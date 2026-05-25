@@ -1,0 +1,10 @@
+{
+  "sample": "CameraFaceDetection",
+  "feature_name": null,
+  "readme_description": "An end-to-end sample camera application that incorporates face detection.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

@@ -1,0 +1,46 @@
+﻿{
+    "sample":  "XamlMasterDetail",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlMasterDetail\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok-generic",
+    "uninstall":  "ok",
+    "package_full_name":  "9296b303-e43c-4323-bc5f-6cb3e72b0054_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "9296b303-e43c-4323-bc5f-6cb3e72b0054_8wekyb3d8bbwe",
+    "aumid":  "9296b303-e43c-4323-bc5f-6cb3e72b0054_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "MainPage (generic)",
+                          "initial_capture":  "00_main.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "ListItem: MasterDetailApp.ViewModels.ItemViewModel",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__01_ListItem_MasterDetailApp.ViewModels.ItemViewModel.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: MasterDetailApp.ViewModels.ItemViewModel",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__02_ListItem_MasterDetailApp.ViewModels.ItemViewModel.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: MasterDetailApp.ViewModels.ItemViewModel",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__03_ListItem_MasterDetailApp.ViewModels.ItemViewModel.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: MasterDetailApp.ViewModels.ItemViewModel",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__04_ListItem_MasterDetailApp.ViewModels.ItemViewModel.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

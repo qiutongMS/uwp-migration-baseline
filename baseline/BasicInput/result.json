@@ -1,0 +1,77 @@
+﻿{
+    "sample":  "BasicInput",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicInput\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.BasicInput.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.BasicInput.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.BasicInput.CS_8wekyb3d8bbwe!BasicInput.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Input Events",
+                          "initial_capture":  "01_1_Input_Events__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) PointerPoint Properties",
+                          "initial_capture":  "02_2_PointerPoint_Properties__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Device Capabilities",
+                          "initial_capture":  "03_3_Device_Capabilities__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) XAML Manipulations",
+                          "initial_capture":  "04_4_XAML_Manipulations__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Inertia",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Reset",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_XAML_Manipulations__after_Reset.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Gesture Recognizer",
+                          "initial_capture":  "05_5_Gesture_Recognizer__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Inertia",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Reset",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Gesture_Recognizer__after_Reset.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

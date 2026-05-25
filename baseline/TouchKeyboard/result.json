@@ -1,0 +1,62 @@
+﻿{
+    "sample":  "TouchKeyboard",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.TouchKeyboard.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.TouchKeyboard.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.TouchKeyboard.CS_8wekyb3d8bbwe!TouchKeyboard.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Display touch keyboard automatically",
+                          "initial_capture":  "01_1_Display_touch_keyboard_automatically__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Display_touch_keyboard_automatically__after_Button.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Listen for Show/Hide events",
+                          "initial_capture":  "02_2_Listen_for_Show_Hide_events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Listen_for_Show_Hide_events__after_Button.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Programmatically Show/Hide\nthe touch keyboard",
+                          "initial_capture":  "03_3_Programmatically_Show_Hide_the_touch_keyboard__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Showing the Emoji keyboard",
+                          "initial_capture":  "04_4_Showing_the_Emoji_keyboard__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Showing_the_Emoji_keyboard__after_Button.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

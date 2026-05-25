@@ -1,0 +1,91 @@
+{
+  "sample": "CustomEditControl",
+  "feature_name": "Custom text control C# Sample",
+  "readme_description": "Shows how to use the CoreTextEditContext class to create a rudimentary text control.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "CoreTextEditContext"
+  ],
+  "api_namespaces": [],
+  "api_references": [
+    "CoreWindow.GetForCurrentThread",
+    "EditControl.GetLayout",
+    "CurrentPoint.Position",
+    "EditControl.Focus",
+    "FocusState.Programmatic"
+  ],
+  "scenarios": {
+    "index": 1,
+    "class": "Scenario1_Input",
+    "title": "Text input",
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomEditControl\\cs\\Scenario1_Input.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomEditControl\\cs\\Scenario1_Input.xaml.cs",
+    "description": "Text input",
+    "controls": [
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Description:"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "Text input"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "When the custom text control has focus, it draws with a green border. The caret is represented by a globe. See the README for this sample for further instructions."
+      }
+    ],
+    "usings": [
+      "System",
+      "System.Diagnostics",
+      "Windows.Foundation",
+      "Windows.UI.Core",
+      "Windows.UI.Text.Core",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Media",
+      "Windows.UI.Xaml.Navigation"
+    ],
+    "handlers": [
+      {
+        "name": "Scenario1_Input",
+        "namespaces_used": [],
+        "api_refs": [
+          "CoreWindow.GetForCurrentThread"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 203
+      },
+      {
+        "name": "Page_PointerPressed",
+        "namespaces_used": [],
+        "api_refs": [
+          "EditControl.GetLayout",
+          "CurrentPoint.Position",
+          "EditControl.Focus",
+          "FocusState.Programmatic"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 386
+      },
+      {
+        "name": "OnNavigatingFrom",
+        "namespaces_used": [],
+        "api_refs": [
+          "CoreWindow.GetForCurrentThread"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 276
+      }
+    ]
+  }
+}

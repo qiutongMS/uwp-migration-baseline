@@ -1,0 +1,262 @@
+{
+  "sample": "Package",
+  "feature_name": "Package",
+  "readme_description": "Shows how to get package info by using the Windows Runtime packaging API (Windows.ApplicationModel.Package and PackageId).",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "Windows.ApplicationModel.Package",
+    "Windows.ApplicationModel.PackageId",
+    "Package.Id",
+    "Package.InstalledLocation",
+    "Package.Dependencies",
+    "Package.Description",
+    "Package.DisplayName",
+    "Package.IsBundle",
+    "Package.IsDevelopmentMode",
+    "Package.IsResourcePackage",
+    "Package.Logo",
+    "Package.PublisherDisplayName",
+    "Windows.ApplicationModel.DataTransfer",
+    "text",
+    "image",
+    "DataPackageView",
+    "ShareOperation",
+    "Windows.ApplicationModel.DataTransfer.Share"
+  ],
+  "api_namespaces": [
+    "Windows.Storage.StorageFolder",
+    "Windows.ApplicationModel.Package"
+  ],
+  "api_references": [
+    "Package.Current",
+    "String.Format",
+    "Logo.AbsoluteUri",
+    "OutputTextBlock.Text",
+    "Windows.Storage",
+    "Windows.ApplicationModel",
+    "Count.ToString",
+    "Id.FullName"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "scenario1_identity",
+      "title": "scenario1_identity",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs\\scenario1_identity.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs\\scenario1_identity.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Use the Package API to retrieve the current application's identity."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GetPackage",
+          "content": "Get Package",
+          "handlers": {
+            "Click": "GetPackage_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "SDKTemplate",
+        "System",
+        "Windows.ApplicationModel"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetPackage_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Package.Current",
+            "String.Format",
+            "Logo.AbsoluteUri",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 2263
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 10
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "scenario2_installedlocation",
+      "title": "scenario2_installedlocation",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs\\scenario2_installedlocation.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs\\scenario2_installedlocation.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Use the Package API to access the current package's installed location."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GetInstalledLocation",
+          "content": "Get Installed Location",
+          "handlers": {
+            "Click": "GetInstalledLocation_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "SDKTemplate",
+        "System",
+        "Windows.ApplicationModel"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetInstalledLocation_Click",
+          "namespaces_used": [
+            "Windows.Storage.StorageFolder"
+          ],
+          "api_refs": [
+            "Windows.Storage",
+            "Package.Current",
+            "OutputTextBlock.Text",
+            "String.Format"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 331
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 10
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "scenario3_dependencies",
+      "title": "scenario3_dependencies",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs\\scenario3_dependencies.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs\\scenario3_dependencies.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Use the Package API to retrieve the current application's dependencies."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GetDependencies",
+          "content": "Get Dependencies",
+          "handlers": {
+            "Click": "GetDependencies_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "SDKTemplate",
+        "System",
+        "System.Collections.Generic",
+        "Windows.ApplicationModel"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetDependencies_Click",
+          "namespaces_used": [
+            "Windows.ApplicationModel.Package"
+          ],
+          "api_refs": [
+            "Windows.ApplicationModel",
+            "Package.Current",
+            "String.Format",
+            "Count.ToString",
+            "Id.FullName",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 492
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 10
+        }
+      ]
+    }
+  ]
+}

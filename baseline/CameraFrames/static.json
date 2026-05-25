@@ -1,0 +1,542 @@
+{
+  "sample": "CameraFrames",
+  "feature_name": "Camera Frames",
+  "readme_description": "Shows how to perform various tasks related to individual frames captured through a camera.",
+  "readme_bullets": [
+    "Find cameras which support color, depth and/or infrared",
+    "Access cameras in shared mode",
+    "Create and read frames from a FrameReader",
+    "Process input frames pixel by pixel",
+    "Rendering frames to an image element",
+    "Use a DeviceWatcher to monitor when cameras are connected and disconnected"
+  ],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.UI.Core.CoreDispatcherPriority.Normal"
+  ],
+  "api_references": [
+    "MediaFrameSourceKind.Color",
+    "MediaFrameSourceKind.Depth",
+    "MediaFrameSourceKind.Infrared",
+    "NextButton.IsEnabled",
+    "MediaFrameSourceGroup.FindAllAsync",
+    "FrameSources.Values",
+    "Info.SourceKind",
+    "FrameRenderer.GetSubtypeForFrameReader",
+    "MediaFrameReaderStartStatus.Success",
+    "MediaCaptureSharingMode.SharedReadOnly",
+    "StreamingCaptureMode.Video",
+    "MediaCaptureMemoryPreference.Cpu",
+    "GroupComboBox.ItemsSource",
+    "Dispatcher.RunAsync",
+    "Windows.UI",
+    "Core.CoreDispatcherPriority",
+    "StartButton.IsEnabled",
+    "StopButton.IsEnabled",
+    "FormatComboBox.ItemsSource",
+    "SourceComboBox.ItemsSource",
+    "GroupComboBox.SelectedItem",
+    "SourceComboBox.SelectedIndex",
+    "SourceComboBox.SelectedItem",
+    "FormatComboBox.SelectedItem",
+    "Info.Id",
+    "SourceGroup.Id",
+    "SourceInfo.Id",
+    "FrameSources.TryGetValue",
+    "MediaCaptureSharingMode.ExclusiveControl"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_DisplayDepthColorIR",
+      "title": "Shared mode access to color, depth and infrared frame sources",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFrames\\shared\\Scenario1_DisplayDepthColorIR.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFrames\\cs\\Scenario1_DisplayDepthColorIR.xaml.cs",
+      "description": "Display multiple frame sources to screen simultaneously in shared mode access.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Display multiple frame sources to screen simultaneously in shared mode access."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "NextButton",
+          "content": "Next Source Group",
+          "handlers": {
+            "Click": "NextButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Color frame source"
+        },
+        {
+          "type": "Image",
+          "name": "colorPreviewImage",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Depth frame source"
+        },
+        {
+          "type": "Image",
+          "name": "depthPreviewImage",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Infrared frame source"
+        },
+        {
+          "type": "Image",
+          "name": "infraredPreviewImage",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "outputTextBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Linq",
+        "System.Collections.Generic",
+        "System.Threading.Tasks",
+        "Windows.Media.Capture",
+        "Windows.Media.Capture.Frames",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_DisplayDepthColorIR",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaFrameSourceKind.Color",
+            "MediaFrameSourceKind.Depth",
+            "MediaFrameSourceKind.Infrared"
+          ],
+          "new_types": [
+            "SimpleLogger",
+            "Dictionary",
+            "FrameRenderer"
+          ],
+          "ui_sets": [],
+          "body_length": 572
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 57
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 57
+        },
+        {
+          "name": "NextButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 57
+        },
+        {
+          "name": "PickNextMediaSourceAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "NextButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 268
+        },
+        {
+          "name": "PickNextMediaSourceWorkerAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaFrameSourceGroup.FindAllAsync",
+            "FrameSources.Values",
+            "Info.SourceKind",
+            "FrameRenderer.GetSubtypeForFrameReader",
+            "MediaFrameReaderStartStatus.Success"
+          ],
+          "new_types": [
+            "HashSet"
+          ],
+          "ui_sets": [],
+          "body_length": 3403
+        },
+        {
+          "name": "InitializeMediaCaptureAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCaptureSharingMode.SharedReadOnly",
+            "StreamingCaptureMode.Video",
+            "MediaCaptureMemoryPreference.Cpu"
+          ],
+          "new_types": [
+            "MediaCapture"
+          ],
+          "ui_sets": [],
+          "body_length": 1035
+        },
+        {
+          "name": "CleanupMediaCaptureAsync",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 651
+        },
+        {
+          "name": "FrameReader_FrameArrived",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 631
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_FindAvailableSourceGroups",
+      "title": "Find and display all media frame sources",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFrames\\shared\\Scenario2_FindAvailableSourceGroups.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFrames\\cs\\Scenario2_FindAvailableSourceGroups.xaml.cs",
+      "description": "Enumerate frame sources, and initialize selected source using frame reader and display frames on screen.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "{Binding Path=DisplayName}"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Enumerate frame sources, and initialize selected source using frame reader and display frames on screen."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Source Group:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Frame Source:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Media Format:"
+        },
+        {
+          "type": "ComboBox",
+          "name": "GroupComboBox",
+          "x_name": "",
+          "placeholdertext": "Select ...",
+          "handlers": {
+            "SelectionChanged": "GroupComboBox_SelectionChanged"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "SourceComboBox",
+          "x_name": "",
+          "placeholdertext": "Select ...",
+          "handlers": {
+            "SelectionChanged": "SourceComboBox_SelectionChanged"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "FormatComboBox",
+          "x_name": "",
+          "placeholdertext": "Default format",
+          "handlers": {
+            "SelectionChanged": "FormatComboBox_SelectionChanged"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "StartButton",
+          "x_name": "",
+          "content": "Start",
+          "handlers": {
+            "Click": "StartButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "StopButton",
+          "x_name": "",
+          "content": "Stop",
+          "handlers": {
+            "Click": "StopButton_Click"
+          }
+        },
+        {
+          "type": "Image",
+          "name": "PreviewImage",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "outputTextBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Media.Capture",
+        "Windows.Media.Capture.Frames",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_FindAvailableSourceGroups",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "SimpleLogger",
+            "FrameRenderer"
+          ],
+          "ui_sets": [],
+          "body_length": 167
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "GroupComboBox.ItemsSource"
+          ],
+          "new_types": [
+            "SourceGroupCollection"
+          ],
+          "ui_sets": [],
+          "body_length": 313
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 126
+        },
+        {
+          "name": "UpdateButtonStateAsync",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority",
+            "StartButton.IsEnabled",
+            "StopButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 278
+        },
+        {
+          "name": "DisposeMediaCapture",
+          "namespaces_used": [],
+          "api_refs": [
+            "FormatComboBox.ItemsSource",
+            "SourceComboBox.ItemsSource"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 213
+        },
+        {
+          "name": "GroupComboBox_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "GroupComboBox.SelectedItem",
+            "SourceComboBox.ItemsSource",
+            "SourceComboBox.SelectedIndex"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 393
+        },
+        {
+          "name": "SourceComboBox_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "SourceComboBox.SelectedItem",
+            "FrameRenderer.GetSubtypeForFrameReader",
+            "Info.SourceKind",
+            "FormatComboBox.ItemsSource"
+          ],
+          "new_types": [
+            "FrameFormatModel"
+          ],
+          "ui_sets": [],
+          "body_length": 818
+        },
+        {
+          "name": "FormatComboBox_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "FormatComboBox.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 136
+        },
+        {
+          "name": "StartReaderAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaFrameReaderStartStatus.Success"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 483
+        },
+        {
+          "name": "CreateReaderAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "FrameRenderer.GetSubtypeForFrameReader",
+            "Info.SourceKind",
+            "Info.Id"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 865
+        },
+        {
+          "name": "UpdateFrameSource",
+          "namespaces_used": [],
+          "api_refs": [
+            "SourceComboBox.SelectedItem",
+            "GroupComboBox.SelectedItem",
+            "SourceGroup.Id",
+            "Info.Id",
+            "SourceInfo.Id",
+            "FrameSources.TryGetValue"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 787
+        },
+        {
+          "name": "InitializeCaptureAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "GroupComboBox.SelectedItem",
+            "MediaCaptureSharingMode.ExclusiveControl",
+            "MediaCaptureMemoryPreference.Cpu",
+            "StreamingCaptureMode.Video"
+          ],
+          "new_types": [
+            "MediaCapture",
+            "MediaCaptureInitializationSettings"
+          ],
+          "ui_sets": [],
+          "body_length": 1726
+        },
+        {
+          "name": "MediaCaptureInitializationSettings",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCaptureSharingMode.ExclusiveControl",
+            "MediaCaptureMemoryPreference.Cpu",
+            "StreamingCaptureMode.Video"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 698
+        },
+        {
+          "name": "ChangeMediaFormatAsync",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 514
+        },
+        {
+          "name": "StopReaderAsync",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 382
+        },
+        {
+          "name": "StartButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 49
+        },
+        {
+          "name": "StopButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "Reader_FrameArrived",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 488
+        }
+      ]
+    }
+  ]
+}

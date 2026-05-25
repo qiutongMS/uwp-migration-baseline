@@ -6,7 +6,7 @@ This document gives the next maintainer the **why** behind decisions, not just t
 
 Establish a **behavioral baseline** for ~38 UWP C# samples so that, after a future architecture migration (e.g. WinUI 3 / WindowsAppSDK / .NET 8+), the same samples can be re-baselined and compared image-for-image and behavior-for-behavior against the originals.
 
-The deliverable per sample is `info.md` plus a `screenshots/` directory. Both are checked into the **output repo** (`uwp-samples-analysis/`), not this scripts repo.
+The deliverable per sample is `info.md` plus a `screenshots/` directory. Both are checked into [`baseline/`](baseline/) in this repo — the last full batch (38 samples, 281 PNGs, 12.8 MB) is preserved there as the reference baseline.
 
 ## Why a custom pipeline (not just `msbuild`)
 
@@ -75,9 +75,11 @@ For each sample directory containing a "cs/" subdir:
 
 ## What this repo intentionally doesn't contain
 
-- The 281 captured PNGs and 38 `info.md` files. Those go in a *separate* output repo / directory (`uwp-samples-analysis/`). They are derivatives of the source samples and would balloon this repo's size.
-- The upstream sample sources themselves.
-- Build artifacts (`bin/`, `obj/`).
+- The upstream sample sources (`uwp-samples-standalone/`) — that's a separate repo.
+- Build artifacts (`bin/`, `obj/`) — they're regenerated on each run.
+- Per-run diagnostics (`msbuild.log`, `process.log`, `_run_*.log`) — stripped from `baseline/` because they're noisy and don't help baseline comparison.
+
+The 281 captured PNGs and 38 `info.md` files **are** included under [`baseline/`](baseline/) as the reference baseline.
 
 ## File layout
 
@@ -95,6 +97,16 @@ uwp-migration-baseline/
 │   ├── output-format.md       ← JSON / Markdown schemas
 │   ├── runbook.md             ← Common operations
 │   └── known-issues.md        ← Env-broken samples + required upstream patches
+├── baseline/                  ← The actual captured baseline (281 PNGs, 38 info.md, 12.8 MB)
+│   ├── README.md              ← How to read this baseline; status summary
+│   ├── _index.md              ← Per-sample table with links + status
+│   ├── _status.csv            ← Machine-readable status row per sample
+│   ├── _progress.log          ← Phase-transition log from the batch run
+│   └── <Sample>/              ← One directory per sample
+│       ├── info.md            ← The main per-sample artifact
+│       ├── static.json        ← Static-analysis output
+│       ├── result.json        ← Runtime output (which scenarios, which screenshots)
+│       └── screenshots/*.png  ← All captures for this sample
 └── .gitignore
 ```
 

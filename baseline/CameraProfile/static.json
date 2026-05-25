@@ -1,0 +1,490 @@
+{
+  "sample": "CameraProfile",
+  "feature_name": "CameraProfile",
+  "readme_description": "Shows how to query a media capture device for a collection of media types that can work together on a given device called a Video Profile.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "Windows.Media.Capture.MediaCaptureInitializationSettings",
+    "Windows.Media.Capture.MediaCaptureInitilizationSettings.VideoDeviceId"
+  ],
+  "api_namespaces": [
+    "Windows.Devices.Enumeration.Panel.Back",
+    "Windows.UI.Core.CoreDispatcherPriority.Normal",
+    "Windows.Devices.Enumeration.Panel.Front",
+    "Windows.Media.Devices.HdrVideoMode.Auto"
+  ],
+  "api_references": [
+    "MainPage.Current",
+    "Windows.Devices",
+    "Enumeration.Panel",
+    "NotifyType.ErrorMessage",
+    "CultureInfo.InvariantCulture",
+    "MediaCapture.FindAllVideoProfiles",
+    "Math.Round",
+    "VideoProfile.Id",
+    "RecordMediaDescription.Width",
+    "RecordMediaDescription.Height",
+    "RecordMediaDescription.FrameRate",
+    "NotifyType.StatusMessage",
+    "DeviceInformation.FindAllAsync",
+    "DeviceClass.VideoCapture",
+    "Count.ToString",
+    "MediaCapture.IsVideoProfileSupported",
+    "EnclosureLocation.Panel",
+    "Dispatcher.RunAsync",
+    "Windows.UI",
+    "Core.CoreDispatcherPriority",
+    "MediaCapture.FindConcurrentProfiles",
+    "MediaCapture.FindKnownVideoProfiles",
+    "KnownVideoProfile.VideoRecording",
+    "VideoDeviceController.HdrVideoControl",
+    "Windows.Media",
+    "Devices.HdrVideoMode"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_SetRecordProfile",
+      "title": "Locate Record Specific Profile",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs\\Scenario1_SetRecordProfile.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs\\Scenario1_SetRecordProfile.xaml.cs",
+      "description": "Query if camera supports a specific profile for recording then initialize the media capture settings with that profile. First option is to query for a matching profile of 640x480 30FPS. Second option is to query for a specific custom profile. In the event the profile can't be found we set to the first recording default profile.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Find 640x480 30FPS Recording Profile",
+          "handlers": {
+            "Click": "InitRecordProfileBtn_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Find Custom Recording Profile",
+          "handlers": {
+            "Click": "InitCustomProfileBtn_Click"
+          }
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "outputBox"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Devices.Enumeration",
+        "Windows.Media.Capture",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_SetRecordProfile",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 52
+        },
+        {
+          "name": "InitRecordProfileBtn_Click",
+          "namespaces_used": [
+            "Windows.Devices.Enumeration.Panel.Back"
+          ],
+          "api_refs": [
+            "Windows.Devices",
+            "Enumeration.Panel",
+            "NotifyType.ErrorMessage",
+            "CultureInfo.InvariantCulture",
+            "MediaCapture.FindAllVideoProfiles",
+            "Math.Round",
+            "VideoProfile.Id",
+            "RecordMediaDescription.Width",
+            "RecordMediaDescription.Height",
+            "RecordMediaDescription.FrameRate",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "MediaCapture",
+            "MediaCaptureInitializationSettings"
+          ],
+          "ui_sets": [],
+          "body_length": 3466
+        },
+        {
+          "name": "InitCustomProfileBtn_Click",
+          "namespaces_used": [
+            "Windows.Devices.Enumeration.Panel.Back"
+          ],
+          "api_refs": [
+            "Windows.Devices",
+            "Enumeration.Panel",
+            "NotifyType.ErrorMessage",
+            "CultureInfo.InvariantCulture",
+            "MediaCapture.FindAllVideoProfiles",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "MediaCapture",
+            "MediaCaptureInitializationSettings"
+          ],
+          "ui_sets": [],
+          "body_length": 2023
+        },
+        {
+          "name": "GetVideoProfileSupportedDeviceIdAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "DeviceInformation.FindAllAsync",
+            "DeviceClass.VideoCapture",
+            "CultureInfo.InvariantCulture",
+            "Count.ToString",
+            "MediaCapture.IsVideoProfileSupported",
+            "EnclosureLocation.Panel"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1054
+        },
+        {
+          "name": "LogStatusToOutputBox",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 270
+        },
+        {
+          "name": "LogStatus",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 242
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_ConcurrentProfile",
+      "title": "Query Profile for Concurrency",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs\\Scenario2_ConcurrentProfile.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs\\Scenario2_ConcurrentProfile.xaml.cs",
+      "description": "Utilize camera profiles to verify if a device supports concurrent camera usage. In this example we query a device for concurrency by checking if both front and rear cameras have a matching concurrent profile. If so we initialize media capture settings of both devices to the concurrent profile.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Query for Concurrent Profile",
+          "handlers": {
+            "Click": "CheckConcurrentProfileBtn_Click"
+          }
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "outputBox"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Globalization",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Devices.Enumeration",
+        "Windows.Media.Capture",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_ConcurrentProfile",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 52
+        },
+        {
+          "name": "CheckConcurrentProfileBtn_Click",
+          "namespaces_used": [
+            "Windows.Devices.Enumeration.Panel.Front",
+            "Windows.Devices.Enumeration.Panel.Back"
+          ],
+          "api_refs": [
+            "Windows.Devices",
+            "Enumeration.Panel",
+            "NotifyType.ErrorMessage",
+            "CultureInfo.InvariantCulture",
+            "MediaCapture.FindConcurrentProfiles",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "MediaCapture",
+            "MediaCaptureInitializationSettings"
+          ],
+          "ui_sets": [],
+          "body_length": 4544
+        },
+        {
+          "name": "GetVideoProfileSupportedDeviceIdAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "DeviceInformation.FindAllAsync",
+            "DeviceClass.VideoCapture",
+            "CultureInfo.InvariantCulture",
+            "Count.ToString",
+            "MediaCapture.IsVideoProfileSupported",
+            "EnclosureLocation.Panel"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 889
+        },
+        {
+          "name": "LogStatusToOutputBox",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 270
+        },
+        {
+          "name": "LogStatus",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 242
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_EnableHdrProfile",
+      "title": "Query Profile for HDR Support",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs\\Scenario3_EnableHdrProfile.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs\\Scenario3_EnableHdrProfile.xaml.cs",
+      "description": "Utilize camera profiles to verify if a device supports HDR video recording. In this example we acquire the record media descriptions from the available video profile and query the profile for HDR support.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Query Profile for HDR Support",
+          "handlers": {
+            "Click": "CheckHdrSupportBtn_Click"
+          }
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "outputBox"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "Windows.Devices.Enumeration",
+        "Windows.Media.Capture",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "SDKTemplate",
+        "System.Threading.Tasks"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_EnableHdrProfile",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 52
+        },
+        {
+          "name": "CheckHdrSupportBtn_Click",
+          "namespaces_used": [
+            "Windows.Devices.Enumeration.Panel.Back",
+            "Windows.Media.Devices.HdrVideoMode.Auto"
+          ],
+          "api_refs": [
+            "Windows.Devices",
+            "Enumeration.Panel",
+            "NotifyType.ErrorMessage",
+            "CultureInfo.InvariantCulture",
+            "MediaCapture.FindKnownVideoProfiles",
+            "KnownVideoProfile.VideoRecording",
+            "NotifyType.StatusMessage",
+            "VideoDeviceController.HdrVideoControl",
+            "Windows.Media",
+            "Devices.HdrVideoMode"
+          ],
+          "new_types": [
+            "MediaCapture",
+            "MediaCaptureInitializationSettings"
+          ],
+          "ui_sets": [],
+          "body_length": 2899
+        },
+        {
+          "name": "GetVideoProfileSupportedDeviceIdAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "DeviceInformation.FindAllAsync",
+            "DeviceClass.VideoCapture",
+            "CultureInfo.InvariantCulture",
+            "Count.ToString",
+            "MediaCapture.IsVideoProfileSupported",
+            "EnclosureLocation.Panel"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 971
+        },
+        {
+          "name": "LogStatusToOutputBox",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 270
+        },
+        {
+          "name": "LogStatus",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 242
+        }
+      ]
+    }
+  ]
+}

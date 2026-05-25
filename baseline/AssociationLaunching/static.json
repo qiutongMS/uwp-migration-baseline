@@ -1,0 +1,746 @@
+{
+  "sample": "AssociationLaunching",
+  "feature_name": "Association Launching C# Sample",
+  "readme_description": "Shows how to launch an app to handle a file type or a protocol (also known as custom scheme).",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "LaunchFileAsync",
+    "LaunchUriAsync",
+    "LauncherOptions.DesiredRemainingView",
+    "tools",
+    "Windows.ApplicationModel.Activation.FileActivatedEventArgs",
+    "Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs",
+    "Windows.System.Launcher.LaunchFileAsync",
+    "Windows.System.Launcher.LaunchUriAsync",
+    "Windows.UI.WebUI.WebUIFileActivatedEventArgs",
+    "Windows.UI.WebUI.WebUIProtocolActivatedEventArgs"
+  ],
+  "api_namespaces": [
+    "Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync",
+    "Windows.UI.Popups.Placement.Below",
+    "Windows.Storage.Pickers.FileOpenPicker",
+    "Windows.Storage.StorageFile",
+    "Windows.UI.Xaml.Media.GeneralTransform",
+    "Windows.System.Launcher.LaunchFolderAsync"
+  ],
+  "api_references": [
+    "ViewPreference.ItemsSource",
+    "MainPage.ViewSizePreferences",
+    "ViewPreference.SelectedIndex",
+    "Windows.ApplicationModel",
+    "Package.Current",
+    "InstalledLocation.GetFileAsync",
+    "ApplicationData.Current",
+    "NameCollisionOption.ReplaceExisting",
+    "Launcher.LaunchFileAsync",
+    "NotifyType.StatusMessage",
+    "NotifyType.ErrorMessage",
+    "MainPage.GetElementLocation",
+    "UI.InvocationPoint",
+    "UI.PreferredPlacement",
+    "Windows.UI",
+    "Popups.Placement",
+    "Windows.Storage",
+    "Pickers.FileOpenPicker",
+    "FileTypeFilter.Add",
+    "ViewPreference.SelectedValue",
+    "Xaml.Media",
+    "UriToLaunch.Text",
+    "Launcher.LaunchUriAsync",
+    "Files.Count",
+    "NeighboringFilesQuery.GetFilesAsync",
+    "Math.Min",
+    "KnownFolders.GetFolderAsync",
+    "KnownFolderId.PicturesLibrary",
+    "CreationCollisionOption.ReplaceExisting",
+    "Windows.System",
+    "Launcher.LaunchFolderAsync",
+    "Uri.AbsoluteUri"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_LaunchFile",
+      "title": "Launching a file",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\shared\\Scenario1_LaunchFile.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\cs\\Scenario1_LaunchFile.xaml.cs",
+      "description": "Launching a file with LaunchFileAsync.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Launching a file with LaunchFileAsync."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Launch a .png file with the default handler installed on the system."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch default handler",
+          "handlers": {
+            "Click": "{x:Bind LaunchFileDefault}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "If supported, let the user chose the handler for the .png file."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch Open With",
+          "handlers": {
+            "Click": "{x:Bind LaunchFileOpenWith}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Launch the file picker, and then launch the picked file."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Pick and launch",
+          "handlers": {
+            "Click": "{x:Bind PickAndLaunchFile}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "If supported, warn the user before launching."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch with warning",
+          "handlers": {
+            "Click": "{x:Bind LaunchFileWithWarning}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Launch the file picker, and then launch the picked file with a preference for how much of the screen to leave for this app."
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "ViewPreference"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch with view preference",
+          "handlers": {
+            "Click": "{x:Bind LaunchFileSplitScreen}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The result depends on a number of things, including the preferences of the app being launched. Pick files of various types to see the behavior when launching different apps."
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Threading.Tasks",
+        "Windows.Storage",
+        "Windows.System",
+        "Windows.UI.ViewManagement",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Foundation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_LaunchFile",
+          "namespaces_used": [],
+          "api_refs": [
+            "ViewPreference.ItemsSource",
+            "MainPage.ViewSizePreferences",
+            "ViewPreference.SelectedIndex"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 170
+        },
+        {
+          "name": "GetFileToLaunch",
+          "namespaces_used": [
+            "Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync"
+          ],
+          "api_refs": [
+            "Windows.ApplicationModel",
+            "Package.Current",
+            "InstalledLocation.GetFileAsync",
+            "ApplicationData.Current",
+            "NameCollisionOption.ReplaceExisting"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 496
+        },
+        {
+          "name": "LaunchFileDefault",
+          "namespaces_used": [],
+          "api_refs": [
+            "Launcher.LaunchFileAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 529
+        },
+        {
+          "name": "LaunchFileWithWarning",
+          "namespaces_used": [],
+          "api_refs": [
+            "Launcher.LaunchFileAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "LauncherOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 673
+        },
+        {
+          "name": "LauncherOptions",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 25
+        },
+        {
+          "name": "LaunchFileOpenWith",
+          "namespaces_used": [
+            "Windows.UI.Popups.Placement.Below"
+          ],
+          "api_refs": [
+            "MainPage.GetElementLocation",
+            "UI.InvocationPoint",
+            "UI.PreferredPlacement",
+            "Windows.UI",
+            "Popups.Placement",
+            "Launcher.LaunchFileAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "LauncherOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 1097
+        },
+        {
+          "name": "LaunchFileSplitScreen",
+          "namespaces_used": [
+            "Windows.Storage.Pickers.FileOpenPicker",
+            "Windows.Storage.StorageFile"
+          ],
+          "api_refs": [
+            "Windows.Storage",
+            "Pickers.FileOpenPicker",
+            "FileTypeFilter.Add",
+            "ViewPreference.SelectedValue",
+            "Launcher.LaunchFileAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Windows.Storage.Pickers.FileOpenPicker",
+            "LauncherOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 1108
+        },
+        {
+          "name": "LauncherOptions",
+          "namespaces_used": [],
+          "api_refs": [
+            "ViewPreference.SelectedValue"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 73
+        },
+        {
+          "name": "PickAndLaunchFile",
+          "namespaces_used": [
+            "Windows.Storage.Pickers.FileOpenPicker",
+            "Windows.Storage.StorageFile"
+          ],
+          "api_refs": [
+            "Windows.Storage",
+            "Pickers.FileOpenPicker",
+            "FileTypeFilter.Add",
+            "Launcher.LaunchFileAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Windows.Storage.Pickers.FileOpenPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 898
+        },
+        {
+          "name": "GetOpenWithPosition",
+          "namespaces_used": [
+            "Windows.UI.Xaml.Media.GeneralTransform"
+          ],
+          "api_refs": [
+            "Windows.UI",
+            "Xaml.Media"
+          ],
+          "new_types": [
+            "Point"
+          ],
+          "ui_sets": [],
+          "body_length": 311
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_LaunchUri",
+      "title": "Launching a URI",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\shared\\Scenario2_LaunchUri.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\cs\\Scenario2_LaunchUri.xaml.cs",
+      "description": "Launching a URI with LaunchUriAsync.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Launching a URI with LaunchUriAsync."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To see the effect of different launcher options, try launching different URI schemes."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "UriToLaunch",
+          "text": "http://www.bing.com"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Launch the URI with the default handler installed on the system."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch default handler",
+          "handlers": {
+            "Click": "{x:Bind LaunchUriDefault}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "If supported, let the user choose the handler for the URI."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch Open With",
+          "handlers": {
+            "Click": "{x:Bind LaunchUriOpenWith}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "If supported, warn the user before launching."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch with warning",
+          "handlers": {
+            "Click": "{x:Bind LaunchUriWithWarning}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "If supported, launch the URI with a preference for how much of the screen to leave for this app."
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "ViewPreference"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Launch with view preference",
+          "handlers": {
+            "Click": "{x:Bind LaunchUriSplitScreen}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The result depends on a number of things, including the preferences of the app being launched. Pick URI schemes of various types to see the behavior when launching different apps."
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Foundation",
+        "Windows.System",
+        "Windows.UI.ViewManagement",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_LaunchUri",
+          "namespaces_used": [],
+          "api_refs": [
+            "ViewPreference.ItemsSource",
+            "MainPage.ViewSizePreferences",
+            "ViewPreference.SelectedIndex"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 170
+        },
+        {
+          "name": "LaunchUriDefault",
+          "namespaces_used": [],
+          "api_refs": [
+            "UriToLaunch.Text",
+            "Launcher.LaunchUriAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Uri"
+          ],
+          "ui_sets": [],
+          "body_length": 503
+        },
+        {
+          "name": "LaunchUriWithWarning",
+          "namespaces_used": [],
+          "api_refs": [
+            "UriToLaunch.Text",
+            "Launcher.LaunchUriAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Uri",
+            "LauncherOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 638
+        },
+        {
+          "name": "LauncherOptions",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 25
+        },
+        {
+          "name": "LaunchUriOpenWith",
+          "namespaces_used": [
+            "Windows.UI.Popups.Placement.Below"
+          ],
+          "api_refs": [
+            "UriToLaunch.Text",
+            "MainPage.GetElementLocation",
+            "UI.InvocationPoint",
+            "UI.PreferredPlacement",
+            "Windows.UI",
+            "Popups.Placement",
+            "Launcher.LaunchUriAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Uri",
+            "LauncherOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 1068
+        },
+        {
+          "name": "LaunchUriSplitScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "UriToLaunch.Text",
+            "ViewPreference.SelectedValue",
+            "Launcher.LaunchUriAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Uri",
+            "LauncherOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 703
+        },
+        {
+          "name": "LauncherOptions",
+          "namespaces_used": [],
+          "api_refs": [
+            "ViewPreference.SelectedValue"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 73
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_ReceiveFile",
+      "title": "Receiving a file",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\shared\\Scenario3_ReceiveFile.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\cs\\Scenario3_ReceiveFile.xaml.cs",
+      "description": "Receiving a file.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Receiving a file."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Create a test file in the Pictures folder with the extension .. Opening that file will launch this app."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Create test file",
+          "handlers": {
+            "Click": "{x:Bind CreateTestFile}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "This sample sets the DesiredView to \"useLess\", which suggests to the system that thie app should use a smaller portion of the screen and leave more of the screen for other apps."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Create test file with no file extension",
+          "handlers": {
+            "Click": "{x:Bind CreateTestFileWithNoExtension}"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Remove test files",
+          "handlers": {
+            "Click": "{x:Bind RemoveTestFiles}"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading.Tasks",
+        "Windows.ApplicationModel.Activation",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_ReceiveFile",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Files.Count",
+            "NeighboringFilesQuery.GetFilesAsync",
+            "Math.Min",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1782
+        },
+        {
+          "name": "CreateTestFile",
+          "namespaces_used": [
+            "Windows.System.Launcher.LaunchFolderAsync"
+          ],
+          "api_refs": [
+            "KnownFolders.GetFolderAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.ReplaceExisting",
+            "Windows.System",
+            "Launcher.LaunchFolderAsync"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 310
+        },
+        {
+          "name": "CreateTestFileWithNoExtension",
+          "namespaces_used": [
+            "Windows.System.Launcher.LaunchFolderAsync"
+          ],
+          "api_refs": [
+            "KnownFolders.GetFolderAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.ReplaceExisting",
+            "Windows.System",
+            "Launcher.LaunchFolderAsync"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 297
+        },
+        {
+          "name": "RemoveTestFiles",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.GetFolderAsync",
+            "KnownFolderId.PicturesLibrary"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 825
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_ReceiveUri",
+      "title": "Receiving a URI",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\shared\\Scenario4_ReceiveUri.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\cs\\Scenario4_ReceiveUri.xaml.cs",
+      "description": "Receiving a URI.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Receiving a URI."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        }
+      ],
+      "usings": [
+        "Windows.ApplicationModel.Activation",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_ReceiveUri",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.AbsoluteUri",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 411
+        }
+      ]
+    }
+  ]
+}

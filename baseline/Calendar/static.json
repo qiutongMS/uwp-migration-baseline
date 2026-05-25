@@ -1,0 +1,446 @@
+{
+  "sample": "Calendar",
+  "feature_name": "Calendar C# sample",
+  "readme_description": "Shows how to use the Calendar class to manipulate and process dates based on a calendar system and the user's globalization preferences.",
+  "readme_bullets": [
+    "How to create a calendar for the user's default preferences or for specific overrides, and how to display calendar details.",
+    "How to determine statistics for the current calendar date and time, such as the number of days in this month and the number of months in this year.",
+    "How to enumerate through a calendar and perform calendar math, such as determining the number of hours in a day that spans the transition from Daylight Saving Time.",
+    "How to create a calendar using language names with supported Unicode extension tags, and how the extension tags are used by the calendar object.",
+    "How to support time zones in calendars, by changing several time zones within a calendar and showing the effect of the time zone change in the date and time properties of the calendar.",
+    "How to convert between calendars and a language-specific date type."
+  ],
+  "readme_api_links": [
+    "Calendar",
+    "Windows.Globalization",
+    "DateTimeOffset",
+    "Date",
+    "Windows.Globalization.CalendarIdentifiers",
+    "Windows.Globalization.ClockIdentifiers",
+    "Windows.Globalization.Calendar"
+  ],
+  "api_namespaces": [
+    "Windows.Globalization.Calendar"
+  ],
+  "api_references": [
+    "Windows.Globalization",
+    "CalendarIdentifiers.Japanese",
+    "ClockIdentifiers.TwelveHour",
+    "CalendarIdentifiers.Hebrew",
+    "ClockIdentifiers.TwentyFourHour",
+    "OutputTextBlock.Text",
+    "CalendarIdentifiers.Gregorian",
+    "DateTimeKind.Utc"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_Data",
+      "title": "Display a calendar",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\shared\\Scenario1_Data.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\cs\\Scenario1_Data.xaml.cs",
+      "description": "Display a calendar",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Display a calendar"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Create a calendar based on the user's default preferences or specific overrides, for the current date and time. The details of the three example calendars are displayed below."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show results",
+          "handlers": {
+            "Click": "ShowResults_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "Windows.Foundation",
+        "Windows.Globalization",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_Data",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "ReportCalendarData",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 471
+        },
+        {
+          "name": "ShowResults_Click",
+          "namespaces_used": [
+            "Windows.Globalization.Calendar"
+          ],
+          "api_refs": [
+            "Windows.Globalization",
+            "CalendarIdentifiers.Japanese",
+            "ClockIdentifiers.TwelveHour",
+            "CalendarIdentifiers.Hebrew",
+            "ClockIdentifiers.TwentyFourHour",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [
+            "Calendar"
+          ],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 808
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_Stats",
+      "title": "Retrieve calendar statistics",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\shared\\Scenario2_Stats.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\cs\\Scenario2_Stats.xaml.cs",
+      "description": "Retrieve calendar statistics",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Retrieve calendar statistics"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Determines statistics for the current calendar date and time."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show results",
+          "handlers": {
+            "Click": "ShowResults_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "Windows.Foundation",
+        "Windows.Globalization",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_Stats",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "ReportCalendarData",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 500
+        },
+        {
+          "name": "ShowResults_Click",
+          "namespaces_used": [
+            "Windows.Globalization.Calendar"
+          ],
+          "api_refs": [
+            "Windows.Globalization",
+            "CalendarIdentifiers.Japanese",
+            "ClockIdentifiers.TwelveHour",
+            "CalendarIdentifiers.Hebrew",
+            "ClockIdentifiers.TwentyFourHour",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [
+            "Calendar"
+          ],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 831
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_Enum",
+      "title": "Calendar enumeration and math",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\shared\\Scenario3_Enum.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\cs\\Scenario3_Enum.xaml.cs",
+      "description": "Calendar enumeration and math",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Calendar enumeration and math"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Enumerates through a calendar and performs calendar math."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show results",
+          "handlers": {
+            "Click": "ShowResults_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Text",
+        "Windows.Foundation",
+        "Windows.Globalization",
+        "Windows.Globalization.DateTimeFormatting",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_Enum",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "ShowResults_Click",
+          "namespaces_used": [
+            "Windows.Globalization.Calendar"
+          ],
+          "api_refs": [
+            "Windows.Globalization",
+            "CalendarIdentifiers.Japanese",
+            "ClockIdentifiers.TwentyFourHour",
+            "CalendarIdentifiers.Gregorian",
+            "DateTimeKind.Utc",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [
+            "StringBuilder",
+            "Calendar",
+            "DateTimeFormatter",
+            "Windows.Globalization.Calendar",
+            "DateTime"
+          ],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 5808
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_UnicodeExtensions",
+      "title": "Calendar with Unicode extensions in languages",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\shared\\Scenario4_UnicodeExtensions.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\cs\\Scenario4_UnicodeExtensions.xaml.cs",
+      "description": "Calendar with Unicode extensions in languages",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Calendar with Unicode extensions in languages"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Creates a calendar using language names with supported Unicode extension tags and demonstrates how the extension tags are used by the calendar object."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show results",
+          "handlers": {
+            "Click": "ShowResults_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "System.Text",
+        "Windows.Foundation",
+        "Windows.Globalization",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_UnicodeExtensions",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "ReportCalendarData",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 711
+        },
+        {
+          "name": "ShowResults_Click",
+          "namespaces_used": [
+            "Windows.Globalization.Calendar"
+          ],
+          "api_refs": [
+            "Windows.Globalization",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [
+            "Calendar"
+          ],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 1399
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5_TimeZone",
+      "title": "Calendar time zone support",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\shared\\Scenario5_TimeZone.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Calendar\\cs\\Scenario5_TimeZone.xaml.cs",
+      "description": "Calendar time zone support",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Calendar time zone support"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Set and get several time zones within a calendar, and show the effect of the time zone change in the date and time time properties of the calendar."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show results",
+          "handlers": {
+            "Click": "ShowResults_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "System.Text",
+        "Windows.Foundation",
+        "Windows.Globalization",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5_TimeZone",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "ReportCalendarData",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 806
+        },
+        {
+          "name": "ShowResults_Click",
+          "namespaces_used": [
+            "Windows.Globalization.Calendar"
+          ],
+          "api_refs": [
+            "Windows.Globalization",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [
+            "StringBuilder",
+            "Calendar"
+          ],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 2468
+        }
+      ]
+    }
+  ]
+}

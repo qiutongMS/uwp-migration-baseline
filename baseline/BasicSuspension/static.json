@@ -1,0 +1,12 @@
+{
+  "sample": "BasicSuspension",
+  "feature_name": null,
+  "readme_description": "Shows how to suspend, shut down and resume your application using the Suspension Manager.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "tools"
+  ],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

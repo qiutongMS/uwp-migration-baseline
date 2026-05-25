@@ -1,0 +1,120 @@
+{
+  "sample": "UserInteractionMode",
+  "feature_name": "User interaction mode",
+  "readme_description": "Shows how to detect and respond to the user interaction mode.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "MainPage.Current",
+    "Window.Current",
+    "UIViewSettings.GetForCurrentView",
+    "UserInteractionMode.Mouse"
+  ],
+  "scenarios": {
+    "index": 1,
+    "class": "Scenario1_Basic",
+    "title": "Responding to mode",
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInteractionMode\\shared\\Scenario1_Basic.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInteractionMode\\cs\\Scenario1_Basic.xaml.cs",
+    "description": "User interaction mode",
+    "controls": [
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Description:"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "User interaction mode"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "The current user interaction mode is . The spacing between the items below will change depending on the mode. (To make the difference easier to see, we also change the color of the items.)"
+      },
+      {
+        "type": "CheckBox",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "CheckBox",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "CheckBox",
+        "name": "",
+        "x_name": ""
+      }
+    ],
+    "usings": [
+      "System.ComponentModel",
+      "Windows.UI.Core",
+      "Windows.UI.ViewManagement",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Navigation"
+    ],
+    "handlers": [
+      {
+        "name": "Scenario1_Basic",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 51
+      },
+      {
+        "name": "OnNavigatedTo",
+        "namespaces_used": [],
+        "api_refs": [
+          "MainPage.Current",
+          "Window.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 231
+      },
+      {
+        "name": "OnNavigatedFrom",
+        "namespaces_used": [],
+        "api_refs": [
+          "Window.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 69
+      },
+      {
+        "name": "OnWindowResize",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 40
+      },
+      {
+        "name": "UpdateContent",
+        "namespaces_used": [],
+        "api_refs": [
+          "UIViewSettings.GetForCurrentView",
+          "UserInteractionMode.Mouse"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 246
+      }
+    ]
+  }
+}

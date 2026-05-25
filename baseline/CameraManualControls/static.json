@@ -1,0 +1,10 @@
+{
+  "sample": "CameraManualControls",
+  "feature_name": null,
+  "readme_description": "An end-to-end sample camera app using the Windows.Media.Capture API and orientation sensors.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

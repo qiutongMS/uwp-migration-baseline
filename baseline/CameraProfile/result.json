@@ -1,0 +1,60 @@
+﻿{
+    "sample":  "CameraProfile",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraProfile\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CameraProfile.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CameraProfile.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CameraProfile.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Locate Record Specific Profile",
+                          "initial_capture":  "01_1_Locate_Record_Specific_Profile__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Find 640x480 30FPS Recording Profile",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Find Custom Recording Profile",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Query Profile for Concurrency",
+                          "initial_capture":  "02_2_Query_Profile_for_Concurrency__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Query for Concurrent Profile",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Query_Profile_for_Concurrency__after_Query_for_Concurrent_Profile.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Query Profile for HDR Support",
+                          "initial_capture":  "03_3_Query_Profile_for_HDR_Support__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Query Profile for HDR Support",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Query_Profile_for_HDR_Support__after_Query_Profile_for_HDR_Support.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

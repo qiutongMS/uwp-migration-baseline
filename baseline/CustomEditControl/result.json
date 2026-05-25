@@ -1,0 +1,23 @@
+﻿{
+    "sample":  "CustomEditControl",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomEditControl\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CustomEditControl.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CustomEditControl.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CustomEditControl.CS_8wekyb3d8bbwe!CustomEditControl.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Text input",
+                          "initial_capture":  "01_1_Text_input__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

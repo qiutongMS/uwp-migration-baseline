@@ -1,0 +1,1008 @@
+{
+  "sample": "FileAccess",
+  "feature_name": "File access C# sample",
+  "readme_description": "Shows basic file operations, how to retrieve file properties, and how to track a file or folder so that your app can access it again.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "Windows.Storage",
+    "Windows.Storage.AccessCache",
+    "StorageFolder",
+    "CreateFileAsync",
+    "StorageFile",
+    "GetParentAsync",
+    "FileIO",
+    "WriteTextAsync",
+    "ReadTextAsync",
+    "WriteBufferAsync",
+    "ReadBufferAsync",
+    "OpenTransactedWriteAsync",
+    "DataWriter",
+    "DataReader",
+    "GetBasicPropertiesAsync",
+    "Properties",
+    "StorageApplicationPermissions",
+    "FutureAccessList",
+    "MostRecentlyUsedList",
+    "CopyAsync",
+    "IsEqual",
+    "DeleteAsync",
+    "TryGetItemAsync",
+    "Windows.Storage.FileProperties"
+  ],
+  "api_namespaces": [
+    "Windows.Storage.Streams.Buffer"
+  ],
+  "api_references": [
+    "KnownFolders.GetFolderForUserAsync",
+    "KnownFolderId.PicturesLibrary",
+    "CreationCollisionOption.ReplaceExisting",
+    "NotifyType.StatusMessage",
+    "NotifyType.ErrorMessage",
+    "InputTextBox.Text",
+    "FileIO.WriteTextAsync",
+    "FileIO.ReadTextAsync",
+    "MainPage.E_NO_UNICODE_TRANSLATION",
+    "MainPage.GetBufferFromString",
+    "FileIO.WriteBufferAsync",
+    "String.Format",
+    "Environment.NewLine",
+    "FileIO.ReadBufferAsync",
+    "MainPage.GetStringFromBuffer",
+    "Stream.WriteAsync",
+    "Stream.Size",
+    "FileAccessMode.Read",
+    "UInt32.MaxValue",
+    "Windows.Storage",
+    "Streams.Buffer",
+    "InputStreamOptions.None",
+    "Properties.RetrievePropertiesAsync",
+    "MRURadioButton.IsChecked",
+    "SystemMRUCheckBox.IsChecked",
+    "RecentStorageItemVisibility.AppAndSystem",
+    "RecentStorageItemVisibility.AppOnly",
+    "StorageApplicationPermissions.MostRecentlyUsedList",
+    "StorageApplicationPermissions.FutureAccessList",
+    "NameCollisionOption.ReplaceExisting",
+    "PickerLocationId.PicturesLibrary",
+    "FileTypeFilter.Add"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_Create",
+      "title": "Scenario1_Create",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario1_Create.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario1_Create.xaml.cs",
+      "description": "Create a new file 'sample.dat' to exercise the scenarios in this sample. File will be created in the Pictures library.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Create a new file 'sample.dat' to exercise the scenarios in this sample. File will be created in the Pictures library."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Create 'sample.dat'",
+          "handlers": {
+            "Click": "CreateFileButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "CreateFileButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.ReplaceExisting",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 699
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_GetParent",
+      "title": "Scenario2_GetParent",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario2_GetParent.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario2_GetParent.xaml.cs",
+      "description": "'sample.dat' was created in the Pictures library. The app has the Pictures library capability, and can therefore access the folder where the file was created. To retrieve the folder, click 'Get Parent'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Get Parent",
+          "handlers": {
+            "Click": "GetParent_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "System.Text",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "GetParent_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [],
+          "body_length": 948
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_Text",
+      "title": "Scenario3_Text",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario3_Text.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario3_Text.xaml.cs",
+      "description": "To write some text to 'sample.dat', type something in the textbox below and click 'Write'. To read the contents of 'sample.dat', click 'Read'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To write some text to 'sample.dat', type something in the textbox below and click 'Write'. To read the contents of 'sample.dat', click 'Read'."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "InputTextBox",
+          "text": "ABC123"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Write",
+          "handlers": {
+            "Click": "WriteTextButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Read",
+          "handlers": {
+            "Click": "ReadTextButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "WriteTextButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "InputTextBox.Text",
+            "FileIO.WriteTextAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 945
+        },
+        {
+          "name": "ReadTextButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "FileIO.ReadTextAsync",
+            "NotifyType.StatusMessage",
+            "MainPage.E_NO_UNICODE_TRANSLATION",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1127
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_Bytes",
+      "title": "Scenario4_Bytes",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario4_Bytes.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario4_Bytes.xaml.cs",
+      "description": "To write some set of bytes to 'sample.dat', type something in the textbox below and click 'Write'. To read a set of bytes with the contents of 'sample.dat', click 'Read'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To write some set of bytes to 'sample.dat', type something in the textbox below and click 'Write'. To read a set of bytes with the contents of 'sample.dat', click 'Read'."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "InputTextBox",
+          "text": "ABC123"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Write",
+          "handlers": {
+            "Click": "WriteBytesButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Read",
+          "handlers": {
+            "Click": "ReadBytesButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "Windows.Storage",
+        "Windows.Storage.Streams",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "WriteBytesButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "InputTextBox.Text",
+            "MainPage.GetBufferFromString",
+            "FileIO.WriteBufferAsync",
+            "String.Format",
+            "Environment.NewLine",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1114
+        },
+        {
+          "name": "ReadBytesButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "FileIO.ReadBufferAsync",
+            "MainPage.GetStringFromBuffer",
+            "NotifyType.StatusMessage",
+            "MainPage.E_NO_UNICODE_TRANSLATION",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1224
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5_Stream",
+      "title": "Scenario5_Stream",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario5_Stream.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario5_Stream.xaml.cs",
+      "description": "To write some text to 'sample.dat' using a stream, type something in the textbox below and click 'Write'. To read the contents of 'sample.dat' using a stream, click 'Read'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To write some text to 'sample.dat' using a stream, type something in the textbox below and click 'Write'. To read the contents of 'sample.dat' using a stream, click 'Read'."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "InputTextBox",
+          "text": "ABC123"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Write",
+          "handlers": {
+            "Click": "WriteToStreamButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Read",
+          "handlers": {
+            "Click": "ReadFromStreamButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "Windows.Storage",
+        "Windows.Storage.Streams",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "WriteToStreamButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "InputTextBox.Text",
+            "MainPage.GetBufferFromString",
+            "Stream.WriteAsync",
+            "Stream.Size",
+            "NotifyType.StatusMessage",
+            "String.Format",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1363
+        },
+        {
+          "name": "ReadFromStreamButton_Click",
+          "namespaces_used": [
+            "Windows.Storage.Streams.Buffer"
+          ],
+          "api_refs": [
+            "FileAccessMode.Read",
+            "UInt32.MaxValue",
+            "Windows.Storage",
+            "Streams.Buffer",
+            "InputStreamOptions.None",
+            "MainPage.GetStringFromBuffer",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage",
+            "MainPage.E_NO_UNICODE_TRANSLATION"
+          ],
+          "new_types": [
+            "Windows.Storage.Streams.Buffer"
+          ],
+          "ui_sets": [],
+          "body_length": 2049
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario6_Properties",
+      "title": "Scenario6_Properties",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario6_Properties.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario6_Properties.xaml.cs",
+      "description": "To retrieve and display file properties for 'sample.dat', click 'Show Properties'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To retrieve and display file properties for 'sample.dat', click 'Show Properties'."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show Properties",
+          "handlers": {
+            "Click": "ShowPropertiesButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "System.Text",
+        "Windows.Storage",
+        "Windows.Storage.FileProperties",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario6",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "ShowPropertiesButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Properties.RetrievePropertiesAsync",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [],
+          "body_length": 2066
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "class": "Scenario7_FutureAccess",
+      "title": "Scenario7_FutureAccess",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario7_FutureAccess.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario7_FutureAccess.xaml.cs",
+      "description": "Persist access to a storage item for future use.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Persist access to a storage item for future use."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "MRURadioButton",
+          "content": "Most Recently Used"
+        },
+        {
+          "type": "CheckBox",
+          "name": "",
+          "x_name": "SystemMRUCheckBox",
+          "content": "Also add to system Most Recently Used"
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "FALRadioButton",
+          "content": "Future Access List"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Add to List",
+          "handlers": {
+            "Click": "AddToListButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Show List",
+          "handlers": {
+            "Click": "ShowListButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Open from List",
+          "handlers": {
+            "Click": "OpenFromListButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "System.Text",
+        "Windows.Storage",
+        "Windows.Storage.AccessCache",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario7",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "AddToListButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MRURadioButton.IsChecked",
+            "SystemMRUCheckBox.IsChecked",
+            "RecentStorageItemVisibility.AppAndSystem",
+            "RecentStorageItemVisibility.AppOnly",
+            "StorageApplicationPermissions.MostRecentlyUsedList",
+            "NotifyType.StatusMessage",
+            "StorageApplicationPermissions.FutureAccessList",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1620
+        },
+        {
+          "name": "ShowListButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MRURadioButton.IsChecked",
+            "StorageApplicationPermissions.MostRecentlyUsedList",
+            "StorageApplicationPermissions.FutureAccessList",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [],
+          "body_length": 1135
+        },
+        {
+          "name": "OpenFromListButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MRURadioButton.IsChecked",
+            "StorageApplicationPermissions.MostRecentlyUsedList",
+            "NotifyType.ErrorMessage",
+            "StorageApplicationPermissions.FutureAccessList",
+            "FileIO.ReadTextAsync",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2446
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "class": "Scenario8_Copy",
+      "title": "Scenario8_Copy",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario8_Copy.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario8_Copy.xaml.cs",
+      "description": "To copy 'sample.dat' to the Pictures library, click 'Copy'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To copy 'sample.dat' to the Pictures library, click 'Copy'."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Copy",
+          "handlers": {
+            "Click": "CopyFileButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario8",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "CopyFileButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "NameCollisionOption.ReplaceExisting",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1125
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "class": "Scenario9_Compare",
+      "title": "Scenario9_Compare",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario9_Compare.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario9_Compare.xaml.cs",
+      "description": "Click 'Compare Files' to pick a file and compare it with 'sample.dat'. For example, in a save scenario you could determine if the user is overwriting the same file or creating a new one.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Click 'Compare Files' to pick a file and compare it with 'sample.dat'. For example, in a save scenario you could determine if the user is overwriting the same file or creating a new one."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Compare Files",
+          "handlers": {
+            "Click": "CompareFilesButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario9",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "CompareFilesButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "PickerLocationId.PicturesLibrary",
+            "FileTypeFilter.Add",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "FileOpenPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 1339
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "class": "Scenario10_Delete",
+      "title": "Scenario10_Delete",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario10_Delete.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario10_Delete.xaml.cs",
+      "description": "To delete 'sample.dat', click 'Delete'.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To delete 'sample.dat', click 'Delete'."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Delete",
+          "handlers": {
+            "Click": "DeleteFileButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.IO",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario10",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "DeleteFileButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 934
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "class": "Scenario11_TryGet",
+      "title": "Scenario11_TryGet",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\shared\\Scenario11_TryGet.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs\\Scenario11_TryGet.xaml.cs",
+      "description": "To try to retrieve the file 'sample.dat', click 'Get File'. The TryGetItemAsync method does not throw an exception if it cannot get the file.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "To try to retrieve the file 'sample.dat', click 'Get File'. The TryGetItemAsync method does not throw an exception if it cannot get the file."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Get File",
+          "handlers": {
+            "Click": "GetFileButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario11",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetFileButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 546
+        }
+      ]
+    }
+  ]
+}

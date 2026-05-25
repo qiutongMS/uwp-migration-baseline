@@ -1,0 +1,545 @@
+{
+  "sample": "CameraResolution",
+  "feature_name": "Camera resolution C# sample",
+  "readme_description": "Shows how to change the resolution of a capture device.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "GetMediaStreamProperties",
+    "SetMediaStreamPropertiesAsync",
+    "GetAvailableMediaStreamProperties"
+  ],
+  "api_namespaces": [],
+  "api_references": [
+    "NotifyType.StatusMessage",
+    "Visibility.Collapsed",
+    "PreviewControl.Visibility",
+    "Visibility.Visible",
+    "MediaStreamType.VideoPreview",
+    "MediaCapture.VideoDeviceController",
+    "CameraSettings.Items",
+    "MediaCapture.MediaCaptureSettings",
+    "VideoDeviceCharacteristic.AllStreamsIdentical",
+    "VideoDeviceCharacteristic.PreviewPhotoStreamsIdentical",
+    "NotifyType.ErrorMessage",
+    "MediaStreamType.Photo",
+    "PhotoButton.IsEnabled",
+    "StorageLibrary.GetLibraryAsync",
+    "KnownLibraryId.Pictures",
+    "ApplicationData.Current",
+    "CreationCollisionOption.GenerateUniqueName",
+    "MediaCapture.CapturePhotoToStorageFileAsync",
+    "ImageEncodingProperties.CreateJpeg",
+    "Items.Add",
+    "VideoDeviceCharacteristic.PreviewRecordStreamsIdentical",
+    "VideoButton.IsEnabled",
+    "VideoSettings.SelectedIndex",
+    "MediaStreamType.VideoRecord",
+    "MediaEncodingProfile.CreateMp4",
+    "VideoEncodingQuality.Auto",
+    "MediaCapture.StartRecordToStorageFileAsync",
+    "VideoButton.Content",
+    "MediaCapture.StopRecordAsync",
+    "String.Format",
+    "AspectRatio.ToString",
+    "PreviewSettings.Items",
+    "Math.Abs",
+    "VideoSettings.Items"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_PreviewSettings",
+      "title": "Change camera preview settings",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\shared\\Scenario1_PreviewSettings.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\cs\\Scenario1_PreviewSettings.xaml.cs",
+      "description": "Get and set all possible combinations of resolution and framerate settings for a given camera device.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get and set all possible combinations of resolution and framerate settings for a given camera device."
+        },
+        {
+          "type": "ComboBox",
+          "name": "CameraSettings",
+          "x_name": "",
+          "placeholdertext": "Preview Settings",
+          "handlers": {
+            "SelectionChanged": "ComboBoxSettings_Changed"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Initialize Camera",
+          "handlers": {
+            "Click": "InitializeCameraButton_Click"
+          }
+        },
+        {
+          "type": "CaptureElement",
+          "name": "PreviewControl",
+          "x_name": ""
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Media.Capture",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_PreviewSettings",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "MediaCapturePreviewer"
+          ],
+          "ui_sets": [],
+          "body_length": 132
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 62
+        },
+        {
+          "name": "InitializeCameraButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "Visibility.Collapsed",
+            "PreviewControl.Visibility",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 541
+        },
+        {
+          "name": "ComboBoxSettings_Changed",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaStreamType.VideoPreview"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 385
+        },
+        {
+          "name": "PopulateSettingsComboBox",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.VideoDeviceController",
+            "MediaStreamType.VideoPreview",
+            "CameraSettings.Items"
+          ],
+          "new_types": [
+            "StreamResolution",
+            "ComboBoxItem"
+          ],
+          "ui_sets": [],
+          "body_length": 826
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_PhotoSettings",
+      "title": "Change preview and photo settings",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\shared\\Scenario2_PhotoSettings.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\cs\\Scenario2_PhotoSettings.xaml.cs",
+      "description": "Get and set resolutions of the preview and photo streams seperately",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get and set resolutions of the preview and photo streams seperately"
+        },
+        {
+          "type": "ComboBox",
+          "name": "PreviewSettings",
+          "x_name": "",
+          "placeholdertext": "Preview Settings",
+          "handlers": {
+            "SelectionChanged": "PreviewSettings_Changed"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "PhotoSettings",
+          "x_name": "",
+          "placeholdertext": "Photo Settings",
+          "handlers": {
+            "SelectionChanged": "PhotoSettings_Changed"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "PhotoButton",
+          "x_name": "",
+          "handlers": {
+            "Click": "PhotoButton_Click"
+          },
+          "inner_text": "Take Photo"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Initialize Camera",
+          "handlers": {
+            "Click": "InitializeCameraButton_Click"
+          }
+        },
+        {
+          "type": "CaptureElement",
+          "name": "PreviewControl",
+          "x_name": ""
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Graphics.Imaging",
+        "Windows.Media.Capture",
+        "Windows.Media.MediaProperties",
+        "Windows.Storage",
+        "Windows.Storage.Streams",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_PhotoSettings",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "MediaCapturePreviewer"
+          ],
+          "ui_sets": [],
+          "body_length": 132
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 62
+        },
+        {
+          "name": "CheckIfStreamsAreIdentical",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.MediaCaptureSettings",
+            "VideoDeviceCharacteristic.AllStreamsIdentical",
+            "VideoDeviceCharacteristic.PreviewPhotoStreamsIdentical",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 494
+        },
+        {
+          "name": "InitializeCameraButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "Visibility.Collapsed",
+            "PreviewControl.Visibility",
+            "Visibility.Visible",
+            "MediaStreamType.VideoPreview",
+            "MediaStreamType.Photo",
+            "PhotoButton.IsEnabled",
+            "StorageLibrary.GetLibraryAsync",
+            "KnownLibraryId.Pictures",
+            "ApplicationData.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1041
+        },
+        {
+          "name": "PreviewSettings_Changed",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaStreamType.VideoPreview"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 385
+        },
+        {
+          "name": "PhotoSettings_Changed",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.VideoDeviceController",
+            "MediaStreamType.Photo"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 413
+        },
+        {
+          "name": "PhotoButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "PhotoButton.IsEnabled",
+            "CreationCollisionOption.GenerateUniqueName",
+            "MediaCapture.CapturePhotoToStorageFileAsync",
+            "ImageEncodingProperties.CreateJpeg",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "InMemoryRandomAccessStream"
+          ],
+          "ui_sets": [],
+          "body_length": 1111
+        },
+        {
+          "name": "PopulateComboBox",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.VideoDeviceController",
+            "Items.Add"
+          ],
+          "new_types": [
+            "StreamResolution",
+            "ComboBoxItem"
+          ],
+          "ui_sets": [],
+          "body_length": 846
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_AspectRatio",
+      "title": "Match aspect ratios",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\shared\\Scenario3_AspectRatio.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\cs\\Scenario3_AspectRatio.xaml.cs",
+      "description": "Match the aspect ratio of the video stream with the preview stream",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Match the aspect ratio of the video stream with the preview stream"
+        },
+        {
+          "type": "ComboBox",
+          "name": "PreviewSettings",
+          "x_name": "",
+          "placeholdertext": "Preview Settings",
+          "handlers": {
+            "SelectionChanged": "PreviewSettings_Changed"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "VideoSettings",
+          "x_name": "",
+          "placeholdertext": "Video Settings",
+          "handlers": {
+            "SelectionChanged": "VideoSettings_Changed"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "VideoButton",
+          "x_name": "",
+          "handlers": {
+            "Click": "VideoButton_Click"
+          },
+          "inner_text": "Record Video"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Initialize Camera",
+          "handlers": {
+            "Click": "InitializeCameraButton_Click"
+          }
+        },
+        {
+          "type": "CaptureElement",
+          "name": "PreviewControl",
+          "x_name": ""
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Media.Capture",
+        "Windows.Media.MediaProperties",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_AspectRatio",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "MediaCapturePreviewer"
+          ],
+          "ui_sets": [],
+          "body_length": 132
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 62
+        },
+        {
+          "name": "CheckIfStreamsAreIdentical",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.MediaCaptureSettings",
+            "VideoDeviceCharacteristic.AllStreamsIdentical",
+            "VideoDeviceCharacteristic.PreviewRecordStreamsIdentical",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 495
+        },
+        {
+          "name": "InitializeCameraButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "MediaCapture.MediaCaptureSettings",
+            "NotifyType.ErrorMessage",
+            "Visibility.Collapsed",
+            "PreviewControl.Visibility",
+            "Visibility.Visible",
+            "VideoButton.IsEnabled",
+            "StorageLibrary.GetLibraryAsync",
+            "KnownLibraryId.Pictures",
+            "ApplicationData.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1252
+        },
+        {
+          "name": "PreviewSettings_Changed",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaStreamType.VideoPreview"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 504
+        },
+        {
+          "name": "VideoSettings_Changed",
+          "namespaces_used": [],
+          "api_refs": [
+            "VideoSettings.SelectedIndex",
+            "MediaCapture.VideoDeviceController",
+            "MediaStreamType.VideoRecord"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 524
+        },
+        {
+          "name": "VideoButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "CreationCollisionOption.GenerateUniqueName",
+            "MediaEncodingProfile.CreateMp4",
+            "VideoEncodingQuality.Auto",
+            "MediaCapture.StartRecordToStorageFileAsync",
+            "VideoButton.Content",
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage",
+            "MediaCapture.StopRecordAsync"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1655
+        },
+        {
+          "name": "PopulateComboBoxes",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.VideoDeviceController",
+            "MediaStreamType.VideoPreview",
+            "String.Format",
+            "AspectRatio.ToString",
+            "PreviewSettings.Items"
+          ],
+          "new_types": [
+            "StreamResolution",
+            "ComboBoxItem"
+          ],
+          "ui_sets": [],
+          "body_length": 1076
+        },
+        {
+          "name": "MatchPreviewAspectRatio",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaCapture.VideoDeviceController",
+            "MediaStreamType.VideoRecord",
+            "MediaStreamType.VideoPreview",
+            "Math.Abs",
+            "VideoSettings.Items",
+            "VideoSettings.SelectedIndex"
+          ],
+          "new_types": [
+            "StreamResolution",
+            "ComboBoxItem"
+          ],
+          "ui_sets": [],
+          "body_length": 1562
+        }
+      ]
+    }
+  ]
+}

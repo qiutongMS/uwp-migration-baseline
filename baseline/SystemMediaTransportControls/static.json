@@ -1,0 +1,282 @@
+{
+  "sample": "SystemMediaTransportControls",
+  "feature_name": "System Media Transport Controls C# Sample",
+  "readme_description": "Shows how to respond to system media events as well as providing the system with metadata about the content that is playing.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "Windows.Media"
+  ],
+  "api_namespaces": [],
+  "api_references": [
+    "MainPage.Current",
+    "CommandManager.IsEnabled",
+    "PlaybackSession.PlaybackStateChanged",
+    "TimeSpan.FromSeconds",
+    "SystemMediaTransportControls.GetForCurrentView",
+    "MediaPlaybackStatus.Closed",
+    "PlaybackSession.Position",
+    "PlaybackSession.NaturalDuration",
+    "PickerViewMode.List",
+    "PickerLocationId.MusicLibrary",
+    "FileTypeFilter.Add",
+    "String.Format",
+    "NotifyType.StatusMessage",
+    "PlaybackSession.PlaybackState",
+    "MediaPlaybackState.None",
+    "MediaPlaybackState.Opening",
+    "MediaPlaybackState.Buffering",
+    "MediaPlaybackState.Paused",
+    "TimeSpan.Zero",
+    "MediaPlaybackStatus.Stopped",
+    "MediaPlaybackStatus.Paused",
+    "MediaPlaybackState.Playing",
+    "MediaPlaybackStatus.Playing",
+    "MediaPlaybackType.Unknown",
+    "ContentType.ToLowerInvariant",
+    "MediaPlaybackType.Music",
+    "MediaPlaybackType.Video",
+    "MediaPlaybackType.Image",
+    "DisplayUpdater.CopyFromFileAsync",
+    "DisplayUpdater.ClearAll",
+    "DisplayUpdater.Update",
+    "FileAccessMode.Read",
+    "Message.Trim",
+    "NotifyType.ErrorMessage",
+    "MediaSource.CreateFromStream",
+    "Symbol.Play",
+    "Symbol.Pause"
+  ],
+  "scenarios": {
+    "index": 1,
+    "class": "Scenario1",
+    "title": "System media transport controls",
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SystemMediaTransportControls\\cs\\Scenario1.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SystemMediaTransportControls\\cs\\Scenario1.xaml.cs",
+    "description": "Select some audio or video files to play. Then use media keys such as \"Play/Pause\", \"Previous\" or \"Next\" on the keyboard to control playback. Observe the system flyout displayed on the screen's upper right. Try bringing up the flyout with keyboard keys (or hardware buttons on a tablet device) for volume up and volume down. Use (with mouse or touch) the flyout's software buttons to control playback.",
+    "controls": [
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Description:"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "MediaPlayerElement",
+        "name": "",
+        "x_name": "mediaPlayerElement"
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "previousButton",
+        "handlers": {
+          "Click": "previousButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "playPauseButton",
+        "handlers": {
+          "Click": "playPauseButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "nextButton",
+        "handlers": {
+          "Click": "nextButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "SelectFilesButton",
+        "content": "Select Files",
+        "handlers": {
+          "Click": "SelectFilesButton_Click"
+        }
+      }
+    ],
+    "usings": [
+      "System",
+      "System.Collections.Generic",
+      "System.Threading.Tasks",
+      "Windows.UI.Core",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Media",
+      "Windows.UI.Xaml.Navigation",
+      "Windows.Media",
+      "Windows.Storage",
+      "Windows.Storage.Pickers",
+      "Windows.Storage.Streams",
+      "System.Diagnostics",
+      "Windows.Media.Playback",
+      "Windows.Media.Core"
+    ],
+    "handlers": [
+      {
+        "name": "Scenario1",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 51
+      },
+      {
+        "name": "OnNavigatedTo",
+        "namespaces_used": [],
+        "api_refs": [
+          "MainPage.Current",
+          "CommandManager.IsEnabled",
+          "PlaybackSession.PlaybackStateChanged",
+          "TimeSpan.FromSeconds"
+        ],
+        "new_types": [
+          "MediaPlayer",
+          "DispatcherTimer"
+        ],
+        "ui_sets": [],
+        "body_length": 1860
+      },
+      {
+        "name": "OnNavigatedFrom",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1063
+      },
+      {
+        "name": "SetupSystemMediaTransportControls",
+        "namespaces_used": [],
+        "api_refs": [
+          "SystemMediaTransportControls.GetForCurrentView",
+          "MediaPlaybackStatus.Closed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 4035
+      },
+      {
+        "name": "UpdateSmtcPosition",
+        "namespaces_used": [],
+        "api_refs": [
+          "TimeSpan.FromSeconds",
+          "PlaybackSession.Position",
+          "PlaybackSession.NaturalDuration"
+        ],
+        "new_types": [
+          "SystemMediaTransportControlsTimelineProperties"
+        ],
+        "ui_sets": [],
+        "body_length": 1195
+      },
+      {
+        "name": "SelectFilesButton_Click",
+        "namespaces_used": [],
+        "api_refs": [
+          "PickerViewMode.List",
+          "PickerLocationId.MusicLibrary",
+          "FileTypeFilter.Add",
+          "String.Format",
+          "NotifyType.StatusMessage"
+        ],
+        "new_types": [
+          "FileOpenPicker"
+        ],
+        "ui_sets": [],
+        "body_length": 2008
+      },
+      {
+        "name": "SyncPlaybackStatusToMediaPlayerState",
+        "namespaces_used": [],
+        "api_refs": [
+          "PlaybackSession.PlaybackState",
+          "MediaPlaybackState.None",
+          "MediaPlaybackStatus.Closed",
+          "MediaPlaybackState.Opening",
+          "MediaPlaybackState.Buffering",
+          "MediaPlaybackState.Paused",
+          "PlaybackSession.Position",
+          "TimeSpan.Zero",
+          "MediaPlaybackStatus.Stopped",
+          "MediaPlaybackStatus.Paused",
+          "MediaPlaybackState.Playing",
+          "MediaPlaybackStatus.Playing"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 3250
+      },
+      {
+        "name": "GetMediaTypeFromFileContentType",
+        "namespaces_used": [],
+        "api_refs": [
+          "MediaPlaybackType.Unknown",
+          "ContentType.ToLowerInvariant",
+          "MediaPlaybackType.Music",
+          "MediaPlaybackType.Video",
+          "MediaPlaybackType.Image"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1457
+      },
+      {
+        "name": "UpdateSystemMediaControlsDisplayAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "MediaPlaybackType.Unknown",
+          "MediaPlaybackType.Music",
+          "DisplayUpdater.CopyFromFileAsync",
+          "DisplayUpdater.ClearAll",
+          "DisplayUpdater.Update"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 3855
+      },
+      {
+        "name": "SetNewMediaItem",
+        "namespaces_used": [],
+        "api_refs": [
+          "FileAccessMode.Read",
+          "String.Format",
+          "Message.Trim",
+          "NotifyType.ErrorMessage",
+          "MediaSource.CreateFromStream"
+        ],
+        "new_types": [
+          "MediaPlaybackItem"
+        ],
+        "ui_sets": [],
+        "body_length": 4563
+      },
+      {
+        "name": "UpdateCustomTransportControls",
+        "namespaces_used": [],
+        "api_refs": [
+          "PlaybackSession.PlaybackState",
+          "MediaPlaybackState.None",
+          "Symbol.Play",
+          "MediaPlaybackState.Paused",
+          "MediaPlaybackState.Playing",
+          "Symbol.Pause"
+        ],
+        "new_types": [
+          "SymbolIcon"
+        ],
+        "ui_sets": [],
+        "body_length": 1244
+      }
+    ]
+  }
+}

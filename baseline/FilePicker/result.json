@@ -1,0 +1,92 @@
+﻿{
+    "sample":  "FilePicker",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FilePicker\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.FilePicker.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.FilePicker.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.FilePicker.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Pick a single photo",
+                          "initial_capture":  "01_1_Pick_a_single_photo__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Pick photo",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Pick_a_single_photo__after_Pick_photo.png",
+                                              "popup_capture":  "01_1_Pick_a_single_photo__popup_Pick_photo.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Pick multiple files",
+                          "initial_capture":  "02_2_Pick_multiple_files__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Pick files",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Pick a folder",
+                          "initial_capture":  "03_3_Pick_a_folder__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Pick folder",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Save a file",
+                          "initial_capture":  "04_4_Save_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Save file",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Trigger CFU",
+                          "initial_capture":  "05_5_Trigger_CFU__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Create a file",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "05_5_Trigger_CFU__after_Create_a_file.png",
+                                              "popup_capture":  "05_5_Trigger_CFU__popup_Create_a_file.png",
+                                              "popup_title":  "Save As"
+                                          },
+                                          {
+                                              "name":  "Open a file",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "05_5_Trigger_CFU__after_Open_a_file.png",
+                                              "popup_capture":  "05_5_Trigger_CFU__popup_Open_a_file.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

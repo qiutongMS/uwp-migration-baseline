@@ -1,0 +1,54 @@
+﻿{
+    "sample":  "Package",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Package\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PackageSample.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PackageSample.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PackageSample.CS_8wekyb3d8bbwe!PackageSample.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Identity",
+                          "initial_capture":  "01_1_Identity__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Package",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Identity__after_Get_Package.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Installed Location",
+                          "initial_capture":  "02_2_Installed_Location__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Installed Location",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Dependencies",
+                          "initial_capture":  "03_3_Dependencies__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Dependencies",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Dependencies__after_Get_Dependencies.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

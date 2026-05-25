@@ -1,0 +1,39 @@
+"sample","analyze","build","deploy","launch","capture","uninstall","scenarios_n","captures_n","elapsed_sec","error"
+"AdaptiveStreaming","ok","skipped","ok","ok","ok","ok","7","29","62",
+"ApplicationData","ok","skipped","ok","ok","ok","ok","7","6","19",
+"AssociationLaunching","ok","skipped","ok","ok","ok","ok","4","8","21",
+"BackgroundMediaPlayback","ok","skipped","ok","ok","failed","pending","1","0","32","Could not find main window (looked for 'Background Media Playback C# Sample')"
+"BasicInput","ok","skipped","ok","ok","ok","ok","0","8","22",
+"BasicSuspension","ok","skipped","ok","ok","ok-generic","ok","0","4","16",
+"Calendar","ok","skipped","ok","ok","ok","ok","5","11","26",
+"CameraAdvancedCapture","ok","skipped","ok","ok","failed","pending","0","0","31","Could not find main window (looked for 'Camera Advanced Capture C# Sample')"
+"CameraFaceDetection","ok","skipped","ok","ok","crashed","ok","0","0","27","App window found (hwnd=264554) but PrintWindow returned null after retry - app likely crashed during startup."
+"CameraFrames","ok","skipped","ok","ok","ok","ok","2","3","16",
+"CameraGetPreviewFrame","ok","skipped","ok","ok","ok-generic","ok","0","1","9",
+"CameraManualControls","ok","skipped","ok","ok","failed","pending","0","0","31","Could not find main window (looked for 'Camera Manual Controls C# Sample')"
+"CameraProfile","ok","skipped","ok","ok","ok","ok","3","6","18",
+"CameraResolution","ok","skipped","ok","ok","ok","ok","3","7","21",
+"CameraStarterKit","ok","skipped","ok","ok","failed","pending","0","0","31","Could not find main window (looked for 'Camera Starter Kit C# Sample')"
+"CameraVideoStabilization","ok","skipped","ok","ok","failed","pending","0","0","31","Could not find main window (looked for 'Camera Video Stabilization C# Sample')"
+"Clipboard","ok","skipped","ok","ok","ok","ok","0","18","37",
+"ContactCards","ok","skipped","ok","ok","ok","ok","3","9","23",
+"CustomEditControl","ok","skipped","ok","ok","ok","ok","1","2","13",
+"DateTimeFormatting","ok","skipped","ok","ok","ok","ok","6","13","33",
+"FileAccess","ok","skipped","ok","ok","ok","ok","11","35","64",
+"FilePicker","ok","skipped","ok","ok","ok","ok","5","12","27",
+"FolderEnumeration","ok","skipped","ok","ok","ok","ok","4","12","29",
+"Package","ok","skipped","ok","ok","ok","ok","3","6","18",
+"Printing","ok","skipped","ok","ok","ok","ok","6","7","19",
+"RadialController","ok","skipped","ok","ok","crashed","ok","2","0","31","App window found (hwnd=9897932) but PrintWindow returned null after retry - app likely crashed during startup."
+"SystemMediaTransportControls","ok","skipped","ok","ok","ok","ok","1","2","13",
+"TouchKeyboard","ok","skipped","ok","ok","ok","ok","4","8","21",
+"UserInteractionMode","ok","skipped","ok","ok","ok","ok","1","2","11",
+"XamlBind","ok","skipped","ok","ok","partial","ok","0","16","37","Scenario iteration: You cannot call a method on a null-valued expression."
+"XamlBottomUpList","ok","skipped","ok","ok","ok","ok","2","7","22",
+"XamlCustomMediaTransportControls","ok","skipped","ok","ok","ok-generic","ok","0","7","20",
+"XamlDragAndDrop","ok","skipped","ok","ok","ok","ok","3","4","15",
+"XamlFocusVisuals","ok","skipped","ok","ok","ok","ok","0","3","14",
+"XamlListView","ok","skipped","ok","ok","ok","ok","6","16","38",
+"XamlMasterDetail","ok","skipped","ok","ok","ok-generic","ok","0","5","17",
+"XamlStateTriggers","ok","skipped","ok","ok","ok-generic","ok","0","5","15",
+"XamlTailoredMultipleViews","ok","skipped","ok","ok","ok-generic","ok","0","9","24",

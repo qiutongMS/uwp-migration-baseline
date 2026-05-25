@@ -17,6 +17,12 @@ For each sample, in a single per-sample folder, you get:
 
 At the repo level you also get `_index.md`, `_status.csv`, and `_progress.log` for batch overviews.
 
+## Where is the baseline I just captured?
+
+The last full batch (38 samples, 281 PNGs, 12.8 MB) is checked into [`baseline/`](baseline/). Start at [`baseline/_index.md`](baseline/_index.md) for the per-sample table.
+
+If you want to **reproduce** the baseline (or re-run after the migration), follow [Quickstart](#quickstart) below — the scripts will regenerate this entire `baseline/` directory.
+
 ## Status as of last full batch (38 samples)
 
 | Capture state | Count | Meaning |

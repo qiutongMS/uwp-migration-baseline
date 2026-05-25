@@ -1,0 +1,233 @@
+[18:17:34] === RUN-ALL START: 38 sample(s) matching '*' ===
+[18:17:34] [1/38] >>> AdaptiveStreaming START
+[ANALYZE] AdaptiveStreaming: 7 scenarios, 1 namespaces
+[18:17:35]     analyze=ok scenarios=7
+[18:17:35]     build+deploy+launch+capture+uninstall START...
+[18:18:48]     build=ok deploy=ok launch=ok capture=ok shots=28
+[18:18:48] [1/38] <<< AdaptiveStreaming DONE in 74s
+[18:18:48] [2/38] >>> ApplicationData START
+[ANALYZE] ApplicationData: 7 scenarios, 1 namespaces
+[18:18:48]     analyze=ok scenarios=7
+[18:18:48]     build+deploy+launch+capture+uninstall START...
+[18:19:09]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:19:09] [2/38] <<< ApplicationData DONE in 21s
+[18:19:09] [3/38] >>> AssociationLaunching START
+[ANALYZE] AssociationLaunching: 4 scenarios, 6 namespaces
+[18:19:09]     analyze=ok scenarios=4
+[18:19:09]     build+deploy+launch+capture+uninstall START...
+[18:19:42]     build=ok deploy=ok launch=ok capture=ok shots=7
+[18:19:42] [3/38] <<< AssociationLaunching DONE in 33s
+[18:19:42] [4/38] >>> BackgroundMediaPlayback START
+[ANALYZE] BackgroundMediaPlayback: 1 scenarios, 0 namespaces
+[18:19:42]     analyze=ok scenarios=1
+[18:19:42]     build+deploy+launch+capture+uninstall START...
+[18:20:03]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:20:03] [4/38] <<< BackgroundMediaPlayback DONE in 21s
+[18:20:03] [5/38] >>> BasicInput START
+[ANALYZE] BasicInput: 0 scenarios, 0 namespaces
+[18:20:03]     analyze=ok scenarios=0
+[18:20:03]     build+deploy+launch+capture+uninstall START...
+[18:20:35]     build=ok deploy=ok launch=ok capture=ok shots=7
+[18:20:35] [5/38] <<< BasicInput DONE in 32s
+[18:20:35] [6/38] >>> BasicSuspension START
+[ANALYZE] BasicSuspension: 0 scenarios, 0 namespaces
+[18:20:35]     analyze=ok scenarios=0
+[18:20:35]     build+deploy+launch+capture+uninstall START...
+[18:20:55]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:20:55] [6/38] <<< BasicSuspension DONE in 20s
+[18:20:55] [7/38] >>> Calendar START
+[ANALYZE] Calendar: 5 scenarios, 1 namespaces
+[18:20:55]     analyze=ok scenarios=5
+[18:20:55]     build+deploy+launch+capture+uninstall START...
+[18:21:24]     build=ok deploy=ok launch=ok capture=ok shots=10
+[18:21:24] [7/38] <<< Calendar DONE in 29s
+[18:21:24] [8/38] >>> CameraAdvancedCapture START
+[ANALYZE] CameraAdvancedCapture: 0 scenarios, 0 namespaces
+[18:21:24]     analyze=ok scenarios=0
+[18:21:24]     build+deploy+launch+capture+uninstall START...
+[18:21:42]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:21:42] [8/38] <<< CameraAdvancedCapture DONE in 19s
+[18:21:42] [9/38] >>> CameraFaceDetection START
+[ANALYZE] CameraFaceDetection: 0 scenarios, 0 namespaces
+[18:21:43]     analyze=ok scenarios=0
+[18:21:43]     build+deploy+launch+capture+uninstall START...
+[18:22:02]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:22:02] [9/38] <<< CameraFaceDetection DONE in 19s
+[18:22:02] [10/38] >>> CameraFrames START
+[ANALYZE] CameraFrames: 2 scenarios, 1 namespaces
+[18:22:02]     analyze=ok scenarios=2
+[18:22:02]     build+deploy+launch+capture+uninstall START...
+[18:22:27]     build=ok deploy=ok launch=ok capture=ok shots=3
+[18:22:27] [10/38] <<< CameraFrames DONE in 26s
+[18:22:27] [11/38] >>> CameraGetPreviewFrame START
+[ANALYZE] CameraGetPreviewFrame: 0 scenarios, 0 namespaces
+[18:22:28]     analyze=ok scenarios=0
+[18:22:28]     build+deploy+launch+capture+uninstall START...
+[18:22:46]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:22:46] [11/38] <<< CameraGetPreviewFrame DONE in 19s
+[18:22:46] [12/38] >>> CameraManualControls START
+[ANALYZE] CameraManualControls: 0 scenarios, 0 namespaces
+[18:22:46]     analyze=ok scenarios=0
+[18:22:46]     build+deploy+launch+capture+uninstall START...
+[18:23:07]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:23:07] [12/38] <<< CameraManualControls DONE in 20s
+[18:23:07] [13/38] >>> CameraProfile START
+[ANALYZE] CameraProfile: 3 scenarios, 4 namespaces
+[18:23:07]     analyze=ok scenarios=3
+[18:23:07]     build+deploy+launch+capture+uninstall START...
+[18:23:35]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:23:35] [13/38] <<< CameraProfile DONE in 28s
+[18:23:35] [14/38] >>> CameraResolution START
+[ANALYZE] CameraResolution: 3 scenarios, 0 namespaces
+[18:23:35]     analyze=ok scenarios=3
+[18:23:35]     build+deploy+launch+capture+uninstall START...
+[18:24:06]     build=ok deploy=ok launch=ok capture=ok shots=6
+[18:24:06] [14/38] <<< CameraResolution DONE in 31s
+[18:24:06] [15/38] >>> CameraStarterKit START
+[ANALYZE] CameraStarterKit: 0 scenarios, 0 namespaces
+[18:24:06]     analyze=ok scenarios=0
+[18:24:06]     build+deploy+launch+capture+uninstall START...
+[18:24:24]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:24:24] [15/38] <<< CameraStarterKit DONE in 19s
+[18:24:24] [16/38] >>> CameraVideoStabilization START
+[ANALYZE] CameraVideoStabilization: 0 scenarios, 0 namespaces
+[18:24:25]     analyze=ok scenarios=0
+[18:24:25]     build+deploy+launch+capture+uninstall START...
+[18:24:43]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:24:44] [16/38] <<< CameraVideoStabilization DONE in 19s
+[18:24:44] [17/38] >>> Clipboard START
+[ANALYZE] Clipboard: 0 scenarios, 0 namespaces
+[18:24:44]     analyze=ok scenarios=0
+[18:24:44]     build+deploy+launch+capture+uninstall START...
+[18:25:29]     build=ok deploy=ok launch=ok capture=ok shots=15
+[18:25:29] [17/38] <<< Clipboard DONE in 46s
+[18:25:29] [18/38] >>> ContactCards START
+[ANALYZE] ContactCards: 3 scenarios, 0 namespaces
+[18:25:30]     analyze=ok scenarios=3
+[18:25:30]     build+deploy+launch+capture+uninstall START...
+[18:26:02]     build=ok deploy=ok launch=ok capture=ok shots=8
+[18:26:02] [18/38] <<< ContactCards DONE in 32s
+[18:26:02] [19/38] >>> CustomEditControl START
+[ANALYZE] CustomEditControl: 1 scenarios, 0 namespaces
+[18:26:02]     analyze=ok scenarios=1
+[18:26:02]     build+deploy+launch+capture+uninstall START...
+[18:26:25]     build=ok deploy=ok launch=ok capture=ok shots=1
+[18:26:25] [19/38] <<< CustomEditControl DONE in 23s
+[18:26:25] [20/38] >>> DateTimeFormatting START
+[ANALYZE] DateTimeFormatting: 6 scenarios, 1 namespaces
+[18:26:25]     analyze=ok scenarios=6
+[18:26:25]     build+deploy+launch+capture+uninstall START...
+[18:27:07]     build=ok deploy=ok launch=ok capture=ok shots=12
+[18:27:07] [20/38] <<< DateTimeFormatting DONE in 43s
+[18:27:07] [21/38] >>> FileAccess START
+[ANALYZE] FileAccess: 11 scenarios, 1 namespaces
+[18:27:08]     analyze=ok scenarios=11
+[18:27:08]     build+deploy+launch+capture+uninstall START...
+[18:28:13]     build=ok deploy=ok launch=ok capture=ok shots=27
+[18:28:13] [21/38] <<< FileAccess DONE in 66s
+[18:28:13] [22/38] >>> FilePicker START
+[ANALYZE] FilePicker: 5 scenarios, 0 namespaces
+[18:28:13]     analyze=ok scenarios=5
+[18:28:13]     build+deploy+launch+capture+uninstall START...
+[18:28:48]     build=ok deploy=ok launch=ok capture=ok shots=8
+[18:28:48] [22/38] <<< FilePicker DONE in 35s
+[18:28:48] [23/38] >>> FolderEnumeration START
+[ANALYZE] FolderEnumeration: 4 scenarios, 0 namespaces
+[18:28:48]     analyze=ok scenarios=4
+[18:28:48]     build+deploy+launch+capture+uninstall START...
+[18:29:25]     build=ok deploy=ok launch=ok capture=ok shots=10
+[18:29:25] [23/38] <<< FolderEnumeration DONE in 37s
+[18:29:25] [24/38] >>> Package START
+[ANALYZE] Package: 3 scenarios, 2 namespaces
+[18:29:25]     analyze=ok scenarios=3
+[18:29:25]     build+deploy+launch+capture+uninstall START...
+[18:29:53]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:29:53] [24/38] <<< Package DONE in 28s
+[18:29:53] [25/38] >>> Printing START
+[ANALYZE] Printing: 6 scenarios, 12 namespaces
+[18:29:53]     analyze=ok scenarios=6
+[18:29:53]     build+deploy+launch+capture+uninstall START...
+[18:30:24]     build=ok deploy=ok launch=ok capture=ok shots=6
+[18:30:24] [25/38] <<< Printing DONE in 31s
+[18:30:24] [26/38] >>> RadialController START
+[ANALYZE] RadialController: 2 scenarios, 0 namespaces
+[18:30:24]     analyze=ok scenarios=2
+[18:30:24]     build+deploy+launch+capture+uninstall START...
+[18:30:44]     build=ok deploy=ok launch=failed capture=pending shots=0
+[18:30:44] [26/38] <<< RadialController DONE in 20s
+[18:30:44] [27/38] >>> SystemMediaTransportControls START
+[ANALYZE] SystemMediaTransportControls: 1 scenarios, 0 namespaces
+[18:30:44]     analyze=ok scenarios=1
+[18:30:44]     build+deploy+launch+capture+uninstall START...
+[18:31:05]     build=ok deploy=ok launch=ok capture=ok shots=1
+[18:31:05] [27/38] <<< SystemMediaTransportControls DONE in 21s
+[18:31:05] [28/38] >>> TouchKeyboard START
+[ANALYZE] TouchKeyboard: 4 scenarios, 2 namespaces
+[18:31:05]     analyze=ok scenarios=4
+[18:31:05]     build+deploy+launch+capture+uninstall START...
+[18:31:39]     build=ok deploy=ok launch=ok capture=ok shots=7
+[18:31:39] [28/38] <<< TouchKeyboard DONE in 34s
+[18:31:39] [29/38] >>> UserInteractionMode START
+[ANALYZE] UserInteractionMode: 1 scenarios, 0 namespaces
+[18:31:39]     analyze=ok scenarios=1
+[18:31:39]     build+deploy+launch+capture+uninstall START...
+[18:32:00]     build=ok deploy=ok launch=ok capture=ok shots=1
+[18:32:00] [29/38] <<< UserInteractionMode DONE in 21s
+[18:32:00] [30/38] >>> XamlBind START
+[ANALYZE] XamlBind: 0 scenarios, 0 namespaces
+[18:32:00]     analyze=ok scenarios=0
+[18:32:00]     build+deploy+launch+capture+uninstall START...
+[18:32:55]     build=ok deploy=ok launch=ok capture=partial shots=14
+[18:32:55] [30/38] <<< XamlBind DONE in 55s
+[18:32:55] [31/38] >>> XamlBottomUpList START
+[ANALYZE] XamlBottomUpList: 2 scenarios, 2 namespaces
+[18:32:56]     analyze=ok scenarios=2
+[18:32:56]     build+deploy+launch+capture+uninstall START...
+[18:33:24]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:33:25] [31/38] <<< XamlBottomUpList DONE in 29s
+[18:33:25] [32/38] >>> XamlCustomMediaTransportControls START
+[ANALYZE] XamlCustomMediaTransportControls: 0 scenarios, 0 namespaces
+[18:33:25]     analyze=ok scenarios=0
+[18:33:25]     build+deploy+launch+capture+uninstall START...
+[18:33:44]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:33:44] [32/38] <<< XamlCustomMediaTransportControls DONE in 19s
+[18:33:44] [33/38] >>> XamlDragAndDrop START
+[ANALYZE] XamlDragAndDrop: 3 scenarios, 2 namespaces
+[18:33:44]     analyze=ok scenarios=3
+[18:33:44]     build+deploy+launch+capture+uninstall START...
+[18:34:12]     build=ok deploy=ok launch=ok capture=ok shots=3
+[18:34:12] [33/38] <<< XamlDragAndDrop DONE in 29s
+[18:34:12] [34/38] >>> XamlFocusVisuals START
+[ANALYZE] XamlFocusVisuals: 0 scenarios, 0 namespaces
+[18:34:13]     analyze=ok scenarios=0
+[18:34:13]     build+deploy+launch+capture+uninstall START...
+[18:34:36]     build=ok deploy=ok launch=ok capture=ok shots=2
+[18:34:36] [34/38] <<< XamlFocusVisuals DONE in 23s
+[18:34:36] [35/38] >>> XamlListView START
+[ANALYZE] XamlListView: 6 scenarios, 0 namespaces
+[18:34:36]     analyze=ok scenarios=6
+[18:34:36]     build+deploy+launch+capture+uninstall START...
+[18:35:23]     build=ok deploy=ok launch=ok capture=ok shots=15
+[18:35:23] [35/38] <<< XamlListView DONE in 48s
+[18:35:23] [36/38] >>> XamlMasterDetail START
+[ANALYZE] XamlMasterDetail: 0 scenarios, 0 namespaces
+[18:35:23]     analyze=ok scenarios=0
+[18:35:23]     build+deploy+launch+capture+uninstall START...
+[18:35:32]     build=failed deploy=pending launch=pending capture=pending shots=0
+[18:35:32] [36/38] <<< XamlMasterDetail DONE in 8s
+[18:35:32] [37/38] >>> XamlStateTriggers START
+[ANALYZE] XamlStateTriggers: 0 scenarios, 0 namespaces
+[18:35:32]     analyze=ok scenarios=0
+[18:35:32]     build+deploy+launch+capture+uninstall START...
+[18:35:51]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:35:51] [37/38] <<< XamlStateTriggers DONE in 19s
+[18:35:51] [38/38] >>> XamlTailoredMultipleViews START
+[ANALYZE] XamlTailoredMultipleViews: 0 scenarios, 0 namespaces
+[18:35:51]     analyze=ok scenarios=0
+[18:35:51]     build+deploy+launch+capture+uninstall START...
+[18:35:51]     build=failed deploy=pending launch=pending capture=pending shots=0
+[18:35:51] [38/38] <<< XamlTailoredMultipleViews DONE in 1s
+[18:35:51] === RUN-ALL COMPLETE: 38 samples ===
+[18:35:52] Built: 36 / 38; Captured: 24 / 38; Total screenshots: 211
+[18:35:52] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[18:35:52] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md

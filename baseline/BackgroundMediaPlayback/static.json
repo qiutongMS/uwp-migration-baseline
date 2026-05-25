@@ -1,0 +1,249 @@
+{
+  "sample": "BackgroundMediaPlayback",
+  "feature_name": "BackgroundMediaPlayback",
+  "readme_description": "Shows how to create a playlist that can continue to play even when the app is no longer in the foreground.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "standby"
+  ],
+  "api_namespaces": [],
+  "api_references": [
+    "NavigationCacheMode.Disabled",
+    "Player.MediaPlayerRateChanged",
+    "Debug.WriteLine",
+    "SettingsService.Instance",
+    "MediaList.LoadFromApplicationUriAsync",
+    "MediaList.ToPlaybackList",
+    "PlaybackList.ItemFailed",
+    "PlayerViewModel.MediaList",
+    "PlayerViewModel.Dispose",
+    "GC.Collect",
+    "Visibility.Visible",
+    "Visibility.Collapsed",
+    "Dispatcher.RunAsync",
+    "CoreDispatcherPriority.Normal",
+    "Error.ErrorCode",
+    "Error.ExtendedError",
+    "MainPage.Current",
+    "NotifyType.ErrorMessage",
+    "String.Format",
+    "Player.PlaybackSession"
+  ],
+  "scenarios": {
+    "index": 1,
+    "class": "Scenario1",
+    "title": "Background Media Playback",
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundMediaPlayback\\shared\\Scenario1.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundMediaPlayback\\cs\\Scenario1.xaml.cs",
+    "description": "Demonstrates playback lists and background audio.",
+    "controls": [
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Description:"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "Demonstrates playback lists and background audio."
+      },
+      {
+        "type": "MediaPlayerElement",
+        "name": "",
+        "x_name": "mediaPlayerElement"
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "prevButton",
+        "handlers": {
+          "Click": "{x:Bind PlayerViewModel.SkipPrevious}"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "playButton",
+        "handlers": {
+          "Click": "{x:Bind PlayerViewModel.TogglePlayPause}"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "nextButton",
+        "handlers": {
+          "Click": "{x:Bind PlayerViewModel.SkipNext}"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "speedButton",
+        "content": "Speed",
+        "handlers": {
+          "Click": "speedButton_Click"
+        }
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "Audio Category"
+      },
+      {
+        "type": "ComboBox",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "currentTrackTitle",
+        "text": "{x:Bind PlayerViewModel.MediaList.CurrentItem.Title, Mode=OneWay}"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "currentStateTextBlock",
+        "text": "{x:Bind PlayerViewModel.PlaybackSession.PlaybackState, Mode=OneWay}"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "StatusBlock"
+      }
+    ],
+    "usings": [
+      "BackgroundMediaPlayback.DataModels",
+      "BackgroundMediaPlayback.Services",
+      "BackgroundMediaPlayback.ViewModels",
+      "SDKTemplate",
+      "System",
+      "System.Collections.Generic",
+      "System.ComponentModel",
+      "System.Diagnostics",
+      "System.Linq",
+      "System.Threading",
+      "System.Threading.Tasks",
+      "Windows.Foundation",
+      "Windows.Foundation.Collections",
+      "Windows.Media",
+      "Windows.Media.Core",
+      "Windows.Media.Playback",
+      "Windows.Storage.Streams",
+      "Windows.UI.Core",
+      "Windows.UI.Popups",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Media.Imaging",
+      "Windows.UI.Xaml.Navigation"
+    ],
+    "handlers": [
+      {
+        "name": "Scenario1",
+        "namespaces_used": [],
+        "api_refs": [
+          "NavigationCacheMode.Disabled",
+          "Player.MediaPlayerRateChanged"
+        ],
+        "new_types": [
+          "PlayerViewModel"
+        ],
+        "ui_sets": [],
+        "body_length": 637
+      },
+      {
+        "name": "Scenario1_Loaded",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine",
+          "SettingsService.Instance",
+          "MediaList.LoadFromApplicationUriAsync",
+          "MediaList.ToPlaybackList",
+          "PlaybackList.ItemFailed",
+          "PlayerViewModel.MediaList"
+        ],
+        "new_types": [
+          "MediaList",
+          "MediaListViewModel"
+        ],
+        "ui_sets": [],
+        "body_length": 1240
+      },
+      {
+        "name": "Scenario1_Unloaded",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine",
+          "SettingsService.Instance",
+          "PlaybackList.ItemFailed",
+          "PlayerViewModel.Dispose",
+          "GC.Collect"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 624
+      },
+      {
+        "name": "SettingsService_UseCustomControlsChanged",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 50
+      },
+      {
+        "name": "UpdateControlVisibility",
+        "namespaces_used": [],
+        "api_refs": [
+          "SettingsService.Instance",
+          "Visibility.Visible",
+          "Visibility.Collapsed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 424
+      },
+      {
+        "name": "PlaybackList_ItemFailed",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal",
+          "Error.ErrorCode",
+          "Error.ExtendedError",
+          "MainPage.Current",
+          "NotifyType.ErrorMessage"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 435
+      },
+      {
+        "name": "Player_MediaPlayerRateChanged",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 182
+      },
+      {
+        "name": "UpdatePlaybackSpeed",
+        "namespaces_used": [],
+        "api_refs": [
+          "String.Format",
+          "Player.PlaybackSession"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 109
+      }
+    ]
+  }
+}

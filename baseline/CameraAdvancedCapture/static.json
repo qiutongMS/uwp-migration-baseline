@@ -1,0 +1,10 @@
+{
+  "sample": "CameraAdvancedCapture",
+  "feature_name": null,
+  "readme_description": "An end-to-end sample camera app supporting orientation, HDR, low light, and other features.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

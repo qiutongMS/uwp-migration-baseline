@@ -1,0 +1,47 @@
+﻿{
+    "sample":  "ApplicationData",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ApplicationData\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ApplicationData.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ApplicationData.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ApplicationData.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Clear",
+                          "initial_capture":  "01_1_Clear__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Clear",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Clear__after_Clear.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) SetVersion",
+                          "initial_capture":  "02_2_SetVersion__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Set version to 0",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_SetVersion__after_Set_version_to_0.png"
+                                          },
+                                          {
+                                              "name":  "Set version to 1",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_SetVersion__after_Set_version_to_1.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,39 @@
+﻿{
+    "sample":  "XamlDragAndDrop",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlDragAndDrop\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DragAndDropSampleManaged.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DragAndDropSampleManaged.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DragAndDropSampleManaged.CS_8wekyb3d8bbwe!DragAndDropSampleManaged.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) ListView Drag and Drop and Reorder",
+                          "initial_capture":  "01_1_ListView_Drag_and_Drop_and_Reorder__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Drag UI Customization",
+                          "initial_capture":  "02_2_Drag_UI_Customization__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) StartDragAsync",
+                          "initial_capture":  "03_3_StartDragAsync__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

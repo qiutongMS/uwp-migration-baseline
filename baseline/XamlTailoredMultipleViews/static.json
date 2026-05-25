@@ -1,0 +1,13 @@
+{
+  "sample": "XamlTailoredMultipleViews",
+  "feature_name": null,
+  "readme_description": "Shows how to build a tailored UI using multiple views that are optimized for one-handed use.",
+  "readme_bullets": [
+    "Use the Pivot control plus commands at the bottom of devices that are less than 7\" in size.",
+    "Use the SplitView control plus commands at the top of devices greater than 7\" in size."
+  ],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

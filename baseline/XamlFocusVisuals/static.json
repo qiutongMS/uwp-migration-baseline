@@ -1,0 +1,15 @@
+{
+  "sample": "XamlFocusVisuals",
+  "feature_name": "Focus Visuals Sample",
+  "readme_description": "Shows how to use system drawn focus visuals, or to create your own custom focus visuals if the system drawn ones do not fit your needs.",
+  "readme_bullets": [
+    "**Use the system focus visuals in custom controls:** By using UseSystemFocusVisuals and the attached property Control.IsTemplateFocusTarget, you can specify which piece of your control template should draw the focus visuals.",
+    "**Create your own focus visuals:** Add back the focus visual states from Windows 8.1 (included in the sample), and set UseSystemFocusVisuals to false to specify your own visuals."
+  ],
+  "readme_api_links": [
+    "Control"
+  ],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

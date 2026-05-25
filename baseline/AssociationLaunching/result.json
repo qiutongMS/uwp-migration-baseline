@@ -1,0 +1,116 @@
+﻿{
+    "sample":  "AssociationLaunching",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AssociationLaunching\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.AssociationLaunching.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.AssociationLaunching.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.AssociationLaunching.CS_8wekyb3d8bbwe!AssociationLaunching.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Launching a file",
+                          "initial_capture":  "01_1_Launching_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Launch default handler",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Launch Open With",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Pick and launch",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Launch with warning",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Launch with view preference",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Launching a URI",
+                          "initial_capture":  "02_2_Launching_a_URI__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Launch default handler",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Launch Open With",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Launch with warning",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Launch with view preference",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Receiving a file",
+                          "initial_capture":  "03_3_Receiving_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Create test file",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Receiving_a_file__after_Create_test_file.png"
+                                          },
+                                          {
+                                              "name":  "Create test file with no file extension",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Receiving_a_file__after_Create_test_file_with_no_file_extension.png"
+                                          },
+                                          {
+                                              "name":  "Remove test files",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Receiving_a_file__after_Remove_test_files.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Receiving a URI",
+                          "initial_capture":  "04_4_Receiving_a_URI__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

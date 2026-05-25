@@ -1,0 +1,14 @@
+{
+  "sample": "Clipboard",
+  "feature_name": "Clipboard C# sample",
+  "readme_description": "Shows how to use clipboard commands, including copy, paste, cut, and move.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "Windows.ApplicationModel.DataTransfer",
+    "Clipboard",
+    "DataPackage"
+  ],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

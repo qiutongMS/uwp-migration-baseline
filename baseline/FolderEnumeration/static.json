@@ -1,0 +1,475 @@
+{
+  "sample": "FolderEnumeration",
+  "feature_name": "Folder enumeration C# sample",
+  "readme_description": "Enumerates the files and folders inside a location, and uses queries to enumerate all files inside a location.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "Windows.Storage",
+    "Windows.Storage.Search",
+    "StorageFolder",
+    "StorageFolderQueryResult",
+    "GetFilesAsync",
+    "StorageFolder.GetFoldersAsync",
+    "CreateFolderQueryWithOptions",
+    "GetFoldersAsync",
+    "QueryOptions",
+    "SetPropertyPrefetch",
+    "SetThumbnailPrefetch",
+    "Provider",
+    "CommonFolderQuery",
+    "CommonFileQuery",
+    "PropertyPrefetchOptions"
+  ],
+  "api_namespaces": [],
+  "api_references": [
+    "KnownFolders.GetFolderForUserAsync",
+    "KnownFolderId.PicturesLibrary",
+    "OutputTextBlock.Text",
+    "CommonFolderQuery.GroupByMonth",
+    "CommonFolderQuery.GroupByRating",
+    "CommonFolderQuery.GroupByTag",
+    "OutputPanel.Children",
+    "Application.Current",
+    "TextWrapping.Wrap",
+    "CommonFileQuery.OrderByName",
+    "PropertyPrefetchOptions.ImageProperties",
+    "ThumbnailMode.PicturesView",
+    "ThumbnailOptions.UseCurrentScale",
+    "Properties.GetImagePropertiesAsync",
+    "Properties.RetrievePropertiesAsync",
+    "FileTypeFilter.Add",
+    "PickerViewMode.List",
+    "PickerLocationId.DocumentsLibrary",
+    "Provider.DisplayName"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1",
+      "title": "Enumerate files and folders in the Pictures library",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\shared\\Scenario1.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\cs\\Scenario1.xaml.cs",
+      "description": "Enumerating",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Enumerating"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get the files and folders in the top-level of the Pictures library. Make sure there are folders and/or pictures in your Pictures library before you try to get them."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GetFilesAndFoldersButton",
+          "content": "Get files and folders",
+          "handlers": {
+            "Click": "GetFilesAndFoldersButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "OutputTextBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Text",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetFilesAndFoldersButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "OutputTextBlock.Text"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [
+            "OutputTextBlock.Text"
+          ],
+          "body_length": 876
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2",
+      "title": "Enumerate files in the Pictures library, by groups",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\shared\\Scenario2.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\cs\\Scenario2.xaml.cs",
+      "description": "Grouping",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Grouping"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get all the files in the Pictures library, by groups (month, rating, tag). Make sure there are picture files in your Pictures library before running the scenario."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GroupByMonthButton",
+          "content": "Group by month",
+          "handlers": {
+            "Click": "GroupByMonthButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GroupByRatingButton",
+          "content": "Group by rating",
+          "handlers": {
+            "Click": "GroupByRatingButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GroupByTagButton",
+          "content": "Group by tag",
+          "handlers": {
+            "Click": "GroupByTagButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Text",
+        "System.Threading.Tasks",
+        "Windows.Storage",
+        "Windows.Storage.Search",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GroupByMonthButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "CommonFolderQuery.GroupByMonth"
+          ],
+          "new_types": [
+            "QueryOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 99
+        },
+        {
+          "name": "GroupByRatingButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "CommonFolderQuery.GroupByRating"
+          ],
+          "new_types": [
+            "QueryOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 100
+        },
+        {
+          "name": "GroupByTagButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "CommonFolderQuery.GroupByTag"
+          ],
+          "new_types": [
+            "QueryOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 97
+        },
+        {
+          "name": "GroupByHelperAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "OutputPanel.Children",
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 861
+        },
+        {
+          "name": "CreateHeaderTextBlock",
+          "namespaces_used": [],
+          "api_refs": [
+            "Application.Current",
+            "TextWrapping.Wrap"
+          ],
+          "new_types": [
+            "TextBlock"
+          ],
+          "ui_sets": [],
+          "body_length": 284
+        },
+        {
+          "name": "CreateLineItemTextBlock",
+          "namespaces_used": [],
+          "api_refs": [
+            "Application.Current",
+            "TextWrapping.Wrap"
+          ],
+          "new_types": [
+            "TextBlock"
+          ],
+          "ui_sets": [],
+          "body_length": 398
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3",
+      "title": "Enumerate files in the Pictures library with prefetch APIs",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\shared\\Scenario3.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\cs\\Scenario3.xaml.cs",
+      "description": "Get properties and thumbnails using prefetch",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get properties and thumbnails using prefetch"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GetFilesButton",
+          "content": "Get files",
+          "handlers": {
+            "Click": "GetFilesButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Text",
+        "Windows.Storage",
+        "Windows.Storage.BulkAccess",
+        "Windows.Storage.FileProperties",
+        "Windows.Storage.Search",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetPropertyDisplayValue",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 303
+        },
+        {
+          "name": "GetFilesButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "OutputPanel.Children",
+            "CommonFileQuery.OrderByName",
+            "PropertyPrefetchOptions.ImageProperties",
+            "ThumbnailMode.PicturesView",
+            "ThumbnailOptions.UseCurrentScale",
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "Properties.GetImagePropertiesAsync",
+            "Properties.RetrievePropertiesAsync"
+          ],
+          "new_types": [
+            "List",
+            "QueryOptions"
+          ],
+          "ui_sets": [],
+          "body_length": 3089
+        },
+        {
+          "name": "CreateHeaderTextBlock",
+          "namespaces_used": [],
+          "api_refs": [
+            "Application.Current",
+            "TextWrapping.Wrap"
+          ],
+          "new_types": [
+            "TextBlock"
+          ],
+          "ui_sets": [],
+          "body_length": 284
+        },
+        {
+          "name": "CreateLineItemTextBlock",
+          "namespaces_used": [],
+          "api_refs": [
+            "Application.Current",
+            "TextWrapping.Wrap"
+          ],
+          "new_types": [
+            "TextBlock"
+          ],
+          "ui_sets": [],
+          "body_length": 398
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4",
+      "title": "Enumerate files in a folder and display availability",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\shared\\Scenario4.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\cs\\Scenario4.xaml.cs",
+      "description": "Get file availability",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get file availability"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Get all the files in the picked folder, then indicate their location (This PC, OneDrive, Network, or Application Content) and whether they are available offline."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GetFilesButton",
+          "content": "Get files",
+          "handlers": {
+            "Click": "GetFilesButton_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Text",
+        "System.Threading.Tasks",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.Storage.Search",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "GetFilesButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "OutputPanel.Children",
+            "FileTypeFilter.Add",
+            "PickerViewMode.List",
+            "PickerLocationId.DocumentsLibrary",
+            "Provider.DisplayName"
+          ],
+          "new_types": [
+            "FolderPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 1700
+        },
+        {
+          "name": "CreateLineItemTextBlock",
+          "namespaces_used": [],
+          "api_refs": [
+            "Application.Current",
+            "TextWrapping.Wrap"
+          ],
+          "new_types": [
+            "TextBlock"
+          ],
+          "ui_sets": [],
+          "body_length": 277
+        }
+      ]
+    }
+  ]
+}

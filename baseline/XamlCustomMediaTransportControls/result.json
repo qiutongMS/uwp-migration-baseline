@@ -1,0 +1,58 @@
+﻿{
+    "sample":  "XamlCustomMediaTransportControls",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlCustomMediaTransportControls\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok-generic",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CustomMediaControls.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CustomMediaControls.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CustomMediaControls.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "MainPage (generic)",
+                          "initial_capture":  "00_main.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Button: Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_MainPage__01_Button_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Button: Like",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__02_Button_Like.png"
+                                          },
+                                          {
+                                              "name":  "Button: Show playback rate list",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__03_Button_Show_playback_rate_list.png"
+                                          },
+                                          {
+                                              "name":  "Button: Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_MainPage__04_Button_Aspect_Ratio.png"
+                                          },
+                                          {
+                                              "name":  "Button: Cast to Device",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__05_Button_Cast_to_Device.png"
+                                          },
+                                          {
+                                              "name":  "Button: Full Screen",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__06_Button_Full_Screen.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

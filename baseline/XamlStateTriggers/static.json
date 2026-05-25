@@ -1,0 +1,12 @@
+{
+  "sample": "XamlStateTriggers",
+  "feature_name": null,
+  "readme_description": "Shows how to extend StateTrigger with a couple of different custom triggers built into a scenario app.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "StateTrigger"
+  ],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

@@ -1,0 +1,396 @@
+{
+  "sample": "XamlBottomUpList",
+  "feature_name": "XAML bottom-up list C# sample",
+  "readme_description": "Shows a ListView that is tailored for scenarios in which the last item is the most interesting.",
+  "readme_bullets": [
+    "Set the ItemsStackPanel.ItemsUpdatingScrollMode property to KeepLastItemInView",
+    "Save and restore the scroll position.",
+    "Add older items to the top of the list incrementally.",
+    "Manually trigger the ISupportIncrementalLoading.LoadMoreAsync method"
+  ],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.UI.Xaml.HorizontalAlignment.Right",
+    "Windows.UI.Xaml.HorizontalAlignment.Left"
+  ],
+  "api_references": [
+    "BottomUpList.Items",
+    "DateTime.Now",
+    "BottomUpList.SelectedIndex",
+    "BottomUpList.SelectedItem",
+    "ListViewPersistenceHelper.GetRelativeScrollPosition",
+    "ListViewPersistenceHelper.SetRelativeScrollPositionAsync",
+    "Task.FromResult",
+    "IncrementalLoadingTrigger.None",
+    "Items.Count",
+    "Math.Max",
+    "ItemContainer.DesiredSize",
+    "ItemContainer.Content",
+    "MessageTextBox.Text",
+    "Task.Delay",
+    "TimeSpan.FromSeconds",
+    "Conversation.CreateRandomMessage",
+    "ItemContainer.HorizontalAlignment",
+    "Windows.UI",
+    "Xaml.HorizontalAlignment",
+    "VirtualKey.Enter"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_Basic",
+      "title": "Create a bottom-up list",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlBottomUpList\\shared\\Scenario1_Basic.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlBottomUpList\\cs\\Scenario1_Basic.xaml.cs",
+      "description": "Create a bottom-up list",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Create a bottom-up list"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "If the list view is at the end of the list when a new item is added to the end, then the KeepLastItemInView scroll mode will scroll the new last item into view."
+        },
+        {
+          "type": "ListView",
+          "name": "",
+          "x_name": "BottomUpList"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "",
+          "x_name": "",
+          "handlers": {
+            "Click": "{x:Bind AddItemToEnd}"
+          }
+        },
+        {
+          "type": "AppBarButton",
+          "name": "",
+          "x_name": "",
+          "handlers": {
+            "Click": "{x:Bind DeleteSelectedItem}"
+          }
+        },
+        {
+          "type": "AppBarButton",
+          "name": "",
+          "x_name": "",
+          "handlers": {
+            "Click": "{x:Bind SaveScrollPosition}"
+          }
+        },
+        {
+          "type": "AppBarButton",
+          "name": "",
+          "x_name": "",
+          "handlers": {
+            "Click": "{x:Bind RestoreScrollPosition}"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Threading.Tasks",
+        "Windows.Foundation",
+        "Windows.UI.Core",
+        "Windows.UI.ViewManagement",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Input",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_Basic",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 156
+        },
+        {
+          "name": "AddItemToEnd",
+          "namespaces_used": [],
+          "api_refs": [
+            "BottomUpList.Items",
+            "DateTime.Now"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 93
+        },
+        {
+          "name": "DeleteSelectedItem",
+          "namespaces_used": [],
+          "api_refs": [
+            "BottomUpList.SelectedIndex",
+            "BottomUpList.Items",
+            "BottomUpList.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 288
+        },
+        {
+          "name": "SaveScrollPosition",
+          "namespaces_used": [],
+          "api_refs": [
+            "ListViewPersistenceHelper.GetRelativeScrollPosition"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 293
+        },
+        {
+          "name": "RestoreScrollPosition",
+          "namespaces_used": [],
+          "api_refs": [
+            "ListViewPersistenceHelper.SetRelativeScrollPositionAsync",
+            "Task.FromResult"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 266
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_Load",
+      "title": "Incremental loading",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlBottomUpList\\shared\\Scenario2_Load.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlBottomUpList\\cs\\Scenario2_Load.xaml.cs",
+      "description": "Incremental loading",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Incremental loading"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "{x:Bind Body}"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "{x:Bind DisplayTime}"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "MessageTextBox",
+          "placeholdertext": "Type a message and press Send",
+          "handlers": {
+            "KeyUp": "MessageTextBox_KeyUp"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "handlers": {
+            "Click": "{x:Bind SendTextMessage}"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.ObjectModel",
+        "System.Threading.Tasks",
+        "Windows.Foundation",
+        "Windows.System",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Data",
+        "Windows.UI.Xaml.Input"
+      ],
+      "handlers": [
+        {
+          "name": "Conversation",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 10
+        },
+        {
+          "name": "LoadMoreItemsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Task.FromResult"
+          ],
+          "new_types": [
+            "LoadMoreItemsResult"
+          ],
+          "ui_sets": [],
+          "body_length": 248
+        },
+        {
+          "name": "LoadMoreItemsResult",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 53
+        },
+        {
+          "name": "CreateMessages",
+          "namespaces_used": [],
+          "api_refs": [
+            "DateTime.Now"
+          ],
+          "new_types": [
+            "TextMessage"
+          ],
+          "ui_sets": [],
+          "body_length": 362
+        },
+        {
+          "name": "TextMessage",
+          "namespaces_used": [],
+          "api_refs": [
+            "DateTime.Now"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 204
+        },
+        {
+          "name": "CreateRandomMessage",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 88
+        },
+        {
+          "name": "ChatListView",
+          "namespaces_used": [],
+          "api_refs": [
+            "IncrementalLoadingTrigger.None"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 463
+        },
+        {
+          "name": "OnApplyTemplate",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 584
+        },
+        {
+          "name": "ArrangeOverride",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 229
+        },
+        {
+          "name": "StartProcessingDataVirtualizationScrollOffsets",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 847
+        },
+        {
+          "name": "ProcessDataVirtualizationScrollOffsetsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Count",
+            "Math.Max"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1625
+        },
+        {
+          "name": "UpdateRunningAverageContainerHeight",
+          "namespaces_used": [],
+          "api_refs": [
+            "ItemContainer.DesiredSize",
+            "ItemContainer.Content"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1416
+        },
+        {
+          "name": "Scenario2_Load",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 196
+        },
+        {
+          "name": "SendTextMessage",
+          "namespaces_used": [],
+          "api_refs": [
+            "MessageTextBox.Text",
+            "DateTime.Now",
+            "Task.Delay",
+            "TimeSpan.FromSeconds",
+            "Conversation.CreateRandomMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "MessageTextBox.Text"
+          ],
+          "body_length": 764
+        },
+        {
+          "name": "OnChatViewContainerContentChanging",
+          "namespaces_used": [
+            "Windows.UI.Xaml.HorizontalAlignment.Right",
+            "Windows.UI.Xaml.HorizontalAlignment.Left"
+          ],
+          "api_refs": [
+            "ItemContainer.HorizontalAlignment",
+            "Windows.UI",
+            "Xaml.HorizontalAlignment"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 272
+        },
+        {
+          "name": "MessageTextBox_KeyUp",
+          "namespaces_used": [],
+          "api_refs": [
+            "VirtualKey.Enter"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 125
+        }
+      ]
+    }
+  ]
+}

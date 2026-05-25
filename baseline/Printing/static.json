@@ -1,0 +1,1077 @@
+{
+  "sample": "Printing",
+  "feature_name": "Printing C# Sample",
+  "readme_description": "Shows how apps can add support for printing on Windows.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.Copies",
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.Orientation",
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.MediaSize",
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.Collation",
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.Duplex",
+    "Windows.UI.Core.CoreDispatcherPriority.Normal",
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.ColorMode",
+    "Windows.UI.Xaml.Visibility.Visible",
+    "Windows.UI.Xaml.Visibility.Collapsed",
+    "Windows.Graphics.Printing.StandardPrintTaskOptions.CustomPageRanges",
+    "Windows.UI.Xaml.HorizontalAlignment.Center",
+    "Windows.UI.Xaml.VerticalAlignment.Center"
+  ],
+  "api_references": [
+    "PrintManager.IsSupported",
+    "MainPage.Current",
+    "NotifyType.StatusMessage",
+    "InvokePrintingButton.Visibility",
+    "Visibility.Collapsed",
+    "NotifyType.ErrorMessage",
+    "Request.CreatePrintTask",
+    "Options.DisplayedOptions",
+    "Windows.Graphics",
+    "Printing.StandardPrintTaskOptions",
+    "Options.MediaSize",
+    "PrintMediaSize.NorthAmericaLegal",
+    "PrintTaskCompletion.Failed",
+    "Dispatcher.RunAsync",
+    "Windows.UI",
+    "Core.CoreDispatcherPriority",
+    "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+    "Xaml.Visibility",
+    "Grid.ColumnSpanProperty",
+    "Grid.RowProperty",
+    "Grid.ColumnProperty",
+    "GridUnitType.Star",
+    "Convert.ToInt32",
+    "Options.PageRangeOptions",
+    "PrintTask.Completed",
+    "StandardPrintTaskOptions.CustomPageRanges",
+    "PrintTaskOptions.CustomPageRanges",
+    "PrintDocument.SetPreviewPageCount",
+    "Math.Abs",
+    "PageSize.Width",
+    "PageSize.Height",
+    "ViewablePageSize.Width",
+    "ViewablePageSize.Height",
+    "PictureViewSize.Width",
+    "PictureViewSize.Height",
+    "DisplayedOptions.Clear",
+    "DisplayedOptions.Add",
+    "Options.Orientation",
+    "PrintOrientation.Landscape",
+    "Scaling.ShrinkToFit",
+    "PhotoSize.SizeFullPage",
+    "OptionId.ToString",
+    "PhotoSize.Size4x6",
+    "PhotoSize.Size5x7",
+    "PhotoSize.Size8x10",
+    "Scaling.Crop",
+    "Interlocked.Increment",
+    "PrintTaskOptions.GetPageDescription",
+    "Margin.Width",
+    "Math.Max",
+    "ImageableRect.Left",
+    "ImageableRect.Right",
+    "Margin.Height",
+    "ImageableRect.Top",
+    "ImageableRect.Bottom",
+    "PreviewPageCountType.Intermediate",
+    "Interlocked.Exchange",
+    "Interlocked.CompareExchange",
+    "PrintCanvas.Children",
+    "PrintCanvas.InvalidateMeasure",
+    "PrintCanvas.UpdateLayout",
+    "Canvas.LeftProperty",
+    "Canvas.TopProperty",
+    "Xaml.HorizontalAlignment",
+    "Xaml.VerticalAlignment",
+    "Stretch.None",
+    "Children.Add",
+    "StorageFile.GetFileFromApplicationUriAsync",
+    "FileAccessMode.Read",
+    "BitmapDecoder.CreateAsync",
+    "BitmapRotation.None",
+    "BitmapRotation.Clockwise270Degrees",
+    "BitmapRotation.Clockwise90Degrees",
+    "BitmapPixelFormat.Bgra8",
+    "BitmapAlphaMode.Straight",
+    "ExifOrientationMode.IgnoreExifOrientation",
+    "ColorManagementMode.DoNotColorManage",
+    "PixelBuffer.AsStream",
+    "CoreDispatcherPriority.Normal",
+    "ImageableRect.Width",
+    "ImageableRect.Height",
+    "Visibility.Visible"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1Basic",
+      "title": "Basic",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario1Basic.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario1Basic.xaml.cs",
+      "description": "Apps can support an in-app print button to invoke the print experience via the print contract.",
+      "controls": [
+        {
+          "type": "Canvas",
+          "name": "",
+          "x_name": "PrintCanvas"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Apps can support an in-app print button to invoke the print experience via the print contract."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "InvokePrintingButton",
+          "content": "Print",
+          "handlers": {
+            "Click": "OnPrintButtonClick"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Graphics.Printing",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1Basic",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnPrintButtonClick",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintManager.IsSupported",
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "InvokePrintingButton.Visibility",
+            "Visibility.Collapsed",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "PrintHelper",
+            "PageToPrint"
+          ],
+          "ui_sets": [],
+          "body_length": 1081
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 132
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2StandardOptons",
+      "title": "Scenario2StandardOptons",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario2StandardOptons.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario2StandardOptons.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "Canvas",
+          "name": "",
+          "x_name": "PrintCanvas"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "InvokePrintingButton",
+          "content": "Print",
+          "handlers": {
+            "Click": "OnPrintButtonClick"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Graphics.Printing",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "PrintTaskRequested",
+          "namespaces_used": [
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Copies",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Orientation",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.MediaSize",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Collation",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Duplex",
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Request.CreatePrintTask",
+            "Options.DisplayedOptions",
+            "Windows.Graphics",
+            "Printing.StandardPrintTaskOptions",
+            "Options.MediaSize",
+            "PrintMediaSize.NorthAmericaLegal",
+            "PrintTaskCompletion.Failed",
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority",
+            "MainPage.Current",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1867
+        },
+        {
+          "name": "Scenario2StandardOptions",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnPrintButtonClick",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintManager.IsSupported",
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "InvokePrintingButton.Visibility",
+            "Visibility.Collapsed",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "StandardOptionsPrintHelper",
+            "PageToPrint"
+          ],
+          "ui_sets": [],
+          "body_length": 1096
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 132
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3CustomOptions",
+      "title": "Custom Options",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario3CustomOptions.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario3CustomOptions.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "Canvas",
+          "name": "",
+          "x_name": "PrintCanvas"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "InvokePrintingButton",
+          "content": "Print",
+          "handlers": {
+            "Click": "OnPrintButtonClick"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading.Tasks",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.UI.Xaml.Printing",
+        "Windows.Graphics.Printing",
+        "Windows.Graphics.Printing.OptionDetails",
+        "Windows.Storage.Streams",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "PrintTaskRequested",
+          "namespaces_used": [
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Copies",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Orientation",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.ColorMode"
+          ],
+          "api_refs": [
+            "Request.CreatePrintTask",
+            "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+            "Windows.Graphics",
+            "Printing.StandardPrintTaskOptions",
+            "PrintTaskCompletion.Failed",
+            "MainPage.Current",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 3918
+        },
+        {
+          "name": "AddOnePrintPreviewPage",
+          "namespaces_used": [
+            "Windows.UI.Xaml.Visibility.Visible",
+            "Windows.UI.Xaml.Visibility.Collapsed"
+          ],
+          "api_refs": [
+            "Windows.UI",
+            "Xaml.Visibility",
+            "Grid.ColumnSpanProperty",
+            "Grid.RowProperty",
+            "Grid.ColumnProperty",
+            "GridUnitType.Star"
+          ],
+          "new_types": [
+            "GridLength"
+          ],
+          "ui_sets": [],
+          "body_length": 2381
+        },
+        {
+          "name": "CreatePrintPreviewPages",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+            "Convert.ToInt32"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 551
+        },
+        {
+          "name": "Scenario3CustomOptions",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnPrintButtonClick",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintManager.IsSupported",
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "InvokePrintingButton.Visibility",
+            "Visibility.Collapsed",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "CustomOptionsPrintHelper",
+            "PageToPrint"
+          ],
+          "ui_sets": [],
+          "body_length": 1094
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 132
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4PageRange",
+      "title": "Page Range",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario4PageRange.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario4PageRange.xaml.cs",
+      "description": "Apps can allow users to print a subset of the pages in the document.",
+      "controls": [
+        {
+          "type": "Canvas",
+          "name": "",
+          "x_name": "PrintCanvas"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Apps can allow users to print a subset of the pages in the document."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "InvokePrintingButton",
+          "content": "Print",
+          "handlers": {
+            "Click": "OnPrintButtonClick"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Collections.Immutable",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.UI.Xaml.Printing",
+        "Windows.Graphics.Printing",
+        "Windows.Graphics.Printing.OptionDetails",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "PrintTaskRequested",
+          "namespaces_used": [
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Copies",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.CustomPageRanges",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Orientation",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.MediaSize",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.ColorMode",
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Request.CreatePrintTask",
+            "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+            "Windows.Graphics",
+            "Printing.StandardPrintTaskOptions",
+            "Options.PageRangeOptions",
+            "PrintTask.Completed",
+            "PrintTaskCompletion.Failed",
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority",
+            "MainPage.Current",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2335
+        },
+        {
+          "name": "CreatePrintPreviewPages",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+            "StandardPrintTaskOptions.CustomPageRanges"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 504
+        },
+        {
+          "name": "AddPrintPages",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintTaskOptions.CustomPageRanges",
+            "PrintDocument.SetPreviewPageCount"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2425
+        },
+        {
+          "name": "ValidatePageRangeOption",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2030
+        },
+        {
+          "name": "Scenario4PageRange",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnPrintButtonClick",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintManager.IsSupported",
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "InvokePrintingButton.Visibility",
+            "Visibility.Collapsed",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "PageRangePrintHelper",
+            "PageToPrint"
+          ],
+          "ui_sets": [],
+          "body_length": 1090
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 132
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5Photos",
+      "title": "Photos",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario5Photos.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario5Photos.xaml.cs",
+      "description": "Photo printing scenario.",
+      "controls": [
+        {
+          "type": "Canvas",
+          "name": "",
+          "x_name": "PrintCanvas"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Photo printing scenario."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "InvokePrintingButton",
+          "content": "Print",
+          "handlers": {
+            "Click": "OnPrintButtonClick"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "System.Runtime.InteropServices.WindowsRuntime",
+        "Windows.Foundation",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.UI.Xaml.Printing",
+        "Windows.UI.Xaml.Media.Imaging",
+        "Windows.UI.Xaml.Media",
+        "Windows.Graphics.Printing",
+        "Windows.Graphics.Printing.OptionDetails",
+        "Windows.Graphics.Imaging",
+        "Windows.Storage",
+        "SDKTemplate"
+      ],
+      "handlers": [
+        {
+          "name": "Equals",
+          "namespaces_used": [],
+          "api_refs": [
+            "Math.Abs",
+            "PageSize.Width",
+            "PageSize.Height",
+            "ViewablePageSize.Width",
+            "ViewablePageSize.Height",
+            "PictureViewSize.Width",
+            "PictureViewSize.Height"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1078
+        },
+        {
+          "name": "PrintTaskRequested",
+          "namespaces_used": [
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.MediaSize",
+            "Windows.Graphics.Printing.StandardPrintTaskOptions.Copies",
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Request.CreatePrintTask",
+            "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+            "DisplayedOptions.Clear",
+            "DisplayedOptions.Add",
+            "Windows.Graphics",
+            "Printing.StandardPrintTaskOptions",
+            "Options.Orientation",
+            "PrintOrientation.Landscape",
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority",
+            "Scaling.ShrinkToFit",
+            "PhotoSize.SizeFullPage",
+            "PrintTaskCompletion.Failed",
+            "MainPage.Current",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 3251
+        },
+        {
+          "name": "PrintDetailedOptionsOptionChanged",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "OptionId.ToString",
+            "PhotoSize.SizeFullPage",
+            "PhotoSize.Size4x6",
+            "PhotoSize.Size5x7",
+            "PhotoSize.Size8x10",
+            "Scaling.Crop",
+            "Scaling.ShrinkToFit",
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2710
+        },
+        {
+          "name": "CreatePrintPreviewPages",
+          "namespaces_used": [],
+          "api_refs": [
+            "Interlocked.Increment",
+            "PrintTaskOptionDetails.GetFromPrintTaskOptions",
+            "PrintTaskOptions.GetPageDescription",
+            "Margin.Width",
+            "Math.Max",
+            "ImageableRect.Left",
+            "ImageableRect.Right",
+            "PageSize.Width",
+            "Margin.Height",
+            "ImageableRect.Top",
+            "ImageableRect.Bottom",
+            "PageSize.Height",
+            "ViewablePageSize.Width",
+            "ViewablePageSize.Height",
+            "PhotoSize.Size4x6",
+            "PictureViewSize.Width",
+            "PictureViewSize.Height",
+            "PhotoSize.Size5x7",
+            "PhotoSize.Size8x10",
+            "PhotoSize.SizeFullPage",
+            "Scaling.Crop",
+            "PreviewPageCountType.Intermediate"
+          ],
+          "new_types": [
+            "PageDescription",
+            "PreviewUnavailable"
+          ],
+          "ui_sets": [],
+          "body_length": 4543
+        },
+        {
+          "name": "GetPrintPreviewPage",
+          "namespaces_used": [],
+          "api_refs": [
+            "Interlocked.Exchange",
+            "Interlocked.CompareExchange",
+            "PrintCanvas.Children",
+            "PrintCanvas.InvalidateMeasure",
+            "PrintCanvas.UpdateLayout"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2240
+        },
+        {
+          "name": "AddPrintPages",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintTask.Completed"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1038
+        },
+        {
+          "name": "ClearPageCollection",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintCanvas.Children"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 158
+        },
+        {
+          "name": "GeneratePageAsync",
+          "namespaces_used": [
+            "Windows.UI.Xaml.HorizontalAlignment.Center",
+            "Windows.UI.Xaml.VerticalAlignment.Center"
+          ],
+          "api_refs": [
+            "PageSize.Width",
+            "PageSize.Height",
+            "ViewablePageSize.Width",
+            "ViewablePageSize.Height",
+            "Canvas.LeftProperty",
+            "Margin.Width",
+            "Canvas.TopProperty",
+            "Margin.Height",
+            "PictureViewSize.Width",
+            "PictureViewSize.Height",
+            "Windows.UI",
+            "Xaml.HorizontalAlignment",
+            "Xaml.VerticalAlignment",
+            "Scaling.Crop",
+            "Stretch.None",
+            "Children.Add"
+          ],
+          "new_types": [
+            "Canvas",
+            "Uri"
+          ],
+          "ui_sets": [],
+          "body_length": 2610
+        },
+        {
+          "name": "Canvas",
+          "namespaces_used": [],
+          "api_refs": [
+            "ViewablePageSize.Width",
+            "ViewablePageSize.Height"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 145
+        },
+        {
+          "name": "LoadBitmapAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "StorageFile.GetFileFromApplicationUriAsync",
+            "FileAccessMode.Read",
+            "BitmapDecoder.CreateAsync",
+            "BitmapRotation.None",
+            "BitmapRotation.Clockwise270Degrees",
+            "BitmapRotation.Clockwise90Degrees",
+            "BitmapPixelFormat.Bgra8",
+            "BitmapAlphaMode.Straight",
+            "ExifOrientationMode.IgnoreExifOrientation",
+            "ColorManagementMode.DoNotColorManage",
+            "PixelBuffer.AsStream"
+          ],
+          "new_types": [
+            "BitmapTransform",
+            "WriteableBitmap"
+          ],
+          "ui_sets": [],
+          "body_length": 1745
+        },
+        {
+          "name": "Scenario5Photos",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnPrintButtonClick",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintManager.IsSupported",
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "InvokePrintingButton.Visibility",
+            "Visibility.Collapsed",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "PhotosPrintHelper"
+          ],
+          "ui_sets": [],
+          "body_length": 961
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 132
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario6DisablePreview",
+      "title": "Disable Preview",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario6DisablePreview.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs\\Scenario6DisablePreview.xaml.cs",
+      "description": "Applications can choose to disable the preview by setting the preview enabled option.",
+      "controls": [
+        {
+          "type": "Canvas",
+          "name": "",
+          "x_name": "PrintCanvas"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Applications can choose to disable the preview by setting the preview enabled option."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "InvokePrintingButton",
+          "content": "Print",
+          "handlers": {
+            "Click": "OnPrintButtonClick"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Collections.Generic",
+        "Windows.Foundation.Metadata",
+        "Windows.Graphics.Printing",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.UI.Xaml.Printing"
+      ],
+      "handlers": [
+        {
+          "name": "PrintTaskRequested",
+          "namespaces_used": [],
+          "api_refs": [
+            "Request.CreatePrintTask",
+            "PrintTaskCompletion.Failed",
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "MainPage.Current",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1026
+        },
+        {
+          "name": "AddPrintPages",
+          "namespaces_used": [
+            "Windows.UI.Xaml.Visibility.Visible"
+          ],
+          "api_refs": [
+            "PrintCanvas.Children",
+            "Windows.UI",
+            "Xaml.Visibility"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1797
+        },
+        {
+          "name": "AddOnePrintPage",
+          "namespaces_used": [
+            "Windows.UI.Xaml.Visibility.Visible"
+          ],
+          "api_refs": [
+            "Visibility.Collapsed",
+            "PageSize.Width",
+            "PageSize.Height",
+            "Math.Max",
+            "ImageableRect.Width",
+            "ImageableRect.Height",
+            "PrintCanvas.Children",
+            "PrintCanvas.InvalidateMeasure",
+            "PrintCanvas.UpdateLayout",
+            "Windows.UI",
+            "Xaml.Visibility",
+            "Visibility.Visible"
+          ],
+          "new_types": [
+            "ContinuationPage"
+          ],
+          "ui_sets": [],
+          "body_length": 2942
+        },
+        {
+          "name": "Scenario6DisablePreview",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnPrintButtonClick",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "PrintManager.IsSupported",
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "InvokePrintingButton.Visibility",
+            "Visibility.Collapsed",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "DisablePreviewPrintHelper",
+            "PageToPrint"
+          ],
+          "ui_sets": [],
+          "body_length": 1095
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 132
+        }
+      ]
+    }
+  ]
+}

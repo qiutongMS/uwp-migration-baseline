@@ -1,0 +1,379 @@
+{
+  "sample": "TouchKeyboard",
+  "feature_name": "TouchKeyboard",
+  "readme_description": "Shows both the default display behavior of the touch keyboard and how that behavior can be customized in a UWP app.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.System.VirtualKey.Enter",
+    "Windows.UI.ViewManagement.InputPane.GetForCurrentView"
+  ],
+  "api_references": [
+    "InputPane.GetForCurrentView",
+    "LastInputPaneEventRun.Text",
+    "FadeOutResults.Stop",
+    "Windows.System",
+    "VirtualKey.Enter",
+    "WordListBox.Text",
+    "Windows.UI",
+    "ViewManagement.InputPane",
+    "ResultsTextBlock.Text",
+    "FadeOutResults.Begin",
+    "CoreInputView.GetForCurrentView",
+    "CoreInputViewKind.Emoji"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_Launch",
+      "title": "Display touch keyboard automatically",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\shared\\Scenario1_Launch.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\cs\\Scenario1_Launch.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "",
+          "header": "TextBox control",
+          "placeholdertext": "The keyboard displays when you tap here."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The keyboard hides when you tap the button."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Button"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Note"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The touch keyboard displays automatically when 1. A hardware keyboard is not active, and 2. Either of the following is true:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "2a. Tablet mode is turned on, or 2b. \"Show the touch keyboard when not in tablet mode and there's no keyboard attached\" is enabled in Settings → Devices → Typing."
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_Launch",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_ShowHideEvents",
+      "title": "Listen for Show/Hide events",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\shared\\Scenario2_ShowHideEvents.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\cs\\Scenario2_ShowHideEvents.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The Showing and Hiding events are raised when the touch keyboard is shown or hidden."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Last event:"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "",
+          "placeholdertext": "Tap to show the touch keyboard"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "The touch keyboard hides when focus is not in a text control."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Button"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "See the note in scenario 1 for the rules regarding the touch keyboard."
+        }
+      ],
+      "usings": [
+        "Windows.UI.ViewManagement",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Media",
+        "Windows.Foundation",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_ShowHideEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "InputPane.GetForCurrentView"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 238
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "InputPane.GetForCurrentView"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 242
+        },
+        {
+          "name": "OnShowing",
+          "namespaces_used": [],
+          "api_refs": [
+            "LastInputPaneEventRun.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 63
+        },
+        {
+          "name": "OnHiding",
+          "namespaces_used": [],
+          "api_refs": [
+            "LastInputPaneEventRun.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 62
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_ShowHideMethods",
+      "title": "Programmatically Show/Hide\\nthe touch keyboard",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\shared\\Scenario3_ShowHideMethods.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\cs\\Scenario3_ShowHideMethods.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "This scenario hides the touch keyboard with TryHide() when you press Enter, so that it won't cover the results below the text box. When the results are cleared, it shows the touch keyboard again."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "See the note in scenario 1 for the rules regarding the touch keyboard."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "WordListBox",
+          "text": "Type a few words and hit Enter.",
+          "handlers": {
+            "KeyDown": "WordListBox_OnKeyUp"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ResultsTextBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Input",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_ShowHideMethods",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "FadeOutResults.Stop"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "WordListBox_OnKeyUp",
+          "namespaces_used": [
+            "Windows.System.VirtualKey.Enter",
+            "Windows.UI.ViewManagement.InputPane.GetForCurrentView"
+          ],
+          "api_refs": [
+            "Windows.System",
+            "VirtualKey.Enter",
+            "WordListBox.Text",
+            "Windows.UI",
+            "ViewManagement.InputPane",
+            "ResultsTextBlock.Text",
+            "FadeOutResults.Begin"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "ResultsTextBlock.Text"
+          ],
+          "body_length": 428
+        },
+        {
+          "name": "OnFadeOutCompleted",
+          "namespaces_used": [
+            "Windows.UI.ViewManagement.InputPane.GetForCurrentView"
+          ],
+          "api_refs": [
+            "ResultsTextBlock.Text",
+            "Windows.UI",
+            "ViewManagement.InputPane"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "ResultsTextBlock.Text"
+          ],
+          "body_length": 131
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_ShowView",
+      "title": "Showing the Emoji keyboard",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\shared\\Scenario4_ShowView.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboard\\cs\\Scenario4_ShowView.xaml.cs",
+      "description": "Showing a specific view.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Showing a specific view."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "This scenario shows the Emoji keyboard when the text box receives focus."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "",
+          "placeholdertext": "What is your reaction?"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Button"
+        }
+      ],
+      "usings": [
+        "Windows.UI.ViewManagement.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_ShowView",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "TextBox_GotFocus",
+          "namespaces_used": [],
+          "api_refs": [
+            "CoreInputView.GetForCurrentView",
+            "CoreInputViewKind.Emoji"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 91
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+﻿{
+    "sample":  "RadialController",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\RadialController\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "crashed",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.RadialController.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.RadialController.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.RadialController.CS_8wekyb3d8bbwe!RadialController.App",
+    "scenarios":  [
+
+                  ],
+    "error":  "App window found (hwnd=9897932) but PrintWindow returned null after retry - app likely crashed during startup."
+}

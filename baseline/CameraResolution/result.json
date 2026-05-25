@@ -1,0 +1,54 @@
+﻿{
+    "sample":  "CameraResolution",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraResolution\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CameraResolution.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CameraResolution.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CameraResolution.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Change camera preview settings",
+                          "initial_capture":  "01_1_Change_camera_preview_settings__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Initialize Camera",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Change_camera_preview_settings__after_Initialize_Camera.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Change preview and photo settings",
+                          "initial_capture":  "02_2_Change_preview_and_photo_settings__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Initialize Camera",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Change_preview_and_photo_settings__after_Initialize_Camera.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Match aspect ratios",
+                          "initial_capture":  "03_3_Match_aspect_ratios__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Initialize Camera",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Match_aspect_ratios__after_Initialize_Camera.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

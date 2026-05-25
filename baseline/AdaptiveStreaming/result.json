@@ -1,0 +1,196 @@
+﻿{
+    "sample":  "AdaptiveStreaming",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.AdaptiveStreaming.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.AdaptiveStreaming.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.AdaptiveStreaming.CS_8wekyb3d8bbwe!AdaptiveStreaming.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Simplest Adaptive Streaming",
+                          "initial_capture":  "01_1_Simplest_Adaptive_Streaming__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Simplest_Adaptive_Streaming__after_Load.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Simplest_Adaptive_Streaming__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Simplest_Adaptive_Streaming__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Event Handlers",
+                          "initial_capture":  "02_2_Event_Handlers__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load Id:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Event_Handlers__after_Load_Id_.png"
+                                          },
+                                          {
+                                              "name":  "Load Uri:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Event_Handlers__after_Load_Uri_.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Event_Handlers__after_Volume.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Network Request Modification",
+                          "initial_capture":  "03_3_Network_Request_Modification__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load Id:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Network_Request_Modification__after_Load_Id_.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Network_Request_Modification__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Network_Request_Modification__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Adaptive Streaming Tuning",
+                          "initial_capture":  "04_4_Adaptive_Streaming_Tuning__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load Id:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Adaptive_Streaming_Tuning__after_Load_Id_.png"
+                                          },
+                                          {
+                                              "name":  "Load Uri:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Adaptive_Streaming_Tuning__after_Load_Uri_.png"
+                                          },
+                                          {
+                                              "name":  "Set",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Adaptive_Streaming_Tuning__after_Set.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Metadata",
+                          "initial_capture":  "05_5_Metadata__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load Id:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Metadata__after_Load_Id_.png"
+                                          },
+                                          {
+                                              "name":  "Load Uri:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Metadata__after_Load_Uri_.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "05_5_Metadata__after_Volume.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Ad Insertion",
+                          "initial_capture":  "06_6_Ad_Insertion__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load Id:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Ad_Insertion__after_Load_Id_.png"
+                                          },
+                                          {
+                                              "name":  "Load Uri:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Ad_Insertion__after_Load_Uri_.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "06_6_Ad_Insertion__after_Volume.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Live Seekable Range",
+                          "initial_capture":  "07_7_Live_Seekable_Range__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load Id:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Live_Seekable_Range__after_Load_Id_.png"
+                                          },
+                                          {
+                                              "name":  "Load Uri:",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Live_Seekable_Range__after_Load_Uri_.png"
+                                          },
+                                          {
+                                              "name":  "Set",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Live_Seekable_Range__after_Set.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

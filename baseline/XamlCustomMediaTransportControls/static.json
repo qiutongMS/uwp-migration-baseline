@@ -1,0 +1,14 @@
+{
+  "sample": "XamlCustomMediaTransportControls",
+  "feature_name": null,
+  "readme_description": "Shows how to create customized media transport controls for the MediaPlayerElement control in your XAML Windows App.",
+  "readme_bullets": [
+    "**Set up the custom template:** Add a new template to the Themes/generic.xaml folder and create a custom template. Add a class called CustomMediaTransportControls.cs",
+    "**Add a custom button:** In generic.xaml, add a custom button to the CommandBar, show how to reference it, and make it useable in CustomMediaTransportControls.cs",
+    "**Change the color of the slider:** Add references in app.xaml for a custom brush used to change the color of the media slider"
+  ],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

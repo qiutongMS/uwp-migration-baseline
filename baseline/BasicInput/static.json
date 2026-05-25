@@ -1,0 +1,23 @@
+{
+  "sample": "BasicInput",
+  "feature_name": "Basic Input sample",
+  "readme_description": "Shows how to handle user input in Universal Windows Platform (UWP) apps.",
+  "readme_bullets": [
+    "**Listen for events on XAML elements:** Use events on XAML elements to listen for various types of input, such as pointer pressed / released, pointer enter / exited, tap / double-tap, and right-tap / press-and-hold.",
+    "**Retrieve properties about a pointer object:** Use a PointerPoint object to retrieve information common to all pointers (such as X/Y coordinates) as well as information specific to the type of input being used (such as mouse wheel information).",
+    "**Query input capabilities for the system:** Use the KeyboardCapabilities, MouseCapabilities, and TouchCapabilities classes to determine what types of input are available on the current system.",
+    "**Manipulate a XAML element:** Use the ManipulationMode property to register for specific manipulation events on XAML elements and react to them in order to move and rotate the element.",
+    "**Manipulate an object using a GestureRecognizer:** Use an instance of a GestureRecognizer to move and rotate an object. This is useful if your app uses its own framework and, thus, cannot use the manipulation events on XAML elements."
+  ],
+  "readme_api_links": [
+    "PointerPoint",
+    "KeyboardCapabilities",
+    "MouseCapabilities",
+    "TouchCapabilities",
+    "ManipulationMode",
+    "GestureRecognizer"
+  ],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

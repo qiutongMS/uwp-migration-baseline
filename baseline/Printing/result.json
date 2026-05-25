@@ -1,0 +1,93 @@
+﻿{
+    "sample":  "Printing",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Printing\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PrintSample.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PrintSample.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PrintSample.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Basic",
+                          "initial_capture":  "01_1_Basic__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Print",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Standard Options",
+                          "initial_capture":  "02_2_Standard_Options__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Print",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Custom Options",
+                          "initial_capture":  "03_3_Custom_Options__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Print",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Page Range",
+                          "initial_capture":  "04_4_Page_Range__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Print",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Photos",
+                          "initial_capture":  "05_5_Photos__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Print",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Disable Preview",
+                          "initial_capture":  "06_6_Disable_Preview__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Print",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

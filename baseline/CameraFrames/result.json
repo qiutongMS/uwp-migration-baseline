@@ -1,0 +1,31 @@
+﻿{
+    "sample":  "CameraFrames",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFrames\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CameraFrames.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CameraFrames.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CameraFrames.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Shared mode access to color, depth and infrared frame sources",
+                          "initial_capture":  "01_1_Shared_mode_access_to_color,_depth_and_infrared___initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Find and display all media frame sources",
+                          "initial_capture":  "02_2_Find_and_display_all_media_frame_sources__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

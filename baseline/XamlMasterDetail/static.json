@@ -1,0 +1,17 @@
+{
+  "sample": "XamlMasterDetail",
+  "feature_name": null,
+  "readme_description": "Shows how to implement a responsive master/detail experience in XAML.",
+  "readme_bullets": [
+    "**Creating a side-by-side master/detail experience in XAML:** In MasterDetailPage.xaml, a master list is used to switch between detail items in a side-by-side view. This page will also responsively update to include just the master list when the view is narrow.",
+    "**Navigating between the master list and a detail view:** At narrow screen sizes, the user can navigate between the master list in MasterDetailPage.xaml and detail view in DetailPage.xaml to view different items.",
+    "**Changing the navigation model when the app is resized:** This sample contains the code necessary to adaptively switch between the two experiences described above at runtime based on screen size."
+  ],
+  "readme_api_links": [
+    "VisualState",
+    "NavigationThemeTransition"
+  ],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

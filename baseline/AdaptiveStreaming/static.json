@@ -1,0 +1,2392 @@
+{
+  "sample": "AdaptiveStreaming",
+  "feature_name": "AdaptiveStreaming",
+  "readme_description": "Shows various features of the AdaptiveMediaSource object.",
+  "readme_bullets": [],
+  "readme_api_links": [
+    "AdaptiveMediaSource",
+    "AdaptiveMediaSourceAdvancedSettings"
+  ],
+  "api_namespaces": [
+    "Windows.Web.Http"
+  ],
+  "api_references": [
+    "MainPage.FindContentById",
+    "MediaPlayer.MediaProtectionManager",
+    "SDKTemplate.Helpers",
+    "MediaSource.CreateFromUri",
+    "ContentSelectorControl.MediaPlaybackItem",
+    "Source.AdaptiveMediaSource",
+    "Windows.Web",
+    "CacheControl.WriteBehavior",
+    "HttpCacheWriteBehavior.NoCache",
+    "ContentSelectorControl.Initialize",
+    "MainPage.ContentManagementSystemStub",
+    "AdaptiveMediaSource.CreateFromUriAsync",
+    "AdaptiveMediaSourceCreationStatus.Success",
+    "MediaSource.CreateFromAdaptiveMediaSource",
+    "ExtendedError.Message",
+    "ExtendedError.HResult",
+    "MediaSource.CustomProperties",
+    "Guid.NewGuid",
+    "Dispatcher.RunAsync",
+    "CoreDispatcherPriority.Normal",
+    "DescriptionText.Visibility",
+    "Visibility.Collapsed",
+    "Visibility.Visible",
+    "LoggerControl.Log",
+    "ContentSelectorControl.HideLoadUri",
+    "AzureAuthorizationMethodPanel.Children",
+    "IsChecked.Value",
+    "Enum.TryParse",
+    "ContentSelectorControl.SetSelectedModel",
+    "AzureKeyAcquisitionMethod.AuthorizationHeader",
+    "ContentSelectorControl.SelectedModel",
+    "DefaultRequestHeaders.Append",
+    "AdaptiveMediaSourceResourceType.Key",
+    "AzureKeyAcquisitionMethod.None",
+    "ResourceUri.Host",
+    "AzureKeyAcquisitionMethod.UrlQueryParameter",
+    "AzureKeyAcquisitionMethod.ApplicationDownloaded",
+    "Result.ResourceUri",
+    "System.Net",
+    "WebUtility.UrlEncode",
+    "ResourceUri.AbsoluteUri",
+    "Result.InputStream",
+    "Result.Buffer",
+    "DefaultRequestHeaders.Authorization",
+    "HttpMethod.Get",
+    "HttpCompletionOption.ResponseHeadersRead",
+    "Content.ReadAsInputStreamAsync",
+    "Content.ReadAsBufferAsync",
+    "Result.ExtendedStatus",
+    "HttpStatusCode.Unauthorized",
+    "HttpStatusCode.NotFound",
+    "Tag.ToString",
+    "HdcpProtection.Off",
+    "HdcpSetProtectionResult.Success",
+    "EffectiveHdcpProtectionText.Text",
+    "AvailableBitrates.Count",
+    "HdcpProtection.OnWithTypeEnforcement",
+    "DesiredMaxBitrateText.Text",
+    "HdcpProtection.On",
+    "String.Equals",
+    "RequestUri.Host",
+    "StringComparison.OrdinalIgnoreCase",
+    "Headers.Authorization",
+    "TimeSpan.FromSeconds",
+    "InboundBitsPerSecondText.Text",
+    "InboundBitsPerSecondLast.ToString",
+    "Task.Delay",
+    "AvailableBitrates.OrderByDescending",
+    "InitialBitrateList.ItemsSource",
+    "InitialBitrateList.SelectedItem",
+    "DesiredMaxBitrateList.ItemsSource",
+    "DesiredMinBitrateList.ItemsSource",
+    "DesiredMaxBitrateList.SelectedItem",
+    "DesiredMinBitrateList.SelectedItem",
+    "AddedItems.Count",
+    "Bitrate.Value",
+    "BitrateDowngradeTriggerRatioText.Text",
+    "AdvancedSettings.BitrateDowngradeTriggerRatio",
+    "AdvancedSettings.DesiredBitrateHeadroomRatio",
+    "Bitrate.ToString",
+    "ContentSelectorControl.SetAutoPlay",
+    "CustomProperties.TryGetValue",
+    "TrackingEventCue.CreateTrackingEventsTrack",
+    "TimedMetadataTracks.Count",
+    "CollectionChange.ItemInserted",
+    "CollectionChange.Reset",
+    "Source.CustomProperties",
+    "MediaTrackKind.TimedMetadata",
+    "TimedMetadataKind.Data",
+    "TimedMetadataKind.Custom",
+    "TimedMetadataTracks.SetPresentationMode",
+    "TimedMetadataTrackPresentationMode.ApplicationPresented",
+    "PlaybackItem.Source",
+    "StringSplitOptions.RemoveEmptyEntries",
+    "Position.HasValue",
+    "PresentationTimeStamp.HasValue",
+    "MediaPlayer.PlaybackSession",
+    "PresentationTimeStamp.Value",
+    "Position.Value",
+    "TimeSpan.FromTicks",
+    "PlaybackSession.Position",
+    "Ams.Position",
+    "Position.GetValueOrDefault",
+    "Ams.PresentationTimeStamp",
+    "PresentationTimeStamp.GetValueOrDefault",
+    "Ams.ProgramDateTime",
+    "ProgramDateTime.GetValueOrDefault",
+    "MediaBreakInsertionMethod.Replace",
+    "MediaBreakInsertionMethod.Interrupt",
+    "TimeSpan.Zero",
+    "PlaybackList.Items",
+    "PlaybackItem.BreakSchedule",
+    "MediaPlayer.BreakManager",
+    "BreakSchedule.PrerollBreak",
+    "MediaSource.OpenOperationCompleted",
+    "Source.OpenOperationCompleted",
+    "MediaPlaybackItem.FindFromMediaSource",
+    "Duration.HasValue",
+    "TimeSpan.MaxValue",
+    "TimeSpan.FromMinutes",
+    "Duration.Value",
+    "BreakSchedule.InsertMidrollBreak",
+    "BreakSchedule.PostrollBreak",
+    "LoggerControl.Height",
+    "MaxSeekableWindowSize.HasValue",
+    "MediaPlayer.Source",
+    "DesiredSeekableWindowSize.GetValueOrDefault",
+    "TimeSpan.TryParse",
+    "DesiredSeekableWindowSize.Text",
+    "DesiredLiveOffset.Text",
+    "MaxSeekableWindowSize.Text",
+    "MaxSeekableWindowSize.Value",
+    "DesiredSeekableWindowSize.HasValue",
+    "DesiredSeekableWindowSize.Value",
+    "DesiredLiveOffset.ToString",
+    "MinLiveOffset.Text",
+    "MinLiveOffset.HasValue",
+    "MinLiveOffset.Value",
+    "PositionSlider.Minimum",
+    "PositionSlider.Maximum",
+    "PositionSlider.Value",
+    "PlaybackSession.PositionChanged",
+    "PlaybackSession.SeekableRangesChanged",
+    "TimeSpan.FromHours",
+    "SeekableRanges.Count",
+    "SeekableRanges.First",
+    "SeekableRangeMin.Start",
+    "SeekableRanges.Last",
+    "SeekableRangeMax.End",
+    "StartPosition.Text",
+    "EndPosition.Text",
+    "CurrentPosition.Text",
+    "MinPosition.Ticks",
+    "LogViewLoggingLevel.Error",
+    "MediaPlaybackState.Paused",
+    "MediaPlayer.Play",
+    "MediaPlaybackState.Playing",
+    "MediaPlayer.Pause",
+    "PlaybackSession.PlaybackStateChanged",
+    "MediaPlaybackState.None",
+    "MediaPlaybackState.Opening",
+    "MediaPlaybackState.Buffering",
+    "PlayButton.IsEnabled",
+    "PauseButton.IsEnabled"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_SimplestAdaptiveStreaming",
+      "title": "Simplest Adaptive Streaming",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario1_SimplestAdaptiveStreaming.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario1_SimplestAdaptiveStreaming.xaml.cs",
+      "description": "In XAML, a URI in the Source property of a MediaPlayerElement goes through a format converter to create a MediaSource. An AdaptiveMediaSource is created implicitly when a manifest URI is used with MediaSource.CreateFromUri(uri). No properties or callbacks of the AdaptiveMediaSource can be retrieved when it is created implicitly.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "Load",
+          "content": "Load",
+          "handlers": {
+            "Click": "Load_Click"
+          }
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Models",
+        "System",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_SimplestAdaptiveStreaming",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 378
+        },
+        {
+          "name": "Load_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.FindContentById",
+            "MediaPlayer.MediaProtectionManager",
+            "SDKTemplate.Helpers",
+            "MediaSource.CreateFromUri"
+          ],
+          "new_types": [
+            "MediaPlayer",
+            "PlayReadyHelper"
+          ],
+          "ui_sets": [],
+          "body_length": 866
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_EventHandlers",
+      "title": "Event Handlers",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario2_EventHandlers.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario2_EventHandlers.xaml.cs",
+      "description": "This scenario demonstrates the explicit use of an AdaptiveMediaSource and all those events which report the state of adaptive streaming and the rest of the playback pipeline. If the URI entered below is not supported for adaptive streaming, the sample falls back to MediaSource.CreateFromUri().",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "txtDownloadBitrate",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "txtPlaybackBitrate",
+          "x_name": ""
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Logging",
+        "System",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.Media.Streaming.Adaptive",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web.Http",
+        "Windows.Web.Http.Filters"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_EventHandlers",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.MediaPlaybackItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 529
+        },
+        {
+          "name": "UnregisterHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.AdaptiveMediaSource"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 844
+        },
+        {
+          "name": "Page_OnLoaded",
+          "namespaces_used": [
+            "Windows.Web.Http"
+          ],
+          "api_refs": [
+            "Windows.Web",
+            "CacheControl.WriteBehavior",
+            "HttpCacheWriteBehavior.NoCache",
+            "ContentSelectorControl.Initialize",
+            "MainPage.ContentManagementSystemStub"
+          ],
+          "new_types": [
+            "MediaPlayer",
+            "MediaPlayerLogger",
+            "PlayReadyHelper",
+            "HttpBaseProtocolFilter",
+            "AdaptiveMediaSourceHttpFilterLogger",
+            "HttpClient"
+          ],
+          "ui_sets": [],
+          "body_length": 2608
+        },
+        {
+          "name": "LoadSourceFromUriAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "AdaptiveMediaSource.CreateFromUriAsync",
+            "AdaptiveMediaSourceCreationStatus.Success",
+            "MediaSource.CreateFromAdaptiveMediaSource",
+            "ExtendedError.Message",
+            "ExtendedError.HResult",
+            "MediaSource.CreateFromUri",
+            "MediaSource.CustomProperties",
+            "Guid.NewGuid"
+          ],
+          "new_types": [
+            "AdaptiveMediaSourceLogger",
+            "BitrateHelper",
+            "MediaSourceLogger",
+            "MediaPlaybackItem",
+            "MediaPlaybackItemLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 3238
+        },
+        {
+          "name": "HideDescriptionOnSmallScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DescriptionText.Visibility",
+            "Visibility.Collapsed",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 323
+        },
+        {
+          "name": "RegisterForAdaptiveMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 176
+        },
+        {
+          "name": "UnregisterForAdaptiveMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 260
+        },
+        {
+          "name": "DownloadBitrateChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 125
+        },
+        {
+          "name": "UpdateDownloadBitrateAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal"
+          ],
+          "new_types": [
+            "DispatchedHandler"
+          ],
+          "ui_sets": [],
+          "body_length": 312
+        },
+        {
+          "name": "PlaybackBitrateChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 125
+        },
+        {
+          "name": "UpdatePlaybackBitrateAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal"
+          ],
+          "new_types": [
+            "DispatchedHandler"
+          ],
+          "ui_sets": [],
+          "body_length": 312
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [
+            "LoggerControl.Log"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_RequestModification",
+      "title": "Network Request Modification",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario3_RequestModification.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario3_RequestModification.xaml.cs",
+      "description": "The AdaptiveMediaSource allows the app to manage some or all aspects of content download. This can be done by modifying the arguments of the DownloadRequested callback, or by passing an HttpClient to the constructor. The default content of this scenario requires a Bearer or Url token to be presented to the key service before responding with the decryption key. Select an authentication mechanism to ensure this content loads. This scenario also imposes bandwidth restriction based on the HDCP protection level.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "RadioButtonNone",
+          "content": "None",
+          "tag": "None",
+          "handlers": {
+            "Click": "AzureMethodSelected_Click"
+          }
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "RadioButtonAuthorizationHeader",
+          "content": "Authorization Header",
+          "tag": "AuthorizationHeader",
+          "handlers": {
+            "Click": "AzureMethodSelected_Click"
+          }
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "RadioButtonUrlQueryParameter",
+          "content": "Url Query Parameter",
+          "tag": "UrlQueryParameter",
+          "handlers": {
+            "Click": "AzureMethodSelected_Click"
+          }
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "RadioButtonApplicationDownloaded",
+          "content": "Application Downloaded",
+          "tag": "ApplicationDownloaded",
+          "handlers": {
+            "Click": "AzureMethodSelected_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Desired HDCP minimum protection"
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "HcdpOff",
+          "content": "HDCP Off",
+          "tag": "Off",
+          "handlers": {
+            "Click": "HdcpDesiredMinimumProtection_Click"
+          }
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "HcdpOn",
+          "content": "HDCP On",
+          "tag": "On",
+          "handlers": {
+            "Click": "HdcpDesiredMinimumProtection_Click"
+          }
+        },
+        {
+          "type": "RadioButton",
+          "name": "",
+          "x_name": "HdcpOnWithTypeEnforcement",
+          "content": "HDCP On With Type Enforcement",
+          "tag": "OnWithTypeEnforcement",
+          "handlers": {
+            "Click": "HdcpDesiredMinimumProtection_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Effective protection: ()"
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Logging",
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Foundation",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.Media.Protection",
+        "Windows.Media.Streaming.Adaptive",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web.Http",
+        "Windows.Web.Http.Filters",
+        "Windows.Web.Http.Headers"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_RequestModification",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.MediaPlaybackItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 913
+        },
+        {
+          "name": "UnregisterHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.AdaptiveMediaSource"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 844
+        },
+        {
+          "name": "Page_OnLoaded",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.Initialize",
+            "MainPage.ContentManagementSystemStub",
+            "ContentSelectorControl.HideLoadUri",
+            "AzureAuthorizationMethodPanel.Children",
+            "IsChecked.Value",
+            "Enum.TryParse",
+            "ContentSelectorControl.SetSelectedModel"
+          ],
+          "new_types": [
+            "HdcpSession",
+            "MediaPlayer",
+            "MediaPlayerLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 2049
+        },
+        {
+          "name": "LoadSourceFromUriAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "AzureKeyAcquisitionMethod.AuthorizationHeader",
+            "ContentSelectorControl.SelectedModel",
+            "CacheControl.WriteBehavior",
+            "HttpCacheWriteBehavior.NoCache",
+            "DefaultRequestHeaders.Append",
+            "AdaptiveMediaSource.CreateFromUriAsync",
+            "AdaptiveMediaSourceCreationStatus.Success",
+            "MediaSource.CreateFromAdaptiveMediaSource",
+            "ExtendedError.Message",
+            "ExtendedError.HResult",
+            "Guid.NewGuid"
+          ],
+          "new_types": [
+            "HttpBaseProtocolFilter",
+            "AddAuthorizationHeaderFilter",
+            "HttpCredentialsHeaderValue",
+            "HttpClient",
+            "AdaptiveMediaSourceLogger",
+            "MediaSourceLogger",
+            "MediaPlaybackItem",
+            "MediaPlaybackItemLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 3880
+        },
+        {
+          "name": "HideDescriptionOnSmallScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DescriptionText.Visibility",
+            "Visibility.Collapsed",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 323
+        },
+        {
+          "name": "RegisterForAdaptiveMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 150
+        },
+        {
+          "name": "UnregisterForAdaptiveMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 234
+        },
+        {
+          "name": "DownloadRequested",
+          "namespaces_used": [],
+          "api_refs": [
+            "AdaptiveMediaSourceResourceType.Key",
+            "AzureKeyAcquisitionMethod.None",
+            "AzureKeyAcquisitionMethod.AuthorizationHeader",
+            "ResourceUri.Host",
+            "AzureKeyAcquisitionMethod.UrlQueryParameter",
+            "AzureKeyAcquisitionMethod.ApplicationDownloaded"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1223
+        },
+        {
+          "name": "ModifyKeyRequestUri",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.SelectedModel",
+            "Result.ResourceUri",
+            "System.Net",
+            "WebUtility.UrlEncode",
+            "ResourceUri.AbsoluteUri"
+          ],
+          "new_types": [
+            "Uri"
+          ],
+          "ui_sets": [],
+          "body_length": 750
+        },
+        {
+          "name": "AppDownloadedKeyRequest",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.SelectedModel",
+            "AzureKeyAcquisitionMethod.ApplicationDownloaded",
+            "Result.InputStream",
+            "Result.Buffer",
+            "DefaultRequestHeaders.Authorization",
+            "HttpMethod.Get",
+            "HttpCompletionOption.ResponseHeadersRead",
+            "Content.ReadAsInputStreamAsync",
+            "Content.ReadAsBufferAsync",
+            "Result.ExtendedStatus",
+            "HttpStatusCode.Unauthorized",
+            "HttpStatusCode.NotFound"
+          ],
+          "new_types": [
+            "HttpClient",
+            "HttpCredentialsHeaderValue",
+            "HttpRequestMessage"
+          ],
+          "ui_sets": [],
+          "body_length": 3254
+        },
+        {
+          "name": "DownloadFailed",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 116
+        },
+        {
+          "name": "AzureMethodSelected_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Tag.ToString",
+            "Enum.TryParse"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 275
+        },
+        {
+          "name": "HdcpDesiredMinimumProtection_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "HdcpProtection.Off",
+            "Tag.ToString",
+            "Enum.TryParse",
+            "HdcpSetProtectionResult.Success"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 866
+        },
+        {
+          "name": "SetMaxBitrateForProtectionLevel",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "EffectiveHdcpProtectionText.Text",
+            "AvailableBitrates.Count",
+            "HdcpProtection.OnWithTypeEnforcement",
+            "DesiredMaxBitrateText.Text",
+            "HdcpProtection.On",
+            "HdcpProtection.Off"
+          ],
+          "new_types": [
+            "List"
+          ],
+          "ui_sets": [],
+          "body_length": 2004
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [
+            "LoggerControl.Log"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "AddAuthorizationHeaderFilter",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "ArgumentException"
+          ],
+          "ui_sets": [],
+          "body_length": 200
+        },
+        {
+          "name": "SendRequestAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "String.Equals",
+            "RequestUri.Host",
+            "StringComparison.OrdinalIgnoreCase",
+            "Headers.Authorization"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 351
+        },
+        {
+          "name": "Dispose",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 10
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_Tuning",
+      "title": "Adaptive Streaming Tuning",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario4_Tuning.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario4_Tuning.xaml.cs",
+      "description": "This scenario shows several ways in which the app can tune the adaptive media source. Setting initial, minimum or maximum bitrates is typical and expected. Setting InboundBitsPerSecondWindow, BitrateDowngradeTriggerRatio, and DesiredBitrateHeadroomRatio should only be done after extensive testing under a range of network conditions.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "txtDownloadBitrate",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "txtPlaybackBitrate",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "InboundBitsPerSecondText",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Min Bitrate ≤"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "DesiredMinBitrateList",
+          "handlers": {
+            "SelectionChanged": "DesiredMinBitrateList_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Initial Bitrate ≤"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "InitialBitrateList",
+          "handlers": {
+            "SelectionChanged": "InitialBitrateList_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Max Bitrate"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "DesiredMaxBitrateList",
+          "handlers": {
+            "SelectionChanged": "DesiredMaxBitrateList_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Downgrade ratio:"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "BitrateDowngradeTriggerRatioText"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Set",
+          "handlers": {
+            "Click": "{x:Bind SetBitrateDowngradeTriggerRatio_Click}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Desired headroom ratio:"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "BitrateHeadroomTriggerRatioText"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Set",
+          "handlers": {
+            "Click": "{x:Bind SetDesiredBitrateHeadroomRatio_Click}"
+          }
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Logging",
+        "System",
+        "System.Linq",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.Media.Streaming.Adaptive",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web.Http"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_Tuning",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 114
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.MediaPlaybackItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 694
+        },
+        {
+          "name": "UnregisterHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.AdaptiveMediaSource"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 844
+        },
+        {
+          "name": "Page_OnLoaded",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.Initialize",
+            "MainPage.ContentManagementSystemStub"
+          ],
+          "new_types": [
+            "MediaPlayer",
+            "MediaPlayerLogger",
+            "PlayReadyHelper"
+          ],
+          "ui_sets": [],
+          "body_length": 954
+        },
+        {
+          "name": "PollForInboundBitsPerSecond",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimeSpan.FromSeconds",
+            "InboundBitsPerSecondText.Text",
+            "InboundBitsPerSecondLast.ToString",
+            "Task.Delay"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 660
+        },
+        {
+          "name": "LoadSourceFromUriAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "AdaptiveMediaSource.CreateFromUriAsync",
+            "AdaptiveMediaSourceCreationStatus.Success",
+            "MediaSource.CreateFromAdaptiveMediaSource",
+            "ExtendedError.Message",
+            "ExtendedError.HResult",
+            "Guid.NewGuid"
+          ],
+          "new_types": [
+            "AdaptiveMediaSourceLogger",
+            "BitrateHelper",
+            "MediaSourceLogger",
+            "MediaPlaybackItem",
+            "MediaPlaybackItemLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 2613
+        },
+        {
+          "name": "HideDescriptionOnSmallScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DescriptionText.Visibility",
+            "Visibility.Collapsed",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 323
+        },
+        {
+          "name": "InitializeBitrateLists",
+          "namespaces_used": [],
+          "api_refs": [
+            "AvailableBitrates.OrderByDescending",
+            "InitialBitrateList.ItemsSource",
+            "InitialBitrateList.SelectedItem",
+            "DesiredMaxBitrateList.ItemsSource",
+            "DesiredMinBitrateList.ItemsSource",
+            "DesiredMaxBitrateList.SelectedItem",
+            "DesiredMinBitrateList.SelectedItem"
+          ],
+          "new_types": [
+            "BitrateItem"
+          ],
+          "ui_sets": [],
+          "body_length": 906
+        },
+        {
+          "name": "IsValidBitrateCombination",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 493
+        },
+        {
+          "name": "InitialBitrateList_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "AddedItems.Count",
+            "Bitrate.Value",
+            "InitialBitrateList.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 634
+        },
+        {
+          "name": "DesiredMinBitrateList_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "AddedItems.Count",
+            "DesiredMinBitrateList.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 628
+        },
+        {
+          "name": "DesiredMaxBitrateList_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "AddedItems.Count",
+            "DesiredMaxBitrateList.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 628
+        },
+        {
+          "name": "SetBitrateDowngradeTriggerRatio_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "BitrateDowngradeTriggerRatioText.Text",
+            "AdvancedSettings.BitrateDowngradeTriggerRatio"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 243
+        },
+        {
+          "name": "SetDesiredBitrateHeadroomRatio_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "BitrateDowngradeTriggerRatioText.Text",
+            "AdvancedSettings.DesiredBitrateHeadroomRatio"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 242
+        },
+        {
+          "name": "RegisterForAdaptiveMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 176
+        },
+        {
+          "name": "UnregisterForAdaptiveMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 260
+        },
+        {
+          "name": "DownloadBitrateChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 125
+        },
+        {
+          "name": "UpdateDownloadBitrateAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal"
+          ],
+          "new_types": [
+            "DispatchedHandler"
+          ],
+          "ui_sets": [],
+          "body_length": 312
+        },
+        {
+          "name": "PlaybackBitrateChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 125
+        },
+        {
+          "name": "UpdatePlaybackBitrateAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal"
+          ],
+          "new_types": [
+            "DispatchedHandler"
+          ],
+          "ui_sets": [],
+          "body_length": 312
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [
+            "LoggerControl.Log"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "BitrateItem",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 42
+        },
+        {
+          "name": "ToString",
+          "namespaces_used": [],
+          "api_refs": [
+            "Bitrate.ToString"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 82
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5_Metadata",
+      "title": "Metadata",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario5_Metadata.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario5_Metadata.xaml.cs",
+      "description": "This scenario shows several ways in which the app can consume or create timed metadata. Enter your own: HLS manifest URI which contains m3u8 comments or ID3 tags in the TS segments; or DASH manifest URI with fMp4 segments that contain emsg boxes (stce35 will be parsed to insert ads).",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Logging",
+        "System",
+        "System.Linq",
+        "System.Text",
+        "System.Threading.Tasks",
+        "Windows.Foundation.Collections",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.Media.Streaming.Adaptive",
+        "Windows.Storage.Streams",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web.Http"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5_Metadata",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.MediaPlaybackItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 531
+        },
+        {
+          "name": "UnregisterHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.AdaptiveMediaSource"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 954
+        },
+        {
+          "name": "Page_OnLoaded",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.Initialize",
+            "MainPage.ContentManagementSystemStub",
+            "ContentSelectorControl.SetAutoPlay"
+          ],
+          "new_types": [
+            "MediaPlayer",
+            "MediaPlayerLogger",
+            "PlayReadyHelper"
+          ],
+          "ui_sets": [],
+          "body_length": 866
+        },
+        {
+          "name": "LoadSourceFromUriAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "AdaptiveMediaSource.CreateFromUriAsync",
+            "AdaptiveMediaSourceCreationStatus.Success",
+            "MediaSource.CreateFromAdaptiveMediaSource",
+            "ExtendedError.Message",
+            "ExtendedError.HResult",
+            "Guid.NewGuid"
+          ],
+          "new_types": [
+            "AdaptiveMediaSourceLogger",
+            "MediaSourceLogger",
+            "MediaPlaybackItem",
+            "MediaPlaybackItemLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 2252
+        },
+        {
+          "name": "HideDescriptionOnSmallScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DescriptionText.Visibility",
+            "Visibility.Collapsed",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 323
+        },
+        {
+          "name": "RegisterForMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 87
+        },
+        {
+          "name": "UnregisterForMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 87
+        },
+        {
+          "name": "Source_OpenOperationCompleted",
+          "namespaces_used": [],
+          "api_refs": [
+            "CustomProperties.TryGetValue",
+            "TrackingEventCue.CreateTrackingEventsTrack"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 559
+        },
+        {
+          "name": "RegisterForMediaPlaybackItemEvents",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimedMetadataTracks.Count"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1014
+        },
+        {
+          "name": "UnregisterForMediaPlaybackItemEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 234
+        },
+        {
+          "name": "Item_TimedMetadataTracksChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimedMetadataTracks.Count",
+            "CollectionChange.ItemInserted",
+            "CollectionChange.Reset"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 615
+        },
+        {
+          "name": "RegisterMetadataHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.CustomProperties",
+            "MediaTrackKind.TimedMetadata",
+            "TimedMetadataKind.Data",
+            "TimedMetadataKind.Custom",
+            "String.Equals",
+            "StringComparison.OrdinalIgnoreCase",
+            "TimedMetadataTracks.SetPresentationMode",
+            "TimedMetadataTrackPresentationMode.ApplicationPresented"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [],
+          "body_length": 3320
+        },
+        {
+          "name": "UnregisterMetadataHandlers",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 711
+        },
+        {
+          "name": "ScheduleAdFromScte35Payload",
+          "namespaces_used": [],
+          "api_refs": [
+            "PlaybackItem.Source",
+            "StringSplitOptions.RemoveEmptyEntries",
+            "Position.HasValue",
+            "PresentationTimeStamp.HasValue",
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "MediaPlayer.PlaybackSession",
+            "TimeSpan.FromSeconds",
+            "PresentationTimeStamp.Value",
+            "Position.Value",
+            "TimeSpan.FromTicks",
+            "PlaybackSession.Position",
+            "Ams.Position",
+            "Position.GetValueOrDefault",
+            "Ams.PresentationTimeStamp",
+            "PresentationTimeStamp.GetValueOrDefault",
+            "Ams.ProgramDateTime",
+            "ProgramDateTime.GetValueOrDefault",
+            "MediaBreakInsertionMethod.Replace",
+            "MediaBreakInsertionMethod.Interrupt",
+            "TimeSpan.Zero",
+            "PlaybackList.Items",
+            "MediaSource.CreateFromUri",
+            "PlaybackItem.BreakSchedule",
+            "MediaPlayer.BreakManager"
+          ],
+          "new_types": [
+            "Uri",
+            "MediaBreak",
+            "MediaPlaybackItem"
+          ],
+          "ui_sets": [],
+          "body_length": 6973
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [
+            "LoggerControl.Log"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario6_AdInsertion",
+      "title": "Ad Insertion",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario6_AdInsertion.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario6_AdInsertion.xaml.cs",
+      "description": "This scenario demonstrates simple Ad insertion with playback progress reporting. We add two pre-roll ads, two mid-roll ads at 10% into the main content, and a post-roll ad. For each of these ads, and the main content, we re-use the Custom TimedMetadataTracks from the Metadata sample to raise playback progress events.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Logging",
+        "System",
+        "System.Linq",
+        "System.Text",
+        "System.Threading.Tasks",
+        "Windows.Foundation.Collections",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.Media.Streaming.Adaptive",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web.Http"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario6_AdInsertion",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.MediaPlaybackItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 529
+        },
+        {
+          "name": "UnregisterHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.AdaptiveMediaSource"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 954
+        },
+        {
+          "name": "Page_OnLoaded",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.Initialize",
+            "MainPage.ContentManagementSystemStub"
+          ],
+          "new_types": [
+            "MediaPlayer",
+            "MediaPlayerLogger",
+            "PlayReadyHelper"
+          ],
+          "ui_sets": [],
+          "body_length": 772
+        },
+        {
+          "name": "LoadSourceFromUriAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "AdaptiveMediaSource.CreateFromUriAsync",
+            "AdaptiveMediaSourceCreationStatus.Success",
+            "MediaSource.CreateFromAdaptiveMediaSource",
+            "ExtendedError.Message",
+            "ExtendedError.HResult"
+          ],
+          "new_types": [
+            "AdaptiveMediaSourceLogger",
+            "MediaSourceLogger",
+            "MediaPlaybackItem",
+            "MediaPlaybackItemLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 2437
+        },
+        {
+          "name": "HideDescriptionOnSmallScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DescriptionText.Visibility",
+            "Visibility.Collapsed",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 323
+        },
+        {
+          "name": "CreateMediaBreaksForItem",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaSource.CreateFromUri",
+            "Source.CustomProperties",
+            "BreakSchedule.PrerollBreak",
+            "MediaBreakInsertionMethod.Interrupt",
+            "PlaybackList.Items",
+            "MediaSource.OpenOperationCompleted",
+            "Source.OpenOperationCompleted",
+            "MediaPlaybackItem.FindFromMediaSource",
+            "Duration.HasValue",
+            "TimeSpan.MaxValue",
+            "Source.AdaptiveMediaSource",
+            "TimeSpan.FromMinutes",
+            "Duration.Value",
+            "TimeSpan.FromTicks",
+            "MediaBreakInsertionMethod.Replace",
+            "BreakSchedule.InsertMidrollBreak",
+            "BreakSchedule.PostrollBreak"
+          ],
+          "new_types": [
+            "Uri",
+            "MediaPlaybackItem",
+            "MediaBreak"
+          ],
+          "ui_sets": [],
+          "body_length": 5152
+        },
+        {
+          "name": "RegisterForMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 87
+        },
+        {
+          "name": "UnregisterForMediaSourceEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 87
+        },
+        {
+          "name": "Source_OpenOperationCompleted",
+          "namespaces_used": [],
+          "api_refs": [
+            "CustomProperties.TryGetValue",
+            "TrackingEventCue.CreateTrackingEventsTrack"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 558
+        },
+        {
+          "name": "RegisterForMediaPlaybackItemEvents",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimedMetadataTracks.Count"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1014
+        },
+        {
+          "name": "UnregisterForMediaPlaybackItemEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 234
+        },
+        {
+          "name": "Item_TimedMetadataTracksChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimedMetadataTracks.Count",
+            "CollectionChange.ItemInserted",
+            "CollectionChange.Reset"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 615
+        },
+        {
+          "name": "RegisterMetadataHandlers",
+          "namespaces_used": [],
+          "api_refs": [
+            "Source.CustomProperties",
+            "MediaTrackKind.TimedMetadata",
+            "TimedMetadataKind.Custom",
+            "TimedMetadataTracks.SetPresentationMode",
+            "TimedMetadataTrackPresentationMode.ApplicationPresented"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [],
+          "body_length": 1484
+        },
+        {
+          "name": "UnregisterMetadataHandlers",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 174
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [
+            "LoggerControl.Log"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "class": "Scenario7_LiveSeekableRange",
+      "title": "Live Seekable Range",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario7_LiveSeekableRange.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdaptiveStreaming\\cs\\Scenario7_LiveSeekableRange.xaml.cs",
+      "description": "This scenario demonstrates a seekable range in Live content, also known as a Live DVR window.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "This scenario demonstrates a seekable range in Live content, also known as a Live DVR window."
+        },
+        {
+          "type": "MediaPlayerElement",
+          "name": "",
+          "x_name": "mediaPlayerElement"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "MaxSeekableWindowSize"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "MaxSeekableWindowSize",
+          "text": "MaxSeekableWindowSize"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "DesiredSeekableWindowSize"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "DesiredSeekableWindowSize",
+          "text": "DesiredSeekableWindowSize"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "DesiredSeekableWindowSizeButton",
+          "content": "Set",
+          "handlers": {
+            "Click": "DesiredSeekableWindowSizeButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "DesiredLiveOffset"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "DesiredLiveOffset",
+          "text": "DesiredLiveOffset"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "DesiredLiveOffsetButton",
+          "content": "Set",
+          "handlers": {
+            "Click": "DesiredLiveOffsetButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "MinLiveOffset"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "MinLiveOffset",
+          "text": "MinLiveOffset"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "StartPosition"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StartPosition",
+          "text": "Start"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "CurrentPosition"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "CurrentPosition",
+          "text": "Current"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "EndPosition"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "EndPosition",
+          "text": "End"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "PositionSlider"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "LogCurrentTimeCorrelation",
+          "content": "Log Times",
+          "handlers": {
+            "Click": "LogCurrentTimeCorrelation_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GoToStart",
+          "content": "GoToStart",
+          "handlers": {
+            "Click": "GoToStart_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "<<15m",
+          "tag": "-00:15:00",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "<<5m",
+          "tag": "-00:05:00",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "<<30s",
+          "tag": "-00:00:30",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "<<2s",
+          "tag": "-00:00:02",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "PlayButton",
+          "handlers": {
+            "Click": "Play_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "PauseButton",
+          "handlers": {
+            "Click": "Pause_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "2s>>",
+          "tag": "00:00:02",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "30s>>",
+          "tag": "00:00:30",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "5m>>",
+          "tag": "00:05:00",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "15m>>",
+          "tag": "00:15:00",
+          "handlers": {
+            "Click": "SeekFixedAmount_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "GoToLive",
+          "content": "GoToLive",
+          "handlers": {
+            "Click": "GoToLive_Click"
+          }
+        }
+      ],
+      "usings": [
+        "SDKTemplate.Helpers",
+        "SDKTemplate.Logging",
+        "SDKTemplate.Logging.Extensions",
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Media",
+        "Windows.Media.Core",
+        "Windows.Media.Playback",
+        "Windows.Media.Streaming.Adaptive",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web.Http"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario7_LiveSeekableRange",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.MediaPlaybackItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 658
+        },
+        {
+          "name": "UnregisterHandlers",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 288
+        },
+        {
+          "name": "Page_OnLoaded",
+          "namespaces_used": [],
+          "api_refs": [
+            "ContentSelectorControl.Initialize",
+            "MainPage.ContentManagementSystemStub",
+            "ContentSelectorControl.SetAutoPlay",
+            "LoggerControl.Height"
+          ],
+          "new_types": [
+            "MediaPlayer",
+            "MediaPlayerLogger",
+            "PlayReadyHelper"
+          ],
+          "ui_sets": [],
+          "body_length": 1226
+        },
+        {
+          "name": "LoadSourceFromUriAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "AdaptiveMediaSource.CreateFromUriAsync",
+            "AdaptiveMediaSourceCreationStatus.Success",
+            "MediaSource.CreateFromAdaptiveMediaSource",
+            "MaxSeekableWindowSize.HasValue",
+            "ExtendedError.Message",
+            "ExtendedError.HResult",
+            "Guid.NewGuid"
+          ],
+          "new_types": [
+            "AdaptiveMediaSourceLogger",
+            "MediaSourceLogger",
+            "MediaPlaybackItem",
+            "MediaPlaybackItemLogger"
+          ],
+          "ui_sets": [],
+          "body_length": 2159
+        },
+        {
+          "name": "HideDescriptionOnSmallScreen",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DescriptionText.Visibility",
+            "Visibility.Collapsed",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 323
+        },
+        {
+          "name": "DesiredSeekableWindowSizeButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.Source",
+            "DesiredSeekableWindowSize.GetValueOrDefault",
+            "TimeSpan.TryParse",
+            "DesiredSeekableWindowSize.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 537
+        },
+        {
+          "name": "DesiredLiveOffsetButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.Source",
+            "TimeSpan.TryParse",
+            "DesiredLiveOffset.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 493
+        },
+        {
+          "name": "UpdateSeekableWindowControls",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.Source"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 204
+        },
+        {
+          "name": "UpdateSeekableWindowControls",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "MaxSeekableWindowSize.Text",
+            "MaxSeekableWindowSize.HasValue",
+            "MaxSeekableWindowSize.Value",
+            "DesiredSeekableWindowSize.Text",
+            "DesiredSeekableWindowSize.HasValue",
+            "DesiredSeekableWindowSize.Value",
+            "DesiredLiveOffset.Text",
+            "DesiredLiveOffset.ToString",
+            "MinLiveOffset.Text",
+            "MinLiveOffset.HasValue",
+            "MinLiveOffset.Value"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 800
+        },
+        {
+          "name": "RegisterForPositionUpdateControls",
+          "namespaces_used": [],
+          "api_refs": [
+            "PositionSlider.Minimum",
+            "PositionSlider.Maximum",
+            "PositionSlider.Value",
+            "PlaybackSession.PositionChanged",
+            "PlaybackSession.SeekableRangesChanged"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 480
+        },
+        {
+          "name": "PositionUpdateControl_SourceChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimeSpan.FromHours",
+            "TimeSpan.Zero"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 130
+        },
+        {
+          "name": "UnregisterForPositionUpdateControl",
+          "namespaces_used": [],
+          "api_refs": [
+            "PlaybackSession.PositionChanged",
+            "PlaybackSession.SeekableRangesChanged"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 272
+        },
+        {
+          "name": "PositionUpdateControl_SeekableRangesChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 130
+        },
+        {
+          "name": "UpdateSeekableRangesControl",
+          "namespaces_used": [],
+          "api_refs": [
+            "SeekableRanges.Count",
+            "SeekableRanges.First",
+            "SeekableRangeMin.Start",
+            "SeekableRanges.Last",
+            "SeekableRangeMax.End",
+            "TimeSpan.FromHours",
+            "TimeSpan.Zero",
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "StartPosition.Text",
+            "EndPosition.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1096
+        },
+        {
+          "name": "PositionUpdateControl_PositionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "CurrentPosition.Text",
+            "PositionSlider.Value"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 434
+        },
+        {
+          "name": "SeekToRequestedPosition",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.PlaybackSession"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 167
+        },
+        {
+          "name": "GetPlaybackPosition",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimeSpan.Zero",
+            "TimeSpan.FromTicks",
+            "MinPosition.Ticks"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 226
+        },
+        {
+          "name": "GetSliderPositionAtPlaybackPosition",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimeSpan.Zero",
+            "LoggerControl.Log",
+            "LogViewLoggingLevel.Error"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 685
+        },
+        {
+          "name": "SeekFixedAmount_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "TimeSpan.Zero",
+            "Tag.ToString",
+            "TimeSpan.TryParse",
+            "MediaPlayer.PlaybackSession"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 416
+        },
+        {
+          "name": "Play_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.PlaybackSession",
+            "MediaPlaybackState.Paused",
+            "MediaPlayer.Play"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 201
+        },
+        {
+          "name": "Pause_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.PlaybackSession",
+            "MediaPlaybackState.Playing",
+            "MediaPlayer.Pause"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 206
+        },
+        {
+          "name": "GoToStart_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.PlaybackSession"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 489
+        },
+        {
+          "name": "GoToLive_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.PlaybackSession"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 508
+        },
+        {
+          "name": "RegisterForDiscreteControls",
+          "namespaces_used": [],
+          "api_refs": [
+            "PlaybackSession.PlaybackStateChanged"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 164
+        },
+        {
+          "name": "UnregisterForDiscreteControls",
+          "namespaces_used": [],
+          "api_refs": [
+            "PlaybackSession.PlaybackStateChanged"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 259
+        },
+        {
+          "name": "MediaPlayer_PlaybackSession_PlaybackStateChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "MediaPlaybackState.None",
+            "MediaPlaybackState.Opening",
+            "MediaPlaybackState.Buffering",
+            "PlayButton.IsEnabled",
+            "PauseButton.IsEnabled",
+            "MediaPlaybackState.Playing",
+            "MediaPlaybackState.Paused"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1060
+        },
+        {
+          "name": "LogCurrentTimeCorrelation_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "MediaPlayer.Source"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 329
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [
+            "LoggerControl.Log"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        }
+      ]
+    }
+  ]
+}

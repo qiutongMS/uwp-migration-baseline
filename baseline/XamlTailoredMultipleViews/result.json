@@ -1,0 +1,70 @@
+﻿{
+    "sample":  "XamlTailoredMultipleViews",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlTailoredMultipleViews\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok-generic",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.TailoredViews.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.TailoredViews.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.TailoredViews.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "MainPage (generic)",
+                          "initial_capture":  "00_main.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Button: Home",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__01_Button_Home.png"
+                                          },
+                                          {
+                                              "name":  "Button: More app bar",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_MainPage__02_Button_More_app_bar.png"
+                                          },
+                                          {
+                                              "name":  "Button: \u003cunnamed\u003e",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__03_Button__unnamed_.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: \u003cunnamed\u003e",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__04_ListItem__unnamed_.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: \u003cunnamed\u003e",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__05_ListItem__unnamed_.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: \u003cunnamed\u003e",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__06_ListItem__unnamed_.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: OneHandedUse_TailoredMultipleViews.ViewModel.Model",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__07_ListItem_OneHandedUse_TailoredMultipleViews.ViewModel.Model.png"
+                                          },
+                                          {
+                                              "name":  "ListItem: OneHandedUse_TailoredMultipleViews.ViewModel.Model",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_MainPage__08_ListItem_OneHandedUse_TailoredMultipleViews.ViewModel.Model.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

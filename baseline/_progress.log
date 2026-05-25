@@ -1,0 +1,855 @@
+[18:17:34] === RUN-ALL START: 38 sample(s) matching '*' ===
+[18:17:34] [1/38] >>> AdaptiveStreaming START
+[18:17:35]     analyze=ok scenarios=7
+[18:17:35]     build+deploy+launch+capture+uninstall START...
+[18:18:48]     build=ok deploy=ok launch=ok capture=ok shots=28
+[18:18:48] [1/38] <<< AdaptiveStreaming DONE in 74s
+[18:18:48] [2/38] >>> ApplicationData START
+[18:18:48]     analyze=ok scenarios=7
+[18:18:48]     build+deploy+launch+capture+uninstall START...
+[18:19:09]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:19:09] [2/38] <<< ApplicationData DONE in 21s
+[18:19:09] [3/38] >>> AssociationLaunching START
+[18:19:09]     analyze=ok scenarios=4
+[18:19:09]     build+deploy+launch+capture+uninstall START...
+[18:19:42]     build=ok deploy=ok launch=ok capture=ok shots=7
+[18:19:42] [3/38] <<< AssociationLaunching DONE in 33s
+[18:19:42] [4/38] >>> BackgroundMediaPlayback START
+[18:19:42]     analyze=ok scenarios=1
+[18:19:42]     build+deploy+launch+capture+uninstall START...
+[18:20:03]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:20:03] [4/38] <<< BackgroundMediaPlayback DONE in 21s
+[18:20:03] [5/38] >>> BasicInput START
+[18:20:03]     analyze=ok scenarios=0
+[18:20:03]     build+deploy+launch+capture+uninstall START...
+[18:20:35]     build=ok deploy=ok launch=ok capture=ok shots=7
+[18:20:35] [5/38] <<< BasicInput DONE in 32s
+[18:20:35] [6/38] >>> BasicSuspension START
+[18:20:35]     analyze=ok scenarios=0
+[18:20:35]     build+deploy+launch+capture+uninstall START...
+[18:20:55]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:20:55] [6/38] <<< BasicSuspension DONE in 20s
+[18:20:55] [7/38] >>> Calendar START
+[18:20:55]     analyze=ok scenarios=5
+[18:20:55]     build+deploy+launch+capture+uninstall START...
+[18:21:24]     build=ok deploy=ok launch=ok capture=ok shots=10
+[18:21:24] [7/38] <<< Calendar DONE in 29s
+[18:21:24] [8/38] >>> CameraAdvancedCapture START
+[18:21:24]     analyze=ok scenarios=0
+[18:21:24]     build+deploy+launch+capture+uninstall START...
+[18:21:42]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:21:42] [8/38] <<< CameraAdvancedCapture DONE in 19s
+[18:21:42] [9/38] >>> CameraFaceDetection START
+[18:21:43]     analyze=ok scenarios=0
+[18:21:43]     build+deploy+launch+capture+uninstall START...
+[18:22:02]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:22:02] [9/38] <<< CameraFaceDetection DONE in 19s
+[18:22:02] [10/38] >>> CameraFrames START
+[18:22:02]     analyze=ok scenarios=2
+[18:22:02]     build+deploy+launch+capture+uninstall START...
+[18:22:27]     build=ok deploy=ok launch=ok capture=ok shots=3
+[18:22:27] [10/38] <<< CameraFrames DONE in 26s
+[18:22:27] [11/38] >>> CameraGetPreviewFrame START
+[18:22:28]     analyze=ok scenarios=0
+[18:22:28]     build+deploy+launch+capture+uninstall START...
+[18:22:46]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:22:46] [11/38] <<< CameraGetPreviewFrame DONE in 19s
+[18:22:46] [12/38] >>> CameraManualControls START
+[18:22:46]     analyze=ok scenarios=0
+[18:22:46]     build+deploy+launch+capture+uninstall START...
+[18:23:07]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:23:07] [12/38] <<< CameraManualControls DONE in 20s
+[18:23:07] [13/38] >>> CameraProfile START
+[18:23:07]     analyze=ok scenarios=3
+[18:23:07]     build+deploy+launch+capture+uninstall START...
+[18:23:35]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:23:35] [13/38] <<< CameraProfile DONE in 28s
+[18:23:35] [14/38] >>> CameraResolution START
+[18:23:35]     analyze=ok scenarios=3
+[18:23:35]     build+deploy+launch+capture+uninstall START...
+[18:24:06]     build=ok deploy=ok launch=ok capture=ok shots=6
+[18:24:06] [14/38] <<< CameraResolution DONE in 31s
+[18:24:06] [15/38] >>> CameraStarterKit START
+[18:24:06]     analyze=ok scenarios=0
+[18:24:06]     build+deploy+launch+capture+uninstall START...
+[18:24:24]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:24:24] [15/38] <<< CameraStarterKit DONE in 19s
+[18:24:24] [16/38] >>> CameraVideoStabilization START
+[18:24:25]     analyze=ok scenarios=0
+[18:24:25]     build+deploy+launch+capture+uninstall START...
+[18:24:43]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:24:44] [16/38] <<< CameraVideoStabilization DONE in 19s
+[18:24:44] [17/38] >>> Clipboard START
+[18:24:44]     analyze=ok scenarios=0
+[18:24:44]     build+deploy+launch+capture+uninstall START...
+[18:25:29]     build=ok deploy=ok launch=ok capture=ok shots=15
+[18:25:29] [17/38] <<< Clipboard DONE in 46s
+[18:25:29] [18/38] >>> ContactCards START
+[18:25:30]     analyze=ok scenarios=3
+[18:25:30]     build+deploy+launch+capture+uninstall START...
+[18:26:02]     build=ok deploy=ok launch=ok capture=ok shots=8
+[18:26:02] [18/38] <<< ContactCards DONE in 32s
+[18:26:02] [19/38] >>> CustomEditControl START
+[18:26:02]     analyze=ok scenarios=1
+[18:26:02]     build+deploy+launch+capture+uninstall START...
+[18:26:25]     build=ok deploy=ok launch=ok capture=ok shots=1
+[18:26:25] [19/38] <<< CustomEditControl DONE in 23s
+[18:26:25] [20/38] >>> DateTimeFormatting START
+[18:26:25]     analyze=ok scenarios=6
+[18:26:25]     build+deploy+launch+capture+uninstall START...
+[18:27:07]     build=ok deploy=ok launch=ok capture=ok shots=12
+[18:27:07] [20/38] <<< DateTimeFormatting DONE in 43s
+[18:27:07] [21/38] >>> FileAccess START
+[18:27:08]     analyze=ok scenarios=11
+[18:27:08]     build+deploy+launch+capture+uninstall START...
+[18:28:13]     build=ok deploy=ok launch=ok capture=ok shots=27
+[18:28:13] [21/38] <<< FileAccess DONE in 66s
+[18:28:13] [22/38] >>> FilePicker START
+[18:28:13]     analyze=ok scenarios=5
+[18:28:13]     build+deploy+launch+capture+uninstall START...
+[18:28:48]     build=ok deploy=ok launch=ok capture=ok shots=8
+[18:28:48] [22/38] <<< FilePicker DONE in 35s
+[18:28:48] [23/38] >>> FolderEnumeration START
+[18:28:48]     analyze=ok scenarios=4
+[18:28:48]     build+deploy+launch+capture+uninstall START...
+[18:29:25]     build=ok deploy=ok launch=ok capture=ok shots=10
+[18:29:25] [23/38] <<< FolderEnumeration DONE in 37s
+[18:29:25] [24/38] >>> Package START
+[18:29:25]     analyze=ok scenarios=3
+[18:29:25]     build+deploy+launch+capture+uninstall START...
+[18:29:53]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:29:53] [24/38] <<< Package DONE in 28s
+[18:29:53] [25/38] >>> Printing START
+[18:29:53]     analyze=ok scenarios=6
+[18:29:53]     build+deploy+launch+capture+uninstall START...
+[18:30:24]     build=ok deploy=ok launch=ok capture=ok shots=6
+[18:30:24] [25/38] <<< Printing DONE in 31s
+[18:30:24] [26/38] >>> RadialController START
+[18:30:24]     analyze=ok scenarios=2
+[18:30:24]     build+deploy+launch+capture+uninstall START...
+[18:30:44]     build=ok deploy=ok launch=failed capture=pending shots=0
+[18:30:44] [26/38] <<< RadialController DONE in 20s
+[18:30:44] [27/38] >>> SystemMediaTransportControls START
+[18:30:44]     analyze=ok scenarios=1
+[18:30:44]     build+deploy+launch+capture+uninstall START...
+[18:31:05]     build=ok deploy=ok launch=ok capture=ok shots=1
+[18:31:05] [27/38] <<< SystemMediaTransportControls DONE in 21s
+[18:31:05] [28/38] >>> TouchKeyboard START
+[18:31:05]     analyze=ok scenarios=4
+[18:31:05]     build+deploy+launch+capture+uninstall START...
+[18:31:39]     build=ok deploy=ok launch=ok capture=ok shots=7
+[18:31:39] [28/38] <<< TouchKeyboard DONE in 34s
+[18:31:39] [29/38] >>> UserInteractionMode START
+[18:31:39]     analyze=ok scenarios=1
+[18:31:39]     build+deploy+launch+capture+uninstall START...
+[18:32:00]     build=ok deploy=ok launch=ok capture=ok shots=1
+[18:32:00] [29/38] <<< UserInteractionMode DONE in 21s
+[18:32:00] [30/38] >>> XamlBind START
+[18:32:00]     analyze=ok scenarios=0
+[18:32:00]     build+deploy+launch+capture+uninstall START...
+[18:32:55]     build=ok deploy=ok launch=ok capture=partial shots=14
+[18:32:55] [30/38] <<< XamlBind DONE in 55s
+[18:32:55] [31/38] >>> XamlBottomUpList START
+[18:32:56]     analyze=ok scenarios=2
+[18:32:56]     build+deploy+launch+capture+uninstall START...
+[18:33:24]     build=ok deploy=ok launch=ok capture=ok shots=5
+[18:33:25] [31/38] <<< XamlBottomUpList DONE in 29s
+[18:33:25] [32/38] >>> XamlCustomMediaTransportControls START
+[18:33:25]     analyze=ok scenarios=0
+[18:33:25]     build+deploy+launch+capture+uninstall START...
+[18:33:44]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:33:44] [32/38] <<< XamlCustomMediaTransportControls DONE in 19s
+[18:33:44] [33/38] >>> XamlDragAndDrop START
+[18:33:44]     analyze=ok scenarios=3
+[18:33:44]     build+deploy+launch+capture+uninstall START...
+[18:34:12]     build=ok deploy=ok launch=ok capture=ok shots=3
+[18:34:12] [33/38] <<< XamlDragAndDrop DONE in 29s
+[18:34:12] [34/38] >>> XamlFocusVisuals START
+[18:34:13]     analyze=ok scenarios=0
+[18:34:13]     build+deploy+launch+capture+uninstall START...
+[18:34:36]     build=ok deploy=ok launch=ok capture=ok shots=2
+[18:34:36] [34/38] <<< XamlFocusVisuals DONE in 23s
+[18:34:36] [35/38] >>> XamlListView START
+[18:34:36]     analyze=ok scenarios=6
+[18:34:36]     build+deploy+launch+capture+uninstall START...
+[18:35:23]     build=ok deploy=ok launch=ok capture=ok shots=15
+[18:35:23] [35/38] <<< XamlListView DONE in 48s
+[18:35:23] [36/38] >>> XamlMasterDetail START
+[18:35:23]     analyze=ok scenarios=0
+[18:35:23]     build+deploy+launch+capture+uninstall START...
+[18:35:32]     build=failed deploy=pending launch=pending capture=pending shots=0
+[18:35:32] [36/38] <<< XamlMasterDetail DONE in 8s
+[18:35:32] [37/38] >>> XamlStateTriggers START
+[18:35:32]     analyze=ok scenarios=0
+[18:35:32]     build+deploy+launch+capture+uninstall START...
+[18:35:51]     build=ok deploy=ok launch=ok capture=partial shots=0
+[18:35:51] [37/38] <<< XamlStateTriggers DONE in 19s
+[18:35:51] [38/38] >>> XamlTailoredMultipleViews START
+[18:35:51]     analyze=ok scenarios=0
+[18:35:51]     build+deploy+launch+capture+uninstall START...
+[18:35:51]     build=failed deploy=pending launch=pending capture=pending shots=0
+[18:35:51] [38/38] <<< XamlTailoredMultipleViews DONE in 1s
+[18:35:51] === RUN-ALL COMPLETE: 38 samples ===
+[18:35:52] Built: 36 / 38; Captured: 24 / 38; Total screenshots: 211
+[18:35:52] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[18:35:52] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:16:24] === RUN-ALL START: 1 sample(s) matching 'XamlMasterDetail' ===
+[10:16:24] [1/1] >>> XamlMasterDetail START
+[10:16:24]     analyze=ok scenarios=0
+[10:16:24]     build+deploy+launch+capture+uninstall START...
+[10:16:46]     build=ok deploy=ok launch=ok capture=partial shots=1
+[10:16:47] [1/1] <<< XamlMasterDetail DONE in 23s
+[10:16:47] === RUN-ALL COMPLETE: 1 samples ===
+[10:16:47] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 1
+[10:16:47] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:16:47] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:17:01] === RUN-ALL START: 1 sample(s) matching 'XamlTailoredMultipleViews' ===
+[10:17:01] [1/1] >>> XamlTailoredMultipleViews START
+[10:17:02]     analyze=ok scenarios=0
+[10:17:02]     build+deploy+launch+capture+uninstall START...
+[10:17:21]     build=failed deploy=pending launch=pending capture=pending shots=0
+[10:17:21] [1/1] <<< XamlTailoredMultipleViews DONE in 19s
+[10:17:21] === RUN-ALL COMPLETE: 1 samples ===
+[10:17:21] Built: 0 / 1; Captured: 0 / 1; Total screenshots: 0
+[10:17:21] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:17:21] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:17:58] === RUN-ALL START: 1 sample(s) matching 'XamlTailoredMultipleViews' ===
+[10:17:58] [1/1] >>> XamlTailoredMultipleViews START
+[10:17:58]     analyze=ok scenarios=0
+[10:17:58]     build+deploy+launch+capture+uninstall START...
+[10:18:07]     build=failed deploy=pending launch=pending capture=pending shots=0
+[10:18:07] [1/1] <<< XamlTailoredMultipleViews DONE in 9s
+[10:18:07] === RUN-ALL COMPLETE: 1 samples ===
+[10:18:07] Built: 0 / 1; Captured: 0 / 1; Total screenshots: 0
+[10:18:07] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:18:07] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:18:48] === RUN-ALL START: 1 sample(s) matching 'XamlTailoredMultipleViews' ===
+[10:18:48] [1/1] >>> XamlTailoredMultipleViews START
+[10:18:48]     analyze=ok scenarios=0
+[10:18:48]     build+deploy+launch+capture+uninstall START...
+[10:18:59]     build=ok deploy=failed launch=pending capture=pending shots=0
+[10:18:59] [1/1] <<< XamlTailoredMultipleViews DONE in 11s
+[10:18:59] === RUN-ALL COMPLETE: 1 samples ===
+[10:18:59] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[10:18:59] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:18:59] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:19:41] === RUN-ALL START: 1 sample(s) matching 'XamlTailoredMultipleViews' ===
+[10:19:41] [1/1] >>> XamlTailoredMultipleViews START
+[10:19:41]     analyze=ok scenarios=0
+[10:19:41]     build+deploy+launch+capture+uninstall START...
+[10:19:56]     build=ok deploy=ok launch=ok capture=partial shots=1
+[10:19:56] [1/1] <<< XamlTailoredMultipleViews DONE in 15s
+[10:19:57] === RUN-ALL COMPLETE: 1 samples ===
+[10:19:57] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 1
+[10:19:57] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:19:57] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:24:59] === RUN-ALL START: 1 sample(s) matching 'RadialController' ===
+[10:24:59] [1/1] >>> RadialController START
+[10:25:00]     analyze=ok scenarios=2
+[10:25:00]     build+deploy+launch+capture+uninstall START...
+[10:25:12]     build=ok deploy=ok launch=failed capture=pending shots=0
+[10:25:12] [1/1] <<< RadialController DONE in 13s
+[10:25:12] === RUN-ALL COMPLETE: 1 samples ===
+[10:25:12] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[10:25:12] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:25:12] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:27:03] === RUN-ALL START: 1 sample(s) matching 'RadialController' ===
+[10:27:03] [1/1] >>> RadialController START
+[10:27:03]     analyze=ok scenarios=2
+[10:27:03]     build+deploy+launch+capture+uninstall START...
+[10:27:46]     build=ok deploy=ok launch=ok capture=partial shots=1
+[10:27:46] [1/1] <<< RadialController DONE in 43s
+[10:27:46] === RUN-ALL COMPLETE: 1 samples ===
+[10:27:46] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 1
+[10:27:46] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:27:46] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:47:04] === RUN-ALL START: 1 sample(s) matching 'CameraStarterKit' ===
+[10:47:04] [1/1] >>> CameraStarterKit START
+[10:47:04]     analyze=ok scenarios=0
+[10:47:04]     build+deploy+launch+capture+uninstall START...
+[10:47:45]     build=ok deploy=ok launch=ok capture=failed shots=1
+[10:47:45] [1/1] <<< CameraStarterKit DONE in 41s
+[10:47:45] === RUN-ALL COMPLETE: 1 samples ===
+[10:47:45] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 1
+[10:47:45] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:47:45] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:52:48] === RUN-ALL START: 1 sample(s) matching 'Calendar' ===
+[10:52:48] Loaded 38 existing entries from _status.csv
+[10:52:48] [1/1] >>> Calendar START
+[10:52:49]     analyze=ok scenarios=5
+[10:52:49]     build+deploy+launch+capture+uninstall START...
+[10:53:16]     build=skipped deploy=ok launch=ok capture=ok shots=11
+[10:53:16] [1/1] <<< Calendar DONE in 28s
+[10:53:16] === RUN-ALL COMPLETE: 1 samples ===
+[10:53:16] Built: 0 / 1; Captured: 1 / 1; Total screenshots: 11
+[10:53:16] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:53:16] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[10:58:19] === RUN-ALL START: 1 sample(s) matching 'XamlMasterDetail' ===
+[10:58:19] Loaded 38 existing entries from _status.csv
+[10:58:19] [1/1] >>> XamlMasterDetail START
+[10:58:19]     analyze=ok scenarios=0
+[10:58:19]     build+deploy+launch+capture+uninstall START...
+[10:58:35]     build=ok deploy=ok launch=ok capture=ok-generic shots=3
+[10:58:35] [1/1] <<< XamlMasterDetail DONE in 16s
+[10:58:35] === RUN-ALL COMPLETE: 1 samples ===
+[10:58:35] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 3
+[10:58:35] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[10:58:35] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:00:25] === RUN-ALL START: 1 sample(s) matching 'XamlMasterDetail' ===
+[11:00:25] Loaded 38 existing entries from _status.csv
+[11:00:25] [1/1] >>> XamlMasterDetail START
+[11:00:25]     analyze=ok scenarios=0
+[11:00:25]     build+deploy+launch+capture+uninstall START...
+[11:00:45]     build=ok deploy=ok launch=ok capture=ok-generic shots=5
+[11:00:45] [1/1] <<< XamlMasterDetail DONE in 21s
+[11:00:45] === RUN-ALL COMPLETE: 1 samples ===
+[11:00:45] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 5
+[11:00:45] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:00:45] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:01:37] === RUN-ALL START: 1 sample(s) matching 'BackgroundMediaPlayback' ===
+[11:01:37] Loaded 38 existing entries from _status.csv
+[11:01:37] [1/1] >>> BackgroundMediaPlayback START
+[11:01:37]     analyze=ok scenarios=1
+[11:01:37]     build+deploy+launch+capture+uninstall START...
+[11:01:59]     build=ok deploy=ok launch=ok capture=partial shots=0
+[11:01:59] [1/1] <<< BackgroundMediaPlayback DONE in 21s
+[11:01:59] === RUN-ALL COMPLETE: 1 samples ===
+[11:01:59] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[11:01:59] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:01:59] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:01:59] === RUN-ALL START: 1 sample(s) matching 'BasicSuspension' ===
+[11:01:59] Loaded 38 existing entries from _status.csv
+[11:01:59] [1/1] >>> BasicSuspension START
+[11:02:00]     analyze=ok scenarios=0
+[11:02:00]     build+deploy+launch+capture+uninstall START...
+[11:02:23]     build=ok deploy=ok launch=ok capture=ok-generic shots=4
+[11:02:23] [1/1] <<< BasicSuspension DONE in 24s
+[11:02:23] === RUN-ALL COMPLETE: 1 samples ===
+[11:02:23] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 4
+[11:02:23] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:02:23] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:02:24] === RUN-ALL START: 1 sample(s) matching 'RadialController' ===
+[11:02:24] Loaded 38 existing entries from _status.csv
+[11:02:24] [1/1] >>> RadialController START
+[11:02:24]     analyze=ok scenarios=2
+[11:02:24]     build+deploy+launch+capture+uninstall START...
+[11:02:39]     build=ok deploy=ok launch=ok capture=partial shots=0
+[11:02:39] [1/1] <<< RadialController DONE in 15s
+[11:02:39] === RUN-ALL COMPLETE: 1 samples ===
+[11:02:39] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[11:02:39] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:02:39] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:02:40] === RUN-ALL START: 1 sample(s) matching 'XamlCustomMediaTransportControls' ===
+[11:02:40] Loaded 38 existing entries from _status.csv
+[11:02:40] [1/1] >>> XamlCustomMediaTransportControls START
+[11:02:40]     analyze=ok scenarios=0
+[11:02:40]     build+deploy+launch+capture+uninstall START...
+[11:03:08]     build=ok deploy=ok launch=ok capture=ok-generic shots=7
+[11:03:08] [1/1] <<< XamlCustomMediaTransportControls DONE in 28s
+[11:03:08] === RUN-ALL COMPLETE: 1 samples ===
+[11:03:08] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 7
+[11:03:08] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:03:08] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:03:09] === RUN-ALL START: 1 sample(s) matching 'XamlStateTriggers' ===
+[11:03:09] Loaded 38 existing entries from _status.csv
+[11:03:09] [1/1] >>> XamlStateTriggers START
+[11:03:09]     analyze=ok scenarios=0
+[11:03:09]     build+deploy+launch+capture+uninstall START...
+[11:03:33]     build=ok deploy=ok launch=ok capture=ok-generic shots=5
+[11:03:33] [1/1] <<< XamlStateTriggers DONE in 23s
+[11:03:33] === RUN-ALL COMPLETE: 1 samples ===
+[11:03:33] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 5
+[11:03:33] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:03:33] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:03:33] === RUN-ALL START: 1 sample(s) matching 'XamlTailoredMultipleViews' ===
+[11:03:33] Loaded 38 existing entries from _status.csv
+[11:03:33] [1/1] >>> XamlTailoredMultipleViews START
+[11:03:34]     analyze=ok scenarios=0
+[11:03:34]     build+deploy+launch+capture+uninstall START...
+[11:04:01]     build=ok deploy=ok launch=ok capture=ok-generic shots=9
+[11:04:01] [1/1] <<< XamlTailoredMultipleViews DONE in 28s
+[11:04:01] === RUN-ALL COMPLETE: 1 samples ===
+[11:04:01] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 9
+[11:04:01] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:04:01] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:05:44] === RUN-ALL START: 1 sample(s) matching 'BackgroundMediaPlayback' ===
+[11:05:44] Loaded 38 existing entries from _status.csv
+[11:05:44] [1/1] >>> BackgroundMediaPlayback START
+[11:05:44]     analyze=ok scenarios=1
+[11:05:44]     build+deploy+launch+capture+uninstall START...
+[11:06:16]     build=ok deploy=ok launch=ok capture=partial shots=0
+[11:06:16] [1/1] <<< BackgroundMediaPlayback DONE in 32s
+[11:06:16] === RUN-ALL COMPLETE: 1 samples ===
+[11:06:16] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[11:06:16] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:06:16] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:06:17] === RUN-ALL START: 1 sample(s) matching 'RadialController' ===
+[11:06:17] Loaded 38 existing entries from _status.csv
+[11:06:17] [1/1] >>> RadialController START
+[11:06:17]     analyze=ok scenarios=2
+[11:06:17]     build+deploy+launch+capture+uninstall START...
+[11:06:50]     build=ok deploy=ok launch=ok capture=partial shots=0
+[11:06:50] [1/1] <<< RadialController DONE in 33s
+[11:06:50] === RUN-ALL COMPLETE: 1 samples ===
+[11:06:50] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[11:06:50] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:06:50] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:08:31] === RUN-ALL START: 1 sample(s) matching 'BackgroundMediaPlayback' ===
+[11:08:31] Loaded 38 existing entries from _status.csv
+[11:08:31] [1/1] >>> BackgroundMediaPlayback START
+[11:08:31]     analyze=ok scenarios=1
+[11:08:31]     build+deploy+launch+capture+uninstall START...
+[11:09:07]     build=ok deploy=ok launch=ok capture=failed shots=0
+[11:09:07] [1/1] <<< BackgroundMediaPlayback DONE in 36s
+[11:09:07] === RUN-ALL COMPLETE: 1 samples ===
+[11:09:07] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[11:09:07] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:09:07] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:09:08] === RUN-ALL START: 1 sample(s) matching 'RadialController' ===
+[11:09:08] Loaded 38 existing entries from _status.csv
+[11:09:08] [1/1] >>> RadialController START
+[11:09:08]     analyze=ok scenarios=2
+[11:09:09]     build+deploy+launch+capture+uninstall START...
+[11:09:42]     build=ok deploy=ok launch=ok capture=partial shots=0
+[11:09:42] [1/1] <<< RadialController DONE in 33s
+[11:09:42] === RUN-ALL COMPLETE: 1 samples ===
+[11:09:42] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[11:09:42] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:09:42] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:09:42] === RUN-ALL START: 1 sample(s) matching 'Calendar' ===
+[11:09:42] Loaded 38 existing entries from _status.csv
+[11:09:42] [1/1] >>> Calendar START
+[11:09:43]     analyze=ok scenarios=5
+[11:09:43]     build+deploy+launch+capture+uninstall START...
+[11:10:12]     build=ok deploy=ok launch=ok capture=ok shots=11
+[11:10:12] [1/1] <<< Calendar DONE in 29s
+[11:10:12] === RUN-ALL COMPLETE: 1 samples ===
+[11:10:12] Built: 1 / 1; Captured: 1 / 1; Total screenshots: 11
+[11:10:12] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:10:12] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:10:13] === RUN-ALL START: 1 sample(s) matching 'XamlMasterDetail' ===
+[11:10:13] Loaded 38 existing entries from _status.csv
+[11:10:13] [1/1] >>> XamlMasterDetail START
+[11:10:13]     analyze=ok scenarios=0
+[11:10:13]     build+deploy+launch+capture+uninstall START...
+[11:10:32]     build=ok deploy=ok launch=ok capture=ok-generic shots=5
+[11:10:32] [1/1] <<< XamlMasterDetail DONE in 19s
+[11:10:32] === RUN-ALL COMPLETE: 1 samples ===
+[11:10:32] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 5
+[11:10:32] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:10:32] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[11:15:14] === RUN-ALL START: 38 sample(s) matching '*' ===
+[11:15:14] Loaded 38 existing entries from _status.csv
+[11:15:14] [1/38] >>> AdaptiveStreaming START
+[11:15:15]     analyze=ok scenarios=7
+[11:15:15]     build+deploy+launch+capture+uninstall START...
+[11:16:16]     build=skipped deploy=ok launch=ok capture=ok shots=29
+[11:16:16] [1/38] <<< AdaptiveStreaming DONE in 62s
+[11:16:16] [2/38] >>> ApplicationData START
+[11:16:17]     analyze=ok scenarios=7
+[11:16:17]     build+deploy+launch+capture+uninstall START...
+[11:16:44]     build=skipped deploy=ok launch=ok capture=ok shots=6
+[11:16:44] [2/38] <<< ApplicationData DONE in 28s
+[11:16:45] [3/38] >>> AssociationLaunching START
+[11:16:45]     analyze=ok scenarios=4
+[11:16:45]     build+deploy+launch+capture+uninstall START...
+[11:17:07]     build=skipped deploy=ok launch=ok capture=ok shots=8
+[11:17:07] [3/38] <<< AssociationLaunching DONE in 23s
+[11:17:07] [4/38] >>> BackgroundMediaPlayback START
+[11:17:07]     analyze=ok scenarios=1
+[11:17:07]     build+deploy+launch+capture+uninstall START...
+[11:17:38]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[11:17:38] [4/38] <<< BackgroundMediaPlayback DONE in 31s
+[11:17:38] [5/38] >>> BasicInput START
+[11:17:39]     analyze=ok scenarios=0
+[11:17:39]     build+deploy+launch+capture+uninstall START...
+[11:18:01]     build=skipped deploy=ok launch=ok capture=ok shots=8
+[11:18:01] [5/38] <<< BasicInput DONE in 23s
+[11:18:01] [6/38] >>> BasicSuspension START
+[11:18:01]     analyze=ok scenarios=0
+[11:18:01]     build+deploy+launch+capture+uninstall START...
+[11:18:17]     build=skipped deploy=ok launch=ok capture=ok-generic shots=4
+[11:18:17] [6/38] <<< BasicSuspension DONE in 15s
+[11:18:17] [7/38] >>> Calendar START
+[11:18:17]     analyze=ok scenarios=5
+[11:18:17]     build+deploy+launch+capture+uninstall START...
+[11:18:43]     build=skipped deploy=ok launch=ok capture=ok shots=11
+[11:18:43] [7/38] <<< Calendar DONE in 26s
+[11:18:43] [8/38] >>> CameraAdvancedCapture START
+[11:18:43]     analyze=ok scenarios=0
+[11:18:43]     build+deploy+launch+capture+uninstall START...
+[11:19:15]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[11:19:15] [8/38] <<< CameraAdvancedCapture DONE in 32s
+[11:19:15] [9/38] >>> CameraFaceDetection START
+[11:19:15]     analyze=ok scenarios=0
+[11:19:15]     build+deploy+launch+capture+uninstall START...
+[11:19:48]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[11:19:48] [9/38] <<< CameraFaceDetection DONE in 33s
+[11:19:48] [10/38] >>> CameraFrames START
+[11:19:48]     analyze=ok scenarios=2
+[11:19:48]     build+deploy+launch+capture+uninstall START...
+[11:20:03]     build=skipped deploy=ok launch=ok capture=ok shots=3
+[11:20:03] [10/38] <<< CameraFrames DONE in 15s
+[11:20:03] [11/38] >>> CameraGetPreviewFrame START
+[11:20:03]     analyze=ok scenarios=0
+[11:20:03]     build+deploy+launch+capture+uninstall START...
+[11:20:13]     build=skipped deploy=ok launch=ok capture=ok-generic shots=1
+[11:20:13] [11/38] <<< CameraGetPreviewFrame DONE in 10s
+[11:20:13] [12/38] >>> CameraManualControls START
+[11:20:13]     analyze=ok scenarios=0
+[11:20:13]     build+deploy+launch+capture+uninstall START...
+[11:20:45]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[11:20:45] [12/38] <<< CameraManualControls DONE in 32s
+[11:20:45] [13/38] >>> CameraProfile START
+[11:20:45]     analyze=ok scenarios=3
+[11:20:45]     build+deploy+launch+capture+uninstall START...
+[11:21:03]     build=skipped deploy=ok launch=ok capture=ok shots=6
+[11:21:03] [13/38] <<< CameraProfile DONE in 19s
+[11:21:03] [14/38] >>> CameraResolution START
+[11:21:04]     analyze=ok scenarios=3
+[11:21:04]     build+deploy+launch+capture+uninstall START...
+[11:21:25]     build=skipped deploy=ok launch=ok capture=ok shots=7
+[11:21:25] [14/38] <<< CameraResolution DONE in 21s
+[11:21:25] [15/38] >>> CameraStarterKit START
+[11:21:25]     analyze=ok scenarios=0
+[11:21:25]     build+deploy+launch+capture+uninstall START...
+[11:21:57]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[11:21:57] [15/38] <<< CameraStarterKit DONE in 32s
+[11:21:57] [16/38] >>> CameraVideoStabilization START
+[11:21:57]     analyze=ok scenarios=0
+[11:21:57]     build+deploy+launch+capture+uninstall START...
+[11:22:29]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[11:22:29] [16/38] <<< CameraVideoStabilization DONE in 33s
+[11:22:29] [17/38] >>> Clipboard START
+[11:22:29]     analyze=ok scenarios=0
+[11:22:29]     build+deploy+launch+capture+uninstall START...
+[11:23:05]     build=skipped deploy=ok launch=ok capture=ok shots=16
+[11:23:05] [17/38] <<< Clipboard DONE in 36s
+[11:23:05] [18/38] >>> ContactCards START
+[11:23:05]     analyze=ok scenarios=3
+[11:23:05]     build+deploy+launch+capture+uninstall START...
+[11:23:28]     build=skipped deploy=ok launch=ok capture=ok shots=9
+[11:23:28] [18/38] <<< ContactCards DONE in 23s
+[11:23:28] [19/38] >>> CustomEditControl START
+[11:23:29]     analyze=ok scenarios=1
+[11:23:29]     build+deploy+launch+capture+uninstall START...
+[11:23:40]     build=skipped deploy=ok launch=ok capture=ok shots=2
+[11:23:40] [19/38] <<< CustomEditControl DONE in 12s
+[11:23:40] [20/38] >>> DateTimeFormatting START
+[11:23:41]     analyze=ok scenarios=6
+[11:23:41]     build+deploy+launch+capture+uninstall START...
+[11:24:10]     build=skipped deploy=ok launch=ok capture=ok shots=13
+[11:24:10] [20/38] <<< DateTimeFormatting DONE in 30s
+[11:24:10] [21/38] >>> FileAccess START
+[11:24:11]     analyze=ok scenarios=11
+[11:24:11]     build+deploy+launch+capture+uninstall START...
+[11:25:14]     build=skipped deploy=ok launch=ok capture=ok shots=32
+[11:25:14] [21/38] <<< FileAccess DONE in 64s
+[11:25:14] [22/38] >>> FilePicker START
+[11:25:15]     analyze=ok scenarios=5
+[11:25:15]     build+deploy+launch+capture+uninstall START...
+[11:25:40]     build=skipped deploy=ok launch=ok capture=ok shots=9
+[11:25:40] [22/38] <<< FilePicker DONE in 26s
+[11:25:40] [23/38] >>> FolderEnumeration START
+[11:25:41]     analyze=ok scenarios=4
+[11:25:41]     build+deploy+launch+capture+uninstall START...
+[11:26:05]     build=skipped deploy=ok launch=ok capture=ok shots=10
+[11:26:05] [23/38] <<< FolderEnumeration DONE in 25s
+[11:26:05] [24/38] >>> Package START
+[11:26:06]     analyze=ok scenarios=3
+[11:26:06]     build+deploy+launch+capture+uninstall START...
+[11:26:16]     build=skipped deploy=ok launch=ok capture=ok-generic shots=1
+[11:26:16] [24/38] <<< Package DONE in 11s
+[11:26:16] [25/38] >>> Printing START
+[11:26:16]     analyze=ok scenarios=6
+[11:26:17]     build+deploy+launch+capture+uninstall START...
+[11:26:48]     build=skipped deploy=ok launch=ok capture=ok shots=7
+[11:26:48] [25/38] <<< Printing DONE in 32s
+[11:26:48] [26/38] >>> RadialController START
+[11:26:49]     analyze=ok scenarios=2
+[11:26:49]     build+deploy+launch+capture+uninstall START...
+[11:27:18]     build=skipped deploy=ok launch=ok capture=crashed shots=0
+[11:27:18] [26/38] <<< RadialController DONE in 30s
+[11:27:18] [27/38] >>> SystemMediaTransportControls START
+[11:27:18]     analyze=ok scenarios=1
+[11:27:18]     build+deploy+launch+capture+uninstall START...
+[11:27:32]     build=skipped deploy=ok launch=ok capture=ok shots=2
+[11:27:32] [27/38] <<< SystemMediaTransportControls DONE in 14s
+[11:27:32] [28/38] >>> TouchKeyboard START
+[11:27:32]     analyze=ok scenarios=4
+[11:27:32]     build+deploy+launch+capture+uninstall START...
+[11:28:07]     build=skipped deploy=ok launch=ok capture=ok shots=8
+[11:28:07] [28/38] <<< TouchKeyboard DONE in 36s
+[11:28:07] [29/38] >>> UserInteractionMode START
+[11:28:08]     analyze=ok scenarios=1
+[11:28:08]     build+deploy+launch+capture+uninstall START...
+[11:28:21]     build=skipped deploy=ok launch=ok capture=ok shots=2
+[11:28:21] [29/38] <<< UserInteractionMode DONE in 13s
+[11:28:21] [30/38] >>> XamlBind START
+[11:28:21]     analyze=ok scenarios=0
+[11:28:21]     build+deploy+launch+capture+uninstall START...
+[11:29:55]     build=skipped deploy=ok launch=ok capture=ok shots=23
+[11:29:55] [30/38] <<< XamlBind DONE in 94s
+[11:29:55] [31/38] >>> XamlBottomUpList START
+[11:29:55]     analyze=ok scenarios=2
+[11:29:55]     build+deploy+launch+capture+uninstall START...
+[11:30:25]     build=skipped deploy=ok launch=ok capture=ok shots=6
+[11:30:25] [31/38] <<< XamlBottomUpList DONE in 30s
+[11:30:25] [32/38] >>> XamlCustomMediaTransportControls START
+[11:30:25]     analyze=ok scenarios=0
+[11:30:25]     build+deploy+launch+capture+uninstall START...
+[11:30:56]     build=skipped deploy=ok launch=ok capture=ok-generic shots=7
+[11:30:56] [32/38] <<< XamlCustomMediaTransportControls DONE in 31s
+[11:30:56] [33/38] >>> XamlDragAndDrop START
+[11:30:57]     analyze=ok scenarios=3
+[11:30:57]     build+deploy+launch+capture+uninstall START...
+[11:31:19]     build=skipped deploy=ok launch=ok capture=ok shots=4
+[11:31:19] [33/38] <<< XamlDragAndDrop DONE in 23s
+[11:31:19] [34/38] >>> XamlFocusVisuals START
+[11:31:19]     analyze=ok scenarios=0
+[11:31:19]     build+deploy+launch+capture+uninstall START...
+[11:31:36]     build=skipped deploy=ok launch=ok capture=ok shots=3
+[11:31:36] [34/38] <<< XamlFocusVisuals DONE in 17s
+[11:31:36] [35/38] >>> XamlListView START
+[11:31:37]     analyze=ok scenarios=6
+[11:31:37]     build+deploy+launch+capture+uninstall START...
+[11:32:44]     build=skipped deploy=ok launch=ok capture=ok shots=16
+[11:32:44] [35/38] <<< XamlListView DONE in 67s
+[11:32:44] [36/38] >>> XamlMasterDetail START
+[11:32:44]     analyze=ok scenarios=0
+[11:32:44]     build+deploy+launch+capture+uninstall START...
+[11:33:09]     build=skipped deploy=ok launch=ok capture=ok-generic shots=5
+[11:33:09] [36/38] <<< XamlMasterDetail DONE in 25s
+[11:33:09] [37/38] >>> XamlStateTriggers START
+[11:33:09]     analyze=ok scenarios=0
+[11:33:09]     build+deploy+launch+capture+uninstall START...
+[11:33:32]     build=skipped deploy=ok launch=ok capture=ok-generic shots=5
+[11:33:32] [37/38] <<< XamlStateTriggers DONE in 24s
+[11:33:32] [38/38] >>> XamlTailoredMultipleViews START
+[11:33:32]     analyze=ok scenarios=0
+[11:33:32]     build+deploy+launch+capture+uninstall START...
+[11:34:12]     build=skipped deploy=ok launch=ok capture=ok-generic shots=9
+[11:34:12] [38/38] <<< XamlTailoredMultipleViews DONE in 40s
+[11:34:13] === RUN-ALL COMPLETE: 38 samples ===
+[11:34:13] Built: 0 / 38; Captured: 24 / 38; Total screenshots: 272
+[11:34:13] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[11:34:13] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[12:39:36] === RUN-ALL START: 1 sample(s) matching 'FilePicker' ===
+[12:39:36] Loaded 38 existing entries from _status.csv
+[12:39:36] [1/1] >>> FilePicker START
+[12:39:37]     analyze=ok scenarios=5
+[12:39:37]     build+deploy+launch+capture+uninstall START...
+[12:40:05]     build=skipped deploy=ok launch=ok capture=ok shots=12
+[12:40:05] [1/1] <<< FilePicker DONE in 29s
+[12:40:05] === RUN-ALL COMPLETE: 1 samples ===
+[12:40:05] Built: 0 / 1; Captured: 1 / 1; Total screenshots: 12
+[12:40:05] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[12:40:05] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[12:40:41] === RUN-ALL START: 38 sample(s) matching '*' ===
+[12:40:41] Loaded 38 existing entries from _status.csv
+[12:40:41] [1/38] >>> AdaptiveStreaming START
+[12:40:43]     analyze=ok scenarios=7
+[12:40:43]     build+deploy+launch+capture+uninstall START...
+[12:41:43]     build=skipped deploy=ok launch=ok capture=ok shots=29
+[12:41:43] [1/38] <<< AdaptiveStreaming DONE in 62s
+[12:41:43] [2/38] >>> ApplicationData START
+[12:41:44]     analyze=ok scenarios=7
+[12:41:44]     build+deploy+launch+capture+uninstall START...
+[12:42:02]     build=skipped deploy=ok launch=ok capture=ok shots=6
+[12:42:02] [2/38] <<< ApplicationData DONE in 19s
+[12:42:02] [3/38] >>> AssociationLaunching START
+[12:42:03]     analyze=ok scenarios=4
+[12:42:03]     build+deploy+launch+capture+uninstall START...
+[12:42:23]     build=skipped deploy=ok launch=ok capture=ok shots=8
+[12:42:23] [3/38] <<< AssociationLaunching DONE in 21s
+[12:42:23] [4/38] >>> BackgroundMediaPlayback START
+[12:42:24]     analyze=ok scenarios=1
+[12:42:24]     build+deploy+launch+capture+uninstall START...
+[12:42:55]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[12:42:55] [4/38] <<< BackgroundMediaPlayback DONE in 32s
+[12:42:55] [5/38] >>> BasicInput START
+[12:42:56]     analyze=ok scenarios=0
+[12:42:56]     build+deploy+launch+capture+uninstall START...
+[12:43:17]     build=skipped deploy=ok launch=ok capture=ok shots=8
+[12:43:17] [5/38] <<< BasicInput DONE in 22s
+[12:43:17] [6/38] >>> BasicSuspension START
+[12:43:17]     analyze=ok scenarios=0
+[12:43:17]     build+deploy+launch+capture+uninstall START...
+[12:43:33]     build=skipped deploy=ok launch=ok capture=ok-generic shots=4
+[12:43:33] [6/38] <<< BasicSuspension DONE in 16s
+[12:43:33] [7/38] >>> Calendar START
+[12:43:34]     analyze=ok scenarios=5
+[12:43:34]     build+deploy+launch+capture+uninstall START...
+[12:43:59]     build=skipped deploy=ok launch=ok capture=ok shots=11
+[12:43:59] [7/38] <<< Calendar DONE in 26s
+[12:43:59] [8/38] >>> CameraAdvancedCapture START
+[12:44:00]     analyze=ok scenarios=0
+[12:44:00]     build+deploy+launch+capture+uninstall START...
+[12:44:31]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[12:44:31] [8/38] <<< CameraAdvancedCapture DONE in 31s
+[12:44:31] [9/38] >>> CameraFaceDetection START
+[12:44:31]     analyze=ok scenarios=0
+[12:44:31]     build+deploy+launch+capture+uninstall START...
+[12:44:58]     build=skipped deploy=ok launch=ok capture=crashed shots=0
+[12:44:58] [9/38] <<< CameraFaceDetection DONE in 27s
+[12:44:58] [10/38] >>> CameraFrames START
+[12:44:58]     analyze=ok scenarios=2
+[12:44:58]     build+deploy+launch+capture+uninstall START...
+[12:45:14]     build=skipped deploy=ok launch=ok capture=ok shots=3
+[12:45:14] [10/38] <<< CameraFrames DONE in 16s
+[12:45:14] [11/38] >>> CameraGetPreviewFrame START
+[12:45:14]     analyze=ok scenarios=0
+[12:45:14]     build+deploy+launch+capture+uninstall START...
+[12:45:23]     build=skipped deploy=ok launch=ok capture=ok-generic shots=1
+[12:45:23] [11/38] <<< CameraGetPreviewFrame DONE in 9s
+[12:45:23] [12/38] >>> CameraManualControls START
+[12:45:23]     analyze=ok scenarios=0
+[12:45:23]     build+deploy+launch+capture+uninstall START...
+[12:45:54]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[12:45:54] [12/38] <<< CameraManualControls DONE in 31s
+[12:45:54] [13/38] >>> CameraProfile START
+[12:45:54]     analyze=ok scenarios=3
+[12:45:54]     build+deploy+launch+capture+uninstall START...
+[12:46:11]     build=skipped deploy=ok launch=ok capture=ok shots=6
+[12:46:11] [13/38] <<< CameraProfile DONE in 18s
+[12:46:11] [14/38] >>> CameraResolution START
+[12:46:12]     analyze=ok scenarios=3
+[12:46:12]     build+deploy+launch+capture+uninstall START...
+[12:46:32]     build=skipped deploy=ok launch=ok capture=ok shots=7
+[12:46:32] [14/38] <<< CameraResolution DONE in 21s
+[12:46:32] [15/38] >>> CameraStarterKit START
+[12:46:32]     analyze=ok scenarios=0
+[12:46:32]     build+deploy+launch+capture+uninstall START...
+[12:47:03]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[12:47:03] [15/38] <<< CameraStarterKit DONE in 31s
+[12:47:03] [16/38] >>> CameraVideoStabilization START
+[12:47:03]     analyze=ok scenarios=0
+[12:47:03]     build+deploy+launch+capture+uninstall START...
+[12:47:35]     build=skipped deploy=ok launch=ok capture=failed shots=0
+[12:47:35] [16/38] <<< CameraVideoStabilization DONE in 31s
+[12:47:35] [17/38] >>> Clipboard START
+[12:47:35]     analyze=ok scenarios=0
+[12:47:35]     build+deploy+launch+capture+uninstall START...
+[12:48:11]     build=skipped deploy=ok launch=ok capture=ok shots=18
+[12:48:11] [17/38] <<< Clipboard DONE in 37s
+[12:48:11] [18/38] >>> ContactCards START
+[12:48:12]     analyze=ok scenarios=3
+[12:48:12]     build+deploy+launch+capture+uninstall START...
+[12:48:34]     build=skipped deploy=ok launch=ok capture=ok shots=9
+[12:48:34] [18/38] <<< ContactCards DONE in 23s
+[12:48:34] [19/38] >>> CustomEditControl START
+[12:48:34]     analyze=ok scenarios=1
+[12:48:34]     build+deploy+launch+capture+uninstall START...
+[12:48:47]     build=skipped deploy=ok launch=ok capture=ok shots=2
+[12:48:47] [19/38] <<< CustomEditControl DONE in 13s
+[12:48:47] [20/38] >>> DateTimeFormatting START
+[12:48:48]     analyze=ok scenarios=6
+[12:48:48]     build+deploy+launch+capture+uninstall START...
+[12:49:20]     build=skipped deploy=ok launch=ok capture=ok shots=13
+[12:49:20] [20/38] <<< DateTimeFormatting DONE in 33s
+[12:49:20] [21/38] >>> FileAccess START
+[12:49:21]     analyze=ok scenarios=11
+[12:49:21]     build+deploy+launch+capture+uninstall START...
+[12:50:24]     build=skipped deploy=ok launch=ok capture=ok shots=35
+[12:50:24] [21/38] <<< FileAccess DONE in 64s
+[12:50:24] [22/38] >>> FilePicker START
+[12:50:25]     analyze=ok scenarios=5
+[12:50:25]     build+deploy+launch+capture+uninstall START...
+[12:50:52]     build=skipped deploy=ok launch=ok capture=ok shots=12
+[12:50:52] [22/38] <<< FilePicker DONE in 27s
+[12:50:52] [23/38] >>> FolderEnumeration START
+[12:50:52]     analyze=ok scenarios=4
+[12:50:52]     build+deploy+launch+capture+uninstall START...
+[12:51:21]     build=skipped deploy=ok launch=ok capture=ok shots=12
+[12:51:21] [23/38] <<< FolderEnumeration DONE in 29s
+[12:51:21] [24/38] >>> Package START
+[12:51:21]     analyze=ok scenarios=3
+[12:51:21]     build+deploy+launch+capture+uninstall START...
+[12:51:39]     build=skipped deploy=ok launch=ok capture=ok shots=6
+[12:51:39] [24/38] <<< Package DONE in 18s
+[12:51:39] [25/38] >>> Printing START
+[12:51:39]     analyze=ok scenarios=6
+[12:51:39]     build+deploy+launch+capture+uninstall START...
+[12:51:58]     build=skipped deploy=ok launch=ok capture=ok shots=7
+[12:51:58] [25/38] <<< Printing DONE in 19s
+[12:51:58] [26/38] >>> RadialController START
+[12:51:58]     analyze=ok scenarios=2
+[12:51:58]     build+deploy+launch+capture+uninstall START...
+[12:52:29]     build=skipped deploy=ok launch=ok capture=crashed shots=0
+[12:52:29] [26/38] <<< RadialController DONE in 31s
+[12:52:29] [27/38] >>> SystemMediaTransportControls START
+[12:52:29]     analyze=ok scenarios=1
+[12:52:29]     build+deploy+launch+capture+uninstall START...
+[12:52:42]     build=skipped deploy=ok launch=ok capture=ok shots=2
+[12:52:42] [27/38] <<< SystemMediaTransportControls DONE in 13s
+[12:52:42] [28/38] >>> TouchKeyboard START
+[12:52:42]     analyze=ok scenarios=4
+[12:52:42]     build+deploy+launch+capture+uninstall START...
+[12:53:02]     build=skipped deploy=ok launch=ok capture=ok shots=8
+[12:53:02] [28/38] <<< TouchKeyboard DONE in 21s
+[12:53:02] [29/38] >>> UserInteractionMode START
+[12:53:03]     analyze=ok scenarios=1
+[12:53:03]     build+deploy+launch+capture+uninstall START...
+[12:53:13]     build=skipped deploy=ok launch=ok capture=ok shots=2
+[12:53:13] [29/38] <<< UserInteractionMode DONE in 11s
+[12:53:13] [30/38] >>> XamlBind START
+[12:53:13]     analyze=ok scenarios=0
+[12:53:13]     build+deploy+launch+capture+uninstall START...
+[12:53:50]     build=skipped deploy=ok launch=ok capture=partial shots=16
+[12:53:50] [30/38] <<< XamlBind DONE in 37s
+[12:53:50] [31/38] >>> XamlBottomUpList START
+[12:53:50]     analyze=ok scenarios=2
+[12:53:50]     build+deploy+launch+capture+uninstall START...
+[12:54:11]     build=skipped deploy=ok launch=ok capture=ok shots=7
+[12:54:11] [31/38] <<< XamlBottomUpList DONE in 22s
+[12:54:11] [32/38] >>> XamlCustomMediaTransportControls START
+[12:54:11]     analyze=ok scenarios=0
+[12:54:11]     build+deploy+launch+capture+uninstall START...
+[12:54:32]     build=skipped deploy=ok launch=ok capture=ok-generic shots=7
+[12:54:32] [32/38] <<< XamlCustomMediaTransportControls DONE in 20s
+[12:54:32] [33/38] >>> XamlDragAndDrop START
+[12:54:32]     analyze=ok scenarios=3
+[12:54:32]     build+deploy+launch+capture+uninstall START...
+[12:54:47]     build=skipped deploy=ok launch=ok capture=ok shots=4
+[12:54:47] [33/38] <<< XamlDragAndDrop DONE in 15s
+[12:54:47] [34/38] >>> XamlFocusVisuals START
+[12:54:47]     analyze=ok scenarios=0
+[12:54:47]     build+deploy+launch+capture+uninstall START...
+[12:55:01]     build=skipped deploy=ok launch=ok capture=ok shots=3
+[12:55:01] [34/38] <<< XamlFocusVisuals DONE in 14s
+[12:55:01] [35/38] >>> XamlListView START
+[12:55:01]     analyze=ok scenarios=6
+[12:55:01]     build+deploy+launch+capture+uninstall START...
+[12:55:39]     build=skipped deploy=ok launch=ok capture=ok shots=16
+[12:55:39] [35/38] <<< XamlListView DONE in 38s
+[12:55:39] [36/38] >>> XamlMasterDetail START
+[12:55:39]     analyze=ok scenarios=0
+[12:55:39]     build+deploy+launch+capture+uninstall START...
+[12:55:56]     build=skipped deploy=ok launch=ok capture=ok-generic shots=5
+[12:55:56] [36/38] <<< XamlMasterDetail DONE in 17s
+[12:55:56] [37/38] >>> XamlStateTriggers START
+[12:55:56]     analyze=ok scenarios=0
+[12:55:56]     build+deploy+launch+capture+uninstall START...
+[12:56:11]     build=skipped deploy=ok launch=ok capture=ok-generic shots=5
+[12:56:11] [37/38] <<< XamlStateTriggers DONE in 15s
+[12:56:11] [38/38] >>> XamlTailoredMultipleViews START
+[12:56:11]     analyze=ok scenarios=0
+[12:56:11]     build+deploy+launch+capture+uninstall START...
+[12:56:35]     build=skipped deploy=ok launch=ok capture=ok-generic shots=9
+[12:56:35] [38/38] <<< XamlTailoredMultipleViews DONE in 24s
+[12:56:35] === RUN-ALL COMPLETE: 38 samples ===
+[12:56:35] Built: 0 / 38; Captured: 24 / 38; Total screenshots: 281
+[12:56:35] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[12:56:35] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[12:58:02] === RUN-ALL START: 0 sample(s) matching '__none__' ===
+[12:58:02] Loaded 38 existing entries from _status.csv
+[12:58:02] === RUN-ALL COMPLETE: 0 samples ===
+[12:58:02] Built: 0 / 0; Captured: 0 / 0; Total screenshots: 
+[12:58:02] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[12:58:02] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[13:32:34] === RUN-ALL START: 0 sample(s) matching '__none_dot_source__' ===
+[13:32:34] Loaded 38 existing entries from _status.csv
+[13:32:34] === RUN-ALL COMPLETE: 0 samples ===
+[13:32:34] Built: 0 / 0; Captured: 0 / 0; Total screenshots: 
+[13:32:34] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
+[13:32:34] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md

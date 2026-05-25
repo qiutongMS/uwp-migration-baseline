@@ -1,0 +1,19 @@
+{
+  "sample": "XamlBind",
+  "feature_name": null,
+  "readme_description": "Shows how to use x:Bind for data binding in XAML apps. x:Bind is a new compile time binding mechanism for XAML in windows 10,",
+  "readme_bullets": [
+    "**Use x:Bind:** It includes a wide range of bindings that cover most usage patterns.",
+    "**Use x:Bind in Data Templates:** Data Templates need to have the model type that will be used in the bindings specified on the template definition using the x:DataType attribute",
+    "**Use x:Bind with x:Phase:** x:Phase can be used with x:Bind for list scenarios to enable incremental binding and rendering of data templates to improve the panning experience on low end devices.",
+    "**Use x:Bind to bind event handlers:** x:Bind can be used in markup to specify event handlers as part of the data model, rather than requiring them to be in the code behind.",
+    "Indexing dictionaries/maps with a string. (See Basic Bindings scenario.)",
+    "Implicit bool-to-Visibility conversion. (See Other Bindings scenario.)",
+    "C-style casts. (See Other Bindings scenario.)",
+    "Function binding. (See Function Binding scenario.)"
+  ],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

@@ -1,0 +1,120 @@
+﻿{
+    "sample":  "Clipboard",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Clipboard\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Clipboard.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Clipboard.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Clipboard.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Copy and paste text",
+                          "initial_capture":  "01_1_Copy_and_paste_text__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Copy text above",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Copy_and_paste_text__after_Copy_text_above.png"
+                                          },
+                                          {
+                                              "name":  "Paste Clipboard contents",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Copy_and_paste_text__after_Paste_Clipboard_contents.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Copy and paste an image",
+                          "initial_capture":  "02_2_Copy_and_paste_an_image__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select image and copy",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Copy_and_paste_an_image__after_Select_image_and_copy.png",
+                                              "popup_capture":  "02_2_Copy_and_paste_an_image__popup_Select_image_and_copy.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Select image and copy using delayed rendering",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Copy_and_paste_an_image__after_Select_image_and_copy_using_delayed_rendering.png",
+                                              "popup_capture":  "02_2_Copy_and_paste_an_image__popup_Select_image_and_copy_using_delayed_rendering.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Paste",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Copy_and_paste_an_image__after_Paste.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Copy and paste files",
+                          "initial_capture":  "03_3_Copy_and_paste_files__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select file and copy",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Paste",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Copy_and_paste_files__after_Paste.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) History and roaming",
+                          "initial_capture":  "04_4_History_and_roaming__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Copy to clipboard",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_History_and_roaming__after_Copy_to_clipboard.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Other Clipboard operations",
+                          "initial_capture":  "05_5_Other_Clipboard_operations__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Clipboard Formats",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Other_Clipboard_operations__after_Show_Clipboard_Formats.png"
+                                          },
+                                          {
+                                              "name":  "Empty Clipboard",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Other_Clipboard_operations__after_Empty_Clipboard.png"
+                                          },
+                                          {
+                                              "name":  "Clear Output",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Other_Clipboard_operations__after_Clear_Output.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,66 @@
+﻿{
+    "sample":  "ContactCards",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ContactCards\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ContactCards.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ContactCards.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ContactCards.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Show mini contact card",
+                          "initial_capture":  "01_1_Show_mini_contact_card__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show contact card",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Show_mini_contact_card__after_Show_contact_card.png"
+                                          },
+                                          {
+                                              "name":  "Show contact card to the right",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Show_mini_contact_card__after_Show_contact_card_to_the_right.png"
+                                          },
+                                          {
+                                              "name":  "Show contact card on Phone tab",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Show_mini_contact_card__after_Show_contact_card_on_Phone_tab.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Show mini contact card with delayed information",
+                          "initial_capture":  "02_2_Show_mini_contact_card_with_delayed_information__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show contact card",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Show_mini_contact_card_with_delayed_information__after_Show_contact_card.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Show full contact card",
+                          "initial_capture":  "03_3_Show_full_contact_card__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show contact card",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Show_full_contact_card__after_Show_contact_card.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

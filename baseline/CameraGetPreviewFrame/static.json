@@ -1,0 +1,10 @@
+{
+  "sample": "CameraGetPreviewFrame",
+  "feature_name": null,
+  "readme_description": "An end-to-end sample camera app which acquires preview frames from the camera stream for further processing.",
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [],
+  "scenarios": null
+}

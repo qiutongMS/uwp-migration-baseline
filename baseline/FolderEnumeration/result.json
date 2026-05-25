@@ -1,0 +1,81 @@
+﻿{
+    "sample":  "FolderEnumeration",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FolderEnumeration\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.FolderEnumeration.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.FolderEnumeration.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.FolderEnumeration.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Enumerate files and folders in the Pictures library",
+                          "initial_capture":  "01_1_Enumerate_files_and_folders_in_the_Pictures_libr__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get files and folders",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Enumerate_files_and_folders_in_the_Pictures_libr__after_Get_files_and_folders.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Enumerate files in the Pictures library, by groups",
+                          "initial_capture":  "02_2_Enumerate_files_in_the_Pictures_library,_by_grou__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Group by month",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Enumerate_files_in_the_Pictures_library,_by_grou__after_Group_by_month.png"
+                                          },
+                                          {
+                                              "name":  "Group by rating",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Enumerate_files_in_the_Pictures_library,_by_grou__after_Group_by_rating.png"
+                                          },
+                                          {
+                                              "name":  "Group by tag",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Enumerate_files_in_the_Pictures_library,_by_grou__after_Group_by_tag.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Enumerate files in the Pictures library with prefetch APIs",
+                          "initial_capture":  "03_3_Enumerate_files_in_the_Pictures_library_with_pre__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get files",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Enumerate_files_in_the_Pictures_library_with_pre__after_Get_files.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Enumerate files in a folder and display availability",
+                          "initial_capture":  "04_4_Enumerate_files_in_a_folder_and_display_availabi__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get files",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "04_4_Enumerate_files_in_a_folder_and_display_availabi__after_Get_files.png",
+                                              "popup_capture":  "04_4_Enumerate_files_in_a_folder_and_display_availabi__popup_Get_files.png",
+                                              "popup_title":  "Select Folder"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

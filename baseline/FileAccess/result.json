@@ -1,0 +1,218 @@
+﻿{
+    "sample":  "FileAccess",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\FileAccess\\cs",
+    "build":  "skipped",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.FileAccess.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.FileAccess.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.FileAccess.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Creating a file",
+                          "initial_capture":  "01_1_Creating_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Create \u0027sample.dat\u0027",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Creating_a_file__after_Create_\u0027sample.dat\u0027.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Getting a file\u0027s parent folder",
+                          "initial_capture":  "02_2_Getting_a_file\u0027s_parent_folder__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Parent",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Getting_a_file\u0027s_parent_folder__after_Get_Parent.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Writing and reading text in a file",
+                          "initial_capture":  "03_3_Writing_and_reading_text_in_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Write",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Writing_and_reading_text_in_a_file__after_Write.png"
+                                          },
+                                          {
+                                              "name":  "Read",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Writing_and_reading_text_in_a_file__after_Read.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Writing and reading bytes in a file",
+                          "initial_capture":  "04_4_Writing_and_reading_bytes_in_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Write",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Writing_and_reading_bytes_in_a_file__after_Write.png"
+                                          },
+                                          {
+                                              "name":  "Read",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Writing_and_reading_bytes_in_a_file__after_Read.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Writing and reading using a stream",
+                          "initial_capture":  "05_5_Writing_and_reading_using_a_stream__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Write",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Writing_and_reading_using_a_stream__after_Write.png"
+                                          },
+                                          {
+                                              "name":  "Read",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Writing_and_reading_using_a_stream__after_Read.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Displaying file properties",
+                          "initial_capture":  "06_6_Displaying_file_properties__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Properties",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Displaying_file_properties__after_Show_Properties.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Persisting access to a storage item for future use",
+                          "initial_capture":  "07_7_Persisting_access_to_a_storage_item_for_future_u__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add to List",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Persisting_access_to_a_storage_item_for_future_u__after_Add_to_List.png"
+                                          },
+                                          {
+                                              "name":  "Show List",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Persisting_access_to_a_storage_item_for_future_u__after_Show_List.png"
+                                          },
+                                          {
+                                              "name":  "Open from List",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Persisting_access_to_a_storage_item_for_future_u__after_Open_from_List.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  8,
+                          "title":  "8) Copying a file",
+                          "initial_capture":  "08_8_Copying_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Copy",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "08_8_Copying_a_file__after_Copy.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  9,
+                          "title":  "9) Comparing two files to see if they are the same file",
+                          "initial_capture":  "09_9_Comparing_two_files_to_see_if_they_are_the_same___initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Compare Files",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "09_9_Comparing_two_files_to_see_if_they_are_the_same___after_Compare_Files.png",
+                                              "popup_capture":  "09_9_Comparing_two_files_to_see_if_they_are_the_same___popup_Compare_Files.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  10,
+                          "title":  "10) Deleting a file",
+                          "initial_capture":  "10_10_Deleting_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "\u0026Help",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "10_10_Deleting_a_file__after_\u0026Help.png"
+                                          },
+                                          {
+                                              "name":  "View Slider",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "10_10_Deleting_a_file__after_View_Slider.png",
+                                              "popup_capture":  "10_10_Deleting_a_file__popup_View_Slider.png",
+                                              "popup_title":  "View Slider Control"
+                                          },
+                                          {
+                                              "name":  "Organize",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "10_10_Deleting_a_file__after_Organize.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  11,
+                          "title":  "11) Attempting to get a file with no error on failure",
+                          "initial_capture":  "11_11_Attempting_to_get_a_file_with_no_error_on_failu__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "\u0026Help",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "11_11_Attempting_to_get_a_file_with_no_error_on_failu__after_\u0026Help.png"
+                                          },
+                                          {
+                                              "name":  "View Slider",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "11_11_Attempting_to_get_a_file_with_no_error_on_failu__after_View_Slider.png",
+                                              "popup_capture":  "11_11_Attempting_to_get_a_file_with_no_error_on_failu__popup_View_Slider.png",
+                                              "popup_title":  "View Slider Control"
+                                          },
+                                          {
+                                              "name":  "Organize",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "11_11_Attempting_to_get_a_file_with_no_error_on_failu__after_Organize.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}
