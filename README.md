@@ -30,7 +30,7 @@ If you want to **reproduce** the baseline (or re-run after the migration), follo
 | `ok`            | 24 | Standard scenario iteration succeeded end-to-end |
 | `ok-generic`    | 6  | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
 | `partial`       | 1  | Got some scenarios then hit a sample-specific bug (XamlBind scenario 5 has a pre-existing null-ref) |
-| `failed` / `crashed` | 7 | UWP launched but immediately crashed with `0xc000027b` (system DLL delayed-load failure) — needs a physical/console session, not RDP |
+| `failed` / `crashed` | 7 | UWP launched but immediately crashed with `0xc000027b` (system DLL delayed-load failure). 5 are Camera samples needing a physical camera in the `Camera` PnP class (RDP redirection's `RDCamera` class doesn't qualify); the remaining 2 are `BackgroundMediaPlayback` and `RadialController` which need a console session / specific hardware. |
 
 281 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list.
 

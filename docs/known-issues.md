@@ -4,21 +4,23 @@
 
 These samples build and deploy fine, but UWP host crashes immediately on launch with `0xc000027b` (`STATUS_APPLICATION_FAILED_DELAYED_LOAD`). Cause is environmental — the system DLL the sample lazy-loads is unavailable in the current session.
 
-### Group A — Camera samples (6) — need physical camera, RDP redirects don't satisfy
+### Group A — Camera samples — need physical camera, RDP redirects don't satisfy
 
-| Sample | Notes |
-|---|---|
-| `CameraAdvancedCapture`        | uses `MediaCapture` extension methods that require local DirectShow filters |
-| `CameraFaceDetection`          | same |
-| `CameraFrames`                 | same — but managed to capture 3 PNGs on some runs |
-| `CameraManualControls`         | same |
-| `CameraStarterKit`             | same |
-| `CameraVideoStabilization`     | same |
-| `CameraProfile`                | works (no live capture, just enumerates profile metadata) — 6 PNGs |
-| `CameraResolution`             | works — 7 PNGs |
-| `CameraGetPreviewFrame`        | ok-generic — 1 PNG (main page only; live preview can't render under RDP) |
+Of 9 total Camera samples, **5 fail or crash** and 1 captures only the main page when no real camera is enumerable:
 
-**Workaround**: re-run on a local console session with a physical camera plugged in.
+| Sample | Current state | Notes |
+|---|---|---|
+| `CameraAdvancedCapture`     | `failed`     | MainPage constructor calls `InitializeAsync()` → no device → crashes before window paints |
+| `CameraFaceDetection`       | `crashed`    | Window appears briefly but `PrintWindow` returns null; process dies immediately |
+| `CameraManualControls`      | `failed`     | same pattern as AdvancedCapture |
+| `CameraStarterKit`          | `failed`     | same pattern |
+| `CameraVideoStabilization`  | `failed`     | same pattern |
+| `CameraGetPreviewFrame`     | `ok-generic` | Main page captures (1 PNG); preview-frame button can't produce output |
+| `CameraFrames`              | `ok` (3 PNGs) | Works because main page is informational; no implicit InitializeAsync |
+| `CameraProfile`             | `ok` (6 PNGs) | Pure metadata enumeration, no live capture |
+| `CameraResolution`          | `ok` (7 PNGs) | same |
+
+**Workaround**: re-run on a local console session with a physical camera plugged in. RDP camera redirection sends the device through `RDCamera` class (`Remote Desktop Camera Bus`), which UWP's `DeviceClass.VideoCapture` enumeration does NOT see. To make it visible, the client (mstsc) must opt into the modern camera redirection: edit the `.rdp` file to add `camerastoredirect:s:*`, then reconnect; the camera then registers under the real `Camera` PnP class on the remote side. Alternatively just run locally.
 
 ### Group B — Other env-broken (2)
 
