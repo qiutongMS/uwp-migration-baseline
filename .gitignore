@@ -1,0 +1,19 @@
+# PowerShell artifacts
+*.psproj
+*.pssproj.user
+
+# Editor
+.vscode/
+.vs/
+*.swp
+
+# Test outputs that should never live in this repo
+# (output goes to a separate analysis dir, NOT here)
+output/
+analysis/
+samples-analysis/
+uwp-samples-analysis/
+
+# Local config overrides
+local.config.ps1
+.env
