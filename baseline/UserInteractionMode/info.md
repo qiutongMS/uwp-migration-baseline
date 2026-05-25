@@ -1,12 +1,16 @@
-#  (C#)
+# UserInteractionMode (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\UserInteractionMode\cs\`  
 > **Feature**: User interaction mode  
 > **AUMID**: `Microsoft.SDKSamples.UserInteractionMode.CS_8wekyb3d8bbwe!UserInteractionMode.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.UserInteractionMode.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to detect and respond to the user interaction mode.
+
+## Scenarios demonstrated (from README)
+- Retrieving the current user interaction mode.
+- Responding to changes in the user interaction mode.
 
 ## Build / deploy / capture status
 - build: skipped

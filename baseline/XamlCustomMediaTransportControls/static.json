@@ -9,6 +9,61 @@
   ],
   "readme_api_links": [],
   "api_namespaces": [],
-  "api_references": [],
-  "scenarios": null
+  "api_references": [
+    "MainMPE.Source",
+    "MediaSource.CreateFromUri"
+  ],
+  "scenarios": null,
+  "main_page": {
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlCustomMediaTransportControls\\cs\\MainPage.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlCustomMediaTransportControls\\cs\\MainPage.xaml.cs",
+    "controls": {
+      "type": "MediaPlayerElement",
+      "name": "",
+      "x_name": "MainMPE"
+    },
+    "usings": [
+      "System",
+      "System.Collections.Generic",
+      "System.IO",
+      "System.Linq",
+      "System.Runtime.InteropServices.WindowsRuntime",
+      "Windows.Foundation",
+      "Windows.Foundation.Collections",
+      "Windows.Media.Core",
+      "Windows.UI.Popups",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Controls.Primitives",
+      "Windows.UI.Xaml.Data",
+      "Windows.UI.Xaml.Input",
+      "Windows.UI.Xaml.Media",
+      "Windows.UI.Xaml.Navigation"
+    ],
+    "handlers": [
+      {
+        "name": "MainPage",
+        "namespaces_used": [],
+        "api_refs": [
+          "MainMPE.Source",
+          "MediaSource.CreateFromUri"
+        ],
+        "new_types": [
+          "Uri"
+        ],
+        "ui_sets": [],
+        "body_length": 252
+      },
+      {
+        "name": "CustomMTC_Liked",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [
+          "MessageDialog"
+        ],
+        "ui_sets": [],
+        "body_length": 157
+      }
+    ]
+  }
 }

@@ -2,7 +2,15 @@
   "sample": "AssociationLaunching",
   "feature_name": "Association Launching C# Sample",
   "readme_description": "Shows how to launch an app to handle a file type or a protocol (also known as custom scheme).",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "launching an  app for a file using LaunchFileAsync",
+    "handling file activation through the **Activated** event",
+    "launching an app for a protocol using LaunchUriAsync",
+    "handling protocol activation through the **Activated** event",
+    "associating the app with a website using the **AppUriHandler** extension",
+    "launching a target app and having the currently running source app remain on the screen for various amounts of screen space using LauncherOptions.DesiredRemainingView.",
+    "**Note**  LauncherOptions.DesiredRemainingView is only supported on desktop Windows when it is running in tablet mode."
+  ],
   "readme_api_links": [
     "LaunchFileAsync",
     "LaunchUriAsync",
@@ -742,5 +750,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

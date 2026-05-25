@@ -1,12 +1,24 @@
-#  (C#)
+# Package (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\Package\cs\`  
 > **Feature**: Package  
 > **AUMID**: `Microsoft.SDKSamples.PackageSample.CS_8wekyb3d8bbwe!PackageSample.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.PackageSample.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to get package info by using the Windows Runtime packaging API (Windows.ApplicationModel.Package and PackageId).
+
+## Scenarios demonstrated (from README)
+- Getting the package identity using Package.Id
+- Getting the package directory using Package.InstalledLocation
+- Getting package dependencies using Package.Dependencies
+- Getting the package description using Package.Description
+- Getting the package display name using Package.DisplayName
+- Determining whether the package is a bundle package using Package.IsBundle
+- Determining whether the package is installed in development mode using Package.IsDevelopmentMode
+- Determining whether the package is a resource package using Package.IsResourcePackage
+- Getting package logo using Package.Logo
+- Getting publisher display name of the package using Package.PublisherDisplayName
 
 ## Top-level UWP namespaces used
 - `Windows.Storage.StorageFolder`

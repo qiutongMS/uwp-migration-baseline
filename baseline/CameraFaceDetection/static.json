@@ -2,9 +2,726 @@
   "sample": "CameraFaceDetection",
   "feature_name": null,
   "readme_description": "An end-to-end sample camera application that incorporates face detection.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "**Manage the MediaCapture object** throughout the lifecycle of the app and through navigation events.",
+    "**Acquire a camera located on a specific side of the device**. In this case, the sample attempts to get the front camera.",
+    "**Start and stop the preview** to a UI element, including mirroring for front-facing cameras.",
+    "**Take a regular picture** to a file, taking into account the orientation of the device.",
+    "**Handle rotation events** for both, the device moving in space and the page orientation changing on the screen. Also apply any necessary corrections to the preview stream rotation.",
+    "**Handle MediaCapture Failed event** to clean up the MediaCapture instance when an error occurs.",
+    "**Manage the Face Detection effect**, including creation, configuration, activation/deactivation, registering for events, and cleanup.",
+    "**Render face bounding boxes** as an overlay on the camera preview, taking mirroring and rotation into account."
+  ],
   "readme_api_links": [],
-  "api_namespaces": [],
-  "api_references": [],
-  "scenarios": null
+  "api_namespaces": [
+    "Windows.Devices.Enumeration.Panel.Front",
+    "Windows.Devices.Enumeration.Panel.Unknown",
+    "Windows.UI.ViewManagement.StatusBar",
+    "Windows.UI.ViewManagement.StatusBar.GetForCurrentView",
+    "Windows.Phone.UI.Input.HardwareButtons"
+  ],
+  "api_references": [
+    "NavigationCacheMode.Disabled",
+    "Application.Current",
+    "Frame.CurrentSourcePageType",
+    "SuspendingOperation.GetDeferral",
+    "Dispatcher.RunAsync",
+    "CoreDispatcherPriority.Normal",
+    "SystemMediaTransportControlsProperty.SoundLevel",
+    "SoundLevel.Muted",
+    "SimpleOrientation.Faceup",
+    "SimpleOrientation.Facedown",
+    "FacesCanvas.Children",
+    "Debug.WriteLine",
+    "ResultFrame.DetectedFaces",
+    "Windows.Devices",
+    "Enumeration.Panel",
+    "EnclosureLocation.Panel",
+    "PreviewControl.Source",
+    "PreviewControl.FlowDirection",
+    "FlowDirection.RightToLeft",
+    "FlowDirection.LeftToRight",
+    "VideoDeviceController.GetMediaStreamProperties",
+    "MediaStreamType.VideoPreview",
+    "Properties.Add",
+    "FaceDetectionMode.HighPerformance",
+    "TimeSpan.FromMilliseconds",
+    "VideoButton.IsEnabled",
+    "MediaCaptureSettings.ConcurrentRecordAndPhotoSupported",
+    "VideoButton.Opacity",
+    "ImageEncodingProperties.CreateJpeg",
+    "CreationCollisionOption.GenerateUniqueName",
+    "MediaEncodingProfile.CreateMp4",
+    "VideoEncodingQuality.Auto",
+    "Video.Properties",
+    "PropertyValue.CreateInt32",
+    "MediaCapture.Dispose",
+    "DisplayInformation.AutoRotationPreferences",
+    "DisplayOrientations.Landscape",
+    "ApiInformation.IsTypePresent",
+    "Windows.UI",
+    "ViewManagement.StatusBar",
+    "StorageLibrary.GetLibraryAsync",
+    "KnownLibraryId.Pictures",
+    "ApplicationData.Current",
+    "DisplayOrientations.None",
+    "PhotoButton.IsEnabled",
+    "FaceDetectionButton.IsEnabled",
+    "FaceDetectionDisabledIcon.Visibility",
+    "Visibility.Visible",
+    "Visibility.Collapsed",
+    "FaceDetectionEnabledIcon.Visibility",
+    "FacesCanvas.Visibility",
+    "StartRecordingIcon.Visibility",
+    "StopRecordingIcon.Visibility",
+    "PhotoButton.Opacity",
+    "Windows.Phone",
+    "UI.Input",
+    "HardwareButtons.CameraPressed",
+    "DeviceInformation.FindAllAsync",
+    "DeviceClass.VideoCapture",
+    "BitmapDecoder.CreateAsync",
+    "FileAccessMode.ReadWrite",
+    "BitmapEncoder.CreateForTranscodingAsync",
+    "System.Photo",
+    "PropertyType.UInt16",
+    "BitmapProperties.SetPropertiesAsync",
+    "SimpleOrientation.NotRotated",
+    "DisplayOrientations.Portrait",
+    "SimpleOrientation.Rotated90DegreesCounterclockwise",
+    "SimpleOrientation.Rotated180DegreesCounterclockwise",
+    "SimpleOrientation.Rotated270DegreesCounterclockwise",
+    "DisplayOrientations.LandscapeFlipped",
+    "DisplayOrientations.PortraitFlipped",
+    "PhotoOrientation.Rotate90",
+    "PhotoOrientation.Rotate180",
+    "PhotoOrientation.Rotate270",
+    "PhotoOrientation.Normal",
+    "PhotoButton.RenderTransform",
+    "VideoButton.RenderTransform",
+    "FaceDetectionButton.RenderTransform",
+    "FacesCanvas.RenderTransform",
+    "FacesCanvas.Width",
+    "FacesCanvas.Height",
+    "Canvas.SetLeft",
+    "Canvas.SetTop",
+    "FacesCanvas.FlowDirection",
+    "Colors.Blue",
+    "Colors.DeepSkyBlue"
+  ],
+  "scenarios": null,
+  "main_page": {
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFaceDetection\\shared\\MainPage.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFaceDetection\\cs\\MainPage.xaml.cs",
+    "controls": [
+      {
+        "type": "CaptureElement",
+        "name": "PreviewControl",
+        "x_name": ""
+      },
+      {
+        "type": "Canvas",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "Canvas",
+        "name": "FacesCanvas",
+        "x_name": ""
+      },
+      {
+        "type": "Button",
+        "name": "PhotoButton",
+        "x_name": "",
+        "handlers": {
+          "Click": "PhotoButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "VideoButton",
+        "x_name": "",
+        "handlers": {
+          "Click": "VideoButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "FaceDetectionButton",
+        "x_name": "",
+        "handlers": {
+          "Click": "FaceDetectionButton_Click"
+        }
+      }
+    ],
+    "usings": [
+      "System",
+      "System.Diagnostics",
+      "System.Linq",
+      "System.Threading.Tasks",
+      "Windows.ApplicationModel",
+      "Windows.Devices.Enumeration",
+      "Windows.Devices.Sensors",
+      "Windows.Foundation",
+      "Windows.Foundation.Metadata",
+      "Windows.Graphics.Display",
+      "Windows.Graphics.Imaging",
+      "Windows.Media",
+      "Windows.Media.Core",
+      "Windows.Media.Capture",
+      "Windows.Media.MediaProperties",
+      "Windows.Phone.UI.Input",
+      "Windows.Storage",
+      "Windows.Storage.FileProperties",
+      "Windows.Storage.Streams",
+      "Windows.System.Display",
+      "Windows.UI.Core",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Input",
+      "Windows.UI.Xaml.Media",
+      "Windows.UI.Xaml.Navigation",
+      "Windows.UI.Xaml.Shapes",
+      "Windows.Media.FaceAnalysis",
+      "Windows.UI",
+      "System.Collections.Generic"
+    ],
+    "handlers": [
+      {
+        "name": "MainPage",
+        "namespaces_used": [],
+        "api_refs": [
+          "NavigationCacheMode.Disabled",
+          "Application.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 404
+      },
+      {
+        "name": "Application_Suspending",
+        "namespaces_used": [],
+        "api_refs": [
+          "Frame.CurrentSourcePageType",
+          "SuspendingOperation.GetDeferral"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 382
+      },
+      {
+        "name": "Application_Resuming",
+        "namespaces_used": [],
+        "api_refs": [
+          "Frame.CurrentSourcePageType"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 272
+      },
+      {
+        "name": "OnNavigatedTo",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 91
+      },
+      {
+        "name": "OnNavigatingFrom",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 250
+      },
+      {
+        "name": "SystemMediaControls_PropertyChanged",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal",
+          "SystemMediaTransportControlsProperty.SoundLevel",
+          "Frame.CurrentSourcePageType",
+          "SoundLevel.Muted"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 883
+      },
+      {
+        "name": "OrientationSensor_OrientationChanged",
+        "namespaces_used": [],
+        "api_refs": [
+          "SimpleOrientation.Faceup",
+          "SimpleOrientation.Facedown",
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 923
+      },
+      {
+        "name": "DisplayInformation_OrientationChanged",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 305
+      },
+      {
+        "name": "PhotoButton_Click",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 47
+      },
+      {
+        "name": "VideoButton_Click",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 359
+      },
+      {
+        "name": "FaceDetectionButton_Click",
+        "namespaces_used": [],
+        "api_refs": [
+          "FacesCanvas.Children"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 481
+      },
+      {
+        "name": "HardwareButtons_CameraPressed",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 47
+      },
+      {
+        "name": "MediaCapture_RecordLimitationExceeded",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 274
+      },
+      {
+        "name": "MediaCapture_Failed",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine",
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 270
+      },
+      {
+        "name": "FaceDetectionEffect_FaceDetected",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal",
+          "ResultFrame.DetectedFaces"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 211
+      },
+      {
+        "name": "InitializeCameraAsync",
+        "namespaces_used": [
+          "Windows.Devices.Enumeration.Panel.Front",
+          "Windows.Devices.Enumeration.Panel.Unknown"
+        ],
+        "api_refs": [
+          "Debug.WriteLine",
+          "Windows.Devices",
+          "Enumeration.Panel",
+          "EnclosureLocation.Panel"
+        ],
+        "new_types": [
+          "MediaCapture"
+        ],
+        "ui_sets": [],
+        "body_length": 2517
+      },
+      {
+        "name": "StartPreviewAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "PreviewControl.Source",
+          "PreviewControl.FlowDirection",
+          "FlowDirection.RightToLeft",
+          "FlowDirection.LeftToRight",
+          "VideoDeviceController.GetMediaStreamProperties",
+          "MediaStreamType.VideoPreview"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 873
+      },
+      {
+        "name": "SetPreviewRotationAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "VideoDeviceController.GetMediaStreamProperties",
+          "MediaStreamType.VideoPreview",
+          "Properties.Add"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 973
+      },
+      {
+        "name": "StopPreviewAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal",
+          "PreviewControl.Source"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 561
+      },
+      {
+        "name": "CreateFaceDetectionEffectAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "FaceDetectionMode.HighPerformance",
+          "MediaStreamType.VideoPreview",
+          "TimeSpan.FromMilliseconds"
+        ],
+        "new_types": [
+          "FaceDetectionEffectDefinition"
+        ],
+        "ui_sets": [],
+        "body_length": 1037
+      },
+      {
+        "name": "CleanUpFaceDetectionEffectAsync",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 519
+      },
+      {
+        "name": "TakePhotoAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "VideoButton.IsEnabled",
+          "MediaCaptureSettings.ConcurrentRecordAndPhotoSupported",
+          "VideoButton.Opacity",
+          "Debug.WriteLine",
+          "ImageEncodingProperties.CreateJpeg",
+          "CreationCollisionOption.GenerateUniqueName"
+        ],
+        "new_types": [
+          "InMemoryRandomAccessStream"
+        ],
+        "ui_sets": [],
+        "body_length": 1505
+      },
+      {
+        "name": "StartRecordingAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "CreationCollisionOption.GenerateUniqueName",
+          "MediaEncodingProfile.CreateMp4",
+          "VideoEncodingQuality.Auto",
+          "Video.Properties",
+          "PropertyValue.CreateInt32",
+          "Debug.WriteLine"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1145
+      },
+      {
+        "name": "StopRecordingAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 208
+      },
+      {
+        "name": "CleanupCameraAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine",
+          "MediaCapture.Dispose"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1268
+      },
+      {
+        "name": "SetupUiAsync",
+        "namespaces_used": [
+          "Windows.UI.ViewManagement.StatusBar",
+          "Windows.UI.ViewManagement.StatusBar.GetForCurrentView"
+        ],
+        "api_refs": [
+          "DisplayInformation.AutoRotationPreferences",
+          "DisplayOrientations.Landscape",
+          "ApiInformation.IsTypePresent",
+          "Windows.UI",
+          "ViewManagement.StatusBar",
+          "StorageLibrary.GetLibraryAsync",
+          "KnownLibraryId.Pictures",
+          "ApplicationData.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1131
+      },
+      {
+        "name": "CleanupUiAsync",
+        "namespaces_used": [
+          "Windows.UI.ViewManagement.StatusBar",
+          "Windows.UI.ViewManagement.StatusBar.GetForCurrentView"
+        ],
+        "api_refs": [
+          "ApiInformation.IsTypePresent",
+          "Windows.UI",
+          "ViewManagement.StatusBar",
+          "DisplayInformation.AutoRotationPreferences",
+          "DisplayOrientations.None"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 429
+      },
+      {
+        "name": "UpdateCaptureControls",
+        "namespaces_used": [],
+        "api_refs": [
+          "PhotoButton.IsEnabled",
+          "VideoButton.IsEnabled",
+          "FaceDetectionButton.IsEnabled",
+          "FaceDetectionDisabledIcon.Visibility",
+          "Visibility.Visible",
+          "Visibility.Collapsed",
+          "FaceDetectionEnabledIcon.Visibility",
+          "FacesCanvas.Visibility",
+          "StartRecordingIcon.Visibility",
+          "StopRecordingIcon.Visibility",
+          "MediaCaptureSettings.ConcurrentRecordAndPhotoSupported",
+          "PhotoButton.Opacity"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1740
+      },
+      {
+        "name": "RegisterEventHandlers",
+        "namespaces_used": [
+          "Windows.Phone.UI.Input.HardwareButtons"
+        ],
+        "api_refs": [
+          "ApiInformation.IsTypePresent",
+          "Windows.Phone",
+          "UI.Input",
+          "HardwareButtons.CameraPressed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 794
+      },
+      {
+        "name": "UnregisterEventHandlers",
+        "namespaces_used": [
+          "Windows.Phone.UI.Input.HardwareButtons"
+        ],
+        "api_refs": [
+          "ApiInformation.IsTypePresent",
+          "Windows.Phone",
+          "UI.Input",
+          "HardwareButtons.CameraPressed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 569
+      },
+      {
+        "name": "FindCameraDeviceByPanelAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "DeviceInformation.FindAllAsync",
+          "DeviceClass.VideoCapture",
+          "EnclosureLocation.Panel"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 549
+      },
+      {
+        "name": "ReencodeAndSavePhotoAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "BitmapDecoder.CreateAsync",
+          "FileAccessMode.ReadWrite",
+          "BitmapEncoder.CreateForTranscodingAsync",
+          "System.Photo",
+          "PropertyType.UInt16",
+          "BitmapProperties.SetPropertiesAsync"
+        ],
+        "new_types": [
+          "BitmapTypedValue"
+        ],
+        "ui_sets": [],
+        "body_length": 693
+      },
+      {
+        "name": "GetCameraOrientation",
+        "namespaces_used": [],
+        "api_refs": [
+          "SimpleOrientation.NotRotated",
+          "DisplayOrientations.Portrait",
+          "SimpleOrientation.Rotated90DegreesCounterclockwise",
+          "SimpleOrientation.Rotated180DegreesCounterclockwise",
+          "SimpleOrientation.Rotated270DegreesCounterclockwise"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 2126
+      },
+      {
+        "name": "ConvertDeviceOrientationToDegrees",
+        "namespaces_used": [],
+        "api_refs": [
+          "SimpleOrientation.Rotated90DegreesCounterclockwise",
+          "SimpleOrientation.Rotated180DegreesCounterclockwise",
+          "SimpleOrientation.Rotated270DegreesCounterclockwise",
+          "SimpleOrientation.NotRotated"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 505
+      },
+      {
+        "name": "ConvertDisplayOrientationToDegrees",
+        "namespaces_used": [],
+        "api_refs": [
+          "DisplayOrientations.Portrait",
+          "DisplayOrientations.LandscapeFlipped",
+          "DisplayOrientations.PortraitFlipped",
+          "DisplayOrientations.Landscape"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 453
+      },
+      {
+        "name": "ConvertOrientationToPhotoOrientation",
+        "namespaces_used": [],
+        "api_refs": [
+          "SimpleOrientation.Rotated90DegreesCounterclockwise",
+          "PhotoOrientation.Rotate90",
+          "SimpleOrientation.Rotated180DegreesCounterclockwise",
+          "PhotoOrientation.Rotate180",
+          "SimpleOrientation.Rotated270DegreesCounterclockwise",
+          "PhotoOrientation.Rotate270",
+          "SimpleOrientation.NotRotated",
+          "PhotoOrientation.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 596
+      },
+      {
+        "name": "UpdateButtonOrientation",
+        "namespaces_used": [],
+        "api_refs": [
+          "DisplayOrientations.Portrait",
+          "PhotoButton.RenderTransform",
+          "VideoButton.RenderTransform",
+          "FaceDetectionButton.RenderTransform"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 931
+      },
+      {
+        "name": "SetFacesCanvasRotation",
+        "namespaces_used": [],
+        "api_refs": [
+          "FacesCanvas.RenderTransform",
+          "DisplayOrientations.Portrait",
+          "DisplayOrientations.PortraitFlipped",
+          "FacesCanvas.Width",
+          "FacesCanvas.Height",
+          "Canvas.SetLeft",
+          "Canvas.SetTop",
+          "FacesCanvas.FlowDirection",
+          "FlowDirection.RightToLeft",
+          "FlowDirection.LeftToRight"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1979
+      },
+      {
+        "name": "HighlightDetectedFaces",
+        "namespaces_used": [],
+        "api_refs": [
+          "FacesCanvas.Children",
+          "Colors.Blue",
+          "Colors.DeepSkyBlue"
+        ],
+        "new_types": [
+          "SolidColorBrush"
+        ],
+        "ui_sets": [],
+        "body_length": 1046
+      },
+      {
+        "name": "ConvertPreviewToUiRectangle",
+        "namespaces_used": [],
+        "api_refs": [
+          "DisplayOrientations.Portrait",
+          "DisplayOrientations.PortraitFlipped",
+          "Canvas.SetLeft",
+          "Canvas.SetTop"
+        ],
+        "new_types": [
+          "Rectangle"
+        ],
+        "ui_sets": [],
+        "body_length": 1894
+      },
+      {
+        "name": "GetPreviewStreamRectInControl",
+        "namespaces_used": [],
+        "api_refs": [
+          "DisplayOrientations.Portrait",
+          "DisplayOrientations.PortraitFlipped"
+        ],
+        "new_types": [
+          "Rect"
+        ],
+        "ui_sets": [],
+        "body_length": 2114
+      }
+    ]
+  }
 }

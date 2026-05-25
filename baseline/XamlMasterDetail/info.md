@@ -1,6 +1,6 @@
-#  (C#)
+# XamlMasterDetail (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlMasterDetail\cs\`  
 > **AUMID**: `9296b303-e43c-4323-bc5f-6cb3e72b0054_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `9296b303-e43c-4323-bc5f-6cb3e72b0054_8wekyb3d8bbwe`  
 

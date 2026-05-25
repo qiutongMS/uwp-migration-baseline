@@ -1,6 +1,6 @@
-#  (C#)
+# Printing (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\Printing\cs\`  
 > **Feature**: Printing C# Sample  
 > **AUMID**: `Microsoft.SDKSamples.PrintSample.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.PrintSample.CS_8wekyb3d8bbwe`  

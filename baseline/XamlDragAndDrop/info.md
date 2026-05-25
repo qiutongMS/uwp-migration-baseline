@@ -1,6 +1,6 @@
-#  (C#)
+# XamlDragAndDrop (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlDragAndDrop\cs\`  
 > **Feature**: XAML Drag and Drop  
 > **AUMID**: `Microsoft.SDKSamples.DragAndDropSampleManaged.CS_8wekyb3d8bbwe!DragAndDropSampleManaged.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.DragAndDropSampleManaged.CS_8wekyb3d8bbwe`  

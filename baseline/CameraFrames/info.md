@@ -1,6 +1,6 @@
-#  (C#)
+# CameraFrames (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\CameraFrames\cs\`  
 > **Feature**: Camera Frames  
 > **AUMID**: `Microsoft.SDKSamples.CameraFrames.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.CameraFrames.CS_8wekyb3d8bbwe`  

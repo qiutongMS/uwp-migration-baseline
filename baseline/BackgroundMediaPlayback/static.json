@@ -2,7 +2,34 @@
   "sample": "BackgroundMediaPlayback",
   "feature_name": "BackgroundMediaPlayback",
   "readme_description": "Shows how to create a playlist that can continue to play even when the app is no longer in the foreground.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "Enabling background media playback through a manifest capability",
+    "Playing audio and video in the background with the MediaPlayer API",
+    "Gapless playback with MediaPlaybackList",
+    "Automatic SystemMediaTransportControl integration",
+    "Update of MediaPlaybackItem DisplayProperties",
+    "MVVM for media player apps",
+    "JSON playlist serialization",
+    "Background applications have a memory target",
+    "There are lifecycle events to inform apps if over target",
+    "Apps can respond to being over target by unloading resources, including views",
+    "If an app needs to continue executing in the background when not playing media",
+    "If an app needs to make networking calls in the background when not",
+    "This changes lifecycle behavior to keep the app process from suspending as",
+    "All media playback APIs become background enabled. That means you can use any",
+    "Enable SystemMediaTransportControls by setting IsEnabled to true",
+    "Set IsPlayEnabled and IsPauseEnabled to true",
+    "Handle the corresponding ButtonPressed events",
+    "Over limit policy: Apps must handle OnAppMemoryUsageLimitChanging to reduce",
+    "Apps can use CoreApplication lifecycle events EnteredBackground and",
+    "Apps can use the MemoryManager class to monitor their memory usage after a",
+    "When the app enters the background or receives an over limit notification,",
+    "MediaPlayer works in foreground and background apps, with UI or without. All",
+    "A lightweight MediaPlayerElement allows binding and unbinding to a player for",
+    "MediaPlayer has a MediaPlayerSurface that can be used to render video to a",
+    "MediaPlayer connects to SystemMediaTransportControls through a",
+    "The app can popupate the DisplayProperties of the MediaPlaybackItem with"
+  ],
   "readme_api_links": [
     "standby"
   ],
@@ -245,5 +272,6 @@
         "body_length": 109
       }
     ]
-  }
+  },
+  "main_page": null
 }

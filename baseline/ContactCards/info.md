@@ -1,6 +1,6 @@
-#  (C#)
+# ContactCards (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\ContactCards\cs\`  
 > **Feature**: Contact cards C# sample  
 > **AUMID**: `Microsoft.SDKSamples.ContactCards.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.ContactCards.CS_8wekyb3d8bbwe`  

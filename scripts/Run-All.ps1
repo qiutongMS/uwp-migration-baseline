@@ -75,6 +75,8 @@ function Compose-Info([string]$staticJsonPath, [string]$resultJsonPath, [string]
     if (-not (Test-Path $staticJsonPath)) { return }
     $stat = Get-Content $staticJsonPath -Raw | ConvertFrom-Json
     $run  = if (Test-Path $resultJsonPath) { Get-Content $resultJsonPath -Raw | ConvertFrom-Json } else { $null }
+    # Fall back to the sample name embedded in static.json when caller didn't supply one
+    if (-not $sampleName) { $sampleName = $stat.sample }
 
     $sb = New-Object System.Text.StringBuilder
     [void]$sb.AppendLine("# $sampleName (C#)")
@@ -270,6 +272,68 @@ function Compose-Info([string]$staticJsonPath, [string]$resultJsonPath, [string]
                         [void]$sb.AppendLine()
                     }
                 }
+            }
+        }
+    }
+
+    # MainPage block (for single-page samples that have no Scenario*.xaml.cs).
+    # Rendered after status block / scenarios so readers see the same structure as
+    # multi-scenario samples: UI elements + Code behavior, but without screenshot
+    # subsections (those would have already been emitted by the runtime branch above
+    # when capture succeeded, e.g. via Plan A).
+    if ($stat.main_page -and -not $hasStaticScenarios) {
+        $mp = $stat.main_page
+        $hasContent = ($mp.controls -and $mp.controls.Count -gt 0) -or
+                      ($mp.handlers -and $mp.handlers.Count -gt 0)
+        if ($hasContent) {
+            [void]$sb.AppendLine("---")
+            [void]$sb.AppendLine()
+            [void]$sb.AppendLine('## MainPage (static analysis)')
+            [void]$sb.AppendLine()
+            [void]$sb.AppendLine("This sample is a single-page app (no scenario list). The MainPage covers the entire functionality.")
+            [void]$sb.AppendLine()
+            if ($mp.controls -and $mp.controls.Count -gt 0) {
+                [void]$sb.AppendLine('### UI elements')
+                foreach ($c in $mp.controls) {
+                    $hasC = $c.name -or $c.x_name -or $c.content -or $c.text -or $c.inner_text -or $c.handlers
+                    if (-not $hasC) { continue }
+                    $extras = @()
+                    if ($c.name)       { $extras += "name=`"$($c.name)`"" }
+                    if ($c.x_name)     { $extras += "x:Name=`"$($c.x_name)`"" }
+                    if ($c.content)    { $extras += "content=`"$($c.content)`"" }
+                    if ($c.text)       { $extras += "text=`"$($c.text)`"" }
+                    if ($c.inner_text) { $extras += "text=`"$($c.inner_text)`"" }
+                    if ($c.handlers) {
+                        $hs = @()
+                        foreach ($p in $c.handlers.PSObject.Properties) { $hs += "$($p.Name)=$($p.Value)" }
+                        if ($hs.Count -gt 0) { $extras += ('events: ' + ($hs -join ', ')) }
+                    }
+                    $line = "- **$($c.type)**"
+                    if ($extras.Count -gt 0) { $line += '  - ' + ($extras -join '; ') }
+                    [void]$sb.AppendLine($line)
+                }
+                [void]$sb.AppendLine()
+            }
+            $codeHandlers = @($mp.handlers | Where-Object { $_.api_refs.Count -gt 0 })
+            if ($codeHandlers.Count -gt 0) {
+                [void]$sb.AppendLine('### Code behavior')
+                foreach ($h in $codeHandlers | Select-Object -First 30) {
+                    [void]$sb.AppendLine("- **``$($h.name)``**")
+                    if ($h.namespaces_used.Count -gt 0) {
+                        [void]$sb.AppendLine("    - namespaces: " + (($h.namespaces_used | ForEach-Object { "``$_``" }) -join ', '))
+                    }
+                    if ($h.new_types.Count -gt 0) {
+                        [void]$sb.AppendLine("    - instantiates: " + (($h.new_types | ForEach-Object { "``$_``" }) -join ', '))
+                    }
+                    if ($h.api_refs.Count -gt 0) {
+                        $apis = $h.api_refs | Select-Object -First 20
+                        [void]$sb.AppendLine("    - API refs: " + (($apis | ForEach-Object { "``$_``" }) -join ', '))
+                    }
+                    if ($h.ui_sets.Count -gt 0) {
+                        [void]$sb.AppendLine("    - updates UI: " + (($h.ui_sets | ForEach-Object { "``$_``" }) -join ', '))
+                    }
+                }
+                [void]$sb.AppendLine()
             }
         }
     }

@@ -1,12 +1,20 @@
-#  (C#)
+# FilePicker (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\FilePicker\cs\`  
 > **Feature**: File picker C# sample  
 > **AUMID**: `Microsoft.SDKSamples.FilePicker.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.FilePicker.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Uses file pickers to access files and folders and save files.
+
+## Scenarios demonstrated (from README)
+- **Let the user pick one file to access**
+- **Let the user pick multiple files to access**
+- **Let the user pick one folder to access**
+- **Let the user save a file and specify the name, file type, and/or save location**
+- **Let the user pick a locally cached file to access**
+- **Let the user save a locally cached file**
 
 ## Build / deploy / capture status
 - build: skipped

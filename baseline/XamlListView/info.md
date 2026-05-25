@@ -1,12 +1,20 @@
-#  (C#)
+# XamlListView (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlListView\cs\`  
 > **Feature**: ListView/GridView C# Sample  
 > **AUMID**: `Microsoft.SDKSamples.ListView.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.ListView.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to use the ListView and GridView controls.
+
+## Scenarios demonstrated (from README)
+- **Simple ListView Sample:** Shows how to implement a grouped ListView using the new x:Bind and x:Phase features.
+- **Simple GridView Sample:** Shows how to implement a grouped GridView using the new x:Bind and x:Phase features.
+- **Master/Details plus Selection Sample:** Shows how to implement a responsive master/details experience with a successful multiple selection experience.
+- **Tap on the left edge of ListView:** Shows how to implement the behavior Tap on the left edge of ListView to going into multiple selection mode.
+- **Restore Scroll Position Sample:** Shows how to restore a list's scrollviewer position when a user navigates away and back from a page. Implements the ListViewPersistenceHelper API.
+- **Scroll into View Sample:** Shows how to scroll a specific item into view.
 
 ## Build / deploy / capture status
 - build: skipped

@@ -1,12 +1,28 @@
-#  (C#)
+# FileAccess (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\FileAccess\cs\`  
 > **Feature**: File access C# sample  
 > **AUMID**: `Microsoft.SDKSamples.FileAccess.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.FileAccess.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows basic file operations, how to retrieve file properties, and how to track a file or folder so that your app can access it again.
+
+## Scenarios demonstrated (from README)
+- **Create a file in the Pictures library**
+- **Get a file's parent folder**
+- **Write and read text in a file**
+- **Write and read bytes in a file**
+- **Write and read a file using a stream**
+- StorageFile.OpenTransactedWriteAsync method
+- DataWriter class
+- DataReader class
+- **Display file properties**
+- **Track a file or folder so that you can access it later (persisting access)**
+- **Copy a file**
+- **Compare two files to see if they're the same**
+- **Delete a file**
+- **Try to get a file without getting an error**
 
 ## Top-level UWP namespaces used
 - `Windows.Storage.Streams.Buffer`

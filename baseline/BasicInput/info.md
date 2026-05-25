@@ -1,6 +1,6 @@
-#  (C#)
+# BasicInput (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\BasicInput\cs\`  
 > **Feature**: Basic Input sample  
 > **AUMID**: `Microsoft.SDKSamples.BasicInput.CS_8wekyb3d8bbwe!BasicInput.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.BasicInput.CS_8wekyb3d8bbwe`  

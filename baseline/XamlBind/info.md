@@ -1,6 +1,6 @@
-#  (C#)
+# XamlBind (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlBind\cs\`  
 > **AUMID**: `Microsoft.SDKSamples.xBindSampleCS.CS_8wekyb3d8bbwe!xBindSampleCS.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.xBindSampleCS.CS_8wekyb3d8bbwe`  
 
@@ -16,6 +16,11 @@ Shows how to use x:Bind for data binding in XAML apps. x:Bind is a new compile t
 - Implicit bool-to-Visibility conversion. (See Other Bindings scenario.)
 - C-style casts. (See Other Bindings scenario.)
 - Function binding. (See Function Binding scenario.)
+
+## Top-level UWP namespaces used
+- `Windows.UI.Colors.Green`
+- `Windows.UI.Colors.Red`
+- `Windows.System.Launcher.LaunchUriAsync`
 
 ## Build / deploy / capture status
 - build: skipped
@@ -107,4 +112,43 @@ After click **Change Folder...** (popup: Select Folder):
 After click **Change Folder...**:
 
 ![after_Change Folder...](screenshots/04_SDKTemplate.Scenario__after_Change_Folder....png)
+
+---
+
+## MainPage (static analysis)
+
+This sample is a single-page app (no scenario list). The MainPage covers the entire functionality.
+
+### UI elements
+- **Image**  - x:Name="WindowsLogo"
+- **TextBlock**  - x:Name="Header"; text="Windows platform sample"
+- **TextBlock**  - x:Name="SampleTitle"; text="{x:Bind SAMPLE_NAME}"
+- **ListBox**  - x:Name="ScenarioControl"; events: SelectionChanged=ScenarioControl_SelectionChanged
+- **TextBlock**  - text="{x:Bind Title}"
+- **TextBlock**  - text="{x:Bind Description, TargetNullValue=''}"
+- **TextBlock**  - x:Name="Copyright"; text="© Microsoft Corporation. All rights reserved."
+- **HyperlinkButton**  - content="Trademarks"; events: Click=Footer_Click
+- **TextBlock**  - text="|"
+- **HyperlinkButton**  - x:Name="PrivacyLink"; content="Privacy"; events: Click=Footer_Click
+- **TextBlock**  - x:Name="StatusLabel"; text="Status:"
+- **TextBlock**  - x:Name="StatusBlock"
+- **ToggleButton**  - events: Click=Button_Click
+
+### Code behavior
+- **`OnNavigatedTo`**
+    - API refs: `ScenarioControl.ItemsSource`, `Window.Current`, `Bounds.Width`, `ScenarioControl.SelectedIndex`
+- **`ScenarioControl_SelectionChanged`**
+    - API refs: `String.Empty`, `NotifyType.StatusMessage`, `ScenarioFrame.Navigate`, `Window.Current`, `Bounds.Width`, `Splitter.IsPaneOpen`, `StatusBorder.Visibility`, `Visibility.Collapsed`
+- **`NotifyUser`**
+    - namespaces: `Windows.UI.Colors.Green`, `Windows.UI.Colors.Red`
+    - instantiates: `SolidColorBrush`
+    - API refs: `NotifyType.StatusMessage`, `StatusBorder.Background`, `Windows.UI`, `Colors.Green`, `NotifyType.ErrorMessage`, `Colors.Red`, `StatusBlock.Text`, `StatusPanel.Visibility`, `String.Empty`, `Visibility.Visible`, `Visibility.Collapsed`
+- **`HideStatus`**
+    - API refs: `StatusPanel.Visibility`, `Visibility.Collapsed`
+- **`Footer_Click`**
+    - namespaces: `Windows.System.Launcher.LaunchUriAsync`
+    - instantiates: `Uri`
+    - API refs: `Windows.System`, `Launcher.LaunchUriAsync`, `Tag.ToString`
+- **`Button_Click`**
+    - API refs: `Splitter.IsPaneOpen`, `StatusBorder.Visibility`, `Visibility.Collapsed`
 

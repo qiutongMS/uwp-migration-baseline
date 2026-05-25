@@ -1,12 +1,23 @@
-#  (C#)
+# AdaptiveStreaming (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\AdaptiveStreaming\cs\`  
 > **Feature**: AdaptiveStreaming  
 > **AUMID**: `Microsoft.SDKSamples.AdaptiveStreaming.CS_8wekyb3d8bbwe!AdaptiveStreaming.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.AdaptiveStreaming.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows various features of the AdaptiveMediaSource object.
+
+## Scenarios demonstrated (from README)
+- Passing a Stream to a manifest in the constructor of AdaptiveMediaSource, to replace the first web request for a Uri.
+- Getting a copy of the downloaded bytes after they have been consumed by the platform in DownloadCompleted.
+- ID3 tags within TS content
+- emsg boxes within fragmented MP4 content
+- Comment tags found in HLS manifests
+- MinLiveOffset: The leading edge of the DRV window, as imposed by the content or platform.
+- DesiredLiveOffset: The application-controlled leading-edge of the DRV window.
+- DesiredSeekableWindowSize: The application-controlled DVR window depth.
+- MaxSeekableWindowSize: The DRV window depth, as imposed by the content.
 
 ## Top-level UWP namespaces used
 - `Windows.Web.Http`

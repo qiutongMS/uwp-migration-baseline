@@ -1,6 +1,6 @@
-#  (C#)
+# SystemMediaTransportControls (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\SystemMediaTransportControls\cs\`  
 > **Feature**: System Media Transport Controls C# Sample  
 > **AUMID**: `Microsoft.SDKSamples.MediaTransportControls.CS_8wekyb3d8bbwe!MediaTransportControls.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.MediaTransportControls.CS_8wekyb3d8bbwe`  

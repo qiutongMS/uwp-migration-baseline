@@ -1,12 +1,18 @@
-#  (C#)
+# CameraProfile (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\CameraProfile\cs\`  
 > **Feature**: CameraProfile  
 > **AUMID**: `Microsoft.SDKSamples.CameraProfile.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.CameraProfile.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to query a media capture device for a collection of media types that can work together on a given device called a Video Profile.
+
+## Scenarios demonstrated (from README)
+- When you choose "Find 640x480 30 FPS Recording Profile" button, we determine if the back video capture device supports
+- When you choose the "Find Custom Recording Profile" button, we are looking to see if a device supports a specific Custom
+- When you choose "Query for Concurrent Profile button, the app queries for a front and back device that supports a video profile. If a profile
+- When you choose "Query Profile for HDR Support" button, the app will query the if the back video capture device supports a Video Profile. Then we query the available profiles
 
 ## Top-level UWP namespaces used
 - `Windows.Devices.Enumeration.Panel.Back`

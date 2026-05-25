@@ -1,12 +1,25 @@
-#  (C#)
+# CameraResolution (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\CameraResolution\cs\`  
 > **Feature**: Camera resolution C# sample  
 > **AUMID**: `Microsoft.SDKSamples.CameraResolution.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.CameraResolution.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to change the resolution of a capture device.
+
+## Scenarios demonstrated (from README)
+- Press the *Initialize Camera* button to populate the combo box with the resolutions
+- When an option from the combo box is selected, the changes will be reflected in the preview.
+- Press the *Initialize Camera* button to populate the combo boxes with the resolutions
+- When an option from the preview stream combo box is selected, the changes will be reflected in the preview.
+- When an option from the photo stream combo box is selected, the changes will be reflected in any photos taken with the photo button.
+- Some devices may share streams, which will result in changes made to one stream also being applied to other streams.
+- Press the *Initialize Camera* button to populate the combo boxes with the resolutions
+- When an option from the preview stream combo box is selected, the changes will be reflected in the preview.
+- When an option from the video stream combo box is selected,
+- Some devices may not support multiple streams and changes will also be reflected in the preview.
+- Although this sample shows maintaining the aspect ratio only between the preview and video streams,
 
 ## Build / deploy / capture status
 - build: skipped

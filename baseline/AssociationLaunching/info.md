@@ -1,12 +1,21 @@
-#  (C#)
+# AssociationLaunching (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\AssociationLaunching\cs\`  
 > **Feature**: Association Launching C# Sample  
 > **AUMID**: `Microsoft.SDKSamples.AssociationLaunching.CS_8wekyb3d8bbwe!AssociationLaunching.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.AssociationLaunching.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to launch an app to handle a file type or a protocol (also known as custom scheme).
+
+## Scenarios demonstrated (from README)
+- launching an  app for a file using LaunchFileAsync
+- handling file activation through the **Activated** event
+- launching an app for a protocol using LaunchUriAsync
+- handling protocol activation through the **Activated** event
+- associating the app with a website using the **AppUriHandler** extension
+- launching a target app and having the currently running source app remain on the screen for various amounts of screen space using LauncherOptions.DesiredRemainingView.
+- **Note**  LauncherOptions.DesiredRemainingView is only supported on desktop Windows when it is running in tablet mode.
 
 ## Top-level UWP namespaces used
 - `Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync`

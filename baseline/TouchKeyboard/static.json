@@ -2,7 +2,13 @@
   "sample": "TouchKeyboard",
   "feature_name": "TouchKeyboard",
   "readme_description": "Shows both the default display behavior of the touch keyboard and how that behavior can be customized in a UWP app.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "XAML text controls (such as TextBox, RichTextBox, and PaswordBox) display the touch keyboard by default.",
+    "Controls derived from XAML text controls display the touch keyboard by default.",
+    "Apps can subscribe to events indicating when the touch keyboard is shown and hidden.",
+    "Apps can request that the touch keyboard be shown or hidden.",
+    "Apps can request that the touch keyboard be shown with a particular view."
+  ],
   "readme_api_links": [],
   "api_namespaces": [
     "Windows.System.VirtualKey.Enter",
@@ -375,5 +381,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

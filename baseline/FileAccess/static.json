@@ -2,7 +2,22 @@
   "sample": "FileAccess",
   "feature_name": "File access C# sample",
   "readme_description": "Shows basic file operations, how to retrieve file properties, and how to track a file or folder so that your app can access it again.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "**Create a file in the Pictures library**",
+    "**Get a file's parent folder**",
+    "**Write and read text in a file**",
+    "**Write and read bytes in a file**",
+    "**Write and read a file using a stream**",
+    "StorageFile.OpenTransactedWriteAsync method",
+    "DataWriter class",
+    "DataReader class",
+    "**Display file properties**",
+    "**Track a file or folder so that you can access it later (persisting access)**",
+    "**Copy a file**",
+    "**Compare two files to see if they're the same**",
+    "**Delete a file**",
+    "**Try to get a file without getting an error**"
+  ],
   "readme_api_links": [
     "Windows.Storage",
     "Windows.Storage.AccessCache",
@@ -1004,5 +1019,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

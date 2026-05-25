@@ -31,18 +31,24 @@ if (Test-Path $readmePath) {
     if ($rmd -match '(?ms)^description:\s*"([^"]+)"') {
         $readme.description = $matches[1]
     }
-    # Bullets after "This sample contains scenarios that demonstrate:" / "This sample shows how to:" / similar
+    # Bullets after a lead-in like "this sample shows how to:" / "will cover how to:" /
+    # "scenarios that demonstrate:" / "covers:" etc. Also supports numbered lists (1. ...).
     $section = $null
-    if ($rmd -match '(?ms)(scenarios that demonstrate:|sample shows how to:|sample demonstrates:|sample contains examples).*?(?=\r?\n##)') {
-        $section = $matches[0]
+    if ($rmd -match '(?ms)\bsample\s+(?:shows|covers|demonstrates|will\s+cover|includes|illustrates|contains)[^.\r\n]*?:\s*\r?\n(.*?)(?=\r?\n##|\z)') {
+        $section = $matches[1]
+    } elseif ($rmd -match '(?ms)(?:scenarios that demonstrate|sample contains examples)[^.\r\n]*?:\s*\r?\n(.*?)(?=\r?\n##|\z)') {
+        $section = $matches[1]
     }
     if ($section) {
         $bullets = @()
         foreach ($line in ($section -split "\r?\n")) {
-            if ($line -match '^\s*[\*\-]\s+(.+)$') {
+            # accept bullets (* or -) and numbered items (1. 2. ...)
+            if ($line -match '^\s*(?:\d+\.|\*|-)\s+(.+)$') {
                 $b = $matches[1].Trim()
-                $b = ($b -replace '\[([^\]]+)\]\([^\)]+\)', '$1')   # strip markdown links to bare text
-                $bullets += $b
+                $b = ($b -replace '\[([^\]]+)\]\([^\)]+\)', '$1')   # strip markdown link syntax
+                if ($b.Length -ge 5 -and $b -notmatch '^Note:') {
+                    $bullets += $b
+                }
             }
         }
         $readme.demonstrates = $bullets
@@ -237,14 +243,39 @@ foreach ($scFile in $scenarioFiles) {
 }
 $scenarios = $scenarios | Sort-Object index
 
+# --- 3b. Single-page samples: analyze MainPage.xaml.cs as a fallback ---
+# When the sample has no Scenario*.xaml.cs files (e.g. the Camera samples),
+# the MainPage IS the whole app. Capture its UI controls + code structure
+# so info.md has something meaningful to show.
+$mainPage = $null
+if ($scenarios.Count -eq 0) {
+    $mainCs = Join-Path $csDir 'MainPage.xaml.cs'
+    $mainXaml = $null
+    foreach ($d in @($csDir, $sharedDir, $SamplePath)) {
+        if (Test-Path (Join-Path $d 'MainPage.xaml')) { $mainXaml = Join-Path $d 'MainPage.xaml'; break }
+    }
+    if (Test-Path $mainCs) {
+        $controls = if ($mainXaml) { Parse-XamlControls $mainXaml } else { @() }
+        $code     = Parse-Cs $mainCs
+        $mainPage = [pscustomobject]@{
+            xaml_path = $mainXaml
+            cs_path   = $mainCs
+            controls  = $controls
+            usings    = $code.usings
+            handlers  = $code.handlers
+        }
+    }
+}
+
 # Aggregate all unique APIs across the sample
 $allApiNamespaces = @()
 $allApiRefs = @()
-foreach ($s in $scenarios) {
-    foreach ($h in $s.handlers) {
-        foreach ($n in $h.namespaces_used) { if ($allApiNamespaces -notcontains $n) { $allApiNamespaces += $n } }
-        foreach ($r in $h.api_refs)        { if ($allApiRefs       -notcontains $r) { $allApiRefs       += $r } }
-    }
+$handlerPool = @()
+foreach ($s in $scenarios) { $handlerPool += $s.handlers }
+if ($mainPage) { $handlerPool += $mainPage.handlers }
+foreach ($h in $handlerPool) {
+    foreach ($n in $h.namespaces_used) { if ($allApiNamespaces -notcontains $n) { $allApiNamespaces += $n } }
+    foreach ($r in $h.api_refs)        { if ($allApiRefs       -notcontains $r) { $allApiRefs       += $r } }
 }
 
 $result = [ordered]@{
@@ -256,6 +287,8 @@ $result = [ordered]@{
     api_namespaces    = $allApiNamespaces
     api_references    = $allApiRefs
     scenarios         = $scenarios
+    main_page         = $mainPage
 }
 $result | ConvertTo-Json -Depth 8 | Out-File (Join-Path $OutDir 'static.json') -Encoding UTF8
-Write-Host "[ANALYZE] ${sampleName}: $($scenarios.Count) scenarios, $($allApiNamespaces.Count) namespaces"
+$mpNote = if ($mainPage) { " + MainPage($($mainPage.handlers.Count) handlers)" } else { '' }
+Write-Host "[ANALYZE] ${sampleName}: $($scenarios.Count) scenarios, $($allApiNamespaces.Count) namespaces$mpNote"

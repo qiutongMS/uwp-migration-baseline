@@ -1,6 +1,6 @@
-#  (C#)
+# Calendar (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\Calendar\cs\`  
 > **Feature**: Calendar C# sample  
 > **AUMID**: `Microsoft.SDKSamples.Calendar.CS_8wekyb3d8bbwe!Calendar.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.Calendar.CS_8wekyb3d8bbwe`  

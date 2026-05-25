@@ -2,7 +2,10 @@
   "sample": "ApplicationData",
   "feature_name": "ApplicationData",
   "readme_description": "Shows how to store and retrieve data that is specific to each user and app by using the Windows Runtime application data APIs.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "Reading and writing settings to an app data store",
+    "Reading and writing files to an app data store"
+  ],
   "readme_api_links": [
     "Windows.Storage.ApplicationData",
     "Windows.Storage.ApplicationDataCompositeValue",
@@ -601,5 +604,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

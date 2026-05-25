@@ -2,9 +2,524 @@
   "sample": "CameraStarterKit",
   "feature_name": null,
   "readme_description": "An end-to-end sample camera application.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "**Manage the MediaCapture object** throughout the lifecycle of the app and through navigation events.",
+    "**Acquire a camera located on a specific side of the device**. In this case, the sample attempts to get the rear camera.",
+    "**Start and stop the preview** to a UI element, including mirroring for front-facing cameras.",
+    "**Take a picture** to a file, and disable the video capture button if the app is running on a device that doesn't support concurrent capturing of photos and video.",
+    "**Record a video** to a file, and disable the photo capture button if the app is running on a device that doesn't support concurrent capturing of photos and video.",
+    "**Handle rotation events** for both, the device moving in space and the page orientation changing on the screen. Also apply any necessary corrections to the preview stream rotation and to captured photos and videos.",
+    "**Handle MediaCapture RecordLimitationExceeded and Failed events** to be notified that video recording needs to be stopped due to a video being too long, or clean up the MediaCapture instance when an error occurs.",
+    "**Handle cameras mounted at an angle in the device enclosure** by inspecting the EnclosureLocation.RotationAngleInDegreesClockwise and adjusting the UI to take it into account."
+  ],
   "readme_api_links": [],
-  "api_namespaces": [],
-  "api_references": [],
-  "scenarios": null
+  "api_namespaces": [
+    "Windows.Devices.Enumeration.Panel.Back",
+    "Windows.Devices.Enumeration.Panel.Unknown",
+    "Windows.Devices.Enumeration.Panel.Front",
+    "Windows.UI.ViewManagement.StatusBar",
+    "Windows.UI.ViewManagement.StatusBar.GetForCurrentView",
+    "Windows.Phone.UI.Input.HardwareButtons"
+  ],
+  "api_references": [
+    "NavigationCacheMode.Disabled",
+    "SuspendingOperation.GetDeferral",
+    "Dispatcher.RunAsync",
+    "CoreDispatcherPriority.High",
+    "Application.Current",
+    "Window.Current",
+    "CoreDispatcherPriority.Normal",
+    "SystemMediaTransportControlsProperty.SoundLevel",
+    "Frame.CurrentSourcePageType",
+    "SoundLevel.Muted",
+    "Debug.WriteLine",
+    "Windows.Devices",
+    "Enumeration.Panel",
+    "EnclosureLocation.Panel",
+    "CameraRotationHelper.ConvertSimpleOrientationToClockwiseDegrees",
+    "PhotoButton.RenderTransform",
+    "VideoButton.RenderTransform",
+    "PreviewControl.Source",
+    "PreviewControl.FlowDirection",
+    "FlowDirection.RightToLeft",
+    "FlowDirection.LeftToRight",
+    "VideoDeviceController.GetMediaStreamProperties",
+    "MediaStreamType.VideoPreview",
+    "Properties.Add",
+    "VideoButton.IsEnabled",
+    "MediaCaptureSettings.ConcurrentRecordAndPhotoSupported",
+    "VideoButton.Opacity",
+    "ImageEncodingProperties.CreateJpeg",
+    "CreationCollisionOption.GenerateUniqueName",
+    "CameraRotationHelper.ConvertSimpleOrientationToPhotoOrientation",
+    "MediaEncodingProfile.CreateMp4",
+    "VideoEncodingQuality.Auto",
+    "Video.Properties",
+    "PropertyValue.CreateInt32",
+    "MediaCapture.Dispose",
+    "DisplayInformation.AutoRotationPreferences",
+    "DisplayOrientations.Landscape",
+    "ApiInformation.IsTypePresent",
+    "Windows.UI",
+    "ViewManagement.StatusBar",
+    "StorageLibrary.GetLibraryAsync",
+    "KnownLibraryId.Pictures",
+    "ApplicationData.Current",
+    "DisplayOrientations.None",
+    "PhotoButton.IsEnabled",
+    "StartRecordingIcon.Visibility",
+    "Visibility.Collapsed",
+    "Visibility.Visible",
+    "StopRecordingIcon.Visibility",
+    "PhotoButton.Opacity",
+    "Windows.Phone",
+    "UI.Input",
+    "HardwareButtons.CameraPressed",
+    "DeviceInformation.FindAllAsync",
+    "DeviceClass.VideoCapture",
+    "BitmapDecoder.CreateAsync",
+    "FileAccessMode.ReadWrite",
+    "BitmapEncoder.CreateForTranscodingAsync",
+    "System.Photo",
+    "PropertyType.UInt16",
+    "BitmapProperties.SetPropertiesAsync"
+  ],
+  "scenarios": null,
+  "main_page": {
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraStarterKit\\shared\\MainPage.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraStarterKit\\cs\\MainPage.xaml.cs",
+    "controls": [
+      {
+        "type": "CaptureElement",
+        "name": "PreviewControl",
+        "x_name": ""
+      },
+      {
+        "type": "Button",
+        "name": "PhotoButton",
+        "x_name": "",
+        "handlers": {
+          "Click": "PhotoButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "VideoButton",
+        "x_name": "",
+        "handlers": {
+          "Click": "VideoButton_Click"
+        }
+      }
+    ],
+    "usings": [
+      "System",
+      "System.Diagnostics",
+      "System.Linq",
+      "System.Threading.Tasks",
+      "Windows.ApplicationModel",
+      "Windows.Devices.Enumeration",
+      "Windows.Foundation",
+      "Windows.Foundation.Metadata",
+      "Windows.Graphics.Display",
+      "Windows.Graphics.Imaging",
+      "Windows.Media",
+      "Windows.Media.Capture",
+      "Windows.Media.MediaProperties",
+      "Windows.Phone.UI.Input",
+      "Windows.Storage",
+      "Windows.Storage.FileProperties",
+      "Windows.Storage.Streams",
+      "Windows.System.Display",
+      "Windows.UI.Core",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Media",
+      "Windows.UI.Xaml.Navigation"
+    ],
+    "handlers": [
+      {
+        "name": "MainPage",
+        "namespaces_used": [],
+        "api_refs": [
+          "NavigationCacheMode.Disabled"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 194
+      },
+      {
+        "name": "Application_Suspending",
+        "namespaces_used": [],
+        "api_refs": [
+          "SuspendingOperation.GetDeferral",
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.High"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 317
+      },
+      {
+        "name": "Application_Resuming",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.High"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 214
+      },
+      {
+        "name": "OnNavigatedTo",
+        "namespaces_used": [],
+        "api_refs": [
+          "Application.Current",
+          "Window.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 375
+      },
+      {
+        "name": "OnNavigatingFrom",
+        "namespaces_used": [],
+        "api_refs": [
+          "Application.Current",
+          "Window.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 464
+      },
+      {
+        "name": "Window_VisibilityChanged",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 55
+      },
+      {
+        "name": "SystemMediaControls_PropertyChanged",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal",
+          "SystemMediaTransportControlsProperty.SoundLevel",
+          "Frame.CurrentSourcePageType",
+          "SoundLevel.Muted"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 883
+      },
+      {
+        "name": "PhotoButton_Click",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 47
+      },
+      {
+        "name": "VideoButton_Click",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 359
+      },
+      {
+        "name": "HardwareButtons_CameraPressed",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 47
+      },
+      {
+        "name": "MediaCapture_RecordLimitationExceeded",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 274
+      },
+      {
+        "name": "MediaCapture_Failed",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine",
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 270
+      },
+      {
+        "name": "InitializeCameraAsync",
+        "namespaces_used": [
+          "Windows.Devices.Enumeration.Panel.Back",
+          "Windows.Devices.Enumeration.Panel.Unknown",
+          "Windows.Devices.Enumeration.Panel.Front"
+        ],
+        "api_refs": [
+          "Debug.WriteLine",
+          "Windows.Devices",
+          "Enumeration.Panel",
+          "EnclosureLocation.Panel"
+        ],
+        "new_types": [
+          "MediaCapture",
+          "CameraRotationHelper"
+        ],
+        "ui_sets": [],
+        "body_length": 2758
+      },
+      {
+        "name": "RotationHelper_OrientationChanged",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 226
+      },
+      {
+        "name": "UpdateButtonOrientation",
+        "namespaces_used": [],
+        "api_refs": [
+          "CameraRotationHelper.ConvertSimpleOrientationToClockwiseDegrees",
+          "PhotoButton.RenderTransform",
+          "VideoButton.RenderTransform"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 542
+      },
+      {
+        "name": "StartPreviewAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "PreviewControl.Source",
+          "PreviewControl.FlowDirection",
+          "FlowDirection.RightToLeft",
+          "FlowDirection.LeftToRight"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 688
+      },
+      {
+        "name": "SetPreviewRotationAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "VideoDeviceController.GetMediaStreamProperties",
+          "MediaStreamType.VideoPreview",
+          "Properties.Add",
+          "CameraRotationHelper.ConvertSimpleOrientationToClockwiseDegrees"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 715
+      },
+      {
+        "name": "StopPreviewAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Dispatcher.RunAsync",
+          "CoreDispatcherPriority.Normal",
+          "PreviewControl.Source"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 557
+      },
+      {
+        "name": "TakePhotoAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "VideoButton.IsEnabled",
+          "MediaCaptureSettings.ConcurrentRecordAndPhotoSupported",
+          "VideoButton.Opacity",
+          "Debug.WriteLine",
+          "ImageEncodingProperties.CreateJpeg",
+          "CreationCollisionOption.GenerateUniqueName",
+          "CameraRotationHelper.ConvertSimpleOrientationToPhotoOrientation"
+        ],
+        "new_types": [
+          "InMemoryRandomAccessStream"
+        ],
+        "ui_sets": [],
+        "body_length": 1551
+      },
+      {
+        "name": "StartRecordingAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "CreationCollisionOption.GenerateUniqueName",
+          "MediaEncodingProfile.CreateMp4",
+          "VideoEncodingQuality.Auto",
+          "CameraRotationHelper.ConvertSimpleOrientationToClockwiseDegrees",
+          "Video.Properties",
+          "PropertyValue.CreateInt32",
+          "Debug.WriteLine"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1192
+      },
+      {
+        "name": "StopRecordingAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 208
+      },
+      {
+        "name": "CleanupCameraAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Debug.WriteLine",
+          "MediaCapture.Dispose"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1307
+      },
+      {
+        "name": "SetUpBasedOnStateAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "Window.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1131
+      },
+      {
+        "name": "SetupUiAsync",
+        "namespaces_used": [
+          "Windows.UI.ViewManagement.StatusBar",
+          "Windows.UI.ViewManagement.StatusBar.GetForCurrentView"
+        ],
+        "api_refs": [
+          "DisplayInformation.AutoRotationPreferences",
+          "DisplayOrientations.Landscape",
+          "ApiInformation.IsTypePresent",
+          "Windows.UI",
+          "ViewManagement.StatusBar",
+          "StorageLibrary.GetLibraryAsync",
+          "KnownLibraryId.Pictures",
+          "ApplicationData.Current"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 813
+      },
+      {
+        "name": "CleanupUiAsync",
+        "namespaces_used": [
+          "Windows.UI.ViewManagement.StatusBar",
+          "Windows.UI.ViewManagement.StatusBar.GetForCurrentView"
+        ],
+        "api_refs": [
+          "ApiInformation.IsTypePresent",
+          "Windows.UI",
+          "ViewManagement.StatusBar",
+          "DisplayInformation.AutoRotationPreferences",
+          "DisplayOrientations.None"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 429
+      },
+      {
+        "name": "UpdateCaptureControls",
+        "namespaces_used": [],
+        "api_refs": [
+          "PhotoButton.IsEnabled",
+          "VideoButton.IsEnabled",
+          "StartRecordingIcon.Visibility",
+          "Visibility.Collapsed",
+          "Visibility.Visible",
+          "StopRecordingIcon.Visibility",
+          "MediaCaptureSettings.ConcurrentRecordAndPhotoSupported",
+          "PhotoButton.Opacity"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1003
+      },
+      {
+        "name": "RegisterEventHandlers",
+        "namespaces_used": [
+          "Windows.Phone.UI.Input.HardwareButtons"
+        ],
+        "api_refs": [
+          "ApiInformation.IsTypePresent",
+          "Windows.Phone",
+          "UI.Input",
+          "HardwareButtons.CameraPressed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 300
+      },
+      {
+        "name": "UnregisterEventHandlers",
+        "namespaces_used": [
+          "Windows.Phone.UI.Input.HardwareButtons"
+        ],
+        "api_refs": [
+          "ApiInformation.IsTypePresent",
+          "Windows.Phone",
+          "UI.Input",
+          "HardwareButtons.CameraPressed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 300
+      },
+      {
+        "name": "FindCameraDeviceByPanelAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "DeviceInformation.FindAllAsync",
+          "DeviceClass.VideoCapture",
+          "EnclosureLocation.Panel"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 549
+      },
+      {
+        "name": "ReencodeAndSavePhotoAsync",
+        "namespaces_used": [],
+        "api_refs": [
+          "BitmapDecoder.CreateAsync",
+          "FileAccessMode.ReadWrite",
+          "BitmapEncoder.CreateForTranscodingAsync",
+          "System.Photo",
+          "PropertyType.UInt16",
+          "BitmapProperties.SetPropertiesAsync"
+        ],
+        "new_types": [
+          "BitmapTypedValue"
+        ],
+        "ui_sets": [],
+        "body_length": 693
+      }
+    ]
+  }
 }

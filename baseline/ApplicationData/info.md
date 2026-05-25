@@ -1,12 +1,16 @@
-#  (C#)
+# ApplicationData (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\ApplicationData\cs\`  
 > **Feature**: ApplicationData  
 > **AUMID**: `Microsoft.SDKSamples.ApplicationData.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.ApplicationData.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to store and retrieve data that is specific to each user and app by using the Windows Runtime application data APIs.
+
+## Scenarios demonstrated (from README)
+- Reading and writing settings to an app data store
+- Reading and writing files to an app data store
 
 ## Top-level UWP namespaces used
 - `Windows.Storage.ApplicationData.Current.ClearAsync`

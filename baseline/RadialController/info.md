@@ -1,6 +1,6 @@
-#  (C#)
+# RadialController (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\RadialController\cs\`  
 > **Feature**: RadialController C# Sample  
 > **AUMID**: `Microsoft.SDKSamples.RadialController.CS_8wekyb3d8bbwe!RadialController.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.RadialController.CS_8wekyb3d8bbwe`  

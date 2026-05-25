@@ -2,7 +2,14 @@
   "sample": "FilePicker",
   "feature_name": "File picker C# sample",
   "readme_description": "Uses file pickers to access files and folders and save files.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "**Let the user pick one file to access**",
+    "**Let the user pick multiple files to access**",
+    "**Let the user pick one folder to access**",
+    "**Let the user save a file and specify the name, file type, and/or save location**",
+    "**Let the user pick a locally cached file to access**",
+    "**Let the user save a locally cached file**"
+  ],
   "readme_api_links": [
     "Windows.Storage.Pickers",
     "Windows.Storage",
@@ -518,5 +525,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

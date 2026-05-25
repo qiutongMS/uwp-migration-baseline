@@ -2,11 +2,201 @@
   "sample": "BasicSuspension",
   "feature_name": null,
   "readme_description": "Shows how to suspend, shut down and resume your application using the Suspension Manager.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "Saving state when the app is suspended or shut down.",
+    "Restoring state when the app is resumed from suspension or reactivated after being shut down."
+  ],
   "readme_api_links": [
     "tools"
   ],
   "api_namespaces": [],
-  "api_references": [],
-  "scenarios": null
+  "api_references": [
+    "NavigationCacheMode.Required",
+    "Frame.Navigate",
+    "ClickedItem.ToString",
+    "ItemList.CreateDefaultItemList",
+    "SuspensionManager.SessionState",
+    "SystemNavigationManager.GetForCurrentView",
+    "Frame.CanGoBack",
+    "AppViewBackButtonVisibility.Visible",
+    "AppViewBackButtonVisibility.Collapsed"
+  ],
+  "scenarios": null,
+  "main_page": {
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicSuspension\\cs\\MainPage.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicSuspension\\cs\\MainPage.xaml.cs",
+    "controls": [
+      {
+        "type": "ListView",
+        "name": "",
+        "x_name": "list",
+        "header": "Click on an item or click a button in the AppBar.",
+        "handlers": {
+          "ItemClick": "ListView_ItemClick"
+        }
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "{Binding}"
+      },
+      {
+        "type": "AppBarButton",
+        "name": "",
+        "x_name": "",
+        "handlers": {
+          "Click": "{x:Bind AddItem}"
+        }
+      },
+      {
+        "type": "AppBarButton",
+        "name": "",
+        "x_name": "",
+        "handlers": {
+          "Click": "{x:Bind ResetItems}"
+        }
+      }
+    ],
+    "usings": [
+      "SDKTemplate.Common",
+      "System",
+      "System.Collections.Generic",
+      "System.Collections.ObjectModel",
+      "Windows.UI.Core",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Navigation"
+    ],
+    "handlers": [
+      {
+        "name": "MainPage",
+        "namespaces_used": [],
+        "api_refs": [
+          "NavigationCacheMode.Required"
+        ],
+        "new_types": [
+          "NavigationHelper",
+          "ItemList"
+        ],
+        "ui_sets": [],
+        "body_length": 397
+      },
+      {
+        "name": "ListView_ItemClick",
+        "namespaces_used": [],
+        "api_refs": [
+          "Frame.Navigate",
+          "ClickedItem.ToString"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 87
+      },
+      {
+        "name": "AddItem",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [
+          "Item"
+        ],
+        "ui_sets": [],
+        "body_length": 128
+      },
+      {
+        "name": "Item",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 63
+      },
+      {
+        "name": "ResetItems",
+        "namespaces_used": [],
+        "api_refs": [
+          "ItemList.CreateDefaultItemList"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 136
+      },
+      {
+        "name": "NavigationHelper_Load",
+        "namespaces_used": [],
+        "api_refs": [
+          "SuspensionManager.SessionState",
+          "ItemList.CreateDefaultItemList"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 455
+      },
+      {
+        "name": "NavigationHelper_Save",
+        "namespaces_used": [],
+        "api_refs": [
+          "SuspensionManager.SessionState"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 81
+      },
+      {
+        "name": "OnNavigatedTo",
+        "namespaces_used": [],
+        "api_refs": [
+          "SystemNavigationManager.GetForCurrentView",
+          "Frame.CanGoBack",
+          "AppViewBackButtonVisibility.Visible",
+          "AppViewBackButtonVisibility.Collapsed"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 269
+      },
+      {
+        "name": "OnNavigatedFrom",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 65
+      },
+      {
+        "name": "ItemList",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 10
+      },
+      {
+        "name": "CreateDefaultItemList",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [
+          "ItemList"
+        ],
+        "ui_sets": [],
+        "body_length": 264
+      },
+      {
+        "name": "ItemList",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 202
+      },
+      {
+        "name": "ToString",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 41
+      }
+    ]
+  }
 }

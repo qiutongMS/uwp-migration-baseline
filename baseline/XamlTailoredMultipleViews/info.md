@@ -1,6 +1,6 @@
-#  (C#)
+# XamlTailoredMultipleViews (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlTailoredMultipleViews\cs\`  
 > **AUMID**: `Microsoft.SDKSamples.TailoredViews.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.TailoredViews.CS_8wekyb3d8bbwe`  
 

@@ -1,12 +1,19 @@
-#  (C#)
+# TouchKeyboard (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\TouchKeyboard\cs\`  
 > **Feature**: TouchKeyboard  
 > **AUMID**: `Microsoft.SDKSamples.TouchKeyboard.CS_8wekyb3d8bbwe!TouchKeyboard.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.TouchKeyboard.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows both the default display behavior of the touch keyboard and how that behavior can be customized in a UWP app.
+
+## Scenarios demonstrated (from README)
+- XAML text controls (such as TextBox, RichTextBox, and PaswordBox) display the touch keyboard by default.
+- Controls derived from XAML text controls display the touch keyboard by default.
+- Apps can subscribe to events indicating when the touch keyboard is shown and hidden.
+- Apps can request that the touch keyboard be shown or hidden.
+- Apps can request that the touch keyboard be shown with a particular view.
 
 ## Top-level UWP namespaces used
 - `Windows.System.VirtualKey.Enter`

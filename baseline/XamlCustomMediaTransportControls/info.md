@@ -1,6 +1,6 @@
-#  (C#)
+# XamlCustomMediaTransportControls (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlCustomMediaTransportControls\cs\`  
 > **AUMID**: `Microsoft.SDKSamples.CustomMediaControls.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.CustomMediaControls.CS_8wekyb3d8bbwe`  
 
@@ -56,4 +56,18 @@ After click **Button: Cast to Device**:
 After click **Button: Full Screen**:
 
 ![after_Button: Full Screen](screenshots/01_MainPage__06_Button_Full_Screen.png)
+
+---
+
+## MainPage (static analysis)
+
+This sample is a single-page app (no scenario list). The MainPage covers the entire functionality.
+
+### UI elements
+- **MediaPlayerElement**  - x:Name="MainMPE"
+
+### Code behavior
+- **`MainPage`**
+    - instantiates: `Uri`
+    - API refs: `MainMPE.Source`, `MediaSource.CreateFromUri`
 

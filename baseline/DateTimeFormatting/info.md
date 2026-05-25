@@ -1,6 +1,6 @@
-#  (C#)
+# DateTimeFormatting (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\DateTimeFormatting\cs\`  
 > **Feature**: Date and time formatting  
 > **AUMID**: `Microsoft.SDKSamples.DateTimeFormatting.CS_8wekyb3d8bbwe!DateTimeFormatting.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.DateTimeFormatting.CS_8wekyb3d8bbwe`  

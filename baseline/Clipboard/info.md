@@ -1,12 +1,20 @@
-#  (C#)
+# Clipboard (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\Clipboard\cs\`  
 > **Feature**: Clipboard C# sample  
 > **AUMID**: `Microsoft.SDKSamples.Clipboard.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.Clipboard.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Shows how to use clipboard commands, including copy, paste, cut, and move.
+
+## Scenarios demonstrated (from README)
+- How to copy and paste text
+- How to copy and paste an image
+- How to copy and paste files
+- How to control clipboard history and roaming
+- How to get the formats on the Clipboard
+- How to detect changes to the Clipboard
 
 ## Build / deploy / capture status
 - build: skipped

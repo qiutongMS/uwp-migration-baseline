@@ -2,7 +2,10 @@
   "sample": "UserInteractionMode",
   "feature_name": "User interaction mode",
   "readme_description": "Shows how to detect and respond to the user interaction mode.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "Retrieving the current user interaction mode.",
+    "Responding to changes in the user interaction mode."
+  ],
   "readme_api_links": [],
   "api_namespaces": [],
   "api_references": [
@@ -116,5 +119,6 @@
         "body_length": 246
       }
     ]
-  }
+  },
+  "main_page": null
 }

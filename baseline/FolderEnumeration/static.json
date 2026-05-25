@@ -2,7 +2,15 @@
   "sample": "FolderEnumeration",
   "feature_name": "Folder enumeration C# sample",
   "readme_description": "Enumerates the files and folders inside a location, and uses queries to enumerate all files inside a location.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "**Enumerate top-level files and subfolders of a folder**",
+    "**Query all the files in a folder (and its subfolders) and create groups of files to enumerate**",
+    "**Query all the files in a folder (and its subfolders) and retrieve file properties as a part of getting results for the query**",
+    "**Query all the files in a folder and show file provider and availability**",
+    "CommonFolderQuery enumeration",
+    "CommonFileQuery enumeration",
+    "PropertyPrefetchOptions enumeration"
+  ],
   "readme_api_links": [
     "Windows.Storage",
     "Windows.Storage.Search",
@@ -471,5 +479,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

@@ -1,12 +1,21 @@
-#  (C#)
+# FolderEnumeration (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\FolderEnumeration\cs\`  
 > **Feature**: Folder enumeration C# sample  
 > **AUMID**: `Microsoft.SDKSamples.FolderEnumeration.CS_8wekyb3d8bbwe!App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.FolderEnumeration.CS_8wekyb3d8bbwe`  
 
 ## Sample purpose
 Enumerates the files and folders inside a location, and uses queries to enumerate all files inside a location.
+
+## Scenarios demonstrated (from README)
+- **Enumerate top-level files and subfolders of a folder**
+- **Query all the files in a folder (and its subfolders) and create groups of files to enumerate**
+- **Query all the files in a folder (and its subfolders) and retrieve file properties as a part of getting results for the query**
+- **Query all the files in a folder and show file provider and availability**
+- CommonFolderQuery enumeration
+- CommonFileQuery enumeration
+- PropertyPrefetchOptions enumeration
 
 ## Build / deploy / capture status
 - build: skipped

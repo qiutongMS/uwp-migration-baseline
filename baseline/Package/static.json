@@ -2,7 +2,18 @@
   "sample": "Package",
   "feature_name": "Package",
   "readme_description": "Shows how to get package info by using the Windows Runtime packaging API (Windows.ApplicationModel.Package and PackageId).",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "Getting the package identity using Package.Id",
+    "Getting the package directory using Package.InstalledLocation",
+    "Getting package dependencies using Package.Dependencies",
+    "Getting the package description using Package.Description",
+    "Getting the package display name using Package.DisplayName",
+    "Determining whether the package is a bundle package using Package.IsBundle",
+    "Determining whether the package is installed in development mode using Package.IsDevelopmentMode",
+    "Determining whether the package is a resource package using Package.IsResourcePackage",
+    "Getting package logo using Package.Logo",
+    "Getting publisher display name of the package using Package.PublisherDisplayName"
+  ],
   "readme_api_links": [
     "Windows.ApplicationModel.Package",
     "Windows.ApplicationModel.PackageId",
@@ -258,5 +269,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

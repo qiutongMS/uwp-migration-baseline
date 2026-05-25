@@ -2,7 +2,19 @@
   "sample": "CameraResolution",
   "feature_name": "Camera resolution C# sample",
   "readme_description": "Shows how to change the resolution of a capture device.",
-  "readme_bullets": [],
+  "readme_bullets": [
+    "Press the *Initialize Camera* button to populate the combo box with the resolutions",
+    "When an option from the combo box is selected, the changes will be reflected in the preview.",
+    "Press the *Initialize Camera* button to populate the combo boxes with the resolutions",
+    "When an option from the preview stream combo box is selected, the changes will be reflected in the preview.",
+    "When an option from the photo stream combo box is selected, the changes will be reflected in any photos taken with the photo button.",
+    "Some devices may share streams, which will result in changes made to one stream also being applied to other streams.",
+    "Press the *Initialize Camera* button to populate the combo boxes with the resolutions",
+    "When an option from the preview stream combo box is selected, the changes will be reflected in the preview.",
+    "When an option from the video stream combo box is selected,",
+    "Some devices may not support multiple streams and changes will also be reflected in the preview.",
+    "Although this sample shows maintaining the aspect ratio only between the preview and video streams,"
+  ],
   "readme_api_links": [
     "GetMediaStreamProperties",
     "SetMediaStreamPropertiesAsync",
@@ -541,5 +553,6 @@
         }
       ]
     }
-  ]
+  ],
+  "main_page": null
 }

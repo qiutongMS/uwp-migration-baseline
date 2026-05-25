@@ -1,6 +1,6 @@
-#  (C#)
+# XamlBottomUpList (C#)
 
-> **Source**: `Samples\\cs\`  
+> **Source**: `Samples\XamlBottomUpList\cs\`  
 > **Feature**: XAML bottom-up list C# sample  
 > **AUMID**: `Microsoft.SDKSamples.XamlBottomUpList.CS_8wekyb3d8bbwe!XamlBottomUpList.App`  
 > **PackageFamilyName**: `Microsoft.SDKSamples.XamlBottomUpList.CS_8wekyb3d8bbwe`  
