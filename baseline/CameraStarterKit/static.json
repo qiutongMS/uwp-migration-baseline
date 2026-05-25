@@ -86,8 +86,8 @@
   ],
   "scenarios": null,
   "main_page": {
-    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraStarterKit\\shared\\MainPage.xaml",
-    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraStarterKit\\cs\\MainPage.xaml.cs",
+    "xaml_path": "E:\\githubProject\\uwp-samples-standalone\\Samples\\CameraStarterKit\\shared\\MainPage.xaml",
+    "cs_path": "E:\\githubProject\\uwp-samples-standalone\\Samples\\CameraStarterKit\\cs\\MainPage.xaml.cs",
     "controls": [
       {
         "type": "CaptureElement",

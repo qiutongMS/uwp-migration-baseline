@@ -853,3 +853,69 @@
 [13:32:34] Built: 0 / 0; Captured: 0 / 0; Total screenshots: 
 [13:32:34] Status: C:\Users\qiutongshen\project\uwp-samples-analysis\_status.csv
 [13:32:34] Index : C:\Users\qiutongshen\project\uwp-samples-analysis\_index.md
+[15:26:31] === RUN-ALL START: 1 sample(s) matching 'BackgroundMediaPlayback' ===
+[15:26:31] Loaded 38 existing entries from _status.csv
+[15:26:31] [1/1] >>> BackgroundMediaPlayback START
+[15:26:31]     analyze=ok scenarios=1
+[15:26:31]     build+deploy+launch+capture+uninstall START...
+[15:27:16]     build=ok deploy=ok launch=ok capture=ok-generic shots=1
+[15:27:16] [1/1] <<< BackgroundMediaPlayback DONE in 45s
+[15:27:16] === RUN-ALL COMPLETE: 1 samples ===
+[15:27:17] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 1
+[15:27:17] Status: E:\githubProject\uwp-migration-baseline\baseline\_status.csv
+[15:27:17] Index : E:\githubProject\uwp-migration-baseline\baseline\_index.md
+[15:27:17] === RUN-ALL START: 1 sample(s) matching 'CameraAdvancedCapture' ===
+[15:27:17] Loaded 38 existing entries from _status.csv
+[15:27:17] [1/1] >>> CameraAdvancedCapture START
+[15:27:18]     analyze=ok scenarios=0
+[15:27:18]     build+deploy+launch+capture+uninstall START...
+[15:27:57]     build=ok deploy=ok launch=ok capture=crashed shots=0
+[15:27:58] [1/1] <<< CameraAdvancedCapture DONE in 40s
+[15:27:58] === RUN-ALL COMPLETE: 1 samples ===
+[15:27:58] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[15:27:58] Status: E:\githubProject\uwp-migration-baseline\baseline\_status.csv
+[15:27:58] Index : E:\githubProject\uwp-migration-baseline\baseline\_index.md
+[15:27:58] === RUN-ALL START: 1 sample(s) matching 'CameraFaceDetection' ===
+[15:27:58] Loaded 38 existing entries from _status.csv
+[15:27:58] [1/1] >>> CameraFaceDetection START
+[15:27:59]     analyze=ok scenarios=0
+[15:27:59]     build+deploy+launch+capture+uninstall START...
+[15:28:39]     build=ok deploy=ok launch=ok capture=crashed shots=0
+[15:28:39] [1/1] <<< CameraFaceDetection DONE in 40s
+[15:28:39] === RUN-ALL COMPLETE: 1 samples ===
+[15:28:39] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[15:28:39] Status: E:\githubProject\uwp-migration-baseline\baseline\_status.csv
+[15:28:39] Index : E:\githubProject\uwp-migration-baseline\baseline\_index.md
+[15:28:40] === RUN-ALL START: 1 sample(s) matching 'CameraManualControls' ===
+[15:28:40] Loaded 38 existing entries from _status.csv
+[15:28:40] [1/1] >>> CameraManualControls START
+[15:28:40]     analyze=ok scenarios=0
+[15:28:40]     build+deploy+launch+capture+uninstall START...
+[15:29:26]     build=ok deploy=ok launch=ok capture=crashed shots=0
+[15:29:26] [1/1] <<< CameraManualControls DONE in 46s
+[15:29:26] === RUN-ALL COMPLETE: 1 samples ===
+[15:29:26] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[15:29:26] Status: E:\githubProject\uwp-migration-baseline\baseline\_status.csv
+[15:29:26] Index : E:\githubProject\uwp-migration-baseline\baseline\_index.md
+[15:29:27] === RUN-ALL START: 1 sample(s) matching 'CameraStarterKit' ===
+[15:29:27] Loaded 38 existing entries from _status.csv
+[15:29:27] [1/1] >>> CameraStarterKit START
+[15:29:27]     analyze=ok scenarios=0
+[15:29:27]     build+deploy+launch+capture+uninstall START...
+[15:29:59]     build=ok deploy=ok launch=ok capture=crashed shots=0
+[15:29:59] [1/1] <<< CameraStarterKit DONE in 33s
+[15:30:00] === RUN-ALL COMPLETE: 1 samples ===
+[15:30:00] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[15:30:00] Status: E:\githubProject\uwp-migration-baseline\baseline\_status.csv
+[15:30:00] Index : E:\githubProject\uwp-migration-baseline\baseline\_index.md
+[15:30:00] === RUN-ALL START: 1 sample(s) matching 'CameraVideoStabilization' ===
+[15:30:00] Loaded 38 existing entries from _status.csv
+[15:30:00] [1/1] >>> CameraVideoStabilization START
+[15:30:01]     analyze=ok scenarios=0
+[15:30:01]     build+deploy+launch+capture+uninstall START...
+[15:30:40]     build=ok deploy=ok launch=ok capture=crashed shots=0
+[15:30:41] [1/1] <<< CameraVideoStabilization DONE in 40s
+[15:30:41] === RUN-ALL COMPLETE: 1 samples ===
+[15:30:41] Built: 1 / 1; Captured: 0 / 1; Total screenshots: 0
+[15:30:41] Status: E:\githubProject\uwp-migration-baseline\baseline\_status.csv
+[15:30:41] Index : E:\githubProject\uwp-migration-baseline\baseline\_index.md

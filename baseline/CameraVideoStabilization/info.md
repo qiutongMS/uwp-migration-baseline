@@ -25,12 +25,12 @@ An end-to-end sample video recording camera application with video stabilization
 - `Windows.UI.ViewManagement.StatusBar.GetForCurrentView`
 
 ## Build / deploy / capture status
-- build: skipped
+- build: ok
 - deploy: ok
 - launch: ok
-- capture: failed
-- uninstall: pending
-- error: Could not find main window (looked for 'Camera Video Stabilization C# Sample')
+- capture: crashed
+- uninstall: ok
+- error: App window found (hwnd=985100) but PrintWindow returned null after retry - app likely crashed during startup.
 
 ---
 

@@ -1,7 +1,7 @@
 ﻿{
     "sample":  "CameraFaceDetection",
-    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraFaceDetection\\cs",
-    "build":  "skipped",
+    "sample_path":  "E:\\githubProject\\uwp-samples-standalone\\Samples\\CameraFaceDetection\\cs",
+    "build":  "ok",
     "deploy":  "ok",
     "launch":  "ok",
     "capture":  "crashed",
@@ -12,5 +12,5 @@
     "scenarios":  [
 
                   ],
-    "error":  "App window found (hwnd=264554) but PrintWindow returned null after retry - app likely crashed during startup."
+    "error":  "App window found (hwnd=788406) but PrintWindow returned null after retry - app likely crashed during startup."
 }

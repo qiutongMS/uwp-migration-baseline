@@ -25,12 +25,12 @@ An end-to-end sample camera application that incorporates face detection.
 - `Windows.Phone.UI.Input.HardwareButtons`
 
 ## Build / deploy / capture status
-- build: skipped
+- build: ok
 - deploy: ok
 - launch: ok
 - capture: crashed
 - uninstall: ok
-- error: App window found (hwnd=264554) but PrintWindow returned null after retry - app likely crashed during startup.
+- error: App window found (hwnd=788406) but PrintWindow returned null after retry - app likely crashed during startup.
 
 ---
 

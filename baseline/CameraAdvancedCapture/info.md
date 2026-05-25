@@ -27,12 +27,12 @@ An end-to-end sample camera app supporting orientation, HDR, low light, and othe
 - `Windows.Phone.UI.Input.HardwareButtons`
 
 ## Build / deploy / capture status
-- build: skipped
+- build: ok
 - deploy: ok
 - launch: ok
-- capture: failed
-- uninstall: pending
-- error: Could not find main window (looked for 'Camera Advanced Capture C# Sample')
+- capture: crashed
+- uninstall: ok
+- error: App window found (hwnd=592086) but PrintWindow returned null after retry - app likely crashed during startup.
 
 ---
 

@@ -37,12 +37,14 @@ Shows how to create a playlist that can continue to play even when the app is no
 - The app can popupate the DisplayProperties of the MediaPlaybackItem with
 
 ## Build / deploy / capture status
-- build: skipped
+- build: ok
 - deploy: ok
 - launch: ok
-- capture: failed
-- uninstall: pending
-- error: Could not find main window (looked for 'Background Media Playback C# Sample')
+- capture: ok-generic
+- uninstall: ok
+
+## Main page
+![Main page](screenshots/00_main.png)
 
 ---
 
@@ -77,4 +79,9 @@ Shows how to create a playlist that can continue to play even when the app is no
     - API refs: `Dispatcher.RunAsync`, `CoreDispatcherPriority.Normal`
 - **`UpdatePlaybackSpeed`**
     - API refs: `String.Format`, `Player.PlaybackSession`
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/00_main.png)
 

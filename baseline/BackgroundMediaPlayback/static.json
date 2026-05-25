@@ -60,8 +60,8 @@
     "index": 1,
     "class": "Scenario1",
     "title": "Background Media Playback",
-    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundMediaPlayback\\shared\\Scenario1.xaml",
-    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundMediaPlayback\\cs\\Scenario1.xaml.cs",
+    "xaml_path": "E:\\githubProject\\uwp-samples-standalone\\Samples\\BackgroundMediaPlayback\\shared\\Scenario1.xaml",
+    "cs_path": "E:\\githubProject\\uwp-samples-standalone\\Samples\\BackgroundMediaPlayback\\cs\\Scenario1.xaml.cs",
     "description": "Demonstrates playback lists and background audio.",
     "controls": [
       {
