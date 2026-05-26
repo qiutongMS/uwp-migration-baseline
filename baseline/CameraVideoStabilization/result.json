@@ -4,13 +4,20 @@
     "build":  "ok",
     "deploy":  "ok",
     "launch":  "ok",
-    "capture":  "crashed",
+    "capture":  "ok-generic",
     "uninstall":  "ok",
     "package_full_name":  "Microsoft.SDKSamples.CameraVideoStabilization.CS_1.0.0.0_x64__8wekyb3d8bbwe",
     "package_family_name":  "Microsoft.SDKSamples.CameraVideoStabilization.CS_8wekyb3d8bbwe",
     "aumid":  "Microsoft.SDKSamples.CameraVideoStabilization.CS_8wekyb3d8bbwe!App",
     "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "MainPage (generic)",
+                          "initial_capture":  "00_main.png",
+                          "buttons":  [
 
+                                      ]
+                      }
                   ],
-    "error":  "App window found (hwnd=985100) but PrintWindow returned null after retry - app likely crashed during startup."
+    "error":  null
 }

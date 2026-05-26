@@ -28,11 +28,11 @@ If you want to **reproduce** the baseline (or re-run after the migration), follo
 | Capture state | Count | Meaning |
 |---|---:|---|
 | `ok`            | 24 | Standard scenario iteration succeeded end-to-end |
-| `ok-generic`    | 6  | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
+| `ok-generic`    | 12 | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
 | `partial`       | 1  | Got some scenarios then hit a sample-specific bug (XamlBind scenario 5 has a pre-existing null-ref) |
-| `failed` / `crashed` | 7 | UWP launched but immediately crashed with `0xc000027b` (system DLL delayed-load failure). 5 are Camera samples needing a physical camera in the `Camera` PnP class (RDP redirection's `RDCamera` class doesn't qualify); the remaining 2 are `BackgroundMediaPlayback` and `RadialController` which need a console session / specific hardware. |
+| `crashed`       | 1  | UWP launched but immediately crashed with `0xc000027b` (system DLL delayed-load failure). Only `RadialController` remains in this bucket — it needs Surface Dial / pen hardware to start up. |
 
-281 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list.
+287 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list and the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket.
 
 ## Prerequisites
 

@@ -1,12 +1,9 @@
-# Known issues
+﻿# Known issues
 
-## Environment-broken samples (7)
+## Camera samples — FIXED upstream (5 samples)
 
-These samples build and deploy fine, but UWP host crashes immediately on launch with `0xc000027b` (`STATUS_APPLICATION_FAILED_DELAYED_LOAD`).
-
-### Root cause (revised 2026-05-25 after retest on local console)
-
-Earlier notes attributed these crashes to RDP camera redirection / missing Surface Dial / missing background-task host. A retry on a **local console session with two physical Lenovo T27hv-30 webcams enumerable in `Get-PnpDevice -Class Camera`** still reproduced the same crashes in the same place across **all four still-broken camera samples**:
+Five Camera samples used to crash immediately on launch on Windows 11
+24H2 (build 26100) with:
 
 ```
 Faulting module name: twinapi.appcore.dll, version: 10.0.26100.8246
@@ -14,138 +11,158 @@ Exception code:       0xc000027b   (STATUS_APPLICATION_FAILED_DELAYED_LOAD)
 Fault offset:         0x0000000000070a33
 ```
 
-Meanwhile `Microsoft.WindowsCamera` (the built-in Camera app) launches and uses the same webcams normally on the same machine — so the system camera stack and physical hardware are fine.
+Affected samples: `CameraStarterKit`, `CameraAdvancedCapture`,
+`CameraFaceDetection`, `CameraManualControls`, `CameraVideoStabilization`.
 
-What was ruled out:
+The fault happens before XAML loads (only ~44 modules mapped at crash
+time; no `Windows.UI.Xaml.dll` yet) and reproduces both on RDP and on
+a local console session.
 
-- Console session (`$env:SESSIONNAME = "Console"`, not RDP)
-- HKLM + HKCU `ConsentStore\webcam = Allow`, no policy override under `HKLM\SOFTWARE\Policies\...\AppPrivacy`
-- `camsvc` (`Capability Access Manager Service`) running; per-user `UserDataSvc_*` running
-- Manual launch via `Shell:AppsFolder!<PFN>!App` crashes with no consent UI ever shown — so it isn't the per-package consent prompt
-- Two physical webcams visible to `Get-PnpDevice -Class Camera` and usable by `Microsoft.WindowsCamera`
+### Root cause
 
-The shared symptom across **all** affected samples: every `Package.appxmanifest` declares
+Each csproj declared the deprecated WindowsMobile Extension SDK:
 
 ```xml
-<TargetDeviceFamily Name="Windows.Universal"
-                    MinVersion="10.0.22621.0"
-                    MaxVersionTested="10.0.22621.0" />
+<ItemGroup>
+  <SDKReference Include="WindowsMobile, Version=$(TargetPlatformVersion)">
+    <Name>...</Name>
+  </SDKReference>
+</ItemGroup>
 ```
 
-…with csproj `TargetPlatformVersion = TargetPlatformMinVersion = 10.0.22621.0`, but the host OS is build **10.0.26100** (Windows 11 24H2 / Server 2025). The fail-fast at `twinapi.appcore.dll+0x70a33` is the AppModel host failing a delayed-load import into the host `twinapi.appcore.dll`, where the WinRT activation factories the sample uses (`MediaCapture` and friends, bound against 22621 contracts) no longer line up with the 26100 export table.
+The `WindowsMobile` platform is deprecated and was never re-published
+beyond `10.0.22621`. On Windows 11 24H2 the AppModel host fails the
+delayed-load resolution for it inside `twinapi.appcore.dll+0x70a33`
+before the app process can register with DCOM or initialize XAML.
 
-So this is a **24H2 binary-compat issue with old UWP samples**, not RDP / camera privacy / Surface Dial / consent UI / background-host. RDP camera redirection is still relevant if you happen to be on an RDP session (see footnote below) but it is not the root cause on console.
+### Fix (committed upstream in `qiutongMS/uwp-samples-standalone`)
 
-### Group A — Camera samples — 24H2 binary-compat crash
+Commit `7ebb7a1` removes, from each of the five samples:
 
-Of 9 total Camera samples, **4 still crash** (one more captures the main page briefly via Plan A before crashing, one captures the main page only):
+1. The `<SDKReference Include="WindowsMobile, ...">` `<ItemGroup>` in
+   the csproj.
+2. The dead `using Windows.Phone.UI.Input;` directive.
+3. The `HardwareButtons_CameraPressed` method.
+4. The two `if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))`
+   register/unregister guards.
+5. The two `if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))`
+   `HideAsync()` / `ShowAsync()` guards.
 
-| Sample | Current state | Notes |
+Items 2–5 are dead code paths that only ran on Windows 10 Mobile, but
+they compile-blocked removing the `SDKReference` in isolation — so all
+five edits land together.
+
+`TargetPlatformVersion` (`10.0.22621.0`), `TargetPlatformMinVersion`
+(`10.0.22621.0`) and `Microsoft.NETCore.UniversalWindowsPlatform`
+(`5.0.0`) are intentionally **left unchanged**. The fix is code-surgery
+only — no toolchain bumps required.
+
+Verified by full build / deploy / launch / screenshot of each sample
+on Windows 11 24H2; live camera preview confirmed in
+`CameraStarterKit` (`Lenovo T27hv-30` redirected webcam under the
+`RDCamera` PnP class on the test machine, enumerable by
+`DeviceClass.VideoCapture`).
+
+### What this fix is NOT
+
+Earlier revisions of this document attributed the crash to a
+"22621 → 26100 WinRT activation-factory binary-compat mismatch" and
+proposed bumping `TargetPlatformVersion` to `10.0.26100.0` and
+`Microsoft.NETCore.UniversalWindowsPlatform` to `6.2.15`. **That
+hypothesis was wrong**:
+
+- The fault is in `twinapi.appcore.dll`'s delayed-load resolver, which
+  runs before any WinRT activation. The WER report shows ~44 modules
+  mapped at fault time and no `Windows.UI.Xaml.dll` — there is no
+  activation factory call in scope yet.
+- Removing only the `WindowsMobile` `SDKReference` (and the dead
+  Phone/StatusBar code that blocks its removal) with the toolchain
+  pinned at `TPV=22621` / `NetCore.UWP=5.0.0` is sufficient. Verified
+  end-to-end with a freshly-built `.exe` (PE timestamp changes) and
+  reproducible launch + screenshot of MainPage.
+- An earlier "controlled experiment" that appeared to disprove the
+  code-surgery fix was contaminated by stale `bin/` and `obj/` from a
+  prior NetCore.UWP 6.2.15 attempt. With a clean rebuild, code surgery
+  alone is sufficient.
+- Bumping `Microsoft.NETCore.UniversalWindowsPlatform` to `6.2.15`
+  *introduces* a separate failure: the `FilterCoreFrameworkPayloadFromNuGet`
+  target in 6.2.15 strips runtime DLLs from the build output when
+  `TargetPlatformMinVersion >= 10.0.16299.0`, expecting them from a
+  framework `PackageDependency`. The framework appx installs but the
+  app still fails to start with `0xe0434352` very early in CLR init.
+  This path was abandoned.
+
+### Camera samples — current status
+
+Of 9 Camera samples, **all 9 now produce useful baseline captures** on
+Windows 11 24H2:
+
+| Sample | Capture | Notes |
 |---|---|---|
-| `CameraAdvancedCapture`     | `crashed`     | `twinapi.appcore.dll+0x70a33` fail-fast before MainPage paints |
-| `CameraFaceDetection`       | `crashed`     | same |
-| `CameraStarterKit`          | `crashed`     | same |
-| `CameraVideoStabilization`  | `crashed`     | same |
-| `CameraManualControls`      | `partial` or `crashed` (run-to-run) | Same fail-fast; sometimes the window paints just long enough for Plan A to grab a 1-PNG main-page capture |
-| `CameraGetPreviewFrame`     | `ok-generic`  | Main page captures (1 PNG); live preview can't render |
-| `CameraFrames`              | `ok` (3 PNGs) | Main page is informational; no implicit MediaCapture init |
-| `CameraProfile`             | `ok` (6 PNGs) | Pure metadata enumeration, no live capture |
-| `CameraResolution`          | `ok` (7 PNGs) | same |
+| `CameraStarterKit`         | `ok-generic` | MainPage paints; live preview frames render when a camera device is enumerable |
+| `CameraAdvancedCapture`    | `ok-generic` | same |
+| `CameraFaceDetection`      | `ok-generic` | same |
+| `CameraManualControls`     | `ok-generic` | same |
+| `CameraVideoStabilization` | `ok-generic` | same |
+| `CameraGetPreviewFrame`    | `ok-generic` | same |
+| `CameraFrames`             | `ok` (3 PNGs) | informational page; no implicit `MediaCapture` init |
+| `CameraProfile`            | `ok` (6 PNGs) | metadata enumeration only |
+| `CameraResolution`         | `ok` (7 PNGs) | metadata enumeration only |
 
-**Workaround (no upstream change)**: re-run the pipeline on a **Windows 11 22H2 host (build 22621)** that matches the samples' `MaxVersionTested`. The delayed-load resolves there.
+> **RDP / camera-class footnote**: on the test machine the redirected
+> `Lenovo T27hv-30` webcam shows up under PnP class `RDCamera`
+> (`Remote Desktop Camera Bus`), and UWP's `DeviceClass.VideoCapture`
+> enumeration *does* see it — `CameraStarterKit` shows live preview
+> over RDP in this setup. If your RDP session predates modern camera
+> redirection or you didn't opt in, the device won't enumerate and
+> live preview won't render (MainPage still paints). Fix by editing
+> the `.rdp` to add `camerastoredirect:s:*` and reconnecting.
 
-> *RDP footnote, kept from previous notes*: if you do run over RDP, camera redirection sends the device through the `RDCamera` class (`Remote Desktop Camera Bus`), which UWP's `DeviceClass.VideoCapture` enumeration does not see. The client (mstsc) must opt into the modern camera redirection: edit the `.rdp` file to add `camerastoredirect:s:*`, then reconnect; the camera then registers under the real `Camera` PnP class on the remote side. This is **independent** of the 24H2 binary-compat crash above and only matters once that root cause is fixed.
+## Remaining environment-broken samples (2)
 
-### Group B — Other 24H2-affected (2)
+These also crash with `0xc000027b`, but the cause is **different** from
+the `WindowsMobile` SDKRef story above and they have not been fixed in
+source:
 
-| Sample | Notes |
-|---|---|
-| `BackgroundMediaPlayback` | Same `0xc000027b`, but faults later in `Windows.UI.Xaml.dll+0x8fa113` — window appears briefly so Plan A captures a 1-PNG main page on local console (`capture=ok-generic`). |
-| `RadialController`        | Crashes in `Windows.UI.Xaml.dll`. Almost certainly needs Surface Dial / pen support; not retried on the test machine since it lacks one. |
+| Sample | Status | Notes |
+|---|---|---|
+| `BackgroundMediaPlayback` | `ok-generic` on local console; crashes on RDP | Fault is in `Windows.UI.Xaml.dll+0x8fa113`, not the AppModel host. On a console session the window paints just long enough for Plan A to capture a 1-PNG MainPage. No source change needed — this is an RDP-environment-only crash. |
+| `RadialController` | `crashed` everywhere tested | Needs a Surface Dial / pen input device. Not retested with one. |
 
-### Suggested upstream fix (attempted, requires source changes)
+## Upstream patches (now committed)
 
-Bumping `Package.appxmanifest`'s `MaxVersionTested` alone has no effect — that field in the built `AppxManifest.xml` is regenerated from the csproj's `TargetPlatformVersion` / `TargetPlatformMinVersion`, not copied from the source manifest.
+Four samples had build-time issues from missing referenced files in the
+standalone repo's vendored `SharedContent`. These are now fixed upstream
+in commit `920b26c` of `qiutongMS/uwp-samples-standalone`. The next
+maintainer does **not** need to re-apply them after cloning.
 
-A direct attempt to retarget `CameraStarterKit` to 26100 hit two cascading blockers:
+For reference, the four patches were:
 
-1. The csproj has `<SDKReference Include="WindowsMobile, Version=$(TargetPlatformVersion)">`. The WindowsMobile Extension SDK was deprecated and only ships up to `10.0.22621`. Pointing `TargetPlatformVersion` at `10.0.26100.0` breaks the reference (`MSB3774: Could not find SDK "WindowsMobile, Version=10.0.26100.0"`).
-2. Pinning the SDKReference to `10.0.22621.0` while keeping `TargetPlatformVersion=10.0.26100.0` then fails compilation at `MainPage.xaml.cs:181` with `CS0731 / CS1069` — the type `Windows.Phone.UI.Input.CameraEventArgs` (Windows 10 Mobile hardware shutter-button event) is type-forwarded but the forward target no longer exists in the 26100 umbrella `Windows` metadata.
+1. **`Samples/ApplicationData/cs/`** — Scenarios 1–5 referenced
+   `.xaml`/`.xaml.cs` files that aren't in the upstream tree. The
+   csproj and `SampleConfiguration.cs` were trimmed to keep only
+   Scenarios 6 (`ClearScenario`) and 7 (`SetVersion`). The
+   `Styles.xaml` reference was redirected from the missing local
+   `..\shared\Styles.xaml` to `$(SharedContentDir)\xaml\Styles.xaml`.
+   Three asset PNG references (`appDataLocal.png`,
+   `appDataRoaming.png`, `appDataTemp.png`) were dropped because the
+   sources aren't in the vendored shared content.
 
-A real fix therefore requires editing the sample source: remove or guard the `Windows.Phone.UI.Input.CameraEventArgs` (hardware camera button) handler, drop the `WindowsMobile` `SDKReference`, and likely bump `Microsoft.NETCore.UniversalWindowsPlatform` from `5.0.0` (2015) to a current version. This is upstream-sample-maintenance work, not pipeline work, and was reverted after diagnosis. The `qiutongMS/uwp-samples-standalone` `Samples/` tree is left clean.
+2. **`Samples/RadialController/cs/`** — dropped the `Content` reference
+   to `$(SharedContentDir)\js\Microsoft.WinJS\fonts\Symbols.ttf`; the
+   WinJS fonts directory isn't part of the vendored shared content.
+   (The sample now compiles, but still crashes on launch — see the
+   "Remaining environment-broken samples" table above.)
 
-For a reproduction matrix of what was tried:
+3. **`Samples/XamlMasterDetail/cs/Package.appxmanifest`** — fixed
+   `<Logo>` filename from `Assets\StoreLogo.png` to
+   `Assets\storelogo-sdk.png` to match the file actually present in
+   the project's `Assets/` folder.
 
-```xml
-<!-- before (crashes on 26100 at twinapi.appcore.dll+0x70a33) -->
-<TargetPlatformVersion>10.0.22621.0</TargetPlatformVersion>
-<TargetPlatformMinVersion>10.0.22621.0</TargetPlatformMinVersion>
-<SDKReference Include="WindowsMobile, Version=$(TargetPlatformVersion)" />
-
-<!-- attempt 1: bump both → MSB3774 (no WindowsMobile 26100 SDK) -->
-<TargetPlatformVersion>10.0.26100.0</TargetPlatformVersion>
-<TargetPlatformMinVersion>10.0.26100.0</TargetPlatformMinVersion>
-
-<!-- attempt 2: pin SDKRef to 22621 → CS0731/CS1069 (Windows.Phone.UI.Input.CameraEventArgs gone) -->
-<TargetPlatformVersion>10.0.26100.0</TargetPlatformVersion>
-<SDKReference Include="WindowsMobile, Version=10.0.22621.0" />
-```
-
-> **Note — the dead phone code is *not* the runtime crash cause.** A controlled experiment confirmed this: in `CameraStarterKit`, removing only the `using Windows.Phone.UI.Input;` directive + the `HardwareButtons_CameraPressed` handler + the two `ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons")` register/unregister blocks (leaving csproj `TargetPlatformVersion=22621` and NuGet `Microsoft.NETCore.UniversalWindowsPlatform 5.0.0` untouched) still compiles cleanly, produces a freshly-built `.exe` (PE timestamp changes), and crashes at the **identical** `twinapi.appcore.dll+0x70a33` on launch. The dead phone code is only a *compile-time* blocker on the SDK-upgrade path; at runtime `IsTypePresent` returns false on desktop, so the handler is never wired up. The runtime crash is the separate, deeper 22621→26100 WinRT activation-factory mismatch described above.
-
-## Upstream patches required (4 samples)
-
-These patches are *not* checked into `qiutongMS/uwp-samples-standalone` — they're surgical fixes to make the samples build with current SDKs. The next maintainer needs to apply them once after cloning.
-
-### 1. `Samples/ApplicationData/cs/` — Scenarios 1-5 reference missing files
-
-```diff
-# In ApplicationData.csproj, remove:
-- <Compile Include="Scenario1_HelloRoaming.xaml.cs" ... />
-- <Compile Include="Scenario2_HelloLocal.xaml.cs" ... />
-- ... (Scenarios 1-5)
-- <Page Include="Scenario1_HelloRoaming.xaml" ... />
-- ... (Scenarios 1-5)
-- <Content Include="Assets\hello-globe.png" ... />
-- <Content Include="Assets\hello-house.png" ... />
-- <Content Include="Assets\hello-roam.png" ... />
-
-# In SampleConfiguration.cs, keep ONLY Scenario6 + Scenario7.
-# Redirect the Styles.xaml reference path to the actual location.
-```
-
-After: Scenario6 (LocalSettings) + Scenario7 (RoamingSettings) build and run cleanly.
-
-### 2. `Samples/RadialController/cs/` — Missing font file reference
-
-```diff
-# In RadialController.csproj, remove:
-- <Content Include="Assets\Symbols.ttf" />
-```
-
-(The actual font file isn't in the upstream tree.) After this the sample compiles, but it still crashes on launch — see Group B above.
-
-### 3. `Samples/XamlMasterDetail/cs/` — Manifest filename mismatch
-
-```diff
-# In Package.appxmanifest:
-- StoreLogo="Assets\StoreLogo.png"
-+ StoreLogo="Assets\storelogo-sdk.png"
-```
-
-(The file is shipped as `storelogo-sdk.png`; manifest references `StoreLogo.png` which doesn't exist.)
-
-### 4. `Samples/XamlTailoredMultipleViews/cs/` — Manifest filename mismatch + recursive csproj search
-
-```diff
-# In Package.appxmanifest:
-- ...smalltile_sdk.png
-+ ...smalltile-sdk.png
-
-# In XamlTailoredMultipleViews.csproj — replace literal asset paths with a
-# wildcard glob so any naming variant is picked up.
-```
-
+4. **`Samples/XamlTailoredMultipleViews/cs/.../Package.appxmanifest`** —
+   fixed `Square44x44Logo` filename from `Assets\smalltile_sdk.png` to
+   `Assets\smalltile-sdk.png` (underscore → hyphen) to match the file
+   on disk.
 ## Sample-specific pre-existing bugs
 
 ### `XamlBind` scenario 5 null-ref

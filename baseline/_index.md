@@ -1,6 +1,6 @@
 # UWP Samples - Migration Baseline
 
-Last update: 2026-05-25 15:30:41Z  (progress: 38/38)
+Last update: 2026-05-26 13:00Z  (progress: 38/38)
 
 | # | Sample | Build | Deploy | Launch | Capture | Scenarios | Shots | Time(s) | Error |
 |---|--------|-------|--------|--------|---------|-----------|-------|---------|-------|
@@ -11,15 +11,15 @@ Last update: 2026-05-25 15:30:41Z  (progress: 38/38)
 | 5 | [BasicInput](./BasicInput/info.md) | skipped | ok | ok | ok | 0 | 8 | 22 |  |
 | 6 | [BasicSuspension](./BasicSuspension/info.md) | skipped | ok | ok | ok-generic | 0 | 4 | 16 |  |
 | 7 | [Calendar](./Calendar/info.md) | skipped | ok | ok | ok | 5 | 11 | 26 |  |
-| 8 | [CameraAdvancedCapture](./CameraAdvancedCapture/info.md) | ok | ok | ok | crashed | 0 | 0 | 40 | App window found (hwnd=592086) but PrintWindow returned null after retry - app l |
-| 9 | [CameraFaceDetection](./CameraFaceDetection/info.md) | ok | ok | ok | crashed | 0 | 0 | 40 | App window found (hwnd=788406) but PrintWindow returned null after retry - app l |
+| 8 | [CameraAdvancedCapture](./CameraAdvancedCapture/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 40 |  |
+| 9 | [CameraFaceDetection](./CameraFaceDetection/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 40 |  |
 | 10 | [CameraFrames](./CameraFrames/info.md) | skipped | ok | ok | ok | 2 | 3 | 16 |  |
 | 11 | [CameraGetPreviewFrame](./CameraGetPreviewFrame/info.md) | skipped | ok | ok | ok-generic | 0 | 1 | 9 |  |
-| 12 | [CameraManualControls](./CameraManualControls/info.md) | ok | ok | ok | crashed | 0 | 0 | 46 | App window found (hwnd=788582) but PrintWindow returned null after retry - app l |
+| 12 | [CameraManualControls](./CameraManualControls/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 46 |  |
 | 13 | [CameraProfile](./CameraProfile/info.md) | skipped | ok | ok | ok | 3 | 6 | 18 |  |
 | 14 | [CameraResolution](./CameraResolution/info.md) | skipped | ok | ok | ok | 3 | 7 | 21 |  |
-| 15 | [CameraStarterKit](./CameraStarterKit/info.md) | ok | ok | ok | crashed | 0 | 0 | 33 | App window found (hwnd=853996) but PrintWindow returned null after retry - app l |
-| 16 | [CameraVideoStabilization](./CameraVideoStabilization/info.md) | ok | ok | ok | crashed | 0 | 0 | 40 | App window found (hwnd=985100) but PrintWindow returned null after retry - app l |
+| 15 | [CameraStarterKit](./CameraStarterKit/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 33 |  |
+| 16 | [CameraVideoStabilization](./CameraVideoStabilization/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 40 |  |
 | 17 | [Clipboard](./Clipboard/info.md) | skipped | ok | ok | ok | 0 | 18 | 37 |  |
 | 18 | [ContactCards](./ContactCards/info.md) | skipped | ok | ok | ok | 3 | 9 | 23 |  |
 | 19 | [CustomEditControl](./CustomEditControl/info.md) | skipped | ok | ok | ok | 1 | 2 | 13 |  |

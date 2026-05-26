@@ -28,9 +28,11 @@ An end-to-end sample camera application that incorporates face detection.
 - build: ok
 - deploy: ok
 - launch: ok
-- capture: crashed
+- capture: ok-generic
 - uninstall: ok
-- error: App window found (hwnd=788406) but PrintWindow returned null after retry - app likely crashed during startup.
+
+## Main page
+![Main page](screenshots/00_main.png)
 
 ---
 

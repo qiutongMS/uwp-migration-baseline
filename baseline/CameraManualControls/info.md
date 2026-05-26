@@ -37,9 +37,11 @@ An end-to-end sample camera app using the Windows.Media.Capture API and orientat
 - build: ok
 - deploy: ok
 - launch: ok
-- capture: crashed
+- capture: ok-generic
 - uninstall: ok
-- error: App window found (hwnd=788582) but PrintWindow returned null after retry - app likely crashed during startup.
+
+## Main page
+![Main page](screenshots/00_main.png)
 
 ---
 
