@@ -1,0 +1,395 @@
+﻿{
+    "sample":  "NetworkConnectivity",
+    "feature_name":  "NetworkingConnectivity",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "ResultsText.Text",
+                           "NetworkInformation.GetInternetConnectionProfile",
+                           "NetworkConnectivityLevel.None",
+                           "Helpers.AppendLine",
+                           "Helpers.ShouldAttemptToConnectToInternet",
+                           "Helpers.EvaluateCostAndConnectAsync",
+                           "OptedInToNetworkUsageToggle.IsOn",
+                           "Helpers.EvaluateAndReportConnectionCost",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "NetworkInformation.NetworkStatusChanged",
+                           "VisualStateManager.GoToState"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_NetworkConnectivity",
+                          "title":  "Query network connectivity",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NetworkConnectivity\\shared\\Scenario1_NetworkConnectivity.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NetworkConnectivity\\cs\\Scenario1_NetworkConnectivity.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows how to query network connectivity, with or without opt-in network usage charges."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use the network even if it may incur charges"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "OptedInToNetworkUsageToggle"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Check network connectivity",
+                                               "handlers":  {
+                                                                "Click":  "QueryCurrentNetworkConnectivityButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ResultsText"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.Networking.Connectivity",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_NetworkConnectivity",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "QueryCurrentNetworkConnectivityButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ResultsText.Text",
+                                                                "NetworkInformation.GetInternetConnectionProfile",
+                                                                "NetworkConnectivityLevel.None",
+                                                                "Helpers.AppendLine",
+                                                                "Helpers.ShouldAttemptToConnectToInternet",
+                                                                "Helpers.EvaluateCostAndConnectAsync",
+                                                                "OptedInToNetworkUsageToggle.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1201
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_NetworkCost",
+                          "title":  "Get network cost information",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NetworkConnectivity\\shared\\Scenario2_NetworkCost.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NetworkConnectivity\\cs\\Scenario2_NetworkCost.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows how to get network cost and how apps should respond to different cost types."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get network cost",
+                                               "handlers":  {
+                                                                "Click":  "GetNetworkCost_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ResultsText"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.Networking.Connectivity",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_NetworkCost",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetNetworkCost_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ResultsText.Text",
+                                                                "NetworkInformation.GetInternetConnectionProfile",
+                                                                "Helpers.AppendLine",
+                                                                "Helpers.EvaluateAndReportConnectionCost"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  618
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_NetworkConnectivityChanges",
+                          "title":  "Listen to connectivity changes",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NetworkConnectivity\\shared\\Scenario3_NetworkConnectivityChanges.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NetworkConnectivity\\cs\\Scenario3_NetworkConnectivityChanges.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario registers for the NetworkStatusChanged event to track changes in network status and network cost, with or without opt-in network usage charges."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use the network even if it may incur charges"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "OptedInToNetworkUsageToggle"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterUnregisterButton",
+                                               "handlers":  {
+                                                                "Click":  "RegisterUnregisterButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "EventStatusText"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ResultsText"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Networking.Connectivity",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_NetworkConnectivityChanges",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  45
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  151
+                                           },
+                                           {
+                                               "name":  "UpdateNetworkStatus",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ResultsText.Text",
+                                                                "NetworkInformation.GetInternetConnectionProfile",
+                                                                "NetworkConnectivityLevel.None",
+                                                                "Helpers.AppendLine",
+                                                                "Helpers.ShouldAttemptToConnectToInternet",
+                                                                "Helpers.EvaluateCostAndConnectAsync",
+                                                                "OptedInToNetworkUsageToggle.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1734
+                                           },
+                                           {
+                                               "name":  "OnNetworkStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  158
+                                           },
+                                           {
+                                               "name":  "RegisterNetworkStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NetworkInformation.NetworkStatusChanged"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  189
+                                           },
+                                           {
+                                               "name":  "UnregisterNetworkStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NetworkInformation.NetworkStatusChanged"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  154
+                                           },
+                                           {
+                                               "name":  "RegisterUnregisterButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  283
+                                           },
+                                           {
+                                               "name":  "UpdateButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "VisualStateManager.GoToState"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  141
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

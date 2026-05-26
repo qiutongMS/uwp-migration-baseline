@@ -1,0 +1,321 @@
+﻿{
+    "sample":  "TextSegmentation",
+    "feature_name":  "Text segmentation C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Globalization.Language.IsWellFormed",
+                           "Windows.Data.Text.WordsSegmenter",
+                           "Windows.Data.Text.SelectableWordsSegmenter"
+                       ],
+    "api_references":  [
+                           "String.IsNullOrEmpty",
+                           "NotifyType.ErrorMessage",
+                           "Windows.Globalization",
+                           "Language.IsWellFormed",
+                           "Windows.Data",
+                           "Text.WordsSegmenter",
+                           "NotifyType.StatusMessage",
+                           "Text.SelectableWordsSegmenter",
+                           "Convert.ToUInt32"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_ExtractTextSegments",
+                          "title":  "Extract Text Segments",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSegmentation\\shared\\Scenario1_ExtractTextSegments.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSegmentation\\cs\\Scenario1_ExtractTextSegments.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Input String: "
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "inputStringBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Language Tag: "
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "languageTagBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "WordSegmentsButton",
+                                               "content":  "Word Segments",
+                                               "handlers":  {
+                                                                "Click":  "WordSegmentsButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SelectionSegmentsButton",
+                                               "content":  "Selection Segments",
+                                               "handlers":  {
+                                                                "Click":  "SelectionSegmentsButton_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "System",
+                                         "System.Text"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_ExtractTextSegments",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "WordSegmentsButton_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.Language.IsWellFormed",
+                                                                       "Windows.Data.Text.WordsSegmenter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Globalization",
+                                                                "Language.IsWellFormed",
+                                                                "Windows.Data",
+                                                                "Text.WordsSegmenter",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Data.Text.WordsSegmenter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2835
+                                           },
+                                           {
+                                               "name":  "SelectionSegmentsButton_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.Language.IsWellFormed",
+                                                                       "Windows.Data.Text.SelectableWordsSegmenter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Globalization",
+                                                                "Language.IsWellFormed",
+                                                                "Windows.Data",
+                                                                "Text.SelectableWordsSegmenter",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Data.Text.SelectableWordsSegmenter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2703
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_GetCurrentTextSegmentFromIndex",
+                          "title":  "Get Current Text Segment From Index",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSegmentation\\shared\\Scenario2_GetCurrentTextSegmentFromIndex.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSegmentation\\cs\\Scenario2_GetCurrentTextSegmentFromIndex.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Input String: "
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "inputStringBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Language Tag: "
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "languageTagBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Index: "
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "indexBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "WordSegmentButton",
+                                               "content":  "Word Segment",
+                                               "handlers":  {
+                                                                "Click":  "WordSegmentButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SelectionSegmentButton",
+                                               "content":  "Selection Segment",
+                                               "handlers":  {
+                                                                "Click":  "SelectionSegmentButton_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "System",
+                                         "System.Text"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_GetCurrentTextSegmentFromIndex",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "WordSegmentButton_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.Language.IsWellFormed",
+                                                                       "Windows.Data.Text.WordsSegmenter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Globalization",
+                                                                "Language.IsWellFormed",
+                                                                "Convert.ToUInt32",
+                                                                "Windows.Data",
+                                                                "Text.WordsSegmenter",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Data.Text.WordsSegmenter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  4327
+                                           },
+                                           {
+                                               "name":  "SelectionSegmentButton_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.Language.IsWellFormed",
+                                                                       "Windows.Data.Text.SelectableWordsSegmenter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Globalization",
+                                                                "Language.IsWellFormed",
+                                                                "Convert.ToUInt32",
+                                                                "Windows.Data",
+                                                                "Text.SelectableWordsSegmenter",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Data.Text.SelectableWordsSegmenter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  4362
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

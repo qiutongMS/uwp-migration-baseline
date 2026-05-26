@@ -1,0 +1,1275 @@
+﻿{
+    "sample":  "CustomHidDeviceAccess",
+    "feature_name":  "CustomHidDeviceAccess",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "EventHandlerForDevice.Current",
+                           "DeviceListSource.Source",
+                           "ConnectDevices.SelectedItems",
+                           "EventHandlerForDevice.CreateNewEventHandlerForDevice",
+                           "ButtonDisconnectFromDevice.Content",
+                           "HidDevice.GetDeviceSelector",
+                           "SuperMutt.Device",
+                           "DeviceInformation.CreateWatcher",
+                           "App.Current",
+                           "DeviceWatcherStatus.Started",
+                           "DeviceWatcherStatus.EnumerationCompleted",
+                           "DeviceInformation.Id",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "NotifyType.StatusMessage",
+                           "ButtonDisconnectFromDevice.IsEnabled",
+                           "ConnectDevices.SelectedIndex",
+                           "ButtonConnectToDevice.IsEnabled",
+                           "ConnectDevices.IsEnabled",
+                           "DeviceType.SuperMutt",
+                           "Utilities.SetUpDeviceScenarios",
+                           "ButtonGetLedBlinkPattern.IsEnabled",
+                           "Utilities.NotifyDeviceNotConnected",
+                           "ButtonSetLedBlinkPattern.IsEnabled",
+                           "LedBlinkPatternInput.SelectedIndex",
+                           "Device.CreateFeatureReport",
+                           "SuperMutt.LedPattern",
+                           "Device.SendFeatureReportAsync",
+                           "Device.GetFeatureReportAsync",
+                           "Data.Length",
+                           "DataReader.FromBuffer",
+                           "NotifyType.ErrorMessage",
+                           "Device.CreateOutputReport",
+                           "SuperMutt.DeviceInputReportControlInformation",
+                           "Device.SendOutputReportAsync",
+                           "ButtonRegisterForInputReportEvents.IsEnabled",
+                           "ButtonUnregisterFromInputReportEvents.IsEnabled",
+                           "ButtonGetNumericInputReport.IsEnabled",
+                           "ButtonSendNumericOutputReport.IsEnabled",
+                           "NumericValueToWrite.SelectedIndex",
+                           "ButtonGetBooleanInputReport.IsEnabled",
+                           "ButtonSendBooleanOutputReport.IsEnabled",
+                           "BooleanValueToWrite.SelectedIndex",
+                           "Device.GetInputReportAsync",
+                           "SuperMutt.ReadWriteBufferControlInformation"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DeviceConnect",
+                          "title":  "Scenario1_DeviceConnect",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario1_DeviceConnect.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario1_DeviceConnect.xaml.cs",
+                          "description":  "This scenario shows how to locate a HID device and open a handle to the device.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonConnectToDevice",
+                                               "content":  "Connect to device",
+                                               "handlers":  {
+                                                                "Click":  "ConnectToDevice_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonDisconnectFromDevice",
+                                               "content":  "Disconnect from device",
+                                               "handlers":  {
+                                                                "Click":  "DisconnectFromDevice_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Select a Hid Device:"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ConnectDevices"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding InstanceId}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.IO",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.ApplicationModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.HumanInterfaceDevice",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "CustomHidDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "DeviceConnect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  344
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceListSource.Source"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  696
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  286
+                                           },
+                                           {
+                                               "name":  "ConnectToDevice_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedItems",
+                                                                "EventHandlerForDevice.CreateNewEventHandlerForDevice",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1368
+                                           },
+                                           {
+                                               "name":  "DisconnectFromDevice_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedItems",
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonDisconnectFromDevice.Content"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  830
+                                           },
+                                           {
+                                               "name":  "InitializeDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "HidDevice.GetDeviceSelector",
+                                                                "SuperMutt.Device",
+                                                                "DeviceInformation.CreateWatcher"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  616
+                                           },
+                                           {
+                                               "name":  "StartHandlingAppEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SuspendingEventHandler",
+                                                                 "EventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  396
+                                           },
+                                           {
+                                               "name":  "StopHandlingAppEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  225
+                                           },
+                                           {
+                                               "name":  "AddDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  462
+                                           },
+                                           {
+                                               "name":  "StartDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  508
+                                           },
+                                           {
+                                               "name":  "StopDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  598
+                                           },
+                                           {
+                                               "name":  "AddDeviceToList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceListEntry"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  594
+                                           },
+                                           {
+                                               "name":  "RemoveDeviceFromList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  194
+                                           },
+                                           {
+                                               "name":  "ClearDeviceEntries",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "FindDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.Id"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "OnAppSuspension",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  248
+                                           },
+                                           {
+                                               "name":  "OnAppResume",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  160
+                                           },
+                                           {
+                                               "name":  "OnDeviceRemoved",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  380
+                                           },
+                                           {
+                                               "name":  "OnDeviceAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  401
+                                           },
+                                           {
+                                               "name":  "OnDeviceEnumerationComplete",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Id",
+                                                                "ButtonDisconnectFromDevice.Content",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1932
+                                           },
+                                           {
+                                               "name":  "OnDeviceConnected",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonDisconnectFromDevice.Content",
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Id",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  924
+                                           },
+                                           {
+                                               "name":  "OnDeviceClosing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ButtonDisconnectFromDevice.IsEnabled",
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonDisconnectFromDevice.Content"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  963
+                                           },
+                                           {
+                                               "name":  "SelectDeviceInList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedIndex",
+                                                                "DeviceInformation.Id"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  472
+                                           },
+                                           {
+                                               "name":  "UpdateConnectDisconnectButtonsAndList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonConnectToDevice.IsEnabled",
+                                                                "ButtonDisconnectFromDevice.IsEnabled",
+                                                                "ConnectDevices.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  239
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_FeatureReports",
+                          "title":  "Scenario2_FeatureReports",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario2_FeatureReports.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario2_FeatureReports.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SuperMuttScenarioText",
+                                               "inner_text":  "This scenario demonstrates how to use feature report to set/get the LED blink pattern of the SuperMUTT device"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonGetLedBlinkPattern",
+                                               "content":  "Get Led Blink Pattern",
+                                               "handlers":  {
+                                                                "Click":  "GetLedBlinkPattern_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSetLedBlinkPattern",
+                                               "content":  "Set Led Blink Pattern",
+                                               "handlers":  {
+                                                                "Click":  "SetLedBlinkPattern_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "LedBlinkPatternInput"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.HumanInterfaceDevice",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "FeatureReports",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  474
+                                           },
+                                           {
+                                               "name":  "GetLedBlinkPattern_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonGetLedBlinkPattern.IsEnabled",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  386
+                                           },
+                                           {
+                                               "name":  "SetLedBlinkPattern_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonSetLedBlinkPattern.IsEnabled",
+                                                                "LedBlinkPatternInput.SelectedIndex",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  467
+                                           },
+                                           {
+                                               "name":  "SetLedBlinkPatternAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.CreateFeatureReport",
+                                                                "SuperMutt.LedPattern",
+                                                                "Device.SendFeatureReportAsync",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  617
+                                           },
+                                           {
+                                               "name":  "GetLedBlinkPatternAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.GetFeatureReportAsync",
+                                                                "SuperMutt.LedPattern",
+                                                                "Data.Length",
+                                                                "DataReader.FromBuffer",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  700
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_InputReportEvents",
+                          "title":  "Scenario3_InputReportEvents",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario3_InputReportEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario3_InputReportEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SuperMuttScenarioText",
+                                               "inner_text":  "This scenario shows how to register for an event using the HidDevice. If the device is disconnected and reconnected, you must reregister for the event because it is not automatically done."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonRegisterForInputReportEvents",
+                                               "content":  "Register For Event",
+                                               "handlers":  {
+                                                                "Click":  "RegisterForInputReportEvents_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonUnregisterFromInputReportEvents",
+                                               "content":  "Unregister From Event",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterFromInputReportEvents_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.HumanInterfaceDevice",
+                                         "Windows.Foundation",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "InputReportEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  155
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  735
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  652
+                                           },
+                                           {
+                                               "name":  "OnDeviceClosing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  246
+                                           },
+                                           {
+                                               "name":  "RegisterForInputReportEvents_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  475
+                                           },
+                                           {
+                                               "name":  "UnregisterFromInputReportEvents_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "StartSuperMuttInputReports",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.CreateOutputReport",
+                                                                "SuperMutt.DeviceInputReportControlInformation",
+                                                                "Device.SendOutputReportAsync"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  566
+                                           },
+                                           {
+                                               "name":  "StopSuperMuttInputReports",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.CreateOutputReport",
+                                                                "SuperMutt.DeviceInputReportControlInformation",
+                                                                "Device.SendOutputReportAsync"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  567
+                                           },
+                                           {
+                                               "name":  "OnInputReportEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1620
+                                           },
+                                           {
+                                               "name":  "RegisterForInputReportEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  926
+                                           },
+                                           {
+                                               "name":  "UnregisterFromInputReportEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  546
+                                           },
+                                           {
+                                               "name":  "UpdateRegisterEventButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonRegisterForInputReportEvents.IsEnabled",
+                                                                "ButtonUnregisterFromInputReportEvents.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  202
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_InputOutputReports",
+                          "title":  "Scenario4_InputOutputReports",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario4_InputOutputReports.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomHidDeviceAccess\\cs\\Scenario4_InputOutputReports.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SuperMuttScenarioText",
+                                               "inner_text":  "This scenario shows how to read and write to the device using input and output reports."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Numeric Values:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSendNumericOutputReport",
+                                               "content":  "Send Output Report",
+                                               "handlers":  {
+                                                                "Click":  "SendNumericOutputReport_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Value To Write:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "NumericValueToWrite"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonGetNumericInputReport",
+                                               "content":  "Get Input Report",
+                                               "handlers":  {
+                                                                "Click":  "GetNumericInputReport_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Boolean Value for Button 1:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSendBooleanOutputReport",
+                                               "content":  "Send Output Report",
+                                               "handlers":  {
+                                                                "Click":  "SendBooleanOutputReport_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Bit Value:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "BooleanValueToWrite"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonGetBooleanInputReport",
+                                               "content":  "Get Input Report",
+                                               "handlers":  {
+                                                                "Click":  "GetBooleanInputReport_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Globalization",
+                                         "System.Threading.Tasks",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "InputOutputReports",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  474
+                                           },
+                                           {
+                                               "name":  "GetNumericInputReport_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonGetNumericInputReport.IsEnabled",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  457
+                                           },
+                                           {
+                                               "name":  "SendNumericOutputReport_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonSendNumericOutputReport.IsEnabled",
+                                                                "NumericValueToWrite.SelectedIndex",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  491
+                                           },
+                                           {
+                                               "name":  "GetBooleanInputReport_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonGetBooleanInputReport.IsEnabled",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  535
+                                           },
+                                           {
+                                               "name":  "SendBooleanOutputReport_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonSendBooleanOutputReport.IsEnabled",
+                                                                "BooleanValueToWrite.SelectedIndex",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  575
+                                           },
+                                           {
+                                               "name":  "GetNumericInputReportAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.GetInputReportAsync",
+                                                                "SuperMutt.ReadWriteBufferControlInformation",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  498
+                                           },
+                                           {
+                                               "name":  "SendNumericOutputReportAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.CreateOutputReport",
+                                                                "SuperMutt.ReadWriteBufferControlInformation",
+                                                                "Device.SendOutputReportAsync",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  751
+                                           },
+                                           {
+                                               "name":  "GetBooleanInputReportAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.GetInputReportAsync",
+                                                                "SuperMutt.ReadWriteBufferControlInformation",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  558
+                                           },
+                                           {
+                                               "name":  "SendBooleanOutputReportAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.CreateOutputReport",
+                                                                "SuperMutt.ReadWriteBufferControlInformation",
+                                                                "Device.SendOutputReportAsync",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  931
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

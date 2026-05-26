@@ -1,0 +1,2506 @@
+﻿{
+    "sample":  "DeviceEnumerationAndPairing",
+    "feature_name":  "Device Enumeration and Pairing C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "DeviceSelectorChoices.DevicePickerSelectors",
+                           "Filter.SupportedDeviceClasses",
+                           "Filter.SupportedDeviceSelectors",
+                           "NotifyType.StatusMessage",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Low",
+                           "DeviceSelectorChoices.DeviceWatcherSelectors",
+                           "DeviceInformation.CreateWatcher",
+                           "DeviceInformationKind.Unknown",
+                           "DeviceSelectorChoices.BackgroundDeviceWatcherSelectors",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "DeviceWatcherEventKind.Add",
+                           "DeviceWatcherEventKind.Remove",
+                           "DeviceWatcherEventKind.Update",
+                           "BackgroundDeviceWatcherTaskCs.BackgroundDeviceWatcher",
+                           "CoreDispatcherPriority.Normal",
+                           "ApplicationData.Current",
+                           "DeviceSelectorChoices.FindAllAsyncSelectors",
+                           "DeviceInformation.FindAllAsync",
+                           "String.Format",
+                           "DeviceClass.AudioRender",
+                           "DeviceInformation.Kind",
+                           "DeviceInformation.Id",
+                           "InformationKindTextBox.Text",
+                           "DeviceInformation.CreateFromIdAsync",
+                           "NotifyType.ErrorMessage",
+                           "FocusState.Keyboard",
+                           "DeviceInformation.Properties",
+                           "System.Devices",
+                           "System.ItemNameDisplay",
+                           "DeviceInformationKindChoices.Choices",
+                           "DeviceSelectorChoices.PairingSelectors",
+                           "Aep.CanPair",
+                           "System.StructuredQueryType",
+                           "Aep.IsPaired",
+                           "DeviceInformation.Pairing",
+                           "Status.ToString",
+                           "DevicePairingResultStatus.Paired",
+                           "DeviceUnpairingResultStatus.Unpaired",
+                           "ProtectionSelectorChoices.Selectors",
+                           "DevicePairingKinds.ConfirmOnly",
+                           "DevicePairingKinds.DisplayPin",
+                           "DevicePairingKinds.ProvidePin",
+                           "DevicePairingKinds.ProvidePasswordCredential",
+                           "DevicePairingKinds.ConfirmPinMatch",
+                           "Visibility.Collapsed",
+                           "Visibility.Visible",
+                           "String.IsNullOrEmpty",
+                           "DevicePairingKinds.None",
+                           "IsChecked.Value"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DevicePicker",
+                          "title":  "Device Picker Common Control",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario1_DevicePicker.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario1_DevicePicker.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=DisplayName}"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario demonstrates the use of the Windows.Devices.Enumeration.DevicePicker. DevicePicker is a UI control that allows users of your app to pick a device"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Choose a device selector:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "selectorComboBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "pickSingleDeviceButton",
+                                               "handlers":  {
+                                                                "Click":  "PickSingleDeviceButton_Click"
+                                                            },
+                                               "inner_text":  "Pick Single Device"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "showDevicePickerButton",
+                                               "handlers":  {
+                                                                "Click":  "ShowDevicePickerButton_Click"
+                                                            },
+                                               "inner_text":  "Show Device Picker"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Media",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DevicePicker",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceSelectorChoices.DevicePickerSelectors"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  209
+                                           },
+                                           {
+                                               "name":  "PickSingleDeviceButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  97
+                                           },
+                                           {
+                                               "name":  "ShowDevicePickerButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  98
+                                           },
+                                           {
+                                               "name":  "ShowDevicePicker",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Filter.SupportedDeviceClasses",
+                                                                "Filter.SupportedDeviceSelectors",
+                                                                "NotifyType.StatusMessage",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DevicePicker",
+                                                                 "Point",
+                                                                 "Rect",
+                                                                 "DeviceInformationDisplay",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2973
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_DeviceWatcher",
+                          "title":  "Enumerate and Watch Devices",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario2_DeviceWatcher.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario2_DeviceWatcher.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=DisplayName}"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario demonstrates the use of the Windows.Devices.Enumeration DeviceWatcher. Device Watcher allows you to find and recieve updates for devices that you care about."
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "selectorComboBox",
+                                               "header":  "Choose a device selector:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "startWatcherButton",
+                                               "content":  "Start Watcher",
+                                               "handlers":  {
+                                                                "Click":  "StartWatcherButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "stopWatcherButton",
+                                               "content":  "Stop Watcher",
+                                               "handlers":  {
+                                                                "Click":  "StopWatcherButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_DeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceWatcherHelper"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  143
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceSelectorChoices.DeviceWatcherSelectors"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  210
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "StartWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StopWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "StartWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "DeviceInformationKind.Unknown",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1650
+                                           },
+                                           {
+                                               "name":  "StopWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  158
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_BackgroundDeviceWatcher",
+                          "title":  "Enumerate and Watch Devices in a Background Task",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario3_BackgroundDeviceWatcher.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario3_BackgroundDeviceWatcher.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=DisplayName}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario demonstrates the use of the Windows.Devices.Enumeration DeviceWatcherTrigger. DeviceWatcherTrigger is similar to DeviceWatcher, but is performed in a background task. Note that Bluetooth and Wi-Fi Direct selectors that perform \u0027live\u0027 protocol queries aren\u0027t support for perforfance reasons."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Choose a device selector:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "selectorComboBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "startWatcherButton",
+                                               "handlers":  {
+                                                                "Click":  "StartWatcherButton_Click"
+                                                            },
+                                               "inner_text":  "Start Background Watcher"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "stopWatcherButton",
+                                               "handlers":  {
+                                                                "Click":  "StopWatcherButton_Click"
+                                                            },
+                                               "inner_text":  "Stop Background Watcher"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "You can see results from the DeviceWatcherTrigger in the debugger output window"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_BackgroundDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceSelectorChoices.BackgroundDeviceWatcherSelectors",
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  633
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  219
+                                           },
+                                           {
+                                               "name":  "StartWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StopWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "StartWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherEventKind.Add",
+                                                                "DeviceWatcherEventKind.Remove",
+                                                                "DeviceWatcherEventKind.Update",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "DeviceInformationKind.Unknown",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2091
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "BackgroundDeviceWatcherTaskCs.BackgroundDeviceWatcher"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  885
+                                           },
+                                           {
+                                               "name":  "OnTaskCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  220
+                                           },
+                                           {
+                                               "name":  "StopWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  264
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ApplicationData.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  191
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_Snapshot",
+                          "title":  "Enumerate Snapshot of Devices",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario4_Snapshot.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario4_Snapshot.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=DisplayName}"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario demonstrates the use of the Windows.Devices.Enumeration DeviceInformation.FindAllAsync. Use for grabbing a quick snapshot of devices you care about."
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "selectorComboBox",
+                                               "header":  "Choose a device selector:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "findButton",
+                                               "content":  "Find",
+                                               "handlers":  {
+                                                                "Click":  "FindButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_Snapshot",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceSelectorChoices.FindAllAsyncSelectors"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  211
+                                           },
+                                           {
+                                               "name":  "FindButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceInformation.FindAllAsync",
+                                                                "String.Format"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceInformationDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1580
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_GetSingleDevice",
+                          "title":  "Get Single Device",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario5_GetSingleDevice.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario5_GetSingleDevice.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario demonstrates the use of the DeviceInformation.CreateFromIdAsync method. This would typically be used when you have a device id saved, and want to retrieve information about that device again."
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "interfaceIdTextBox",
+                                               "header":  "Remembered device id:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "InformationKindTextBox",
+                                               "header":  "Remembered device information kind:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "getButton",
+                                               "content":  "Get",
+                                               "handlers":  {
+                                                                "Click":  "GetButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "System.IO",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario5_GetSingleDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  71
+                                           },
+                                           {
+                                               "name":  "Page_Loaded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.FindAllAsync",
+                                                                "DeviceClass.AudioRender",
+                                                                "DeviceInformation.Kind",
+                                                                "DeviceInformation.Id",
+                                                                "InformationKindTextBox.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "interfaceIdTextBox.Text",
+                                                               "InformationKindTextBox.Text"
+                                                           ],
+                                               "body_length":  763
+                                           },
+                                           {
+                                               "name":  "GetButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceInformation.Kind",
+                                                                "DeviceInformation.Id",
+                                                                "DeviceInformation.CreateFromIdAsync",
+                                                                "NotifyType.ErrorMessage",
+                                                                "FocusState.Keyboard"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceInformationDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1061
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  6,
+                          "class":  "Scenario6_CustomFilterAddedProps",
+                          "title":  "Custom Filter with Additional Properties",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario6_CustomFilterAddedProps.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario6_CustomFilterAddedProps.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "System.Devices.InterfaceClassGuid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind GetPropertyForDisplay(\"System.Devices.InterfaceClassGuid\"), Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "System.ItemNameDisplay:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind GetPropertyForDisplay(\u0027System.ItemNameDisplay\u0027), Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario demonstrates using custom filters and/or requesting additional properties with the DeviceWatcher. A custom filter and/or requested additional properties can also be done with the DevicePicker, FindAllAsync, and DeviceWatcherTrigger."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Enter an Advanced Query Syntax (AQS) filter"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "aqsFilterTextBox",
+                                               "text":  "System.Devices.InterfaceClassGuid:=\"{e6327cad-dcec-4949-ae8a-991e976a79d2}\" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "startWatcherButton",
+                                               "handlers":  {
+                                                                "Click":  "StartWatcherButton_Click"
+                                                            },
+                                               "inner_text":  "Start Watcher"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "stopWatcherButton",
+                                               "handlers":  {
+                                                                "Click":  "StopWatcherButton_Click"
+                                                            },
+                                               "inner_text":  "Stop Watcher"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario6_CustomFilterAddedProps",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceWatcherHelper"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  143
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  71
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "StartWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StopWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "StartWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.Properties",
+                                                                "System.Devices",
+                                                                "System.ItemNameDisplay",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "NotifyType.StatusMessage",
+                                                                "FocusState.Keyboard"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "aqsFilterTextBox.IsEnabled"
+                                                           ],
+                                               "body_length":  1279
+                                           },
+                                           {
+                                               "name":  "StopWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "FocusState.Keyboard"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "aqsFilterTextBox.IsEnabled"
+                                                           ],
+                                               "body_length":  319
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  7,
+                          "class":  "Scenario7_DeviceInformationKind",
+                          "title":  "Request Specific DeviceInformationKind",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario7_DeviceInformationKind.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario7_DeviceInformationKind.xaml.cs",
+                          "description":  "This scenario demonstrates requesting various DeviceInformationKinds.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind DisplayName}"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Kind:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Kind, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario demonstrates requesting various DeviceInformationKinds. Methods without the DeviceInformationKind parameter default to DeviceInterface"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "kindComboBox",
+                                               "header":  "Choose a DeviceInformationKind:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "startWatcherButton",
+                                               "content":  "Start Watcher",
+                                               "handlers":  {
+                                                                "Click":  "StartWatcherButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "stopWatcherButton",
+                                               "content":  "Stop Watcher",
+                                               "handlers":  {
+                                                                "Click":  "StopWatcherButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario7_DeviceInformationKind",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformationKindChoices.Choices"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  196
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  55
+                                           },
+                                           {
+                                               "name":  "StartWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  40
+                                           },
+                                           {
+                                               "name":  "StopWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StartWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "FocusState.Keyboard"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceWatcherHelper"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1119
+                                           },
+                                           {
+                                               "name":  "StopWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "FocusState.Keyboard"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  502
+                                           },
+                                           {
+                                               "name":  "OnDeviceListChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  555
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  8,
+                          "class":  "Scenario8_PairDevice",
+                          "title":  "Basic Device Pairing",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario8_PairDevice.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario8_PairDevice.xaml.cs",
+                          "description":  "This scenario demonstrates how to perform basic pairing. Basic pairing allows you to tell Windows which device you want paired, and then Windows will handle the ceremony and the UI. If you want to display your own UI and be involved in the pairing ceremony, please see the Custom Pairing scenario.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=DisplayName}"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "CanPair:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind CanPair, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "IsPaired:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind IsPaired, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Choose a device selector:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "selectorComboBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "startWatcherButton",
+                                               "handlers":  {
+                                                                "Click":  "StartWatcherButton_Click"
+                                                            },
+                                               "inner_text":  "Start Watcher"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "stopWatcherButton",
+                                               "handlers":  {
+                                                                "Click":  "StopWatcherButton_Click"
+                                                            },
+                                               "inner_text":  "Stop Watcher"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "pairButton",
+                                               "handlers":  {
+                                                                "Click":  "PairButton_Click"
+                                                            },
+                                               "inner_text":  "Pair Selected Device"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "unpairButton",
+                                               "handlers":  {
+                                                                "Click":  "UnpairButton_Click"
+                                                            },
+                                               "inner_text":  "Unpair Selected Device"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "ResultsListView_SelectionChanged"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario8_PairDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceWatcherHelper"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  214
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceSelectorChoices.PairingSelectors"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  206
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "StartWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StopWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "StartWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "System.Devices",
+                                                                "Aep.CanPair",
+                                                                "System.StructuredQueryType",
+                                                                "Aep.IsPaired",
+                                                                "DeviceInformationKind.Unknown",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1528
+                                           },
+                                           {
+                                               "name":  "StopWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  162
+                                           },
+                                           {
+                                               "name":  "OnDeviceListChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  387
+                                           },
+                                           {
+                                               "name":  "PairButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceInformation.Pairing",
+                                                                "Status.ToString",
+                                                                "DevicePairingResultStatus.Paired",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  803
+                                           },
+                                           {
+                                               "name":  "UnpairButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceInformation.Pairing",
+                                                                "Status.ToString",
+                                                                "DeviceUnpairingResultStatus.Unpaired",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  824
+                                           },
+                                           {
+                                               "name":  "ResultsListView_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  47
+                                           },
+                                           {
+                                               "name":  "UpdatePairingButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.Pairing"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  763
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  9,
+                          "class":  "Scenario9_CustomPairDevice",
+                          "title":  "Custom Device Pairing",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\shared\\Scenario9_CustomPairDevice.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs\\Scenario9_CustomPairDevice.xaml.cs",
+                          "description":  "Custom pairing allows your app to be involved in the pairing ceremony and use your own UI. If you want Windows to control the ceremony and display system UI, please look at the basic pairing scenario.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind DisplayName}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind DisplayName}"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Name, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Id:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind Id, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "CanPair:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind CanPair, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "IsPaired:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind IsPaired, Mode=OneWay}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "selectorComboBox",
+                                               "header":  "Choose a device selector:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Select supported pairing ceremonies:"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "confirmOnlyOption",
+                                               "content":  "ConfirmOnly"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "displayPinOption",
+                                               "content":  "DisplayPin"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "providePinOption",
+                                               "content":  "ProvidePin"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "confirmPinMatchOption",
+                                               "content":  "ConfirmPinMatch"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "passwordCredentialOption",
+                                               "content":  "Credential"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "protectionLevelComboBox",
+                                               "header":  "Choose a protection level:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "startWatcherButton",
+                                               "content":  "Start Watcher",
+                                               "handlers":  {
+                                                                "Click":  "StartWatcherButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "stopWatcherButton",
+                                               "content":  "Stop Watcher",
+                                               "handlers":  {
+                                                                "Click":  "StopWatcherButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "pairButton",
+                                               "content":  "Pair Selected Device",
+                                               "handlers":  {
+                                                                "Click":  "PairButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "unpairButton",
+                                               "content":  "Unpair Selected Device",
+                                               "handlers":  {
+                                                                "Click":  "UnpairButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "pairingTextBlock"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "pinEntryTextBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "okButton",
+                                               "handlers":  {
+                                                                "Click":  "okButton_Click"
+                                                            },
+                                               "inner_text":  "OK"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "usernameEntryTextBox"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "passwordEntryTextBox"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "verifyButton",
+                                               "handlers":  {
+                                                                "Click":  "verifyButton_Click"
+                                                            },
+                                               "inner_text":  "Verify"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "yesButton",
+                                               "handlers":  {
+                                                                "Click":  "yesButton_Click"
+                                                            },
+                                               "inner_text":  "Yes"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "noButton",
+                                               "handlers":  {
+                                                                "Click":  "noButton_Click"
+                                                            },
+                                               "inner_text":  "No"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "ResultsListView_SelectionChanged"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.Security.Credentials",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario9_CustomPairDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceWatcherHelper"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  214
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceSelectorChoices.PairingSelectors",
+                                                                "ProtectionSelectorChoices.Selectors"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  352
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  285
+                                           },
+                                           {
+                                               "name":  "StartWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StopWatcherButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "StartWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "System.Devices",
+                                                                "Aep.CanPair",
+                                                                "System.StructuredQueryType",
+                                                                "Aep.IsPaired",
+                                                                "DeviceInformationKind.Unknown",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1528
+                                           },
+                                           {
+                                               "name":  "StopWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  158
+                                           },
+                                           {
+                                               "name":  "OnDeviceListChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  387
+                                           },
+                                           {
+                                               "name":  "PairButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceInformation.Pairing",
+                                                                "Status.ToString",
+                                                                "DevicePairingResultStatus.Paired",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1533
+                                           },
+                                           {
+                                               "name":  "UnpairButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceInformation.Pairing",
+                                                                "Status.ToString",
+                                                                "DeviceUnpairingResultStatus.Unpaired",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  824
+                                           },
+                                           {
+                                               "name":  "PairingRequestedHandler",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DevicePairingKinds.ConfirmOnly",
+                                                                "DevicePairingKinds.DisplayPin",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "DevicePairingKinds.ProvidePin",
+                                                                "DevicePairingKinds.ProvidePasswordCredential",
+                                                                "DevicePairingKinds.ConfirmPinMatch"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3618
+                                           },
+                                           {
+                                               "name":  "ShowPairingPanel",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Visibility.Collapsed",
+                                                                "DevicePairingKinds.ConfirmOnly",
+                                                                "DevicePairingKinds.DisplayPin",
+                                                                "DevicePairingKinds.ProvidePin",
+                                                                "Visibility.Visible",
+                                                                "DevicePairingKinds.ConfirmPinMatch",
+                                                                "DevicePairingKinds.ProvidePasswordCredential"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "pinEntryTextBox.Visibility",
+                                                               "usernameEntryTextBox.Visibility",
+                                                               "passwordEntryTextBox.Visibility",
+                                                               "pairingTextBlock.Text",
+                                                               "pinEntryTextBox.Text",
+                                                               "usernameEntryTextBox.Text",
+                                                               "passwordEntryTextBox.Text"
+                                                           ],
+                                               "body_length":  1752
+                                           },
+                                           {
+                                               "name":  "HidePairingPanel",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "pairingTextBlock.Text"
+                                                           ],
+                                               "body_length":  112
+                                           },
+                                           {
+                                               "name":  "GetPinFromUserAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DevicePairingKinds.ProvidePin"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TaskCompletionSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  405
+                                           },
+                                           {
+                                               "name":  "CompleteProvidePinTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  178
+                                           },
+                                           {
+                                               "name":  "GetPasswordCredentialFromUserAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DevicePairingKinds.ProvidePasswordCredential"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TaskCompletionSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  430
+                                           },
+                                           {
+                                               "name":  "CompletePasswordCredential",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty"
+                                                            ],
+                                               "new_types":  [
+                                                                 "PasswordCredential"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  487
+                                           },
+                                           {
+                                               "name":  "PasswordCredential",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  42
+                                           },
+                                           {
+                                               "name":  "GetUserConfirmationAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DevicePairingKinds.ConfirmPinMatch"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TaskCompletionSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  430
+                                           },
+                                           {
+                                               "name":  "CompleteConfirmPinTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  181
+                                           },
+                                           {
+                                               "name":  "GetSelectedCeremonies",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DevicePairingKinds.None",
+                                                                "IsChecked.Value",
+                                                                "DevicePairingKinds.ConfirmOnly",
+                                                                "DevicePairingKinds.DisplayPin",
+                                                                "DevicePairingKinds.ProvidePin",
+                                                                "DevicePairingKinds.ConfirmPinMatch",
+                                                                "DevicePairingKinds.ProvidePasswordCredential"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  676
+                                           },
+                                           {
+                                               "name":  "ResultsListView_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  47
+                                           },
+                                           {
+                                               "name":  "UpdatePairingButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.Pairing"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  763
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

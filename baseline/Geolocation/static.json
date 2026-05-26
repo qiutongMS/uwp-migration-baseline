@@ -1,0 +1,2362 @@
+﻿{
+    "sample":  "Geolocation",
+    "feature_name":  "Geolocation",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "Geolocator.RequestAccessAsync",
+                           "GeolocationAccessStatus.Allowed",
+                           "NotifyType.StatusMessage",
+                           "LocationDisabledMessage.Visibility",
+                           "Visibility.Collapsed",
+                           "StartTrackingButton.IsEnabled",
+                           "StopTrackingButton.IsEnabled",
+                           "GeolocationAccessStatus.Denied",
+                           "NotifyType.ErrorMessage",
+                           "Visibility.Visible",
+                           "GeolocationAccessStatus.Unspecified",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "PositionStatus.Ready",
+                           "ScenarioOutput_Status.Text",
+                           "PositionStatus.Initializing",
+                           "PositionStatus.NoData",
+                           "PositionStatus.Disabled",
+                           "PositionStatus.NotInitialized",
+                           "PositionStatus.NotAvailable",
+                           "ScenarioOutput_Latitude.Text",
+                           "ScenarioOutput_Longitude.Text",
+                           "ScenarioOutput_Accuracy.Text",
+                           "ScenarioOutput_Source.Text",
+                           "ScenarioOutput_IsRemoteSource.Text",
+                           "Coordinate.Point",
+                           "Position.Latitude",
+                           "Position.Longitude",
+                           "Coordinate.Accuracy",
+                           "Coordinate.PositionSource",
+                           "Coordinate.IsRemoteSource",
+                           "GetGeolocationButton.IsEnabled",
+                           "CancelGetGeolocationButton.IsEnabled",
+                           "DesiredAccuracy.Default",
+                           "DesiredAccuracyInMeters.Text",
+                           "PositionSource.Satellite",
+                           "ScenarioOutput_PosPrecision.Text",
+                           "Coordinate.SatelliteData",
+                           "PositionDilutionOfPrecision.ToString",
+                           "ScenarioOutput_HorzPrecision.Text",
+                           "HorizontalDilutionOfPrecision.ToString",
+                           "ScenarioOutput_VertPrecision.Text",
+                           "VerticalDilutionOfPrecision.ToString",
+                           "ScenarioOutput_GeomPrecision.Text",
+                           "GeometricDilutionOfPrecision.ToString",
+                           "ScenarioOutput_TimePrecision.Text",
+                           "TimeDilutionOfPrecision.ToString",
+                           "ScenarioOutput_PosPrecision.Visibility",
+                           "ScenarioOutput_HorzPrecision.Visibility",
+                           "ScenarioOutput_VertPrecision.Visibility",
+                           "ScenarioOutput_GeomPrecision.Visibility",
+                           "ScenarioOutput_TimePrecision.Visibility",
+                           "MainPage.LookupBackgroundTask",
+                           "MainPage.CheckBackgroundAndRequestLocationAccess",
+                           "MainPage.ReportSavedStatus",
+                           "MainPage.LookupSavedString",
+                           "RegisterBackgroundTaskButton.IsEnabled",
+                           "UnregisterBackgroundTaskButton.IsEnabled",
+                           "Window.Current",
+                           "DateTime.Now",
+                           "StartDate.Date",
+                           "StartTime.Time",
+                           "GeofenceMonitor.Current",
+                           "GeofenceState.Removed",
+                           "RemovalReason.ToString",
+                           "Geofences.Remove",
+                           "RegisteredGeofenceListBox.Items",
+                           "GeofenceState.Entered",
+                           "GeofenceState.Exited",
+                           "RegisteredGeofenceListBox.SelectedItem",
+                           "Id.Text",
+                           "SingleUse.IsChecked",
+                           "MonitoredGeofenceStates.Entered",
+                           "MonitoredGeofenceStates.Exited",
+                           "MonitoredGeofenceStates.Removed",
+                           "DwellTime.Text",
+                           "Duration.Text",
+                           "TimeSpan.Zero",
+                           "StartImmediately.IsChecked",
+                           "DateTimeOffset.Now",
+                           "AddedItems.Count",
+                           "RemoveGeofenceItem.IsEnabled",
+                           "Latitude.Text",
+                           "Center.Latitude",
+                           "Longitude.Text",
+                           "Center.Longitude",
+                           "Radius.Text",
+                           "Radius.ToString",
+                           "DwellTime.ToString",
+                           "Duration.ToString",
+                           "StartAtSpecificTime.IsChecked",
+                           "StartTime.Date",
+                           "StartTime.TimeOfDay",
+                           "Double.TryParse",
+                           "SetPositionProgressBar.Visibility",
+                           "SetPositionToHereButton.IsEnabled",
+                           "Latitude.IsEnabled",
+                           "Longitude.IsEnabled",
+                           "PositionAccuracy.High",
+                           "Geofences.Add",
+                           "GeofenceEventsListBox.Items",
+                           "Array.Reverse",
+                           "TimeSpan.FromDays",
+                           "TimeSpan.FromHours",
+                           "TimeSpan.FromMinutes",
+                           "TimeSpan.FromSeconds",
+                           "LocationTriggerType.Geofence",
+                           "SystemConditionType.UserPresent",
+                           "SystemConditionType.InternetAvailable",
+                           "MainPage.FillItemsFromSavedJson",
+                           "GetLastVisitButton.IsEnabled",
+                           "GeovisitMonitor.GetLastReportAsync",
+                           "ScenarioOutput_Timestamp.Text",
+                           "ScenarioOutput_VisitStateChange.Text",
+                           "StateChange.ToString",
+                           "Timestamp.ToString",
+                           "Position.Coordinate",
+                           "Point.Position",
+                           "Latitude.ToString",
+                           "Longitude.ToString",
+                           "Accuracy.ToString",
+                           "IsRemoteSource.ToString",
+                           "VisitMonitoringScope.Venue",
+                           "StartMonitoringButton.IsEnabled",
+                           "StopMonitoringButton.IsEnabled",
+                           "BackgroundExecutionManager.RequestAccessAsync"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_TrackPosition",
+                          "title":  "Track position",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario1_TrackPosition.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario1_TrackPosition.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Geolocation API allows application to continuously track the position of the device either distance-based or periodic-based."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StartTrackingButton",
+                                               "content":  "Start Tracking",
+                                               "handlers":  {
+                                                                "Click":  "StartTracking"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopTrackingButton",
+                                               "content":  "Stop Tracking",
+                                               "handlers":  {
+                                                                "Click":  "StopTracking"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Status: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Latitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Longitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Accuracy: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Source: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "IsRemoteSource: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Status",
+                                               "text":  "Unknown"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Latitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Longitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Accuracy",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Source",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_IsRemoteSource",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "LocationDisabledMessage",
+                                               "inner_text":  "Application is not able to get location data. Go to Settings to check the location permissions."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_TrackPosition",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  208
+                                           },
+                                           {
+                                               "name":  "StartTracking",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Geolocator.RequestAccessAsync",
+                                                                "GeolocationAccessStatus.Allowed",
+                                                                "NotifyType.StatusMessage",
+                                                                "LocationDisabledMessage.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "StartTrackingButton.IsEnabled",
+                                                                "StopTrackingButton.IsEnabled",
+                                                                "GeolocationAccessStatus.Denied",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "GeolocationAccessStatus.Unspecified"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2015
+                                           },
+                                           {
+                                               "name":  "StopTracking",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "StartTrackingButton.IsEnabled",
+                                                                "StopTrackingButton.IsEnabled",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  365
+                                           },
+                                           {
+                                               "name":  "OnPositionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  253
+                                           },
+                                           {
+                                               "name":  "OnStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "LocationDisabledMessage.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "PositionStatus.Ready",
+                                                                "ScenarioOutput_Status.Text",
+                                                                "NotifyType.StatusMessage",
+                                                                "PositionStatus.Initializing",
+                                                                "PositionStatus.NoData",
+                                                                "NotifyType.ErrorMessage",
+                                                                "PositionStatus.Disabled",
+                                                                "Visibility.Visible",
+                                                                "PositionStatus.NotInitialized",
+                                                                "PositionStatus.NotAvailable"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3067
+                                           },
+                                           {
+                                               "name":  "UpdateLocationData",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_Latitude.Text",
+                                                                "ScenarioOutput_Longitude.Text",
+                                                                "ScenarioOutput_Accuracy.Text",
+                                                                "ScenarioOutput_Source.Text",
+                                                                "ScenarioOutput_IsRemoteSource.Text",
+                                                                "Coordinate.Point",
+                                                                "Position.Latitude",
+                                                                "Position.Longitude",
+                                                                "Coordinate.Accuracy",
+                                                                "Coordinate.PositionSource",
+                                                                "Coordinate.IsRemoteSource"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  916
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_GetPosition",
+                          "title":  "Get position",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario2_GetPosition.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario2_GetPosition.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Geolocation API allows application to take a one-shot reading of the current position."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "DesiredAccuracy (meters): "
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "DesiredAccuracyInMeters",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "(Set accuracy = 0 to use system default.)"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetGeolocationButton",
+                                               "content":  "Get Geolocation",
+                                               "handlers":  {
+                                                                "Click":  "GetGeolocationButtonClicked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CancelGetGeolocationButton",
+                                               "content":  "Cancel",
+                                               "handlers":  {
+                                                                "Click":  "CancelGetGeolocationButtonClicked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Latitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Longitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Accuracy: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Source: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "IsRemoteSource: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Label_DilutionOfPrecision",
+                                               "text":  "Dilution Of Precision (DOP): "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Label_PosPrecision",
+                                               "text":  "Position DOP: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Label_HorzPrecision",
+                                               "text":  "Horizontal DOP: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Label_VertPrecision",
+                                               "text":  "Vertical DOP: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Label_GeomPrecision",
+                                               "text":  "Geometric DOP: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Label_TimePrecision",
+                                               "text":  "Time DOP: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Latitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Longitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Accuracy",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Source",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_IsRemoteSource",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_PosPrecision",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_HorzPrecision",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_VertPrecision",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_GeomPrecision",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TimePrecision",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "LocationDisabledMessage",
+                                               "inner_text":  "Application is not able to get location data. Go to Settings to check the location permissions."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_GetPosition",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  133
+                                           },
+                                           {
+                                               "name":  "GetGeolocationButtonClicked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetGeolocationButton.IsEnabled",
+                                                                "CancelGetGeolocationButton.IsEnabled",
+                                                                "LocationDisabledMessage.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "Geolocator.RequestAccessAsync",
+                                                                "GeolocationAccessStatus.Allowed",
+                                                                "NotifyType.StatusMessage",
+                                                                "DesiredAccuracy.Default",
+                                                                "DesiredAccuracyInMeters.Text",
+                                                                "GeolocationAccessStatus.Denied",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "GeolocationAccessStatus.Unspecified"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CancellationTokenSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2607
+                                           },
+                                           {
+                                               "name":  "CancelGetGeolocationButtonClicked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetGeolocationButton.IsEnabled",
+                                                                "CancelGetGeolocationButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  246
+                                           },
+                                           {
+                                               "name":  "UpdateLocationData",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_Latitude.Text",
+                                                                "ScenarioOutput_Longitude.Text",
+                                                                "ScenarioOutput_Accuracy.Text",
+                                                                "ScenarioOutput_Source.Text",
+                                                                "ScenarioOutput_IsRemoteSource.Text",
+                                                                "Coordinate.Point",
+                                                                "Position.Latitude",
+                                                                "Position.Longitude",
+                                                                "Coordinate.Accuracy",
+                                                                "Coordinate.PositionSource",
+                                                                "Coordinate.IsRemoteSource",
+                                                                "PositionSource.Satellite",
+                                                                "ScenarioOutput_PosPrecision.Text",
+                                                                "Coordinate.SatelliteData",
+                                                                "PositionDilutionOfPrecision.ToString",
+                                                                "ScenarioOutput_HorzPrecision.Text",
+                                                                "HorizontalDilutionOfPrecision.ToString",
+                                                                "ScenarioOutput_VertPrecision.Text",
+                                                                "VerticalDilutionOfPrecision.ToString",
+                                                                "ScenarioOutput_GeomPrecision.Text",
+                                                                "GeometricDilutionOfPrecision.ToString",
+                                                                "ScenarioOutput_TimePrecision.Text",
+                                                                "TimeDilutionOfPrecision.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2015
+                                           },
+                                           {
+                                               "name":  "ShowSatelliteData",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Visibility.Visible",
+                                                                "Visibility.Collapsed",
+                                                                "ScenarioOutput_PosPrecision.Visibility",
+                                                                "ScenarioOutput_HorzPrecision.Visibility",
+                                                                "ScenarioOutput_VertPrecision.Visibility",
+                                                                "ScenarioOutput_GeomPrecision.Visibility",
+                                                                "ScenarioOutput_TimePrecision.Visibility"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  429
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_BackgroundTask",
+                          "title":  "Background position",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario3_BackgroundTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario3_BackgroundTask.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "inner_text":  "Registers a background task to read geolocation on a periodic timer. Displayed position will be updated periodically when the background task runs (set in the sample to every 15 minutes)."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterBackgroundTaskButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterBackgroundTaskButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Latitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Longitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Accuracy: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Latitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Longitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Accuracy",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.Foundation.Collections"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_BackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.LookupBackgroundTask"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  395
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  178
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.CheckBackgroundAndRequestLocationAccess"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "TimeTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1113
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_Latitude.Text",
+                                                                "ScenarioOutput_Longitude.Text",
+                                                                "ScenarioOutput_Accuracy.Text",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  505
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "MainPage.ReportSavedStatus",
+                                                                "ScenarioOutput_Latitude.Text",
+                                                                "MainPage.LookupSavedString",
+                                                                "ScenarioOutput_Longitude.Text",
+                                                                "ScenarioOutput_Accuracy.Text",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1222
+                                           },
+                                           {
+                                               "name":  "UpdateButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisterBackgroundTaskButton.IsEnabled",
+                                                                "UnregisterBackgroundTaskButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  199
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_ForegroundGeofence",
+                          "title":  "Foreground geofencing",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario4_ForegroundGeofence.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario4_ForegroundGeofence.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Geofence API allows applications to add, list and remove geofences that will be monitored by the system."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "*"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Indicates Required Fields"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "*"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Id",
+                                               "placeholdertext":  "(Required)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "up to 64 characters"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SetPositionToHereButton",
+                                               "content":  "Set to Here",
+                                               "handlers":  {
+                                                                "Click":  "OnSetPositionToHere"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ProgressBar",
+                                               "name":  "",
+                                               "x_name":  "SetPositionProgressBar"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Latitude"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "*"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Latitude",
+                                               "placeholdertext":  "(Required)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "-90 to 90 degrees"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Longitude"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "*"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Longitude",
+                                               "x_name":  "",
+                                               "placeholdertext":  "(Required)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "-180 to 180 degrees"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Radius"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "*"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Radius",
+                                               "placeholdertext":  "(Required)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  ".1 to 10018754.3 m"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Dwell Time"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "DwellTime"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Format: d:hh:mm:ss"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Leading zeros may be omitted."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Start Time"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "StartImmediately"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "StartAtSpecificTime"
+                                           },
+                                           {
+                                               "type":  "DatePicker",
+                                               "name":  "",
+                                               "x_name":  "StartDate"
+                                           },
+                                           {
+                                               "type":  "TimePicker",
+                                               "name":  "",
+                                               "x_name":  "StartTime"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Duration"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Duration",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "If 0, then infinite duration."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Format: d:hh:mm:ss"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Leading zeros may be omitted."
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "SingleUse",
+                                               "content":  "Single Use"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CreateGeofenceButton",
+                                               "content":  "Create Geofence",
+                                               "handlers":  {
+                                                                "Click":  "OnCreateGeofence"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Registered geofences"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "RegisteredGeofenceListBox",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "OnRegisteredGeofenceListBoxSelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RemoveGeofenceItem",
+                                               "content":  "Remove Geofence",
+                                               "handlers":  {
+                                                                "Click":  "OnRemoveGeofenceItem"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Events"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "GeofenceEventsListBox"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "System.Collections.Generic",
+                                         "Windows.Data.Json",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.Devices.Geolocation.Geofencing",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_ForegroundGeofence",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "DateTime.Now",
+                                                                "StartDate.Date",
+                                                                "StartTime.Time",
+                                                                "Geolocator.RequestAccessAsync",
+                                                                "GeolocationAccessStatus.Allowed",
+                                                                "GeofenceMonitor.Current",
+                                                                "NotifyType.ErrorMessage",
+                                                                "GeolocationAccessStatus.Denied",
+                                                                "GeolocationAccessStatus.Unspecified"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1865
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  433
+                                           },
+                                           {
+                                               "name":  "OnVisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1006
+                                           },
+                                           {
+                                               "name":  "OnGeofenceStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DateTime.Now",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  366
+                                           },
+                                           {
+                                               "name":  "OnGeofenceStateChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "DateTime.Now",
+                                                                "GeofenceState.Removed",
+                                                                "RemovalReason.ToString",
+                                                                "Geofences.Remove",
+                                                                "RegisteredGeofenceListBox.Items",
+                                                                "GeofenceState.Entered",
+                                                                "GeofenceState.Exited"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1788
+                                           },
+                                           {
+                                               "name":  "OnRemoveGeofenceItem",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisteredGeofenceListBox.SelectedItem",
+                                                                "Geofences.Remove",
+                                                                "RegisteredGeofenceListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  435
+                                           },
+                                           {
+                                               "name":  "GenerateGeofence",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "Id.Text",
+                                                                "NotifyType.ErrorMessage",
+                                                                "SingleUse.IsChecked",
+                                                                "MonitoredGeofenceStates.Entered",
+                                                                "MonitoredGeofenceStates.Exited",
+                                                                "MonitoredGeofenceStates.Removed",
+                                                                "DwellTime.Text",
+                                                                "Duration.Text",
+                                                                "TimeSpan.Zero",
+                                                                "StartImmediately.IsChecked",
+                                                                "DateTimeOffset.Now",
+                                                                "StartDate.Date",
+                                                                "StartTime.Time"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Geocircle",
+                                                                 "Geofence"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2978
+                                           },
+                                           {
+                                               "name":  "OnRegisteredGeofenceListBoxSelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AddedItems.Count",
+                                                                "RemoveGeofenceItem.IsEnabled",
+                                                                "RegisteredGeofenceListBox.SelectedItem"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  581
+                                           },
+                                           {
+                                               "name":  "RefreshControlsFromGeofence",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Id.Text",
+                                                                "Latitude.Text",
+                                                                "Center.Latitude",
+                                                                "Longitude.Text",
+                                                                "Center.Longitude",
+                                                                "Radius.Text",
+                                                                "Radius.ToString",
+                                                                "SingleUse.IsChecked",
+                                                                "TimeSpan.Zero",
+                                                                "DwellTime.Text",
+                                                                "DwellTime.ToString",
+                                                                "Duration.Text",
+                                                                "Duration.ToString",
+                                                                "StartImmediately.IsChecked",
+                                                                "StartAtSpecificTime.IsChecked",
+                                                                "StartDate.Date",
+                                                                "StartTime.Date",
+                                                                "StartTime.Time",
+                                                                "StartTime.TimeOfDay"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1215
+                                           },
+                                           {
+                                               "name":  "ParseDoubleFromTextBox",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Double.TryParse",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  313
+                                           },
+                                           {
+                                               "name":  "AddGeofenceToRegisteredGeofenceListBox",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Center.Latitude",
+                                                                "Center.Longitude",
+                                                                "RegisteredGeofenceListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  314
+                                           },
+                                           {
+                                               "name":  "OnSetPositionToHere",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SetPositionProgressBar.Visibility",
+                                                                "Visibility.Visible",
+                                                                "SetPositionToHereButton.IsEnabled",
+                                                                "Latitude.IsEnabled",
+                                                                "Longitude.IsEnabled",
+                                                                "PositionAccuracy.High",
+                                                                "Latitude.Text",
+                                                                "Coordinate.Point",
+                                                                "Position.Latitude",
+                                                                "Longitude.Text",
+                                                                "Position.Longitude",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CancellationTokenSource",
+                                                                 "Geolocator"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1741
+                                           },
+                                           {
+                                               "name":  "OnCreateGeofence",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Geofences.Add",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1015
+                                           },
+                                           {
+                                               "name":  "AddEventDescription",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GeofenceEventsListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  110
+                                           },
+                                           {
+                                               "name":  "ParseTimeSpan",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "TimeSpan.Zero",
+                                                                "Array.Reverse",
+                                                                "TimeSpan.FromDays",
+                                                                "TimeSpan.FromHours",
+                                                                "TimeSpan.FromMinutes",
+                                                                "TimeSpan.FromSeconds"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  989
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_GeofenceBackgroundTask",
+                          "title":  "Background geofencing",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario5_GeofenceBackgroundTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario5_GeofenceBackgroundTask.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Control registration of a background task to receive geofencing events. Geofences need to be created using the Foreground Geofencing scenario before background geofence events can occur."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterBackgroundTaskButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterBackgroundTaskButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Geofence events"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "GeofenceBackgroundEventsListBox",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario5_GeofenceBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.LookupBackgroundTask"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  458
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LocationTriggerType.Geofence",
+                                                                "SystemConditionType.UserPresent",
+                                                                "SystemConditionType.InternetAvailable",
+                                                                "MainPage.CheckBackgroundAndRequestLocationAccess"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "LocationTrigger",
+                                                                 "SystemCondition"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1535
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  411
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "MainPage.ReportSavedStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  873
+                                           },
+                                           {
+                                               "name":  "UpdateButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisterBackgroundTaskButton.IsEnabled",
+                                                                "UnregisterBackgroundTaskButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  201
+                                           },
+                                           {
+                                               "name":  "FillEventListBoxWithExistingEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.FillItemsFromSavedJson"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  126
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  6,
+                          "class":  "Scenario6_GetLastVisit",
+                          "title":  "Get last visit",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario6_GetLastVisit.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario6_GetLastVisit.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Geolocation API allows application to get the last visit report."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetLastVisitButton",
+                                               "content":  "Get last Visit",
+                                               "handlers":  {
+                                                                "Click":  "GetLastVisitButtonClicked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "State change: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Latitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Longitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Accuracy: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "IsRemoteSource: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_VisitStateChange",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Latitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Longitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Accuracy",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_IsRemoteSource",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "LocationDisabledMessage",
+                                               "inner_text":  "Application is not able to get location data. Go to Settings to check the location permissions."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario6_GetLastVisit",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetLastVisitButtonClicked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetLastVisitButton.IsEnabled",
+                                                                "LocationDisabledMessage.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "Geolocator.RequestAccessAsync",
+                                                                "GeolocationAccessStatus.Allowed",
+                                                                "NotifyType.StatusMessage",
+                                                                "GeovisitMonitor.GetLastReportAsync",
+                                                                "GeolocationAccessStatus.Denied",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "GeolocationAccessStatus.Unspecified"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1359
+                                           },
+                                           {
+                                               "name":  "UpdateLastVisit",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_Latitude.Text",
+                                                                "ScenarioOutput_Longitude.Text",
+                                                                "ScenarioOutput_Accuracy.Text",
+                                                                "ScenarioOutput_Timestamp.Text",
+                                                                "ScenarioOutput_VisitStateChange.Text",
+                                                                "StateChange.ToString",
+                                                                "Timestamp.ToString",
+                                                                "ScenarioOutput_IsRemoteSource.Text",
+                                                                "Position.Coordinate",
+                                                                "Point.Position",
+                                                                "Latitude.ToString",
+                                                                "Longitude.ToString",
+                                                                "Accuracy.ToString",
+                                                                "IsRemoteSource.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1646
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  7,
+                          "class":  "Scenario7_ForegroundVisits",
+                          "title":  "Foreground visit monitoring",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario7_ForegroundVisits.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario7_ForegroundVisits.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Geolocation API allows application to monitor user\u0027s visits in the foreground."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StartMonitoringButton",
+                                               "content":  "Start Monitoring",
+                                               "handlers":  {
+                                                                "Click":  "StartMonitoring"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopMonitoringButton",
+                                               "content":  "Stop Monitoring",
+                                               "handlers":  {
+                                                                "Click":  "StopMonitoring"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "State change: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Latitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Longitude: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Accuracy: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "IsRemoteSource: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_VisitStateChange",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Latitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Longitude",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Accuracy",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_IsRemoteSource",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "LocationDisabledMessage",
+                                               "inner_text":  "Application is not able to get location data. Go to Settings to check the location permissions."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario7_ForegroundVisits",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  192
+                                           },
+                                           {
+                                               "name":  "StartMonitoring",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Geolocator.RequestAccessAsync",
+                                                                "GeolocationAccessStatus.Allowed",
+                                                                "VisitMonitoringScope.Venue",
+                                                                "LocationDisabledMessage.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "NotifyType.StatusMessage",
+                                                                "StartMonitoringButton.IsEnabled",
+                                                                "StopMonitoringButton.IsEnabled",
+                                                                "GeolocationAccessStatus.Denied",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "GeolocationAccessStatus.Unspecified"
+                                                            ],
+                                               "new_types":  [
+                                                                 "GeovisitMonitor"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1744
+                                           },
+                                           {
+                                               "name":  "StopMonitoring",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "StartMonitoringButton.IsEnabled",
+                                                                "StopMonitoringButton.IsEnabled",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  392
+                                           },
+                                           {
+                                               "name":  "OnVisitStateChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  253
+                                           },
+                                           {
+                                               "name":  "UpdateVisitData",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_VisitStateChange.Text",
+                                                                "StateChange.ToString",
+                                                                "ScenarioOutput_Timestamp.Text",
+                                                                "Timestamp.ToString",
+                                                                "ScenarioOutput_Latitude.Text",
+                                                                "ScenarioOutput_Longitude.Text",
+                                                                "ScenarioOutput_Accuracy.Text",
+                                                                "ScenarioOutput_IsRemoteSource.Text",
+                                                                "Position.Coordinate",
+                                                                "Point.Position",
+                                                                "Latitude.ToString",
+                                                                "Longitude.ToString",
+                                                                "Accuracy.ToString",
+                                                                "IsRemoteSource.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1173
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  8,
+                          "class":  "Scenario8_VisitsBackgroundTask",
+                          "title":  "Background visit monitoring",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\shared\\Scenario8_VisitsBackgroundTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geolocation\\cs\\Scenario8_VisitsBackgroundTask.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Control registration of a background task to receive Visit state change events."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterBackgroundTaskButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterBackgroundTaskButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Visit events"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "VisitBackgroundEventsListBox",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Data.Json",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario8_VisitsBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.LookupBackgroundTask"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  449
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "VisitMonitoringScope.Venue",
+                                                                "SystemConditionType.UserPresent",
+                                                                "SystemConditionType.InternetAvailable",
+                                                                "MainPage.CheckBackgroundAndRequestLocationAccess"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "GeovisitTrigger",
+                                                                 "SystemCondition"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2094
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  396
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "MainPage.ReportSavedStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  791
+                                           },
+                                           {
+                                               "name":  "UpdateButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisterBackgroundTaskButton.IsEnabled",
+                                                                "UnregisterBackgroundTaskButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  198
+                                           },
+                                           {
+                                               "name":  "FillEventListBoxWithExistingEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.FillItemsFromSavedJson"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  120
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

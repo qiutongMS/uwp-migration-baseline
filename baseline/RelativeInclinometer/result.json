@@ -1,0 +1,36 @@
+﻿{
+    "sample":  "RelativeInclinometer",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\RelativeInclinometer\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.RelativeInclinometerCS.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.RelativeInclinometerCS.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.RelativeInclinometerCS.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Data events",
+                          "initial_capture":  "01_1_Data_events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Enable",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Data_events__after_Enable.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Polling",
+                          "initial_capture":  "02_2_Polling__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

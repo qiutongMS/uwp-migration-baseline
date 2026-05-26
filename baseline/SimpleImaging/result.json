@@ -1,0 +1,57 @@
+﻿{
+    "sample":  "SimpleImaging",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleImaging\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.SimpleImaging.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.SimpleImaging.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.SimpleImaging.CS_8wekyb3d8bbwe!SimpleImaging.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Image properties (FileProperties)",
+                          "initial_capture":  "01_1_Image_properties_FileProperties___initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Open",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Image_properties_FileProperties___after_Open.png",
+                                              "popup_capture":  "01_1_Image_properties_FileProperties___popup_Open.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Image transforms/encode (BitmapDecoder)",
+                          "initial_capture":  "02_2_Image_transforms_encode_BitmapDecoder___initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "\u0026Help",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Image_transforms_encode_BitmapDecoder___after_\u0026Help.png"
+                                          },
+                                          {
+                                              "name":  "View Slider",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Image_transforms_encode_BitmapDecoder___after_View_Slider.png",
+                                              "popup_capture":  "02_2_Image_transforms_encode_BitmapDecoder___popup_View_Slider.png",
+                                              "popup_title":  "View Slider Control"
+                                          },
+                                          {
+                                              "name":  "Organize",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Image_transforms_encode_BitmapDecoder___after_Organize.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,60 @@
+﻿{
+    "sample":  "PenHaptics",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PenHaptics.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PenHaptics.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PenHaptics.CS_8wekyb3d8bbwe!PenHaptics.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Ink Canvas Tactile Feedback",
+                          "initial_capture":  "01_1_Ink_Canvas_Tactile_Feedback__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Query Tactile Feedback Support",
+                          "initial_capture":  "02_2_Query_Tactile_Feedback_Support__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Inking Feedback",
+                          "initial_capture":  "03_3_Inking_Feedback__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Interaction Feedback",
+                          "initial_capture":  "04_4_Interaction_Feedback__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Send Interaction Feedback",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Interaction_Feedback__after_Send_Interaction_Feedback.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Inking and Interaction Feedback",
+                          "initial_capture":  "05_5_Inking_and_Interaction_Feedback__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

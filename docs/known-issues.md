@@ -118,16 +118,73 @@ Windows 11 24H2:
 > live preview won't render (MainPage still paints). Fix by editing
 > the `.rdp` to add `camerastoredirect:s:*` and reconnecting.
 
-## Remaining environment-broken samples (2)
+## Remaining environment-broken samples (1)
 
-These also crash with `0xc000027b`, but the cause is **different** from
-the `WindowsMobile` SDKRef story above and they have not been fixed in
+This sample also crashes with `0xc000027b`, but the cause is **different**
+from the `WindowsMobile` SDKRef story above and it has not been fixed in
 source:
 
 | Sample | Status | Notes |
 |---|---|---|
 | `BackgroundMediaPlayback` | `ok-generic` on local console; crashes on RDP | Fault is in `Windows.UI.Xaml.dll+0x8fa113`, not the AppModel host. On a console session the window paints just long enough for Plan A to capture a 1-PNG MainPage. No source change needed — this is an RDP-environment-only crash. |
-| `RadialController` | `crashed` everywhere tested | Needs a Surface Dial / pen input device. Not retested with one. |
+
+> Previously this section also listed `RadialController` (needs Surface
+> Dial / pen input). After the `refilter-102-samples` refresh,
+> `RadialController` was dropped from the upstream sample list and is no
+> longer part of this baseline.
+
+## New failure categories from the 102-sample refresh
+
+When the upstream sample set grew from 38 → 89 (the `refilter-102-samples`
+branch), four new failure shapes appeared. None of them invalidate the
+baseline — each row in `_status.csv` accurately reflects how far the
+pipeline got — but they are worth recording so the next maintainer
+knows what's surgical vs. what's environmental.
+
+### Build failures — 6 samples (`capture: pending`, `build: failed`)
+
+| Sample | Cause |
+|---|---|
+| `CameraOpenCV` | Native sub-project `OpenCVBridge.vcxproj` needs the `OpenCV.Win.Core.310.6.1` NuGet package. `msbuild /restore` only restores the C# top-level project, not the C++ sub-project, so the build fails before reaching code generation. Recoverable by running `nuget restore` (Classic) against the `.sln` first, or by adding a top-level `<RestoreSources>`/`PackageReference` shim. Not yet automated. |
+| `ApplicationResources` | `Package.appxmanifest` references `Images\logo.png` for `Square44x44Logo`, but `shared/images/logo.contrast-*_scale-100.png` has the wrong dimensions. Upstream content bug in the vendored shared assets. |
+| `LinguisticServices`, `MobileHotspot`, `NetworkConnectivity`, `PersonalDataEncryption` | Build fails due to other missing or mis-pathed shared assets / resources. Not investigated in depth; treat as build-time content bugs analogous to the four upstream patches already applied (see "Upstream patches" below). |
+
+### Capture failures — 4 samples (`capture: failed`, `build`/`deploy`/`launch: ok`)
+
+The app launches successfully but the pipeline's `FindWindowsByTitle`
+fails because the running window's title doesn't match the canonical
+`"<SampleName> C# Sample"` / `"<SampleName> C# SDK Sample"` format the
+pipeline expects:
+
+- `BluetoothAdvertisement` — actual title: `"Bluetooth Advertisement C# Sample"` (extra space)
+- `BluetoothLE` — actual title: `"Bluetooth Low Energy C# sample"` (different capitalization + wording)
+- `OnDemandHotspot` — actual title: differs from `"OnDemandHotspot C# Sample"`
+- `RadioManager` — actual title: differs from `"RadioManager C# SDK Sample"`
+
+Recoverable by adding a `<SampleName, ActualTitle>` mapping to
+`Process-Sample.ps1` or by relaxing the title match to substring /
+`StartsWith`. Not yet implemented.
+
+### Partial captures — 3 samples (`capture: partial`)
+
+Plus the existing `XamlBind` scenario-5 case documented below.
+
+- `AdvancedCasting` — null-ref during `Invoke-ScenarioIteration`
+- `HotspotAuthentication` — same shape (null-ref during scenario iteration)
+- `PlayReady` — UIA `FindFirst` exception during scenario walk; got some scenarios before the failure
+
+These are mid-iteration faults: the pipeline captured the main page and
+some scenarios before the loop crashed. The errors look pipeline-side
+(null-ref in PS) rather than app-side, so the right fix is in the
+iteration helper, not the samples.
+
+### Deploy failure — 1 sample (`capture: pending`, `deploy: failed`)
+
+- `MIDI` — `Add-AppxPackage -Register` fails with HRESULT `0x80073CF3`
+  (PACKAGE_DEPLOYMENT_FAILED — likely an identity/signing conflict with
+  a previous deployment of the same `PackageFamilyName`). Workaround:
+  fully remove any pre-existing `MIDI*` packages
+  (`Get-AppxPackage *MIDI* | Remove-AppxPackage`) before re-running.
 
 ## Upstream patches (now committed)
 

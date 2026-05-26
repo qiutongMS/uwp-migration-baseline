@@ -1,0 +1,843 @@
+﻿{
+    "sample":  "PenHaptics",
+    "feature_name":  "PenHaptics C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "RootGrid.ActualWidth",
+                           "RootGrid.ActualHeight",
+                           "Pointer.PointerDeviceType",
+                           "PointerDeviceType.Pen",
+                           "PenDevice.GetFromPointerId",
+                           "Pointer.PointerId",
+                           "MainPage.WaveformNamesMap",
+                           "MainPage.FindSupportedFeedback",
+                           "KnownSimpleHapticsControllerWaveforms.InkContinuous",
+                           "KnownSimpleHapticsControllerWaveforms.Click",
+                           "Colors.DarkGray",
+                           "Children.Add",
+                           "Matrix.Identity",
+                           "Delta.Translation",
+                           "Visibility.Visible",
+                           "Visibility.Collapsed"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_InkCanvasTactileFeedback",
+                          "title":  "Ink Canvas Tactile Feedback",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\shared\\Scenario1_InkCanvasTactileFeedback.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\cs\\Scenario1_InkCanvasTactileFeedback.xaml.cs",
+                          "description":  "This scenario shows how the default InkCanvas provides tactile feedback via the pen. Simply use the pen on the canvas to feel the tactile feedback. Change the pen type between marker, pencil, and highlighter to feel the different types of feedback.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "InkCanvas",
+                                               "name":  "",
+                                               "x_name":  "appInkCanvas"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_InkCanvasTactileFeedback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnSizeChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RootGrid.ActualWidth",
+                                                                "RootGrid.ActualHeight"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  124
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_SupportedTactileFeedback",
+                          "title":  "Query Tactile Feedback Support",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\shared\\Scenario2_SupportedTactileFeedback.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\cs\\Scenario2_SupportedTactileFeedback.xaml.cs",
+                          "description":  "This scenario shows how to query whether the current pen is capable of providing tactile feedback and, if so, what types of feedback it can provide.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows how to query whether the current pen is capable of providing tactile feedback and, if so, what types of feedback it can provide."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "statusText",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "supportedFeatures",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "supportedFeedback",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System.Collections.Generic",
+                                         "Windows.Devices.Haptics",
+                                         "Windows.Devices.Input",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_SupportedTactileFeedback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "Pointer_Entered",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Pointer.PointerDeviceType",
+                                                                "PointerDeviceType.Pen",
+                                                                "PenDevice.GetFromPointerId",
+                                                                "Pointer.PointerId",
+                                                                "MainPage.WaveformNamesMap"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2677
+                                           },
+                                           {
+                                               "name":  "Pointer_Exited",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  80
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_InkingFeedback",
+                          "title":  "Inking Feedback",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\shared\\Scenario3_InkingFeedback.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\cs\\Scenario3_InkingFeedback.xaml.cs",
+                          "description":  "This scenario shows how to start and stop the different inking haptic signals, as well as how to apply fallback logic in the event that a desired signal is not supported by the current pen. In addition, this shows how to alter the intensity of the haptic signal.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Desired waveform: "
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "waveformComboBox",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Intensity: "
+                                           },
+                                           {
+                                               "type":  "Slider",
+                                               "name":  "intensitySlider",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Canvas",
+                                               "name":  "hapticCanvas",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "statusText",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.Devices.Haptics",
+                                         "Windows.Devices.Input",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_InkingFeedback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "HapticCanvas_Entered",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Pointer.PointerDeviceType",
+                                                                "PointerDeviceType.Pen",
+                                                                "PenDevice.GetFromPointerId",
+                                                                "Pointer.PointerId"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2280
+                                           },
+                                           {
+                                               "name":  "HapticCanvas_Exited",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  285
+                                           },
+                                           {
+                                               "name":  "GetSelectedFeedbackOrFallback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.WaveformNamesMap",
+                                                                "MainPage.FindSupportedFeedback",
+                                                                "KnownSimpleHapticsControllerWaveforms.InkContinuous"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  835
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_InteractionFeedback",
+                          "title":  "Interaction Feedback",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\shared\\Scenario4_InteractionFeedback.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\cs\\Scenario4_InteractionFeedback.xaml.cs",
+                          "description":  "This scenario shows how to send the different interaction haptic signals, as well as how to apply fallback logic in the event that a desired signal is not supported by the current pen. In addition, this shows how to alter the intensity of the haptic signal.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Desired waveform: "
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "waveformComboBox",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Intensity: "
+                                           },
+                                           {
+                                               "type":  "Slider",
+                                               "name":  "intensitySlider",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "sendFeedback",
+                                               "x_name":  "",
+                                               "content":  "Send Interaction Feedback",
+                                               "handlers":  {
+                                                                "Click":  "SendFeedback_Clicked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "statusText",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.Devices.Haptics",
+                                         "Windows.Devices.Input",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_InteractionFeedback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "MainGrid_Entered",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Pointer.PointerDeviceType",
+                                                                "PointerDeviceType.Pen",
+                                                                "PenDevice.GetFromPointerId",
+                                                                "Pointer.PointerId"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1072
+                                           },
+                                           {
+                                               "name":  "MainGrid_Exited",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  285
+                                           },
+                                           {
+                                               "name":  "SendFeedback_Clicked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1219
+                                           },
+                                           {
+                                               "name":  "GetSelectedFeedbackOrFallback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.WaveformNamesMap",
+                                                                "MainPage.FindSupportedFeedback",
+                                                                "KnownSimpleHapticsControllerWaveforms.Click"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  811
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_InkingAndInteractionFeedback",
+                          "title":  "Inking and Interaction Feedback",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\shared\\Scenario5_InkingAndInteractionFeedback.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PenHaptics\\cs\\Scenario5_InkingAndInteractionFeedback.xaml.cs",
+                          "description":  "This scenario shows how to use both inking and interaction feedback together. Use your pen to drag the square around to feel the different types of feedback being sent together.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows how to use both inking and interaction feedback together. Use your pen to drag the square around to feel the different types of feedback being sent together."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "statusText",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Canvas",
+                                               "name":  "hapticCanvas",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System.Numerics",
+                                         "Windows.Devices.Haptics",
+                                         "Windows.Devices.Input",
+                                         "Windows.Foundation",
+                                         "Windows.UI",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Media",
+                                         "Windows.UI.Xaml.Shapes"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario5_InkingAndInteractionFeedback",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  131
+                                           },
+                                           {
+                                               "name":  "InitializeGridLines",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Colors.DarkGray",
+                                                                "Children.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SolidColorBrush",
+                                                                 "Line"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  920
+                                           },
+                                           {
+                                               "name":  "Line",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  179
+                                           },
+                                           {
+                                               "name":  "Line",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  178
+                                           },
+                                           {
+                                               "name":  "InitializeManipulationTransforms",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Matrix.Identity"
+                                                            ],
+                                               "new_types":  [
+                                                                 "MatrixTransform",
+                                                                 "Point",
+                                                                 "CompositeTransform",
+                                                                 "TransformGroup"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  457
+                                           },
+                                           {
+                                               "name":  "MatrixTransform",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Matrix.Identity"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  26
+                                           },
+                                           {
+                                               "name":  "CompositeTransform",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  48
+                                           },
+                                           {
+                                               "name":  "TransformGroup",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  50
+                                           },
+                                           {
+                                               "name":  "MovableRect_Entered",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Pointer.PointerDeviceType",
+                                                                "PointerDeviceType.Pen",
+                                                                "PenDevice.GetFromPointerId",
+                                                                "Pointer.PointerId",
+                                                                "KnownSimpleHapticsControllerWaveforms.InkContinuous"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2202
+                                           },
+                                           {
+                                               "name":  "MovableRect_Exited",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  244
+                                           },
+                                           {
+                                               "name":  "MovableRect_ManipulationStarted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  68
+                                           },
+                                           {
+                                               "name":  "MovableRect_ManipulationDelta",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Delta.Translation"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  445
+                                           },
+                                           {
+                                               "name":  "UpdatePreviewRect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Visibility.Visible",
+                                                                "KnownSimpleHapticsControllerWaveforms.Click",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Vector3",
+                                                                 "Point"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1779
+                                           },
+                                           {
+                                               "name":  "MovableRect_ManipulationCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  172
+                                           },
+                                           {
+                                               "name":  "SnapMovableRectToGridLines",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Matrix.Identity",
+                                                                "KnownSimpleHapticsControllerWaveforms.Click"
+                                                            ],
+                                               "new_types":  [
+                                                                 "MatrixTransform",
+                                                                 "TransformGroup"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  804
+                                           },
+                                           {
+                                               "name":  "MatrixTransform",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Matrix.Identity"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  26
+                                           },
+                                           {
+                                               "name":  "TransformGroup",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  50
+                                           },
+                                           {
+                                               "name":  "GetSnappedPoint",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  943
+                                           },
+                                           {
+                                               "name":  "IsInSnapRange",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  261
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

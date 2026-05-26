@@ -1,0 +1,860 @@
+﻿{
+    "sample":  "CredentialPicker",
+    "feature_name":  "CredentialPicker",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Security.Credentials.UI.CredentialPicker.PickAsync",
+                           "Windows.UI.Xaml.Visibility.Visible",
+                           "Windows.UI.Xaml.Visibility.Collapsed"
+                       ],
+    "api_references":  [
+                           "NotifyType.ErrorMessage",
+                           "Status.Text",
+                           "String.Format",
+                           "Domain.Text",
+                           "Username.Text",
+                           "Password.Text",
+                           "CredentialSaved.Text",
+                           "CredentialSaveOption.Hidden",
+                           "CheckboxState.Text",
+                           "CredentialSaveOption.Selected",
+                           "CredentialSaveOption.Unselected",
+                           "Target.Text",
+                           "Message.Text",
+                           "Windows.Security",
+                           "Credentials.UI",
+                           "CredentialPicker.PickAsync",
+                           "Caption.Text",
+                           "PasswordExplain1.Visibility",
+                           "Windows.UI",
+                           "Xaml.Visibility",
+                           "PasswordExplain2.Visibility",
+                           "AlwaysShowDialog.IsChecked",
+                           "ProtocolSelection.SelectedItem",
+                           "AuthenticationProtocol.Negotiate",
+                           "Content.ToString",
+                           "StringComparison.CurrentCultureIgnoreCase",
+                           "AuthenticationProtocol.Kerberos",
+                           "AuthenticationProtocol.Ntlm",
+                           "AuthenticationProtocol.CredSsp",
+                           "AuthenticationProtocol.Basic",
+                           "AuthenticationProtocol.Digest",
+                           "CustomProtocol.Text",
+                           "String.Empty",
+                           "AuthenticationProtocol.Custom",
+                           "SaveCheckboxSelection.SelectedItem",
+                           "CustomProtocol.IsEnabled"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Message",
+                          "title":  "Message",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs\\Scenario1_Message.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs\\Scenario1_Message.xaml.cs",
+                          "description":  "Prompts user for credentials. Allows calling application to specify a message to display.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Prompts user for credentials. Allows calling application to specify a message to display."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "MessageLabel",
+                                               "text":  "Message:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Message",
+                                               "text":  "Enter your credentials"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "TargetLabel",
+                                               "text":  "Target:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Target",
+                                               "text":  "contoso.com"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "Launch",
+                                               "content":  "Launch",
+                                               "handlers":  {
+                                                                "Click":  "Launch_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Domain:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Domain"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Username:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Username"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Password:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Password"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PasswordExplain1",
+                                               "text":  "For this API call, the password will always be returned encrypted."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PasswordExplain2",
+                                               "text":  "All supported networking APIs will decrypt this automatically"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Saved by API?"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CredentialSaved"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Save Checkbox:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CheckboxState"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Status:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Status"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Security.Credentials.UI"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Message",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "SetError",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  74
+                                           },
+                                           {
+                                               "name":  "SetResult",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Status.Text",
+                                                                "String.Format",
+                                                                "Domain.Text",
+                                                                "Username.Text",
+                                                                "Password.Text",
+                                                                "CredentialSaved.Text",
+                                                                "CredentialSaveOption.Hidden",
+                                                                "CheckboxState.Text",
+                                                                "CredentialSaveOption.Selected",
+                                                                "CredentialSaveOption.Unselected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1000
+                                           },
+                                           {
+                                               "name":  "Launch_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Security.Credentials.UI.CredentialPicker.PickAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Target.Text",
+                                                                "Message.Text",
+                                                                "Windows.Security",
+                                                                "Credentials.UI",
+                                                                "CredentialPicker.PickAsync"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  546
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_MessageCaption",
+                          "title":  "Message+Caption",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs\\Scenario2_MessageCaption.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs\\Scenario2_MessageCaption.xaml.cs",
+                          "description":  "Prompts user for credentials. Allows calling application to specify a message to display.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Prompts user for credentials. Allows calling application to specify a message to display."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Message:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Message",
+                                               "text":  "Enter your credentials"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Caption:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Caption",
+                                               "text":  "WindowCaption"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Target:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Target",
+                                               "text":  "contoso.com"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "Launch",
+                                               "content":  "Launch",
+                                               "handlers":  {
+                                                                "Click":  "Launch_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Domain:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Domain"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Username:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Username"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Password:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Password"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PasswordExplain1",
+                                               "text":  "For this API call, the password will always be returned encrypted."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PasswordExplain2",
+                                               "text":  "All supported networking APIs will decrypt this automatically"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Saved by API?"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CredentialSaved"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Save Checkbox:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CheckboxState"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Status:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Status"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Security.Credentials.UI"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_MessageCaption",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "SetError",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  74
+                                           },
+                                           {
+                                               "name":  "SetResult",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Status.Text",
+                                                                "String.Format",
+                                                                "Domain.Text",
+                                                                "Username.Text",
+                                                                "Password.Text",
+                                                                "CredentialSaved.Text",
+                                                                "CredentialSaveOption.Hidden",
+                                                                "CheckboxState.Text",
+                                                                "CredentialSaveOption.Selected",
+                                                                "CredentialSaveOption.Unselected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1002
+                                           },
+                                           {
+                                               "name":  "Launch_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Security.Credentials.UI.CredentialPicker.PickAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Target.Text",
+                                                                "Message.Text",
+                                                                "Caption.Text",
+                                                                "Windows.Security",
+                                                                "Credentials.UI",
+                                                                "CredentialPicker.PickAsync"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  321
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_CredentialPickerOptions",
+                          "title":  "CredentialPickerOptions",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs\\Scenario3_CredentialPickerOptions.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs\\Scenario3_CredentialPickerOptions.xaml.cs",
+                          "description":  "Prompts user for credentials. Allows calling application to specify a message to display.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Prompts user for credentials. Allows calling application to specify a message to display."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Message:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Message",
+                                               "text":  "Enter your credentials"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Caption:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Caption",
+                                               "text":  "WindowCaption"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Target:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Target",
+                                               "text":  "contoso.com"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Save Checkbox:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "SaveCheckboxSelection"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Protocol:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "ProtocolSelection",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "Protocol_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Custom Protcol:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CustomProtocol",
+                                               "text":  "CustomProtocolName"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Always Show?"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "AlwaysShowDialog"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "Launch",
+                                               "content":  "Launch",
+                                               "handlers":  {
+                                                                "Click":  "Launch_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Domain:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Domain"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Username:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Username"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Password:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Password"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PasswordExplain1",
+                                               "text":  "For this API call, the password will always be returned encrypted."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PasswordExplain2",
+                                               "text":  "All supported networking APIs will decrypt this automatically"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Saved by API?"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CredentialSaved"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Save Checkbox:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CheckboxState"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Status:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "Status"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Security.Credentials.UI"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_CredentialPickerOptions",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "SetError",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  74
+                                           },
+                                           {
+                                               "name":  "SetPasswordExplainVisibility",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Xaml.Visibility.Visible",
+                                                                       "Windows.UI.Xaml.Visibility.Collapsed"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PasswordExplain1.Visibility",
+                                                                "Windows.UI",
+                                                                "Xaml.Visibility",
+                                                                "PasswordExplain2.Visibility"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  450
+                                           },
+                                           {
+                                               "name":  "SetResult",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Status.Text",
+                                                                "String.Format",
+                                                                "Domain.Text",
+                                                                "Username.Text",
+                                                                "Password.Text",
+                                                                "CredentialSaved.Text",
+                                                                "CredentialSaveOption.Hidden",
+                                                                "CheckboxState.Text",
+                                                                "CredentialSaveOption.Selected",
+                                                                "CredentialSaveOption.Unselected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1002
+                                           },
+                                           {
+                                               "name":  "Launch_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Security.Credentials.UI.CredentialPicker.PickAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Target.Text",
+                                                                "Message.Text",
+                                                                "Caption.Text",
+                                                                "AlwaysShowDialog.IsChecked",
+                                                                "ProtocolSelection.SelectedItem",
+                                                                "AuthenticationProtocol.Negotiate",
+                                                                "Content.ToString",
+                                                                "StringComparison.CurrentCultureIgnoreCase",
+                                                                "AuthenticationProtocol.Kerberos",
+                                                                "AuthenticationProtocol.Ntlm",
+                                                                "AuthenticationProtocol.CredSsp",
+                                                                "AuthenticationProtocol.Basic",
+                                                                "AuthenticationProtocol.Digest",
+                                                                "CustomProtocol.Text",
+                                                                "String.Empty",
+                                                                "AuthenticationProtocol.Custom",
+                                                                "NotifyType.ErrorMessage",
+                                                                "SaveCheckboxSelection.SelectedItem",
+                                                                "CredentialSaveOption.Hidden",
+                                                                "CredentialSaveOption.Selected",
+                                                                "CredentialSaveOption.Unselected",
+                                                                "Windows.Security",
+                                                                "Credentials.UI",
+                                                                "CredentialPicker.PickAsync"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CredentialPickerOptions"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  4033
+                                           },
+                                           {
+                                               "name":  "Protocol_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProtocolSelection.SelectedItem",
+                                                                "Content.ToString",
+                                                                "StringComparison.CurrentCultureIgnoreCase",
+                                                                "CustomProtocol.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1279
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

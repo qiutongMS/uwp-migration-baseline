@@ -1,0 +1,630 @@
+﻿{
+    "sample":  "Gyrometer",
+    "feature_name":  "Gyrometer",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Graphics.Display.DisplayOrientations.Portrait"
+                       ],
+    "api_references":  [
+                           "Gyrometer.GetDefault",
+                           "NotifyType.ErrorMessage",
+                           "ScenarioEnableButton.IsEnabled",
+                           "ScenarioDisableButton.IsEnabled",
+                           "Window.Current",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "ScenarioOutput_X.Text",
+                           "String.Format",
+                           "ScenarioOutput_Y.Text",
+                           "ScenarioOutput_Z.Text",
+                           "Windows.Graphics",
+                           "Display.DisplayOrientations",
+                           "GetSampleButton.IsEnabled",
+                           "ScenarioOutput_X_WP.Text",
+                           "AngularVelocityX.ToString",
+                           "ScenarioOutput_Y_WP.Text",
+                           "AngularVelocityY.ToString",
+                           "ScenarioOutput_Z_WP.Text",
+                           "AngularVelocityZ.ToString",
+                           "ScenarioOutput_X_Windows.Text",
+                           "ScenarioOutput_Y_Windows.Text",
+                           "ScenarioOutput_Z_Windows.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DataEvents",
+                          "title":  "Data Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Gyrometer\\cs\\Scenario1_DataEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Gyrometer\\cs\\Scenario1_DataEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers an event listener for gyrometer data and displays the X, Y and Z angular velocity values as they are reported."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "X:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Y:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Z:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_X",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Y",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Z",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "System.Threading.Tasks",
+                                         "Windows.UI.Core"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DataEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Gyrometer.GetDefault",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  668
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  116
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "Window.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  532
+                                           },
+                                           {
+                                               "name":  "VisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  767
+                                           },
+                                           {
+                                               "name":  "ReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioOutput_X.Text",
+                                                                "String.Format",
+                                                                "ScenarioOutput_Y.Text",
+                                                                "ScenarioOutput_Z.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  461
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  690
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  503
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Polling",
+                          "title":  "Polling",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Gyrometer\\cs\\Scenario2_Polling.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Gyrometer\\cs\\Scenario2_Polling.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Polls for gyrometer data and displays the X, Y and Z angular velocity values at a set interval."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "X:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Y:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Z:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_X",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Y",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Z",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "System.Threading.Tasks",
+                                         "Windows.UI.Core"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Polling",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Gyrometer.GetDefault",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatcherTimer",
+                                                                 "TimeSpan"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  937
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  116
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "Window.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  486
+                                           },
+                                           {
+                                               "name":  "VisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  592
+                                           },
+                                           {
+                                               "name":  "DisplayCurrentReading",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_X.Text",
+                                                                "String.Format",
+                                                                "ScenarioOutput_Y.Text",
+                                                                "ScenarioOutput_Z.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  434
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  630
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  465
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_Porting",
+                          "title":  "Cross-Platform Porting",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Gyrometer\\cs\\Scenario3_Porting.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Gyrometer\\cs\\Scenario3_Porting.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Illustrates the role of \u0027ReadingTransform\u0027 property when porting sensor logic developed for Windows Phone devices (Portrait-First) over to Windows (Landscape-First) devices. Reads the current reading from the sensor and displays the raw sample and the transformed sample that represents the sensor readings if the sensor was oriented on a Windows Phone device , as your code would expect."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetSampleButton",
+                                               "content":  "Get Sample",
+                                               "handlers":  {
+                                                                "Click":  "GetGyrometerSample"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Platform:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "X:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Y:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Z:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Windows (raw sample)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "WP (transformed)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_X_Windows",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Y_Windows",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Z_Windows",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_X_WP",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Y_WP",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Z_WP",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "System.Threading.Tasks",
+                                         "Windows.UI.Core"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_Porting",
+                                               "namespaces_used":  [
+                                                                       "Windows.Graphics.Display.DisplayOrientations.Portrait"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Gyrometer.GetDefault",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Graphics",
+                                                                "Display.DisplayOrientations"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1830
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetSampleButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  256
+                                           },
+                                           {
+                                               "name":  "GetGyrometerSample",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetSampleButton.IsEnabled",
+                                                                "ScenarioOutput_X_WP.Text",
+                                                                "AngularVelocityX.ToString",
+                                                                "ScenarioOutput_Y_WP.Text",
+                                                                "AngularVelocityY.ToString",
+                                                                "ScenarioOutput_Z_WP.Text",
+                                                                "AngularVelocityZ.ToString",
+                                                                "ScenarioOutput_X_Windows.Text",
+                                                                "ScenarioOutput_Y_Windows.Text",
+                                                                "ScenarioOutput_Z_Windows.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1305
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

@@ -1,0 +1,621 @@
+﻿{
+    "sample":  "LampDevice",
+    "feature_name":  "Lamp device C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Devices.Enumeration.Panel.Back",
+                           "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "Lamp.GetDeviceSelector",
+                           "CultureInfo.InvariantCulture",
+                           "DeviceInformation.FindAllAsync",
+                           "Count.ToString",
+                           "EnclosureLocation.Panel",
+                           "Windows.Devices",
+                           "Enumeration.Panel",
+                           "Lamp.FromIdAsync",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "Lamp.GetDefaultAsync",
+                           "Dispatcher.RunAsync",
+                           "Windows.UI",
+                           "Core.CoreDispatcherPriority",
+                           "Colors.Blue"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_GetLamp",
+                          "title":  "Get Lamp Instance",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs\\Scenario1_GetLamp.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs\\Scenario1_GetLamp.xaml.cs",
+                          "description":  "Enumerate Lamp devices and select an instance to operate. Two possible methods for acquiring the Lamp instance. First is to query DeviceInformation by class selection string for lamp. Second option is to grab the default instance using GetDefaultAsync() call.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get Lamp Instance from DeviceInformation",
+                                               "handlers":  {
+                                                                "Click":  "InitLampBtn_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get Default Lamp Instance",
+                                               "handlers":  {
+                                                                "Click":  "GetDefaultAsyncBtn_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "outputBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Globalization",
+                                         "System.Linq",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Lights",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_GetLamp",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  88
+                                           },
+                                           {
+                                               "name":  "InitLampBtn_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Devices.Enumeration.Panel.Back"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Lamp.GetDeviceSelector",
+                                                                "CultureInfo.InvariantCulture",
+                                                                "DeviceInformation.FindAllAsync",
+                                                                "Count.ToString",
+                                                                "EnclosureLocation.Panel",
+                                                                "Windows.Devices",
+                                                                "Enumeration.Panel",
+                                                                "Lamp.FromIdAsync",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "InvalidOperationException"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2307
+                                           },
+                                           {
+                                               "name":  "GetDefaultAsyncBtn_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Lamp.GetDefaultAsync",
+                                                                "NotifyType.ErrorMessage",
+                                                                "CultureInfo.InvariantCulture",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1170
+                                           },
+                                           {
+                                               "name":  "LogStatusToOutputBoxAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  271
+                                           },
+                                           {
+                                               "name":  "LogStatusAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  247
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_EnableSettings",
+                          "title":  "Enable Lamp and Settings Adjustment",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs\\Scenario2_EnableSettings.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs\\Scenario2_EnableSettings.xaml.cs",
+                          "description":  "Once a Lamp instance is acquired, you can determine the capabilities of the lamp and adjust those capabilities accordingly. If the device supports color lamp, you can set the brightness levels of the red, green, and blue components. All adjustments are followed by turning on the lamp.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Adjust Brightness and turn on Lamp",
+                                               "handlers":  {
+                                                                "Click":  "BrightnessBtn_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Adjust Color and turn on Lamp",
+                                               "handlers":  {
+                                                                "Click":  "ColorLampBtn_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "outputBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Globalization",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Lights"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_EnableSettings",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  88
+                                           },
+                                           {
+                                               "name":  "BrightnessBtn_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Lamp.GetDefaultAsync",
+                                                                "NotifyType.ErrorMessage",
+                                                                "CultureInfo.InvariantCulture",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1992
+                                           },
+                                           {
+                                               "name":  "ColorLampBtn_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Lamp.GetDefaultAsync",
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage",
+                                                                "CultureInfo.InvariantCulture",
+                                                                "Colors.Blue"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2433
+                                           },
+                                           {
+                                               "name":  "LogStatusToOutputBoxAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  270
+                                           },
+                                           {
+                                               "name":  "LogStatusAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  247
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_AvailabilityChanged",
+                          "title":  "Lamp Device Change Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs\\Scenario3_AvailabilityChanged.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs\\Scenario3_AvailabilityChanged.xaml.cs",
+                          "description":  "A lamp application should handle unsolicited device state change events if acquired lamp device is involuntarily evicted or becomes available again. This can occur when the lamp is in use by another application.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Register for AvailablityChanged Event",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBtn_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Unregister for AvailablityChanged Event",
+                                               "handlers":  {
+                                                                "Click":  "UnRegisterBtn_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "lampToggle",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Toggled":  "lampToggle_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "outputBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Globalization",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Lights"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_AvailabilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  130
+                                           },
+                                           {
+                                               "name":  "InitializeLampAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Lamp.GetDefaultAsync",
+                                                                "NotifyType.ErrorMessage",
+                                                                "CultureInfo.InvariantCulture",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  509
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  77
+                                           },
+                                           {
+                                               "name":  "DisposeLamp",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  300
+                                           },
+                                           {
+                                               "name":  "RegisterBtn_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  382
+                                           },
+                                           {
+                                               "name":  "Lamp_AvailabilityChanged",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "CultureInfo.InvariantCulture",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  627
+                                           },
+                                           {
+                                               "name":  "UnRegisterBtn_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  384
+                                           },
+                                           {
+                                               "name":  "LogStatusToOutputBoxAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  270
+                                           },
+                                           {
+                                               "name":  "LogStatusAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  247
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

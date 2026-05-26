@@ -1,0 +1,206 @@
+﻿{
+    "sample":  "Geotag",
+    "feature_name":  "Geotag C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "FileTypeFilter.Add",
+                           "PickerLocationId.PicturesLibrary",
+                           "FileDisplayName.Text",
+                           "FileOperationsPanel.Visibility",
+                           "Visibility.Visible",
+                           "Visibility.Collapsed",
+                           "GeotagHelper.GetGeotagAsync",
+                           "Position.Latitude",
+                           "Position.Longitude",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "Geolocator.RequestAccessAsync",
+                           "GeolocationAccessStatus.Allowed",
+                           "PositionAccuracy.High",
+                           "GeotagHelper.SetGeotagFromGeolocatorAsync",
+                           "GeotagHelper.SetGeotagAsync"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1_Geotag",
+                      "title":  "Geotag a file",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geotag\\shared\\Scenario1_Geotag.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geotag\\cs\\Scenario1_Geotag.xaml.cs",
+                      "description":  "Use the Geotag API to set and read geolocation information from JPEG and MP4 files.",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Description:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "Use the Geotag API to set and read geolocation information from JPEG and MP4 files."
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Choose file",
+                                           "handlers":  {
+                                                            "Click":  "{x:Bind ChooseFileButton_Click}"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "File:"
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Read geotag from file",
+                                           "handlers":  {
+                                                            "Click":  "{x:Bind GetGeotagButton_Click}"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Set geotag from geolocator",
+                                           "handlers":  {
+                                                            "Click":  "{x:Bind SetGeotagFromGeolocatorButton_Click}"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Set geotag to Seattle Space Needle",
+                                           "handlers":  {
+                                                            "Click":  "{x:Bind SetGeotagButton_Click}"
+                                                        }
+                                       }
+                                   ],
+                      "usings":  [
+                                     "System",
+                                     "System.Threading.Tasks",
+                                     "Windows.Devices.Geolocation",
+                                     "Windows.Storage",
+                                     "Windows.Storage.FileProperties",
+                                     "Windows.Storage.Pickers",
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1_Geotag",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  51
+                                       },
+                                       {
+                                           "name":  "ChooseFileButton_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "FileTypeFilter.Add",
+                                                            "PickerLocationId.PicturesLibrary",
+                                                            "FileDisplayName.Text",
+                                                            "FileOperationsPanel.Visibility",
+                                                            "Visibility.Visible",
+                                                            "Visibility.Collapsed"
+                                                        ],
+                                           "new_types":  [
+                                                             "FileOpenPicker"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  647
+                                       },
+                                       {
+                                           "name":  "GetGeotagButton_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "GeotagHelper.GetGeotagAsync",
+                                                            "Position.Latitude",
+                                                            "Position.Longitude",
+                                                            "NotifyType.StatusMessage",
+                                                            "NotifyType.ErrorMessage"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  519
+                                       },
+                                       {
+                                           "name":  "SetGeotagFromGeolocatorButton_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Geolocator.RequestAccessAsync",
+                                                            "GeolocationAccessStatus.Allowed",
+                                                            "NotifyType.ErrorMessage",
+                                                            "PositionAccuracy.High",
+                                                            "GeotagHelper.SetGeotagFromGeolocatorAsync",
+                                                            "NotifyType.StatusMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "Geolocator"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1193
+                                       },
+                                       {
+                                           "name":  "SetGeotagButton_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "GeotagHelper.SetGeotagAsync",
+                                                            "NotifyType.StatusMessage",
+                                                            "NotifyType.ErrorMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "BasicGeoposition",
+                                                             "Geopoint"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  804
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

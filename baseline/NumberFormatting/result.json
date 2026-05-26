@@ -1,0 +1,106 @@
+﻿{
+    "sample":  "NumberFormatting",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.NumberFormatting.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.NumberFormatting.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.NumberFormatting.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Percent and Permille Formatting",
+                          "initial_capture":  "01_1_Percent_and_Permille_Formatting__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Percent_and_Permille_Formatting__after_Display.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Decimal Formatting",
+                          "initial_capture":  "02_2_Decimal_Formatting__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Decimal_Formatting__after_Display.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Currency Formatting",
+                          "initial_capture":  "03_3_Currency_Formatting__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Currency_Formatting__after_Display.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Number Parsing",
+                          "initial_capture":  "04_4_Number_Parsing__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Number_Parsing__after_Display.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Rounding and Padding",
+                          "initial_capture":  "05_5_Rounding_and_Padding__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Rounding_and_Padding__after_Display.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Numeral System Translation",
+                          "initial_capture":  "06_6_Numeral_System_Translation__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Numeral_System_Translation__after_Display.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Formatting/Translation using Unicode Extensions",
+                          "initial_capture":  "07_7_Formatting_Translation_using_Unicode_Extensions__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Formatting_Translation_using_Unicode_Extensions__after_Display.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

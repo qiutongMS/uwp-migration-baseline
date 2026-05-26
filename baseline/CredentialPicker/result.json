@@ -1,0 +1,54 @@
+﻿{
+    "sample":  "CredentialPicker",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CredentialPicker\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CredentialPicker.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CredentialPicker.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CredentialPicker.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Message",
+                          "initial_capture":  "01_1_Message__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Launch",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Message+Caption",
+                          "initial_capture":  "02_2_Message+Caption__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Launch",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) CredentialPickerOptions",
+                          "initial_capture":  "03_3_CredentialPickerOptions__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Launch",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

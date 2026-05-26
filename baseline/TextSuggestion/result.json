@@ -1,0 +1,54 @@
+﻿{
+    "sample":  "TextSuggestion",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.TextSuggestion.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.TextSuggestion.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.TextSuggestion.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Conversion",
+                          "initial_capture":  "01_1_Conversion__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Create Generator",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Conversion__after_Create_Generator.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Prediction",
+                          "initial_capture":  "02_2_Prediction__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Create Generator",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Prediction__after_Create_Generator.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) ReverseConversion",
+                          "initial_capture":  "03_3_ReverseConversion__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Create Generator",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_ReverseConversion__after_Create_Generator.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

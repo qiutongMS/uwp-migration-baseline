@@ -5,17 +5,19 @@
 .PARAMETER SamplesRoot   e.g. C:\...\uwp-samples-standalone\Samples
 .PARAMETER OutRoot       e.g. C:\...\uwp-samples-analysis
 .PARAMETER Filter        Optional name filter (wildcard)
+.PARAMETER Names         Optional explicit array of sample names (overrides Filter when supplied)
 .PARAMETER SkipBuild     Skip msbuild step (assume already built)
 .PARAMETER SkipCapture   Run only static analysis (no app launch)
 .PARAMETER OnlyAnalyze   Alias for SkipCapture + SkipBuild
 #>
 param(
-    [string] $SamplesRoot,
-    [string] $OutRoot,
-    [string] $Filter      = '*',
-    [switch] $SkipBuild,
-    [switch] $SkipCapture,
-    [switch] $OnlyAnalyze
+    [string]   $SamplesRoot,
+    [string]   $OutRoot,
+    [string]   $Filter      = '*',
+    [string[]] $Names,
+    [switch]   $SkipBuild,
+    [switch]   $SkipCapture,
+    [switch]   $OnlyAnalyze
 )
 
 if (-not $SamplesRoot) {
@@ -49,12 +51,18 @@ function Log-Progress([string]$msg) {
     Add-Content -Path $progressLog -Value $line -Encoding UTF8
 }
 
-# Enumerate samples that have a cs/ subdirectory
+# Enumerate samples that have a cs/ subdirectory containing at least one .csproj
+# (on some branches a sample is "deactivated" by removing its csproj while keeping the dir)
 $samples = Get-ChildItem $SamplesRoot -Directory | Where-Object {
-    (Test-Path (Join-Path $_.FullName 'cs')) -and ($_.Name -like $Filter)
+    $csDir = Join-Path $_.FullName 'cs'
+    if (-not (Test-Path $csDir)) { return $false }
+    if (-not (Get-ChildItem $csDir -Filter '*.csproj' -ErrorAction SilentlyContinue)) { return $false }
+    if ($Names -and $Names.Count -gt 0) { return ($Names -contains $_.Name) }
+    return ($_.Name -like $Filter)
 } | Sort-Object Name
 
-Log-Progress "=== RUN-ALL START: $($samples.Count) sample(s) matching '$Filter' ==="
+$selector = if ($Names -and $Names.Count -gt 0) { "Names list ($($Names.Count) entries)" } else { "'$Filter'" }
+Log-Progress "=== RUN-ALL START: $($samples.Count) sample(s) matching $selector ==="
 
 # When the user runs a filtered subset (e.g. -Filter 'XamlMasterDetail'), we want to
 # UPDATE the entries for those samples in the existing _status.csv rather than wipe

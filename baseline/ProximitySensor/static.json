@@ -1,0 +1,819 @@
+﻿{
+    "sample":  "ProximitySensor",
+    "feature_name":  "Proximity sensor",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "DeviceInformation.CreateWatcher",
+                           "ProximitySensor.GetDeviceSelector",
+                           "ProximitySensor.FromId",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "ScenarioEnableButton.IsEnabled",
+                           "ScenarioDisableButton.IsEnabled",
+                           "ScenarioOutput_DetectionState.Text",
+                           "ScenarioOutput_Timestamp.Text",
+                           "Timestamp.ToString",
+                           "ScenarioOutput_DetectionDistance.Text",
+                           "DistanceInMillimeters.ToString",
+                           "ProximitySensor.MaxDistanceInCentimeters",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "Scenario4_BackgroundProximitySensor.SampleBackgroundTaskName",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                           "Value.Unregister",
+                           "ScenarioRegisterTaskButton.IsEnabled",
+                           "ScenarioUnregisterTaskButton.IsEnabled",
+                           "ScenarioOutput_TaskRegistration.Text",
+                           "ApplicationData.Current",
+                           "Values.TryGetValue",
+                           "ScenarioOutput_ReportCount.Text",
+                           "ScenarioOutput_TaskStatus.Text",
+                           "ScenarioOutput_LastTimestamp.Text",
+                           "ScenarioOutput_Detected.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DataEvents",
+                          "title":  "Data Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario1_DataEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario1_DataEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers an event listener for proximity sensor data and displays the values as they are reported."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Detected: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_DetectionState",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Distance (mm): "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_DetectionDistance",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DataEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "ProximitySensor.GetDeviceSelector"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  230
+                                           },
+                                           {
+                                               "name":  "OnProximitySensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProximitySensor.FromId",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2794
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  116
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  269
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  468
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  252
+                                           },
+                                           {
+                                               "name":  "ReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioOutput_DetectionState.Text",
+                                                                "ScenarioOutput_Timestamp.Text",
+                                                                "Timestamp.ToString",
+                                                                "ScenarioOutput_DetectionDistance.Text",
+                                                                "DistanceInMillimeters.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  734
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Polling",
+                          "title":  "Polling",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario2_Polling.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario2_Polling.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Polls for proximity sensor data and displays the reading."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioGetDataButton",
+                                               "content":  "Get Data",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGetData"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Detected: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_DetectionState",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Distance (mm): "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_DetectionDistance",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Polling",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "ProximitySensor.GetDeviceSelector"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  230
+                                           },
+                                           {
+                                               "name":  "OnProximitySensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProximitySensor.FromId",
+                                                                "ProximitySensor.MaxDistanceInCentimeters",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  781
+                                           },
+                                           {
+                                               "name":  "ScenarioGetData",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_DetectionState.Text",
+                                                                "ScenarioOutput_Timestamp.Text",
+                                                                "Timestamp.ToString",
+                                                                "ScenarioOutput_DetectionDistance.Text",
+                                                                "DistanceInMillimeters.ToString",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  846
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_DisplayOnOff",
+                          "title":  "Display On/Off",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario3_DisplayOnOff.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario3_DisplayOnOff.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Demonstrates how to enable proximity monitoring to turn the display on or off based on the detection state."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisable"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_DisplayOnOff",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "ProximitySensor.GetDeviceSelector"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  230
+                                           },
+                                           {
+                                               "name":  "OnProximitySensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProximitySensor.FromId",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  596
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  116
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  339
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  715
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  608
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_BackgroundProximitySensor",
+                          "title":  "Background Proximity Sensor",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario4_BackgroundProximitySensor.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs\\Scenario4_BackgroundProximitySensor.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers a background task to watch for proximity changes. This background task runs whenever a change in the proximity of the selected sensor is detected."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioRegisterTaskButton",
+                                               "content":  "Register Task",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioRegisterTask_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioUnregisterTaskButton",
+                                               "content":  "Unregister Task",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioUnregisterTask_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Task Registration:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Task Status:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Report Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Report Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Detected:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TaskRegistration",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TaskStatus",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_ReportCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_LastTimestamp",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Detected",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.UI.Core",
+                                         "Windows.Storage"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_BackgroundProximitySensor",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "ProximitySensor.GetDeviceSelector"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  230
+                                           },
+                                           {
+                                               "name":  "OnProximitySensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProximitySensor.FromId",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  541
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "Scenario4_BackgroundProximitySensor.SampleBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  391
+                                           },
+                                           {
+                                               "name":  "ScenarioRegisterTask_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  721
+                                           },
+                                           {
+                                               "name":  "ScenarioUnregisterTask_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "Value.Unregister"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  527
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "ProximitySensorDataThreshold",
+                                                                 "SensorDataThresholdTrigger",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  731
+                                           },
+                                           {
+                                               "name":  "BackgroundTaskBuilder",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  129
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  272
+                                           },
+                                           {
+                                               "name":  "UpdateUIAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioRegisterTaskButton.IsEnabled",
+                                                                "ScenarioUnregisterTaskButton.IsEnabled",
+                                                                "ScenarioOutput_TaskRegistration.Text",
+                                                                "ApplicationData.Current",
+                                                                "Values.TryGetValue",
+                                                                "ScenarioOutput_ReportCount.Text",
+                                                                "ScenarioOutput_TaskStatus.Text",
+                                                                "ScenarioOutput_LastTimestamp.Text",
+                                                                "ScenarioOutput_Detected.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1195
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

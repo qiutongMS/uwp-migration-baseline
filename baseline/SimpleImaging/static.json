@@ -1,0 +1,1212 @@
+﻿{
+    "sample":  "SimpleImaging",
+    "feature_name":  "Simple imaging C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Storage.FileProperties.ImageProperties",
+                           "Windows.Storage.FileProperties",
+                           "Windows.Foundation.PropertyType.UInt16"
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "App.Current",
+                           "Helpers.FillDecoderExtensions",
+                           "PickerLocationId.PicturesLibrary",
+                           "SuspendingOperation.GetDeferral",
+                           "TitleTextbox.Text",
+                           "KeywordsTextbox.Text",
+                           "DateTakenTextblock.Text",
+                           "MakeTextblock.Text",
+                           "ModelTextblock.Text",
+                           "OrientationTextblock.Text",
+                           "LatDegTextbox.Text",
+                           "LatMinTextbox.Text",
+                           "LatSecTextbox.Text",
+                           "LatRefTextbox.Text",
+                           "LongDegTextbox.Text",
+                           "LongMinTextbox.Text",
+                           "LongSecTextbox.Text",
+                           "LongRefTextbox.Text",
+                           "ExposureTextblock.Text",
+                           "FNumberTextblock.Text",
+                           "Properties.GetImagePropertiesAsync",
+                           "NotifyType.StatusMessage",
+                           "CloseButton.IsEnabled",
+                           "ApplyButton.IsEnabled",
+                           "NotifyType.ErrorMessage",
+                           "Windows.Storage",
+                           "FileProperties.ImageProperties",
+                           "System.Photo",
+                           "String.Join",
+                           "Environment.NewLine",
+                           "Helpers.GetOrientationString",
+                           "Latitude.HasValue",
+                           "Longitude.HasValue",
+                           "Latitude.Value",
+                           "Longitude.Value",
+                           "Math.Floor",
+                           "Math.Abs",
+                           "DateTaken.ToString",
+                           "FileAccessMode.Read",
+                           "PreviewImage.Source",
+                           "AutomationProperties.SetName",
+                           "Keywords.Clear",
+                           "Keywords.Add",
+                           "String.Empty",
+                           "Double.Parse",
+                           "System.GPS",
+                           "System.FlagStatus",
+                           "Helpers.ConvertToExifOrientationFlag",
+                           "Helpers.ConvertToPhotoOrientation",
+                           "ExifOrientationTextblock.Text",
+                           "ScaleSlider.Value",
+                           "RotateRightButton.IsEnabled",
+                           "RotateLeftButton.IsEnabled",
+                           "SaveButton.IsEnabled",
+                           "SaveAsButton.IsEnabled",
+                           "ScaleSlider.IsEnabled",
+                           "BitmapDecoder.CreateAsync",
+                           "BitmapProperties.GetPropertiesAsync",
+                           "Helpers.Add90DegreesCW",
+                           "Helpers.Add90DegreesCCW",
+                           "FileAccessMode.ReadWrite",
+                           "BitmapEncoder.CreateForTranscodingAsync",
+                           "BitmapTransform.ScaledWidth",
+                           "BitmapTransform.ScaledHeight",
+                           "BitmapTransform.InterpolationMode",
+                           "BitmapInterpolationMode.Fant",
+                           "Helpers.AddPhotoOrientation",
+                           "Windows.Foundation",
+                           "PropertyType.UInt16",
+                           "BitmapProperties.SetPropertiesAsync",
+                           "BitmapTransform.Rotation",
+                           "Helpers.ConvertToBitmapRotation",
+                           "RandomAccessStream.CopyAsync",
+                           "FileTypeChoices.Add",
+                           "BitmapEncoder.PngEncoderId",
+                           "BitmapEncoder.BmpEncoderId",
+                           "BitmapEncoder.JpegEncoderId",
+                           "ExifOrientationMode.RespectExifOrientation",
+                           "ColorManagementMode.ColorManageToSRgb",
+                           "BitmapEncoder.CreateAsync",
+                           "ScaleTextblock.Text",
+                           "WidthTextblock.Text",
+                           "HeightTextblock.Text",
+                           "UserRotationTextblock.Text",
+                           "PhotoOrientation.Rotate270",
+                           "PhotoOrientation.Rotate180",
+                           "PhotoOrientation.Rotate90",
+                           "PhotoOrientation.Normal",
+                           "ImageViewbox.Width",
+                           "ImageViewbox.Height",
+                           "ImageViewbox.RenderTransform"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1",
+                          "title":  "Image properties (FileProperties)",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleImaging\\cs\\Scenario1.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleImaging\\cs\\Scenario1.xaml.cs",
+                          "description":  "Use the property system APIs (Windows.Storage.FileProperties) to read and edit bitmap properties from an image.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use the property system APIs (Windows.Storage.FileProperties) to read and edit bitmap properties from an image."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "OpenButton",
+                                               "content":  "Open",
+                                               "handlers":  {
+                                                                "Click":  "Open_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ApplyButton",
+                                               "content":  "Save",
+                                               "handlers":  {
+                                                                "Click":  "Apply_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseButton",
+                                               "content":  "Close",
+                                               "handlers":  {
+                                                                "Click":  "Close_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  "PreviewImage"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Title"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "TitleTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Keywords"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "KeywordsTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Latitude"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LatDegTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "°"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LatMinTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "\""
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LatSecTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "\u0027"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LatRefTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Longitude"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LongDegTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "°"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LongMinTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "\""
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LongSecTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "\u0027"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "LongRefTextbox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Date Taken:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DateTakenTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Camera make:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "MakeTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Camera model:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ModelTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "EXIF orientation:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OrientationTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Exposure:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ExposureTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "F Number:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "FNumberTextblock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel",
+                                         "Windows.Foundation.Collections",
+                                         "Windows.Storage",
+                                         "Windows.Storage.AccessCache",
+                                         "Windows.Storage.FileProperties",
+                                         "Windows.Storage.Pickers",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Automation",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Media.Imaging",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SuspendingEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  454
+                                           },
+                                           {
+                                               "name":  "Open_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Helpers.FillDecoderExtensions",
+                                                                "PickerLocationId.PicturesLibrary"
+                                                            ],
+                                               "new_types":  [
+                                                                 "FileOpenPicker"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  454
+                                           },
+                                           {
+                                               "name":  "SaveDataToPersistedState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SuspendingOperation.GetDeferral",
+                                                                "TitleTextbox.Text",
+                                                                "KeywordsTextbox.Text",
+                                                                "DateTakenTextblock.Text",
+                                                                "MakeTextblock.Text",
+                                                                "ModelTextblock.Text",
+                                                                "OrientationTextblock.Text",
+                                                                "LatDegTextbox.Text",
+                                                                "LatMinTextbox.Text",
+                                                                "LatSecTextbox.Text",
+                                                                "LatRefTextbox.Text",
+                                                                "LongDegTextbox.Text",
+                                                                "LongMinTextbox.Text",
+                                                                "LongSecTextbox.Text",
+                                                                "LongRefTextbox.Text",
+                                                                "ExposureTextblock.Text",
+                                                                "FNumberTextblock.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1858
+                                           },
+                                           {
+                                               "name":  "RestoreDataFromPersistedState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Properties.GetImagePropertiesAsync",
+                                                                "NotifyType.StatusMessage",
+                                                                "CloseButton.IsEnabled",
+                                                                "ApplyButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2475
+                                           },
+                                           {
+                                               "name":  "LoadFileAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.FileProperties.ImageProperties"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Storage",
+                                                                "FileProperties.ImageProperties",
+                                                                "System.Photo",
+                                                                "Properties.GetImagePropertiesAsync",
+                                                                "NotifyType.StatusMessage",
+                                                                "CloseButton.IsEnabled",
+                                                                "ApplyButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1713
+                                           },
+                                           {
+                                               "name":  "GetImagePropertiesForDisplay",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.Join",
+                                                                "Environment.NewLine",
+                                                                "System.Photo",
+                                                                "Helpers.GetOrientationString",
+                                                                "Latitude.HasValue",
+                                                                "Longitude.HasValue",
+                                                                "Latitude.Value",
+                                                                "Longitude.Value",
+                                                                "Math.Floor",
+                                                                "Math.Abs",
+                                                                "DateTaken.ToString"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3595
+                                           },
+                                           {
+                                               "name":  "DisplayImageUIAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "FileAccessMode.Read",
+                                                                "PreviewImage.Source",
+                                                                "AutomationProperties.SetName",
+                                                                "TitleTextbox.Text",
+                                                                "KeywordsTextbox.Text",
+                                                                "DateTakenTextblock.Text",
+                                                                "MakeTextblock.Text",
+                                                                "ModelTextblock.Text",
+                                                                "OrientationTextblock.Text",
+                                                                "LatDegTextbox.Text",
+                                                                "LatMinTextbox.Text",
+                                                                "LatRefTextbox.Text",
+                                                                "LongDegTextbox.Text",
+                                                                "LongMinTextbox.Text",
+                                                                "LongRefTextbox.Text",
+                                                                "ExposureTextblock.Text",
+                                                                "FNumberTextblock.Text",
+                                                                "LatSecTextbox.Text",
+                                                                "LongSecTextbox.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BitmapImage"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1853
+                                           },
+                                           {
+                                               "name":  "Apply_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "TitleTextbox.Text",
+                                                                "KeywordsTextbox.Text",
+                                                                "Keywords.Clear",
+                                                                "Keywords.Add",
+                                                                "String.Empty",
+                                                                "Math.Floor",
+                                                                "Double.Parse",
+                                                                "LatDegTextbox.Text",
+                                                                "LatMinTextbox.Text",
+                                                                "LatSecTextbox.Text",
+                                                                "LongDegTextbox.Text",
+                                                                "LongMinTextbox.Text",
+                                                                "LongSecTextbox.Text",
+                                                                "LatRefTextbox.Text",
+                                                                "LongRefTextbox.Text",
+                                                                "System.GPS",
+                                                                "System.FlagStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "PropertySet"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  5402
+                                           },
+                                           {
+                                               "name":  "Close_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  155
+                                           },
+                                           {
+                                               "name":  "ResetPersistedState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  978
+                                           },
+                                           {
+                                               "name":  "ResetSessionState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CloseButton.IsEnabled",
+                                                                "ApplyButton.IsEnabled",
+                                                                "PreviewImage.Source",
+                                                                "TitleTextbox.Text",
+                                                                "KeywordsTextbox.Text",
+                                                                "DateTakenTextblock.Text",
+                                                                "MakeTextblock.Text",
+                                                                "ModelTextblock.Text",
+                                                                "OrientationTextblock.Text",
+                                                                "LatDegTextbox.Text",
+                                                                "LatMinTextbox.Text",
+                                                                "LatSecTextbox.Text",
+                                                                "LatRefTextbox.Text",
+                                                                "LongDegTextbox.Text",
+                                                                "LongMinTextbox.Text",
+                                                                "LongSecTextbox.Text",
+                                                                "LongRefTextbox.Text",
+                                                                "ExposureTextblock.Text",
+                                                                "FNumberTextblock.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  848
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2",
+                          "title":  "Image transforms/encode (BitmapDecoder)",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleImaging\\cs\\Scenario2.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleImaging\\cs\\Scenario2.xaml.cs",
+                          "description":  "Use the imaging APIs (Windows.Graphics.Imaging) to read and edit bitmap properties and apply transformations such as scale, crop and rotate.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use the imaging APIs (Windows.Graphics.Imaging) to read and edit bitmap properties and apply transformations such as scale, crop and rotate."
+                                           },
+                                           {
+                                               "type":  "GridView",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "OpenButton",
+                                               "content":  "Open",
+                                               "handlers":  {
+                                                                "Click":  "Open_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RotateLeftButton",
+                                               "content":  "Left 90°",
+                                               "handlers":  {
+                                                                "Click":  "RotateLeft_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RotateRightButton",
+                                               "content":  "Right 90°",
+                                               "handlers":  {
+                                                                "Click":  "RotateRight_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SaveButton",
+                                               "content":  "Save",
+                                               "handlers":  {
+                                                                "Click":  "Save_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SaveAsButton",
+                                               "content":  "Save as",
+                                               "handlers":  {
+                                                                "Click":  "SaveAs_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseButton",
+                                               "content":  "Close",
+                                               "handlers":  {
+                                                                "Click":  "Close_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  "PreviewImage"
+                                           },
+                                           {
+                                               "type":  "Slider",
+                                               "name":  "",
+                                               "x_name":  "ScaleSlider",
+                                               "handlers":  {
+                                                                "ValueChanged":  "ScaleSlider_ValueChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Scale:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScaleTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Oriented width:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "WidthTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Oriented height:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "HeightTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "User rotation:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "UserRotationTextblock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "EXIF orientation:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ExifOrientationTextblock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel",
+                                         "Windows.Foundation.Collections",
+                                         "Windows.Graphics.Imaging",
+                                         "Windows.Storage",
+                                         "Windows.Storage.AccessCache",
+                                         "Windows.Storage.FileProperties",
+                                         "Windows.Storage.Pickers",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Automation",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Media",
+                                         "Windows.UI.Xaml.Media.Imaging",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SuspendingEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  454
+                                           },
+                                           {
+                                               "name":  "SaveDataToPersistedState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SuspendingOperation.GetDeferral",
+                                                                "Helpers.ConvertToExifOrientationFlag"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1241
+                                           },
+                                           {
+                                               "name":  "RestoreDataFromPersistedState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "Helpers.ConvertToPhotoOrientation",
+                                                                "FileAccessMode.Read",
+                                                                "PreviewImage.Source",
+                                                                "AutomationProperties.SetName",
+                                                                "ExifOrientationTextblock.Text",
+                                                                "Helpers.GetOrientationString",
+                                                                "ScaleSlider.Value",
+                                                                "RotateRightButton.IsEnabled",
+                                                                "RotateLeftButton.IsEnabled",
+                                                                "SaveButton.IsEnabled",
+                                                                "CloseButton.IsEnabled",
+                                                                "SaveAsButton.IsEnabled",
+                                                                "ScaleSlider.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BitmapImage"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2544
+                                           },
+                                           {
+                                               "name":  "Open_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Helpers.FillDecoderExtensions",
+                                                                "PickerLocationId.PicturesLibrary"
+                                                            ],
+                                               "new_types":  [
+                                                                 "FileOpenPicker"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  454
+                                           },
+                                           {
+                                               "name":  "LoadFileAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  445
+                                           },
+                                           {
+                                               "name":  "DisplayImageFileAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "FileAccessMode.Read",
+                                                                "PreviewImage.Source",
+                                                                "AutomationProperties.SetName",
+                                                                "ExifOrientationTextblock.Text",
+                                                                "Helpers.GetOrientationString",
+                                                                "ScaleSlider.IsEnabled",
+                                                                "RotateLeftButton.IsEnabled",
+                                                                "RotateRightButton.IsEnabled",
+                                                                "SaveButton.IsEnabled",
+                                                                "SaveAsButton.IsEnabled",
+                                                                "CloseButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BitmapImage"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1224
+                                           },
+                                           {
+                                               "name":  "GetImageInformationAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.FileProperties"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "FileAccessMode.Read",
+                                                                "BitmapDecoder.CreateAsync",
+                                                                "Windows.Storage",
+                                                                "System.Photo",
+                                                                "BitmapProperties.GetPropertiesAsync",
+                                                                "Helpers.ConvertToPhotoOrientation"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2363
+                                           },
+                                           {
+                                               "name":  "RotateRight_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Helpers.Add90DegreesCW"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  374
+                                           },
+                                           {
+                                               "name":  "RotateLeft_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Helpers.Add90DegreesCCW"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  375
+                                           },
+                                           {
+                                               "name":  "Save_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Foundation.PropertyType.UInt16"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "FileAccessMode.ReadWrite",
+                                                                "BitmapDecoder.CreateAsync",
+                                                                "BitmapEncoder.CreateForTranscodingAsync",
+                                                                "BitmapTransform.ScaledWidth",
+                                                                "BitmapTransform.ScaledHeight",
+                                                                "BitmapTransform.InterpolationMode",
+                                                                "BitmapInterpolationMode.Fant",
+                                                                "System.Photo",
+                                                                "Helpers.ConvertToExifOrientationFlag",
+                                                                "Helpers.AddPhotoOrientation",
+                                                                "Windows.Foundation",
+                                                                "PropertyType.UInt16",
+                                                                "BitmapProperties.SetPropertiesAsync",
+                                                                "BitmapTransform.Rotation",
+                                                                "Helpers.ConvertToBitmapRotation",
+                                                                "RandomAccessStream.CopyAsync",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "InMemoryRandomAccessStream",
+                                                                 "BitmapPropertySet",
+                                                                 "BitmapTypedValue"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  6145
+                                           },
+                                           {
+                                               "name":  "SaveAs_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "FileTypeChoices.Add",
+                                                                "PickerLocationId.PicturesLibrary"
+                                                            ],
+                                               "new_types":  [
+                                                                 "FileSavePicker"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  661
+                                           },
+                                           {
+                                               "name":  "LoadSaveFileAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BitmapEncoder.PngEncoderId",
+                                                                "BitmapEncoder.BmpEncoderId",
+                                                                "BitmapEncoder.JpegEncoderId",
+                                                                "FileAccessMode.Read",
+                                                                "FileAccessMode.ReadWrite",
+                                                                "BitmapDecoder.CreateAsync",
+                                                                "Helpers.ConvertToBitmapRotation",
+                                                                "BitmapInterpolationMode.Fant",
+                                                                "ExifOrientationMode.RespectExifOrientation",
+                                                                "ColorManagementMode.ColorManageToSRgb",
+                                                                "BitmapTransform.ScaledWidth",
+                                                                "BitmapEncoder.CreateAsync",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BitmapTransform"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  4060
+                                           },
+                                           {
+                                               "name":  "ScaleSlider_ValueChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScaleSlider.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  427
+                                           },
+                                           {
+                                               "name":  "UpdateImageDimensionsUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScaleTextblock.Text",
+                                                                "WidthTextblock.Text",
+                                                                "Math.Floor",
+                                                                "HeightTextblock.Text",
+                                                                "UserRotationTextblock.Text",
+                                                                "Helpers.GetOrientationString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  417
+                                           },
+                                           {
+                                               "name":  "UpdateImageRotation",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PhotoOrientation.Rotate270",
+                                                                "PhotoOrientation.Rotate180",
+                                                                "PhotoOrientation.Rotate90",
+                                                                "PhotoOrientation.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  770
+                                           },
+                                           {
+                                               "name":  "Close_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  155
+                                           },
+                                           {
+                                               "name":  "ResetPersistedState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  481
+                                           },
+                                           {
+                                               "name":  "ResetSessionState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PhotoOrientation.Normal",
+                                                                "RotateLeftButton.IsEnabled",
+                                                                "RotateRightButton.IsEnabled",
+                                                                "SaveButton.IsEnabled",
+                                                                "SaveAsButton.IsEnabled",
+                                                                "CloseButton.IsEnabled",
+                                                                "PreviewImage.Source",
+                                                                "ImageViewbox.Width",
+                                                                "ImageViewbox.Height",
+                                                                "ImageViewbox.RenderTransform",
+                                                                "ScaleTextblock.Text",
+                                                                "ScaleSlider.Value",
+                                                                "ScaleSlider.IsEnabled",
+                                                                "HeightTextblock.Text",
+                                                                "WidthTextblock.Text",
+                                                                "UserRotationTextblock.Text",
+                                                                "ExifOrientationTextblock.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1128
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

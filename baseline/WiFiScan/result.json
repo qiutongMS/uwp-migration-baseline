@@ -1,0 +1,47 @@
+﻿{
+    "sample":  "WiFiScan",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.WiFiScan.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.WiFiScan.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.WiFiScan.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Cached Networks",
+                          "initial_capture":  "01_1_Cached_Networks__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Scan",
+                          "initial_capture":  "02_2_Scan__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Register for Scan Updates",
+                          "initial_capture":  "03_3_Register_for_Scan_Updates__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Connect",
+                          "initial_capture":  "04_4_Connect__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,726 @@
+﻿{
+    "sample":  "PresenceSensor",
+    "feature_name":  "Presence Sensor",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "GetSensorButton.IsEnabled",
+                           "NotifyType.StatusMessage",
+                           "HumanPresenceSensor.GetDefaultAsync",
+                           "VisualStateManager.GoToState",
+                           "NotifyType.ErrorMessage",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "EngagementStateTextBlock.Text",
+                           "Engagement.ToString",
+                           "DetectionStateTextBlock.Text",
+                           "Presence.ToString",
+                           "DetectionDistanceTextBlock.Text",
+                           "DistanceInMillimeters.ToString",
+                           "TimestampTextBlock.Text",
+                           "Timestamp.ToString",
+                           "DeviceInformation.FindAllAsync",
+                           "HumanPresenceSensor.GetDeviceSelector",
+                           "HumanPresenceSensor.FromIdAsync",
+                           "Appearance.Title",
+                           "Filter.SupportedDeviceSelectors",
+                           "ScenarioPickButton.TransformToVisual",
+                           "ScenarioPickButton.ActualWidth",
+                           "ScenarioPickButton.ActualHeight",
+                           "SensorsList.Items",
+                           "DeviceInformation.CreateWatcher",
+                           "ScenarioStartButton.IsEnabled",
+                           "ScenarioStopButton.IsEnabled",
+                           "SensorsList.SelectedItem"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DataEvents",
+                          "title":  "Data Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\shared\\Scenario1_DataEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\cs\\Scenario1_DataEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "inner_text":  "Reads data from the default presence sensor and displays the values as they are reported."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetSensorButton",
+                                               "content":  "Get default sensor",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGetSensor_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Engagement State: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "EngagementStateTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Detection State: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DetectionStateTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Distance (mm): "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DetectionDistanceTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "TimestampTextBlock",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DataEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  163
+                                           },
+                                           {
+                                               "name":  "ScenarioGetSensor_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetSensorButton.IsEnabled",
+                                                                "NotifyType.StatusMessage",
+                                                                "HumanPresenceSensor.GetDefaultAsync",
+                                                                "VisualStateManager.GoToState",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1057
+                                           },
+                                           {
+                                               "name":  "ReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "EngagementStateTextBlock.Text",
+                                                                "Engagement.ToString",
+                                                                "DetectionStateTextBlock.Text",
+                                                                "Presence.ToString",
+                                                                "DetectionDistanceTextBlock.Text",
+                                                                "DistanceInMillimeters.ToString",
+                                                                "TimestampTextBlock.Text",
+                                                                "Timestamp.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "EngagementStateTextBlock.Text",
+                                                               "DetectionStateTextBlock.Text",
+                                                               "DetectionDistanceTextBlock.Text",
+                                                               "TimestampTextBlock.Text"
+                                                           ],
+                                               "body_length":  1228
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Polling",
+                          "title":  "Polling",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\shared\\Scenario2_Polling.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\cs\\Scenario2_Polling.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "inner_text":  "Polls for presence sensor data and displays the reading."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetSensorButton",
+                                               "content":  "Get a sensor",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGetSensor_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioGetDataButton",
+                                               "content":  "Get Data",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGetData_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Engagement State: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "EngagementStateTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Detection State: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DetectionStateTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Distance (mm): "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DetectionDistanceTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "TimestampTextBlock",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Polling",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "ScenarioGetSensor_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.FindAllAsync",
+                                                                "GetSensorButton.IsEnabled",
+                                                                "NotifyType.StatusMessage",
+                                                                "HumanPresenceSensor.GetDeviceSelector",
+                                                                "HumanPresenceSensor.FromIdAsync",
+                                                                "VisualStateManager.GoToState",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3497
+                                           },
+                                           {
+                                               "name":  "ScenarioGetData_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EngagementStateTextBlock.Text",
+                                                                "Engagement.ToString",
+                                                                "DetectionStateTextBlock.Text",
+                                                                "Presence.ToString",
+                                                                "DetectionDistanceTextBlock.Text",
+                                                                "DistanceInMillimeters.ToString",
+                                                                "TimestampTextBlock.Text",
+                                                                "Timestamp.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "EngagementStateTextBlock.Text",
+                                                               "DetectionStateTextBlock.Text",
+                                                               "DetectionDistanceTextBlock.Text",
+                                                               "TimestampTextBlock.Text"
+                                                           ],
+                                               "body_length":  1301
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_Choosing",
+                          "title":  "Choosing",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\shared\\Scenario3_Choosing.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\cs\\Scenario3_Choosing.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Lets the user choose among the available presence sensors."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use a standard system picker dialog."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioPickButton",
+                                               "content":  "Use picker",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioPick_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use a custom picker UI which updates dynamically as sensors are added or removed."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioStartButton",
+                                               "content":  "Start watcher",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioStart_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioStopButton",
+                                               "content":  "Stop watcher",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioStop_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "SensorsList"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ReadSelectedButton",
+                                               "content":  "Poll selected sensor",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioReadSelected_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Engagement State: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "EngagementStateTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Detection State: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DetectionStateTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Distance (mm): "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DetectionDistanceTextBlock",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "TimestampTextBlock",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Media",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_Choosing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  107
+                                           },
+                                           {
+                                               "name":  "ScenarioPick_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Appearance.Title",
+                                                                "Filter.SupportedDeviceSelectors",
+                                                                "HumanPresenceSensor.GetDeviceSelector",
+                                                                "ScenarioPickButton.TransformToVisual",
+                                                                "ScenarioPickButton.ActualWidth",
+                                                                "ScenarioPickButton.ActualHeight"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DevicePicker",
+                                                                 "Rect"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  793
+                                           },
+                                           {
+                                               "name":  "OnHumanPresenceSensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "SensorsList.Items"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ListBoxItem"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  544
+                                           },
+                                           {
+                                               "name":  "ListBoxItem",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  45
+                                           },
+                                           {
+                                               "name":  "OnHumanPresenceSensorRemoved",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "SensorsList.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  651
+                                           },
+                                           {
+                                               "name":  "OnHumanPresenceSensorUpdated",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "SensorsList.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  824
+                                           },
+                                           {
+                                               "name":  "OnHumanPresenceSensorEnumerationCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  230
+                                           },
+                                           {
+                                               "name":  "ScenarioStart_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SensorsList.Items",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "HumanPresenceSensor.GetDeviceSelector",
+                                                                "NotifyType.StatusMessage",
+                                                                "ScenarioStartButton.IsEnabled",
+                                                                "ScenarioStopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  641
+                                           },
+                                           {
+                                               "name":  "ScenarioStop_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ScenarioStartButton.IsEnabled",
+                                                                "ScenarioStopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  238
+                                           },
+                                           {
+                                               "name":  "ScenarioReadSelected_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "SensorsList.SelectedItem",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  463
+                                           },
+                                           {
+                                               "name":  "ReadOneReadingFromSensorAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "HumanPresenceSensor.FromIdAsync",
+                                                                "EngagementStateTextBlock.Text",
+                                                                "DetectionStateTextBlock.Text",
+                                                                "TimestampTextBlock.Text",
+                                                                "DetectionDistanceTextBlock.Text",
+                                                                "Engagement.ToString",
+                                                                "Presence.ToString",
+                                                                "DistanceInMillimeters.ToString",
+                                                                "Timestamp.ToString",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "EngagementStateTextBlock.Text",
+                                                               "DetectionStateTextBlock.Text",
+                                                               "TimestampTextBlock.Text",
+                                                               "DetectionDistanceTextBlock.Text"
+                                                           ],
+                                               "body_length":  2220
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

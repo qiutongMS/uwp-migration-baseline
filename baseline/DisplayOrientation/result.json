@@ -1,0 +1,28 @@
+﻿{
+    "sample":  "DisplayOrientation",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisplayOrientation\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DisplayOrientation.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DisplayOrientation.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DisplayOrientation.CS_8wekyb3d8bbwe!DisplayOrientation.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Show and lock orientation",
+                          "initial_capture":  "01_1_Show_and_lock_orientation__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Apply preferences",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Show_and_lock_orientation__after_Apply_preferences.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

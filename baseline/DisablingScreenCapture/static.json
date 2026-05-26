@@ -1,0 +1,319 @@
+﻿{
+    "sample":  "DisablingScreenCapture",
+    "feature_name":  "Disabling screen capture C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.UI.ViewManagement.ApplicationView.GetForCurrentView"
+                       ],
+    "api_references":  [
+                           "Windows.UI",
+                           "ViewManagement.ApplicationView",
+                           "AppCapture.GetForCurrentView",
+                           "AppCapture.SetAllowedAsync",
+                           "NotifyType.StatusMessage"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Enable",
+                          "title":  "Enabling screen capture",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\shared\\Scenario1_Enable.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\cs\\Scenario1_Enable.xaml.cs",
+                          "description":  "Screen capture allowed",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Screen capture allowed"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "By default, screen capture is allowed."
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Enable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Disable",
+                          "title":  "Disabling screen capture",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\shared\\Scenario2_Disable.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\cs\\Scenario2_Disable.xaml.cs",
+                          "description":  "Screen capture disabled",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Screen capture disabled"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This view will be excluded from screen captures."
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Disable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.ViewManagement.ApplicationView.GetForCurrentView"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.UI",
+                                                                "ViewManagement.ApplicationView"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  194
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.ViewManagement.ApplicationView.GetForCurrentView"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.UI",
+                                                                "ViewManagement.ApplicationView"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  202
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_AppCapture",
+                          "title":  "Managing AppCapture",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\shared\\Scenario3_AppCapture.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\cs\\Scenario3_AppCapture.xaml.cs",
+                          "description":  "Managing AppCapture",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Managing AppCapture"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Disabling screen capture prevents the view\u0027s video from being captured by system-intiiated app capture such as the Xbox Game Bar. You can also customize app capture behavior directly."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Allow app capture"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "AllowAppCaptureCheckBox",
+                                               "handlers":  {
+                                                                "Toggled":  "AllowAppCaptureCheckBox_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Media.Capture",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_AppCapture",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AppCapture.GetForCurrentView"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AppCapture.SetAllowedAsync"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  203
+                                           },
+                                           {
+                                               "name":  "AllowAppCaptureCheckBox_Toggled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AppCapture.SetAllowedAsync"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  139
+                                           },
+                                           {
+                                               "name":  "AppCapture_CapturingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "UpdateCaptureStatus",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  354
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

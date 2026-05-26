@@ -1,0 +1,2628 @@
+﻿{
+    "sample":  "CustomUsbDeviceAccess",
+    "feature_name":  "Custom USB Device Access",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Storage.Streams.Buffer",
+                           "Windows.Devices.Enumeration",
+                           "Windows.Devices.Enumeration.Pnp"
+                       ],
+    "api_references":  [
+                           "EventHandlerForDevice.Current",
+                           "DeviceListSource.Source",
+                           "ConnectDevices.SelectedItems",
+                           "EventHandlerForDevice.CreateNewEventHandlerForDevice",
+                           "UsbDevice.GetDeviceSelector",
+                           "OsrFx2.DeviceVid",
+                           "OsrFx2.DevicePid",
+                           "DeviceInformation.CreateWatcher",
+                           "SuperMutt.DeviceVid",
+                           "SuperMutt.DevicePid",
+                           "SuperMutt.DeviceInterfaceClass",
+                           "App.Current",
+                           "DeviceWatcherStatus.Started",
+                           "DeviceWatcherStatus.EnumerationCompleted",
+                           "DeviceInformation.Id",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "NotifyType.StatusMessage",
+                           "ButtonDisconnectFromDevice.Content",
+                           "ButtonDisconnectFromDevice.IsEnabled",
+                           "ConnectDevices.SelectedIndex",
+                           "ButtonConnectToDevice.IsEnabled",
+                           "ConnectDevices.IsEnabled",
+                           "DeviceType.OsrFx2",
+                           "DeviceType.SuperMutt",
+                           "Utilities.SetUpDeviceScenarios",
+                           "ButtonGetOsrFx2SevenSegment.IsEnabled",
+                           "Utilities.NotifyDeviceNotConnected",
+                           "ButtonSetOsrFx2SevenSegment.IsEnabled",
+                           "OsrFx2SevenSegmentSettingInput.SelectedIndex",
+                           "ButtonGetSuperMuttLedBlinkPattern.IsEnabled",
+                           "ButtonSetSuperMuttLedBlinkPattern.IsEnabled",
+                           "SuperMuttLedBlinkPatternInput.SelectedIndex",
+                           "OsrFx2.SevenLedSegmentMask",
+                           "UsbTransferDirection.Out",
+                           "UsbControlRecipient.Device",
+                           "UsbControlTransferType.Vendor",
+                           "OsrFx2.VendorCommand",
+                           "Device.SendControlOutTransferAsync",
+                           "MainPage.Current",
+                           "NotifyType.ErrorMessage",
+                           "DataReader.FromBuffer",
+                           "Length.ToString",
+                           "SuperMutt.VendorCommand",
+                           "Windows.Storage",
+                           "Streams.Buffer",
+                           "UsbTransferDirection.In",
+                           "Device.SendControlInTransferAsync",
+                           "OsrFx2.Pipe",
+                           "SuperMutt.Pipe",
+                           "Device.DefaultInterface",
+                           "EndpointDescriptor.MaxPacketSize",
+                           "NumberFormatInfo.InvariantInfo",
+                           "SwitchStates.Inlines",
+                           "ButtonRegisterSuperMuttInterruptEvent.IsEnabled",
+                           "ButtonRegisterOsrFx2InterruptEvent.IsEnabled",
+                           "ButtonUnregisterInterruptEvent.IsEnabled",
+                           "Inlines.Add",
+                           "ButtonBulkReadWrite.IsEnabled",
+                           "ButtonBulkRead.IsEnabled",
+                           "ButtonBulkWrite.IsEnabled",
+                           "ButtonCancelAllIoTasks.IsEnabled",
+                           "Task.Factory",
+                           "TaskCreationOptions.AttachedToParent",
+                           "TaskScheduler.Current",
+                           "CoreDispatcherPriority.Low",
+                           "Token.Register",
+                           "CoreDispatcherPriority.High",
+                           "Descriptor.Device",
+                           "Descriptor.Configuration",
+                           "Descriptor.Interface",
+                           "Descriptor.Endpoint",
+                           "Descriptor.Custom",
+                           "Windows.Devices",
+                           "Enumeration.Pnp",
+                           "System.Devices",
+                           "PnpObject.Properties",
+                           "Descriptor.String",
+                           "DeviceType.All",
+                           "Utilities.GetDeviceType",
+                           "DeviceType.None",
+                           "ListOfDescriptorTypesSource.Source",
+                           "DescriptorOutput.Text",
+                           "Device.DeviceDescriptor",
+                           "BcdUsb.ToString",
+                           "MaxPacketSize0.ToString",
+                           "VendorId.ToString",
+                           "ProductId.ToString",
+                           "BcdDeviceRevision.ToString",
+                           "NumberOfConfigurations.ToString",
+                           "Device.Configuration",
+                           "UsbInterfaces.Count",
+                           "ConfigurationValue.ToString",
+                           "SelfPowered.ToString",
+                           "RemoteWakeup.ToString",
+                           "MaxPowerMilliamps.ToString",
+                           "InterfaceNumber.ToString",
+                           "ClassCode.ToString",
+                           "SubclassCode.ToString",
+                           "ProtocolCode.ToString",
+                           "InterfaceSettings.Count",
+                           "BulkInPipes.Count",
+                           "BulkOutPipes.Count",
+                           "InterruptInPipes.Count",
+                           "InterruptOutPipes.Count",
+                           "EndpointNumber.ToString",
+                           "MaxPacketSize.ToString",
+                           "Interval.Milliseconds",
+                           "ByteOrder.LittleEndian",
+                           "DeviceInformation.Name",
+                           "InterfaceSettingsToChoose.Items",
+                           "InterfaceSettingsToChoose.SelectedIndex",
+                           "Utilities.IsSuperMuttDevice",
+                           "ButtonSetSetting.IsEnabled",
+                           "UsbInterface.InterfaceSettings",
+                           "InterfaceDescriptor.AlternateSettingNumber",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "SyncBackgroundTaskInformation.Name",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "SyncBackgroundTaskInformation.TaskEntryPoint",
+                           "DeviceTriggerResult.Allowed",
+                           "DeviceTriggerResult.LowBattery",
+                           "DeviceTriggerResult.DeniedByUser",
+                           "DeviceTriggerResult.DeniedBySystem",
+                           "ApplicationData.Current",
+                           "LocalSettings.Values",
+                           "LocalSettingKeys.SyncBackgroundTaskStatus",
+                           "SyncBackgroundTaskInformation.TaskCompleted",
+                           "LocalSettingKeys.SyncBackgroundTaskResult",
+                           "SyncProgressBar.Value",
+                           "SyncBackgroundTaskInformation.TaskCanceled",
+                           "ButtonSync.IsEnabled",
+                           "ButtonCancelSync.IsEnabled"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_ConnectDisconnect",
+                          "title":  "Connect/Disconnect",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario1_ConnectDisconnect.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario1_ConnectDisconnect.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Device Selection"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonConnectToDevice",
+                                               "content":  "Connect to device",
+                                               "handlers":  {
+                                                                "Click":  "ConnectToDevice_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonDisconnectFromDevice",
+                                               "content":  "Disconnect from device",
+                                               "handlers":  {
+                                                                "Click":  "DisconnectFromDevice_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Select a Usb Device:"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ConnectDevices"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding InstanceId}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.IO",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.ApplicationModel",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Usb",
+                                         "CustomUsbDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_ConnectDisconnect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  344
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceListSource.Source"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1291
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  286
+                                           },
+                                           {
+                                               "name":  "ConnectToDevice_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedItems",
+                                                                "EventHandlerForDevice.CreateNewEventHandlerForDevice",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1383
+                                           },
+                                           {
+                                               "name":  "DisconnectFromDevice_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedItems",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  746
+                                           },
+                                           {
+                                               "name":  "InitializeDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  105
+                                           },
+                                           {
+                                               "name":  "InitializeOsrFx2DeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UsbDevice.GetDeviceSelector",
+                                                                "OsrFx2.DeviceVid",
+                                                                "OsrFx2.DevicePid",
+                                                                "DeviceInformation.CreateWatcher"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  510
+                                           },
+                                           {
+                                               "name":  "InitializeSuperMuttDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UsbDevice.GetDeviceSelector",
+                                                                "SuperMutt.DeviceVid",
+                                                                "SuperMutt.DevicePid",
+                                                                "SuperMutt.DeviceInterfaceClass",
+                                                                "DeviceInformation.CreateWatcher"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  715
+                                           },
+                                           {
+                                               "name":  "StartHandlingAppEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SuspendingEventHandler",
+                                                                 "EventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  396
+                                           },
+                                           {
+                                               "name":  "StopHandlingAppEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  225
+                                           },
+                                           {
+                                               "name":  "AddDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  462
+                                           },
+                                           {
+                                               "name":  "StartDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  508
+                                           },
+                                           {
+                                               "name":  "StopDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  598
+                                           },
+                                           {
+                                               "name":  "AddDeviceToList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceListEntry"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  594
+                                           },
+                                           {
+                                               "name":  "RemoveDeviceFromList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  194
+                                           },
+                                           {
+                                               "name":  "ClearDeviceEntries",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "FindDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.Id"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "OnAppSuspension",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  248
+                                           },
+                                           {
+                                               "name":  "OnAppResume",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  160
+                                           },
+                                           {
+                                               "name":  "OnDeviceRemoved",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  384
+                                           },
+                                           {
+                                               "name":  "OnDeviceAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  405
+                                           },
+                                           {
+                                               "name":  "OnDeviceEnumerationComplete",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Id",
+                                                                "ButtonDisconnectFromDevice.Content",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1701
+                                           },
+                                           {
+                                               "name":  "OnDeviceConnected",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Id",
+                                                                "ButtonDisconnectFromDevice.Content",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  478
+                                           },
+                                           {
+                                               "name":  "OnDeviceClosing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ButtonDisconnectFromDevice.IsEnabled",
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonDisconnectFromDevice.Content"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  634
+                                           },
+                                           {
+                                               "name":  "SelectDeviceInList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedIndex",
+                                                                "DeviceInformation.Id"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  472
+                                           },
+                                           {
+                                               "name":  "UpdateConnectDisconnectButtonsAndList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonConnectToDevice.IsEnabled",
+                                                                "ButtonDisconnectFromDevice.IsEnabled",
+                                                                "ConnectDevices.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  239
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_ControlTransfer",
+                          "title":  "Control Transfer",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario2_ControlTransfer.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario2_ControlTransfer.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Control Transfer"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OsrFx2ScenarioText",
+                                               "inner_text":  "This scenario demonstrates how to use control transfer to set the seven segment on the OSRFX2 device"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "OsrFx2SevenSegmentSettingInput"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonGetOsrFx2SevenSegment",
+                                               "content":  "Get Seven Segment Display",
+                                               "handlers":  {
+                                                                "Click":  "GetOsrFx2SevenSegmentSetting_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSetOsrFx2SevenSegment",
+                                               "content":  "Set Seven Segment Display",
+                                               "handlers":  {
+                                                                "Click":  "SetOsrFx2SevenSegmentSetting_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SuperMuttScenarioText",
+                                               "inner_text":  "This scenario demonstrates how to use control transfer to set the LED blink pattern of the SuperMUTT device"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "SuperMuttLedBlinkPatternInput"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonGetSuperMuttLedBlinkPattern",
+                                               "content":  "Get Led Blink Pattern",
+                                               "handlers":  {
+                                                                "Click":  "GetSuperMuttLedBlinkPattern_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSetSuperMuttLedBlinkPattern",
+                                               "content":  "Set Led Blink Pattern",
+                                               "handlers":  {
+                                                                "Click":  "SetSuperMuttLedBlinkPattern_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Usb",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "CustomUsbDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_ControlTransfer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.OsrFx2",
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  543
+                                           },
+                                           {
+                                               "name":  "GetOsrFx2SevenSegmentSetting_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonGetOsrFx2SevenSegment.IsEnabled",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  395
+                                           },
+                                           {
+                                               "name":  "SetOsrFx2SevenSegmentSetting_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonSetOsrFx2SevenSegment.IsEnabled",
+                                                                "OsrFx2SevenSegmentSettingInput.SelectedIndex",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  498
+                                           },
+                                           {
+                                               "name":  "GetSuperMuttLedBlinkPattern_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonGetSuperMuttLedBlinkPattern.IsEnabled",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  413
+                                           },
+                                           {
+                                               "name":  "SetSuperMuttLedBlinkPattern_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonSetSuperMuttLedBlinkPattern.IsEnabled",
+                                                                "SuperMuttLedBlinkPatternInput.SelectedIndex",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  503
+                                           },
+                                           {
+                                               "name":  "SetOsrFx2SevenSegmentAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "OsrFx2.SevenLedSegmentMask",
+                                                                "UsbTransferDirection.Out",
+                                                                "UsbControlRecipient.Device",
+                                                                "UsbControlTransferType.Vendor",
+                                                                "OsrFx2.VendorCommand",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.SendControlOutTransferAsync",
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1558
+                                           },
+                                           {
+                                               "name":  "GetOsrFx2SevenSegmentAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "OsrFx2.VendorCommand",
+                                                                "DataReader.FromBuffer",
+                                                                "OsrFx2.SevenLedSegmentMask",
+                                                                "MainPage.Current",
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage",
+                                                                "Length.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2031
+                                           },
+                                           {
+                                               "name":  "SetSuperMuttLedBlinkPatternAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UsbTransferDirection.Out",
+                                                                "UsbControlRecipient.Device",
+                                                                "UsbControlTransferType.Vendor",
+                                                                "SuperMutt.VendorCommand",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.SendControlOutTransferAsync",
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  777
+                                           },
+                                           {
+                                               "name":  "GetSuperMuttLedBlinkPatternAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SuperMutt.VendorCommand",
+                                                                "DataReader.FromBuffer",
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  769
+                                           },
+                                           {
+                                               "name":  "SendVendorControlTransferInToDeviceRecipientAsync",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.Streams.Buffer"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Storage",
+                                                                "Streams.Buffer",
+                                                                "UsbTransferDirection.In",
+                                                                "UsbControlRecipient.Device",
+                                                                "UsbControlTransferType.Vendor",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.SendControlInTransferAsync"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Storage.Streams.Buffer"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  741
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_InterruptPipes",
+                          "title":  "Interrupt Pipes",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario3_InterruptPipes.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario3_InterruptPipes.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Interrupt Pipes"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OsrFx2ScenarioText"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonRegisterOsrFx2InterruptEvent",
+                                               "content":  "Register For Interrupt Event",
+                                               "handlers":  {
+                                                                "Click":  "RegisterOsrFx2InterruptEvent_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SuperMuttScenarioText"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonWriteSuperMuttInterruptOut",
+                                               "content":  "Write To Interrupt Out",
+                                               "handlers":  {
+                                                                "Click":  "WriteSuperMuttInterruptOut_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonRegisterSuperMuttInterruptEvent",
+                                               "content":  "Register For Interrupt Event",
+                                               "handlers":  {
+                                                                "Click":  "RegisterSuperMuttInterruptEvent_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonUnregisterInterruptEvent",
+                                               "content":  "Unregister From Interrupt Event",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterInterruptEvent_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SwitchStates"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Globalization",
+                                         "System.Runtime.InteropServices.WindowsRuntime",
+                                         "Windows.Devices.Usb",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Documents",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_InterruptPipes",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  309
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.OsrFx2",
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  883
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  334
+                                           },
+                                           {
+                                               "name":  "OnDeviceClosing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  336
+                                           },
+                                           {
+                                               "name":  "RegisterOsrFx2InterruptEvent_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "OsrFx2.Pipe",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  619
+                                           },
+                                           {
+                                               "name":  "RegisterSuperMuttInterruptEvent_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "SuperMutt.Pipe",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  617
+                                           },
+                                           {
+                                               "name":  "UnregisterInterruptEvent_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  348
+                                           },
+                                           {
+                                               "name":  "WriteSuperMuttInterruptOut_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "SuperMutt.Pipe",
+                                                                "Device.DefaultInterface",
+                                                                "EndpointDescriptor.MaxPacketSize",
+                                                                "MainPage.Current",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1051
+                                           },
+                                           {
+                                               "name":  "RegisterForInterruptEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  710
+                                           },
+                                           {
+                                               "name":  "UnregisterFromInterruptEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  432
+                                           },
+                                           {
+                                               "name":  "OnOsrFx2SwitchStateChangeEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DataReader.FromBuffer",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List",
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3466
+                                           },
+                                           {
+                                               "name":  "OnGeneralInterruptEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1552
+                                           },
+                                           {
+                                               "name":  "WriteToInterruptOut",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface",
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1141
+                                           },
+                                           {
+                                               "name":  "ClearSwitchStateTable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SwitchStates.Inlines"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  95
+                                           },
+                                           {
+                                               "name":  "UpdateSwitchStateTable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SwitchStates.Inlines"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  306
+                                           },
+                                           {
+                                               "name":  "UpdateRegisterEventButton",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonRegisterSuperMuttInterruptEvent.IsEnabled",
+                                                                "ButtonRegisterOsrFx2InterruptEvent.IsEnabled",
+                                                                "ButtonUnregisterInterruptEvent.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  254
+                                           },
+                                           {
+                                               "name":  "CreateBooleanChartInTable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "Inlines.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Span",
+                                                                 "Run",
+                                                                 "Bold",
+                                                                 "LineBreak"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1804
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_BulkPipes",
+                          "title":  "Bulk Pipes",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario4_BulkPipes.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario4_BulkPipes.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Bulk Pipes"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "GeneralScenarioText",
+                                               "inner_text":  "This scenario shows how to read and write to bulk pipe."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonBulkRead",
+                                               "content":  "Read 512 bytes",
+                                               "handlers":  {
+                                                                "Click":  "BulkRead_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonBulkWrite",
+                                               "content":  "Write 512 bytes",
+                                               "handlers":  {
+                                                                "Click":  "BulkWrite_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonBulkReadWrite",
+                                               "content":  "Continuously Read and Write 512 bytes",
+                                               "handlers":  {
+                                                                "Click":  "BulkReadWrite_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonCancelAllIoTasks",
+                                               "content":  "Cancel all Read/Write tasks",
+                                               "handlers":  {
+                                                                "Click":  "CancelAllIoTasks_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Globalization",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Usb",
+                                         "Windows.Foundation",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_BulkPipes",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  242
+                                           },
+                                           {
+                                               "name":  "Dispose",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  191
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.OsrFx2",
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary",
+                                                                 "SuspendingEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1054
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  306
+                                           },
+                                           {
+                                               "name":  "OnAppSuspension",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  43
+                                           },
+                                           {
+                                               "name":  "OnDeviceConnected",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  45
+                                           },
+                                           {
+                                               "name":  "BulkRead_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1307
+                                           },
+                                           {
+                                               "name":  "BulkWrite_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1318
+                                           },
+                                           {
+                                               "name":  "BulkReadWrite_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3550
+                                           },
+                                           {
+                                               "name":  "CancelAllIoTasks_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  246
+                                           },
+                                           {
+                                               "name":  "UpdateButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonBulkReadWrite.IsEnabled",
+                                                                "ButtonBulkRead.IsEnabled",
+                                                                "ButtonBulkWrite.IsEnabled",
+                                                                "ButtonCancelAllIoTasks.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  308
+                                           },
+                                           {
+                                               "name":  "BulkWriteAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1214
+                                           },
+                                           {
+                                               "name":  "BulkReadAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataReader"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1048
+                                           },
+                                           {
+                                               "name":  "BulkReadWriteAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Task.Factory",
+                                                                "EventHandlerForDevice.Current",
+                                                                "TaskCreationOptions.AttachedToParent",
+                                                                "TaskScheduler.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1683
+                                           },
+                                           {
+                                               "name":  "CancelAllIoTasks",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  413
+                                           },
+                                           {
+                                               "name":  "IsPerformingIo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  93
+                                           },
+                                           {
+                                               "name":  "PrintTotalReadWriteBytes",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  740
+                                           },
+                                           {
+                                               "name":  "ResetCancellationTokenSource",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Token.Register"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CancellationTokenSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  346
+                                           },
+                                           {
+                                               "name":  "NotifyCancelingTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.High",
+                                                                "ButtonBulkRead.IsEnabled",
+                                                                "ButtonBulkWrite.IsEnabled",
+                                                                "ButtonBulkReadWrite.IsEnabled",
+                                                                "ButtonCancelAllIoTasks.IsEnabled",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  915
+                                           },
+                                           {
+                                               "name":  "NotifyTaskCanceled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  384
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_UsbDescriptors",
+                          "title":  "USB Descriptors",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario5_UsbDescriptors.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario5_UsbDescriptors.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "USB Descriptors"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "GenericScenarioText",
+                                               "inner_text":  "Please select which descriptor to display:"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ListOfDescriptorTypes",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "Descriptor_SelectChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding EntryName}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DescriptorOutput"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "System.Globalization",
+                                         "Windows.Devices.Usb",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "DescriptorTypeEntry",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  77
+                                           },
+                                           {
+                                               "name":  "Scenario5_UsbDescriptors",
+                                               "namespaces_used":  [
+                                                                       "Windows.Devices.Enumeration",
+                                                                       "Windows.Devices.Enumeration.Pnp"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Descriptor.Device",
+                                                                "Descriptor.Configuration",
+                                                                "Descriptor.Interface",
+                                                                "Descriptor.Endpoint",
+                                                                "Descriptor.Custom",
+                                                                "Windows.Devices",
+                                                                "Enumeration.Pnp",
+                                                                "System.Devices",
+                                                                "PnpObject.Properties",
+                                                                "Descriptor.String"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "DescriptorTypeEntry"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1877
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.All",
+                                                                "Utilities.SetUpDeviceScenarios",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.GetDeviceType",
+                                                                "DeviceType.None",
+                                                                "ListOfDescriptorTypesSource.Source"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  809
+                                           },
+                                           {
+                                               "name":  "Descriptor_SelectChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  478
+                                           },
+                                           {
+                                               "name":  "PrintDescriptor",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Descriptor.Device",
+                                                                "Descriptor.Configuration",
+                                                                "Descriptor.Interface",
+                                                                "Descriptor.Endpoint",
+                                                                "Descriptor.String",
+                                                                "Descriptor.Custom",
+                                                                "DescriptorOutput.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "DescriptorOutput.Text"
+                                                           ],
+                                               "body_length":  1258
+                                           },
+                                           {
+                                               "name":  "GetDeviceDescriptorAsString",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DeviceDescriptor",
+                                                                "BcdUsb.ToString",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "MaxPacketSize0.ToString",
+                                                                "VendorId.ToString",
+                                                                "ProductId.ToString",
+                                                                "BcdDeviceRevision.ToString",
+                                                                "NumberOfConfigurations.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1093
+                                           },
+                                           {
+                                               "name":  "GetConfigurationDescriptorAsString",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Configuration",
+                                                                "UsbInterfaces.Count",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "ConfigurationValue.ToString",
+                                                                "SelfPowered.ToString",
+                                                                "RemoteWakeup.ToString",
+                                                                "MaxPowerMilliamps.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1023
+                                           },
+                                           {
+                                               "name":  "GetInterfaceDescriptorsAsString",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Configuration",
+                                                                "InterfaceNumber.ToString",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "ClassCode.ToString",
+                                                                "SubclassCode.ToString",
+                                                                "ProtocolCode.ToString",
+                                                                "InterfaceSettings.Count",
+                                                                "BulkInPipes.Count",
+                                                                "BulkOutPipes.Count",
+                                                                "InterruptInPipes.Count",
+                                                                "InterruptOutPipes.Count"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1981
+                                           },
+                                           {
+                                               "name":  "GetEndpointDescriptorsAsString",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface",
+                                                                "EndpointNumber.ToString",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "MaxPacketSize.ToString",
+                                                                "Interval.Milliseconds"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3262
+                                           },
+                                           {
+                                               "name":  "GetCustomDescriptorsAsString",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.Streams.Buffer"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Configuration",
+                                                                "Windows.Storage",
+                                                                "Streams.Buffer",
+                                                                "DataReader.FromBuffer",
+                                                                "ByteOrder.LittleEndian",
+                                                                "NumberFormatInfo.InvariantInfo"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Storage.Streams.Buffer"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2018
+                                           },
+                                           {
+                                               "name":  "GetProductName",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Name"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  275
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  6,
+                          "class":  "Scenario6_InterfaceSettings",
+                          "title":  "Interface Settings",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario6_InterfaceSettings.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario6_InterfaceSettings.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Interface Settings"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "GenericScenarioText",
+                                               "inner_text":  "You can view the number of interface settings that are available on the device, but this sample only allows the SuperMutt device to change its interface settings. Interface Settings:"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "InterfaceSettingsToChoose"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSetSetting",
+                                               "content":  "Set Interface Setting",
+                                               "handlers":  {
+                                                                "Click":  "SetSuperMuttInterfaceSetting_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonGetSetting",
+                                               "content":  "Get Interface Setting",
+                                               "handlers":  {
+                                                                "Click":  "GetInterfaceSetting_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Globalization",
+                                         "Windows.Devices.Usb",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario6_InterfaceSettings",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.All",
+                                                                "Utilities.SetUpDeviceScenarios",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface",
+                                                                "InterfaceSettings.Count",
+                                                                "InterfaceSettingsToChoose.Items",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "InterfaceSettingsToChoose.SelectedIndex",
+                                                                "Utilities.IsSuperMuttDevice",
+                                                                "ButtonSetSetting.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1546
+                                           },
+                                           {
+                                               "name":  "SetSuperMuttInterfaceSetting_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "UsbInterface.InterfaceSettings",
+                                                                "InterfaceSettingsToChoose.SelectedIndex",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  648
+                                           },
+                                           {
+                                               "name":  "GetInterfaceSetting_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  249
+                                           },
+                                           {
+                                               "name":  "SetInterfaceSetting",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface",
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  420
+                                           },
+                                           {
+                                               "name":  "GetInterfaceSetting",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DefaultInterface",
+                                                                "InterfaceDescriptor.AlternateSettingNumber",
+                                                                "MainPage.Current",
+                                                                "NumberFormatInfo.InvariantInfo",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  778
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  7,
+                          "class":  "Scenario7_SyncDevice",
+                          "title":  "Sync Device",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario7_SyncDevice.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs\\Scenario7_SyncDevice.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Sync Device in Background"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "GeneralScenarioText"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonSync",
+                                               "content":  "Sync with the device",
+                                               "handlers":  {
+                                                                "Click":  "Sync_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonCancelSync",
+                                               "content":  "Cancel Sync with the device",
+                                               "handlers":  {
+                                                                "Click":  "CancelSync_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ProgressBarText",
+                                               "inner_text":  "Sync progress:"
+                                           },
+                                           {
+                                               "type":  "ProgressBar",
+                                               "name":  "",
+                                               "x_name":  "SyncProgressBar"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "TaskRequiresBackgroundAccess",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  101
+                                           },
+                                           {
+                                               "name":  "Scenario7_SyncDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceUseTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  543
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceType.OsrFx2",
+                                                                "DeviceType.SuperMutt",
+                                                                "Utilities.SetUpDeviceScenarios"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  933
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  84
+                                           },
+                                           {
+                                               "name":  "FindSyncTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "SyncBackgroundTaskInformation.Name"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  346
+                                           },
+                                           {
+                                               "name":  "CancelSyncWithDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  405
+                                           },
+                                           {
+                                               "name":  "SetupBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "SyncBackgroundTaskInformation.Name",
+                                                                "SyncBackgroundTaskInformation.TaskEntryPoint"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "BackgroundTaskCompletedEventHandler",
+                                                                 "BackgroundTaskProgressEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  952
+                                           },
+                                           {
+                                               "name":  "StartSyncBackgroundTaskAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  782
+                                           },
+                                           {
+                                               "name":  "SyncWithDeviceAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceTriggerResult.Allowed",
+                                                                "DeviceTriggerResult.LowBattery",
+                                                                "DeviceTriggerResult.DeniedByUser",
+                                                                "DeviceTriggerResult.DeniedBySystem",
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1987
+                                           },
+                                           {
+                                               "name":  "OnSyncWithDeviceCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "EventHandlerForDevice.Current",
+                                                                "ApplicationData.Current",
+                                                                "LocalSettings.Values",
+                                                                "LocalSettingKeys.SyncBackgroundTaskStatus",
+                                                                "SyncBackgroundTaskInformation.TaskCompleted",
+                                                                "LocalSettingKeys.SyncBackgroundTaskResult",
+                                                                "SyncProgressBar.Value",
+                                                                "NotifyType.StatusMessage",
+                                                                "SyncBackgroundTaskInformation.TaskCanceled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2879
+                                           },
+                                           {
+                                               "name":  "OnSyncWithDeviceProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "SyncProgressBar.Value"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  235
+                                           },
+                                           {
+                                               "name":  "Sync_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "SyncProgressBar.Value",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  480
+                                           },
+                                           {
+                                               "name":  "CancelSync_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  253
+                                           },
+                                           {
+                                               "name":  "UpdateButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonSync.IsEnabled",
+                                                                "ButtonCancelSync.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  111
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

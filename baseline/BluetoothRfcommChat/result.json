@@ -1,0 +1,72 @@
+﻿{
+    "sample":  "BluetoothRfcommChat",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.RfcommChatSampleCS.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.RfcommChatSampleCS.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.RfcommChatSampleCS.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Chat Client",
+                          "initial_capture":  "01_1_Chat_Client__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Chat_Client__after_Start.png"
+                                          },
+                                          {
+                                              "name":  "Connect to Selected Device",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Chat_Client__after_Connect_to_Selected_Device.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Foreground Chat Server",
+                          "initial_capture":  "02_2_Foreground_Chat_Server__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Listening",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Foreground_Chat_Server__after_Start_Listening.png"
+                                          },
+                                          {
+                                              "name":  "Send",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Foreground_Chat_Server__after_Send.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Background Chat Server",
+                          "initial_capture":  "03_3_Background_Chat_Server__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Listening",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Background_Chat_Server__after_Start_Listening.png"
+                                          },
+                                          {
+                                              "name":  "Send",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Background_Chat_Server__after_Send.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

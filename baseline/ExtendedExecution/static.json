@@ -1,0 +1,881 @@
+﻿{
+    "sample":  "ExtendedExecution",
+    "feature_name":  "Extended Execution",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "Status.Text",
+                           "RequestButton.IsEnabled",
+                           "CloseButton.IsEnabled",
+                           "ExtendedExecutionReason.Unspecified",
+                           "ExtendedExecutionResult.Allowed",
+                           "NotifyType.StatusMessage",
+                           "DateTime.Now",
+                           "TimeSpan.FromSeconds",
+                           "ExtendedExecutionResult.Denied",
+                           "NotifyType.ErrorMessage",
+                           "Math.Round",
+                           "MainPage.DisplayToast",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "ExtendedExecutionRevokedReason.Resumed",
+                           "ExtendedExecutionRevokedReason.SystemPolicy",
+                           "App.Current",
+                           "SuspendingOperation.GetDeferral",
+                           "ExtendedExecutionReason.SavingData",
+                           "Task.Delay",
+                           "Geolocator.RequestAccessAsync",
+                           "GeolocationAccessStatus.Allowed",
+                           "GeolocationAccessStatus.Denied",
+                           "GeolocationAccessStatus.Unspecified",
+                           "ExtendedExecutionReason.LocationTracking",
+                           "Coordinate.Point"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_UnspecifiedReason",
+                          "title":  "Scenario1_UnspecifiedReason",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\shared\\Scenario1_UnspecifiedReason.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\cs\\Scenario1_UnspecifiedReason.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Unspecified reason"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Requests for extended execution using the \"Unspecified\" reason are allowed only during the Resumed lifecycle stage. The app raises a toast every ten seconds to demonstrate that it is still running."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RequestButton",
+                                               "content":  "Begin extended execution",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind BeginExtendedExecution}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseButton",
+                                               "content":  "End extended execution",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind EndExtendedExecution}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Extended execution:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "See the instructions in the README for details on how to use this scenario."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.ApplicationModel.ExtendedExecution",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "UnspecifiedReason",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  196
+                                           },
+                                           {
+                                               "name":  "ClearExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  348
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Status.Text",
+                                                                "RequestButton.IsEnabled",
+                                                                "CloseButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  408
+                                           },
+                                           {
+                                               "name":  "BeginExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ExtendedExecutionReason.Unspecified",
+                                                                "ExtendedExecutionResult.Allowed",
+                                                                "NotifyType.StatusMessage",
+                                                                "DateTime.Now",
+                                                                "TimeSpan.FromSeconds",
+                                                                "ExtendedExecutionResult.Denied",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ExtendedExecutionSession",
+                                                                 "Timer"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1363
+                                           },
+                                           {
+                                               "name":  "OnTimer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Math.Round",
+                                                                "DateTime.Now",
+                                                                "MainPage.DisplayToast"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  244
+                                           },
+                                           {
+                                               "name":  "EndExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  74
+                                           },
+                                           {
+                                               "name":  "SessionRevoked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ExtendedExecutionRevokedReason.Resumed",
+                                                                "NotifyType.StatusMessage",
+                                                                "ExtendedExecutionRevokedReason.SystemPolicy"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  698
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_SavingDataReason",
+                          "title":  "Scenario2_SavingDataReason",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\shared\\Scenario2_SavingDataReason.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\cs\\Scenario2_SavingDataReason.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Saving Data Reason"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "See the instructions in the README for details on how to use this scenario."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel",
+                                         "Windows.ApplicationModel.ExtendedExecution",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "SavingDataReason",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  157
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  63
+                                           },
+                                           {
+                                               "name":  "OnSuspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SuspendingOperation.GetDeferral",
+                                                                "NotifyType.StatusMessage",
+                                                                "ExtendedExecutionReason.SavingData",
+                                                                "ExtendedExecutionResult.Allowed",
+                                                                "MainPage.DisplayToast",
+                                                                "Task.Delay",
+                                                                "TimeSpan.FromSeconds",
+                                                                "ExtendedExecutionResult.Denied"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ExtendedExecutionSession",
+                                                                 "CancellationTokenSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2048
+                                           },
+                                           {
+                                               "name":  "ExtendedExecutionSessionRevoked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ExtendedExecutionRevokedReason.Resumed",
+                                                                "NotifyType.StatusMessage",
+                                                                "ExtendedExecutionRevokedReason.SystemPolicy",
+                                                                "MainPage.DisplayToast"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1242
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_LocationTrackingReason",
+                          "title":  "Scenario3_LocationTrackingReason",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\shared\\Scenario3_LocationTrackingReason.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\cs\\Scenario3_LocationTrackingReason.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Location Tracking Reason"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RequestButton",
+                                               "content":  "Begin extended execution",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind BeginExtendedExecution}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseButton",
+                                               "content":  "End extended execution",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind EndExtendedExecution}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Extended execution:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "See the instructions in the README for details on how to use this scenario."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel.ExtendedExecution",
+                                         "Windows.Devices.Geolocation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "LocationTrackingReason",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  196
+                                           },
+                                           {
+                                               "name":  "ClearExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  348
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Status.Text",
+                                                                "RequestButton.IsEnabled",
+                                                                "CloseButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  408
+                                           },
+                                           {
+                                               "name":  "StartLocationTrackingAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Geolocator.RequestAccessAsync",
+                                                                "GeolocationAccessStatus.Allowed",
+                                                                "GeolocationAccessStatus.Denied",
+                                                                "NotifyType.ErrorMessage",
+                                                                "GeolocationAccessStatus.Unspecified"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  944
+                                           },
+                                           {
+                                               "name":  "BeginExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ExtendedExecutionReason.LocationTracking",
+                                                                "ExtendedExecutionResult.Allowed",
+                                                                "NotifyType.StatusMessage",
+                                                                "TimeSpan.FromSeconds",
+                                                                "ExtendedExecutionResult.Denied",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ExtendedExecutionSession",
+                                                                 "Timer"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1446
+                                           },
+                                           {
+                                               "name":  "OnTimer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Coordinate.Point",
+                                                                "MainPage.DisplayToast"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  780
+                                           },
+                                           {
+                                               "name":  "EndExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  74
+                                           },
+                                           {
+                                               "name":  "SessionRevoked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ExtendedExecutionRevokedReason.Resumed",
+                                                                "NotifyType.StatusMessage",
+                                                                "ExtendedExecutionRevokedReason.SystemPolicy"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  698
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_MultipleTasks",
+                          "title":  "Scenario4_MultipleTasks",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\shared\\Scenario4_MultipleTasks.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\cs\\Scenario4_MultipleTasks.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Using Extended Execution with Multiple Tasks"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RequestButton",
+                                               "content":  "Begin extended execution and Tasks",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind BeginExtendedExecution}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseButton",
+                                               "content":  "End extended execution and Tasks",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind EndExtendedExecution}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Extended execution:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "See the instructions in the README for details on how to use this scenario."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.IO",
+                                         "System.Linq",
+                                         "System.Runtime.InteropServices.WindowsRuntime",
+                                         "System.Threading",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel.ExtendedExecution",
+                                         "Windows.Foundation",
+                                         "Windows.Foundation.Collections",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Controls.Primitives",
+                                         "Windows.UI.Xaml.Data",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Media",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "MultipleTasks",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  196
+                                           },
+                                           {
+                                               "name":  "ClearExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  844
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Status.Text",
+                                                                "RequestButton.IsEnabled",
+                                                                "CloseButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  410
+                                           },
+                                           {
+                                               "name":  "OnTaskCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.DisplayToast"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  250
+                                           },
+                                           {
+                                               "name":  "GetExecutionDeferral",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "InvalidOperationException",
+                                                                 "Deferral"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  250
+                                           },
+                                           {
+                                               "name":  "BeginExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ExtendedExecutionReason.Unspecified",
+                                                                "ExtendedExecutionResult.Allowed",
+                                                                "NotifyType.StatusMessage",
+                                                                "ExtendedExecutionResult.Denied",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ExtendedExecutionSession",
+                                                                 "CancellationTokenSource",
+                                                                 "Random"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1766
+                                           },
+                                           {
+                                               "name":  "RaiseToastAfterDelay",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Task.Delay",
+                                                                "MainPage.DisplayToast"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  488
+                                           },
+                                           {
+                                               "name":  "EndExtendedExecution",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  74
+                                           },
+                                           {
+                                               "name":  "SessionRevoked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ExtendedExecutionRevokedReason.Resumed",
+                                                                "NotifyType.StatusMessage",
+                                                                "ExtendedExecutionRevokedReason.SystemPolicy"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  700
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

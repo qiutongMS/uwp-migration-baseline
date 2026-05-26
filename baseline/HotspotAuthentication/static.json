@@ -1,0 +1,542 @@
+﻿{
+    "sample":  "HotspotAuthentication",
+    "feature_name":  "Hotspot Authentication",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.ApplicationModel.Package.Current.InstalledLocation",
+                           "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                       ],
+    "api_references":  [
+                           "ConfigStore.UseNativeWISPr",
+                           "ConfigStore.AuthenticateThroughBackgroundTask",
+                           "ScenarioCommon.Instance",
+                           "ProvisionButton.IsEnabled",
+                           "Windows.ApplicationModel",
+                           "Package.Current",
+                           "XmlDocument.LoadFromFileAsync",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "System.Exception",
+                           "ScenarioCommon.BackgroundTaskEntryPoint",
+                           "ScenarioCommon.BackgroundTaskName",
+                           "String.Format",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "Value.Unregister",
+                           "RegisterButton.IsEnabled",
+                           "UnregisterButton.IsEnabled",
+                           "Dispatcher.RunAsync",
+                           "Windows.UI",
+                           "Core.CoreDispatcherPriority",
+                           "AuthenticateButton.IsEnabled",
+                           "ConfigStore.UserName",
+                           "ConfigStore.Password",
+                           "ConfigStore.ExtraParameters",
+                           "ConfigStore.MarkAsManualConnect",
+                           "HotspotAuthenticationResponseCode.LoginSucceeded",
+                           "ConfigStore.AuthenticationToken",
+                           "String.IsNullOrEmpty",
+                           "HotspotAuthenticationContext.TryGetAuthenticationContext",
+                           "SkipButton.IsEnabled",
+                           "AbortButton.IsEnabled"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Initialization",
+                          "title":  "Initialization",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs\\Scenario1_Initialization.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs\\Scenario1_Initialization.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This sample demonstrates the authentication with a Wi-Fi hotspot through an application. This mechanism can be used as an alternative to configuring static credentials for a hotspot."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "This scenario consists of two parts. First, Windows must be provisioned to trigger the application when authenticating with a certain hotspot. This is achieved by provisioning a WLAN profile with a corresponding configuration. The provisioning XML must either be signed to be consumed by the provisioning API, or this sample must be part of a privileged mobile network operator companion application. Refer to the provisioning agent sample for more details. The sample XML built into this application must be modified to match the hotspot\u0027s SSID and signed before it can be applied."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ProvisionButton",
+                                               "content":  "Provision",
+                                               "handlers":  {
+                                                                "Click":  "ProvisionButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Next, the application needs to register a background task for the hotspot authentication event. The background task runs whenever Windows attempts to authenticate with a Wi-Fi hotspot and the corresponding WLAN profile has an extension configured. Note that provisioning has to be done first to give the application access to the background event. If an application unregisters from this event, it has to provision again before it can reregister for this event. It is safe to provision multiple times, but an application can only register one background task handler for this event at a time."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterButton_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "HotspotAuthenticationTask",
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Data.Xml.Dom",
+                                         "Windows.Networking.NetworkOperators",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Initialization",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConfigStore.UseNativeWISPr",
+                                                                "ConfigStore.AuthenticateThroughBackgroundTask",
+                                                                "ScenarioCommon.Instance"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  459
+                                           },
+                                           {
+                                               "name":  "ProvisionButton_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.ApplicationModel.Package.Current.InstalledLocation"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProvisionButton.IsEnabled",
+                                                                "Windows.ApplicationModel",
+                                                                "Package.Current",
+                                                                "XmlDocument.LoadFromFileAsync",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage",
+                                                                "System.Exception"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ProvisioningAgent"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1669
+                                           },
+                                           {
+                                               "name":  "RegisterButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioCommon.BackgroundTaskEntryPoint",
+                                                                "ScenarioCommon.BackgroundTaskName",
+                                                                "ScenarioCommon.Instance",
+                                                                "NotifyType.StatusMessage",
+                                                                "System.Exception",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "NetworkOperatorHotspotAuthenticationTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1330
+                                           },
+                                           {
+                                               "name":  "UnregisterButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "String.Format",
+                                                                "ScenarioCommon.BackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  427
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "ScenarioCommon.BackgroundTaskName",
+                                                                "Value.Unregister"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  465
+                                           },
+                                           {
+                                               "name":  "UpdateButtonState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisterButton.IsEnabled",
+                                                                "UnregisterButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  323
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_BackgroundTask",
+                          "title":  "Authentication by background task",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs\\Scenario2_BackgroundTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs\\Scenario2_BackgroundTask.xaml.cs",
+                          "description":  "The background task handler can be used to perform the actual authentication. Connect to the hotspot configured in step one to see it happen. You may exit this application now.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "The background task handler can be used to perform the actual authentication. Connect to the hotspot configured in step one to see it happen. You may exit this application now."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "HotspotAuthenticationTask",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_BackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConfigStore.AuthenticateThroughBackgroundTask",
+                                                                "ScenarioCommon.Instance"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  281
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_ForegroundApp",
+                          "title":  "Authentication by foreground app",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs\\Scenario3_ForegroundApp.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs\\Scenario3_ForegroundApp.xaml.cs",
+                          "description":  "Authentication can also be performed by the foreground application. In this case, the background task handler triggers the foreground application being launched. This is useful if the application needs additional user input to perform the authentication. Connect to the hotspot configured in step 1 to see it happen. You may exit this application now, and it will be launched on demand.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "AuthenticateButton",
+                                               "content":  "Authenticate",
+                                               "handlers":  {
+                                                                "Click":  "AuthenticateButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SkipButton",
+                                               "content":  "Skip",
+                                               "handlers":  {
+                                                                "Click":  "SkipButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "AbortButton",
+                                               "content":  "Abort",
+                                               "handlers":  {
+                                                                "Click":  "AbortButton_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "HotspotAuthenticationTask",
+                                         "System",
+                                         "Windows.Networking.NetworkOperators",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_ForegroundApp",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConfigStore.AuthenticateThroughBackgroundTask",
+                                                                "ScenarioCommon.Instance"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  594
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioCommon.Instance"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  121
+                                           },
+                                           {
+                                               "name":  "OnBackgroundAuthenticationCompleted",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  456
+                                           },
+                                           {
+                                               "name":  "AuthenticateButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AuthenticateButton.IsEnabled",
+                                                                "ConfigStore.UserName",
+                                                                "ConfigStore.Password",
+                                                                "ConfigStore.ExtraParameters",
+                                                                "ConfigStore.MarkAsManualConnect",
+                                                                "HotspotAuthenticationResponseCode.LoginSucceeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  954
+                                           },
+                                           {
+                                               "name":  "SkipButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  256
+                                           },
+                                           {
+                                               "name":  "AbortButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConfigStore.MarkAsManualConnect",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  226
+                                           },
+                                           {
+                                               "name":  "InitializeForegroundAppAuthentication",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConfigStore.AuthenticationToken",
+                                                                "String.IsNullOrEmpty",
+                                                                "HotspotAuthenticationContext.TryGetAuthenticationContext",
+                                                                "NotifyType.ErrorMessage",
+                                                                "AuthenticateButton.IsEnabled",
+                                                                "SkipButton.IsEnabled",
+                                                                "AbortButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  593
+                                           },
+                                           {
+                                               "name":  "ClearAuthenticationToken",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConfigStore.AuthenticationToken",
+                                                                "AuthenticateButton.IsEnabled",
+                                                                "SkipButton.IsEnabled",
+                                                                "AbortButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  199
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

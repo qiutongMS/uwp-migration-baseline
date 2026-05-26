@@ -1,0 +1,53 @@
+﻿{
+    "sample":  "TextSegmentation",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSegmentation\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.TextSegmentation.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.TextSegmentation.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.TextSegmentation.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Extract Text Segments",
+                          "initial_capture":  "01_1_Extract_Text_Segments__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Words Segments Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Extract_Text_Segments__after_Words_Segments_Button.png"
+                                          },
+                                          {
+                                              "name":  "Selection Segments Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Extract_Text_Segments__after_Selection_Segments_Button.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Get Current Text Segment From Index",
+                          "initial_capture":  "02_2_Get_Current_Text_Segment_From_Index__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Words Segments Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Get_Current_Text_Segment_From_Index__after_Words_Segments_Button.png"
+                                          },
+                                          {
+                                              "name":  "Selection Segments Button",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Get_Current_Text_Segment_From_Index__after_Selection_Segments_Button.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

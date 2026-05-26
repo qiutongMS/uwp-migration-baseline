@@ -1,0 +1,672 @@
+﻿{
+    "sample":  "OrientationSensor",
+    "feature_name":  "Orientation Sensor C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "SensorReadingType.Absolute",
+                           "SensorReadingType.Relative",
+                           "ReadingTypeComboBox.ItemsSource",
+                           "ReadingTypeComboBox.SelectedIndex",
+                           "SensorOptimizationGoal.Precision",
+                           "SensorOptimizationGoal.PowerEfficiency",
+                           "OptimizationGoalComboBox.ItemsSource",
+                           "OptimizationGoalComboBox.SelectedIndex",
+                           "ReadingTypeComboBox.SelectedValue",
+                           "OptimizationGoalComboBox.SelectedValue",
+                           "OrientationSensor.GetDefault",
+                           "NotifyType.StatusMessage",
+                           "ScenarioEnableButton.IsEnabled",
+                           "NotifyType.ErrorMessage",
+                           "ScenarioDisableButton.IsEnabled",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "MainPage.SetReadingText",
+                           "Math.Max",
+                           "Window.Current",
+                           "TimeSpan.FromMilliseconds",
+                           "EnabledContent.Visibility",
+                           "Visibility.Collapsed",
+                           "DisabledContent.Visibility",
+                           "Visibility.Visible",
+                           "MagnetometerAccuracy.Unreliable"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  0,
+                          "class":  "Scenario0_Choose",
+                          "title":  "Choose orientation sensor",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\shared\\Scenario0_Choose.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\cs\\Scenario0_Choose.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Choose orientation sensor"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Choose the orientation sensor reading type to be used by the other scenarios."
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "ReadingTypeComboBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Choose the sensor optimization goal."
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "OptimizationGoalComboBox"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario0_Choose",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SensorReadingType.Absolute",
+                                                                "SensorReadingType.Relative",
+                                                                "ReadingTypeComboBox.ItemsSource",
+                                                                "ReadingTypeComboBox.SelectedIndex",
+                                                                "SensorOptimizationGoal.Precision",
+                                                                "SensorOptimizationGoal.PowerEfficiency",
+                                                                "OptimizationGoalComboBox.ItemsSource",
+                                                                "OptimizationGoalComboBox.SelectedIndex"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  792
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadingTypeComboBox.SelectedValue",
+                                                                "OptimizationGoalComboBox.SelectedValue"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  217
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DataEvents",
+                          "title":  "Data Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\shared\\Scenario1_DataEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\cs\\Scenario1_DataEvents.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Data events"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Registers an event listener for orientation sensor data and displays the rotation data as it is reported."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ScenarioEnable}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ScenarioDisable}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput",
+                                               "text":  "no data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DataEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "OrientationSensor.GetDefault",
+                                                                "NotifyType.StatusMessage",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  504
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  126
+                                           },
+                                           {
+                                               "name":  "VisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  625
+                                           },
+                                           {
+                                               "name":  "ReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "MainPage.SetReadingText"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  187
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Math.Max",
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  446
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  388
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Polling",
+                          "title":  "Polling",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\shared\\Scenario2_Polling.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\cs\\Scenario2_Polling.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Polling"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Polls for orientation sensor data and displays the rotation data at a set interval."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ScenarioEnable}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ScenarioDisable}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput",
+                                               "text":  "no data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "System.Threading.Tasks",
+                                         "Windows.UI.Core"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Polling",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "OrientationSensor.GetDefault",
+                                                                "Math.Max",
+                                                                "TimeSpan.FromMilliseconds",
+                                                                "NotifyType.StatusMessage",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatcherTimer"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1056
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  126
+                                           },
+                                           {
+                                               "name":  "VisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  592
+                                           },
+                                           {
+                                               "name":  "DisplayCurrentReading",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.SetReadingText"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  218
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  362
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  421
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_Calibration",
+                          "title":  "Calibration",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\shared\\Scenario3_Calibration.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OrientationSensor\\cs\\Scenario3_Calibration.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Calibration"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Simulates the current sensor accuracy. Setting to \u0027Unreliable\u0027 will invoke the calibration bar until accuracy improves or 30 seconds passes. The calibration bar will not be shown again for at least 5 minutes, even when accuracy returns to \u0027Unreliable\u0027."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Yaw Accuracy:"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "High",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind OnHighAccuracy}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Approximate",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind OnApproximateAccuracy}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Unreliable",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind OnUnreliableAccuracy}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DisabledContent",
+                                               "text":  "Yaw accuracy is reported only for absolute sensor reading types."
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.Devices.Sensors",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_Calibration",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SensorReadingType.Relative",
+                                                                "EnabledContent.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "DisabledContent.Visibility",
+                                                                "Visibility.Visible"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  291
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnHighAccuracy",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnApproximateAccuracy",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnUnreliableAccuracy",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MagnetometerAccuracy.Unreliable"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  91
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

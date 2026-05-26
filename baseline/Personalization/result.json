@@ -1,0 +1,28 @@
+﻿{
+    "sample":  "Personalization",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Personalization\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Personalization.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Personalization.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Personalization.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Pick and set lock screen image",
+                          "initial_capture":  "01_1_Pick_and_set_lock_screen_image__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Pick and set lock screen image",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

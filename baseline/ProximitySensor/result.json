@@ -1,0 +1,67 @@
+﻿{
+    "sample":  "ProximitySensor",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ProximitySensor\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ProximityCS.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ProximityCS.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ProximityCS.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Data Events",
+                          "initial_capture":  "01_1_Data_Events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Enable",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Data_Events__after_Enable.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Polling",
+                          "initial_capture":  "02_2_Polling__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Data",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Polling__after_Get_Data.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Display On/Off",
+                          "initial_capture":  "03_3_Display_On_Off__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Enable",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Display_On_Off__after_Enable.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Background Proximity Sensor",
+                          "initial_capture":  "04_4_Background_Proximity_Sensor__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register Task",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Background_Proximity_Sensor__after_Register_Task.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

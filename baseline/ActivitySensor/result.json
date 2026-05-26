@@ -1,0 +1,67 @@
+﻿{
+    "sample":  "ActivitySensor",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ActivitySensor.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ActivitySensor.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ActivitySensor.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Current activity",
+                          "initial_capture":  "01_1_Current_activity__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Current Activity",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Current_activity__after_Get_Current_Activity.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Activity history",
+                          "initial_capture":  "02_2_Activity_history__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Activity History",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Activity_history__after_Get_Activity_History.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Events",
+                          "initial_capture":  "03_3_Events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "ReadingChanged On",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Events__after_ReadingChanged_On.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Background activity",
+                          "initial_capture":  "04_4_Background_activity__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register Task",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Background_activity__after_Register_Task.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

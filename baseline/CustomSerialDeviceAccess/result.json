@@ -1,0 +1,52 @@
+﻿{
+    "sample":  "CustomSerialDeviceAccess",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CustomSerialDeviceAccess.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CustomSerialDeviceAccess.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CustomSerialDeviceAccess.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Connect/Disconnect",
+                          "initial_capture":  "01_1_Connect_Disconnect__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Connect to device",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Connect_Disconnect__after_Connect_to_device.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Configure Device",
+                          "initial_capture":  "02_2_Configure_Device__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Read/Write",
+                          "initial_capture":  "03_3_Read_Write__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Events",
+                          "initial_capture":  "04_4_Events__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

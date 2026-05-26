@@ -1,0 +1,337 @@
+﻿{
+    "sample":  "BackgroundSensors",
+    "feature_name":  "Background sensors",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "Accelerometer.GetDefault",
+                           "NotifyType.StatusMessage",
+                           "ApplicationData.Current",
+                           "LocalSettings.Values",
+                           "ScenarioEnableButton.IsEnabled",
+                           "ScenarioDisableButton.IsEnabled",
+                           "Window.Current",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                           "Accelerometer.DeviceId",
+                           "NotifyType.ErrorMessage",
+                           "SampleConstants.Scenario1_DeviceUse_TaskName",
+                           "SampleConstants.Scenario1_DeviceUse_TaskEntryPoint",
+                           "DeviceTriggerResult.Allowed",
+                           "DeviceTriggerResult.LowBattery",
+                           "DeviceTriggerResult.DeniedBySystem",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "ScenarioOutput_SampleCount.Text",
+                           "System.Globalization",
+                           "CultureInfo.CurrentCulture",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1_DeviceUse",
+                      "title":  "Accelerometer DeviceUse",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundSensors\\shared\\Scenario1_DeviceUse.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundSensors\\cs\\Scenario1_DeviceUse.xaml.cs",
+                      "description":  "Launches a DeviceUse trigger background task to listen for accelerometer data. Displays the number of data samples received by the background task.",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Description:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "Launches a DeviceUse trigger background task to listen for accelerometer data. Displays the number of data samples received by the background task."
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "ScenarioEnableButton",
+                                           "content":  "Enable",
+                                           "handlers":  {
+                                                            "Click":  "ScenarioEnable"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "ScenarioDisableButton",
+                                           "content":  "Disable",
+                                           "handlers":  {
+                                                            "Click":  "ScenarioDisable"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Sample count:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "ScenarioOutput_SampleCount",
+                                           "text":  "No data"
+                                       }
+                                   ],
+                      "usings":  [
+                                     "System",
+                                     "System.Threading.Tasks",
+                                     "Windows.ApplicationModel.Background",
+                                     "Windows.Devices.Sensors",
+                                     "Windows.Foundation",
+                                     "Windows.Storage",
+                                     "Windows.UI.Core",
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Navigation"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1_DeviceUse",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Accelerometer.GetDefault",
+                                                            "NotifyType.StatusMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "DeviceUseTrigger",
+                                                             "DispatcherTimer",
+                                                             "TimeSpan"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  989
+                                       },
+                                       {
+                                           "name":  "DispatcherTimer",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+                                                             "TimeSpan"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  101
+                                       },
+                                       {
+                                           "name":  "OnNavigatedTo",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "ApplicationData.Current",
+                                                            "LocalSettings.Values",
+                                                            "ScenarioEnableButton.IsEnabled",
+                                                            "ScenarioDisableButton.IsEnabled"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  845
+                                       },
+                                       {
+                                           "name":  "OnNavigatingFrom",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Window.Current",
+                                                            "ApplicationData.Current",
+                                                            "LocalSettings.Values"
+                                                        ],
+                                           "new_types":  [
+                                                             "WindowVisibilityChangedEventHandler"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  827
+                                       },
+                                       {
+                                           "name":  "VisibilityChanged",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "ScenarioDisableButton.IsEnabled",
+                                                            "ApplicationData.Current",
+                                                            "LocalSettings.Values"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  400
+                                       },
+                                       {
+                                           "name":  "ScenarioEnable",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Window.Current",
+                                                            "BackgroundExecutionManager.RequestAccessAsync",
+                                                            "BackgroundAccessStatus.AlwaysAllowed",
+                                                            "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                            "Accelerometer.DeviceId",
+                                                            "ScenarioEnableButton.IsEnabled",
+                                                            "ScenarioDisableButton.IsEnabled",
+                                                            "NotifyType.ErrorMessage",
+                                                            "NotifyType.StatusMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "WindowVisibilityChangedEventHandler"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1286
+                                       },
+                                       {
+                                           "name":  "ScenarioDisable",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Window.Current",
+                                                            "ScenarioEnableButton.IsEnabled",
+                                                            "ScenarioDisableButton.IsEnabled",
+                                                            "NotifyType.StatusMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "WindowVisibilityChangedEventHandler"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  876
+                                       },
+                                       {
+                                           "name":  "StartSensorBackgroundTaskAsync",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "SampleConstants.Scenario1_DeviceUse_TaskName",
+                                                            "SampleConstants.Scenario1_DeviceUse_TaskEntryPoint",
+                                                            "DeviceTriggerResult.Allowed",
+                                                            "NotifyType.StatusMessage",
+                                                            "DeviceTriggerResult.LowBattery",
+                                                            "NotifyType.ErrorMessage",
+                                                            "DeviceTriggerResult.DeniedBySystem"
+                                                        ],
+                                           "new_types":  [
+                                                             "BackgroundTaskBuilder",
+                                                             "BackgroundTaskCompletedEventHandler"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  2575
+                                       },
+                                       {
+                                           "name":  "BackgroundTaskBuilder",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "SampleConstants.Scenario1_DeviceUse_TaskName",
+                                                            "SampleConstants.Scenario1_DeviceUse_TaskEntryPoint"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  169
+                                       },
+                                       {
+                                           "name":  "FindAndCancelExistingBackgroundTask",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "BackgroundTaskRegistration.AllTasks",
+                                                            "SampleConstants.Scenario1_DeviceUse_TaskName"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  368
+                                       },
+                                       {
+                                           "name":  "RefreshTimer_Tick",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "ApplicationData.Current",
+                                                            "LocalSettings.Values",
+                                                            "ScenarioOutput_SampleCount.Text",
+                                                            "System.Globalization",
+                                                            "CultureInfo.CurrentCulture"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  467
+                                       },
+                                       {
+                                           "name":  "OnBackgroundTaskCompleted",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Dispatcher.RunAsync",
+                                                            "CoreDispatcherPriority.Normal",
+                                                            "ApplicationData.Current",
+                                                            "LocalSettings.Values",
+                                                            "NotifyType.StatusMessage",
+                                                            "NotifyType.ErrorMessage"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1348
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

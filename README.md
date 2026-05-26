@@ -3,7 +3,7 @@
 A PowerShell-based pipeline that **builds, deploys, launches, screenshots and uninstalls** every C# UWP sample in a target repo so the captured artifacts can serve as a **behavioral baseline** for a future architecture migration.
 
 The pipeline was originally written against
-[`qiutongMS/uwp-samples-standalone`](https://github.com/qiutongMS/uwp-samples-standalone) (38 samples), but the scripts are generic — point them at any directory of UWP sample projects and they will iterate.
+[`qiutongMS/uwp-samples-standalone`](https://github.com/qiutongMS/uwp-samples-standalone) (89 samples on the `refilter-102-samples` branch), but the scripts are generic — point them at any directory of UWP sample projects and they will iterate.
 
 ## What you get out of it
 
@@ -19,20 +19,21 @@ At the repo level you also get `_index.md`, `_status.csv`, and `_progress.log` f
 
 ## Where is the baseline I just captured?
 
-The last full batch (38 samples, 281 PNGs, 12.8 MB) is checked into [`baseline/`](baseline/). Start at [`baseline/_index.md`](baseline/_index.md) for the per-sample table.
+The last full batch (89 samples, 508 PNGs) is checked into [`baseline/`](baseline/). Start at [`baseline/_index.md`](baseline/_index.md) for the per-sample table.
 
 If you want to **reproduce** the baseline (or re-run after the migration), follow [Quickstart](#quickstart) below — the scripts will regenerate this entire `baseline/` directory.
 
-## Status as of last full batch (38 samples)
+## Status as of last full batch (89 samples)
 
 | Capture state | Count | Meaning |
 |---|---:|---|
-| `ok`            | 24 | Standard scenario iteration succeeded end-to-end |
-| `ok-generic`    | 12 | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
-| `partial`       | 1  | Got some scenarios then hit a sample-specific bug (XamlBind scenario 5 has a pre-existing null-ref) |
-| `crashed`       | 1  | UWP launched but immediately crashed with `0xc000027b` (system DLL delayed-load failure). Only `RadialController` remains in this bucket — it needs Surface Dial / pen hardware to start up. |
+| `ok`            | 65 | Standard scenario iteration succeeded end-to-end |
+| `ok-generic`    | 10 | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
+| `partial`       | 3  | Got some scenarios then hit a sample-specific bug (null-ref or UIA timing — `AdvancedCasting`, `HotspotAuthentication`, `PlayReady`, plus pre-existing `XamlBind` scenario 5 null-ref) |
+| `failed`        | 4  | Pipeline could not locate the main window after launch (sample uses a non-default window title — `BluetoothAdvertisement`, `BluetoothLE`, `OnDemandHotspot`, `RadioManager` — needs per-sample title mapping to recover) |
+| `pending`       | 7  | Build / deploy failed before reaching capture (6× msbuild — `ApplicationResources`, `CameraOpenCV`, `LinguisticServices`, `MobileHotspot`, `NetworkConnectivity`, `PersonalDataEncryption` — and 1× `Add-AppxPackage` HRESULT 0x80073CF3 — `MIDI`) |
 
-287 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list and the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket.
+508 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list and the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket.
 
 ## Prerequisites
 

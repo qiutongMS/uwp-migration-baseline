@@ -1,0 +1,28 @@
+﻿{
+    "sample":  "KeyCredentialManager",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\KeyCredentialManager\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.KeyCredentialManager.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.KeyCredentialManager.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.KeyCredentialManager.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Sign In Scenario",
+                          "initial_capture":  "01_1_Sign_In_Scenario__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Sign In",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

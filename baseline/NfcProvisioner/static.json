@@ -1,0 +1,284 @@
+﻿{
+    "sample":  "NfcProvisioner",
+    "feature_name":  "NfcProvisioner",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Networking.Proximity.ProximityDevice"
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "FileTypeFilter.Add",
+                           "NotifyType.StatusMessage",
+                           "ProvisioningPackagePathText.Text",
+                           "TransferButton.Visibility",
+                           "Visibility.Collapsed",
+                           "CancelTransferButton.Visibility",
+                           "Visibility.Visible",
+                           "TransferButton.IsEnabled",
+                           "System.OperationCanceledException",
+                           "System.ArgumentException",
+                           "NotifyType.ErrorMessage",
+                           "FileIO.ReadBufferAsync",
+                           "ProximityDevice.GetDefault",
+                           "Windows.Networking",
+                           "Proximity.ProximityDevice",
+                           "Task.Run",
+                           "WaitHandle.WaitAny",
+                           "Marshal.SizeOf"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1",
+                      "title":  "Provision Peer Device",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NfcProvisioner\\cs\\Scenario1.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NfcProvisioner\\cs\\Scenario1.xaml.cs",
+                      "description":  "NFC Provisioning App",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Description:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "NFC Provisioning App"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "Choose a provisioning package to transfer"
+                                       },
+                                       {
+                                           "type":  "TextBox",
+                                           "name":  "ProvisioningPackagePathText",
+                                           "x_name":  ""
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "BrowseButton",
+                                           "x_name":  "",
+                                           "content":  "Browse",
+                                           "handlers":  {
+                                                            "Click":  "Browse_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "TransferButton",
+                                           "x_name":  "",
+                                           "content":  "Transfer",
+                                           "handlers":  {
+                                                            "Click":  "Transfer_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "CancelTransferButton",
+                                           "x_name":  "",
+                                           "content":  "Cancel Transfer",
+                                           "handlers":  {
+                                                            "Click":  "CancelTransfer_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "StatusBlock"
+                                       }
+                                   ],
+                      "usings":  [
+                                     "System",
+                                     "System.Threading",
+                                     "System.Threading.Tasks",
+                                     "System.Runtime.InteropServices",
+                                     "Windows.Networking.Proximity",
+                                     "Windows.Storage",
+                                     "Windows.Storage.Pickers",
+                                     "Windows.Storage.Streams",
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Navigation",
+                                     "SDKTemplate"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  51
+                                       },
+                                       {
+                                           "name":  "OnNavigatedTo",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "MainPage.Current"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  52
+                                       },
+                                       {
+                                           "name":  "Browse_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "FileTypeFilter.Add",
+                                                            "NotifyType.StatusMessage",
+                                                            "ProvisioningPackagePathText.Text",
+                                                            "TransferButton.Visibility",
+                                                            "Visibility.Collapsed",
+                                                            "CancelTransferButton.Visibility",
+                                                            "Visibility.Visible"
+                                                        ],
+                                           "new_types":  [
+                                                             "FileOpenPicker"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  968
+                                       },
+                                       {
+                                           "name":  "Transfer_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "TransferButton.IsEnabled",
+                                                            "TransferButton.Visibility",
+                                                            "Visibility.Collapsed",
+                                                            "CancelTransferButton.Visibility",
+                                                            "Visibility.Visible",
+                                                            "System.OperationCanceledException",
+                                                            "NotifyType.StatusMessage",
+                                                            "System.ArgumentException",
+                                                            "NotifyType.ErrorMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "CancellationTokenSource"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1066
+                                       },
+                                       {
+                                           "name":  "CancelTransfer_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  147
+                                       },
+                                       {
+                                           "name":  "InternalTransferHandlerAsync",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "NotifyType.StatusMessage",
+                                                            "NotifyType.ErrorMessage",
+                                                            "FileIO.ReadBufferAsync",
+                                                            "ProximityDevice.GetDefault"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1229
+                                       },
+                                       {
+                                           "name":  "NfcMessageHandlerAsync",
+                                           "namespaces_used":  [
+                                                                   "Windows.Networking.Proximity.ProximityDevice"
+                                                               ],
+                                           "api_refs":  [
+                                                            "Windows.Networking",
+                                                            "Proximity.ProximityDevice",
+                                                            "System.ArgumentException",
+                                                            "Task.Run",
+                                                            "WaitHandle.WaitAny"
+                                                        ],
+                                           "new_types":  [
+                                                             "AutoResetEvent",
+                                                             "System.ArgumentException"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1262
+                                       },
+                                       {
+                                           "name":  "ConvertToNfcMessageAsync",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+                                                             "DataWriter",
+                                                             "NfcProvHeader"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1831
+                                       },
+                                       {
+                                           "name":  "GetNfcProvHeaderSize",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Marshal.SizeOf"
+                                                        ],
+                                           "new_types":  [
+                                                             "NfcProvHeader"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  101
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

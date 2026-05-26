@@ -1,0 +1,30 @@
+﻿{
+    "sample":  "Compression",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Compression\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Compression.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Compression.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Compression.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Compression/Decompression sample",
+                          "initial_capture":  "01_1_Compression_Decompression_sample__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Compress File...",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Compression_Decompression_sample__after_Compress_File....png",
+                                              "popup_capture":  "01_1_Compression_Decompression_sample__popup_Compress_File....png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,62 @@
+﻿{
+    "sample":  "ExtendedExecution",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ExtendedExecution\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ExtendedExecution.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ExtendedExecution.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ExtendedExecution.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Unspecified Reason",
+                          "initial_capture":  "01_1_Unspecified_Reason__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Begin extended execution",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Unspecified_Reason__after_Begin_extended_execution.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Saving Data Reason",
+                          "initial_capture":  "02_2_Saving_Data_Reason__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Location Tracking Reason",
+                          "initial_capture":  "03_3_Location_Tracking_Reason__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Begin extended execution",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Location_Tracking_Reason__after_Begin_extended_execution.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Using Multiple Tasks",
+                          "initial_capture":  "04_4_Using_Multiple_Tasks__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Begin extended execution and Tasks",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Using_Multiple_Tasks__after_Begin_extended_execution_and_Tasks.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

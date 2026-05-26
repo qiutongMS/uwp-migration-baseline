@@ -1,0 +1,21 @@
+﻿{
+    "sample":  "MobileBroadband",
+    "feature_name":  "MobileBroadband",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+
+                       ],
+    "scenarios":  {
+
+                  },
+    "main_page":  null
+}

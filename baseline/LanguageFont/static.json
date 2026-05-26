@@ -1,0 +1,178 @@
+﻿{
+    "sample":  "LanguageFont",
+    "feature_name":  "Language Font CS Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "MainPage.ApplyLanguageFont"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_UIFonts",
+                          "title":  "Fonts for UI",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LanguageFont\\shared\\Scenario1_UIFonts.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LanguageFont\\cs\\Scenario1_UIFonts.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This shows the use of the LanguageFontGroup to get fonts for a particular language for UI body text and heading elements. This sample uses Japanese."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Apply Recommended Fonts",
+                                               "handlers":  {
+                                                                "Click":  "ApplyFonts_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "HeadingTextBlock",
+                                               "inner_text":  "䶧䧟みゅろ猪"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "BodyTextBlock",
+                                               "inner_text":  "訧焨を餯ダ 拣饵廦え尤 栧穃榞しゃぴゃ 餯ダ ら横襩 ペ覧へ 䨣禚詃ウォ榯 稣じ韩むにょ ぬ檧 みよ栣 グェ来げ毚廤 しゅ择れ苩㫣 スィ栩, 婧スぴゅ し짦さシャず 䥚にゃ槚じゅ谦 饟襧ッラ゜け 餯ダ 饟襧ッ 䩚埨 嫣婧スぴゅ椩 綩觚奤珣う"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.Globalization.Fonts",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_UIFonts",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "ApplyFonts_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.ApplyLanguageFont"
+                                                            ],
+                                               "new_types":  [
+                                                                 "LanguageFontGroup"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  343
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_DocumentFonts",
+                          "title":  "Fonts for Documents",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LanguageFont\\shared\\Scenario2_DocumentFonts.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LanguageFont\\cs\\Scenario2_DocumentFonts.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This shows the use of the LanguageFontGroup to get fonts for a particular language for document body text and heading elements. This sample uses Hindi."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Apply Recommended Fonts",
+                                               "handlers":  {
+                                                                "Click":  "ApplyFonts_Click "
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "HeadingTextBlock",
+                                               "inner_text":  "है।अभी पत्रिका लाभान्वित"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DocumentTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Globalization.Fonts",
+                                         "Windows.Graphics.Display",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Text",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Data",
+                                         "Windows.UI.Xaml.Media"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_DocumentFonts",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "ApplyFonts_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.ApplyLanguageFont"
+                                                            ],
+                                               "new_types":  [
+                                                                 "LanguageFontGroup"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  805
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

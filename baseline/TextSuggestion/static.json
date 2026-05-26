@@ -1,0 +1,614 @@
+﻿{
+    "sample":  "TextSuggestion",
+    "feature_name":  "TextSuggestion",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "NotifyType.StatusMessage",
+                           "Input.Text",
+                           "String.IsNullOrEmpty",
+                           "Tag.ToString",
+                           "UInt32.TryParse",
+                           "Items.Count",
+                           "NotifyType.ErrorMessage",
+                           "Visibility.Visible",
+                           "Visibility.Collapsed",
+                           "GeneratorOperationArea.Visibility"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Conversion",
+                          "title":  "Conversion",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs\\Scenario1_Conversion.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs\\Scenario1_Conversion.xaml.cs",
+                          "description":  "Set a language tag",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "TextConversionGenerator Sample"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Set a language tag"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "langTag",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "createGeneratorButton",
+                                               "x_name":  "",
+                                               "content":  "Create Generator",
+                                               "handlers":  {
+                                                                "Click":  "CreateGeneratorButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Choose a method"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "methods",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "Methods_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Parameters"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Input"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Input",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "maxCandidates"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "maxCandidates",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "executeButton",
+                                               "x_name":  "",
+                                               "content":  "Execute",
+                                               "handlers":  {
+                                                                "Click":  "Execute_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Result"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "resultView",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Data.Text",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Conversion",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  169
+                                           },
+                                           {
+                                               "name":  "Execute_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "Input.Text",
+                                                                "String.IsNullOrEmpty",
+                                                                "Tag.ToString",
+                                                                "UInt32.TryParse",
+                                                                "Items.Count",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2159
+                                           },
+                                           {
+                                               "name":  "Methods_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Tag.ToString",
+                                                                "Visibility.Visible",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  618
+                                           },
+                                           {
+                                               "name":  "CreateGeneratorButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GeneratorOperationArea.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TextConversionGenerator"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1693
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Prediction",
+                          "title":  "Prediction",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs\\Scenario2_Prediction.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs\\Scenario2_Prediction.xaml.cs",
+                          "description":  "Set a language tag",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "TextPredictionGenerator Sample"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Set a language tag"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "langTag",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "createGeneratorButton",
+                                               "x_name":  "",
+                                               "content":  "Create Generator",
+                                               "handlers":  {
+                                                                "Click":  "CreateGeneratorButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Choose a method"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "methods",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "Methods_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Parameters"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Input"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Input",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "maxCandidates"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "maxCandidates",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "executeButton",
+                                               "x_name":  "",
+                                               "content":  "Execute",
+                                               "handlers":  {
+                                                                "Click":  "Execute_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Result"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "resultView",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Data.Text",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Prediction",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  169
+                                           },
+                                           {
+                                               "name":  "Execute_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "Input.Text",
+                                                                "String.IsNullOrEmpty",
+                                                                "Tag.ToString",
+                                                                "UInt32.TryParse",
+                                                                "Items.Count",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2163
+                                           },
+                                           {
+                                               "name":  "Methods_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Tag.ToString",
+                                                                "Visibility.Visible",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  618
+                                           },
+                                           {
+                                               "name":  "CreateGeneratorButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GeneratorOperationArea.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TextPredictionGenerator"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1693
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_ReverseConversion",
+                          "title":  "ReverseConversion",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs\\Scenario3_ReverseConversion.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TextSuggestion\\cs\\Scenario3_ReverseConversion.xaml.cs",
+                          "description":  "Set a language tag",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "TextReverseConversionGenerator Sample"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Set a language tag"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "langTag",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "createGeneratorButton",
+                                               "x_name":  "",
+                                               "content":  "Create Generator",
+                                               "handlers":  {
+                                                                "Click":  "CreateGeneratorButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Choose a method"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "methods",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Parameters"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Input"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Input",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "executeButton",
+                                               "x_name":  "",
+                                               "content":  "Execute",
+                                               "handlers":  {
+                                                                "Click":  "Execute_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Result"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "resultView",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "Windows.Data.Text",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_ReverseConversion",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  169
+                                           },
+                                           {
+                                               "name":  "Execute_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "Input.Text",
+                                                                "String.IsNullOrEmpty",
+                                                                "Tag.ToString"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2148
+                                           },
+                                           {
+                                               "name":  "CreateGeneratorButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GeneratorOperationArea.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Visibility.Visible",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TextReverseConversionGenerator"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1700
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

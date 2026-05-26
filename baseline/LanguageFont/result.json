@@ -1,0 +1,41 @@
+﻿{
+    "sample":  "LanguageFont",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LanguageFont\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.SDKTemplate.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.SDKTemplate.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.SDKTemplate.CS_8wekyb3d8bbwe!SDKTemplate.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Fonts for UI",
+                          "initial_capture":  "01_1_Fonts_for_UI__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Apply Recommended Fonts",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Fonts_for_UI__after_Apply_Recommended_Fonts.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Fonts for Documents",
+                          "initial_capture":  "02_2_Fonts_for_Documents__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Apply Recommended Fonts",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Fonts_for_Documents__after_Apply_Recommended_Fonts.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

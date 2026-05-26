@@ -1,0 +1,28 @@
+﻿{
+    "sample":  "NfcProvisioner",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NfcProvisioner\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.NfcProvisioner.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.NfcProvisioner.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.NfcProvisioner.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Provision Peer Device",
+                          "initial_capture":  "01_1_Provision_Peer_Device__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Browse",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

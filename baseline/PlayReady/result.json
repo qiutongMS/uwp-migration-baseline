@@ -1,0 +1,42 @@
+﻿{
+    "sample":  "PlayReady",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "partial",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PlayReady.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PlayReady.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PlayReady.CS_8wekyb3d8bbwe!PlayReady.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Reactive License Request",
+                          "initial_capture":  "01_1_Reactive_License_Request__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Reactive_License_Request__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Stop",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Reactive_License_Request__after_Stop.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Proactive License Request",
+                          "initial_capture":  "02_2_Proactive_License_Request__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  "Scenario iteration: Exception calling \"FindFirst\" with \"2\" argument(s): \"Operation timed out. (Exception from HRESULT: 0x80131505)\""
+}

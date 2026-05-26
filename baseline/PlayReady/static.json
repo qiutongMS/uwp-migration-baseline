@@ -1,0 +1,339 @@
+﻿{
+    "sample":  "PlayReady",
+    "feature_name":  "PlayReady C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_ReactiveRequest",
+                          "title":  "Reactive License Request",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario1_ReactiveRequest.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario1_ReactiveRequest.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Reactive license request"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding MoviePath, Mode=TwoWay}"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Play"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Stop"
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "mediaElement",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate.ViewModels",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_ReactiveRequest",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "ReactiveViewModel"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  120
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_ProactiveRequest",
+                          "title":  "Proactive License Request",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario2_ProactiveRequest.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario2_ProactiveRequest.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Proactive license request"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows how an application can actively manage DRM license requests and the individualization process."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get License"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding KeyId, Mode=TwoWay}"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding MoviePath, Mode=TwoWay}"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Play"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Stop"
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "mediaElement",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate.ViewModels",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_ProactiveRequest",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "ProactiveViewModel"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  121
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_HardwareDRM",
+                          "title":  "Manage HW/SW DRM",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario3_HardwareDRM.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario3_HardwareDRM.xaml.cs",
+                          "description":  "Hardware DRM provides enhanced video performance with hardware based security. Software DRM provides better compatability for legacy devices and content. The application can force either mode with Software DRM being the default.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Use Hardware DRM"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Use Software DRM"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding MoviePath, Mode=TwoWay}"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Play"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Stop"
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "mediaElement",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate.ViewModels",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_HardwareDRM",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "HardwareDRMViewModel"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  123
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_SecureStop",
+                          "title":  "Secure Stop",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario4_SecureStop.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PlayReady\\cs\\Scenario4_SecureStop.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Secure Stop"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get Publisher Cert"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Renew License"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding MoviePath, Mode=TwoWay}"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Play"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Stop"
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "mediaElement",
+                                               "x_name":  ""
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate.ViewModels",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_SecureStop",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "SecureStopViewModel"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  122
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

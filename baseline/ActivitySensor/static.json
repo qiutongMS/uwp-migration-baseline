@@ -1,0 +1,839 @@
+﻿{
+    "sample":  "ActivitySensor",
+    "feature_name":  "Activity sensor",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "ScenarioOutput_Activity.Text",
+                           "ScenarioOutput_Confidence.Text",
+                           "ScenarioOutput_Timestamp.Text",
+                           "NotifyType.StatusMessage",
+                           "DeviceAccessInformation.CreateFromDeviceClassId",
+                           "DeviceAccessStatus.Allowed",
+                           "ActivitySensor.GetDefaultAsync",
+                           "Activity.ToString",
+                           "Confidence.ToString",
+                           "Timestamp.ToString",
+                           "NotifyType.ErrorMessage",
+                           "ScenarioOutput_Count.Text",
+                           "ScenarioOutput_Activity1.Text",
+                           "ScenarioOutput_Confidence1.Text",
+                           "ScenarioOutput_Timestamp1.Text",
+                           "ScenarioOutput_ActivityN.Text",
+                           "ScenarioOutput_ConfidenceN.Text",
+                           "ScenarioOutput_TimestampN.Text",
+                           "ActivitySensor.GetSystemHistoryAsync",
+                           "Count.ToString",
+                           "ScenarioEnableReadingChangedButton.IsEnabled",
+                           "ScenarioDisableReadingChangedButton.IsEnabled",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "ScenarioOutput_ReadingTimestamp.Text",
+                           "SubscribedActivities.Add",
+                           "ActivityType.Walking",
+                           "ActivityType.Running",
+                           "ActivityType.InVehicle",
+                           "ActivityType.Biking",
+                           "ActivityType.Fidgeting",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "Scenario4_BackgroundActivity.SampleBackgroundTaskName",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                           "Value.Unregister",
+                           "ScenarioRegisterTaskButton.IsEnabled",
+                           "ScenarioUnregisterTaskButton.IsEnabled",
+                           "ScenarioOutput_TaskRegistration.Text",
+                           "ApplicationData.Current",
+                           "Values.ContainsKey",
+                           "ScenarioOutput_ReportCount.Text",
+                           "ScenarioOutput_TaskStatus.Text",
+                           "ScenarioOutput_LastActivity.Text",
+                           "ScenarioOutput_LastConfidence.Text",
+                           "ScenarioOutput_LastTimestamp.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_CurrentActivity",
+                          "title":  "Current activity",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\shared\\Scenario1_CurrentActivity.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\cs\\Scenario1_CurrentActivity.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Gets the default activity sensor and displays its current activity reading."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioGetCurrentActivityButton",
+                                               "content":  "Get Current Activity",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGetCurrentActivity"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Activity:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Confidence:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Activity",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Confidence",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_CurrentActivity",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "ScenarioGetCurrentActivity",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_Activity.Text",
+                                                                "ScenarioOutput_Confidence.Text",
+                                                                "ScenarioOutput_Timestamp.Text",
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId",
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "ActivitySensor.GetDefaultAsync",
+                                                                "Activity.ToString",
+                                                                "Confidence.ToString",
+                                                                "Timestamp.ToString",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1559
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_History",
+                          "title":  "Activity history",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\shared\\Scenario2_History.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\cs\\Scenario2_History.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Gets the default activity sensor and displays its current activity reading."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioGetActivityHistoryButton",
+                                               "content":  "Get Activity History",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGetActivityHistory"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "First Activity:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "First Confidence:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "First Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Activity:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Confidence:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Count",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Activity1",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Confidence1",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp1",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_ActivityN",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_ConfidenceN",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TimestampN",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Globalization",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_History",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "ScenarioGetActivityHistory",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioOutput_Count.Text",
+                                                                "ScenarioOutput_Activity1.Text",
+                                                                "ScenarioOutput_Confidence1.Text",
+                                                                "ScenarioOutput_Timestamp1.Text",
+                                                                "ScenarioOutput_ActivityN.Text",
+                                                                "ScenarioOutput_ConfidenceN.Text",
+                                                                "ScenarioOutput_TimestampN.Text",
+                                                                "NotifyType.StatusMessage",
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId",
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "ActivitySensor.GetDefaultAsync",
+                                                                "ActivitySensor.GetSystemHistoryAsync",
+                                                                "Count.ToString",
+                                                                "Activity.ToString",
+                                                                "Confidence.ToString",
+                                                                "Timestamp.ToString",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Calendar"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2607
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_ChangeEvents",
+                          "title":  "Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\shared\\Scenario3_ChangeEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\cs\\Scenario3_ChangeEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Subscribes to reading changed events and displays the updated reading."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableReadingChangedButton",
+                                               "content":  "ReadingChanged On",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnableReadingChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableReadingChangedButton",
+                                               "content":  "ReadingChanged Off",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisableReadingChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Activity:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Confidence:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Reading Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Activity",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Confidence",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_ReadingTimestamp",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_ChangeEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  429
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableReadingChangedButton.IsEnabled",
+                                                                "ScenarioDisableReadingChangedButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  144
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableReadingChangedButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  317
+                                           },
+                                           {
+                                               "name":  "ReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioOutput_Activity.Text",
+                                                                "Activity.ToString",
+                                                                "ScenarioOutput_Confidence.Text",
+                                                                "Confidence.ToString",
+                                                                "ScenarioOutput_ReadingTimestamp.Text",
+                                                                "Timestamp.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  426
+                                           },
+                                           {
+                                               "name":  "ScenarioEnableReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "ActivitySensor.GetDefaultAsync",
+                                                                "SubscribedActivities.Add",
+                                                                "ActivityType.Walking",
+                                                                "ActivityType.Running",
+                                                                "ActivityType.InVehicle",
+                                                                "ActivityType.Biking",
+                                                                "ActivityType.Fidgeting",
+                                                                "ScenarioEnableReadingChangedButton.IsEnabled",
+                                                                "ScenarioDisableReadingChangedButton.IsEnabled",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1571
+                                           },
+                                           {
+                                               "name":  "ScenarioDisableReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ScenarioEnableReadingChangedButton.IsEnabled",
+                                                                "ScenarioDisableReadingChangedButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  464
+                                           },
+                                           {
+                                               "name":  "AccessChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage",
+                                                                "ScenarioEnableReadingChangedButton.IsEnabled",
+                                                                "ScenarioDisableReadingChangedButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  552
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_BackgroundActivity",
+                          "title":  "Background activity",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\shared\\Scenario4_BackgroundActivity.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ActivitySensor\\cs\\Scenario4_BackgroundActivity.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers a background task for activity changes. The background task runs whenever the most likely activity changes to/from any of the subscribed activities."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioRegisterTaskButton",
+                                               "content":  "Register Task",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioRegisterTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioUnregisterTaskButton",
+                                               "content":  "Unregister Task",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioUnregisterTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Task Registration:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Task Status:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Report Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Activity:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Confidence:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TaskRegistration",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TaskStatus",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_ReportCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_LastActivity",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_LastConfidence",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_LastTimestamp",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_BackgroundActivity",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "Scenario4_BackgroundActivity.SampleBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  386
+                                           },
+                                           {
+                                               "name":  "ScenarioRegisterTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId",
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "ActivitySensor.GetDefaultAsync",
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1479
+                                           },
+                                           {
+                                               "name":  "ScenarioUnregisterTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "Value.Unregister"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  527
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  272
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SubscribedActivities.Add",
+                                                                "ActivityType.Walking",
+                                                                "ActivityType.Running",
+                                                                "ActivityType.Biking"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "ActivitySensorTrigger",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  831
+                                           },
+                                           {
+                                               "name":  "BackgroundTaskBuilder",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  129
+                                           },
+                                           {
+                                               "name":  "UpdateUIAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioRegisterTaskButton.IsEnabled",
+                                                                "ScenarioUnregisterTaskButton.IsEnabled",
+                                                                "ScenarioOutput_TaskRegistration.Text",
+                                                                "ApplicationData.Current",
+                                                                "Values.ContainsKey",
+                                                                "ScenarioOutput_ReportCount.Text",
+                                                                "ScenarioOutput_TaskStatus.Text",
+                                                                "ScenarioOutput_LastActivity.Text",
+                                                                "ScenarioOutput_LastConfidence.Text",
+                                                                "ScenarioOutput_LastTimestamp.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1520
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

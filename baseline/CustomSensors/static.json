@@ -1,0 +1,382 @@
+﻿{
+    "sample":  "CustomSensors",
+    "feature_name":  "CustomSensors",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "CustomSensor.GetDeviceSelector",
+                           "DeviceInformation.CreateWatcher",
+                           "DeviceAccessInformation.CreateFromDeviceClassId",
+                           "CustomSensor.FromIdAsync",
+                           "Properties.ContainsKey",
+                           "NotifyType.ErrorMessage",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "DeviceAccessStatus.Allowed",
+                           "ScenarioEnableButton.IsEnabled",
+                           "ScenarioDisableButton.IsEnabled",
+                           "Window.Current",
+                           "String.Format",
+                           "ScenarioOutputCO2Level.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DataEvents",
+                          "title":  "Data events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSensors\\cs\\Scenario1_DataEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSensors\\cs\\Scenario1_DataEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers an event listener for CO2 custom sensor data and displays the CO2 level value as it is reported."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "CO2 level (ppmv):"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutputCO2Level",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors.Custom",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DataEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CustomSensor.GetDeviceSelector",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  771
+                                           },
+                                           {
+                                               "name":  "OnCustomSensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CustomSensor.FromIdAsync",
+                                                                "Properties.ContainsKey",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1683
+                                           },
+                                           {
+                                               "name":  "OnAccessChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  391
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  116
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "Window.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  641
+                                           },
+                                           {
+                                               "name":  "OnVisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  811
+                                           },
+                                           {
+                                               "name":  "OnReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.Format",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioOutputCO2Level.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  336
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  709
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  600
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Polling",
+                          "title":  "Polling",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSensors\\cs\\Scenario2_Polling.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSensors\\cs\\Scenario2_Polling.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Polls for custom sensor data and displays the CO2 level value."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetCO2LevelButton",
+                                               "content":  "Get CO2 level",
+                                               "handlers":  {
+                                                                "Click":  "GetCO2Level"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "CO2 level (ppmv):"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutputCO2Level",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors.Custom",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Polling",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CustomSensor.GetDeviceSelector",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  771
+                                           },
+                                           {
+                                               "name":  "OnCustomSensorAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CustomSensor.FromIdAsync",
+                                                                "Properties.ContainsKey",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1079
+                                           },
+                                           {
+                                               "name":  "OnAccessChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  391
+                                           },
+                                           {
+                                               "name":  "GetCO2Level",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.Format",
+                                                                "ScenarioOutputCO2Level.Text",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  465
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

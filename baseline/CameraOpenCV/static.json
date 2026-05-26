@@ -1,0 +1,314 @@
+﻿{
+    "sample":  "CameraOpenCV",
+    "feature_name":  "CameraOpenCV C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "TimeSpan.FromSeconds",
+                           "MediaCaptureSharingMode.ExclusiveControl",
+                           "StreamingCaptureMode.Video",
+                           "MediaCaptureMemoryPreference.Cpu",
+                           "Interlocked.Exchange",
+                           "FPSMonitor.Text",
+                           "MainPage.Current",
+                           "OperationComboBox.ItemsSource",
+                           "Enum.GetValues",
+                           "OperationComboBox.SelectedIndex",
+                           "OperationType.Blur",
+                           "MediaFrameSourceGroup.FindAllAsync",
+                           "SourceInfos.FirstOrDefault",
+                           "MediaFrameSourceKind.Color",
+                           "Debug.WriteLine",
+                           "SourceInfo.Id",
+                           "MediaEncodingSubtypes.Bgra8",
+                           "SoftwareBitmap.Convert",
+                           "BitmapPixelFormat.Bgra8",
+                           "BitmapAlphaMode.Premultiplied",
+                           "OperationType.HoughLines",
+                           "OperationType.Contours",
+                           "OperationType.Histogram",
+                           "OperationType.MotionDetector",
+                           "Interlocked.Increment",
+                           "CurrentOperationTextBlock.Text"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1_ExampleOperations",
+                      "title":  "Example Operations",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraOpenCV\\shared\\Scenario1_ExampleOperations.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CameraOpenCV\\cs\\Scenario1_ExampleOperations.xaml.cs",
+                      "description":  "Shows the output of various OpenCV operations",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Description:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "Shows the output of various OpenCV operations"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "CurrentOperationTextBlock",
+                                           "x_name":  "",
+                                           "inner_text":  "Current: Blur"
+                                       },
+                                       {
+                                           "type":  "ComboBox",
+                                           "name":  "OperationComboBox",
+                                           "x_name":  "",
+                                           "handlers":  {
+                                                            "SelectionChanged":  "OperationComboBox_SelectionChanged"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Preview"
+                                       },
+                                       {
+                                           "type":  "Image",
+                                           "name":  "PreviewImage",
+                                           "x_name":  ""
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Output of Operation"
+                                       },
+                                       {
+                                           "type":  "Image",
+                                           "name":  "OutputImage",
+                                           "x_name":  ""
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "FPSMonitor",
+                                           "x_name":  ""
+                                       }
+                                   ],
+                      "usings":  [
+                                     "OpenCVBridge",
+                                     "System",
+                                     "System.Diagnostics",
+                                     "System.Linq",
+                                     "System.Threading",
+                                     "System.Threading.Tasks",
+                                     "Windows.Graphics.Imaging",
+                                     "Windows.Media.Capture",
+                                     "Windows.Media.Capture.Frames",
+                                     "Windows.Media.MediaProperties",
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Navigation"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1_ExampleOperations",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "TimeSpan.FromSeconds"
+                                                        ],
+                                           "new_types":  [
+                                                             "FrameRenderer",
+                                                             "OpenCVHelper",
+                                                             "DispatcherTimer"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  398
+                                       },
+                                       {
+                                           "name":  "DispatcherTimer",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "TimeSpan.FromSeconds"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  66
+                                       },
+                                       {
+                                           "name":  "InitializeMediaCaptureAsync",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "MediaCaptureSharingMode.ExclusiveControl",
+                                                            "StreamingCaptureMode.Video",
+                                                            "MediaCaptureMemoryPreference.Cpu"
+                                                        ],
+                                           "new_types":  [
+                                                             "MediaCapture",
+                                                             "MediaCaptureInitializationSettings"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  570
+                                       },
+                                       {
+                                           "name":  "MediaCaptureInitializationSettings",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "MediaCaptureSharingMode.ExclusiveControl",
+                                                            "StreamingCaptureMode.Video",
+                                                            "MediaCaptureMemoryPreference.Cpu"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  268
+                                       },
+                                       {
+                                           "name":  "CleanupMediaCaptureAsync",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  276
+                                       },
+                                       {
+                                           "name":  "UpdateFPS",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Interlocked.Exchange",
+                                                            "FPSMonitor.Text"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  140
+                                       },
+                                       {
+                                           "name":  "OnNavigatedTo",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "MainPage.Current",
+                                                            "OperationComboBox.ItemsSource",
+                                                            "Enum.GetValues",
+                                                            "OperationComboBox.SelectedIndex",
+                                                            "OperationType.Blur",
+                                                            "MediaFrameSourceGroup.FindAllAsync",
+                                                            "SourceInfos.FirstOrDefault",
+                                                            "MediaFrameSourceKind.Color",
+                                                            "Debug.WriteLine",
+                                                            "SourceInfo.Id",
+                                                            "MediaEncodingSubtypes.Bgra8"
+                                                        ],
+                                           "new_types":  [
+                                                             "BitmapSize"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1925
+                                       },
+                                       {
+                                           "name":  "OnNavigatedFrom",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  88
+                                       },
+                                       {
+                                           "name":  "ColorFrameReader_FrameArrivedAsync",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "SoftwareBitmap.Convert",
+                                                            "BitmapPixelFormat.Bgra8",
+                                                            "BitmapAlphaMode.Premultiplied",
+                                                            "OperationType.Blur",
+                                                            "OperationType.HoughLines",
+                                                            "OperationType.Contours",
+                                                            "OperationType.Histogram",
+                                                            "OperationType.MotionDetector",
+                                                            "Interlocked.Increment"
+                                                        ],
+                                           "new_types":  [
+                                                             "SoftwareBitmap"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  2242
+                                       },
+                                       {
+                                           "name":  "OperationComboBox_SelectionChanged",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "OperationType.Blur",
+                                                            "CurrentOperationTextBlock.Text",
+                                                            "OperationType.Contours",
+                                                            "OperationType.Histogram",
+                                                            "OperationType.HoughLines",
+                                                            "OperationType.MotionDetector"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+                                                           "CurrentOperationTextBlock.Text"
+                                                       ],
+                                           "body_length":  1098
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

@@ -1,0 +1,340 @@
+﻿{
+    "sample":  "SimpleOrientationSensor",
+    "feature_name":  "Simple Orientation Sensor",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "SimpleOrientationSensor.GetDefault",
+                           "NotifyType.ErrorMessage",
+                           "ScenarioEnableButton.IsEnabled",
+                           "ScenarioDisableButton.IsEnabled",
+                           "Window.Current",
+                           "SimpleOrientation.NotRotated",
+                           "SimpleOrientation.Rotated90DegreesCounterclockwise",
+                           "SimpleOrientation.Rotated180DegreesCounterclockwise",
+                           "SimpleOrientation.Rotated270DegreesCounterclockwise",
+                           "SimpleOrientation.Faceup",
+                           "SimpleOrientation.Facedown",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_DataEvents",
+                          "title":  "Data Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleOrientationSensor\\cs\\Scenario1_DataEvents.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleOrientationSensor\\cs\\Scenario1_DataEvents.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers an event listener for orientation changes and displays the new orientation as it is reported."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioEnableButton",
+                                               "content":  "Enable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioEnable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioDisableButton",
+                                               "content":  "Disable",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioDisable"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Orientation: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Orientation",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "System.Threading.Tasks",
+                                         "Windows.UI.Core"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_DataEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SimpleOrientationSensor.GetDefault",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  279
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  116
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "Window.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  411
+                                           },
+                                           {
+                                               "name":  "VisibilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  841
+                                           },
+                                           {
+                                               "name":  "DisplayOrientation",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SimpleOrientation.NotRotated",
+                                                                "SimpleOrientation.Rotated90DegreesCounterclockwise",
+                                                                "SimpleOrientation.Rotated180DegreesCounterclockwise",
+                                                                "SimpleOrientation.Rotated270DegreesCounterclockwise",
+                                                                "SimpleOrientation.Faceup",
+                                                                "SimpleOrientation.Facedown"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1066
+                                           },
+                                           {
+                                               "name":  "OrientationChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  198
+                                           },
+                                           {
+                                               "name":  "ScenarioEnable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  822
+                                           },
+                                           {
+                                               "name":  "ScenarioDisable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Window.Current",
+                                                                "ScenarioEnableButton.IsEnabled",
+                                                                "ScenarioDisableButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WindowVisibilityChangedEventHandler",
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  390
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Polling",
+                          "title":  "Polling",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleOrientationSensor\\cs\\Scenario2_Polling.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\SimpleOrientationSensor\\cs\\Scenario2_Polling.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Performs a single request to retrieve the current device orientation."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioGetButton",
+                                               "content":  "Get",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioGet"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Orientation: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Orientation",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Foundation",
+                                         "System.Threading.Tasks",
+                                         "Windows.UI.Core"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Polling",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SimpleOrientationSensor.GetDefault",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  279
+                                           },
+                                           {
+                                               "name":  "DisplayOrientation",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SimpleOrientation.NotRotated",
+                                                                "SimpleOrientation.Rotated90DegreesCounterclockwise",
+                                                                "SimpleOrientation.Rotated180DegreesCounterclockwise",
+                                                                "SimpleOrientation.Rotated270DegreesCounterclockwise",
+                                                                "SimpleOrientation.Faceup",
+                                                                "SimpleOrientation.Facedown"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1066
+                                           },
+                                           {
+                                               "name":  "ScenarioGet",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  321
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

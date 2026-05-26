@@ -1,0 +1,65 @@
+﻿{
+    "sample":  "AdvancedCasting",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AdvancedCasting\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "partial",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ScreenCasting.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ScreenCasting.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ScreenCasting.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1 - Media Element Casting 101",
+                          "initial_capture":  "01_1_-_Media_Element_Casting_101__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_-_Media_Element_Casting_101__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_-_Media_Element_Casting_101__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_-_Media_Element_Casting_101__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2 - Casting APIs and a Custom Cast Button",
+                          "initial_capture":  "02_2_-_Casting_APIs_and_a_Custom_Cast_Button__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_-_Casting_APIs_and_a_Custom_Cast_Button__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_-_Casting_APIs_and_a_Custom_Cast_Button__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Full Screen",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_-_Casting_APIs_and_a_Custom_Cast_Button__after_Full_Screen.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  "Scenario iteration: You cannot call a method on a null-valued expression."
+}

@@ -1,0 +1,1249 @@
+﻿{
+    "sample":  "BluetoothRfcommChat",
+    "feature_name":  "Bluetooth Rfcomm Chat Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.System.VirtualKey.Enter",
+                           "Windows.Storage.Streams.UnicodeEncoding.Utf8",
+                           "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                       ],
+    "api_references":  [
+                           "App.Current",
+                           "MainPage.Current",
+                           "DeviceWatcherStatus.Started",
+                           "DeviceWatcherStatus.EnumerationCompleted",
+                           "RunButton.Content",
+                           "NotifyType.StatusMessage",
+                           "Visibility.Visible",
+                           "RunButton.IsEnabled",
+                           "ConnectButton.Visibility",
+                           "ChatBox.Visibility",
+                           "Visibility.Collapsed",
+                           "RequestAccessButton.Visibility",
+                           "ConversationList.Items",
+                           "System.Devices",
+                           "Aep.DeviceAddress",
+                           "Aep.IsConnected",
+                           "DeviceInformation.CreateWatcher",
+                           "Aep.ProtocolId",
+                           "DeviceInformationKind.AssociationEndpoint",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "ResultCollection.Add",
+                           "String.Format",
+                           "ResultCollection.Count",
+                           "CoreDispatcherPriority.Low",
+                           "ResultCollection.Remove",
+                           "ResultCollection.Clear",
+                           "NotifyType.ErrorMessage",
+                           "DeviceAccessInformation.CreateFromId",
+                           "DeviceAccessStatus.DeniedByUser",
+                           "BluetoothDevice.FromIdAsync",
+                           "RfcommServiceId.FromUuid",
+                           "Constants.RfcommChatServiceUuid",
+                           "BluetoothCacheMode.Uncached",
+                           "Services.Count",
+                           "Constants.SdpServiceNameAttributeId",
+                           "DataReader.FromBuffer",
+                           "Constants.SdpServiceNameAttributeType",
+                           "UnicodeEncoding.Utf8",
+                           "DeviceAccessStatus.Allowed",
+                           "Windows.System",
+                           "VirtualKey.Enter",
+                           "MessageTextBox.Text",
+                           "HResult.ToString",
+                           "ServiceName.Text",
+                           "DeviceName.Text",
+                           "ConnectButton.IsEnabled",
+                           "ListenButton.IsEnabled",
+                           "DisconnectButton.IsEnabled",
+                           "RfcommServiceProvider.CreateAsync",
+                           "ServiceId.AsString",
+                           "SocketProtectionLevel.BluetoothEncryptionAllowNullAuthentication",
+                           "Constants.SdpServiceName",
+                           "Windows.Storage",
+                           "Streams.UnicodeEncoding",
+                           "SdpRawAttributes.Add",
+                           "ConversationListBox.Items",
+                           "Windows.UI",
+                           "Core.CoreDispatcherPriority",
+                           "BluetoothDevice.FromHostNameAsync",
+                           "Information.RemoteHostName",
+                           "InboundConnection.LocalServiceId",
+                           "InboundConnection.SdpRecord",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                           "ApplicationData.Current",
+                           "LocalSettings.Values",
+                           "Values.ContainsKey",
+                           "Keys.Contains"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_ChatClient",
+                          "title":  "Chat Client",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs\\Scenario1_ChatClient.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs\\Scenario1_ChatClient.xaml.cs",
+                          "description":  "Enumerates all the Chat service instances that are known to Windows and connects to the selected one.",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Name}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Enumerates all the Chat service instances that are known to Windows and connects to the selected one."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RunButton",
+                                               "content":  "Start",
+                                               "handlers":  {
+                                                                "Click":  "RunButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ConnectButton",
+                                               "content":  "Connect to Selected Device",
+                                               "handlers":  {
+                                                                "Click":  "ConnectButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RequestAccessButton",
+                                               "content":  "Request Access to Trusted Device",
+                                               "handlers":  {
+                                                                "Click":  "RequestAccessButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "resultsListView",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "ResultsListView_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DeviceName",
+                                               "text":  "Connected to: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ServiceName",
+                                               "text":  "Current Service Name"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "DisconnectButton",
+                                               "content":  "Disconnect",
+                                               "handlers":  {
+                                                                "Click":  "DisconnectButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Enter a message to send:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "MessageTextBox",
+                                               "handlers":  {
+                                                                "KeyDown":  "KeyboardKey_Pressed"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SendButton",
+                                               "content":  "Send",
+                                               "handlers":  {
+                                                                "Click":  "SendButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ConversationList"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "System.ComponentModel",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Rfcomm",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Media.Imaging",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_ChatClient",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  106
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  170
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "StopWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  366
+                                           },
+                                           {
+                                               "name":  "App_Suspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  125
+                                           },
+                                           {
+                                               "name":  "RunButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  246
+                                           },
+                                           {
+                                               "name":  "SetDeviceWatcherUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RunButton.Content",
+                                                                "NotifyType.StatusMessage",
+                                                                "Visibility.Visible"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  339
+                                           },
+                                           {
+                                               "name":  "ResetMainUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RunButton.Content",
+                                                                "RunButton.IsEnabled",
+                                                                "ConnectButton.Visibility",
+                                                                "Visibility.Visible",
+                                                                "ChatBox.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "RequestAccessButton.Visibility",
+                                                                "ConversationList.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  539
+                                           },
+                                           {
+                                               "name":  "StartUnpairedDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "System.Devices",
+                                                                "Aep.DeviceAddress",
+                                                                "Aep.IsConnected",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "Aep.ProtocolId",
+                                                                "DeviceInformationKind.AssociationEndpoint",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ResultCollection.Add",
+                                                                "String.Format",
+                                                                "ResultCollection.Count",
+                                                                "NotifyType.StatusMessage",
+                                                                "CoreDispatcherPriority.Low",
+                                                                "ResultCollection.Remove",
+                                                                "ResultCollection.Clear"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler",
+                                                                 "RfcommChatDeviceDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  4039
+                                           },
+                                           {
+                                               "name":  "ConnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage",
+                                                                "DeviceAccessInformation.CreateFromId",
+                                                                "DeviceAccessStatus.DeniedByUser",
+                                                                "BluetoothDevice.FromIdAsync",
+                                                                "RfcommServiceId.FromUuid",
+                                                                "Constants.RfcommChatServiceUuid",
+                                                                "BluetoothCacheMode.Uncached",
+                                                                "Services.Count",
+                                                                "Constants.SdpServiceNameAttributeId",
+                                                                "DataReader.FromBuffer",
+                                                                "Constants.SdpServiceNameAttributeType",
+                                                                "UnicodeEncoding.Utf8"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StreamSocket",
+                                                                 "DataWriter",
+                                                                 "DataReader"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  5398
+                                           },
+                                           {
+                                               "name":  "RequestAccessButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  683
+                                           },
+                                           {
+                                               "name":  "SendButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "KeyboardKey_Pressed",
+                                               "namespaces_used":  [
+                                                                       "Windows.System.VirtualKey.Enter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.System",
+                                                                "VirtualKey.Enter"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  131
+                                           },
+                                           {
+                                               "name":  "SendMessage",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MessageTextBox.Text",
+                                                                "ConversationList.Items",
+                                                                "HResult.ToString",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "MessageTextBox.Text"
+                                                           ],
+                                               "body_length":  808
+                                           },
+                                           {
+                                               "name":  "ReceiveStringLoop",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConversationList.Items",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1781
+                                           },
+                                           {
+                                               "name":  "DisconnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Disconnect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  631
+                                           },
+                                           {
+                                               "name":  "SetChatUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ServiceName.Text",
+                                                                "DeviceName.Text",
+                                                                "RunButton.IsEnabled",
+                                                                "ConnectButton.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "RequestAccessButton.Visibility",
+                                                                "Visibility.Visible",
+                                                                "ChatBox.Visibility"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  545
+                                           },
+                                           {
+                                               "name":  "ResultsListView_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  47
+                                           },
+                                           {
+                                               "name":  "UpdatePairingButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  331
+                                           },
+                                           {
+                                               "name":  "RfcommChatDeviceDisplay",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  89
+                                           },
+                                           {
+                                               "name":  "Update",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  99
+                                           },
+                                           {
+                                               "name":  "UpdateGlyphBitmapImage",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BitmapImage"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  334
+                                           },
+                                           {
+                                               "name":  "OnPropertyChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "PropertyChangedEventArgs"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  210
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_ChatServer",
+                          "title":  "Foreground Chat Server",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs\\Scenario2_ChatServer.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs\\Scenario2_ChatServer.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1",
+                                               "inner_text":  "Once a client is connected to the Bluetooth Rfcomm server, write the message you want to transmit to the client and click \"Send\"."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "ListenButton",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "ListenButton_Click"
+                                                            },
+                                               "inner_text":  "Start Listening"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "DisconnectButton",
+                                               "content":  "Disconnect",
+                                               "handlers":  {
+                                                                "Click":  "DisconnectButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Enter a message to send:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "MessageTextBox",
+                                               "handlers":  {
+                                                                "KeyDown":  "KeyboardKey_Pressed"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SendButton",
+                                               "content":  "Send",
+                                               "handlers":  {
+                                                                "Click":  "SendButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ConversationListBox"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Rfcomm",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_ChatServer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  37
+                                           },
+                                           {
+                                               "name":  "ListenButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  49
+                                           },
+                                           {
+                                               "name":  "InitializeRfcommServer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ListenButton.IsEnabled",
+                                                                "DisconnectButton.IsEnabled",
+                                                                "RfcommServiceProvider.CreateAsync",
+                                                                "RfcommServiceId.FromUuid",
+                                                                "Constants.RfcommChatServiceUuid",
+                                                                "NotifyType.ErrorMessage",
+                                                                "ServiceId.AsString",
+                                                                "SocketProtectionLevel.BluetoothEncryptionAllowNullAuthentication",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StreamSocketListener"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2057
+                                           },
+                                           {
+                                               "name":  "InitializeServiceSdpAttributes",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.Streams.UnicodeEncoding.Utf8"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Constants.SdpServiceNameAttributeType",
+                                                                "Constants.SdpServiceName",
+                                                                "Windows.Storage",
+                                                                "Streams.UnicodeEncoding",
+                                                                "SdpRawAttributes.Add",
+                                                                "Constants.SdpServiceNameAttributeId"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  723
+                                           },
+                                           {
+                                               "name":  "SendButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "KeyboardKey_Pressed",
+                                               "namespaces_used":  [
+                                                                       "Windows.System.VirtualKey.Enter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.System",
+                                                                "VirtualKey.Enter"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  131
+                                           },
+                                           {
+                                               "name":  "SendMessage",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MessageTextBox.Text",
+                                                                "ConversationListBox.Items",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "MessageTextBox.Text"
+                                                           ],
+                                               "body_length":  957
+                                           },
+                                           {
+                                               "name":  "DisconnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  114
+                                           },
+                                           {
+                                               "name":  "Disconnect",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "ListenButton.IsEnabled",
+                                                                "DisconnectButton.IsEnabled",
+                                                                "ConversationListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  874
+                                           },
+                                           {
+                                               "name":  "OnConnectionReceived",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.ErrorMessage",
+                                                                "BluetoothDevice.FromHostNameAsync",
+                                                                "Information.RemoteHostName",
+                                                                "NotifyType.StatusMessage",
+                                                                "ConversationListBox.Items"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter",
+                                                                 "DataReader"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3533
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_BgChatServer",
+                          "title":  "Background Chat Server",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs\\Scenario3_BgChatServer.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothRfcommChat\\cs\\Scenario3_BgChatServer.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1",
+                                               "inner_text":  "Once a client is connected to the Bluetooth Rfcomm server, write the message you want to transmit to the client and click \"Send\"."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "ListenButton",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "ListenButton_Click"
+                                                            },
+                                               "inner_text":  "Start Listening"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "DisconnectButton",
+                                               "content":  "Disconnect",
+                                               "handlers":  {
+                                                                "Click":  "DisconnectButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Enter a message to send:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "MessageTextBox",
+                                               "handlers":  {
+                                                                "KeyDown":  "KeyboardKey_Pressed"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SendButton",
+                                               "content":  "Send",
+                                               "handlers":  {
+                                                                "Click":  "SendButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ConversationListBox"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Runtime.InteropServices.WindowsRuntime",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Bluetooth.Rfcomm",
+                                         "Windows.Storage",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Input",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_BgChatServer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "InboundConnection.LocalServiceId",
+                                                                "RfcommServiceId.FromUuid",
+                                                                "Constants.RfcommChatServiceUuid",
+                                                                "InboundConnection.SdpRecord"
+                                                            ],
+                                               "new_types":  [
+                                                                 "RfcommConnectionTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  513
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  268
+                                           },
+                                           {
+                                               "name":  "ListenButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ListenButton.IsEnabled",
+                                                                "DisconnectButton.IsEnabled",
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "NotifyType.StatusMessage",
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2335
+                                           },
+                                           {
+                                               "name":  "SendButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  38
+                                           },
+                                           {
+                                               "name":  "KeyboardKey_Pressed",
+                                               "namespaces_used":  [
+                                                                       "Windows.System.VirtualKey.Enter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.System",
+                                                                "VirtualKey.Enter"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  131
+                                           },
+                                           {
+                                               "name":  "SendMessage",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MessageTextBox.Text",
+                                                                "ApplicationData.Current",
+                                                                "LocalSettings.Values",
+                                                                "ConversationListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "MessageTextBox.Text"
+                                                           ],
+                                               "body_length":  805
+                                           },
+                                           {
+                                               "name":  "DisconnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  37
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ApplicationData.Current",
+                                                                "Values.ContainsKey",
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1008
+                                           },
+                                           {
+                                               "name":  "Disconnect",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "ListenButton.IsEnabled",
+                                                                "DisconnectButton.IsEnabled",
+                                                                "ConversationListBox.Items",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1134
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ApplicationData.Current",
+                                                                "LocalSettings.Values",
+                                                                "Keys.Contains",
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.StatusMessage",
+                                                                "ConversationListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  814
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}
