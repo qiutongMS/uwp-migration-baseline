@@ -17,7 +17,7 @@
 
 ---
 
-## Scenario 0 - Choose accelerometer
+## Scenario 1 - Choose accelerometer
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -29,9 +29,14 @@
 - **`OnNavigatingFrom`**
     - API refs: `ReadingTypeComboBox.SelectedValue`
 
+### Screenshots
+Initial state:
+
+![initial](screenshots/01_1_Choose_accelerometer__initial.png)
+
 ---
 
-## Scenario 1 - Data events
+## Scenario 2 - Data events
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -58,11 +63,11 @@
 ### Screenshots
 Initial state:
 
-![initial](screenshots/01_1_Choose_accelerometer__initial.png)
+![initial](screenshots/02_2_Data_events__initial.png)
 
 ---
 
-## Scenario 2 - Shake events
+## Scenario 3 - Shake events
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -89,11 +94,11 @@ Initial state:
 ### Screenshots
 Initial state:
 
-![initial](screenshots/02_2_Data_events__initial.png)
+![initial](screenshots/03_3_Shake_events__initial.png)
 
 ---
 
-## Scenario 3 - Polling
+## Scenario 4 - Polling
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -121,11 +126,11 @@ Initial state:
 ### Screenshots
 Initial state:
 
-![initial](screenshots/03_3_Shake_events__initial.png)
+![initial](screenshots/04_4_Polling__initial.png)
 
 ---
 
-## Scenario 4 - Orientation change
+## Scenario 5 - Orientation change
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -153,11 +158,11 @@ Initial state:
 ### Screenshots
 Initial state:
 
-![initial](screenshots/04_4_Polling__initial.png)
+![initial](screenshots/05_5_Orientation_change__initial.png)
 
 ---
 
-## Scenario 5 - Data events batching
+## Scenario 6 - Data events batching
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -184,5 +189,5 @@ Initial state:
 ### Screenshots
 Initial state:
 
-![initial](screenshots/05_5_Orientation_change__initial.png)
+![initial](screenshots/06_6_Data_events_batching__initial.png)
 

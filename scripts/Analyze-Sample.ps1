@@ -210,8 +210,22 @@ function Parse-Cs([string]$csPath) {
 }
 
 # Find Scenario#_*.xaml.cs files
+# When SampleConfiguration.cs declares an explicit scenarios array, use it as
+# the source of truth (the runtime UI only lists those). Orphan Scenario*.xaml.cs
+# files that aren't registered get skipped — they're typically left-overs from
+# upstream subset/filter operations and never appear in the running app.
+# Fallback: when no SampleConfiguration is present (or it has no Scenarios array),
+# enumerate every Scenario*.xaml.cs on disk.
 $scenarioFiles = Get-ChildItem -Path $csDir -Filter 'Scenario*.xaml.cs' -ErrorAction SilentlyContinue | Sort-Object Name
+if ($scenarioRefs.Count -gt 0) {
+    $registeredClasses = $scenarioRefs | ForEach-Object { $_.class }
+    $scenarioFiles = $scenarioFiles | Where-Object {
+        $cn = ([System.IO.Path]::GetFileNameWithoutExtension($_.Name) -replace '\.xaml$', '')
+        $registeredClasses -contains $cn
+    }
+}
 $scenarios = @()
+$scenarioIdx = 0
 foreach ($scFile in $scenarioFiles) {
     $className = [System.IO.Path]::GetFileNameWithoutExtension($scFile.Name) -replace '\.xaml$', ''
     $xaml = Get-ScenarioXaml $className
@@ -221,6 +235,18 @@ foreach ($scFile in $scenarioFiles) {
     # find a matching title from SampleConfiguration if any
     $match = $scenarioRefs | Where-Object { $_.class -eq $className } | Select-Object -First 1
     $title = if ($match) { $match.title } else { $className }
+    # Use position in scenarioRefs (registration order) as index when available;
+    # this matches the runtime UI-iteration index that Process-Sample.ps1 emits
+    # in result.json, so the info.md composer can join static + runtime correctly
+    # even for samples like ApplicationData where the class digits (6,7) don't
+    # align with UI order (1,2). Fallback: file enumeration position.
+    $scenarioIdx++
+    if ($scenarioRefs.Count -gt 0) {
+        $regPos = [array]::IndexOf(($scenarioRefs | ForEach-Object { $_.class }), $className)
+        $idx = if ($regPos -ge 0) { $regPos + 1 } else { $scenarioIdx }
+    } else {
+        $idx = $scenarioIdx
+    }
     # extract description text from XAML if any TextBlock has ScenarioDescriptionTextStyle
     $descText = $null
     if (Test-Path $xaml) {
@@ -230,7 +256,7 @@ foreach ($scFile in $scenarioFiles) {
         }
     }
     $scenarios += [pscustomobject]@{
-        index           = ([int]([regex]::Match($className, '\d+').Value))
+        index           = $idx
         class           = $className
         title           = $title
         xaml_path       = $xaml

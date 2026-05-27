@@ -17,7 +17,7 @@
 
 ---
 
-## Scenario 0 - Choose orientation sensor
+## Scenario 1 - Choose orientation sensor
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -31,9 +31,14 @@
 - **`OnNavigatingFrom`**
     - API refs: `ReadingTypeComboBox.SelectedValue`, `OptimizationGoalComboBox.SelectedValue`
 
+### Screenshots
+Initial state:
+
+![initial](screenshots/01_1_Choose_orientation_sensor__initial.png)
+
 ---
 
-## Scenario 1 - Data Events
+## Scenario 2 - Data Events
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -60,11 +65,11 @@
 ### Screenshots
 Initial state:
 
-![initial](screenshots/01_1_Choose_orientation_sensor__initial.png)
+![initial](screenshots/02_2_Data_Events__initial.png)
 
 ---
 
-## Scenario 2 - Polling
+## Scenario 3 - Polling
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -92,11 +97,11 @@ Initial state:
 ### Screenshots
 Initial state:
 
-![initial](screenshots/02_2_Data_Events__initial.png)
+![initial](screenshots/03_3_Polling__initial.png)
 
 ---
 
-## Scenario 3 - Calibration
+## Scenario 4 - Calibration
 
 ### UI elements
 - **TextBlock**  - text="Description:"
@@ -115,5 +120,5 @@ Initial state:
 ### Screenshots
 Initial state:
 
-![initial](screenshots/03_3_Polling__initial.png)
+![initial](screenshots/04_4_Calibration__initial.png)
 

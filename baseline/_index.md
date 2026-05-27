@@ -9,7 +9,7 @@ Last update: 2026-05-27 09:59:02Z  (progress: 89/89)
 | 3 | [AdaptiveStreaming](./AdaptiveStreaming/info.md) | skipped | ok | ok | ok | 7 | 29 | 62 |  |
 | 4 | [AdvancedCasting](./AdvancedCasting/info.md) | ok | ok | ok | ok | 0 | 14 | 77 |  |
 | 5 | [Altimeter](./Altimeter/info.md) | ok | ok | ok | ok | 2 | 5 | 34 |  |
-| 6 | [ApplicationData](./ApplicationData/info.md) | skipped | ok | ok | ok | 7 | 6 | 19 |  |
+| 6 | [ApplicationData](./ApplicationData/info.md) | skipped | ok | ok | ok | 2 | 6 | 19 |  |
 | 7 | [ApplicationResources](./ApplicationResources/info.md) | ok | ok | ok | ok | 13 | 23 | 56 |  |
 | 8 | [AssociationLaunching](./AssociationLaunching/info.md) | skipped | ok | ok | ok | 4 | 8 | 21 |  |
 | 9 | [BackgroundActivation](./BackgroundActivation/info.md) | ok | ok | ok | ok | 6 | 14 | 73 |  |
