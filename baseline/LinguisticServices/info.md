@@ -2,17 +2,21 @@
 
 > **Source**: `Samples\LinguisticServices\cs\`  
 > **Feature**: Linguistic services C# sample  
+> **AUMID**: `Microsoft.SDKSamples.LinguisticServices.CS_8wekyb3d8bbwe!LinguisticServices.App`  
+> **PackageFamilyName**: `Microsoft.SDKSamples.LinguisticServices.CS_8wekyb3d8bbwe`  
 
 ## Top-level UWP namespaces used
 - `Windows.Globalization.Language.IsWellFormed`
 
 ## Build / deploy / capture status
-- build: failed
-- deploy: pending
-- launch: pending
-- capture: pending
-- uninstall: pending
-- error: msbuild exit 1, see msbuild.log
+- build: ok
+- deploy: ok
+- launch: ok
+- capture: ok
+- uninstall: ok
+
+## Main page
+![Main page](screenshots/00_main.png)
 
 ---
 
@@ -31,6 +35,15 @@
     - API refs: `LinguisticServices.RecognizeTextLanguages`, `TextInput.Text`, `TextOutput.Text`
     - updates UI: `TextOutput.Text`
 
+### Screenshots
+Initial state:
+
+![initial](screenshots/01_1_Language_Detection__initial.png)
+
+After click **Detect Languages**:
+
+![after_Detect Languages](screenshots/01_1_Language_Detection__after_Detect_Languages.png)
+
 ---
 
 ## Scenario 2 - Script Detection
@@ -48,6 +61,15 @@
     - API refs: `LinguisticServices.RecognizeTextScripts`, `TextInput.Text`, `TextOutput.Text`
     - updates UI: `TextOutput.Text`
 
+### Screenshots
+Initial state:
+
+![initial](screenshots/02_2_Script_Detection__initial.png)
+
+After click **Detect Scripts**:
+
+![after_Detect Scripts](screenshots/02_2_Script_Detection__after_Detect_Scripts.png)
+
 ---
 
 ## Scenario 3 - Transliteration
@@ -63,6 +85,13 @@
 - **`Go_Click`**
     - API refs: `TextOutput.Text`, `LinguisticServices.TransliterateFromCyrillicToLatin`, `TextInput.Text`
     - updates UI: `TextOutput.Text`
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/03_3_Transliteration__initial.png)
+
+> Button **Transliterate** skipped (invoke_failed)
 
 ---
 
@@ -89,4 +118,17 @@
 - **`AssignGroup_Click`**
     - API refs: `NotifyType.StatusMessage`, `NotifyType.ErrorMessage`, `String.IsNullOrEmpty`, `CandidateText.Text`, `ActiveGroupings.Lookup`, `GroupingsGrid.SelectedItem`, `GroupingResult.Text`
     - updates UI: `GroupingResult.Text`
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/04_4_Character_Grouping__initial.png)
+
+After click **Get groups**:
+
+![after_Get groups](screenshots/04_4_Character_Grouping__after_Get_groups.png)
+
+After click **Assign group**:
+
+![after_Assign group](screenshots/04_4_Character_Grouping__after_Assign_group.png)
 

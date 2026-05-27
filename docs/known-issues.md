@@ -1,9 +1,9 @@
 ﻿# Known issues
 
-## M12 update — May 2026 (pipeline hardening + 5 sample fixes)
+## M12 update — May 2026 (pipeline hardening + 5 sample fixes + LinguisticServices port)
 
 A second pass on the 89-sample refilter baseline brought the count from
-65 → 70 `ok`. Net `_status.csv` summary: **70 ok / 10 ok-generic / 6 failed / 2 pending / 1 crashed**.
+65 → 71 `ok`. Net `_status.csv` summary: **71 ok / 10 ok-generic / 6 failed / 1 pending / 1 crashed**.
 
 ### What was fixed
 
@@ -16,6 +16,7 @@ branch `refilter-102-samples`):
 | `NetworkConnectivity` | Removed `<uap:LockScreen BadgeLogo="Assets\smalltile-sdk.png" .../>` from the manifest — `BadgeLogo` requires a 24×24 asset; `smalltile-sdk.png` is 44×44. The lock-screen badge isn't core to the sample's demonstration. |
 | `MobileHotspot` | `TargetPlatformVersion` `10.0.25336.0` (Insider-only SDK) → `10.0.26100.0`. The 22621.0 SDK doesn't expose `TetheringWiFiAuthenticationKind` which the sample uses. |
 | `PersonalDataEncryption` | `TargetPlatformVersion` and `TargetPlatformMinVersion` `10.0.22000.0` → `10.0.22621.0` (the 22000.0 SDK isn't installed and isn't required by the sample's API surface). |
+| `LinguisticServices` | Ported the missing C++/WinRT `RuntimeComponent\` sister project (10 files: `LinguisticServices.cpp/.h/.idl`, `RuntimeComponent.{vcxproj,vcxproj.filters,def,sln}`, `pch.{h,cpp}`, `packages.config`) from `microsoft/Windows-universal-samples` HEAD `4eb2fcb4`. The component exposes `Sample.LinguisticServices` (a C++/WinRT runtime class with `RecognizeTextLanguages` / `RecognizeTextScripts` / `TransliterateFromCyrillicToLatin` static methods) which the four C# scenarios consume via `using Sample;`. The cs csproj already had the `<ProjectReference Include="..\RuntimeComponent\RuntimeComponent.vcxproj">` line; the port just supplied the missing target. NuGet `Microsoft.Windows.CppWinRT 2.0.200615.7` is restored automatically by the pipeline's per-vcxproj `packages.config` lookup (fix #4 below). Build now succeeds; capture is `ok` with 9 PNGs across 4 scenarios. |
 
 **Pipeline robustness fixes** (`scripts/Process-Sample.ps1`):
 
@@ -64,7 +65,6 @@ branch `refilter-102-samples`):
 |---|---|---|
 | `CameraOpenCV` | `capture: crashed` (build / deploy / launch OK) | App crashes inside `Windows.UI.Xaml.dll+0x8fa113` immediately after the splash, exit code `0xc000027b` (STATUS_APP_CALLBACK_EXCEPTION — unhandled .NET exception in a XAML callback). Build now succeeds (NuGet restore fix), but `OpenCV.Win.*` 3.10.6.1's old `.targets` aren't fully compatible with the modern UAP build — `OpenCVBridge.dll` likely throws `DllNotFoundException` during `MainPage` activation. Not pipeline-fixable. |
 | `MIDI` | `deploy: failed` | `Microsoft.Midi.GmDls` framework package is not installed on this machine. The MIDI sample's manifest declares `<PackageDependency Name="Microsoft.Midi.GmDls" />`; without the framework appx, deployment can never succeed. Not a sample bug — the framework either ships with Windows or has to be installed separately. |
-| `LinguisticServices` | `build: failed` | Requires a C++/CX `RuntimeComponent\` sister project (exposes the `Sample` namespace) that isn't included in the `refilter-102-samples` branch. Fix would mean porting `microsoft/Windows-universal-samples/Samples/LinguisticServices/RuntimeComponent/` and wiring it as a `ProjectReference`. Deferred — out of scope for the baseline. |
 | `BluetoothAdvertisement`, `BluetoothLE` | `capture: failed` | No Bluetooth adapter on this Hyper-V host. App processes never even start (`IApplicationActivationManager` returns "the app didn't start"). Pipeline window-find correctly times out. Hardware-environment-broken. |
 | `MobileHotspot`, `NetworkConnectivity`, `OnDemandHotspot` | `capture: failed` | Build now OK. Apps launch but the UI thread never paints a window (no real WiFi adapter on this Hyper-V host; `OnDemandHotspot` additionally requires Microsoft's custom-capability descriptor for `Microsoft.onDemandHotspotControl`). Hardware-environment-broken. |
 | `RadioManager` | `capture: failed` | Needs a `RadioManager` device class enumerable via `Windows.Devices.Radios` — none on this host. Hardware-environment-broken. |

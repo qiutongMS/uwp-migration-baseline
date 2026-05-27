@@ -52,7 +52,7 @@
 "LampDevice","ok","ok","ok","ok","ok","ok","3","10","35",""
 "LanguageFont","ok","ok","ok","ok","ok","ok","2","5","27",""
 "LightSensor","ok","ok","ok","ok","ok","ok","2","5","27",""
-"LinguisticServices","ok","failed","pending","pending","pending","pending","4","0","5","msbuild exit 1, see msbuild.log"
+"LinguisticServices","ok","ok","ok","ok","ok","ok","4","9","58",""
 "Magnetometer","ok","ok","ok","ok","ok","ok","2","5","27",""
 "MIDI","ok","ok","failed","pending","pending","pending","3","0","19","Add-AppxPackage (after cleanup) failed: Deployment failed with HRESULT: 0x80073CF3, Package failed updates, dependency or conflict validation.
 

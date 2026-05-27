@@ -57,7 +57,7 @@ Last update: 2026-05-27 09:59:02Z  (progress: 89/89)
 | 51 | [LampDevice](./LampDevice/info.md) | ok | ok | ok | ok | 3 | 10 | 35 |  |
 | 52 | [LanguageFont](./LanguageFont/info.md) | ok | ok | ok | ok | 2 | 5 | 27 |  |
 | 53 | [LightSensor](./LightSensor/info.md) | ok | ok | ok | ok | 2 | 5 | 27 |  |
-| 54 | [LinguisticServices](./LinguisticServices/info.md) | failed | pending | pending | pending | 4 | 0 | 5 | msbuild exit 1, see msbuild.log |
+| 54 | [LinguisticServices](./LinguisticServices/info.md) | ok | ok | ok | ok | 4 | 9 | 58 |  |
 | 55 | [Magnetometer](./Magnetometer/info.md) | ok | ok | ok | ok | 2 | 5 | 27 |  |
 | 56 | [MIDI](./MIDI/info.md) | ok | failed | pending | pending | 3 | 0 | 19 | Add-AppxPackage (after cleanup) failed: Deployment failed with HRESULT: 0x80073C |
 | 57 | [MobileBroadband](./MobileBroadband/info.md) | ok | ok | ok | ok |  | 12 | 39 |  |
