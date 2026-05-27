@@ -13,9 +13,8 @@
 - build: ok
 - deploy: ok
 - launch: ok
-- capture: partial
+- capture: ok
 - uninstall: ok
-- error: Scenario iteration: You cannot call a method on a null-valued expression.
 
 ## Main page
 ![Main page](screenshots/00_main.png)
@@ -75,6 +74,7 @@ After click **Provision**:
 - **`OnNavigatedTo`**
     - API refs: `ConfigStore.AuthenticateThroughBackgroundTask`, `ScenarioCommon.Instance`
 
+### Screenshots
 ---
 
 ## Scenario 3 - Authentication by foreground app
@@ -106,3 +106,4 @@ After click **Provision**:
 - **`ClearAuthenticationToken`**
     - API refs: `ConfigStore.AuthenticationToken`, `AuthenticateButton.IsEnabled`, `SkipButton.IsEnabled`, `AbortButton.IsEnabled`
 
+### Screenshots

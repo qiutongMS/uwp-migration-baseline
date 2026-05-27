@@ -1,410 +1,354 @@
-﻿{
-    "sample":  "OnDemandHotspot",
-    "feature_name":  "OnDemandHotspot C# Sample",
-    "readme_description":  null,
-    "readme_bullets":  [
-
-                       ],
-    "readme_api_links":  [
-
-                         ],
-    "api_namespaces":  [
-
-                       ],
-    "api_references":  [
-                           "Constants.MetadataUpdateTaskName",
-                           "Constants.DeviceWatcherTaskName",
-                           "Constants.ConnectTaskName",
-                           "WiFiOnDemandHotspotNetwork.GetOrCreateById",
-                           "Constants.SampleHotspotGuid",
-                           "DisplayNameText.Text",
-                           "AvailableToggle.IsOn",
-                           "WiFiOnDemandHotspotAvailability.Available",
-                           "CellularBarsToggle.IsOn",
-                           "Debug.Assert",
-                           "WiFiOnDemandHotspotCellularBars.ZeroBars",
-                           "WiFiOnDemandHotspotCellularBars.OneBar",
-                           "WiFiOnDemandHotspotCellularBars.TwoBars",
-                           "WiFiOnDemandHotspotCellularBars.ThreeBars",
-                           "WiFiOnDemandHotspotCellularBars.FourBars",
-                           "WiFiOnDemandHotspotCellularBars.FiveBars",
-                           "CellularBarsSlider.Value",
-                           "BatteryPercentageToggle.IsOn",
-                           "BatteryPercentageSlider.Value",
-                           "SsidText.Text",
-                           "PasswordText.Password",
-                           "String.Empty",
-                           "BackgroundTaskRegistration.AllTasks",
-                           "Value.Name",
-                           "VisualStateManager.GoToState",
-                           "Constants.MetadataUpdateEntryPoint",
-                           "Constants.ConnectEntryPoint",
-                           "DeviceInformation.CreateWatcher",
-                           "Contoso.Devices",
-                           "OnDemandHotSpot.GetDeviceSelector",
-                           "DeviceWatcherEventKind.Add",
-                           "DeviceWatcherEventKind.Remove",
-                           "DeviceWatcherEventKind.Update",
-                           "Constants.DeviceWatcherEntryPoint",
-                           "Value.Unregister",
-                           "NotifyType.StatusMessage",
-                           "String.IsNullOrEmpty",
-                           "NotifyType.ErrorMessage",
-                           "ApplicationData.Current",
-                           "LocalSettings.Values",
-                           "WiFiOnDemandHotspotAvailability.Unavailable"
-                       ],
-    "scenarios":  {
-                      "index":  1,
-                      "class":  "Scenario1_ManageHotspot",
-                      "title":  "Manage Hotspot",
-                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OnDemandHotspot\\shared\\Scenario1_ManageHotspot.xaml",
-                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OnDemandHotspot\\cs\\Scenario1_ManageHotspot.xaml.cs",
-                      "description":  "To create an on-demand hotspot, register a background task to provide information about the hotspot when the system shows a list of Wi-Fi networks, and another to turn on the hotspot when the user selects it. You probably also want to register a background task to detect when the hotspot is in range so you can update its availability and other properties.",
-                      "controls":  [
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "Description:"
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  ""
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "inner_text":  "This sample does not control a physical hotspot device, so we will simulate it by displaying a toast message instructing you to turn on your mobile phone\u0027s hotspot."
-                                       },
-                                       {
-                                           "type":  "Button",
-                                           "name":  "RegisterButton",
-                                           "x_name":  "",
-                                           "content":  "Register tasks",
-                                           "handlers":  {
-                                                            "Click":  "RegisterTasks_Click"
-                                                        }
-                                       },
-                                       {
-                                           "type":  "Button",
-                                           "name":  "UnregisterButton",
-                                           "x_name":  "",
-                                           "content":  "Unregister tasks",
-                                           "handlers":  {
-                                                            "Click":  "UnregisterTasks_Click"
-                                                        }
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "DisplayName:"
-                                       },
-                                       {
-                                           "type":  "TextBox",
-                                           "name":  "",
-                                           "x_name":  "DisplayNameText",
-                                           "placeholdertext":  "Provide a name for the on-demand hotspot"
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "Available:"
-                                       },
-                                       {
-                                           "type":  "ToggleSwitch",
-                                           "name":  "",
-                                           "x_name":  "AvailableToggle"
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "Cellular bars:"
-                                       },
-                                       {
-                                           "type":  "ToggleSwitch",
-                                           "name":  "",
-                                           "x_name":  "CellularBarsToggle"
-                                       },
-                                       {
-                                           "type":  "Slider",
-                                           "name":  "",
-                                           "x_name":  "CellularBarsSlider"
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "Battery percentage: "
-                                       },
-                                       {
-                                           "type":  "ToggleSwitch",
-                                           "name":  "",
-                                           "x_name":  "BatteryPercentageToggle"
-                                       },
-                                       {
-                                           "type":  "Slider",
-                                           "name":  "",
-                                           "x_name":  "BatteryPercentageSlider"
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  ""
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "SSID:"
-                                       },
-                                       {
-                                           "type":  "TextBox",
-                                           "name":  "",
-                                           "x_name":  "SsidText",
-                                           "placeholdertext":  "Required"
-                                       },
-                                       {
-                                           "type":  "TextBlock",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "text":  "Password:"
-                                       },
-                                       {
-                                           "type":  "PasswordBox",
-                                           "name":  "",
-                                           "x_name":  "PasswordText",
-                                           "placeholdertext":  "Required"
-                                       },
-                                       {
-                                           "type":  "Button",
-                                           "name":  "ApplyNowButton",
-                                           "x_name":  "",
-                                           "content":  "Update now",
-                                           "handlers":  {
-                                                            "Click":  "UpdateNowButton_Click"
-                                                        }
-                                       },
-                                       {
-                                           "type":  "Button",
-                                           "name":  "",
-                                           "x_name":  "",
-                                           "content":  "Update when user opens Wi-Fi network list",
-                                           "handlers":  {
-                                                            "Click":  "UpdateOnDemandButton_Click"
-                                                        }
-                                       }
-                                   ],
-                      "usings":  [
-                                     "System",
-                                     "System.Diagnostics",
-                                     "Windows.UI.Xaml",
-                                     "Windows.UI.Xaml.Controls",
-                                     "Windows.UI.Xaml.Navigation",
-                                     "Windows.ApplicationModel.Background",
-                                     "Windows.Foundation.Collections",
-                                     "Windows.Devices.WiFi",
-                                     "Windows.Security.Credentials",
-                                     "Windows.Storage"
-                                 ],
-                      "handlers":  [
-                                       {
-                                           "name":  "Scenario1_ManageHotspot",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  51
-                                       },
-                                       {
-                                           "name":  "IsBackgroundTaskName",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-                                                            "Constants.MetadataUpdateTaskName",
-                                                            "Constants.DeviceWatcherTaskName",
-                                                            "Constants.ConnectTaskName"
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  186
-                                       },
-                                       {
-                                           "name":  "OnNavigatedTo",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-                                                            "WiFiOnDemandHotspotNetwork.GetOrCreateById",
-                                                            "Constants.SampleHotspotGuid",
-                                                            "DisplayNameText.Text",
-                                                            "AvailableToggle.IsOn",
-                                                            "WiFiOnDemandHotspotAvailability.Available",
-                                                            "CellularBarsToggle.IsOn",
-                                                            "Debug.Assert",
-                                                            "WiFiOnDemandHotspotCellularBars.ZeroBars",
-                                                            "WiFiOnDemandHotspotCellularBars.OneBar",
-                                                            "WiFiOnDemandHotspotCellularBars.TwoBars",
-                                                            "WiFiOnDemandHotspotCellularBars.ThreeBars",
-                                                            "WiFiOnDemandHotspotCellularBars.FourBars",
-                                                            "WiFiOnDemandHotspotCellularBars.FiveBars",
-                                                            "CellularBarsSlider.Value",
-                                                            "BatteryPercentageToggle.IsOn",
-                                                            "BatteryPercentageSlider.Value",
-                                                            "SsidText.Text",
-                                                            "PasswordText.Password",
-                                                            "String.Empty",
-                                                            "BackgroundTaskRegistration.AllTasks",
-                                                            "Value.Name",
-                                                            "VisualStateManager.GoToState"
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  1969
-                                       },
-                                       {
-                                           "name":  "RegisterTasks_Click",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-                                                            "Constants.MetadataUpdateTaskName",
-                                                            "Constants.MetadataUpdateEntryPoint",
-                                                            "Constants.ConnectTaskName",
-                                                            "Constants.ConnectEntryPoint",
-                                                            "DeviceInformation.CreateWatcher",
-                                                            "Contoso.Devices",
-                                                            "OnDemandHotSpot.GetDeviceSelector",
-                                                            "DeviceWatcherEventKind.Add",
-                                                            "DeviceWatcherEventKind.Remove",
-                                                            "DeviceWatcherEventKind.Update",
-                                                            "Constants.DeviceWatcherTaskName",
-                                                            "Constants.DeviceWatcherEntryPoint",
-                                                            "VisualStateManager.GoToState"
-                                                        ],
-                                           "new_types":  [
-                                                             "WiFiOnDemandHotspotUpdateMetadataTrigger",
-                                                             "BackgroundTaskBuilder",
-                                                             "WiFiOnDemandHotspotConnectTrigger",
-                                                             "List"
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  2253
-                                       },
-                                       {
-                                           "name":  "UnregisterTasks_Click",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-                                                            "BackgroundTaskRegistration.AllTasks",
-                                                            "Value.Name",
-                                                            "Value.Unregister",
-                                                            "VisualStateManager.GoToState"
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  331
-                                       },
-                                       {
-                                           "name":  "SavePropertiesForBackgroundTask",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-                                                            "NotifyType.StatusMessage",
-                                                            "AvailableToggle.IsOn",
-                                                            "String.IsNullOrEmpty",
-                                                            "DisplayNameText.Text",
-                                                            "NotifyType.ErrorMessage",
-                                                            "SsidText.Text",
-                                                            "PasswordText.Password",
-                                                            "ApplicationData.Current",
-                                                            "LocalSettings.Values",
-                                                            "CellularBarsToggle.IsOn",
-                                                            "CellularBarsSlider.Value",
-                                                            "BatteryPercentageToggle.IsOn",
-                                                            "BatteryPercentageSlider.Value",
-                                                            "Constants.SampleHotspotGuid"
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  1404
-                                       },
-                                       {
-                                           "name":  "UpdateNowButton_Click",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-                                                            "AvailableToggle.IsOn",
-                                                            "WiFiOnDemandHotspotAvailability.Available",
-                                                            "WiFiOnDemandHotspotAvailability.Unavailable",
-                                                            "DisplayNameText.Text",
-                                                            "CellularBarsToggle.IsOn",
-                                                            "CellularBarsSlider.Value",
-                                                            "BatteryPercentageToggle.IsOn",
-                                                            "BatteryPercentageSlider.Value",
-                                                            "SsidText.Text",
-                                                            "PasswordText.Password"
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  1064
-                                       },
-                                       {
-                                           "name":  "UpdateOnDemandButton_Click",
-                                           "namespaces_used":  [
-
-                                                               ],
-                                           "api_refs":  [
-
-                                                        ],
-                                           "new_types":  [
-
-                                                         ],
-                                           "ui_sets":  [
-
-                                                       ],
-                                           "body_length":  58
-                                       }
-                                   ]
-                  },
-    "main_page":  null
+{
+  "sample": "OnDemandHotspot",
+  "feature_name": "OnDemandHotspot C# Sample",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "Constants.MetadataUpdateTaskName",
+    "Constants.DeviceWatcherTaskName",
+    "Constants.ConnectTaskName",
+    "WiFiOnDemandHotspotNetwork.GetOrCreateById",
+    "Constants.SampleHotspotGuid",
+    "DisplayNameText.Text",
+    "AvailableToggle.IsOn",
+    "WiFiOnDemandHotspotAvailability.Available",
+    "CellularBarsToggle.IsOn",
+    "Debug.Assert",
+    "WiFiOnDemandHotspotCellularBars.ZeroBars",
+    "WiFiOnDemandHotspotCellularBars.OneBar",
+    "WiFiOnDemandHotspotCellularBars.TwoBars",
+    "WiFiOnDemandHotspotCellularBars.ThreeBars",
+    "WiFiOnDemandHotspotCellularBars.FourBars",
+    "WiFiOnDemandHotspotCellularBars.FiveBars",
+    "CellularBarsSlider.Value",
+    "BatteryPercentageToggle.IsOn",
+    "BatteryPercentageSlider.Value",
+    "SsidText.Text",
+    "PasswordText.Password",
+    "String.Empty",
+    "BackgroundTaskRegistration.AllTasks",
+    "Value.Name",
+    "VisualStateManager.GoToState",
+    "Constants.MetadataUpdateEntryPoint",
+    "Constants.ConnectEntryPoint",
+    "DeviceInformation.CreateWatcher",
+    "Contoso.Devices",
+    "OnDemandHotSpot.GetDeviceSelector",
+    "DeviceWatcherEventKind.Add",
+    "DeviceWatcherEventKind.Remove",
+    "DeviceWatcherEventKind.Update",
+    "Constants.DeviceWatcherEntryPoint",
+    "Value.Unregister",
+    "NotifyType.StatusMessage",
+    "String.IsNullOrEmpty",
+    "NotifyType.ErrorMessage",
+    "ApplicationData.Current",
+    "LocalSettings.Values",
+    "WiFiOnDemandHotspotAvailability.Unavailable"
+  ],
+  "scenarios": {
+    "index": 1,
+    "class": "Scenario1_ManageHotspot",
+    "title": "Manage Hotspot",
+    "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OnDemandHotspot\\shared\\Scenario1_ManageHotspot.xaml",
+    "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\OnDemandHotspot\\cs\\Scenario1_ManageHotspot.xaml.cs",
+    "description": "To create an on-demand hotspot, register a background task to provide information about the hotspot when the system shows a list of Wi-Fi networks, and another to turn on the hotspot when the user selects it. You probably also want to register a background task to detect when the hotspot is in range so you can update its availability and other properties.",
+    "controls": [
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Description:"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "inner_text": "This sample does not control a physical hotspot device, so we will simulate it by displaying a toast message instructing you to turn on your mobile phone's hotspot."
+      },
+      {
+        "type": "Button",
+        "name": "RegisterButton",
+        "x_name": "",
+        "content": "Register tasks",
+        "handlers": {
+          "Click": "RegisterTasks_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "UnregisterButton",
+        "x_name": "",
+        "content": "Unregister tasks",
+        "handlers": {
+          "Click": "UnregisterTasks_Click"
+        }
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "DisplayName:"
+      },
+      {
+        "type": "TextBox",
+        "name": "",
+        "x_name": "DisplayNameText",
+        "placeholdertext": "Provide a name for the on-demand hotspot"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Available:"
+      },
+      {
+        "type": "ToggleSwitch",
+        "name": "",
+        "x_name": "AvailableToggle"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Cellular bars:"
+      },
+      {
+        "type": "ToggleSwitch",
+        "name": "",
+        "x_name": "CellularBarsToggle"
+      },
+      {
+        "type": "Slider",
+        "name": "",
+        "x_name": "CellularBarsSlider"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Battery percentage: "
+      },
+      {
+        "type": "ToggleSwitch",
+        "name": "",
+        "x_name": "BatteryPercentageToggle"
+      },
+      {
+        "type": "Slider",
+        "name": "",
+        "x_name": "BatteryPercentageSlider"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": ""
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "SSID:"
+      },
+      {
+        "type": "TextBox",
+        "name": "",
+        "x_name": "SsidText",
+        "placeholdertext": "Required"
+      },
+      {
+        "type": "TextBlock",
+        "name": "",
+        "x_name": "",
+        "text": "Password:"
+      },
+      {
+        "type": "PasswordBox",
+        "name": "",
+        "x_name": "PasswordText",
+        "placeholdertext": "Required"
+      },
+      {
+        "type": "Button",
+        "name": "ApplyNowButton",
+        "x_name": "",
+        "content": "Update now",
+        "handlers": {
+          "Click": "UpdateNowButton_Click"
+        }
+      },
+      {
+        "type": "Button",
+        "name": "",
+        "x_name": "",
+        "content": "Update when user opens Wi-Fi network list",
+        "handlers": {
+          "Click": "UpdateOnDemandButton_Click"
+        }
+      }
+    ],
+    "usings": [
+      "System",
+      "System.Diagnostics",
+      "Windows.UI.Xaml",
+      "Windows.UI.Xaml.Controls",
+      "Windows.UI.Xaml.Navigation",
+      "Windows.ApplicationModel.Background",
+      "Windows.Foundation.Collections",
+      "Windows.Devices.WiFi",
+      "Windows.Security.Credentials",
+      "Windows.Storage"
+    ],
+    "handlers": [
+      {
+        "name": "Scenario1_ManageHotspot",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 51
+      },
+      {
+        "name": "IsBackgroundTaskName",
+        "namespaces_used": [],
+        "api_refs": [
+          "Constants.MetadataUpdateTaskName",
+          "Constants.DeviceWatcherTaskName",
+          "Constants.ConnectTaskName"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 186
+      },
+      {
+        "name": "OnNavigatedTo",
+        "namespaces_used": [],
+        "api_refs": [
+          "WiFiOnDemandHotspotNetwork.GetOrCreateById",
+          "Constants.SampleHotspotGuid",
+          "DisplayNameText.Text",
+          "AvailableToggle.IsOn",
+          "WiFiOnDemandHotspotAvailability.Available",
+          "CellularBarsToggle.IsOn",
+          "Debug.Assert",
+          "WiFiOnDemandHotspotCellularBars.ZeroBars",
+          "WiFiOnDemandHotspotCellularBars.OneBar",
+          "WiFiOnDemandHotspotCellularBars.TwoBars",
+          "WiFiOnDemandHotspotCellularBars.ThreeBars",
+          "WiFiOnDemandHotspotCellularBars.FourBars",
+          "WiFiOnDemandHotspotCellularBars.FiveBars",
+          "CellularBarsSlider.Value",
+          "BatteryPercentageToggle.IsOn",
+          "BatteryPercentageSlider.Value",
+          "SsidText.Text",
+          "PasswordText.Password",
+          "String.Empty",
+          "BackgroundTaskRegistration.AllTasks",
+          "Value.Name",
+          "VisualStateManager.GoToState"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1969
+      },
+      {
+        "name": "RegisterTasks_Click",
+        "namespaces_used": [],
+        "api_refs": [
+          "Constants.MetadataUpdateTaskName",
+          "Constants.MetadataUpdateEntryPoint",
+          "Constants.ConnectTaskName",
+          "Constants.ConnectEntryPoint",
+          "DeviceInformation.CreateWatcher",
+          "Contoso.Devices",
+          "OnDemandHotSpot.GetDeviceSelector",
+          "DeviceWatcherEventKind.Add",
+          "DeviceWatcherEventKind.Remove",
+          "DeviceWatcherEventKind.Update",
+          "Constants.DeviceWatcherTaskName",
+          "Constants.DeviceWatcherEntryPoint",
+          "VisualStateManager.GoToState"
+        ],
+        "new_types": [
+          "WiFiOnDemandHotspotUpdateMetadataTrigger",
+          "BackgroundTaskBuilder",
+          "WiFiOnDemandHotspotConnectTrigger",
+          "List"
+        ],
+        "ui_sets": [],
+        "body_length": 2253
+      },
+      {
+        "name": "UnregisterTasks_Click",
+        "namespaces_used": [],
+        "api_refs": [
+          "BackgroundTaskRegistration.AllTasks",
+          "Value.Name",
+          "Value.Unregister",
+          "VisualStateManager.GoToState"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 331
+      },
+      {
+        "name": "SavePropertiesForBackgroundTask",
+        "namespaces_used": [],
+        "api_refs": [
+          "NotifyType.StatusMessage",
+          "AvailableToggle.IsOn",
+          "String.IsNullOrEmpty",
+          "DisplayNameText.Text",
+          "NotifyType.ErrorMessage",
+          "SsidText.Text",
+          "PasswordText.Password",
+          "ApplicationData.Current",
+          "LocalSettings.Values",
+          "CellularBarsToggle.IsOn",
+          "CellularBarsSlider.Value",
+          "BatteryPercentageToggle.IsOn",
+          "BatteryPercentageSlider.Value",
+          "Constants.SampleHotspotGuid"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1404
+      },
+      {
+        "name": "UpdateNowButton_Click",
+        "namespaces_used": [],
+        "api_refs": [
+          "AvailableToggle.IsOn",
+          "WiFiOnDemandHotspotAvailability.Available",
+          "WiFiOnDemandHotspotAvailability.Unavailable",
+          "DisplayNameText.Text",
+          "CellularBarsToggle.IsOn",
+          "CellularBarsSlider.Value",
+          "BatteryPercentageToggle.IsOn",
+          "BatteryPercentageSlider.Value",
+          "SsidText.Text",
+          "PasswordText.Password"
+        ],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 1064
+      },
+      {
+        "name": "UpdateOnDemandButton_Click",
+        "namespaces_used": [],
+        "api_refs": [],
+        "new_types": [],
+        "ui_sets": [],
+        "body_length": 58
+      }
+    ]
+  },
+  "main_page": null
 }

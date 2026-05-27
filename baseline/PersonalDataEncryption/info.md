@@ -2,14 +2,18 @@
 
 > **Source**: `Samples\PersonalDataEncryption\cs\`  
 > **Feature**: Personal Data Encryption  
+> **AUMID**: `Microsoft.SDKSamples.PersonalDataEncryption.CS_8wekyb3d8bbwe!PersonalDataEncryption.App`  
+> **PackageFamilyName**: `Microsoft.SDKSamples.PersonalDataEncryption.CS_8wekyb3d8bbwe`  
 
 ## Build / deploy / capture status
-- build: failed
-- deploy: pending
-- launch: pending
-- capture: pending
-- uninstall: pending
-- error: msbuild exit 1, see msbuild.log
+- build: ok
+- deploy: ok
+- launch: ok
+- capture: ok
+- uninstall: ok
+
+## Main page
+![Main page](screenshots/00_main.png)
 
 ---
 
@@ -47,6 +51,11 @@
 - **`ReportStatus`**
     - API refs: `UserDataStorageItemProtectionStatus.Succeeded`, `NotifyType.StatusMessage`, `UserDataStorageItemProtectionStatus.NotProtectable`, `NotifyType.ErrorMessage`, `UserDataStorageItemProtectionStatus.DataUnavailable`
 
+### Screenshots
+Initial state:
+
+![initial](screenshots/01_1_Files_and_folders__initial.png)
+
 ---
 
 ## Scenario 2 - Memory
@@ -79,4 +88,9 @@
 - **`Unprotect_Click`**
     - API refs: `UnprotectedDataTextBlock.Text`, `UserDataBufferUnprotectStatus.Succeeded`, `NotifyType.StatusMessage`, `CryptographicBuffer.ConvertBinaryToString`, `BinaryStringEncoding.Utf8`, `UserDataBufferUnprotectStatus.Unavailable`, `NotifyType.ErrorMessage`
     - updates UI: `UnprotectedDataTextBlock.Text`
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/02_2_Memory__initial.png)
 

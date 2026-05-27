@@ -1,840 +1,692 @@
-﻿{
-    "sample":  "MIDI",
-    "feature_name":  "MIDI",
-    "readme_description":  null,
-    "readme_bullets":  [
-
-                       ],
-    "readme_api_links":  [
-
-                         ],
-    "api_namespaces":  [
-
-                       ],
-    "api_references":  [
-                           "MainPage.Current",
-                           "MidiInPort.GetDeviceSelector",
-                           "MidiOutPort.GetDeviceSelector",
-                           "Items.Clear",
-                           "Items.Add",
-                           "DeviceInformation.FindAllAsync",
-                           "NotifyType.ErrorMessage",
-                           "NotifyType.StatusMessage",
-                           "Timestamp.ToString",
-                           "MidiMessageType.NoteOff",
-                           "MidiMessageType.NoteOn",
-                           "MidiMessageType.PolyphonicKeyPressure",
-                           "MidiMessageType.ControlChange",
-                           "MidiMessageType.ProgramChange",
-                           "MidiMessageType.ChannelPressure",
-                           "MidiMessageType.PitchBendChange",
-                           "MidiMessageType.SystemExclusive",
-                           "DataReader.FromBuffer",
-                           "MidiMessageType.MidiTimeCode",
-                           "MidiMessageType.SongPositionPointer",
-                           "MidiMessageType.SongSelect",
-                           "MidiMessageType.TuneRequest",
-                           "MidiMessageType.TimingClock",
-                           "MidiMessageType.Start",
-                           "MidiMessageType.Continue",
-                           "MidiMessageType.Stop",
-                           "MidiMessageType.ActiveSensing",
-                           "MidiMessageType.SystemReset",
-                           "MidiMessageType.None",
-                           "Dispatcher.RunAsync",
-                           "CoreDispatcherPriority.High",
-                           "Items.Count",
-                           "Visibility.Collapsed",
-                           "Visibility.Visible"
-                       ],
-    "scenarios":  [
-                      {
-                          "index":  1,
-                          "class":  "Scenario1_MIDIDeviceEnumeration",
-                          "title":  "MIDI Device Enumeration",
-                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario1_MIDIDeviceEnumeration.xaml",
-                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario1_MIDIDeviceEnumeration.xaml.cs",
-                          "description":  "",
-                          "controls":  [
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "",
-                                               "text":  "Description"
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "",
-                                               "text":  "This scenario illustrates MIDI Device Enumeration. Connect a MIDI device to see it in the list."
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "deviceAutoDetectToggleLabel",
-                                               "text":  "AUTO-DETECT"
-                                           },
-                                           {
-                                               "type":  "ToggleSwitch",
-                                               "name":  "",
-                                               "x_name":  "deviceAutoDetectToggle",
-                                               "handlers":  {
-                                                                "Toggled":  "DeviceAutoDetectToggle_Toggled"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "listInputDevicesButtonLabel",
-                                               "text":  "INPUT"
-                                           },
-                                           {
-                                               "type":  "Button",
-                                               "name":  "",
-                                               "x_name":  "listInputDevicesButton",
-                                               "content":  "List all input devices",
-                                               "handlers":  {
-                                                                "Click":  "listInputDevicesButton_Click"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "inputDevices",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "inputDevices_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "inputDeviceProperties"
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "listOutputDevicesButtonLabel",
-                                               "text":  "OUTPUT"
-                                           },
-                                           {
-                                               "type":  "Button",
-                                               "name":  "",
-                                               "x_name":  "listOutputDevicesButton",
-                                               "content":  "List all output devices",
-                                               "handlers":  {
-                                                                "Click":  "listOutputDevicesButton_Click"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "outputDevices",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "outputDevices_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "outputDeviceProperties"
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "statusBlock"
-                                           }
-                                       ],
-                          "usings":  [
-                                         "SDKTemplate",
-                                         "System",
-                                         "System.Collections.Generic",
-                                         "System.Threading.Tasks",
-                                         "Windows.Devices.Enumeration",
-                                         "Windows.Devices.Midi",
-                                         "Windows.UI.Core",
-                                         "Windows.UI.Xaml",
-                                         "Windows.UI.Xaml.Controls",
-                                         "Windows.UI.Xaml.Navigation"
-                                     ],
-                          "handlers":  [
-                                           {
-                                               "name":  "OnNavigatedTo",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MainPage.Current"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  57
-                                           },
-                                           {
-                                               "name":  "OnNavigatedFrom",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  201
-                                           },
-                                           {
-                                               "name":  "Scenario1_MIDIDeviceEnumeration",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiInPort.GetDeviceSelector",
-                                                                "MidiOutPort.GetDeviceSelector"
-                                                            ],
-                                               "new_types":  [
-                                                                 "MidiDeviceWatcher"
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  879
-                                           },
-                                           {
-                                               "name":  "ClearAllDeviceValues",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "Items.Add"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  988
-                                           },
-                                           {
-                                               "name":  "EnumerateMidiInputDevices",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "MidiInPort.GetDeviceSelector",
-                                                                "DeviceInformation.FindAllAsync",
-                                                                "Items.Add",
-                                                                "NotifyType.ErrorMessage",
-                                                                "NotifyType.StatusMessage"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1278
-                                           },
-                                           {
-                                               "name":  "EnumerateMidiOutputDevices",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "MidiOutPort.GetDeviceSelector",
-                                                                "DeviceInformation.FindAllAsync",
-                                                                "Items.Add",
-                                                                "NotifyType.ErrorMessage",
-                                                                "NotifyType.StatusMessage"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1331
-                                           },
-                                           {
-                                               "name":  "DeviceAutoDetectToggle_Toggled",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  993
-                                           },
-                                           {
-                                               "name":  "DisplayDeviceProperties",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "Items.Add"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  768
-                                           }
-                                       ]
-                      },
-                      {
-                          "index":  2,
-                          "class":  "Scenario2_ReceiveMIDIMessages",
-                          "title":  "Receive MIDI Messages",
-                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario2_ReceiveMIDIMessages.xaml",
-                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario2_ReceiveMIDIMessages.xaml.cs",
-                          "description":  "",
-                          "controls":  [
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "",
-                                               "text":  "Description"
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "",
-                                               "text":  "This scenario reads MIDI input from a MIDI device. Device auto-detection is enabled. Messages from the selected device are displayed. Connect a MIDI device to use this scenario."
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "inputDevicesLabel",
-                                               "text":  "INPUT DEVICES"
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "inputDevices",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "inputDevices_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "inputDeviceMessagesLabel",
-                                               "text":  "RECEIVED MESSAGES"
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "inputDeviceMessages"
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "statusBlock"
-                                           }
-                                       ],
-                          "usings":  [
-                                         "SDKTemplate",
-                                         "System",
-                                         "System.Collections.Generic",
-                                         "System.Text",
-                                         "Windows.Devices.Enumeration",
-                                         "Windows.Devices.Midi",
-                                         "Windows.Storage.Streams",
-                                         "Windows.UI.Core",
-                                         "Windows.UI.Xaml.Controls",
-                                         "Windows.UI.Xaml.Navigation"
-                                     ],
-                          "handlers":  [
-                                           {
-                                               "name":  "OnNavigatedTo",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MainPage.Current"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  57
-                                           },
-                                           {
-                                               "name":  "OnNavigatedFrom",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  347
-                                           },
-                                           {
-                                               "name":  "Scenario2_ReceiveMIDIMessages",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiInPort.GetDeviceSelector"
-                                                            ],
-                                               "new_types":  [
-                                                                 "List",
-                                                                 "MidiDeviceWatcher"
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  447
-                                           },
-                                           {
-                                               "name":  "MidiInputDevice_MessageReceived",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Timestamp.ToString",
-                                                                "MidiMessageType.NoteOff",
-                                                                "MidiMessageType.NoteOn",
-                                                                "MidiMessageType.PolyphonicKeyPressure",
-                                                                "MidiMessageType.ControlChange",
-                                                                "MidiMessageType.ProgramChange",
-                                                                "MidiMessageType.ChannelPressure",
-                                                                "MidiMessageType.PitchBendChange",
-                                                                "MidiMessageType.SystemExclusive",
-                                                                "DataReader.FromBuffer",
-                                                                "MidiMessageType.MidiTimeCode",
-                                                                "MidiMessageType.SongPositionPointer",
-                                                                "MidiMessageType.SongSelect",
-                                                                "MidiMessageType.TuneRequest",
-                                                                "MidiMessageType.TimingClock",
-                                                                "MidiMessageType.Start",
-                                                                "MidiMessageType.Continue",
-                                                                "MidiMessageType.Stop",
-                                                                "MidiMessageType.ActiveSensing",
-                                                                "MidiMessageType.SystemReset",
-                                                                "MidiMessageType.None",
-                                                                "Dispatcher.RunAsync",
-                                                                "CoreDispatcherPriority.High",
-                                                                "Items.Add",
-                                                                "Items.Count",
-                                                                "NotifyType.StatusMessage"
-                                                            ],
-                                               "new_types":  [
-                                                                 "StringBuilder",
-                                                                 "InvalidOperationException"
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  6737
-                                           }
-                                       ]
-                      },
-                      {
-                          "index":  3,
-                          "class":  "Scenario3_SendMIDIMessages",
-                          "title":  "Send MIDI Messages",
-                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario3_SendMIDIMessages.xaml",
-                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario3_SendMIDIMessages.xaml.cs",
-                          "description":  "",
-                          "controls":  [
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "",
-                                               "text":  "Description"
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "",
-                                               "text":  "This scenario sends MIDI output to a MIDI device (external or the built-in synth). Device auto-detection is enabled. Select an output device to send MIDI messages to it."
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "outputDevicesLabel",
-                                               "text":  "OUTPUT DEVICES"
-                                           },
-                                           {
-                                               "type":  "ListBox",
-                                               "name":  "",
-                                               "x_name":  "outputDevices",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "outputDevices_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "messageTypeLabel",
-                                               "text":  "SEND MESSAGE"
-                                           },
-                                           {
-                                               "type":  "ComboBox",
-                                               "name":  "",
-                                               "x_name":  "messageType",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "messageType_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ComboBox",
-                                               "name":  "",
-                                               "x_name":  "parameter1",
-                                               "header":  "Parameter 1",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "Parameter1_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ComboBox",
-                                               "name":  "",
-                                               "x_name":  "parameter2",
-                                               "header":  "Parameter 2",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "Parameter2_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "ComboBox",
-                                               "name":  "",
-                                               "x_name":  "parameter3",
-                                               "header":  "Parameter 3",
-                                               "handlers":  {
-                                                                "SelectionChanged":  "Parameter3_SelectionChanged"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "rawBufferHeader",
-                                               "text":  "Enter SysEx Message: "
-                                           },
-                                           {
-                                               "type":  "TextBox",
-                                               "name":  "",
-                                               "x_name":  "sysExMessageContent"
-                                           },
-                                           {
-                                               "type":  "Button",
-                                               "name":  "",
-                                               "x_name":  "resetButton",
-                                               "content":  "Reset",
-                                               "handlers":  {
-                                                                "Click":  "resetButton_Click"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "Button",
-                                               "name":  "",
-                                               "x_name":  "sendButton",
-                                               "content":  "Send",
-                                               "handlers":  {
-                                                                "Click":  "sendButton_Click"
-                                                            }
-                                           },
-                                           {
-                                               "type":  "TextBlock",
-                                               "name":  "",
-                                               "x_name":  "statusBlock"
-                                           }
-                                       ],
-                          "usings":  [
-                                         "SDKTemplate",
-                                         "System",
-                                         "System.Collections.Generic",
-                                         "System.Linq",
-                                         "System.Threading.Tasks",
-                                         "Windows.Devices.Enumeration",
-                                         "Windows.Devices.Midi",
-                                         "Windows.Storage.Streams",
-                                         "Windows.UI",
-                                         "Windows.UI.Core",
-                                         "Windows.UI.Xaml",
-                                         "Windows.UI.Xaml.Controls",
-                                         "Windows.UI.Xaml.Media",
-                                         "Windows.UI.Xaml.Navigation"
-                                     ],
-                          "handlers":  [
-                                           {
-                                               "name":  "OnNavigatedTo",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MainPage.Current"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  57
-                                           },
-                                           {
-                                               "name":  "OnNavigatedFrom",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  356
-                                           },
-                                           {
-                                               "name":  "Scenario3_SendMIDIMessages",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiOutPort.GetDeviceSelector"
-                                                            ],
-                                               "new_types":  [
-                                                                 "List",
-                                                                 "MidiDeviceWatcher"
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  544
-                                           },
-                                           {
-                                               "name":  "PopulateMessageTypes",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiMessageType.ActiveSensing",
-                                                                "MidiMessageType.ChannelPressure",
-                                                                "MidiMessageType.Continue",
-                                                                "MidiMessageType.ControlChange",
-                                                                "MidiMessageType.MidiTimeCode",
-                                                                "MidiMessageType.NoteOff",
-                                                                "MidiMessageType.NoteOn",
-                                                                "MidiMessageType.PitchBendChange",
-                                                                "MidiMessageType.PolyphonicKeyPressure",
-                                                                "MidiMessageType.ProgramChange",
-                                                                "MidiMessageType.SongPositionPointer",
-                                                                "MidiMessageType.SongSelect",
-                                                                "MidiMessageType.Start",
-                                                                "MidiMessageType.Stop",
-                                                                "MidiMessageType.SystemExclusive",
-                                                                "MidiMessageType.SystemReset",
-                                                                "MidiMessageType.TimingClock",
-                                                                "MidiMessageType.TuneRequest",
-                                                                "Items.Clear",
-                                                                "Items.Add"
-                                                            ],
-                                               "new_types":  [
-                                                                 "Dictionary"
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1944
-                                           },
-                                           {
-                                               "name":  "ResetMessageTypeAndParameters",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiMessageType.None",
-                                                                "Visibility.Collapsed"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1149
-                                           },
-                                           {
-                                               "name":  "UpdateParameterList1",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiMessageType.NoteOff",
-                                                                "MidiMessageType.NoteOn",
-                                                                "MidiMessageType.PolyphonicKeyPressure",
-                                                                "MidiMessageType.ControlChange",
-                                                                "MidiMessageType.ProgramChange",
-                                                                "MidiMessageType.ChannelPressure",
-                                                                "MidiMessageType.PitchBendChange",
-                                                                "MidiMessageType.MidiTimeCode",
-                                                                "MidiMessageType.SongPositionPointer",
-                                                                "MidiMessageType.SongSelect",
-                                                                "MidiMessageType.SystemExclusive",
-                                                                "Items.Clear",
-                                                                "Visibility.Collapsed",
-                                                                "NotifyType.StatusMessage"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  2509
-                                           },
-                                           {
-                                               "name":  "Parameter1_SelectionChanged",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiMessageType.SongPositionPointer",
-                                                                "MidiMessageType.SongSelect"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1036
-                                           },
-                                           {
-                                               "name":  "UpdateParameterList2",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "Visibility.Collapsed",
-                                                                "MidiMessageType.NoteOff",
-                                                                "MidiMessageType.NoteOn",
-                                                                "MidiMessageType.PolyphonicKeyPressure",
-                                                                "MidiMessageType.ControlChange",
-                                                                "MidiMessageType.ProgramChange",
-                                                                "MidiMessageType.ChannelPressure",
-                                                                "MidiMessageType.PitchBendChange",
-                                                                "MidiMessageType.MidiTimeCode"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  2409
-                                           },
-                                           {
-                                               "name":  "Parameter2_SelectionChanged",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiMessageType.ProgramChange",
-                                                                "MidiMessageType.ChannelPressure",
-                                                                "MidiMessageType.PitchBendChange",
-                                                                "MidiMessageType.MidiTimeCode"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1142
-                                           },
-                                           {
-                                               "name":  "UpdateParameterList3",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "Visibility.Collapsed",
-                                                                "MidiMessageType.NoteOff",
-                                                                "MidiMessageType.NoteOn",
-                                                                "MidiMessageType.PolyphonicKeyPressure",
-                                                                "MidiMessageType.ControlChange"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1619
-                                           },
-                                           {
-                                               "name":  "Parameter3_SelectionChanged",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "MidiMessageType.NoteOff",
-                                                                "MidiMessageType.NoteOn",
-                                                                "MidiMessageType.PolyphonicKeyPressure",
-                                                                "MidiMessageType.ControlChange"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  1002
-                                           },
-                                           {
-                                               "name":  "PopulateParameterList",
-                                               "namespaces_used":  [
-
-                                                                   ],
-                                               "api_refs":  [
-                                                                "Items.Clear",
-                                                                "Items.Add",
-                                                                "Visibility.Visible"
-                                                            ],
-                                               "new_types":  [
-
-                                                             ],
-                                               "ui_sets":  [
-
-                                                           ],
-                                               "body_length":  450
-                                           }
-                                       ]
-                      }
-                  ],
-    "main_page":  null
+{
+  "sample": "MIDI",
+  "feature_name": "MIDI",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "MainPage.Current",
+    "MidiInPort.GetDeviceSelector",
+    "MidiOutPort.GetDeviceSelector",
+    "Items.Clear",
+    "Items.Add",
+    "DeviceInformation.FindAllAsync",
+    "NotifyType.ErrorMessage",
+    "NotifyType.StatusMessage",
+    "Timestamp.ToString",
+    "MidiMessageType.NoteOff",
+    "MidiMessageType.NoteOn",
+    "MidiMessageType.PolyphonicKeyPressure",
+    "MidiMessageType.ControlChange",
+    "MidiMessageType.ProgramChange",
+    "MidiMessageType.ChannelPressure",
+    "MidiMessageType.PitchBendChange",
+    "MidiMessageType.SystemExclusive",
+    "DataReader.FromBuffer",
+    "MidiMessageType.MidiTimeCode",
+    "MidiMessageType.SongPositionPointer",
+    "MidiMessageType.SongSelect",
+    "MidiMessageType.TuneRequest",
+    "MidiMessageType.TimingClock",
+    "MidiMessageType.Start",
+    "MidiMessageType.Continue",
+    "MidiMessageType.Stop",
+    "MidiMessageType.ActiveSensing",
+    "MidiMessageType.SystemReset",
+    "MidiMessageType.None",
+    "Dispatcher.RunAsync",
+    "CoreDispatcherPriority.High",
+    "Items.Count",
+    "Visibility.Collapsed",
+    "Visibility.Visible"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_MIDIDeviceEnumeration",
+      "title": "MIDI Device Enumeration",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario1_MIDIDeviceEnumeration.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario1_MIDIDeviceEnumeration.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario illustrates MIDI Device Enumeration. Connect a MIDI device to see it in the list."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "deviceAutoDetectToggleLabel",
+          "text": "AUTO-DETECT"
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "deviceAutoDetectToggle",
+          "handlers": {
+            "Toggled": "DeviceAutoDetectToggle_Toggled"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "listInputDevicesButtonLabel",
+          "text": "INPUT"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "listInputDevicesButton",
+          "content": "List all input devices",
+          "handlers": {
+            "Click": "listInputDevicesButton_Click"
+          }
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "inputDevices",
+          "handlers": {
+            "SelectionChanged": "inputDevices_SelectionChanged"
+          }
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "inputDeviceProperties"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "listOutputDevicesButtonLabel",
+          "text": "OUTPUT"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "listOutputDevicesButton",
+          "content": "List all output devices",
+          "handlers": {
+            "Click": "listOutputDevicesButton_Click"
+          }
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "outputDevices",
+          "handlers": {
+            "SelectionChanged": "outputDevices_SelectionChanged"
+          }
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "outputDeviceProperties"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "statusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Collections.Generic",
+        "System.Threading.Tasks",
+        "Windows.Devices.Enumeration",
+        "Windows.Devices.Midi",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 57
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 201
+        },
+        {
+          "name": "Scenario1_MIDIDeviceEnumeration",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiInPort.GetDeviceSelector",
+            "MidiOutPort.GetDeviceSelector"
+          ],
+          "new_types": [
+            "MidiDeviceWatcher"
+          ],
+          "ui_sets": [],
+          "body_length": 879
+        },
+        {
+          "name": "ClearAllDeviceValues",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "Items.Add"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 988
+        },
+        {
+          "name": "EnumerateMidiInputDevices",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "MidiInPort.GetDeviceSelector",
+            "DeviceInformation.FindAllAsync",
+            "Items.Add",
+            "NotifyType.ErrorMessage",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1278
+        },
+        {
+          "name": "EnumerateMidiOutputDevices",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "MidiOutPort.GetDeviceSelector",
+            "DeviceInformation.FindAllAsync",
+            "Items.Add",
+            "NotifyType.ErrorMessage",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1331
+        },
+        {
+          "name": "DeviceAutoDetectToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 993
+        },
+        {
+          "name": "DisplayDeviceProperties",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "Items.Add"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 768
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_ReceiveMIDIMessages",
+      "title": "Receive MIDI Messages",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario2_ReceiveMIDIMessages.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario2_ReceiveMIDIMessages.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario reads MIDI input from a MIDI device. Device auto-detection is enabled. Messages from the selected device are displayed. Connect a MIDI device to use this scenario."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "inputDevicesLabel",
+          "text": "INPUT DEVICES"
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "inputDevices",
+          "handlers": {
+            "SelectionChanged": "inputDevices_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "inputDeviceMessagesLabel",
+          "text": "RECEIVED MESSAGES"
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "inputDeviceMessages"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "statusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Collections.Generic",
+        "System.Text",
+        "Windows.Devices.Enumeration",
+        "Windows.Devices.Midi",
+        "Windows.Storage.Streams",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 57
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 347
+        },
+        {
+          "name": "Scenario2_ReceiveMIDIMessages",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiInPort.GetDeviceSelector"
+          ],
+          "new_types": [
+            "List",
+            "MidiDeviceWatcher"
+          ],
+          "ui_sets": [],
+          "body_length": 447
+        },
+        {
+          "name": "MidiInputDevice_MessageReceived",
+          "namespaces_used": [],
+          "api_refs": [
+            "Timestamp.ToString",
+            "MidiMessageType.NoteOff",
+            "MidiMessageType.NoteOn",
+            "MidiMessageType.PolyphonicKeyPressure",
+            "MidiMessageType.ControlChange",
+            "MidiMessageType.ProgramChange",
+            "MidiMessageType.ChannelPressure",
+            "MidiMessageType.PitchBendChange",
+            "MidiMessageType.SystemExclusive",
+            "DataReader.FromBuffer",
+            "MidiMessageType.MidiTimeCode",
+            "MidiMessageType.SongPositionPointer",
+            "MidiMessageType.SongSelect",
+            "MidiMessageType.TuneRequest",
+            "MidiMessageType.TimingClock",
+            "MidiMessageType.Start",
+            "MidiMessageType.Continue",
+            "MidiMessageType.Stop",
+            "MidiMessageType.ActiveSensing",
+            "MidiMessageType.SystemReset",
+            "MidiMessageType.None",
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.High",
+            "Items.Add",
+            "Items.Count",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "StringBuilder",
+            "InvalidOperationException"
+          ],
+          "ui_sets": [],
+          "body_length": 6737
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_SendMIDIMessages",
+      "title": "Send MIDI Messages",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario3_SendMIDIMessages.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MIDI\\cs\\Scenario3_SendMIDIMessages.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario sends MIDI output to a MIDI device (external or the built-in synth). Device auto-detection is enabled. Select an output device to send MIDI messages to it."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "outputDevicesLabel",
+          "text": "OUTPUT DEVICES"
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "outputDevices",
+          "handlers": {
+            "SelectionChanged": "outputDevices_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "messageTypeLabel",
+          "text": "SEND MESSAGE"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "messageType",
+          "handlers": {
+            "SelectionChanged": "messageType_SelectionChanged"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "parameter1",
+          "header": "Parameter 1",
+          "handlers": {
+            "SelectionChanged": "Parameter1_SelectionChanged"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "parameter2",
+          "header": "Parameter 2",
+          "handlers": {
+            "SelectionChanged": "Parameter2_SelectionChanged"
+          }
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "parameter3",
+          "header": "Parameter 3",
+          "handlers": {
+            "SelectionChanged": "Parameter3_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "rawBufferHeader",
+          "text": "Enter SysEx Message: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "sysExMessageContent"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "resetButton",
+          "content": "Reset",
+          "handlers": {
+            "Click": "resetButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "sendButton",
+          "content": "Send",
+          "handlers": {
+            "Click": "sendButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "statusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Collections.Generic",
+        "System.Linq",
+        "System.Threading.Tasks",
+        "Windows.Devices.Enumeration",
+        "Windows.Devices.Midi",
+        "Windows.Storage.Streams",
+        "Windows.UI",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 57
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 356
+        },
+        {
+          "name": "Scenario3_SendMIDIMessages",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiOutPort.GetDeviceSelector"
+          ],
+          "new_types": [
+            "List",
+            "MidiDeviceWatcher"
+          ],
+          "ui_sets": [],
+          "body_length": 544
+        },
+        {
+          "name": "PopulateMessageTypes",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiMessageType.ActiveSensing",
+            "MidiMessageType.ChannelPressure",
+            "MidiMessageType.Continue",
+            "MidiMessageType.ControlChange",
+            "MidiMessageType.MidiTimeCode",
+            "MidiMessageType.NoteOff",
+            "MidiMessageType.NoteOn",
+            "MidiMessageType.PitchBendChange",
+            "MidiMessageType.PolyphonicKeyPressure",
+            "MidiMessageType.ProgramChange",
+            "MidiMessageType.SongPositionPointer",
+            "MidiMessageType.SongSelect",
+            "MidiMessageType.Start",
+            "MidiMessageType.Stop",
+            "MidiMessageType.SystemExclusive",
+            "MidiMessageType.SystemReset",
+            "MidiMessageType.TimingClock",
+            "MidiMessageType.TuneRequest",
+            "Items.Clear",
+            "Items.Add"
+          ],
+          "new_types": [
+            "Dictionary"
+          ],
+          "ui_sets": [],
+          "body_length": 1944
+        },
+        {
+          "name": "ResetMessageTypeAndParameters",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiMessageType.None",
+            "Visibility.Collapsed"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1149
+        },
+        {
+          "name": "UpdateParameterList1",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiMessageType.NoteOff",
+            "MidiMessageType.NoteOn",
+            "MidiMessageType.PolyphonicKeyPressure",
+            "MidiMessageType.ControlChange",
+            "MidiMessageType.ProgramChange",
+            "MidiMessageType.ChannelPressure",
+            "MidiMessageType.PitchBendChange",
+            "MidiMessageType.MidiTimeCode",
+            "MidiMessageType.SongPositionPointer",
+            "MidiMessageType.SongSelect",
+            "MidiMessageType.SystemExclusive",
+            "Items.Clear",
+            "Visibility.Collapsed",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2509
+        },
+        {
+          "name": "Parameter1_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiMessageType.SongPositionPointer",
+            "MidiMessageType.SongSelect"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1036
+        },
+        {
+          "name": "UpdateParameterList2",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "Visibility.Collapsed",
+            "MidiMessageType.NoteOff",
+            "MidiMessageType.NoteOn",
+            "MidiMessageType.PolyphonicKeyPressure",
+            "MidiMessageType.ControlChange",
+            "MidiMessageType.ProgramChange",
+            "MidiMessageType.ChannelPressure",
+            "MidiMessageType.PitchBendChange",
+            "MidiMessageType.MidiTimeCode"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2409
+        },
+        {
+          "name": "Parameter2_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiMessageType.ProgramChange",
+            "MidiMessageType.ChannelPressure",
+            "MidiMessageType.PitchBendChange",
+            "MidiMessageType.MidiTimeCode"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1142
+        },
+        {
+          "name": "UpdateParameterList3",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "Visibility.Collapsed",
+            "MidiMessageType.NoteOff",
+            "MidiMessageType.NoteOn",
+            "MidiMessageType.PolyphonicKeyPressure",
+            "MidiMessageType.ControlChange"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1619
+        },
+        {
+          "name": "Parameter3_SelectionChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "MidiMessageType.NoteOff",
+            "MidiMessageType.NoteOn",
+            "MidiMessageType.PolyphonicKeyPressure",
+            "MidiMessageType.ControlChange"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1002
+        },
+        {
+          "name": "PopulateParameterList",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "Items.Add",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 450
+        }
+      ]
+    }
+  ],
+  "main_page": null
 }

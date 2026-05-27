@@ -9,11 +9,11 @@
 - launch: pending
 - capture: pending
 - uninstall: pending
-- error: Add-AppxPackage failed: Deployment failed with HRESULT: 0x80073CF3, Package failed updates, dependency or conflict validation.
+- error: Add-AppxPackage (after cleanup) failed: Deployment failed with HRESULT: 0x80073CF3, Package failed updates, dependency or conflict validation.
 
 Windows cannot install package Microsoft.SDKSamples.MIDI.CS_1.0.0.0_x64__8wekyb3d8bbwe because this package depends on a framework that could not be found. Provide the framework "Microsoft.Midi.GmDls" published by "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US", with neutral or x64 processor architecture and minimum version 1.0.0.0, along with this package to install.
 
-NOTE: For additional information, look for [ActivityId] 924185f5-0230-0005-4a52-cf5904e4dc01 in the Event Log or use the command line Get-AppPackageLog -ActivityID 924185f5-0230-0005-4a52-cf5904e4dc01
+NOTE: For additional information, look for [ActivityId] 924185f5-0230-0009-a9ca-b55904e4dc01 in the Event Log or use the command line Get-AppPackageLog -ActivityID 924185f5-0230-0009-a9ca-b55904e4dc01
 
 
 ---

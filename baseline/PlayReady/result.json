@@ -4,7 +4,7 @@
     "build":  "ok",
     "deploy":  "ok",
     "launch":  "ok",
-    "capture":  "partial",
+    "capture":  "ok",
     "uninstall":  "ok",
     "package_full_name":  "Microsoft.SDKSamples.PlayReady.CS_1.0.0.0_x64__8wekyb3d8bbwe",
     "package_family_name":  "Microsoft.SDKSamples.PlayReady.CS_8wekyb3d8bbwe",
@@ -36,7 +36,23 @@
                           "buttons":  [
 
                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Manage HW/SW DRM",
+                          "initial_capture":  "03_3_Manage_HW_SW_DRM__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Secure Stop",
+                          "initial_capture":  "04_4_Secure_Stop__initial.png",
+                          "buttons":  [
+
+                                      ]
                       }
                   ],
-    "error":  "Scenario iteration: Exception calling \"FindFirst\" with \"2\" argument(s): \"Operation timed out. (Exception from HRESULT: 0x80131505)\""
+    "error":  null
 }

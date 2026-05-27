@@ -4,7 +4,7 @@
     "build":  "ok",
     "deploy":  "ok",
     "launch":  "ok",
-    "capture":  "partial",
+    "capture":  "ok",
     "uninstall":  "ok",
     "package_full_name":  "Microsoft.SDKSamples.ScreenCasting.CS_1.0.0.0_x64__8wekyb3d8bbwe",
     "package_family_name":  "Microsoft.SDKSamples.ScreenCasting.CS_8wekyb3d8bbwe",
@@ -59,7 +59,56 @@
                                               "capture":  "02_2_-_Casting_APIs_and_a_Custom_Cast_Button__after_Full_Screen.png"
                                           }
                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3 - DIAL Sender Universal Windows app",
+                          "initial_capture":  "03_3_-_DIAL_Sender_Universal_Windows_app__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_-_DIAL_Sender_Universal_Windows_app__after_Pause.png"
+                                          },
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_-_DIAL_Sender_Universal_Windows_app__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Exit Full Screen",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_-_DIAL_Sender_Universal_Windows_app__after_Exit_Full_Screen.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4 - DIAL Receiver Windows Universal app",
+                          "initial_capture":  "04_4_-_DIAL_Receiver_Windows_Universal_app__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5 - Multi-View Media Application",
+                          "initial_capture":  null,
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6 - Combine Casting Methods",
+                          "initial_capture":  null,
+                          "buttons":  [
+
+                                      ]
                       }
                   ],
-    "error":  "Scenario iteration: You cannot call a method on a null-valued expression."
+    "error":  null
 }

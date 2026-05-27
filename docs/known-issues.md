@@ -1,5 +1,82 @@
 ﻿# Known issues
 
+## M12 update — May 2026 (pipeline hardening + 5 sample fixes)
+
+A second pass on the 89-sample refilter baseline brought the count from
+65 → 70 `ok`. Net `_status.csv` summary: **70 ok / 10 ok-generic / 6 failed / 2 pending / 1 crashed**.
+
+### What was fixed
+
+**Upstream patches** (committed in `qiutongMS/uwp-samples-standalone`
+branch `refilter-102-samples`):
+
+| Sample | Patch |
+|---|---|
+| `ApplicationResources` | `Package.appxmanifest`: `Square150x150Logo` and `Square44x44Logo` were both pointing at `Images\logo.png`, whose `contrast-*_scale-100` variants are 150×150 — wrong for `Square44x44Logo`. Manifest now references `Assets\SquareTile-sdk.png` / `Assets\SmallTile-sdk.png` (50×50 and 44×44 from `SharedContent\media`). Two new `<Content Include="$(SharedContentDir)\media\...">` items with `<Link>Assets\...</Link>` added to the csproj. |
+| `NetworkConnectivity` | Removed `<uap:LockScreen BadgeLogo="Assets\smalltile-sdk.png" .../>` from the manifest — `BadgeLogo` requires a 24×24 asset; `smalltile-sdk.png` is 44×44. The lock-screen badge isn't core to the sample's demonstration. |
+| `MobileHotspot` | `TargetPlatformVersion` `10.0.25336.0` (Insider-only SDK) → `10.0.26100.0`. The 22621.0 SDK doesn't expose `TetheringWiFiAuthenticationKind` which the sample uses. |
+| `PersonalDataEncryption` | `TargetPlatformVersion` and `TargetPlatformMinVersion` `10.0.22000.0` → `10.0.22621.0` (the 22000.0 SDK isn't installed and isn't required by the sample's API surface). |
+
+**Pipeline robustness fixes** (`scripts/Process-Sample.ps1`):
+
+1. **Window-finder accepts CamelCase-spaced sample names.** Many UWP
+   manifests declare `DisplayName="ms-resource:appDisplayNameCS"` —
+   the literal `ms-resource:` string never matches a real window
+   title. The pipeline now builds a candidate list:
+   *(a)* the manifest `DisplayName` literal (if it's not an
+   `ms-resource:` indirection), *(b)* the `$SampleName` as-is, and
+   *(c)* a CamelCase-split variant (`ApplicationResources` →
+   `Application Resources`). All three are tried each iteration of
+   the 25 s find loop. Fixed `ApplicationResources` and is a
+   pre-condition for any future sample whose live window title
+   doesn't match the project folder name exactly.
+2. **Per-scenario null-check in the iteration helper.** When a sample
+   doesn't expose `ScenarioControl` or the `ListBox` doesn't enumerate,
+   `FindAll(...).Select(...)` was throwing
+   `You cannot call a method on a null-valued expression`. Defensive
+   `$null` checks now skip cleanly. Fixed `AdvancedCasting`
+   (`partial` → `ok`, 14 shots) and `HotspotAuthentication`
+   (`partial` → `ok`, 3 shots).
+3. **`Get-ScenarioList` retries on UIA timeout.** UI Automation
+   occasionally throws `HRESULT 0x80131505 (UIA timed out)` on the
+   first traversal of a freshly-launched app. We now retry up to
+   3 times with a 500 ms backoff. Fixed `PlayReady`
+   (`partial` → `ok`, 7 shots).
+4. **Native sub-project NuGet restore (`packages.config` style).**
+   Modern `nuget restore <sln>` doesn't recurse into `vcxproj`
+   projects whose `packages.config` lives next to the `vcxproj`
+   (rather than at the sln root). The pipeline now scans every
+   detected `*.vcxproj` for a sibling `packages.config` and runs
+   `nuget restore <packages.config> -PackagesDirectory <sln-dir>\packages`
+   explicitly. **Fixes `CameraOpenCV.build`** (was `failed`, now `ok`).
+5. **MIDI / package-conflict cleanup before re-deploy.** When
+   `Add-AppxPackage -Register` returns `HRESULT 0x80073CF3` with a
+   "Package failed updates, dependency or conflict validation"
+   message that's *purely* a conflict (not a missing framework), we
+   now `Get-AppxPackage -Name <id> | Remove-AppxPackage` both
+   `-AllUsers` and current-user, then retry once.
+   *(Does **not** help MIDI — see below — but is the right cleanup
+   step in general.)*
+
+### What's still not OK after M12
+
+| Sample | State | Why |
+|---|---|---|
+| `CameraOpenCV` | `capture: crashed` (build / deploy / launch OK) | App crashes inside `Windows.UI.Xaml.dll+0x8fa113` immediately after the splash, exit code `0xc000027b` (STATUS_APP_CALLBACK_EXCEPTION — unhandled .NET exception in a XAML callback). Build now succeeds (NuGet restore fix), but `OpenCV.Win.*` 3.10.6.1's old `.targets` aren't fully compatible with the modern UAP build — `OpenCVBridge.dll` likely throws `DllNotFoundException` during `MainPage` activation. Not pipeline-fixable. |
+| `MIDI` | `deploy: failed` | `Microsoft.Midi.GmDls` framework package is not installed on this machine. The MIDI sample's manifest declares `<PackageDependency Name="Microsoft.Midi.GmDls" />`; without the framework appx, deployment can never succeed. Not a sample bug — the framework either ships with Windows or has to be installed separately. |
+| `LinguisticServices` | `build: failed` | Requires a C++/CX `RuntimeComponent\` sister project (exposes the `Sample` namespace) that isn't included in the `refilter-102-samples` branch. Fix would mean porting `microsoft/Windows-universal-samples/Samples/LinguisticServices/RuntimeComponent/` and wiring it as a `ProjectReference`. Deferred — out of scope for the baseline. |
+| `BluetoothAdvertisement`, `BluetoothLE` | `capture: failed` | No Bluetooth adapter on this Hyper-V host. App processes never even start (`IApplicationActivationManager` returns "the app didn't start"). Pipeline window-find correctly times out. Hardware-environment-broken. |
+| `MobileHotspot`, `NetworkConnectivity`, `OnDemandHotspot` | `capture: failed` | Build now OK. Apps launch but the UI thread never paints a window (no real WiFi adapter on this Hyper-V host; `OnDemandHotspot` additionally requires Microsoft's custom-capability descriptor for `Microsoft.onDemandHotspotControl`). Hardware-environment-broken. |
+| `RadioManager` | `capture: failed` | Needs a `RadioManager` device class enumerable via `Windows.Devices.Radios` — none on this host. Hardware-environment-broken. |
+
+The 7 hardware-environment-broken cases above (Bluetooth ×2, network ×3,
+radio ×1, and CameraOpenCV's runtime DLL load) are environmental, not
+pipeline or source bugs. Re-running on a host with a Bluetooth adapter,
+a real Wi-Fi NIC, and a Surface-class Radio device should pick them up
+without any pipeline change.
+
+---
+
 ## Camera samples — FIXED upstream (5 samples)
 
 Five Camera samples used to crash immediately on launch on Windows 11

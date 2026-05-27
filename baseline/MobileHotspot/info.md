@@ -2,14 +2,16 @@
 
 > **Source**: `Samples\MobileHotspot\cs\`  
 > **Feature**: MobileHotspot C# Sample  
+> **AUMID**: `Microsoft.SDKSamples.MobileHotspot.CS_8wekyb3d8bbwe!App`  
+> **PackageFamilyName**: `Microsoft.SDKSamples.MobileHotspot.CS_8wekyb3d8bbwe`  
 
 ## Build / deploy / capture status
-- build: failed
-- deploy: pending
-- launch: pending
-- capture: pending
+- build: ok
+- deploy: ok
+- launch: ok
+- capture: failed
 - uninstall: pending
-- error: msbuild exit 1, see msbuild.log
+- error: Could not find main window (looked for 'MobileHotspot C# Sample')
 
 ---
 

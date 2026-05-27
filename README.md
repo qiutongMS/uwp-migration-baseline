@@ -27,13 +27,13 @@ If you want to **reproduce** the baseline (or re-run after the migration), follo
 
 | Capture state | Count | Meaning |
 |---|---:|---|
-| `ok`            | 65 | Standard scenario iteration succeeded end-to-end |
+| `ok`            | 70 | Standard scenario iteration succeeded end-to-end |
 | `ok-generic`    | 10 | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
-| `partial`       | 3  | Got some scenarios then hit a sample-specific bug (null-ref or UIA timing — `AdvancedCasting`, `HotspotAuthentication`, `PlayReady`, plus pre-existing `XamlBind` scenario 5 null-ref) |
-| `failed`        | 4  | Pipeline could not locate the main window after launch (sample uses a non-default window title — `BluetoothAdvertisement`, `BluetoothLE`, `OnDemandHotspot`, `RadioManager` — needs per-sample title mapping to recover) |
-| `pending`       | 7  | Build / deploy failed before reaching capture (6× msbuild — `ApplicationResources`, `CameraOpenCV`, `LinguisticServices`, `MobileHotspot`, `NetworkConnectivity`, `PersonalDataEncryption` — and 1× `Add-AppxPackage` HRESULT 0x80073CF3 — `MIDI`) |
+| `failed`        | 6  | App launched but the UI thread never paints a window — all six are hardware-environment-broken on the test host (`BluetoothAdvertisement`, `BluetoothLE` — no Bluetooth adapter; `MobileHotspot`, `NetworkConnectivity`, `OnDemandHotspot` — no real Wi-Fi NIC / Hotspot capability; `RadioManager` — no enumerable `RadioManager` device). Build / deploy / launch all OK; capture times out because the app doesn't render. |
+| `pending`       | 2  | Build / deploy failed before reaching capture: `LinguisticServices` (needs an upstream C++/CX `RuntimeComponent` not in `refilter-102-samples`) and `MIDI` (manifest declares `<PackageDependency Name="Microsoft.Midi.GmDls" />`; that framework appx is not installed on the host). |
+| `crashed`       | 1  | `CameraOpenCV` — build/deploy/launch OK, but the app crashes inside `Windows.UI.Xaml.dll` (`0xc000027b`) immediately after splash. `OpenCV.Win.* 3.10.6.1` native bindings load but their old `.targets` aren't fully compatible with the modern UAP build. Not pipeline-fixable. |
 
-508 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list and the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket.
+541 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list and the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket.
 
 ## Prerequisites
 

@@ -14,9 +14,8 @@
 - build: ok
 - deploy: ok
 - launch: ok
-- capture: partial
+- capture: ok
 - uninstall: ok
-- error: Scenario iteration: You cannot call a method on a null-valued expression.
 
 ## Main page
 ![Main page](screenshots/00_main.png)
@@ -62,6 +61,44 @@ After click **Volume**:
 After click **Full Screen**:
 
 ![after_Full Screen](screenshots/02_2_-_Casting_APIs_and_a_Custom_Cast_Button__after_Full_Screen.png)
+
+---
+
+## Scenario 3 - 3 - DIAL Sender Universal Windows app
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/03_3_-_DIAL_Sender_Universal_Windows_app__initial.png)
+
+After click **Pause**:
+
+![after_Pause](screenshots/03_3_-_DIAL_Sender_Universal_Windows_app__after_Pause.png)
+
+After click **Volume**:
+
+![after_Volume](screenshots/03_3_-_DIAL_Sender_Universal_Windows_app__after_Volume.png)
+
+After click **Exit Full Screen**:
+
+![after_Exit Full Screen](screenshots/03_3_-_DIAL_Sender_Universal_Windows_app__after_Exit_Full_Screen.png)
+
+---
+
+## Scenario 4 - 4 - DIAL Receiver Windows Universal app
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/04_4_-_DIAL_Receiver_Windows_Universal_app__initial.png)
+
+---
+
+## Scenario 5 - 5 - Multi-View Media Application
+
+---
+
+## Scenario 6 - 6 - Combine Casting Methods
 
 ---
 

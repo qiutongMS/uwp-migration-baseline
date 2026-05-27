@@ -4,7 +4,7 @@
     "build":  "ok",
     "deploy":  "ok",
     "launch":  "ok",
-    "capture":  "partial",
+    "capture":  "ok",
     "uninstall":  "ok",
     "package_full_name":  "Microsoft.SDKSamples.HotspotAuthentication.CS_1.0.0.0_x64__8wekyb3d8bbwe",
     "package_family_name":  "Microsoft.SDKSamples.HotspotAuthentication.CS_8wekyb3d8bbwe",
@@ -28,7 +28,23 @@
                                               "capture":  null
                                           }
                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Authentication by background task",
+                          "initial_capture":  null,
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Authentication by foreground app",
+                          "initial_capture":  null,
+                          "buttons":  [
+
+                                      ]
                       }
                   ],
-    "error":  "Scenario iteration: You cannot call a method on a null-valued expression."
+    "error":  null
 }

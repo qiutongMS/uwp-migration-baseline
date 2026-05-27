@@ -9,9 +9,8 @@
 - build: ok
 - deploy: ok
 - launch: ok
-- capture: partial
+- capture: ok
 - uninstall: ok
-- error: Scenario iteration: Exception calling "FindFirst" with "2" argument(s): "Operation timed out. (Exception from HRESULT: 0x80131505)"
 
 ## Main page
 ![Main page](screenshots/00_main.png)
@@ -76,6 +75,11 @@ Initial state:
 - **Button**  - content="Stop"
 - **MediaElement**  - name="mediaElement"
 
+### Screenshots
+Initial state:
+
+![initial](screenshots/03_3_Manage_HW_SW_DRM__initial.png)
+
 ---
 
 ## Scenario 4 - Secure Stop
@@ -89,4 +93,9 @@ Initial state:
 - **Button**  - content="Play"
 - **Button**  - content="Stop"
 - **MediaElement**  - name="mediaElement"
+
+### Screenshots
+Initial state:
+
+![initial](screenshots/04_4_Secure_Stop__initial.png)
 

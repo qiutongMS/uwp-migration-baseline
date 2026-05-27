@@ -1,16 +1,16 @@
 # UWP Samples - Migration Baseline
 
-Last update: 2026-05-26 08:50Z  (progress: 89/89)
+Last update: 2026-05-27 09:59:02Z  (progress: 89/89)
 
 | # | Sample | Build | Deploy | Launch | Capture | Scenarios | Shots | Time(s) | Error |
 |---|--------|-------|--------|--------|---------|-----------|-------|---------|-------|
 | 1 | [Accelerometer](./Accelerometer/info.md) | ok | ok | ok | ok | 6 | 7 | 43 |  |
 | 2 | [ActivitySensor](./ActivitySensor/info.md) | ok | ok | ok | ok | 4 | 9 | 50 |  |
 | 3 | [AdaptiveStreaming](./AdaptiveStreaming/info.md) | skipped | ok | ok | ok | 7 | 29 | 62 |  |
-| 4 | [AdvancedCasting](./AdvancedCasting/info.md) | ok | ok | ok | partial |  | 9 | 50 | Scenario iteration: You cannot call a method on a null-valued expression. |
+| 4 | [AdvancedCasting](./AdvancedCasting/info.md) | ok | ok | ok | ok | 0 | 14 | 77 |  |
 | 5 | [Altimeter](./Altimeter/info.md) | ok | ok | ok | ok | 2 | 5 | 34 |  |
 | 6 | [ApplicationData](./ApplicationData/info.md) | skipped | ok | ok | ok | 7 | 6 | 19 |  |
-| 7 | [ApplicationResources](./ApplicationResources/info.md) | failed | pending | pending | pending | 0 | 0 | 9 | msbuild exit 1, see msbuild.log |
+| 7 | [ApplicationResources](./ApplicationResources/info.md) | ok | ok | ok | ok | 13 | 23 | 56 |  |
 | 8 | [AssociationLaunching](./AssociationLaunching/info.md) | skipped | ok | ok | ok | 4 | 8 | 21 |  |
 | 9 | [BackgroundActivation](./BackgroundActivation/info.md) | ok | ok | ok | ok | 6 | 14 | 73 |  |
 | 10 | [BackgroundMediaPlayback](./BackgroundMediaPlayback/info.md) | ok | ok | ok | ok-generic | 1 | 1 | 45 |  |
@@ -27,7 +27,7 @@ Last update: 2026-05-26 08:50Z  (progress: 89/89)
 | 21 | [CameraFrames](./CameraFrames/info.md) | skipped | ok | ok | ok | 2 | 3 | 16 |  |
 | 22 | [CameraGetPreviewFrame](./CameraGetPreviewFrame/info.md) | skipped | ok | ok | ok-generic | 0 | 1 | 9 |  |
 | 23 | [CameraManualControls](./CameraManualControls/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 46 |  |
-| 24 | [CameraOpenCV](./CameraOpenCV/info.md) | failed | pending | pending | pending |  | 0 | 4 | msbuild exit 1, see msbuild.log |
+| 24 | [CameraOpenCV](./CameraOpenCV/info.md) | ok | ok | ok | crashed | 1 | 0 | 47 | App window found (hwnd=5245388) but PrintWindow returned null after retry - app  |
 | 25 | [CameraProfile](./CameraProfile/info.md) | skipped | ok | ok | ok | 3 | 6 | 18 |  |
 | 26 | [CameraResolution](./CameraResolution/info.md) | skipped | ok | ok | ok | 3 | 7 | 21 |  |
 | 27 | [CameraStarterKit](./CameraStarterKit/info.md) | ok | ok | ok | ok-generic | 0 | 1 | 33 |  |
@@ -50,7 +50,7 @@ Last update: 2026-05-26 08:50Z  (progress: 89/89)
 | 44 | [Geolocation](./Geolocation/info.md) | ok | ok | ok | ok-generic | 8 | 1 | 32 |  |
 | 45 | [Geotag](./Geotag/info.md) | ok | ok | ok | ok |  | 2 | 22 |  |
 | 46 | [Gyrometer](./Gyrometer/info.md) | ok | ok | ok | ok | 3 | 6 | 30 |  |
-| 47 | [HotspotAuthentication](./HotspotAuthentication/info.md) | ok | ok | ok | partial | 3 | 3 | 52 | Scenario iteration: You cannot call a method on a null-valued expression. |
+| 47 | [HotspotAuthentication](./HotspotAuthentication/info.md) | ok | ok | ok | ok | 3 | 3 | 31 |  |
 | 48 | [Inclinometer](./Inclinometer/info.md) | ok | ok | ok | ok | 3 | 6 | 29 |  |
 | 49 | [KeyCredentialManager](./KeyCredentialManager/info.md) | ok | ok | ok | ok |  | 2 | 22 |  |
 | 50 | [LampArray](./LampArray/info.md) | ok | ok | ok | ok | 2 | 5 | 34 |  |
@@ -59,21 +59,21 @@ Last update: 2026-05-26 08:50Z  (progress: 89/89)
 | 53 | [LightSensor](./LightSensor/info.md) | ok | ok | ok | ok | 2 | 5 | 27 |  |
 | 54 | [LinguisticServices](./LinguisticServices/info.md) | failed | pending | pending | pending | 4 | 0 | 5 | msbuild exit 1, see msbuild.log |
 | 55 | [Magnetometer](./Magnetometer/info.md) | ok | ok | ok | ok | 2 | 5 | 27 |  |
-| 56 | [MIDI](./MIDI/info.md) | ok | failed | pending | pending | 3 | 0 | 18 | Add-AppxPackage failed: Deployment failed with HRESULT: 0x80073CF3, Package fail... |
+| 56 | [MIDI](./MIDI/info.md) | ok | failed | pending | pending | 3 | 0 | 19 | Add-AppxPackage (after cleanup) failed: Deployment failed with HRESULT: 0x80073C |
 | 57 | [MobileBroadband](./MobileBroadband/info.md) | ok | ok | ok | ok |  | 12 | 39 |  |
-| 58 | [MobileHotspot](./MobileHotspot/info.md) | failed | pending | pending | pending | 2 | 0 | 4 | msbuild exit 1, see msbuild.log |
-| 59 | [NetworkConnectivity](./NetworkConnectivity/info.md) | failed | pending | pending | pending | 3 | 0 | 12 | msbuild exit 1, see msbuild.log |
+| 58 | [MobileHotspot](./MobileHotspot/info.md) | ok | ok | ok | failed | 2 | 0 | 45 | Could not find main window (looked for 'MobileHotspot C# Sample') |
+| 59 | [NetworkConnectivity](./NetworkConnectivity/info.md) | ok | ok | ok | failed | 3 | 0 | 41 | Could not find main window (looked for 'NetworkConnectivity C# Sample') |
 | 60 | [NfcProvisioner](./NfcProvisioner/info.md) | ok | ok | ok | ok |  | 2 | 23 |  |
 | 61 | [NumberFormatting](./NumberFormatting/info.md) | ok | ok | ok | ok | 7 | 15 | 45 |  |
 | 62 | [OCR](./OCR/info.md) | ok | ok | ok | ok-generic |  | 1 | 22 |  |
-| 63 | [OnDemandHotspot](./OnDemandHotspot/info.md) | ok | ok | ok | failed |  | 0 | 51 | Could not find main window (looked for 'OnDemandHotspot C# Sample') |
+| 63 | [OnDemandHotspot](./OnDemandHotspot/info.md) | ok | ok | ok | failed | 1 | 0 | 42 | Could not find main window (looked for 'OnDemandHotspot C# Sample') |
 | 64 | [OrientationSensor](./OrientationSensor/info.md) | ok | ok | ok | ok | 4 | 5 | 29 |  |
 | 65 | [Package](./Package/info.md) | skipped | ok | ok | ok | 3 | 6 | 18 |  |
 | 66 | [Pedometer](./Pedometer/info.md) | ok | ok | ok | ok | 4 | 9 | 38 |  |
 | 67 | [PenHaptics](./PenHaptics/info.md) | ok | ok | ok | ok | 5 | 7 | 31 |  |
-| 68 | [PersonalDataEncryption](./PersonalDataEncryption/info.md) | failed | pending | pending | pending | 2 | 0 | 4 | msbuild exit 1, see msbuild.log |
+| 68 | [PersonalDataEncryption](./PersonalDataEncryption/info.md) | ok | ok | ok | ok | 2 | 3 | 25 |  |
 | 69 | [Personalization](./Personalization/info.md) | ok | ok | ok | ok |  | 2 | 22 |  |
-| 70 | [PlayReady](./PlayReady/info.md) | ok | ok | ok | partial | 4 | 5 | 160 | Scenario iteration: Exception calling "FindFirst" with "2" argument(s): "Operati... |
+| 70 | [PlayReady](./PlayReady/info.md) | ok | ok | ok | ok | 4 | 7 | 630 |  |
 | 71 | [PowerGrid](./PowerGrid/info.md) | ok | ok | ok | ok | 2 | 5 | 28 |  |
 | 72 | [PresenceSensor](./PresenceSensor/info.md) | ok | ok | ok | ok | 3 | 9 | 35 |  |
 | 73 | [Printing](./Printing/info.md) | skipped | ok | ok | ok | 6 | 7 | 19 |  |
@@ -93,4 +93,3 @@ Last update: 2026-05-26 08:50Z  (progress: 89/89)
 | 87 | [XamlDataVirtualization](./XamlDataVirtualization/info.md) | ok | ok | ok | ok |  | 4 | 26 |  |
 | 88 | [XamlDeferLoadStrategy](./XamlDeferLoadStrategy/info.md) | ok | ok | ok | ok |  | 5 | 28 |  |
 | 89 | [XamlFocusVisuals](./XamlFocusVisuals/info.md) | skipped | ok | ok | ok | 0 | 3 | 14 |  |
-
