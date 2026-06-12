@@ -5,21 +5,29 @@
 
 .PARAMETER SamplePath   Path to the sample root (e.g. ...\Samples\Calendar)
 .PARAMETER OutDir       Destination directory; static.json will be written here.
+.PARAMETER CodeDir      Optional override for the C# code directory (default: <SamplePath>\cs).
+                        Use this for multi-app samples like AppServices where each
+                        UWP app lives in its own subdir (cs\AppServicesClient, etc.).
+.PARAMETER SampleName   Optional override for the sample/app name embedded in static.json
+                        (default: leaf of SamplePath). For multi-app rows, pass the
+                        sub-project name (e.g. "AppServicesClient").
 
   Run in either PS 7 or 5.1.
 #>
 param(
     [Parameter(Mandatory=$true)] [string] $SamplePath,
-    [Parameter(Mandatory=$true)] [string] $OutDir
+    [Parameter(Mandatory=$true)] [string] $OutDir,
+    [string] $CodeDir,
+    [string] $SampleName
 )
 $ErrorActionPreference = 'Continue'
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 
-$sampleName = Split-Path $SamplePath -Leaf
-$csDir      = Join-Path $SamplePath 'cs'
+if ($SampleName) { $sampleName = $SampleName } else { $sampleName = Split-Path $SamplePath -Leaf }
+if ($CodeDir)    { $csDir      = $CodeDir }    else { $csDir      = Join-Path $SamplePath 'cs' }
 $sharedDir  = Join-Path $SamplePath 'shared'
 
-if (-not (Test-Path $csDir)) { Write-Error "No cs/ directory under $SamplePath"; exit 2 }
+if (-not (Test-Path $csDir)) { Write-Error "No cs/ directory at $csDir"; exit 2 }
 
 # --- 1. README ---
 $readmePath = Join-Path $SamplePath 'README.md'

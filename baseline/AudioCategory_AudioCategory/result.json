@@ -1,0 +1,285 @@
+﻿{
+    "sample":  "AudioCategory",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.AudioCategory.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.AudioCategory.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.AudioCategory.CS_8wekyb3d8bbwe!AudioCategory.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Movie",
+                          "initial_capture":  "01_1_Movie__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Movie__after_Select_Audio_File.png",
+                                              "popup_capture":  "01_1_Movie__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Movie__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Movie__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Media",
+                          "initial_capture":  "02_2_Media__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Media__after_Select_Audio_File.png",
+                                              "popup_capture":  "02_2_Media__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Media__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Media__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Game Chat",
+                          "initial_capture":  "03_3_Game_Chat__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Game_Chat__after_Select_Audio_File.png",
+                                              "popup_capture":  "03_3_Game_Chat__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Game_Chat__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Game_Chat__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Speech",
+                          "initial_capture":  "04_4_Speech__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "04_4_Speech__after_Select_Audio_File.png",
+                                              "popup_capture":  "04_4_Speech__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Speech__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Speech__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Communications",
+                          "initial_capture":  "05_5_Communications__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "05_5_Communications__after_Select_Audio_File.png",
+                                              "popup_capture":  "05_5_Communications__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Communications__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Communications__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Alerts",
+                          "initial_capture":  "06_6_Alerts__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "06_6_Alerts__after_Select_Audio_File.png",
+                                              "popup_capture":  "06_6_Alerts__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Alerts__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Alerts__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Sound Effects",
+                          "initial_capture":  "07_7_Sound_Effects__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "07_7_Sound_Effects__after_Select_Audio_File.png",
+                                              "popup_capture":  "07_7_Sound_Effects__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Sound_Effects__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Sound_Effects__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  8,
+                          "title":  "8) Game Effects",
+                          "initial_capture":  "08_8_Game_Effects__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "08_8_Game_Effects__after_Select_Audio_File.png",
+                                              "popup_capture":  "08_8_Game_Effects__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "08_8_Game_Effects__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "08_8_Game_Effects__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  9,
+                          "title":  "9) Game Media",
+                          "initial_capture":  "09_9_Game_Media__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "09_9_Game_Media__after_Select_Audio_File.png",
+                                              "popup_capture":  "09_9_Game_Media__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "09_9_Game_Media__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "09_9_Game_Media__after_Pause.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  10,
+                          "title":  "10) Other",
+                          "initial_capture":  "10_10_Other__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Select Audio File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "10_10_Other__after_Select_Audio_File.png",
+                                              "popup_capture":  "10_10_Other__popup_Select_Audio_File.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "10_10_Other__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "10_10_Other__after_Pause.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

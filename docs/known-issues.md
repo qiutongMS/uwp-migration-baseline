@@ -1,5 +1,76 @@
 ﻿# Known issues
 
+## M13 update — June 2026 (multi-project sample support, +7 baseline rows)
+
+The 89-sample baseline was missing 5 samples whose `cs\` directory contains
+sub-folders instead of a single flat `cs\<Sample>.csproj`. Pipeline discovery
+now recognises sub-projects and emits **one baseline row per UWP app**, so a
+sample that ships two UWP apps (e.g. `AppServices` ships
+`AppServicesClient` **and** `AppServicesProvider`) becomes two rows. Result:
+**89 → 96 rows, +164 PNGs**. Final summary: **78 ok / 10 ok-generic / 6 failed / 1 pending / 1 crashed**.
+
+### Schema (multi-app samples)
+
+| Layout | Row name |
+|---|---|
+| Single-app (`cs\<Sample>.csproj`)        | `<Sample>` (unchanged) |
+| Multi-project, single UWP app (`cs\<Sample>\<Sample>.csproj` + sibling WinRT component) | `<Sample>` |
+| Multi-app (`cs\<App1>\<App1>.csproj`, `cs\<App2>\<App2>.csproj`) | `<Sample>_<App1>`, `<Sample>_<App2>` |
+
+7 new rows added under this rule:
+
+| Row | Sample | UWP app folder |
+|---|---|---|
+| `AudioCreation` | AudioCreation | `cs\AudioCreation\` (sibling: `AudioCreationFrameInputNodeComponent` winmdobj) |
+| `BackgroundTask` | BackgroundTask | `cs\BackgroundTask\` (sibling: `Tasks` winmdobj) |
+| `BackgroundTransfer` | BackgroundTransfer | `cs\BackgroundTransfer\` (sibling: `Toasts` winmdobj) |
+| `AppServices_AppServicesClient` | AppServices | `cs\AppServicesClient\` |
+| `AppServices_AppServicesProvider` | AppServices | `cs\AppServicesProvider\` (+ sibling `RandomNumberService` winmdobj) |
+| `AudioCategory_AudioCategory` | AudioCategory | `cs\AudioCategory\` |
+| `AudioCategory_AudioCategoryCompanion` | AudioCategory | `cs\AudioCategoryCompanion\` |
+
+### What changed
+
+**Pipeline (`scripts/Run-All.ps1`, `scripts/Analyze-Sample.ps1`):**
+
+1. **`Get-SampleRows()` discovery rewrite.** Replaces the old flat
+   `cs\<Sample>.csproj` filter. For every sample under `Samples\`, scans
+   `cs\` for csprojs (at any depth ≤ 2), keeps only those with a sibling
+   `Package.appxmanifest` (= UWP app, not winmdobj component), and emits a
+   record `{RowName, AppName, RootDir, CodeDir}`. Single-app samples keep
+   their existing row names; multi-app samples get the `<Sample>_<App>`
+   suffix. The runner iterates these records, so the rest of the pipeline
+   (`Process-Sample.ps1`, `Capture-Sample.ps1`) didn't need changes.
+2. **`Analyze-Sample.ps1` accepts `-CodeDir` and `-SampleName` overrides.**
+   For the sub-project case, `$sampleName` and `$csDir` are overridden so
+   the analyzer reads from `cs\<SubApp>\` instead of inferring the wrong
+   path. `$sharedDir` and `$readmePath` still derive from the sample root
+   (correct for sub-project case since `README.md` / `shared/` live at the
+   sample root, not in the sub-folder).
+
+**Upstream content (committed in `qiutongMS/uwp-samples-standalone`):**
+
+| Path | What it is |
+|---|---|
+| `Samples\AppServices\shared\` (3 files) | `KeepConnectionOpenScenario.xaml`, `OpenCloseConnectionScenario.xaml`, `ShowPackageFamilyName.xaml` fetched from `microsoft/Windows-universal-samples` HEAD — sparse-checkout had dropped them. |
+| `Samples\AudioCategory\shared\` (11 files) | `PlaybackControl.xaml` + `Scenario1..Scenario10` XAML. |
+| `Samples\BackgroundTask\shared\` (6 files) | `Scenario1_..` through `Scenario6_..` XAML. |
+| `Samples\BackgroundTransfer\shared\` (7 files) | `Scenario1_..` through `Scenario7_..` XAML. |
+| `Samples\BackgroundTask\cs\BackgroundTask\Package.appxmanifest` | `<uap:LockScreen BadgeLogo="Assets\smalltile-sdk.png" />` → `Assets\badge-logo.png`. `BadgeLogo` requires 24×24; `smalltile-sdk.png` is 44×44 — `APPX1619` packaging error. `badge-logo.png` (24×24, 244 bytes) was already in `SharedContent\media\` and is the asset other samples (`BackgroundActivation`, `Geolocation`) use. |
+| `Samples\BackgroundTask\cs\BackgroundTask\BackgroundTask.csproj` | Added `<Content Include="$(SharedContentDir)\media\badge-logo.png"><Link>Assets\badge-logo.png</Link></Content>` so the asset is staged into the appx. |
+
+### Known follow-up (out of scope for M13)
+
+* `AudioCreation` static analyzer reports 5 scenarios while runtime captures
+  6. The file `Scenario3_FrameInputNode.xaml.cs` declares
+  `class Scenario3_FrameInput` (filename ≠ class name), and the analyzer's
+  filename-based derivation drops it. The runtime registry in
+  `SampleConfiguration.cs` enumerates correctly, so all 6 scenarios are
+  captured — only `static.json` undercounts. Fix is an analyzer
+  enhancement to parse the class declaration, not the sample.
+
+---
+
 ## M12 update — May 2026 (pipeline hardening + 5 sample fixes + LinguisticServices port)
 
 A second pass on the 89-sample refilter baseline brought the count from

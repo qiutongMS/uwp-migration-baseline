@@ -51,18 +51,67 @@ function Log-Progress([string]$msg) {
     Add-Content -Path $progressLog -Value $line -Encoding UTF8
 }
 
-# Enumerate samples that have a cs/ subdirectory containing at least one .csproj
-# (on some branches a sample is "deactivated" by removing its csproj while keeping the dir)
-$samples = Get-ChildItem $SamplesRoot -Directory | Where-Object {
-    $csDir = Join-Path $_.FullName 'cs'
-    if (-not (Test-Path $csDir)) { return $false }
-    if (-not (Get-ChildItem $csDir -Filter '*.csproj' -ErrorAction SilentlyContinue)) { return $false }
-    if ($Names -and $Names.Count -gt 0) { return ($Names -contains $_.Name) }
-    return ($_.Name -like $Filter)
-} | Sort-Object Name
+# Enumerate baseline rows.
+# A "row" is one runnable UWP app. Most samples are single-app (cs\<Name>.csproj
+# with a sibling Package.appxmanifest) and produce exactly one row whose name
+# equals the sample directory. Multi-app samples (cs\<SubApp1>\<SubApp1>.csproj,
+# cs\<SubApp2>\<SubApp2>.csproj, ...) produce one row per UWP app, named
+# <Sample>_<SubAppName> so each entry in _status.csv is unique and the per-row
+# OutDir / screenshots / info.md don't collide.
+#
+# A csproj is treated as a UWP app when it has a sibling Package.appxmanifest.
+# That filters out WinRT components / class libs (e.g. cs\Tasks\Tasks.csproj for
+# BackgroundTask, cs\CustomEffect\CustomEffect.csproj for AudioCreation,
+# cs\RandomNumberService\RandomNumberService.csproj for AppServices).
+function Get-SampleRows([string]$samplesRoot) {
+    $rows = @()
+    foreach ($s in Get-ChildItem $samplesRoot -Directory | Sort-Object Name) {
+        $csDir = Join-Path $s.FullName 'cs'
+        if (-not (Test-Path $csDir)) { continue }
+
+        $uwpApps = @()
+        # csproj directly under cs/
+        foreach ($p in Get-ChildItem $csDir -Filter '*.csproj' -ErrorAction SilentlyContinue) {
+            if (Test-Path (Join-Path $p.DirectoryName 'Package.appxmanifest')) { $uwpApps += $p }
+        }
+        # csproj in one-level subdir of cs/
+        foreach ($sub in Get-ChildItem $csDir -Directory -ErrorAction SilentlyContinue) {
+            foreach ($p in Get-ChildItem $sub.FullName -Filter '*.csproj' -ErrorAction SilentlyContinue) {
+                if (Test-Path (Join-Path $p.DirectoryName 'Package.appxmanifest')) { $uwpApps += $p }
+            }
+        }
+        if ($uwpApps.Count -eq 0) { continue }
+
+        if ($uwpApps.Count -eq 1) {
+            $app = $uwpApps[0]
+            $rows += [pscustomobject]@{
+                RowName = $s.Name
+                AppName = $s.Name
+                RootDir = $s.FullName
+                CodeDir = $app.DirectoryName
+            }
+        } else {
+            foreach ($app in $uwpApps) {
+                $sub = $app.BaseName
+                $rows += [pscustomobject]@{
+                    RowName = "$($s.Name)_$sub"
+                    AppName = $sub
+                    RootDir = $s.FullName
+                    CodeDir = $app.DirectoryName
+                }
+            }
+        }
+    }
+    return $rows
+}
+
+$samples = Get-SampleRows $SamplesRoot | Where-Object {
+    if ($Names -and $Names.Count -gt 0) { return ($Names -contains $_.RowName) }
+    return ($_.RowName -like $Filter)
+}
 
 $selector = if ($Names -and $Names.Count -gt 0) { "Names list ($($Names.Count) entries)" } else { "'$Filter'" }
-Log-Progress "=== RUN-ALL START: $($samples.Count) sample(s) matching $selector ==="
+Log-Progress "=== RUN-ALL START: $($samples.Count) row(s) matching $selector ==="
 
 # When the user runs a filtered subset (e.g. -Filter 'XamlMasterDetail'), we want to
 # UPDATE the entries for those samples in the existing _status.csv rather than wipe
@@ -373,7 +422,10 @@ function Write-IndexMd {
 $idx = 0
 foreach ($s in $samples) {
     $idx++
-    $name = $s.Name
+    $name    = $s.RowName
+    $appName = $s.AppName
+    $rootDir = $s.RootDir
+    $codeDir = $s.CodeDir
     $sampleOut = Join-Path $OutRoot $name
     New-Item -ItemType Directory -Force -Path $sampleOut | Out-Null
     $sampleStart = Get-Date
@@ -395,7 +447,8 @@ foreach ($s in $samples) {
 
     # 1) STATIC ANALYSIS
     try {
-        & $AnalyzeScript -SamplePath $s.FullName -OutDir $sampleOut 2>&1 | Out-Null
+        & $AnalyzeScript -SamplePath $rootDir -OutDir $sampleOut `
+            -CodeDir $codeDir -SampleName $appName 2>&1 | Out-Null
         if (Test-Path (Join-Path $sampleOut 'static.json')) {
             $rec.analyze = 'ok'
             $stat = Get-Content (Join-Path $sampleOut 'static.json') -Raw | ConvertFrom-Json
@@ -413,9 +466,9 @@ foreach ($s in $samples) {
     if (-not $SkipCapture) {
         $procArgs = @(
             '-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',$ProcessScript,
-            '-SamplePath',(Join-Path $s.FullName 'cs'),
+            '-SamplePath',$codeDir,
             '-OutDir',$sampleOut,
-            '-SampleName',$name
+            '-SampleName',$appName
         )
         if ($SkipBuild) { $procArgs += '-SkipBuild' }
 

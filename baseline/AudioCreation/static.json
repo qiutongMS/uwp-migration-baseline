@@ -1,0 +1,1404 @@
+{
+  "sample": "AudioCreation",
+  "feature_name": "AudioCreation",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.UI.Core.CoreDispatcherPriority.Normal"
+  ],
+  "api_references": [
+    "MainPage.Current",
+    "NotifyType.StatusMessage",
+    "Content.Equals",
+    "PickerLocationId.MusicLibrary",
+    "FileTypeFilter.Add",
+    "PickerViewMode.Thumbnail",
+    "AudioFileNodeCreationStatus.Success",
+    "String.Format",
+    "Status.ToString",
+    "NotifyType.ErrorMessage",
+    "TimeSpan.FromSeconds",
+    "Colors.Green",
+    "Colors.Blue",
+    "Color.FromArgb",
+    "StartTime.Value",
+    "AudioRenderCategory.Media",
+    "AudioGraph.CreateAsync",
+    "AudioGraphCreationStatus.Success",
+    "AudioDeviceNodeCreationStatus.Success",
+    "Colors.Red",
+    "FileTypeChoices.Add",
+    "Name.ToString",
+    "Colors.YellowGreen",
+    "FileType.ToString",
+    "MediaEncodingProfile.CreateWma",
+    "AudioEncodingQuality.High",
+    "MediaEncodingProfile.CreateMp3",
+    "MediaEncodingProfile.CreateWav",
+    "TranscodeFailureReason.None",
+    "Items.Clear",
+    "DeviceInformation.FindAllAsync",
+    "MediaDevice.GetAudioRenderSelector",
+    "Items.Add",
+    "MediaDevice.GetAudioCaptureSelector",
+    "QuantumSizeSelectionMode.LowestLatency",
+    "MediaCategory.Other",
+    "Dispatcher.RunAsync",
+    "Windows.UI",
+    "Core.CoreDispatcherPriority",
+    "EffectDefinitions.Add",
+    "Colors.White"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_FilePlayback",
+      "title": "File Playback",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario1_FilePlayback.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario1_FilePlayback.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "SampleHeader",
+          "text": "Description: File Playback"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "SampleDescription",
+          "text": "Using the AudioGraph API to playback from a file input. The loop and trim functionalities are demonstrated. The playback is started 3 seconds from the start of the file."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "fileButton",
+          "content": "Load File",
+          "handlers": {
+            "Click": "File_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "speaker",
+          "text": "Output Device"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "graphButton",
+          "content": "Start Graph",
+          "handlers": {
+            "Click": "Graph_Click"
+          }
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "loopToggle",
+          "header": "Loop",
+          "handlers": {
+            "Toggled": "LoopToggle_Toggled"
+          }
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "playSpeedSlider",
+          "header": "Playback Speed",
+          "handlers": {
+            "ValueChanged": "PlaySpeedSlider_ValueChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Threading.Tasks",
+        "Windows.Media.Audio",
+        "Windows.Media.Render",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.UI",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Controls.Primitives",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_FilePlayback",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 91
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 174
+        },
+        {
+          "name": "File_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "Content.Equals",
+            "PickerLocationId.MusicLibrary",
+            "FileTypeFilter.Add",
+            "PickerViewMode.Thumbnail",
+            "AudioFileNodeCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "TimeSpan.FromSeconds",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "FileOpenPicker",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 2676
+        },
+        {
+          "name": "Graph_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 37
+        },
+        {
+          "name": "TogglePlay",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "Colors.Blue",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 506
+        },
+        {
+          "name": "PlaySpeedSlider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 148
+        },
+        {
+          "name": "LoopToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [
+            "StartTime.Value"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 786
+        },
+        {
+          "name": "CreateAudioGraph",
+          "namespaces_used": [],
+          "api_refs": [
+            "AudioRenderCategory.Media",
+            "AudioGraph.CreateAsync",
+            "AudioGraphCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "AudioDeviceNodeCreationStatus.Success",
+            "Colors.Red",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "AudioGraphSettings",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1448
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_DeviceCapture",
+      "title": "Capture From Device",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario2_DeviceCapture.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario2_DeviceCapture.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario shows using AudioGraph for audio capture from a microphone with low latency. The captured signal is also monitored through a user-selected output device."
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "outputDevicesListBox",
+          "handlers": {
+            "SelectionChanged": "outputDevicesListBox_SelectionChanged"
+          }
+        },
+        {
+          "type": "ListBox",
+          "name": "",
+          "x_name": "inputDevicesListBox",
+          "handlers": {
+            "SelectionChanged": "inputDevicesListBox_SelectionChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Input Device"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "outputDevice",
+          "text": "Output Device"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "fileButton",
+          "content": "Pick Output File",
+          "handlers": {
+            "Click": "FileButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "recordStopButton",
+          "content": "Record",
+          "handlers": {
+            "Click": "RecordStopButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "createGraphButton",
+          "content": "Create Graph",
+          "handlers": {
+            "Click": "CreateGraphButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Collections.Generic",
+        "System.Threading.Tasks",
+        "Windows.Devices.Enumeration",
+        "Windows.Media.Audio",
+        "Windows.Media.Capture",
+        "Windows.Media.Devices",
+        "Windows.Media.MediaProperties",
+        "Windows.Media.Render",
+        "Windows.Media.Transcoding",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.UI",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_DeviceCapture",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 145
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 106
+        },
+        {
+          "name": "FileButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 49
+        },
+        {
+          "name": "RecordStopButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 49
+        },
+        {
+          "name": "CreateGraphButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 49
+        },
+        {
+          "name": "SelectOutputFile",
+          "namespaces_used": [],
+          "api_refs": [
+            "FileTypeChoices.Add",
+            "String.Format",
+            "Name.ToString",
+            "NotifyType.StatusMessage",
+            "AudioFileNodeCreationStatus.Success",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "Colors.Red",
+            "Colors.YellowGreen"
+          ],
+          "new_types": [
+            "FileSavePicker",
+            "List",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1923
+        },
+        {
+          "name": "CreateMediaEncodingProfile",
+          "namespaces_used": [],
+          "api_refs": [
+            "FileType.ToString",
+            "MediaEncodingProfile.CreateWma",
+            "AudioEncodingQuality.High",
+            "MediaEncodingProfile.CreateMp3",
+            "MediaEncodingProfile.CreateWav"
+          ],
+          "new_types": [
+            "ArgumentException"
+          ],
+          "ui_sets": [],
+          "body_length": 534
+        },
+        {
+          "name": "ToggleRecordStop",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "Colors.Blue",
+            "Color.FromArgb",
+            "TranscodeFailureReason.None",
+            "String.Format",
+            "NotifyType.ErrorMessage",
+            "Colors.Red",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1583
+        },
+        {
+          "name": "PopulateOutputDeviceList",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "DeviceInformation.FindAllAsync",
+            "MediaDevice.GetAudioRenderSelector",
+            "Items.Add"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 380
+        },
+        {
+          "name": "PopulateInputDeviceList",
+          "namespaces_used": [],
+          "api_refs": [
+            "Items.Clear",
+            "DeviceInformation.FindAllAsync",
+            "MediaDevice.GetAudioCaptureSelector",
+            "Items.Add"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 375
+        },
+        {
+          "name": "CreateAudioGraph",
+          "namespaces_used": [],
+          "api_refs": [
+            "AudioRenderCategory.Media",
+            "QuantumSizeSelectionMode.LowestLatency",
+            "AudioGraph.CreateAsync",
+            "AudioGraphCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "NotifyType.StatusMessage",
+            "AudioDeviceNodeCreationStatus.Success",
+            "Colors.Red",
+            "Colors.Green",
+            "MediaCategory.Other"
+          ],
+          "new_types": [
+            "AudioGraphSettings",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 3146
+        },
+        {
+          "name": "Graph_UnrecoverableErrorOccurred",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 851
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_Submix",
+      "title": "Using A Submix Node",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario4_Submix.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario4_Submix.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario shows the use of a Submix node. A Submix node can be used to to mix multiple streams into a single one or apply an effect to multiple streams."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "fileButton1",
+          "content": "Load File 1",
+          "handlers": {
+            "Click": "File1_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "fileButton2",
+          "content": "Load File 2",
+          "handlers": {
+            "Click": "File2_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "submixLabel",
+          "text": "SubMix Node"
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "echoEffectToggle",
+          "header": "Echo",
+          "handlers": {
+            "Toggled": "EchoEffectToggle_Toggled"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "speaker",
+          "text": "Output Device"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "graphButton",
+          "content": "Start Graph",
+          "handlers": {
+            "Click": "GraphButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Threading.Tasks",
+        "Windows.Media.Audio",
+        "Windows.Media.Render",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.UI",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_Submix",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 91
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 106
+        },
+        {
+          "name": "File1_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "PickerLocationId.MusicLibrary",
+            "FileTypeFilter.Add",
+            "PickerViewMode.Thumbnail",
+            "AudioFileNodeCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "Colors.Blue",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "FileOpenPicker",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 2374
+        },
+        {
+          "name": "File2_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "PickerLocationId.MusicLibrary",
+            "FileTypeFilter.Add",
+            "PickerViewMode.Thumbnail",
+            "AudioFileNodeCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "Colors.Blue",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "FileOpenPicker",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 2270
+        },
+        {
+          "name": "GraphButton_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 37
+        },
+        {
+          "name": "TogglePlay",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "Colors.Blue",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1012
+        },
+        {
+          "name": "EchoEffectToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 356
+        },
+        {
+          "name": "CreateAudioGraph",
+          "namespaces_used": [],
+          "api_refs": [
+            "AudioRenderCategory.Media",
+            "AudioGraph.CreateAsync",
+            "AudioGraphCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "AudioDeviceNodeCreationStatus.Success",
+            "Colors.Red",
+            "NotifyType.StatusMessage",
+            "Colors.Green",
+            "EffectDefinitions.Add"
+          ],
+          "new_types": [
+            "AudioGraphSettings",
+            "SolidColorBrush",
+            "EchoEffectDefinition"
+          ],
+          "ui_sets": [],
+          "body_length": 2428
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5_InboxEffects",
+      "title": "Inbox Effects",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario5_InboxEffects.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario5_InboxEffects.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario is to demonstrate the use of Built-In Effects."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "fileButton",
+          "content": "Load File",
+          "handlers": {
+            "Click": "File_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "speaker",
+          "text": "Output Device"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "graphButton",
+          "content": "Start Graph",
+          "handlers": {
+            "Click": "Graph_Click"
+          }
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "echoEffectToggle",
+          "header": "ECHO EFFECT",
+          "handlers": {
+            "Toggled": "EchoEffectToggle_Toggled"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "echoLabel",
+          "text": "Delay: 500ms"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "echoSlider",
+          "handlers": {
+            "ValueChanged": "EchoSlider_ValueChanged"
+          }
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "reverbEffectToggle",
+          "header": "REVERB EFFECT",
+          "handlers": {
+            "Toggled": "ReverbEffectToggle_Toggled"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "decayLabel",
+          "text": "Decay: 5s"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "decaySlider",
+          "handlers": {
+            "ValueChanged": "DecaySlider_ValueChanged"
+          }
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "limiterEffectToggle",
+          "header": "LIMITER EFFECT",
+          "handlers": {
+            "Toggled": "LimiterEffectToggle_Toggled"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "loudnessLabel",
+          "text": "Loudness: 1000"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "loudnessSlider",
+          "handlers": {
+            "ValueChanged": "LoudnessSlider_ValueChanged"
+          }
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "eqToggle",
+          "header": "EQUALIZER EFFECT",
+          "handlers": {
+            "Toggled": "EqToggle_Toggled"
+          }
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "eq1Slider",
+          "handlers": {
+            "ValueChanged": "Eq1Slider_ValueChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "eq1SliderLabel",
+          "text": "100Hz"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "eq2Slider",
+          "handlers": {
+            "ValueChanged": "Eq2Slider_ValueChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "eq2SliderLabel",
+          "text": "900Hz"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "eq3Slider",
+          "handlers": {
+            "ValueChanged": "Eq3Slider_ValueChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "eq3SliderLabel",
+          "text": "5kHz"
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "eq4Slider",
+          "handlers": {
+            "ValueChanged": "Eq4Slider_ValueChanged"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "eq4SliderLabel",
+          "text": "12kHz"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "SDKTemplate",
+        "System",
+        "System.Threading.Tasks",
+        "Windows.Media.Audio",
+        "Windows.Media.Render",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.UI",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Controls.Primitives",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5_InboxEffects",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 91
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 106
+        },
+        {
+          "name": "File_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "PickerLocationId.MusicLibrary",
+            "FileTypeFilter.Add",
+            "PickerViewMode.Thumbnail",
+            "AudioFileNodeCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "FileOpenPicker",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 2353
+        },
+        {
+          "name": "Graph_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 37
+        },
+        {
+          "name": "TogglePlay",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "Colors.Blue",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 474
+        },
+        {
+          "name": "EchoEffectToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [
+            "Colors.White",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 679
+        },
+        {
+          "name": "EchoSlider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 283
+        },
+        {
+          "name": "ReverbEffectToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [
+            "Colors.White",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 692
+        },
+        {
+          "name": "DecaySlider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 292
+        },
+        {
+          "name": "LimiterEffectToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [
+            "Colors.White",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 707
+        },
+        {
+          "name": "LoudnessSlider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 298
+        },
+        {
+          "name": "EqToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [
+            "Colors.White",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1488
+        },
+        {
+          "name": "ConvertRange",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 297
+        },
+        {
+          "name": "Eq1Slider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 220
+        },
+        {
+          "name": "Eq2Slider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 221
+        },
+        {
+          "name": "Eq3Slider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 221
+        },
+        {
+          "name": "Eq4Slider_ValueChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 221
+        },
+        {
+          "name": "CreateEchoEffect",
+          "namespaces_used": [],
+          "api_refs": [
+            "EffectDefinitions.Add"
+          ],
+          "new_types": [
+            "EchoEffectDefinition"
+          ],
+          "ui_sets": [],
+          "body_length": 628
+        },
+        {
+          "name": "CreateReverbEffect",
+          "namespaces_used": [],
+          "api_refs": [
+            "EffectDefinitions.Add"
+          ],
+          "new_types": [
+            "ReverbEffectDefinition"
+          ],
+          "ui_sets": [],
+          "body_length": 787
+        },
+        {
+          "name": "CreateLimiterEffect",
+          "namespaces_used": [],
+          "api_refs": [
+            "EffectDefinitions.Add"
+          ],
+          "new_types": [
+            "LimiterEffectDefinition"
+          ],
+          "ui_sets": [],
+          "body_length": 387
+        },
+        {
+          "name": "CreateEqEffect",
+          "namespaces_used": [],
+          "api_refs": [
+            "EffectDefinitions.Add"
+          ],
+          "new_types": [
+            "EqualizerEffectDefinition"
+          ],
+          "ui_sets": [],
+          "body_length": 1254
+        },
+        {
+          "name": "CreateAudioGraph",
+          "namespaces_used": [],
+          "api_refs": [
+            "AudioRenderCategory.Media",
+            "AudioGraph.CreateAsync",
+            "AudioGraphCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "AudioDeviceNodeCreationStatus.Success",
+            "Colors.Red",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "AudioGraphSettings",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1458
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario6_CustomEffects",
+      "title": "Custom Effects",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario6_CustomEffects.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation\\Scenario6_CustomEffects.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "This scenario shows using custom effects with the AudioGraph API. In this example, an echo effect is created using the IBasicAudioEffect interface."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "fileButton",
+          "content": "Load File",
+          "handlers": {
+            "Click": "File_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "speaker",
+          "text": "Output Device"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "graphButton",
+          "content": "Start Graph",
+          "handlers": {
+            "Click": "Graph_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "StatusBlock"
+        }
+      ],
+      "usings": [
+        "CustomEffect",
+        "SDKTemplate",
+        "System",
+        "System.Threading.Tasks",
+        "Windows.Foundation.Collections",
+        "Windows.Media.Audio",
+        "Windows.Media.Effects",
+        "Windows.Media.Render",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.UI",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario6_CustomEffects",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 91
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 106
+        },
+        {
+          "name": "File_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 48
+        },
+        {
+          "name": "SelectInputFile",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "PickerLocationId.MusicLibrary",
+            "FileTypeFilter.Add",
+            "PickerViewMode.Thumbnail",
+            "AudioFileNodeCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "FileOpenPicker",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1961
+        },
+        {
+          "name": "Graph_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 37
+        },
+        {
+          "name": "TogglePlay",
+          "namespaces_used": [],
+          "api_refs": [
+            "Content.Equals",
+            "Colors.Blue",
+            "Color.FromArgb"
+          ],
+          "new_types": [
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 506
+        },
+        {
+          "name": "CreateAudioGraph",
+          "namespaces_used": [],
+          "api_refs": [
+            "AudioRenderCategory.Media",
+            "AudioGraph.CreateAsync",
+            "AudioGraphCreationStatus.Success",
+            "String.Format",
+            "Status.ToString",
+            "NotifyType.ErrorMessage",
+            "AudioDeviceNodeCreationStatus.Success",
+            "Colors.Red",
+            "NotifyType.StatusMessage",
+            "Colors.Green"
+          ],
+          "new_types": [
+            "AudioGraphSettings",
+            "SolidColorBrush"
+          ],
+          "ui_sets": [],
+          "body_length": 1437
+        },
+        {
+          "name": "AddCustomEffect",
+          "namespaces_used": [],
+          "api_refs": [
+            "EffectDefinitions.Add"
+          ],
+          "new_types": [
+            "PropertySet",
+            "AudioEffectDefinition"
+          ],
+          "ui_sets": [],
+          "body_length": 478
+        },
+        {
+          "name": "FileInput_FileCompleted",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 501
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

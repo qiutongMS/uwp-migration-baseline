@@ -1,0 +1,23 @@
+﻿{
+    "sample":  "AppServicesProvider",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AppServices\\cs\\AppServicesProvider",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.AppServicesProvider.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.AppServicesProvider.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.AppServicesProvider.CS_8wekyb3d8bbwe!AppServicesProvider.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Show Package Family Name",
+                          "initial_capture":  "01_1_Show_Package_Family_Name__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}
