@@ -1,0 +1,893 @@
+﻿{
+    "sample":  "LampArray",
+    "feature_name":  "LampArray C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Storage.Streams.Buffer"
+                       ],
+    "api_references":  [
+                           "DeviceInformation.CreateWatcher",
+                           "LampArray.GetDeviceSelector",
+                           "LampArray.FromIdAsync",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "NotifyType.ErrorMessage",
+                           "LampArrayKind.ToString",
+                           "LampArraysSummary.Text",
+                           "OffButton.IsChecked",
+                           "Colors.Black",
+                           "SetColorButton.IsChecked",
+                           "Colors.Green",
+                           "GradientButton.IsChecked",
+                           "WasdButton.IsChecked",
+                           "BrightnessSlider.Value",
+                           "BrightnessSlider.Maximum",
+                           "Enumerable.Range",
+                           "Colors.Blue",
+                           "Enumerable.Repeat",
+                           "Colors.White",
+                           "ImageBitmap.Source",
+                           "LampArrayEffectPlaylist.StopAll",
+                           "StorageFile.GetFileFromApplicationUriAsync",
+                           "FileAccessMode.Read",
+                           "BitmapDecoder.CreateAsync",
+                           "TimeSpan.MaxValue",
+                           "LampArrayEffectPlaylist.StartAll",
+                           "LampArrayEffectStartMode.Simultaneous",
+                           "TimeSpan.FromMilliseconds",
+                           "LampArrayRepetitionMode.Forever",
+                           "SuggestedBitmapSize.Width",
+                           "SuggestedBitmapSize.Height",
+                           "Math.Min",
+                           "CanvasDevice.GetSharedDevice",
+                           "BitmapPixelFormat.Bgra8",
+                           "BitmapAlphaMode.Premultiplied",
+                           "Windows.Storage",
+                           "Streams.Buffer",
+                           "Colors.Red",
+                           "LampArrayEffectStartMode.Sequential",
+                           "LampArrayEffectCompletionBehavior.KeepState",
+                           "Colors.Yellow",
+                           "LampArrayEffectPlaylist.PauseAll"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Basics",
+                          "title":  "LampArray Basics",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampArray\\shared\\Scenario1_Basics.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampArray\\cs\\Scenario1_Basics.xaml.cs",
+                          "description":  "Demonstrates basic device properties and RGB lighting operations of Windows.Devices.Lights.LampArray.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Demonstrates basic device properties and RGB lighting operations of Windows.Devices.Lights.LampArray."
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "OffButton"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "SetColorButton"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "GradientButton"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "WasdButton"
+                                           },
+                                           {
+                                               "type":  "Slider",
+                                               "name":  "",
+                                               "x_name":  "BrightnessSlider",
+                                               "header":  "Brightness"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "100"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Apply",
+                                               "handlers":  {
+                                                                "Click":  "Apply_Clicked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "LampArraysSummary",
+                                               "inner_text":  "Attached LampArrays"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Linq",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Lights",
+                                         "Windows.System",
+                                         "Windows.UI",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Basics",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "LampArray.GetDeviceSelector"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  47
+                                           },
+                                           {
+                                               "name":  "Watcher_Added",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArray.FromIdAsync",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "LampArrayInfo"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1242
+                                           },
+                                           {
+                                               "name":  "Watcher_Removed",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  457
+                                           },
+                                           {
+                                               "name":  "LampArray_AvailabilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  158
+                                           },
+                                           {
+                                               "name":  "UpdateLampArrayList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayKind.ToString",
+                                                                "LampArraysSummary.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  468
+                                           },
+                                           {
+                                               "name":  "Apply_Clicked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  165
+                                           },
+                                           {
+                                               "name":  "ApplySettingsToLampArray",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "OffButton.IsChecked",
+                                                                "Colors.Black",
+                                                                "SetColorButton.IsChecked",
+                                                                "Colors.Green",
+                                                                "GradientButton.IsChecked",
+                                                                "WasdButton.IsChecked",
+                                                                "BrightnessSlider.Value",
+                                                                "BrightnessSlider.Maximum"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  953
+                                           },
+                                           {
+                                               "name":  "SetGradientPatternToLampArray",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Enumerable.Range"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3253
+                                           },
+                                           {
+                                               "name":  "SetWasdPatternToLampArray",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Colors.Blue",
+                                                                "Enumerable.Repeat",
+                                                                "Colors.White"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  728
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Effects",
+                          "title":  "LampArray Effects",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampArray\\shared\\Scenario2_Effects.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampArray\\cs\\Scenario2_Effects.xaml.cs",
+                          "description":  "Demonstrates RGB lighting effects using Windows.Devices.Lights.Effects APIs.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Demonstrates RGB lighting effects using Windows.Devices.Lights.Effects APIs."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "StaticBitmapButton_Click"
+                                                            },
+                                               "inner_text":  "Display Static Bitmap"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "FadeButton_Click"
+                                                            },
+                                               "inner_text":  "Display Fade In/Out"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "CustomEffectButton_Click"
+                                                            },
+                                               "inner_text":  "Display Wave"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "GeneratedBitmapButton_Click"
+                                                            },
+                                               "inner_text":  "Display Generated Bitmap"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "CycleButton_Click"
+                                                            },
+                                               "inner_text":  "Cycle Primary Colors"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PauseButton",
+                                               "handlers":  {
+                                                                "Click":  "PauseButton_Click"
+                                                            },
+                                               "inner_text":  "Pause"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PlayButton",
+                                               "handlers":  {
+                                                                "Click":  "PlayButton_Click"
+                                                            },
+                                               "inner_text":  "Play"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopButton",
+                                               "handlers":  {
+                                                                "Click":  "StopButton_Click"
+                                                            },
+                                               "inner_text":  "Stop"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "LampArraysSummary",
+                                               "inner_text":  "Attached LampArrays"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  "ImageBitmap"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Linq",
+                                         "Microsoft.Graphics.Canvas",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Lights",
+                                         "Windows.Devices.Lights.Effects",
+                                         "Windows.Graphics.Imaging",
+                                         "Windows.Storage",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Media.Imaging",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Effects",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  91
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "LampArray.GetDeviceSelector"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  201
+                                           },
+                                           {
+                                               "name":  "Watcher_Added",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArray.FromIdAsync",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Colors.Black"
+                                                            ],
+                                               "new_types":  [
+                                                                 "LampArrayInfo"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1309
+                                           },
+                                           {
+                                               "name":  "Watcher_Removed",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  457
+                                           },
+                                           {
+                                               "name":  "LampArray_AvailabilityChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  158
+                                           },
+                                           {
+                                               "name":  "UpdateLampArrayList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayKind.ToString",
+                                                                "LampArraysSummary.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  468
+                                           },
+                                           {
+                                               "name":  "CleanupPreviousEffect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ImageBitmap.Source",
+                                                                "LampArrayEffectPlaylist.StopAll"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  391
+                                           },
+                                           {
+                                               "name":  "StaticBitmapButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "StorageFile.GetFileFromApplicationUriAsync",
+                                                                "FileAccessMode.Read",
+                                                                "BitmapDecoder.CreateAsync",
+                                                                "ImageBitmap.Source",
+                                                                "TimeSpan.MaxValue",
+                                                                "LampArrayEffectPlaylist.StartAll"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Uri",
+                                                                 "BitmapImage",
+                                                                 "List",
+                                                                 "LampArrayBitmapEffect",
+                                                                 "LampArrayEffectPlaylist"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2862
+                                           },
+                                           {
+                                               "name":  "StaticBitmapEffect_BitmapRequested",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  226
+                                           },
+                                           {
+                                               "name":  "FadeButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayEffectStartMode.Simultaneous",
+                                                                "TimeSpan.FromMilliseconds",
+                                                                "LampArrayRepetitionMode.Forever",
+                                                                "LampArrayEffectPlaylist.StartAll"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List",
+                                                                 "LampArrayEffectPlaylist",
+                                                                 "LampArrayBlinkEffect"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3654
+                                           },
+                                           {
+                                               "name":  "LampArrayBlinkEffect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "TimeSpan.FromMilliseconds",
+                                                                "LampArrayRepetitionMode.Forever"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1086
+                                           },
+                                           {
+                                               "name":  "CustomEffectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "TimeSpan.MaxValue",
+                                                                "Enumerable.Repeat",
+                                                                "Colors.Black",
+                                                                "LampArrayEffectPlaylist.StartAll"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List",
+                                                                 "CustomEffectState",
+                                                                 "LampArrayCustomEffect",
+                                                                 "LampArrayEffectPlaylist"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3509
+                                           },
+                                           {
+                                               "name":  "CustomEffectState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  198
+                                           },
+                                           {
+                                               "name":  "LampArrayCustomEffect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "TimeSpan.MaxValue"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  552
+                                           },
+                                           {
+                                               "name":  "CustomEffect_UpdateRequested",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Colors.Black"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1476
+                                           },
+                                           {
+                                               "name":  "GeneratedBitmapButton_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.Streams.Buffer"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "TimeSpan.MaxValue",
+                                                                "SuggestedBitmapSize.Width",
+                                                                "SuggestedBitmapSize.Height",
+                                                                "Math.Min",
+                                                                "CanvasDevice.GetSharedDevice",
+                                                                "BitmapPixelFormat.Bgra8",
+                                                                "BitmapAlphaMode.Premultiplied",
+                                                                "Windows.Storage",
+                                                                "Streams.Buffer",
+                                                                "LampArrayEffectPlaylist.StartAll"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List",
+                                                                 "GeneratedBitmapState",
+                                                                 "LampArrayBitmapEffect",
+                                                                 "CanvasRenderTarget",
+                                                                 "SoftwareBitmap",
+                                                                 "Windows.Storage.Streams.Buffer",
+                                                                 "LampArrayEffectPlaylist"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3203
+                                           },
+                                           {
+                                               "name":  "GeneratedBitmapEffect_UpdateRequested",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Colors.Blue",
+                                                                "Colors.Red"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1129
+                                           },
+                                           {
+                                               "name":  "CycleButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayEffectStartMode.Sequential",
+                                                                "LampArrayRepetitionMode.Forever",
+                                                                "Colors.Red",
+                                                                "LampArrayEffectCompletionBehavior.KeepState",
+                                                                "Colors.Yellow",
+                                                                "Colors.Green",
+                                                                "Colors.Blue",
+                                                                "LampArrayEffectPlaylist.StartAll"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List",
+                                                                 "LampArrayEffectPlaylist",
+                                                                 "LampArrayColorRampEffect"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2721
+                                           },
+                                           {
+                                               "name":  "LampArrayEffectPlaylist",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayEffectStartMode.Sequential",
+                                                                "LampArrayRepetitionMode.Forever"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  165
+                                           },
+                                           {
+                                               "name":  "PauseButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayEffectPlaylist.PauseAll"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  75
+                                           },
+                                           {
+                                               "name":  "PlayButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayEffectPlaylist.StartAll"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  75
+                                           },
+                                           {
+                                               "name":  "StopButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LampArrayEffectPlaylist.StopAll"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  78
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

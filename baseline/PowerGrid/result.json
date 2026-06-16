@@ -1,0 +1,41 @@
+﻿{
+    "sample":  "PowerGrid",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PowerGrid\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PowerGrid.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PowerGrid.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PowerGrid.CS_8wekyb3d8bbwe!PowerGrid.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Find best time",
+                          "initial_capture":  "01_1_Find_best_time__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Find best time",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Find_best_time__after_Find_best_time.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Display full forecast",
+                          "initial_capture":  "02_2_Display_full_forecast__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get forecast",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Display_full_forecast__after_Get_forecast.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

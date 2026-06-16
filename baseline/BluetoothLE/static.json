@@ -1,0 +1,1755 @@
+﻿{
+    "sample":  "BluetoothLE",
+    "feature_name":  "Bluetooth Low Energy C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "ResultsListView.SelectedItem",
+                           "EnumerateButton.Content",
+                           "NotifyType.StatusMessage",
+                           "System.Devices",
+                           "Aep.DeviceAddress",
+                           "Aep.IsConnected",
+                           "Aep.Bluetooth",
+                           "Le.IsConnectable",
+                           "Aep.ProtocolId",
+                           "DeviceInformation.CreateWatcher",
+                           "DeviceInformationKind.AssociationEndpoint",
+                           "KnownDevices.Clear",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "Debug.WriteLine",
+                           "String.Format",
+                           "KnownDevices.Add",
+                           "KnownDevices.Remove",
+                           "KnownDevices.Count",
+                           "DeviceWatcherStatus.Aborted",
+                           "NotifyType.ErrorMessage",
+                           "DeviceInformation.Pairing",
+                           "DevicePairingResultStatus.Paired",
+                           "DevicePairingResultStatus.AlreadyPaired",
+                           "SelectedDeviceRun.Text",
+                           "ConnectButton.IsEnabled",
+                           "GattClientCharacteristicConfigurationDescriptorValue.None",
+                           "GattCommunicationStatus.Success",
+                           "ServiceList.Visibility",
+                           "Visibility.Collapsed",
+                           "BluetoothLEDevice.FromIdAsync",
+                           "BluetoothLEDevice.GattServices",
+                           "BluetoothCacheMode.Uncached",
+                           "ServiceList.Items",
+                           "DisplayHelpers.GetServiceName",
+                           "ConnectButton.Visibility",
+                           "Visibility.Visible",
+                           "Utilities.FormatGattCommunicationStatus",
+                           "CharacteristicList.Items",
+                           "CharacteristicList.Visibility",
+                           "ServiceList.SelectedItem",
+                           "DeviceAccessStatus.Allowed",
+                           "DisplayHelpers.GetCharacteristicName",
+                           "ValueChangedSubscribeToggle.Content",
+                           "CharacteristicList.SelectedItem",
+                           "GattCharacteristicProperties.None",
+                           "GattCharacteristicProperties.Read",
+                           "GattCharacteristicProperties.Write",
+                           "GattCharacteristicProperties.WriteWithoutResponse",
+                           "CharacteristicWriteValue.Text",
+                           "GattCharacteristicProperties.Indicate",
+                           "GattCharacteristicProperties.Notify",
+                           "ValueChangedSubscribeToggle.IsEnabled",
+                           "String.IsNullOrEmpty",
+                           "CryptographicBuffer.ConvertStringToBinary",
+                           "BinaryStringEncoding.Utf8",
+                           "Int32.TryParse",
+                           "BufferHelpers.BufferFromInt32",
+                           "CharacteristicProperties.HasFlag",
+                           "GattClientCharacteristicConfigurationDescriptorValue.Indicate",
+                           "GattClientCharacteristicConfigurationDescriptorValue.Notify",
+                           "DateTime.Now",
+                           "CharacteristicLatestValue.Text",
+                           "PresentationFormats.Count",
+                           "CryptographicBuffer.CopyToByteArray",
+                           "GattPresentationFormatTypes.UInt32",
+                           "BitConverter.ToInt32",
+                           "GattPresentationFormatTypes.Utf8",
+                           "Encoding.UTF8",
+                           "CryptographicBuffer.EncodeToHexString",
+                           "Uuid.Equals",
+                           "GattCharacteristicUuids.HeartRateMeasurement",
+                           "GattCharacteristicUuids.BatteryLevel",
+                           "Constants.ResultCharacteristicUuid",
+                           "Constants.BackgroundResultUuid",
+                           "BitConverter.ToUInt16",
+                           "ServiceIdRun.Text",
+                           "Constants.CalculatorServiceUuid",
+                           "BluetoothAdapter.GetDefaultAsync",
+                           "ServerPanel.Visibility",
+                           "PeripheralWarning.Visibility",
+                           "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                           "Publishing2MPHYReasonRun.Text",
+                           "Publishing2MPHY.IsEnabled",
+                           "GattServiceProviderAdvertisementStatus.Stopped",
+                           "PublishButton.Content",
+                           "Publishing2MPHY.IsChecked",
+                           "CalculatorOperators.Add",
+                           "CalculatorOperators.Subtract",
+                           "CalculatorOperators.Multiply",
+                           "CalculatorOperators.Divide",
+                           "OperationTextBox.Text",
+                           "Operand1TextBox.Text",
+                           "Operand2TextBox.Text",
+                           "ResultTextBox.Text",
+                           "GattServiceProvider.CreateAsync",
+                           "BluetoothError.Success",
+                           "Service.CreateCharacteristicAsync",
+                           "Constants.Operand1CharacteristicUuid",
+                           "Constants.Operand2CharacteristicUuid",
+                           "Constants.OperatorCharacteristicUuid",
+                           "SubscribedClients.Count",
+                           "Int32.MinValue",
+                           "GattCommunicationStatus.ProtocolError",
+                           "CalculatorCharacteristics.Operand1",
+                           "CalculatorCharacteristics.Operand2",
+                           "CalculatorCharacteristics.Operator",
+                           "BufferHelpers.Int32FromBuffer",
+                           "GattWriteOption.WriteWithResponse",
+                           "GattProtocolError.InvalidAttributeValueLength",
+                           "Enum.IsDefined",
+                           "GattProtocolError.InvalidPdu",
+                           "ApplicationData.Current",
+                           "Constants.CalculatorContainerName",
+                           "ApplicationDataCreateDisposition.Always",
+                           "Constants.BackgroundCalculatorServiceUuid",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Application.Current",
+                           "CalculatorServerBackgroundTask.ValuesChanged",
+                           "GattServiceProviderConnection.AllServices",
+                           "GattServiceProviderTrigger.CreateAsync",
+                           "Constants.BackgroundOperand1Uuid",
+                           "Constants.BackgroundOperand2Uuid",
+                           "Constants.BackgroundOperatorUuid",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Discovery",
+                          "title":  "Client: Discover servers",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\shared\\Scenario1_Discovery.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\cs\\Scenario1_Discovery.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Name:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "IsPaired: , IsConnected: , IsConnectable:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Discover GATT servers"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Enumerate nearby Bluetooth Low Energy devices, then select and pair a device, so that it can be used in the next scenario."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "EnumerateButton",
+                                               "content":  "Start enumerating",
+                                               "handlers":  {
+                                                                "Click":  "EnumerateButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PairButton",
+                                               "content":  "Pair",
+                                               "handlers":  {
+                                                                "Click":  "PairButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ResultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "System.Diagnostics",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Discovery",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ResultsListView.SelectedItem"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  420
+                                           },
+                                           {
+                                               "name":  "EnumerateButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EnumerateButton.Content",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  522
+                                           },
+                                           {
+                                               "name":  "StartBleDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "System.Devices",
+                                                                "Aep.DeviceAddress",
+                                                                "Aep.IsConnected",
+                                                                "Aep.Bluetooth",
+                                                                "Le.IsConnectable",
+                                                                "Aep.ProtocolId",
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "DeviceInformationKind.AssociationEndpoint",
+                                                                "KnownDevices.Clear"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1792
+                                           },
+                                           {
+                                               "name":  "StopBleDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  596
+                                           },
+                                           {
+                                               "name":  "FindBluetoothLEDeviceDisplay",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  270
+                                           },
+                                           {
+                                               "name":  "DeviceWatcher_Added",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "Debug.WriteLine",
+                                                                "String.Format",
+                                                                "KnownDevices.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BluetoothLEDeviceDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1046
+                                           },
+                                           {
+                                               "name":  "DeviceWatcher_Updated",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "Debug.WriteLine",
+                                                                "String.Format",
+                                                                "KnownDevices.Add"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1162
+                                           },
+                                           {
+                                               "name":  "DeviceWatcher_Removed",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "Debug.WriteLine",
+                                                                "String.Format",
+                                                                "KnownDevices.Remove"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  998
+                                           },
+                                           {
+                                               "name":  "DeviceWatcher_EnumerationCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "KnownDevices.Count",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  583
+                                           },
+                                           {
+                                               "name":  "DeviceWatcher_Stopped",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "DeviceWatcherStatus.Aborted",
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  633
+                                           },
+                                           {
+                                               "name":  "PairButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ResultsListView.SelectedItem",
+                                                                "DeviceInformation.Pairing",
+                                                                "DevicePairingResultStatus.Paired",
+                                                                "DevicePairingResultStatus.AlreadyPaired",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1169
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Client",
+                          "title":  "Client: Connect to a server",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\shared\\Scenario2_Client.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\cs\\Scenario2_Client.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Query services from GATT server"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario connects to the Bluetooth Low Energy device selected in the \"Discover GATT Servers\" scenario and communicates with the device."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Selected device:"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ConnectButton",
+                                               "content":  "Connect",
+                                               "handlers":  {
+                                                                "Click":  "ConnectButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "ServiceList",
+                                               "placeholdertext":  "Choose a service",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "ServiceList_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "CharacteristicList",
+                                               "placeholdertext":  "Choose a characteristic",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "CharacteristicList_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CharacteristicReadButton",
+                                               "content":  "Read Value",
+                                               "handlers":  {
+                                                                "Click":  "CharacteristicReadButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ValueChangedSubscribeToggle",
+                                               "content":  "Subscribe to value changes",
+                                               "handlers":  {
+                                                                "Click":  "ValueChangedSubscribeToggle_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "CharacteristicWriteValue",
+                                               "placeholdertext":  "Enter text/number to send"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Write Value as Number",
+                                               "handlers":  {
+                                                                "Click":  "CharacteristicWriteButtonInt_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Write Value as UTF-8",
+                                               "handlers":  {
+                                                                "Click":  "CharacteristicWriteButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "CharacteristicLatestValue"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Text",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.GenericAttributeProfile",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Security.Cryptography",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Client",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SelectedDeviceRun.Text",
+                                                                "ConnectButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  229
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  60
+                                           },
+                                           {
+                                               "name":  "ClearBluetoothLEDeviceAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattClientCharacteristicConfigurationDescriptorValue.None",
+                                                                "GattCommunicationStatus.Success",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1077
+                                           },
+                                           {
+                                               "name":  "ConnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectButton.IsEnabled",
+                                                                "ServiceList.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "BluetoothLEDevice.FromIdAsync",
+                                                                "BluetoothLEDevice.GattServices",
+                                                                "BluetoothCacheMode.Uncached",
+                                                                "GattCommunicationStatus.Success",
+                                                                "String.Format",
+                                                                "NotifyType.StatusMessage",
+                                                                "ServiceList.Items",
+                                                                "DisplayHelpers.GetServiceName",
+                                                                "ConnectButton.Visibility",
+                                                                "Visibility.Visible",
+                                                                "Utilities.FormatGattCommunicationStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2566
+                                           },
+                                           {
+                                               "name":  "ServiceList_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CharacteristicList.Items",
+                                                                "CharacteristicList.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "ServiceList.SelectedItem",
+                                                                "NotifyType.ErrorMessage",
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "BluetoothCacheMode.Uncached",
+                                                                "GattCommunicationStatus.Success",
+                                                                "Utilities.FormatGattCommunicationStatus",
+                                                                "DisplayHelpers.GetCharacteristicName",
+                                                                "Visibility.Visible"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2305
+                                           },
+                                           {
+                                               "name":  "AddValueChangedHandler",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ValueChangedSubscribeToggle.Content"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  331
+                                           },
+                                           {
+                                               "name":  "RemoveValueChangedHandler",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ValueChangedSubscribeToggle.Content"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  309
+                                           },
+                                           {
+                                               "name":  "CharacteristicList_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CharacteristicList.SelectedItem",
+                                                                "GattCharacteristicProperties.None",
+                                                                "NotifyType.ErrorMessage",
+                                                                "BluetoothCacheMode.Uncached",
+                                                                "GattCommunicationStatus.Success",
+                                                                "Utilities.FormatGattCommunicationStatus"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1189
+                                           },
+                                           {
+                                               "name":  "SetVisibility",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Visibility.Visible",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  97
+                                           },
+                                           {
+                                               "name":  "EnableCharacteristicPanels",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattCharacteristicProperties.Read",
+                                                                "GattCharacteristicProperties.Write",
+                                                                "GattCharacteristicProperties.WriteWithoutResponse",
+                                                                "CharacteristicWriteValue.Text",
+                                                                "GattCharacteristicProperties.Indicate",
+                                                                "GattCharacteristicProperties.Notify",
+                                                                "ValueChangedSubscribeToggle.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  885
+                                           },
+                                           {
+                                               "name":  "CharacteristicReadButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BluetoothCacheMode.Uncached",
+                                                                "GattCommunicationStatus.Success",
+                                                                "NotifyType.StatusMessage",
+                                                                "Utilities.FormatGattCommunicationStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1336
+                                           },
+                                           {
+                                               "name":  "CharacteristicWriteButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "CharacteristicWriteValue.Text",
+                                                                "CryptographicBuffer.ConvertStringToBinary",
+                                                                "BinaryStringEncoding.Utf8",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  632
+                                           },
+                                           {
+                                               "name":  "CharacteristicWriteButtonInt_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Int32.TryParse",
+                                                                "CharacteristicWriteValue.Text",
+                                                                "BufferHelpers.BufferFromInt32",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  522
+                                           },
+                                           {
+                                               "name":  "WriteBufferToSelectedCharacteristicAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattCommunicationStatus.Success",
+                                                                "NotifyType.StatusMessage",
+                                                                "Utilities.FormatGattCommunicationStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1148
+                                           },
+                                           {
+                                               "name":  "ValueChangedSubscribeToggle_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattClientCharacteristicConfigurationDescriptorValue.None",
+                                                                "CharacteristicProperties.HasFlag",
+                                                                "GattCharacteristicProperties.Indicate",
+                                                                "GattClientCharacteristicConfigurationDescriptorValue.Indicate",
+                                                                "GattCharacteristicProperties.Notify",
+                                                                "GattClientCharacteristicConfigurationDescriptorValue.Notify",
+                                                                "GattCommunicationStatus.Success",
+                                                                "NotifyType.StatusMessage",
+                                                                "Utilities.FormatGattCommunicationStatus",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2694
+                                           },
+                                           {
+                                               "name":  "Characteristic_ValueChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DisplayHelpers.GetCharacteristicName",
+                                                                "DateTime.Now",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "CharacteristicLatestValue.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  498
+                                           },
+                                           {
+                                               "name":  "FormatValueByPresentation",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PresentationFormats.Count",
+                                                                "CryptographicBuffer.CopyToByteArray",
+                                                                "GattPresentationFormatTypes.UInt32",
+                                                                "BitConverter.ToInt32",
+                                                                "GattPresentationFormatTypes.Utf8",
+                                                                "Encoding.UTF8",
+                                                                "CryptographicBuffer.EncodeToHexString",
+                                                                "Uuid.Equals",
+                                                                "GattCharacteristicUuids.HeartRateMeasurement",
+                                                                "GattCharacteristicUuids.BatteryLevel",
+                                                                "Constants.ResultCharacteristicUuid",
+                                                                "Constants.BackgroundResultUuid"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3817
+                                           },
+                                           {
+                                               "name":  "ParseHeartRateValue",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BitConverter.ToUInt16"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  455
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_ServerForeground",
+                          "title":  "Server: Publish foreground",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\shared\\Scenario3_ServerForeground.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\cs\\Scenario3_ServerForeground.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Publish the calculator service"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario publishes a calculator service. Remote clients (including this sample on another machine) can connect to service , then supply 2 operands and an operator and get a result."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PeripheralWarning",
+                                               "inner_text":  "There is no Bluetooth device, or the default Bluetooth device cannot act as a Bluetooth server."
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "Publishing2MPHY",
+                                               "handlers":  {
+                                                                "Click":  "Publishing2MPHY_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Advertising with 2M PHY as secondary PHY"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PublishButton",
+                                               "content":  "Start Service",
+                                               "handlers":  {
+                                                                "Click":  "PublishButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Operand1TextBox",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "Operand1Label",
+                                               "x_name":  "",
+                                               "text":  "Operand 1 (integer)"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "OperationTextBox",
+                                               "x_name":  "",
+                                               "text":  "INV"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OperationLabel",
+                                               "text":  "Operator"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Operand2TextBox",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "Operand2Label",
+                                               "x_name":  "",
+                                               "text":  "Operand 2 (integer)"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "ResultTextBox",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "ResultLabel",
+                                               "x_name":  "",
+                                               "text":  "Result"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Operator codes: 1: addition 2: subtraction 3: multiplication 4: division"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.GenericAttributeProfile",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_ServerForeground",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ServiceIdRun.Text",
+                                                                "Constants.CalculatorServiceUuid"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  424
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BluetoothAdapter.GetDefaultAsync",
+                                                                "ServerPanel.Visibility",
+                                                                "Visibility.Visible",
+                                                                "PeripheralWarning.Visibility",
+                                                                "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                                                                "Publishing2MPHYReasonRun.Text",
+                                                                "Publishing2MPHY.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1536
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattServiceProviderAdvertisementStatus.Stopped"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  495
+                                           },
+                                           {
+                                               "name":  "PublishButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PublishButton.Content",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1271
+                                           },
+                                           {
+                                               "name":  "Publishing2MPHY_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Publishing2MPHY.IsChecked"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  584
+                                           },
+                                           {
+                                               "name":  "UnsubscribeServiceEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1008
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorOperators.Add",
+                                                                "CalculatorOperators.Subtract",
+                                                                "CalculatorOperators.Multiply",
+                                                                "CalculatorOperators.Divide",
+                                                                "OperationTextBox.Text",
+                                                                "Operand1TextBox.Text",
+                                                                "Operand2TextBox.Text",
+                                                                "ResultTextBox.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OperationTextBox.Text",
+                                                               "Operand1TextBox.Text",
+                                                               "Operand2TextBox.Text",
+                                                               "ResultTextBox.Text"
+                                                           ],
+                                               "body_length":  903
+                                           },
+                                           {
+                                               "name":  "CreateAndAdvertiseServiceAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattServiceProvider.CreateAsync",
+                                                                "Constants.CalculatorServiceUuid",
+                                                                "BluetoothError.Success",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Service.CreateCharacteristicAsync",
+                                                                "Constants.Operand1CharacteristicUuid",
+                                                                "Constants.Operand2CharacteristicUuid",
+                                                                "Constants.OperatorCharacteristicUuid",
+                                                                "Constants.ResultCharacteristicUuid"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3921
+                                           },
+                                           {
+                                               "name":  "ResultCharacteristic_SubscribedClientsChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SubscribedClients.Count",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  152
+                                           },
+                                           {
+                                               "name":  "ServiceProvider_AdvertisementStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  623
+                                           },
+                                           {
+                                               "name":  "ResultCharacteristic_ReadRequestedAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage",
+                                                                "BufferHelpers.BufferFromInt32"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1103
+                                           },
+                                           {
+                                               "name":  "ComputeResult",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorOperators.Add",
+                                                                "CalculatorOperators.Subtract",
+                                                                "CalculatorOperators.Multiply",
+                                                                "CalculatorOperators.Divide",
+                                                                "Int32.MinValue",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1160
+                                           },
+                                           {
+                                               "name":  "NotifyClientDevices",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BufferHelpers.BufferFromInt32",
+                                                                "NotifyType.StatusMessage",
+                                                                "GattCommunicationStatus.ProtocolError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  839
+                                           },
+                                           {
+                                               "name":  "Op1Characteristic_WriteRequestedAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorCharacteristics.Operand1"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  631
+                                           },
+                                           {
+                                               "name":  "Op2Characteristic_WriteRequestedAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorCharacteristics.Operand2"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  578
+                                           },
+                                           {
+                                               "name":  "OperatorCharacteristic_WriteRequestedAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorCharacteristics.Operator"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  613
+                                           },
+                                           {
+                                               "name":  "ProcessWriteCharacteristic",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BufferHelpers.Int32FromBuffer",
+                                                                "GattWriteOption.WriteWithResponse",
+                                                                "GattProtocolError.InvalidAttributeValueLength",
+                                                                "CalculatorCharacteristics.Operand1",
+                                                                "CalculatorCharacteristics.Operand2",
+                                                                "CalculatorCharacteristics.Operator",
+                                                                "Enum.IsDefined",
+                                                                "GattProtocolError.InvalidPdu",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1644
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_ServerBackground",
+                          "title":  "Server: Publish background",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\shared\\Scenario4_ServerBackground.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothLE\\cs\\Scenario4_ServerBackground.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Publish the calculator service"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PeripheralWarning",
+                                               "inner_text":  "There is no Bluetooth device, or the default Bluetooth device cannot act as a Bluetooth server."
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "Publishing2MPHY",
+                                               "handlers":  {
+                                                                "Click":  "Publishing2MPHY_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Advertising with 2M PHY as secondary PHY"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PublishButton",
+                                               "content":  "Start Service",
+                                               "handlers":  {
+                                                                "Click":  "PublishOrStopButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Operand1TextBox",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "Operand1Label",
+                                               "x_name":  "",
+                                               "text":  "Operand 1 (integer)"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "OperationTextBox",
+                                               "x_name":  "",
+                                               "text":  "INV"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OperationLabel",
+                                               "text":  "Operator"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "Operand2TextBox",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "Operand2Label",
+                                               "x_name":  "",
+                                               "text":  "Operand 2 (integer)"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "ResultTextBox",
+                                               "x_name":  "",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "ResultLabel",
+                                               "x_name":  "",
+                                               "text":  "Result"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Operator codes: 1: addition 2: subtraction 3: multiplication 4: division"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Background",
+                                         "Windows.Devices.Bluetooth.GenericAttributeProfile",
+                                         "Windows.Foundation.Collections",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_ServerBackground",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ApplicationData.Current",
+                                                                "Constants.CalculatorContainerName",
+                                                                "ApplicationDataCreateDisposition.Always",
+                                                                "ServiceIdRun.Text",
+                                                                "Constants.BackgroundCalculatorServiceUuid"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  421
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "NotifyType.StatusMessage",
+                                                                "PublishButton.Content",
+                                                                "BluetoothAdapter.GetDefaultAsync",
+                                                                "ServerPanel.Visibility",
+                                                                "Visibility.Visible",
+                                                                "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                                                                "Publishing2MPHYReasonRun.Text",
+                                                                "Publishing2MPHY.IsEnabled",
+                                                                "PeripheralWarning.Visibility",
+                                                                "Application.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2223
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Application.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  201
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Operand1TextBox.Text",
+                                                                "CalculatorOperators.Add",
+                                                                "CalculatorOperators.Subtract",
+                                                                "CalculatorOperators.Multiply",
+                                                                "CalculatorOperators.Divide",
+                                                                "OperationTextBox.Text",
+                                                                "Operand2TextBox.Text",
+                                                                "ResultTextBox.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "Operand1TextBox.Text",
+                                                               "OperationTextBox.Text",
+                                                               "Operand2TextBox.Text",
+                                                               "ResultTextBox.Text"
+                                                           ],
+                                               "body_length":  1689
+                                           },
+                                           {
+                                               "name":  "OnCalculatorValuesChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  184
+                                           },
+                                           {
+                                               "name":  "StartUpdatingUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorServerBackgroundTask.ValuesChanged"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  267
+                                           },
+                                           {
+                                               "name":  "StopUpdatingUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CalculatorServerBackgroundTask.ValuesChanged"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  170
+                                           },
+                                           {
+                                               "name":  "App_Suspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  41
+                                           },
+                                           {
+                                               "name":  "App_Resuming",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  42
+                                           },
+                                           {
+                                               "name":  "Publishing2MPHY_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattServiceProviderConnection.AllServices",
+                                                                "Publishing2MPHY.IsChecked"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  986
+                                           },
+                                           {
+                                               "name":  "PublishOrStopButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PublishButton.Content"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  956
+                                           },
+                                           {
+                                               "name":  "CreateBackgroundServiceAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GattServiceProviderTrigger.CreateAsync",
+                                                                "Constants.BackgroundCalculatorServiceUuid",
+                                                                "BluetoothError.Success",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Service.CreateCharacteristicAsync",
+                                                                "Constants.BackgroundOperand1Uuid",
+                                                                "Constants.BackgroundOperand2Uuid",
+                                                                "Constants.BackgroundOperatorUuid",
+                                                                "Constants.BackgroundResultUuid",
+                                                                "Publishing2MPHY.IsChecked",
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  5018
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

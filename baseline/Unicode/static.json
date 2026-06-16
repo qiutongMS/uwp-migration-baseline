@@ -1,0 +1,133 @@
+﻿{
+    "sample":  "Unicode",
+    "feature_name":  "Unicode tokenization C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "UnicodeCharacters.IsHighSurrogate",
+                           "UnicodeCharacters.IsLowSurrogate",
+                           "UnicodeCharacters.GetCodepointFromSurrogatePair",
+                           "UnicodeCharacters.IsIdStart",
+                           "UnicodeCharacters.IsIdContinue",
+                           "TextInput.Text",
+                           "TextOutput.Text",
+                           "String.Join"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1_FindId",
+                      "title":  "Tokenize lexical identifiers within a string",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Unicode\\shared\\Scenario1_FindId.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Unicode\\cs\\Scenario1_FindId.xaml.cs",
+                      "description":  "This scenario demonstrates how to use the UnicodeCharacters class in order to tokenize lexical identifiers within a string. The code iterates through the characters, detects surrogate pairs and delimits the identifiers using the appropriate methods in the class.",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Description:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  ""
+                                       },
+                                       {
+                                           "type":  "TextBox",
+                                           "name":  "",
+                                           "x_name":  "TextInput",
+                                           "text":  "Hello, how are you?  I hope you are ok!\n--\u003eid\u003c--\n1id 2id 3id\nid1 id2 id3\n𠀀_CJK_B_1 𠀁_CJK_B_2 𠀂_CJK_B_3"
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Extract Identifiers",
+                                           "handlers":  {
+                                                            "Click":  "Default_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "TextOutput"
+                                       }
+                                   ],
+                      "usings":  [
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Navigation",
+                                     "Windows.Foundation",
+                                     "Windows.Data.Text",
+                                     "System",
+                                     "System.Text",
+                                     "System.Collections",
+                                     "System.Collections.Generic"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1_FindId",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  51
+                                       },
+                                       {
+                                           "name":  "FindIdsInString",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "UnicodeCharacters.IsHighSurrogate",
+                                                            "UnicodeCharacters.IsLowSurrogate",
+                                                            "UnicodeCharacters.GetCodepointFromSurrogatePair",
+                                                            "UnicodeCharacters.IsIdStart",
+                                                            "UnicodeCharacters.IsIdContinue"
+                                                        ],
+                                           "new_types":  [
+                                                             "List"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  2863
+                                       },
+                                       {
+                                           "name":  "Default_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "TextInput.Text",
+                                                            "TextOutput.Text",
+                                                            "String.Join"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+                                                           "TextOutput.Text"
+                                                       ],
+                                           "body_length":  129
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

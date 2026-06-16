@@ -1,0 +1,391 @@
+{
+  "sample": "LinguisticServices",
+  "feature_name": "Linguistic services C# sample",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.Globalization.Language.IsWellFormed"
+  ],
+  "api_references": [
+    "LinguisticServices.RecognizeTextLanguages",
+    "TextInput.Text",
+    "TextOutput.Text",
+    "LinguisticServices.RecognizeTextScripts",
+    "LinguisticServices.TransliterateFromCyrillicToLatin",
+    "GroupingsGrid.Items",
+    "NotifyType.StatusMessage",
+    "LanguageText.Text",
+    "Windows.Globalization",
+    "Language.IsWellFormed",
+    "NotifyType.ErrorMessage",
+    "Symbol.Globe",
+    "String.IsNullOrEmpty",
+    "CandidateText.Text",
+    "ActiveGroupings.Lookup",
+    "GroupingsGrid.SelectedItem",
+    "GroupingResult.Text"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_LanguageDetection",
+      "title": "Language Detection",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\shared\\Scenario1_LanguageDetection.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\cs\\Scenario1_LanguageDetection.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Language Detection"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Type below the text for which you want to detect the language (to ensure detection, don't write a too short phrase)."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "TextInput"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "Go",
+          "content": "Detect Languages",
+          "handlers": {
+            "Click": "Go_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "TextOutput"
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Sample",
+        "System.Text"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_LanguageDetection",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "Go_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "LinguisticServices.RecognizeTextLanguages",
+            "TextInput.Text",
+            "TextOutput.Text"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [
+            "TextOutput.Text"
+          ],
+          "body_length": 293
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_ScriptDetection",
+      "title": "Script Detection",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\shared\\Scenario2_ScriptDetection.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\cs\\Scenario2_ScriptDetection.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Script Detection"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Type below the text for which you want to detect the present scripts."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "TextInput"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "Go",
+          "content": "Detect Scripts",
+          "handlers": {
+            "Click": "Go_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "TextOutput"
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Sample",
+        "System.Text"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_ScriptDetection",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "Go_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "LinguisticServices.RecognizeTextScripts",
+            "TextInput.Text",
+            "TextOutput.Text"
+          ],
+          "new_types": [
+            "StringBuilder"
+          ],
+          "ui_sets": [
+            "TextOutput.Text"
+          ],
+          "body_length": 351
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_Transliteration",
+      "title": "Transliteration",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\shared\\Scenario3_Transliteration.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\cs\\Scenario3_Transliteration.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Transliteration"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Type below the text in Cyrillic that you want to transliterate to Latin."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "TextInput"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "Go",
+          "content": "Transliterate",
+          "handlers": {
+            "Click": "Go_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "TextOutput"
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Sample"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_Transliteration",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "Go_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "TextOutput.Text",
+            "LinguisticServices.TransliterateFromCyrillicToLatin",
+            "TextInput.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "TextOutput.Text"
+          ],
+          "body_length": 110
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_CharacterGrouping",
+      "title": "Character Grouping",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\shared\\Scenario4_CharacterGrouping.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\cs\\Scenario4_CharacterGrouping.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The CharacterGroupings class provides a list of character groups, that can be used for headers in grouped views or for zoomed-out SemanticZoom views. The Lookup method finds the group for a string."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Choose a language:"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "LanguageText"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Get groups",
+          "handlers": {
+            "Click": "GetGroups_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Text:"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "CandidateText"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Assign group",
+          "handlers": {
+            "Click": "AssignGroup_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "GroupingResult"
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "x_name": "GroupingsGrid"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.IO",
+        "System.Linq",
+        "System.Runtime.InteropServices.WindowsRuntime",
+        "System.Text",
+        "Windows.Foundation",
+        "Windows.Foundation.Collections",
+        "Windows.Globalization",
+        "Windows.Globalization.Collation",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Controls.Primitives",
+        "Windows.UI.Xaml.Data",
+        "Windows.UI.Xaml.Input",
+        "Windows.UI.Xaml.Media",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_CharacterGrouping",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "AddGroup",
+          "namespaces_used": [],
+          "api_refs": [
+            "GroupingsGrid.Items"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 98
+        },
+        {
+          "name": "GetGroups_Click",
+          "namespaces_used": [
+            "Windows.Globalization.Language.IsWellFormed"
+          ],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "LanguageText.Text",
+            "Windows.Globalization",
+            "Language.IsWellFormed",
+            "NotifyType.ErrorMessage",
+            "GroupingsGrid.Items",
+            "Symbol.Globe"
+          ],
+          "new_types": [
+            "CharacterGroupings"
+          ],
+          "ui_sets": [],
+          "body_length": 1061
+        },
+        {
+          "name": "AssignGroup_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "NotifyType.ErrorMessage",
+            "String.IsNullOrEmpty",
+            "CandidateText.Text",
+            "ActiveGroupings.Lookup",
+            "GroupingsGrid.SelectedItem",
+            "GroupingResult.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "GroupingResult.Text"
+          ],
+          "body_length": 882
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

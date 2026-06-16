@@ -87,6 +87,54 @@ if (-not $SkipBuild) {
         exit 1
     }
     Log "[BUILD] using msbuild: $msbuild"
+
+    # For samples with native C++ sub-projects (.vcxproj that's not in the
+    # main .csproj's restore graph), msbuild /restore on the csproj does not
+    # restore packages declared in the vcxproj's packages.config. Detect this
+    # and run nuget.exe restore on the parent solution first if present.
+    $nativeProjects = @()
+    $sampleRoot = $csproj.Directory.Parent.FullName
+    if (Test-Path $sampleRoot) {
+        $nativeProjects = Get-ChildItem -Path $sampleRoot -Recurse -Filter '*.vcxproj' -ErrorAction SilentlyContinue |
+            Where-Object { $_.FullName -notmatch '\\(obj|bin)\\' }
+    }
+    if ($nativeProjects.Count -gt 0) {
+        $sln = Get-ChildItem -Path $sampleRoot -Filter '*.sln' -ErrorAction SilentlyContinue | Select-Object -First 1
+        if ($sln) {
+            $nugetExe = $null
+            $nugetCmd = Get-Command nuget.exe -ErrorAction SilentlyContinue
+            if ($nugetCmd) { $nugetExe = $nugetCmd.Source }
+            if (-not $nugetExe) {
+                foreach ($candidate in @(
+                    'C:\Users\qiutongshen\tools\nuget.exe',
+                    'C:\ProgramData\chocolatey\bin\nuget.exe',
+                    "$env:USERPROFILE\.nuget\nuget.exe"
+                )) {
+                    if (Test-Path $candidate) { $nugetExe = $candidate; break }
+                }
+            }
+            if ($nugetExe) {
+                Log "[BUILD] native sub-project(s) found; nuget restore $($sln.FullName)"
+                & $nugetExe restore $sln.FullName -NonInteractive *>&1 | Tee-Object -FilePath (Join-Path $OutDir 'nuget.log') | Out-Null
+                # nuget.exe restore <sln> may skip native vcxproj packages.config in some layouts (e.g.
+                # vcxproj outside the sln directory). For every detected vcxproj, if a sibling
+                # packages.config exists, restore it explicitly into the sln's adjacent packages\ dir.
+                $slnDir = $sln.Directory.FullName
+                $pkgsDir = Join-Path $slnDir 'packages'
+                foreach ($vcx in $nativeProjects) {
+                    $pkgsCfg = Join-Path $vcx.Directory.FullName 'packages.config'
+                    if (Test-Path $pkgsCfg) {
+                        Log "[BUILD] restoring vcxproj packages.config $pkgsCfg -> $pkgsDir"
+                        & $nugetExe restore $pkgsCfg -PackagesDirectory $pkgsDir -NonInteractive *>&1 |
+                            Tee-Object -FilePath (Join-Path $OutDir 'nuget.log') -Append | Out-Null
+                    }
+                }
+            } else {
+                Log "[BUILD] WARN: native sub-project found but nuget.exe not on PATH or known locations"
+            }
+        }
+    }
+
     & $msbuild $csproj.FullName /restore /t:Build `
         /p:Configuration=Debug /p:Platform=x64 `
         /p:AppxPackageSigningEnabled=false `
@@ -127,11 +175,35 @@ try {
     Add-AppxPackage -Register $manifestPath -ForceUpdateFromAnyVersion -ErrorAction Stop
     $result.deploy = 'ok'
 } catch {
-    $result.deploy = 'failed'
-    $result.error = "Add-AppxPackage failed: $_"
-    Log "[DEPLOY] FAILED $_"
-    $result | ConvertTo-Json -Depth 6 | Out-File (Join-Path $OutDir 'result.json')
-    exit 1
+    # HRESULT 0x80073CF3 = PACKAGE_FAILED_DEPENDENCY_OR_CONFLICT. Most often
+    # caused by an existing package with the same Identity from a different
+    # signing/version. Remove it once and retry.
+    if ("$_" -match '0x80073CF3' -or "$_" -match 'updates, dependency or conflict') {
+        Log "[DEPLOY] retry: removing conflicting package(s) for $identityName"
+        try {
+            Get-AppxPackage -Name $identityName -AllUsers -ErrorAction SilentlyContinue |
+                ForEach-Object { Remove-AppxPackage -Package $_.PackageFullName -AllUsers -ErrorAction SilentlyContinue }
+            Get-AppxPackage -Name $identityName -ErrorAction SilentlyContinue |
+                ForEach-Object { Remove-AppxPackage -Package $_.PackageFullName -ErrorAction SilentlyContinue }
+        } catch { Log "[DEPLOY] cleanup pre-retry: $_" }
+        try {
+            Add-AppxPackage -Register $manifestPath -ForceUpdateFromAnyVersion -ErrorAction Stop
+            $result.deploy = 'ok'
+            Log "[DEPLOY] retry OK after cleanup"
+        } catch {
+            $result.deploy = 'failed'
+            $result.error = "Add-AppxPackage (after cleanup) failed: $_"
+            Log "[DEPLOY] FAILED after cleanup: $_"
+            $result | ConvertTo-Json -Depth 6 | Out-File (Join-Path $OutDir 'result.json')
+            exit 1
+        }
+    } else {
+        $result.deploy = 'failed'
+        $result.error = "Add-AppxPackage failed: $_"
+        Log "[DEPLOY] FAILED $_"
+        $result | ConvertTo-Json -Depth 6 | Out-File (Join-Path $OutDir 'result.json')
+        exit 1
+    }
 }
 
 $pkg = Get-AppxPackage | Where-Object { $_.Name -eq $identityName } | Select-Object -First 1
@@ -350,31 +422,44 @@ Start-Sleep -Seconds 3
 Log "[LAUNCH] proceeding to find window"
 
 # ============ 4. FIND WINDOW ============
+# Many UWP samples reference DisplayName via ms-resource:* — that literal will
+# never match a real window title. Build a set of candidate substrings to search:
+#   1. The literal $displayName (if not an ms-resource indirection)
+#   2. The $SampleName as-is (PascalCase)
+#   3. The $SampleName split at CamelCase boundaries (e.g. "ApplicationResources" -> "Application Resources")
+$searchTitles = New-Object System.Collections.Generic.List[string]
+if ($displayName -and -not $displayName.StartsWith('ms-resource:')) {
+    [void]$searchTitles.Add($displayName)
+}
+[void]$searchTitles.Add($SampleName)
+$spaced = [regex]::Replace($SampleName, '(?<=[a-z0-9])([A-Z])', ' $1')
+$spaced = [regex]::Replace($spaced, '(?<=[A-Z])([A-Z][a-z])', ' $1')
+if ($spaced -ne $SampleName) { [void]$searchTitles.Add($spaced) }
+
 $hwnd = [IntPtr]::Zero
 $deadline = (Get-Date).AddSeconds(25)
 while ((Get-Date) -lt $deadline -and $hwnd -eq [IntPtr]::Zero) {
-    $list = [WinNative]::FindWindowsByTitle($displayName)
-    if ($list.Count -gt 0) {
-        $hwnd = $list[0]
-        $bestArea = 0
-        foreach ($h in $list) {
-            $r = New-Object 'WinNative+RECT'
-            [WinNative]::GetWindowRect($h, [ref]$r) | Out-Null
-            $a = ($r.Right - $r.Left) * ($r.Bottom - $r.Top)
-            if ($a -gt $bestArea) { $bestArea = $a; $hwnd = $h }
+    foreach ($title in $searchTitles) {
+        $list = [WinNative]::FindWindowsByTitle($title)
+        if ($list.Count -gt 0) {
+            $hwnd = $list[0]
+            $bestArea = 0
+            foreach ($h in $list) {
+                $r = New-Object 'WinNative+RECT'
+                [WinNative]::GetWindowRect($h, [ref]$r) | Out-Null
+                $a = ($r.Right - $r.Left) * ($r.Bottom - $r.Top)
+                if ($a -gt $bestArea) { $bestArea = $a; $hwnd = $h }
+            }
+            Log "[WINDOW] matched on substring '$title'"
+            break
         }
-        break
     }
+    if ($hwnd -ne [IntPtr]::Zero) { break }
     Start-Sleep -Milliseconds 500
 }
 if ($hwnd -eq [IntPtr]::Zero) {
-    # fallback by sample name
-    $list = [WinNative]::FindWindowsByTitle($SampleName)
-    if ($list.Count -gt 0) { $hwnd = $list[0] }
-}
-if ($hwnd -eq [IntPtr]::Zero) {
     $result.capture = 'failed'
-    $result.error = "Could not find main window (looked for '$displayName')"
+    $result.error = "Could not find main window (tried: " + ($searchTitles -join ', ') + ")"
     Log "[WINDOW] FAILED"
     Stop-Process -Id $pidOut -Force -ErrorAction SilentlyContinue
     $result | ConvertTo-Json -Depth 6 | Out-File (Join-Path $OutDir 'result.json')
@@ -394,9 +479,12 @@ if ($null -eq $bmp) {
     Start-Sleep -Seconds 3
     $deadline2 = (Get-Date).AddSeconds(15)
     while ((Get-Date) -lt $deadline2) {
-        $list2 = [WinNative]::FindWindowsByTitle($displayName)
-        if ($list2.Count -eq 0) { $list2 = [WinNative]::FindWindowsByTitle($SampleName) }
-        if ($list2.Count -gt 0) {
+        $list2 = $null
+        foreach ($title in $searchTitles) {
+            $list2 = [WinNative]::FindWindowsByTitle($title)
+            if ($list2.Count -gt 0) { break }
+        }
+        if ($list2 -and $list2.Count -gt 0) {
             $newHwnd = $list2[0]
             $bestArea = 0
             foreach ($h in $list2) {
@@ -642,13 +730,25 @@ try {
     if ($null -eq $rootElem) { throw "FromHandle returned null" }
 
     function Get-ScenarioList() {
-        $listCond = New-Object System.Windows.Automation.PropertyCondition(
-            [System.Windows.Automation.AutomationElement]::AutomationIdProperty, 'ScenarioControl')
-        $lb = $rootElem.FindFirst([System.Windows.Automation.TreeScope]::Descendants, $listCond)
-        if ($null -eq $lb) {
-            $cond2 = New-Object System.Windows.Automation.PropertyCondition(
-                [System.Windows.Automation.AutomationElement]::NameProperty, 'Scenarios')
-            $lb = $rootElem.FindFirst([System.Windows.Automation.TreeScope]::Descendants, $cond2)
+        # Defensive: UIA tree can take a moment to settle after navigation.
+        # If FindFirst throws (HRESULT 0x80131505 timeout) or returns null,
+        # retry up to 3 times with 500 ms backoff.
+        $lb = $null
+        for ($attempt = 0; $attempt -lt 3; $attempt++) {
+            try {
+                $listCond = New-Object System.Windows.Automation.PropertyCondition(
+                    [System.Windows.Automation.AutomationElement]::AutomationIdProperty, 'ScenarioControl')
+                $lb = $rootElem.FindFirst([System.Windows.Automation.TreeScope]::Descendants, $listCond)
+                if ($null -eq $lb) {
+                    $cond2 = New-Object System.Windows.Automation.PropertyCondition(
+                        [System.Windows.Automation.AutomationElement]::NameProperty, 'Scenarios')
+                    $lb = $rootElem.FindFirst([System.Windows.Automation.TreeScope]::Descendants, $cond2)
+                }
+                if ($null -ne $lb) { return $lb }
+            } catch {
+                Log "[SCENARIOS] Get-ScenarioList attempt $attempt failed: $_"
+            }
+            Start-Sleep -Milliseconds 500
         }
         return $lb
     }
@@ -678,14 +778,26 @@ try {
             buttons         = @()
         }
 
-        # Re-fetch listbox & items each iteration to avoid stale references
+        # Re-fetch listbox & items each iteration to avoid stale references.
+        # Defensive: navigation may briefly destroy + recreate the listbox,
+        # in which case Get-ScenarioList returns null. Skip the selection
+        # attempt instead of crashing the whole loop.
         $listBox = Get-ScenarioList
-        $items = $listBox.FindAll([System.Windows.Automation.TreeScope]::Children, $itemCond)
-        if ($i -lt $items.Count) {
+        if ($null -eq $listBox) {
+            Log "[SCENARIO $idx] listbox not found after navigation, skipping selection"
+        } else {
             try {
-                $sel = $items[$i].GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
-                $sel.Select()
-            } catch { Log "[SCENARIO $idx] select failed: $_" }
+                $items = $listBox.FindAll([System.Windows.Automation.TreeScope]::Children, $itemCond)
+            } catch {
+                Log "[SCENARIO $idx] FindAll failed: $_"
+                $items = $null
+            }
+            if ($null -ne $items -and $i -lt $items.Count) {
+                try {
+                    $sel = $items[$i].GetCurrentPattern([System.Windows.Automation.SelectionItemPattern]::Pattern)
+                    $sel.Select()
+                } catch { Log "[SCENARIO $idx] select failed: $_" }
+            }
         }
         Start-Sleep -Milliseconds 1500
 

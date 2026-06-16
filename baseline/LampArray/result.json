@@ -1,0 +1,83 @@
+﻿{
+    "sample":  "LampArray",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampArray\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.LampArray.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.LampArray.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.LampArray.CS_8wekyb3d8bbwe!LampArray.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) LampArray Basics",
+                          "initial_capture":  "01_1_LampArray_Basics__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Apply",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_LampArray_Basics__after_Apply.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) LampArray Effects",
+                          "initial_capture":  "02_2_LampArray_Effects__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Display Static Bitmap",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_LampArray_Effects__after_Display_Static_Bitmap.png"
+                                          },
+                                          {
+                                              "name":  "Display Fade In/Out",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Display Wave",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Display Generated Bitmap",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Cycle Primary Colors",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Pause",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Stop",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

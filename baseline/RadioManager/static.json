@@ -1,0 +1,104 @@
+﻿{
+    "sample":  "RadioManager",
+    "feature_name":  "RadioManager C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Devices.Enumeration"
+                       ],
+    "api_references":  [
+                           "Radio.RequestAccessAsync",
+                           "RadioAccessStatus.Allowed",
+                           "NotifyType.ErrorMessage",
+                           "Radio.GetRadiosAsync",
+                           "Windows.Devices",
+                           "Radio.GetDeviceSelector",
+                           "RadioSwitchList.Items"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1_Toggle",
+                      "title":  "Toggle Radios",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\RadioManager\\shared\\Scenario1_Toggle.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\RadioManager\\cs\\Scenario1_Toggle.xaml.cs",
+                      "description":  "Enumerate Radios, and display toggles for each one",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Description:"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "inner_text":  "Enumerate Radios, and display toggles for each one"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "{x:Bind Name}"
+                                       },
+                                       {
+                                           "type":  "ToggleSwitch",
+                                           "name":  "",
+                                           "x_name":  ""
+                                       }
+                                   ],
+                      "usings":  [
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Navigation",
+                                     "SDKTemplate",
+                                     "Windows.Devices.Radios",
+                                     "System"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1_Toggle",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  51
+                                       },
+                                       {
+                                           "name":  "OnNavigatedTo",
+                                           "namespaces_used":  [
+                                                                   "Windows.Devices.Enumeration"
+                                                               ],
+                                           "api_refs":  [
+                                                            "Radio.RequestAccessAsync",
+                                                            "RadioAccessStatus.Allowed",
+                                                            "NotifyType.ErrorMessage",
+                                                            "Radio.GetRadiosAsync",
+                                                            "Windows.Devices",
+                                                            "Radio.GetDeviceSelector",
+                                                            "RadioSwitchList.Items"
+                                                        ],
+                                           "new_types":  [
+                                                             "RadioModel"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  774
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

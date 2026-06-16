@@ -1,0 +1,138 @@
+﻿{
+    "sample":  "DeviceEnumerationAndPairing",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DeviceEnumerationAndPairing\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DeviceEnumeration.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DeviceEnumeration.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DeviceEnumeration.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Device Picker Common Control",
+                          "initial_capture":  "01_1_Device_Picker_Common_Control__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Pick Single Device",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Device_Picker_Common_Control__after_Pick_Single_Device.png"
+                                          },
+                                          {
+                                              "name":  "Show Device Picker",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Enumerate and Watch Devices",
+                          "initial_capture":  "02_2_Enumerate_and_Watch_Devices__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Enumerate_and_Watch_Devices__after_Start_Watcher.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Enumerate and Watch Devices in a Background Task",
+                          "initial_capture":  "03_3_Enumerate_and_Watch_Devices_in_a_Background_Task__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Background Watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Enumerate_and_Watch_Devices_in_a_Background_Task__after_Start_Background_Watcher.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Enumerate Snapshot of Devices",
+                          "initial_capture":  "04_4_Enumerate_Snapshot_of_Devices__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Find",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Enumerate_Snapshot_of_Devices__after_Find.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Get Single Device",
+                          "initial_capture":  "05_5_Get_Single_Device__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Get_Single_Device__after_Get.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Custom Filter with Additional Properties",
+                          "initial_capture":  "06_6_Custom_Filter_with_Additional_Properties__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Custom_Filter_with_Additional_Properties__after_Start_Watcher.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Request Specific DeviceInformationKind",
+                          "initial_capture":  "07_7_Request_Specific_DeviceInformationKind__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Request_Specific_DeviceInformationKind__after_Start_Watcher.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  8,
+                          "title":  "8) Basic Device Pairing",
+                          "initial_capture":  "08_8_Basic_Device_Pairing__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "08_8_Basic_Device_Pairing__after_Start_Watcher.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  9,
+                          "title":  "9) Custom Device Pairing",
+                          "initial_capture":  "09_9_Custom_Device_Pairing__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "09_9_Custom_Device_Pairing__after_Start_Watcher.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

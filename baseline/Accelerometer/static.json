@@ -1,0 +1,813 @@
+{
+  "sample": "Accelerometer",
+  "feature_name": "Accelerometer C# Sample",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "AccelerometerReadingType.Standard",
+    "AccelerometerReadingType.Linear",
+    "AccelerometerReadingType.Gravity",
+    "ReadingTypeComboBox.ItemsSource",
+    "ReadingTypeComboBox.SelectedIndex",
+    "ReadingTypeComboBox.SelectedValue",
+    "Accelerometer.GetDefault",
+    "NotifyType.StatusMessage",
+    "ScenarioEnableButton.IsEnabled",
+    "NotifyType.ErrorMessage",
+    "ScenarioDisableButton.IsEnabled",
+    "Dispatcher.RunAsync",
+    "CoreDispatcherPriority.Normal",
+    "MainPage.SetReadingText",
+    "Math.Max",
+    "Window.Current",
+    "ScenarioOutputText.Text",
+    "TimeSpan.FromMilliseconds",
+    "DisplayInformation.GetForCurrentView",
+    "Math.Min"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario0_Choose",
+      "title": "Choose accelerometer",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\shared\\Scenario0_Choose.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\cs\\Scenario0_Choose.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Choose accelerometer"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Choose the accelerometer to be used by the other scenarios."
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "ReadingTypeComboBox"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading.Tasks",
+        "Windows.Devices.Sensors",
+        "Windows.Foundation",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario0_Choose",
+          "namespaces_used": [],
+          "api_refs": [
+            "AccelerometerReadingType.Standard",
+            "AccelerometerReadingType.Linear",
+            "AccelerometerReadingType.Gravity",
+            "ReadingTypeComboBox.ItemsSource",
+            "ReadingTypeComboBox.SelectedIndex"
+          ],
+          "new_types": [
+            "List"
+          ],
+          "ui_sets": [],
+          "body_length": 471
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ReadingTypeComboBox.SelectedValue"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 120
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario1_DataEvents",
+      "title": "Data events",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\shared\\Scenario1_DataEvents.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\cs\\Scenario1_DataEvents.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Data events"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Registers an event listener for accelerometer data and displays the X, Y and Z acceleration values as they are reported."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioEnableButton",
+          "content": "Enable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioEnable}"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioDisableButton",
+          "content": "Disable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioDisable}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ScenarioOutput",
+          "inner_text": "No data"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Devices.Sensors",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_DataEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Accelerometer.GetDefault",
+            "NotifyType.StatusMessage",
+            "ScenarioEnableButton.IsEnabled",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 527
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 126
+        },
+        {
+          "name": "VisibilityChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 639
+        },
+        {
+          "name": "ReadingChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "MainPage.SetReadingText"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 187
+        },
+        {
+          "name": "ScenarioEnable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Math.Max",
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 467
+        },
+        {
+          "name": "ScenarioDisable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 402
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario2_ShakeEvents",
+      "title": "Shake events",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\shared\\Scenario2_ShakeEvents.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\cs\\Scenario2_ShakeEvents.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Shake events"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Registers an event listener for accelerometer shake events and displays the cumulative count of shake events. Note that not all accelerometers report shake events."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioEnableButton",
+          "content": "Enable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioEnable}"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioDisableButton",
+          "content": "Disable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioDisable}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Shake count:"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Devices.Sensors",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_ShakeEvents",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Accelerometer.GetDefault",
+            "NotifyType.StatusMessage",
+            "ScenarioEnableButton.IsEnabled",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 527
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 126
+        },
+        {
+          "name": "VisibilityChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 420
+        },
+        {
+          "name": "Shaken",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "ScenarioOutputText.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 217
+        },
+        {
+          "name": "ScenarioEnable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 230
+        },
+        {
+          "name": "ScenarioDisable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 230
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario3_Polling",
+      "title": "Polling",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\shared\\Scenario3_Polling.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\cs\\Scenario3_Polling.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Polling"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Polls for accelerometer data and displays the X, Y and Z acceleration values at a set interval."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioEnableButton",
+          "content": "Enable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioEnable}"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioDisableButton",
+          "content": "Disable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioDisable}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ScenarioOutput",
+          "inner_text": "No data"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Devices.Sensors",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_Polling",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Accelerometer.GetDefault",
+            "Math.Max",
+            "TimeSpan.FromMilliseconds",
+            "NotifyType.StatusMessage",
+            "ScenarioEnableButton.IsEnabled",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "DispatcherTimer"
+          ],
+          "ui_sets": [],
+          "body_length": 1086
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 126
+        },
+        {
+          "name": "VisibilityChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 592
+        },
+        {
+          "name": "DisplayCurrentReading",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.SetReadingText"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 221
+        },
+        {
+          "name": "ScenarioEnable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 369
+        },
+        {
+          "name": "ScenarioDisable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 416
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario4_OrientationChanged",
+      "title": "Orientation change",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\shared\\Scenario4_OrientationChanged.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\cs\\Scenario4_OrientationChanged.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Orientation change"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Registers for OrientationChanged event of the DisplayInformation class to illustrate the usage of the 'ReadingTransform' Property. Displays accelerometer readings with and without the transformation."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioEnableButton",
+          "content": "Enable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioEnable}"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioDisableButton",
+          "content": "Disable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioDisable}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Untransformed:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ScenarioOutputOriginal",
+          "inner_text": "No data"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Transformed to DisplayOrientation:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ScenarioOutputReadingTransform",
+          "inner_text": "No data"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Devices.Sensors",
+        "Windows.Graphics.Display",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_OrientationChanged",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Accelerometer.GetDefault",
+            "NotifyType.ErrorMessage",
+            "NotifyType.StatusMessage",
+            "ScenarioEnableButton.IsEnabled",
+            "DisplayInformation.GetForCurrentView"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1150
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 221
+        },
+        {
+          "name": "ScenarioEnable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 999
+        },
+        {
+          "name": "Current_VisibilityChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 931
+        },
+        {
+          "name": "ScenarioDisable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 618
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario5_DataEventsBatching",
+      "title": "Data events batching",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\shared\\Scenario5_DataEventsBatching.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Accelerometer\\cs\\Scenario5_DataEventsBatching.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Orientation change"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Registers an event listener for accelerometer data (with a report latency specified) and displays the X, Y and Z acceleration values as they are reported."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioEnableButton",
+          "content": "Enable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioEnable}"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ScenarioDisableButton",
+          "content": "Disable",
+          "handlers": {
+            "Click": "{x:Bind ScenarioDisable}"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ScenarioOutput",
+          "inner_text": "No data"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Devices.Sensors",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5_DataEventsBatching",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Accelerometer.GetDefault",
+            "Math.Max",
+            "Math.Min",
+            "NotifyType.StatusMessage",
+            "ScenarioEnableButton.IsEnabled",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1066
+        },
+        {
+          "name": "OnNavigatingFrom",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 126
+        },
+        {
+          "name": "VisibilityChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 637
+        },
+        {
+          "name": "ReadingChanged",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "MainPage.SetReadingText"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 187
+        },
+        {
+          "name": "ScenarioEnable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 536
+        },
+        {
+          "name": "ScenarioDisable",
+          "namespaces_used": [],
+          "api_refs": [
+            "Window.Current",
+            "ScenarioEnableButton.IsEnabled",
+            "ScenarioDisableButton.IsEnabled"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 400
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

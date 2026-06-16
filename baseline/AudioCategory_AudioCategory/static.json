@@ -1,0 +1,615 @@
+{
+  "sample": "AudioCategory",
+  "feature_name": "Audio Category Sample",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "Playback.SetAudioCategory",
+    "AudioCategory.Movie",
+    "Playback.SelectFile",
+    "AudioCategory.Media",
+    "AudioCategory.GameChat",
+    "AudioCategory.Speech",
+    "AudioCategory.Communications",
+    "AudioCategory.Alerts",
+    "AudioCategory.SoundEffects",
+    "AudioCategory.GameEffects",
+    "AudioCategory.GameMedia",
+    "AudioCategory.Other"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1",
+      "title": "Movie",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario1.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario1.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Movie category. This category is used to play video files where there is focus on having clear dialog, such as in movies. Use the second Audio Category sample to see the interactions between this category and Communications.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.Movie",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 107
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2",
+      "title": "Media",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario2.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario2.xaml.cs",
+      "description": "This scenario will play a Media audio stream. This category is typically used to play any audio file, apart from movies. Select an audio file from your library (e.g. a song), and press play. It will have similar characteristics to the Movie category, but the audio effects that are applied to each audio category might be different.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.Media",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 107
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3",
+      "title": "Game Chat",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario3.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario3.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Game Chat category. This category is used for in-game communication between players. This category has the same behavior as the Communications category with the exception that it does not attenuate other audio streams.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.GameChat",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 110
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4",
+      "title": "Speech",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario4.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario4.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Speech category. This category is used by applications that handle speech input (e.g. personal assistants, such as Cortana) and output (e.g., navigation apps).",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.Speech",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 108
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5",
+      "title": "Communications",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario5.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario5.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Communications category. This category is used by VOIP apps, such as Skype and Lync. If a separate communications device is connected (Blutooth HFP) audio will play via that endpoint instead of stereo speakers. Note the interactions between Media/Movie audio and Communications streams. Play one using the Audio Category Copy SDK sample, and then the other with Audio Category SDK sample to see how they interact. Communications will attenuate the Music and Movie streams (so that users use VOIP apps to chat while there is audio in the background).",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.Communications",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 116
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario6",
+      "title": "Alerts",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario6.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario6.xaml.cs",
+      "description": "This scenario will play a stream tagged as Alerts. Notice that this stream will attenuate Media and Movie streams when the alert is played.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario6",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.Alerts",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 108
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "class": "Scenario7",
+      "title": "Sound Effects",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario7.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario7.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Sound Effects category. This category is used by applications that play sound effects.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario7",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.SoundEffects",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 114
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "class": "Scenario8",
+      "title": "Game Effects",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario8.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario8.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Game Effects category. This category is used by applications that play game effects.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario8",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.GameEffects",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 113
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "class": "Scenario9",
+      "title": "Game Media",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario9.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario9.xaml.cs",
+      "description": "This scenario will play an audio stream tagged with the Game Media category. This category is used to play audio for games. It has very similar characteristics to the Media category. However, notice that streams that use the Media category will also attenuate streams that use the Game Media category.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario9",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.GameMedia",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 111
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "class": "Scenario10",
+      "title": "Other",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\shared\\Scenario10.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCategory\\cs\\AudioCategory\\Scenario10.xaml.cs",
+      "description": "This scenario plays audio with the Other tag. It is the lowest priority audio stream and will play only in the foreground and mix with background media. Use it for generic apps that will play a few sounds while the app is in the foreground.",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Select Audio File",
+          "handlers": {
+            "Click": "Default_Click"
+          }
+        }
+      ],
+      "usings": [
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "System",
+        "Windows.UI.Xaml.Media"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario10",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "Default_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Playback.SetAudioCategory",
+            "AudioCategory.Other",
+            "Playback.SelectFile"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 107
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

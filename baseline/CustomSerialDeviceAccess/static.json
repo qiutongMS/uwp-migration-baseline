@@ -1,0 +1,2179 @@
+﻿{
+    "sample":  "CustomSerialDeviceAccess",
+    "feature_name":  "CustomSerialDeviceAccess",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Foundation.TypedEventHandler"
+                       ],
+    "api_references":  [
+                           "EventHandlerForDevice.Current",
+                           "DeviceListSource.Source",
+                           "ConnectDevices.SelectedItems",
+                           "EventHandlerForDevice.CreateNewEventHandlerForDevice",
+                           "SerialDevice.GetDeviceSelector",
+                           "SerialDevice.GetDeviceSelectorFromUsbVidPid",
+                           "DeviceInformation.CreateWatcher",
+                           "App.Current",
+                           "DeviceWatcherStatus.Started",
+                           "DeviceWatcherStatus.EnumerationCompleted",
+                           "DeviceInformation.Id",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "NotifyType.StatusMessage",
+                           "ButtonDisconnectFromDevice.Content",
+                           "Device.PortName",
+                           "ButtonDisconnectFromDevice.IsEnabled",
+                           "ConnectDevices.SelectedIndex",
+                           "ButtonConnectToDevice.IsEnabled",
+                           "ConnectDevices.IsEnabled",
+                           "ConfigureDeviceScrollViewer.Visibility",
+                           "Visibility.Collapsed",
+                           "MainPage.Current",
+                           "NotifyType.ErrorMessage",
+                           "BaudRateValue.Text",
+                           "Device.BaudRate",
+                           "BaudRateInputValue.Text",
+                           "ParityValue.Text",
+                           "Device.Parity",
+                           "ParityComboBox.SelectedIndex",
+                           "ParityComboBox.Items",
+                           "ParityComboBox.SelectedItem",
+                           "SerialParity.None",
+                           "SerialParity.Even",
+                           "SerialParity.Odd",
+                           "SerialParity.Mark",
+                           "SerialParity.Space",
+                           "StopBitCountValue.Text",
+                           "Device.StopBits",
+                           "StopBitCountComboBox.SelectedIndex",
+                           "StopBitCountComboBox.Items",
+                           "StopBitCountComboBox.SelectedItem",
+                           "SerialStopBitCount.One",
+                           "SerialStopBitCount.OnePointFive",
+                           "SerialStopBitCount.Two",
+                           "HandShakeValue.Text",
+                           "Device.Handshake",
+                           "HandShakeComboBox.SelectedIndex",
+                           "HandShakeComboBox.Items",
+                           "HandShakeComboBox.SelectedItem",
+                           "SerialHandshake.None",
+                           "SerialHandshake.RequestToSend",
+                           "SerialHandshake.XOnXOff",
+                           "SerialHandshake.RequestToSendXOnXOff",
+                           "Device.BreakSignalState",
+                           "BreakStateSignalValue.Text",
+                           "BreakStateSignalToggleSwitch.IsOn",
+                           "Device.IsDataTerminalReadyEnabled",
+                           "DataTerminalReadyEnabledValue.Text",
+                           "DataTerminalReadyEnabledToggleSwitch.IsOn",
+                           "Device.IsRequestToSendEnabled",
+                           "RequestToSendEnabledValue.Text",
+                           "RequestToSendEnabledToggleSwitch.IsOn",
+                           "Device.CarrierDetectState",
+                           "CarrierDetectStateValue.Text",
+                           "Device.DataSetReadyState",
+                           "DataSetReadyStateValue.Text",
+                           "Device.DataBits",
+                           "DataBitsValue.Text",
+                           "DataBitsComboBox.SelectedIndex",
+                           "DataBitsComboBox.SelectedValue",
+                           "ReadCancellationTokenSource.Dispose",
+                           "WriteCancellationTokenSource.Dispose",
+                           "ReadWriteScollViewer.Visibility",
+                           "WriteBytesCounterValue.Text",
+                           "WriteBytesCounter.ToString",
+                           "WriteTimeoutValue.Text",
+                           "Device.WriteTimeout",
+                           "TotalMilliseconds.ToString",
+                           "ReadBytesCounterValue.Text",
+                           "ReadBytesCounter.ToString",
+                           "ReadTimeoutValue.Text",
+                           "Device.ReadTimeout",
+                           "ReadTimeoutInputValue.Text",
+                           "System.TimeSpan",
+                           "WriteTimeoutInputValue.Text",
+                           "Device.InputStream",
+                           "ReadCancellationTokenSource.Token",
+                           "Message.ToString",
+                           "Debug.WriteLine",
+                           "DataReaderObject.DetachStream",
+                           "Utilities.NotifyDeviceNotConnected",
+                           "Device.OutputStream",
+                           "WriteCancellationTokenSource.Token",
+                           "DataWriteObject.DetachStream",
+                           "ReadButton.IsEnabled",
+                           "ReadCancelButton.IsEnabled",
+                           "ReadTimeoutButton.IsEnabled",
+                           "ReadTimeoutInputValue.IsEnabled",
+                           "WriteButton.IsEnabled",
+                           "WriteCancelButton.IsEnabled",
+                           "WriteTimeoutButton.IsEnabled",
+                           "WriteTimeoutInputValue.IsEnabled",
+                           "WriteBytesInputValue.IsEnabled",
+                           "DataReaderObject.InputStreamOptions",
+                           "InputStreamOptions.Partial",
+                           "DataReaderObject.LoadAsync",
+                           "ReadBytesTextBlock.Text",
+                           "DataReaderObject.ReadString",
+                           "WriteBytesInputValue.Text",
+                           "DataWriteObject.WriteString",
+                           "DataWriteObject.StoreAsync",
+                           "WriteBytesTextBlock.Text",
+                           "InputString.Substring",
+                           "ReadCancellationTokenSource.IsCancellationRequested",
+                           "ReadCancellationTokenSource.Cancel",
+                           "WriteCancellationTokenSource.IsCancellationRequested",
+                           "WriteCancellationTokenSource.Cancel",
+                           "CoreDispatcherPriority.High",
+                           "EventsScrollViewer.Visibility",
+                           "PinChangedToggleSwitch.IsOn",
+                           "ErrorReceivedToggleSwitch.IsOn",
+                           "Windows.Foundation",
+                           "Device.PinChanged",
+                           "PinChangedValue.Text",
+                           "Device.ErrorReceived",
+                           "ErrorReceivedValue.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_ConnectDisconnect",
+                          "title":  "Connect/Disconnect",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario1_ConnectDisconnect.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario1_ConnectDisconnect.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Device Selection"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonConnectToDevice",
+                                               "content":  "Connect to device",
+                                               "handlers":  {
+                                                                "Click":  "ConnectToDevice_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ButtonDisconnectFromDevice",
+                                               "content":  "Disconnect from device",
+                                               "handlers":  {
+                                                                "Click":  "DisconnectFromDevice_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Select a Serial Device:"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ConnectDevices"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding InstanceId}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.IO",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.ApplicationModel",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Core",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.SerialCommunication",
+                                         "CustomSerialDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_ConnectDisconnect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "Dictionary"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  344
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceListSource.Source"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1291
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  286
+                                           },
+                                           {
+                                               "name":  "ConnectToDevice_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedItems",
+                                                                "EventHandlerForDevice.CreateNewEventHandlerForDevice",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1383
+                                           },
+                                           {
+                                               "name":  "DisconnectFromDevice_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedItems",
+                                                                "EventHandlerForDevice.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  746
+                                           },
+                                           {
+                                               "name":  "InitializeDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SerialDevice.GetDeviceSelector",
+                                                                "SerialDevice.GetDeviceSelectorFromUsbVidPid",
+                                                                "DeviceInformation.CreateWatcher"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1340
+                                           },
+                                           {
+                                               "name":  "StartHandlingAppEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SuspendingEventHandler",
+                                                                 "EventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  396
+                                           },
+                                           {
+                                               "name":  "StopHandlingAppEvents",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  225
+                                           },
+                                           {
+                                               "name":  "AddDeviceWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  462
+                                           },
+                                           {
+                                               "name":  "StartDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  508
+                                           },
+                                           {
+                                               "name":  "StopDeviceWatchers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceWatcherStatus.Started",
+                                                                "DeviceWatcherStatus.EnumerationCompleted"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  598
+                                           },
+                                           {
+                                               "name":  "AddDeviceToList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "DeviceListEntry"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  594
+                                           },
+                                           {
+                                               "name":  "RemoveDeviceFromList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  194
+                                           },
+                                           {
+                                               "name":  "ClearDeviceEntries",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "FindDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.Id"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "OnAppSuspension",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  248
+                                           },
+                                           {
+                                               "name":  "OnAppResume",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  160
+                                           },
+                                           {
+                                               "name":  "OnDeviceRemoved",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  384
+                                           },
+                                           {
+                                               "name":  "OnDeviceAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  405
+                                           },
+                                           {
+                                               "name":  "OnDeviceEnumerationComplete",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Id",
+                                                                "ButtonDisconnectFromDevice.Content",
+                                                                "Device.PortName",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2256
+                                           },
+                                           {
+                                               "name":  "OnDeviceConnected",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "DeviceInformation.Id",
+                                                                "ButtonDisconnectFromDevice.Content",
+                                                                "Device.PortName",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  925
+                                           },
+                                           {
+                                               "name":  "OnDeviceClosing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ButtonDisconnectFromDevice.IsEnabled",
+                                                                "EventHandlerForDevice.Current",
+                                                                "ButtonDisconnectFromDevice.Content"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  634
+                                           },
+                                           {
+                                               "name":  "SelectDeviceInList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectDevices.SelectedIndex",
+                                                                "DeviceInformation.Id"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  472
+                                           },
+                                           {
+                                               "name":  "UpdateConnectDisconnectButtonsAndList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ButtonConnectToDevice.IsEnabled",
+                                                                "ButtonDisconnectFromDevice.IsEnabled",
+                                                                "ConnectDevices.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  239
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_ConfigureDevice",
+                          "title":  "Configure Device",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario2_ConfigureDevice.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario2_ConfigureDevice.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Configure Serial Device"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Carrier Detect State = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "CarrierDetectStateValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Data Set Ready = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DataSetReadyStateValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Break State Signal : "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "BreakStateSignalValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "BreakStateSignalToggleSwitch",
+                                               "handlers":  {
+                                                                "Toggled":  "BreakStateSignalToggleSwitch_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Data Terminal Ready Enabled = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DataTerminalReadyEnabledValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "DataTerminalReadyEnabledToggleSwitch",
+                                               "handlers":  {
+                                                                "Toggled":  "DataTerminalReadyEnabledToggleSwitch_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Request To Send Enabled = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "RequestToSendEnabledValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "RequestToSendEnabledToggleSwitch",
+                                               "handlers":  {
+                                                                "Toggled":  "RequestToSendEnabledToggleSwitch_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Baud Rate = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "BaudRateValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "BaudRateInputValue",
+                                               "text":  "Enter Baud Rate"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "BaudRateSetButton",
+                                               "content":  "SET",
+                                               "handlers":  {
+                                                                "Click":  "BaudRateSetButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Parity = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ParityValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "ParityComboBox",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "ParityComboBox_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Stop Bit Count = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StopBitCountValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "StopBitCountComboBox",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "StopBitCountComboBox_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Hand Shake = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "HandShakeValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "HandShakeComboBox",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "HandShakeComboBox_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Data Bits = "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "DataBitsValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "DataBitsComboBox",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "DataBitsComboBox_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.Devices.SerialCommunication",
+                                         "SDKTemplate",
+                                         "CustomSerialDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_ConfigureDevice",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ConfigureDeviceScrollViewer.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "MainPage.Current",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Device.PortName",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1139
+                                           },
+                                           {
+                                               "name":  "UpdateBaudRateView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BaudRateValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.BaudRate"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  102
+                                           },
+                                           {
+                                               "name":  "BaudRateSetButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BaudRateInputValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.BaudRate"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  264
+                                           },
+                                           {
+                                               "name":  "UpdateParityView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ParityValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Parity",
+                                                                "ParityComboBox.SelectedIndex",
+                                                                "ParityComboBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  190
+                                           },
+                                           {
+                                               "name":  "ParityComboBox_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ParityComboBox.SelectedItem",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Parity",
+                                                                "SerialParity.None",
+                                                                "SerialParity.Even",
+                                                                "SerialParity.Odd",
+                                                                "SerialParity.Mark",
+                                                                "SerialParity.Space"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  928
+                                           },
+                                           {
+                                               "name":  "UpdateStopBitCountView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "StopBitCountValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.StopBits",
+                                                                "StopBitCountComboBox.SelectedIndex",
+                                                                "StopBitCountComboBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  315
+                                           },
+                                           {
+                                               "name":  "StopBitCountComboBox_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "StopBitCountComboBox.SelectedItem",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.StopBits",
+                                                                "SerialStopBitCount.One",
+                                                                "SerialStopBitCount.OnePointFive",
+                                                                "SerialStopBitCount.Two"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  632
+                                           },
+                                           {
+                                               "name":  "UpdateHandShakeView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "HandShakeValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Handshake",
+                                                                "HandShakeComboBox.SelectedIndex",
+                                                                "HandShakeComboBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  205
+                                           },
+                                           {
+                                               "name":  "HandShakeComboBox_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "HandShakeComboBox.SelectedItem",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.Handshake",
+                                                                "SerialHandshake.None",
+                                                                "SerialHandshake.RequestToSend",
+                                                                "SerialHandshake.XOnXOff",
+                                                                "SerialHandshake.RequestToSendXOnXOff"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  845
+                                           },
+                                           {
+                                               "name":  "UpdateBreakStateSignalView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.BreakSignalState",
+                                                                "BreakStateSignalValue.Text",
+                                                                "BreakStateSignalToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  377
+                                           },
+                                           {
+                                               "name":  "BreakStateSignalToggleSwitch_Toggled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.BreakSignalState",
+                                                                "BreakStateSignalToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  157
+                                           },
+                                           {
+                                               "name":  "UpdateDataTerminalReadyEnabledView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.IsDataTerminalReadyEnabled",
+                                                                "DataTerminalReadyEnabledValue.Text",
+                                                                "DataTerminalReadyEnabledToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  409
+                                           },
+                                           {
+                                               "name":  "DataTerminalReadyEnabledToggleSwitch_Toggled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.IsDataTerminalReadyEnabled",
+                                                                "DataTerminalReadyEnabledToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  183
+                                           },
+                                           {
+                                               "name":  "UpdateRequestToSendEnabledView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.IsRequestToSendEnabled",
+                                                                "RequestToSendEnabledValue.Text",
+                                                                "RequestToSendEnabledToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  393
+                                           },
+                                           {
+                                               "name":  "RequestToSendEnabledToggleSwitch_Toggled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.IsRequestToSendEnabled",
+                                                                "RequestToSendEnabledToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  171
+                                           },
+                                           {
+                                               "name":  "UpdateCarrierDetectStateView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.CarrierDetectState",
+                                                                "CarrierDetectStateValue.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  271
+                                           },
+                                           {
+                                               "name":  "UpdateDataSetReadyStateView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DataSetReadyState",
+                                                                "DataSetReadyStateValue.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  268
+                                           },
+                                           {
+                                               "name":  "UpdateDataBitsView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DataBits",
+                                                                "DataBitsValue.Text",
+                                                                "DataBitsComboBox.SelectedIndex"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  265
+                                           },
+                                           {
+                                               "name":  "DataBitsComboBox_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.DataBits",
+                                                                "DataBitsComboBox.SelectedValue"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  163
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_ReadWrite",
+                          "title":  "Read/Write",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario3_ReadWrite.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario3_ReadWrite.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Communicate with Serial Device"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Write Timeout (ms) ="
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "WriteTimeoutValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "WriteTimeoutInputValue",
+                                               "text":  "Enter Write Timeout"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "WriteTimeoutButton",
+                                               "content":  "SET",
+                                               "handlers":  {
+                                                                "Click":  "WriteTimeoutButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "WriteBytesInputValue",
+                                               "text":  "Enter text to write",
+                                               "handlers":  {
+                                                                "TextChanged":  "WriteBytesInputValue_TextChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "WriteButton",
+                                               "content":  "WRITE BYTES",
+                                               "handlers":  {
+                                                                "Click":  "WriteButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "WriteCancelButton",
+                                               "content":  "CANCEL WRITE",
+                                               "handlers":  {
+                                                                "Click":  "WriteCancelButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Written bytes are displayed here as text: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "WriteBytesCounterValue",
+                                               "text":  "0 bytes"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "WriteBytesTextBlock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Read Timeout (ms) ="
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ReadTimeoutValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "ReadTimeoutInputValue",
+                                               "text":  "Enter Read Timeout"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ReadTimeoutButton",
+                                               "content":  "SET",
+                                               "handlers":  {
+                                                                "Click":  "ReadTimeoutButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ReadButton",
+                                               "content":  "READ BYTES",
+                                               "handlers":  {
+                                                                "Click":  "ReadButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ReadCancelButton",
+                                               "content":  "CANCEL READ",
+                                               "handlers":  {
+                                                                "Click":  "ReadCancelButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Read bytes are displayed here as text: "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ReadBytesCounterValue",
+                                               "text":  "0 bytes"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ReadBytesTextBlock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Diagnostics",
+                                         "System.Threading",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.Devices.SerialCommunication",
+                                         "System.Threading.Tasks",
+                                         "Windows.Storage.Streams",
+                                         "SDKTemplate",
+                                         "CustomSerialDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_ReadWrite",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Dispose",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadCancellationTokenSource.Dispose",
+                                                                "WriteCancellationTokenSource.Dispose"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  401
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "ReadWriteScollViewer.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "MainPage.Current",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Device.PortName",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1099
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  82
+                                           },
+                                           {
+                                               "name":  "UpdateWriteBytesCounterView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteBytesCounterValue.Text",
+                                                                "WriteBytesCounter.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  100
+                                           },
+                                           {
+                                               "name":  "UpdateWriteTimeoutView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteTimeoutValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.WriteTimeout",
+                                                                "TotalMilliseconds.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  128
+                                           },
+                                           {
+                                               "name":  "UpdateReadBytesCounterView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadBytesCounterValue.Text",
+                                                                "ReadBytesCounter.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  98
+                                           },
+                                           {
+                                               "name":  "UpdateReadTimeoutView",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadTimeoutValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.ReadTimeout",
+                                                                "TotalMilliseconds.ToString"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  126
+                                           },
+                                           {
+                                               "name":  "ReadTimeoutButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadTimeoutInputValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.ReadTimeout",
+                                                                "System.TimeSpan"
+                                                            ],
+                                               "new_types":  [
+                                                                 "System.TimeSpan"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  234
+                                           },
+                                           {
+                                               "name":  "WriteTimeoutButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteTimeoutInputValue.Text",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.WriteTimeout",
+                                                                "System.TimeSpan"
+                                                            ],
+                                               "new_types":  [
+                                                                 "System.TimeSpan"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  239
+                                           },
+                                           {
+                                               "name":  "ReadButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "Device.InputStream",
+                                                                "ReadCancellationTokenSource.Token",
+                                                                "MainPage.Current",
+                                                                "Message.ToString",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Debug.WriteLine",
+                                                                "DataReaderObject.DetachStream",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataReader"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1513
+                                           },
+                                           {
+                                               "name":  "WriteButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "Device.OutputStream",
+                                                                "WriteCancellationTokenSource.Token",
+                                                                "MainPage.Current",
+                                                                "Message.ToString",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Debug.WriteLine",
+                                                                "DataWriteObject.DetachStream",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1520
+                                           },
+                                           {
+                                               "name":  "UpdateReadButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadButton.IsEnabled",
+                                                                "ReadCancelButton.IsEnabled",
+                                                                "ReadTimeoutButton.IsEnabled",
+                                                                "ReadTimeoutInputValue.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  545
+                                           },
+                                           {
+                                               "name":  "UpdateWriteButtonStates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteButton.IsEnabled",
+                                                                "WriteCancelButton.IsEnabled",
+                                                                "WriteTimeoutButton.IsEnabled",
+                                                                "WriteTimeoutInputValue.IsEnabled",
+                                                                "WriteBytesInputValue.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  667
+                                           },
+                                           {
+                                               "name":  "ReadAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DataReaderObject.InputStreamOptions",
+                                                                "InputStreamOptions.Partial",
+                                                                "DataReaderObject.LoadAsync",
+                                                                "ReadBytesTextBlock.Text",
+                                                                "DataReaderObject.ReadString",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1115
+                                           },
+                                           {
+                                               "name":  "WriteAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteBytesInputValue.Text",
+                                                                "DataWriteObject.WriteString",
+                                                                "DataWriteObject.StoreAsync",
+                                                                "WriteBytesTextBlock.Text",
+                                                                "InputString.Substring",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1664
+                                           },
+                                           {
+                                               "name":  "CancelReadTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadCancellationTokenSource.IsCancellationRequested",
+                                                                "ReadCancellationTokenSource.Cancel"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  547
+                                           },
+                                           {
+                                               "name":  "CancelWriteTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteCancellationTokenSource.IsCancellationRequested",
+                                                                "WriteCancellationTokenSource.Cancel"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  552
+                                           },
+                                           {
+                                               "name":  "CancelAllIoTasks",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  73
+                                           },
+                                           {
+                                               "name":  "IsPerformingRead",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "IsPerformingWrite",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "ResetReadCancellationTokenSource",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadCancellationTokenSource.Token"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CancellationTokenSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  358
+                                           },
+                                           {
+                                               "name":  "ResetWriteCancellationTokenSource",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteCancellationTokenSource.Token"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CancellationTokenSource"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  361
+                                           },
+                                           {
+                                               "name":  "NotifyReadCancelingTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.High",
+                                                                "ReadButton.IsEnabled",
+                                                                "ReadCancelButton.IsEnabled",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  791
+                                           },
+                                           {
+                                               "name":  "NotifyWriteCancelingTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.High",
+                                                                "WriteButton.IsEnabled",
+                                                                "WriteCancelButton.IsEnabled",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  794
+                                           },
+                                           {
+                                               "name":  "NotifyReadTaskCanceled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  371
+                                           },
+                                           {
+                                               "name":  "NotifyWriteTaskCanceled",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DispatchedHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  372
+                                           },
+                                           {
+                                               "name":  "ReadCancelButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  244
+                                           },
+                                           {
+                                               "name":  "WriteCancelButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "Utilities.NotifyDeviceNotConnected"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  245
+                                           },
+                                           {
+                                               "name":  "WriteBytesInputValue_TextChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteBytesInputValue.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "WriteBytesInputValue_GotFocus",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WriteBytesInputValue.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  136
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_Events",
+                          "title":  "Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario4_Events.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomSerialDeviceAccess\\cs\\Scenario4_Events.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Events"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Pin Changed Event : "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PinChangedValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "PinChangedToggleSwitch",
+                                               "handlers":  {
+                                                                "Toggled":  "PinChangedToggleSwitch_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Error Received Event : "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ErrorReceivedValue",
+                                               "text":  " Not Set"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "ErrorReceivedToggleSwitch",
+                                               "handlers":  {
+                                                                "Toggled":  "ErrorReceivedToggleSwitch_Toggled"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.Devices.SerialCommunication",
+                                         "SDKTemplate",
+                                         "CustomSerialDeviceAccess"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_Events",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "EventHandlerForDevice.Current",
+                                                                "EventsScrollViewer.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "MainPage.Current",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Device.PortName",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  624
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PinChangedToggleSwitch.IsOn",
+                                                                "ErrorReceivedToggleSwitch.IsOn"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  113
+                                           },
+                                           {
+                                               "name":  "PinChangedEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  100
+                                           },
+                                           {
+                                               "name":  "ErrorReceivedEvent",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  102
+                                           },
+                                           {
+                                               "name":  "PinChangedToggleSwitch_Toggled",
+                                               "namespaces_used":  [
+                                                                       "Windows.Foundation.TypedEventHandler"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PinChangedToggleSwitch.IsOn",
+                                                                "Windows.Foundation",
+                                                                "NotifyType.StatusMessage",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.PinChanged",
+                                                                "PinChangedValue.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Foundation.TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  746
+                                           },
+                                           {
+                                               "name":  "ErrorReceivedToggleSwitch_Toggled",
+                                               "namespaces_used":  [
+                                                                       "Windows.Foundation.TypedEventHandler"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ErrorReceivedToggleSwitch.IsOn",
+                                                                "Windows.Foundation",
+                                                                "NotifyType.StatusMessage",
+                                                                "EventHandlerForDevice.Current",
+                                                                "Device.ErrorReceived",
+                                                                "ErrorReceivedValue.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Foundation.TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  782
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

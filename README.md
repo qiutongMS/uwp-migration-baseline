@@ -3,7 +3,7 @@
 A PowerShell-based pipeline that **builds, deploys, launches, screenshots and uninstalls** every C# UWP sample in a target repo so the captured artifacts can serve as a **behavioral baseline** for a future architecture migration.
 
 The pipeline was originally written against
-[`qiutongMS/uwp-samples-standalone`](https://github.com/qiutongMS/uwp-samples-standalone) (38 samples), but the scripts are generic — point them at any directory of UWP sample projects and they will iterate.
+[`qiutongMS/uwp-samples-standalone`](https://github.com/qiutongMS/uwp-samples-standalone) (96 baseline rows from 94 samples on the `refilter-102-samples` branch — two samples ship multiple UWP apps, each captured as its own row), but the scripts are generic — point them at any directory of UWP sample projects and they will iterate.
 
 ## What you get out of it
 
@@ -19,20 +19,21 @@ At the repo level you also get `_index.md`, `_status.csv`, and `_progress.log` f
 
 ## Where is the baseline I just captured?
 
-The last full batch (38 samples, 281 PNGs, 12.8 MB) is checked into [`baseline/`](baseline/). Start at [`baseline/_index.md`](baseline/_index.md) for the per-sample table.
+The last full batch (96 baseline rows, 715 PNGs) is checked into [`baseline/`](baseline/). Start at [`baseline/_index.md`](baseline/_index.md) for the per-sample table.
 
 If you want to **reproduce** the baseline (or re-run after the migration), follow [Quickstart](#quickstart) below — the scripts will regenerate this entire `baseline/` directory.
 
-## Status as of last full batch (38 samples)
+## Status as of last full batch (96 baseline rows)
 
 | Capture state | Count | Meaning |
 |---|---:|---|
-| `ok`            | 24 | Standard scenario iteration succeeded end-to-end |
-| `ok-generic`    | 12 | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
-| `partial`       | 1  | Got some scenarios then hit a sample-specific bug (XamlBind scenario 5 has a pre-existing null-ref) |
-| `crashed`       | 1  | UWP launched but immediately crashed with `0xc000027b` (system DLL delayed-load failure). Only `RadialController` remains in this bucket — it needs Surface Dial / pen hardware to start up. |
+| `ok`            | 78 | Standard scenario iteration succeeded end-to-end |
+| `ok-generic`    | 10 | No standard `ScenarioControl` found → fell back to enumerating main-page Buttons/ListItems/Hyperlinks (Plan A) |
+| `failed`        | 6  | App launched but the UI thread never paints a window — all six are hardware-environment-broken on the test host (`BluetoothAdvertisement`, `BluetoothLE` — no Bluetooth adapter; `MobileHotspot`, `NetworkConnectivity`, `OnDemandHotspot` — no real Wi-Fi NIC / Hotspot capability; `RadioManager` — no enumerable `RadioManager` device). Build / deploy / launch all OK; capture times out because the app doesn't render. |
+| `pending`       | 1  | Build / deploy failed before reaching capture: `MIDI` (manifest declares `<PackageDependency Name="Microsoft.Midi.GmDls" />`; that framework appx is not installed on the host). |
+| `crashed`       | 1  | `CameraOpenCV` — build/deploy/launch OK, but the app crashes inside `Windows.UI.Xaml.dll` (`0xc000027b`) immediately after splash. `OpenCV.Win.* 3.10.6.1` native bindings load but their old `.targets` aren't fully compatible with the modern UAP build. Not pipeline-fixable. |
 
-287 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list and the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket.
+715 PNG screenshots total. See [`docs/known-issues.md`](docs/known-issues.md) for the env-broken-sample list, the recipe (now committed upstream) that fixed the 5 Camera samples previously in this bucket, and the M13 multi-project-sample handling that added the 7 most recent rows.
 
 ## Prerequisites
 

@@ -1,0 +1,67 @@
+﻿{
+    "sample":  "Pedometer",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PedometerCS.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PedometerCS.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PedometerCS.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Events",
+                          "initial_capture":  "01_1_Events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register ReadingChanged",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Events__after_Register_ReadingChanged.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) History",
+                          "initial_capture":  "02_2_History__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get History",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_History__after_Get_History.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Current step count",
+                          "initial_capture":  "03_3_Current_step_count__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get steps count",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Current_step_count__after_Get_steps_count.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Background Pedometer",
+                          "initial_capture":  "04_4_Background_Pedometer__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register Task",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Background_Pedometer__after_Register_Task.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

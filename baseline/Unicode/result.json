@@ -1,0 +1,28 @@
+﻿{
+    "sample":  "Unicode",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Unicode\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.UnicodeSample.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.UnicodeSample.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.UnicodeSample.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Tokenize lexical identifiers within a string",
+                          "initial_capture":  "01_1_Tokenize_lexical_identifiers_within_a_string__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Extract Identifiers",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Tokenize_lexical_identifiers_within_a_string__after_Extract_Identifiers.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

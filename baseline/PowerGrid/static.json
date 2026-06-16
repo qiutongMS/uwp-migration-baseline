@@ -1,0 +1,465 @@
+﻿{
+    "sample":  "PowerGrid",
+    "feature_name":  "PowerGrid",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "PowerGridForecast.ForecastUpdated",
+                           "NotifyType.StatusMessage",
+                           "TimeSpan.Zero",
+                           "Math.Max",
+                           "Math.Min",
+                           "Forecast.Count",
+                           "BestTimeRun.Text",
+                           "LowestSeverityRun.Text",
+                           "HoursAheadTextBox.Text",
+                           "NotifyType.ErrorMessage",
+                           "TimeSpan.FromHours",
+                           "LowUXImpactCheckBox.IsChecked",
+                           "DateTimeOffset.MaxValue",
+                           "Task.Run",
+                           "PowerGridForecast.GetForecast",
+                           "DateTimeOffset.Now",
+                           "BlockDuration.Ticks",
+                           "ForecastStartTimeRun.Text",
+                           "ForecastBlockDurationRun.Text",
+                           "ForecastList.ItemsSource",
+                           "TotalMinutes.ToString",
+                           "IsLowUserExperienceImpact.ToString"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_FindBest",
+                          "title":  "Find best time",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PowerGrid\\shared\\Scenario1_FindBest.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PowerGrid\\cs\\Scenario1_FindBest.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Find the best Power Grid severity"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Hours to look ahead"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "HoursAheadTextBox",
+                                               "text":  "12"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "LowUXImpactCheckBox",
+                                               "content":  "Restrict to low user experience impact"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "FindBest",
+                                               "content":  "Find best time",
+                                               "handlers":  {
+                                                                "Click":  "FindBest_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Best time:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Lowest severity:"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading.Tasks",
+                                         "Windows.ApplicationModel.UserDataTasks",
+                                         "Windows.Devices.Display.Core",
+                                         "Windows.Devices.Power",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_FindBest",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PowerGridForecast.ForecastUpdated"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  95
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PowerGridForecast.ForecastUpdated"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  95
+                                           },
+                                           {
+                                               "name":  "PowerGridForecast_ForecastUpdated",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  209
+                                           },
+                                           {
+                                               "name":  "GetForecastIndexContainingTime",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "TimeSpan.Zero",
+                                                                "Math.Max",
+                                                                "Math.Min",
+                                                                "Forecast.Count"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  407
+                                           },
+                                           {
+                                               "name":  "FindBest_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BestTimeRun.Text",
+                                                                "LowestSeverityRun.Text",
+                                                                "NotifyType.StatusMessage",
+                                                                "HoursAheadTextBox.Text",
+                                                                "NotifyType.ErrorMessage",
+                                                                "TimeSpan.FromHours",
+                                                                "LowUXImpactCheckBox.IsChecked",
+                                                                "DateTimeOffset.MaxValue",
+                                                                "Task.Run",
+                                                                "PowerGridForecast.GetForecast",
+                                                                "DateTimeOffset.Now",
+                                                                "BlockDuration.Ticks"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TimeSpan",
+                                                                 "DateTimeFormatter",
+                                                                 "DecimalFormatter",
+                                                                 "IncrementNumberRounder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3264
+                                           },
+                                           {
+                                               "name":  "DecimalFormatter",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "IncrementNumberRounder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  245
+                                           },
+                                           {
+                                               "name":  "IncrementNumberRounder",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  18
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_PrintFullForecast",
+                          "title":  "Display full forecast",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PowerGrid\\shared\\Scenario2_PrintFullForecast.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PowerGrid\\cs\\Scenario2_PrintFullForecast.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Full power grid forecast"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get forecast",
+                                               "handlers":  {
+                                                                "Click":  "GetForecastButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Forecast start time:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Forecast block duration (minutes):"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ForecastList"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind DateTimeString}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind SeverityString}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{x:Bind LowImpactString}"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.Power",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "System.Linq",
+                                         "Windows.UI.Xaml.Data",
+                                         "Windows.Globalization.NumberFormatting"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_PrintFullForecast",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PowerGridForecast.ForecastUpdated"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  95
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PowerGridForecast.ForecastUpdated"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  95
+                                           },
+                                           {
+                                               "name":  "PowerGridForecast_ForecastUpdated",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  208
+                                           },
+                                           {
+                                               "name":  "GetForecastButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ForecastStartTimeRun.Text",
+                                                                "ForecastBlockDurationRun.Text",
+                                                                "ForecastList.ItemsSource",
+                                                                "Task.Run",
+                                                                "PowerGridForecast.GetForecast",
+                                                                "Forecast.Count",
+                                                                "NotifyType.ErrorMessage",
+                                                                "TotalMinutes.ToString",
+                                                                "IsLowUserExperienceImpact.ToString"
+                                                            ],
+                                               "new_types":  [
+                                                                 "List",
+                                                                 "DateTimeFormatter",
+                                                                 "DecimalFormatter",
+                                                                 "IncrementNumberRounder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2297
+                                           },
+                                           {
+                                               "name":  "DecimalFormatter",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "IncrementNumberRounder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  225
+                                           },
+                                           {
+                                               "name":  "IncrementNumberRounder",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  18
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

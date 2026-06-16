@@ -1,0 +1,99 @@
+﻿{
+    "sample":  "BackgroundTask",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTask\\cs\\BackgroundTask",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.BackgroundTask.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.BackgroundTask.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.BackgroundTask.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Background Task",
+                          "initial_capture":  "01_1_Background_Task__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Background_Task__after_Register.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Background Task with Condition",
+                          "initial_capture":  "02_2_Background_Task_with_Condition__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Background_Task_with_Condition__after_Register.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Servicing Complete Task",
+                          "initial_capture":  "03_3_Servicing_Complete_Task__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Servicing_Complete_Task__after_Register.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Background Task with Time Trigger",
+                          "initial_capture":  "04_4_Background_Task_with_Time_Trigger__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Background_Task_with_Time_Trigger__after_Register.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Background Task with Application Trigger",
+                          "initial_capture":  "05_5_Background_Task_with_Application_Trigger__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Background_Task_with_Application_Trigger__after_Register.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Grouped Background Task",
+                          "initial_capture":  "06_6_Grouped_Background_Task__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Grouped_Background_Task__after_Register.png"
+                                          },
+                                          {
+                                              "name":  "Unregister Ungrouped Tasks",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Grouped_Background_Task__after_Unregister_Ungrouped_Tasks.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

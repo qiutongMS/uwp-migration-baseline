@@ -1,0 +1,36 @@
+﻿{
+    "sample":  "XamlDataVirtualization",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlDataVirtualization\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DataVirtualization.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DataVirtualization.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DataVirtualization.CS_8wekyb3d8bbwe!DataVirtualization.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Data Virtualization",
+                          "initial_capture":  "01_1_Data_Virtualization__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Selection Management",
+                          "initial_capture":  "02_2_Selection_Management__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Force a reset",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Selection_Management__after_Force_a_reset.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,76 @@
+﻿{
+    "sample":  "CustomUsbDeviceAccess",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\CustomUsbDeviceAccess\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.CustomUsbDeviceAccess.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.CustomUsbDeviceAccess.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.CustomUsbDeviceAccess.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Connect/Disconnect",
+                          "initial_capture":  "01_1_Connect_Disconnect__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Connect to device",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Connect_Disconnect__after_Connect_to_device.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Control Transfer",
+                          "initial_capture":  "02_2_Control_Transfer__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Interrupt Pipes",
+                          "initial_capture":  "03_3_Interrupt_Pipes__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Bulk Pipes",
+                          "initial_capture":  "04_4_Bulk_Pipes__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) USB Descriptors",
+                          "initial_capture":  "05_5_USB_Descriptors__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Interface Settings",
+                          "initial_capture":  "06_6_Interface_Settings__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Sync Device",
+                          "initial_capture":  "07_7_Sync_Device__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

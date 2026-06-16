@@ -1,0 +1,1086 @@
+﻿{
+    "sample":  "DatagramSocket",
+    "feature_name":  "DatagramSocket",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "BindToAny.IsChecked",
+                           "AdapterList.IsEnabled",
+                           "String.IsNullOrEmpty",
+                           "ServiceNameForListener.Text",
+                           "NotifyType.ErrorMessage",
+                           "CoreApplication.Properties",
+                           "String.IsNullOrWhiteSpace",
+                           "InboundBufferSize.Text",
+                           "Control.InboundBufferSizeInBytes",
+                           "BindToAddress.IsChecked",
+                           "BindToAdapter.IsChecked",
+                           "AdapterList.SelectedItem",
+                           "LocalHost.CanonicalName",
+                           "NotifyType.StatusMessage",
+                           "LocalHost.IPInformation",
+                           "SocketError.GetStatus",
+                           "SocketErrorStatus.Unknown",
+                           "String.Format",
+                           "OutputStream.WriteAsync",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "AdapterList.ItemsSource",
+                           "AdapterList.DisplayMemberPath",
+                           "NetworkInformation.GetHostNames",
+                           "IPInformation.NetworkAdapter",
+                           "HostNameForConnect.Text",
+                           "ServiceNameForConnect.Text",
+                           "DontFragment.IsOn",
+                           "Control.DontFragment",
+                           "SocketErrorStatus.ConnectionResetByPeer",
+                           "SendOutput.Text",
+                           "DatagramSocket.Close",
+                           "MulticastRadioButton.IsChecked",
+                           "RemoteAddressLabel.Text",
+                           "StartListener.Content",
+                           "RemoteAddress.Text",
+                           "RemoteAddress.IsEnabled",
+                           "SendMessageButton.IsEnabled",
+                           "CloseListenerButton.IsEnabled",
+                           "ServiceName.Text",
+                           "Control.MulticastOnly",
+                           "Information.LocalPort",
+                           "RemoteAddress.CanonicalName"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Start",
+                          "title":  "Scenario1_Start",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario1_Start.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario1_Start.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Service name:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "ServiceNameForListener",
+                                               "text":  "22112"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Optional settings:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Inbound buffer size (bytes):"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "InboundBufferSize"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "BindToAny",
+                                               "handlers":  {
+                                                                "Checked":  "BindToAny_Checked",
+                                                                "Unchecked":  "BindToAny_Unchecked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "BindToAddress"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "BindToAdapter"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "AdapterList"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StartListener",
+                                               "content":  "Listen",
+                                               "handlers":  {
+                                                                "Click":  "StartListener_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "Windows.ApplicationModel.Core",
+                                         "Windows.Networking",
+                                         "Windows.Networking.Connectivity",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BindToAny.IsChecked"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  87
+                                           },
+                                           {
+                                               "name":  "BindToAny_Checked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AdapterList.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  54
+                                           },
+                                           {
+                                               "name":  "BindToAny_Unchecked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AdapterList.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  53
+                                           },
+                                           {
+                                               "name":  "StartListener_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "ServiceNameForListener.Text",
+                                                                "NotifyType.ErrorMessage",
+                                                                "CoreApplication.Properties",
+                                                                "String.IsNullOrWhiteSpace",
+                                                                "InboundBufferSize.Text",
+                                                                "Control.InboundBufferSizeInBytes",
+                                                                "BindToAddress.IsChecked",
+                                                                "BindToAdapter.IsChecked",
+                                                                "AdapterList.SelectedItem",
+                                                                "LocalHost.CanonicalName",
+                                                                "BindToAny.IsChecked",
+                                                                "NotifyType.StatusMessage",
+                                                                "LocalHost.IPInformation",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DatagramSocket"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  4808
+                                           },
+                                           {
+                                               "name":  "MessageReceived",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CoreApplication.Properties",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "RemotePeer"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1840
+                                           },
+                                           {
+                                               "name":  "EchoMessage",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.Format",
+                                                                "NotifyType.ErrorMessage",
+                                                                "OutputStream.WriteAsync",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1561
+                                           },
+                                           {
+                                               "name":  "NotifyUserFromAsyncThread",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  151
+                                           },
+                                           {
+                                               "name":  "PopulateAdapterList",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "AdapterList.ItemsSource",
+                                                                "AdapterList.DisplayMemberPath",
+                                                                "NetworkInformation.GetHostNames"
+                                                            ],
+                                               "new_types":  [
+                                                                 "LocalHostItem"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  512
+                                           },
+                                           {
+                                               "name":  "RemotePeer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  127
+                                           },
+                                           {
+                                               "name":  "IsMatching",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  80
+                                           },
+                                           {
+                                               "name":  "ToString",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  47
+                                           },
+                                           {
+                                               "name":  "LocalHostItem",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "IPInformation.NetworkAdapter"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ArgumentNullException",
+                                                                 "ArgumentException"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  529
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Connect",
+                          "title":  "Scenario2_Connect",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario2_Connect.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario2_Connect.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Host name:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "HostNameForConnect",
+                                               "text":  "localhost"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Service name:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "ServiceNameForConnect",
+                                               "text":  "22112"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Optional settings:"
+                                           },
+                                           {
+                                               "type":  "ToggleSwitch",
+                                               "name":  "",
+                                               "x_name":  "DontFragment"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ConnectSocket",
+                                               "content":  "Connect",
+                                               "handlers":  {
+                                                                "Click":  "ConnectSocket_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.ApplicationModel.Core",
+                                         "Windows.Networking",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CoreApplication.Properties",
+                                                                "HostNameForConnect.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  430
+                                           },
+                                           {
+                                               "name":  "ConnectSocket_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "ServiceNameForConnect.Text",
+                                                                "NotifyType.ErrorMessage",
+                                                                "HostNameForConnect.Text",
+                                                                "CoreApplication.Properties",
+                                                                "DontFragment.IsOn",
+                                                                "Control.DontFragment",
+                                                                "NotifyType.StatusMessage",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown"
+                                                            ],
+                                               "new_types":  [
+                                                                 "HostName",
+                                                                 "DatagramSocket"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3013
+                                           },
+                                           {
+                                               "name":  "MessageReceived",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.ConnectionResetByPeer",
+                                                                "NotifyType.ErrorMessage",
+                                                                "SocketErrorStatus.Unknown"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1670
+                                           },
+                                           {
+                                               "name":  "NotifyUserFromAsyncThread",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  151
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_Send",
+                          "title":  "Scenario3_Send",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario3_Send.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario3_Send.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1",
+                                               "inner_text":  "Now you can send data to the \u0027server\u0027. Data is often sent using a DataWriter instance, which writes to the socket\u0027s output stream."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SendHello",
+                                               "content":  "Send \u0027hello\u0027",
+                                               "handlers":  {
+                                                                "Click":  "SendHello_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SendOutput"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Diagnostics",
+                                         "Windows.ApplicationModel.Core",
+                                         "Windows.Networking",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  10
+                                           },
+                                           {
+                                               "name":  "SendHello_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CoreApplication.Properties",
+                                                                "NotifyType.ErrorMessage",
+                                                                "SendOutput.Text",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "SendOutput.Text"
+                                                           ],
+                                               "body_length":  2018
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_Close",
+                          "title":  "Scenario4_Close",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario4_Close.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario4_Close.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseSockets",
+                                               "content":  "Close",
+                                               "handlers":  {
+                                                                "Click":  "CloseSockets_Click"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Diagnostics",
+                                         "Windows.ApplicationModel.Core",
+                                         "Windows.Networking",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  10
+                                           },
+                                           {
+                                               "name":  "CloseSockets_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CoreApplication.Properties",
+                                                                "DatagramSocket.Close",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2142
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_MulticastAndBroadcast",
+                          "title":  "Scenario5_MulticastAndBroadcast",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario5_MulticastAndBroadcast.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs\\Scenario5_MulticastAndBroadcast.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock1"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "MulticastRadioButton",
+                                               "handlers":  {
+                                                                "Checked":  "MulticastRadioButton_Checked",
+                                                                "Unchecked":  "MulticastRadioButton_Unchecked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Service name:"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "ServiceName",
+                                               "text":  "22113"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "RemoteAddressLabel"
+                                           },
+                                           {
+                                               "type":  "TextBox",
+                                               "name":  "",
+                                               "x_name":  "RemoteAddress"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StartListener",
+                                               "handlers":  {
+                                                                "Click":  "StartListener_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SendMessageButton",
+                                               "content":  "Send \u0027hello\u0027",
+                                               "handlers":  {
+                                                                "Click":  "SendMessage_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "CloseListenerButton",
+                                               "content":  "Close Listener",
+                                               "handlers":  {
+                                                                "Click":  "CloseListener_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "SendOutput"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "Windows.ApplicationModel.Core",
+                                         "Windows.Networking",
+                                         "Windows.Networking.Connectivity",
+                                         "Windows.Networking.Sockets",
+                                         "Windows.Storage.Streams",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario5",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "CloseListenerSocket",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DatagramSocket.Close"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  371
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MulticastRadioButton.IsChecked"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  62
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  46
+                                           },
+                                           {
+                                               "name":  "SetupMulticastScenarioUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RemoteAddressLabel.Text",
+                                                                "StartListener.Content",
+                                                                "RemoteAddress.Text",
+                                                                "RemoteAddress.IsEnabled",
+                                                                "SendMessageButton.IsEnabled",
+                                                                "CloseListenerButton.IsEnabled",
+                                                                "SendOutput.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "SendOutput.Text"
+                                                           ],
+                                               "body_length":  379
+                                           },
+                                           {
+                                               "name":  "SetupBroadcastScenarioUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RemoteAddressLabel.Text",
+                                                                "StartListener.Content",
+                                                                "RemoteAddress.Text",
+                                                                "RemoteAddress.IsEnabled",
+                                                                "SendMessageButton.IsEnabled",
+                                                                "CloseListenerButton.IsEnabled",
+                                                                "SendOutput.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "SendOutput.Text"
+                                                           ],
+                                               "body_length":  362
+                                           },
+                                           {
+                                               "name":  "MulticastRadioButton_Checked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  87
+                                           },
+                                           {
+                                               "name":  "MulticastRadioButton_Unchecked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  87
+                                           },
+                                           {
+                                               "name":  "StartListener_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "ServiceName.Text",
+                                                                "NotifyType.ErrorMessage",
+                                                                "MulticastRadioButton.IsChecked",
+                                                                "Control.MulticastOnly",
+                                                                "RemoteAddress.Text",
+                                                                "Information.LocalPort",
+                                                                "NotifyType.StatusMessage",
+                                                                "SendMessageButton.IsEnabled",
+                                                                "CloseListenerButton.IsEnabled",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DatagramSocket",
+                                                                 "HostName"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3660
+                                           },
+                                           {
+                                               "name":  "SendMessage_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SendOutput.Text",
+                                                                "RemoteAddress.Text",
+                                                                "ServiceName.Text",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "HostName",
+                                                                 "DataWriter"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "SendOutput.Text"
+                                                           ],
+                                               "body_length":  1661
+                                           },
+                                           {
+                                               "name":  "CloseListener_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SendMessageButton.IsEnabled",
+                                                                "CloseListenerButton.IsEnabled",
+                                                                "SendOutput.Text",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+                                                               "SendOutput.Text"
+                                                           ],
+                                               "body_length":  357
+                                           },
+                                           {
+                                               "name":  "MessageReceived",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RemoteAddress.CanonicalName",
+                                                                "NotifyType.StatusMessage",
+                                                                "SocketError.GetStatus",
+                                                                "SocketErrorStatus.Unknown",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1206
+                                           },
+                                           {
+                                               "name":  "NotifyUserFromAsyncThread",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  151
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

@@ -1,0 +1,585 @@
+﻿{
+    "sample":  "UserInfo",
+    "feature_name":  "Account picture name C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "MainPage.GetUserViewModelsAsync",
+                           "UserList.DataContext",
+                           "UserList.SelectedIndex",
+                           "UserList.SelectedValue",
+                           "ResultsText.Text",
+                           "ProfileImage.Source",
+                           "NotifyType.StatusMessage",
+                           "User.GetFromId",
+                           "Type.ToString",
+                           "AuthenticationStatus.ToString",
+                           "KnownUserProperties.FirstName",
+                           "KnownUserProperties.LastName",
+                           "KnownUserProperties.ProviderName",
+                           "KnownUserProperties.AccountName",
+                           "KnownUserProperties.GuestHost",
+                           "KnownUserProperties.PrincipalName",
+                           "KnownUserProperties.DomainName",
+                           "KnownUserProperties.SessionInitiationProtocolUri",
+                           "UserPictureSize.Size64x64",
+                           "NotifyType.ErrorMessage",
+                           "Users.Clear",
+                           "User.CreateWatcher",
+                           "StartButton.IsEnabled",
+                           "StopButton.IsEnabled",
+                           "KnownUserProperties.DisplayName",
+                           "String.IsNullOrEmpty",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Low",
+                           "Users.Add",
+                           "Users.Remove",
+                           "UserAgeConsentResult.Included",
+                           "UserAgeConsentResult.NotEnforced",
+                           "UserAgeConsentResult.NotIncluded",
+                           "UserAgeConsentResult.Unknown",
+                           "UserAgeConsentResult.Ambiguous",
+                           "UserAgeConsentGroup.Child",
+                           "UserAgeConsentGroup.Minor",
+                           "UserAgeConsentGroup.Adult"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_FindUsers",
+                          "title":  "Find users",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\shared\\Scenario1_FindUsers.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\cs\\Scenario1_FindUsers.xaml.cs",
+                          "description":  "Find users and display user properties",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Find users and display user properties"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "UserList"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Show properties",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ShowProperties}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ResultsText"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  "ProfileImage"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Foundation.Collections",
+                                         "Windows.Storage.Streams",
+                                         "Windows.System",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Media.Imaging",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_FindUsers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "MainPage.GetUserViewModelsAsync",
+                                                                "UserList.DataContext",
+                                                                "UserList.SelectedIndex"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  346
+                                           },
+                                           {
+                                               "name":  "ShowProperties",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UserList.SelectedValue",
+                                                                "ResultsText.Text",
+                                                                "ProfileImage.Source",
+                                                                "NotifyType.StatusMessage",
+                                                                "User.GetFromId",
+                                                                "Type.ToString",
+                                                                "AuthenticationStatus.ToString",
+                                                                "KnownUserProperties.FirstName",
+                                                                "KnownUserProperties.LastName",
+                                                                "KnownUserProperties.ProviderName",
+                                                                "KnownUserProperties.AccountName",
+                                                                "KnownUserProperties.GuestHost",
+                                                                "KnownUserProperties.PrincipalName",
+                                                                "KnownUserProperties.DomainName",
+                                                                "KnownUserProperties.SessionInitiationProtocolUri",
+                                                                "UserPictureSize.Size64x64",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BitmapImage"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2575
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_WatchUsers",
+                          "title":  "Watch users",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\shared\\Scenario2_WatchUsers.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\cs\\Scenario2_WatchUsers.xaml.cs",
+                          "description":  "Maintain a list of users with a UserWatcher",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Maintain a list of users with a UserWatcher"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StartButton",
+                                               "content":  "Start watching",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind StartWatching}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopButton",
+                                               "content":  "Stop watching",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind StopWatching}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "UserList"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.System",
+                                         "Windows.UI.Core",
+                                         "System.Threading.Tasks"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_WatchUsers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  39
+                                           },
+                                           {
+                                               "name":  "StartWatching",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "Users.Clear",
+                                                                "User.CreateWatcher",
+                                                                "StartButton.IsEnabled",
+                                                                "StopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  578
+                                           },
+                                           {
+                                               "name":  "StopWatching",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Users.Clear",
+                                                                "StartButton.IsEnabled",
+                                                                "StopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  654
+                                           },
+                                           {
+                                               "name":  "FindModelByUserId",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  236
+                                           },
+                                           {
+                                               "name":  "GetDisplayNameOrGenericNameAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "KnownUserProperties.DisplayName",
+                                                                "String.IsNullOrEmpty"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  455
+                                           },
+                                           {
+                                               "name":  "OnUserAdded",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low",
+                                                                "Users.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "UserViewModel"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  697
+                                           },
+                                           {
+                                               "name":  "OnUserUpdated",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  543
+                                           },
+                                           {
+                                               "name":  "OnUserRemoved",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low",
+                                                                "Users.Remove"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  478
+                                           },
+                                           {
+                                               "name":  "OnEnumerationCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  291
+                                           },
+                                           {
+                                               "name":  "OnWatcherStopped",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Low"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  211
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_CheckUserConsentGroup",
+                          "title":  "Check user consent group",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\cs\\Scenario3_CheckUserConsentGroup.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\cs\\Scenario3_CheckUserConsentGroup.xaml.cs",
+                          "description":  "Find users and display user consent group",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Find users and display user consent group"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "UserList"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Show Consent Group",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ShowConsentGroups}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ResultsText"
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  "ProfileImage"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Foundation.Collections",
+                                         "Windows.Storage.Streams",
+                                         "Windows.System",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Media.Imaging",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_CheckUserConsentGroup",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.GetUserViewModelsAsync",
+                                                                "UserList.DataContext",
+                                                                "UserList.SelectedIndex"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  302
+                                           },
+                                           {
+                                               "name":  "EvaluateConsentResult",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UserAgeConsentResult.Included",
+                                                                "UserAgeConsentResult.NotEnforced",
+                                                                "UserAgeConsentResult.NotIncluded",
+                                                                "UserAgeConsentResult.Unknown",
+                                                                "UserAgeConsentResult.Ambiguous"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  668
+                                           },
+                                           {
+                                               "name":  "ShowConsentGroups",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UserList.SelectedValue",
+                                                                "ResultsText.Text",
+                                                                "NotifyType.StatusMessage",
+                                                                "User.GetFromId",
+                                                                "UserAgeConsentGroup.Child",
+                                                                "UserAgeConsentGroup.Minor",
+                                                                "UserAgeConsentGroup.Adult",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1432
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

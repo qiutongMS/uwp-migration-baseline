@@ -1,0 +1,1389 @@
+﻿{
+    "sample":  "BackgroundActivation",
+    "feature_name":  "Background Activation",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "BackgroundTaskSample.SampleBackgroundTaskName",
+                           "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus",
+                           "BackgroundTaskSample.RegisterBackgroundTask",
+                           "SystemTriggerType.TimeZoneChange",
+                           "BackgroundTaskSample.UnregisterBackgroundTasks",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "BackgroundTaskSample.SampleBackgroundTaskProgress",
+                           "RegisterButton.IsEnabled",
+                           "BackgroundTaskSample.SampleBackgroundTaskRegistered",
+                           "UnregisterButton.IsEnabled",
+                           "Progress.Text",
+                           "Status.Text",
+                           "BackgroundTaskSample.GetBackgroundTaskStatus",
+                           "BackgroundTaskSample.SampleBackgroundTaskWithConditionName",
+                           "SystemConditionType.InternetAvailable",
+                           "BackgroundTaskSample.SampleBackgroundTaskWithConditionProgress",
+                           "BackgroundTaskSample.SampleBackgroundTaskWithConditionRegistered",
+                           "BackgroundTaskSample.ServicingCompleteTaskName",
+                           "SystemTriggerType.ServicingComplete",
+                           "BackgroundTaskSample.ServicingCompleteTaskProgress",
+                           "BackgroundTaskSample.ServicingCompleteTaskRegistered",
+                           "BackgroundTaskSample.TimeTriggeredTaskName",
+                           "BackgroundTaskSample.TimeTriggeredTaskProgress",
+                           "BackgroundTaskSample.TimeTriggeredTaskRegistered",
+                           "BackgroundTaskSample.ApplicationTriggerTaskName",
+                           "BackgroundTaskSample.ApplicationTriggerTaskResult",
+                           "BackgroundTaskSample.TaskStatuses",
+                           "BackgroundTaskSample.ApplicationTriggerTaskProgress",
+                           "BackgroundTaskSample.ApplicationTriggerTaskRegistered",
+                           "SignalButton.IsEnabled",
+                           "Result.Text",
+                           "BackgroundTaskSample.GetTaskGroup",
+                           "BackgroundTaskSample.BackgroundTaskGroupId",
+                           "BackgroundTaskSample.BackgroundTaskGroupFriendlyName",
+                           "BackgroundTaskSample.GroupedBackgroundTaskName",
+                           "Value.Unregister",
+                           "BackgroundTaskSample.GroupedBackgroundTaskProgress",
+                           "BackgroundTaskSample.GroupedBackgroundTaskRegistered",
+                           "UnregisterGroupedButton.IsEnabled"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_SampleBackgroundTask",
+                          "title":  "Scenario1_SampleBackgroundTask",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\shared\\Scenario1_SampleBackgroundTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\cs\\Scenario1_SampleBackgroundTask.xaml.cs",
+                          "description":  "Registers a background task for the Time Zone Change system event. The background task runs whenever the Time Zone changes.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Registers a background task for the Time Zone Change system event. The background task runs whenever the Time Zone changes."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Status",
+                                               "text":  "Unregistered"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Progress"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "SampleBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskName",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  495
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.RegisterBackgroundTask",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskName",
+                                                                "SystemTriggerType.TimeZoneChange"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SystemTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  482
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.UnregisterBackgroundTasks",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  143
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskProgress"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  302
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  35
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "RegisterButton.IsEnabled",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskRegistered",
+                                                                "UnregisterButton.IsEnabled",
+                                                                "Progress.Text",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskProgress",
+                                                                "Status.Text",
+                                                                "BackgroundTaskSample.GetBackgroundTaskStatus",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  536
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_SampleBackgroundTaskWithCondition",
+                          "title":  "Scenario2_SampleBackgroundTaskWithCondition",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\shared\\Scenario2_SampleBackgroundTaskWithCondition.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\cs\\Scenario2_SampleBackgroundTaskWithCondition.xaml.cs",
+                          "description":  "Registers a background task for the Time Zone Change system event and the Internet Available system condition. The background task runs whenever the Time Zone changes if there is an available internet connection. The task will be canceled if the internet connection is disconnected while the background task is running.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Status",
+                                               "text":  "Unregistered"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Progress"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "SDKTemplate",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "SampleBackgroundTaskWithCondition",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionName",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  521
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.RegisterBackgroundTask",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionName",
+                                                                "SystemTriggerType.TimeZoneChange",
+                                                                "SystemConditionType.InternetAvailable"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SystemTrigger",
+                                                                 "SystemCondition"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  549
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.UnregisterBackgroundTasks",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  156
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionProgress"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  315
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  35
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "RegisterButton.IsEnabled",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionRegistered",
+                                                                "UnregisterButton.IsEnabled",
+                                                                "Progress.Text",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionProgress",
+                                                                "Status.Text",
+                                                                "BackgroundTaskSample.GetBackgroundTaskStatus",
+                                                                "BackgroundTaskSample.SampleBackgroundTaskWithConditionName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  588
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_ServicingCompleteTask",
+                          "title":  "Scenario3_ServicingCompleteTask",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\shared\\Scenario3_ServicingCompleteTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\cs\\Scenario3_ServicingCompleteTask.xaml.cs",
+                          "description":  "Registers a background task for the Servicing Complete event. The background task runs when the application is updated with a newer version.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Registers a background task for the Servicing Complete event. The background task runs when the application is updated with a newer version."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Status",
+                                               "text":  "Unregistered"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Progress"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "SDKTemplate",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "ServicingCompleteTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskName",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  497
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.RegisterBackgroundTask",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskName",
+                                                                "SystemTriggerType.ServicingComplete"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SystemTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  486
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.UnregisterBackgroundTasks",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  144
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskProgress"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  303
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  35
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "RegisterButton.IsEnabled",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskRegistered",
+                                                                "UnregisterButton.IsEnabled",
+                                                                "Progress.Text",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskProgress",
+                                                                "Status.Text",
+                                                                "BackgroundTaskSample.GetBackgroundTaskStatus",
+                                                                "BackgroundTaskSample.ServicingCompleteTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  540
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_TimeTriggeredTask",
+                          "title":  "Scenario4_TimeTriggeredTask",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\shared\\Scenario4_TimeTriggeredTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\cs\\Scenario4_TimeTriggeredTask.xaml.cs",
+                          "description":  "Registers a background task for a time trigger event. The background task runs every 15 mins.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Registers a background task for a time trigger event. The background task runs every 15 mins."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Status",
+                                               "text":  "Unregistered"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Progress"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "SDKTemplate",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "TimeTriggeredTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskName",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  489
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.RegisterBackgroundTask",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskName"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TimeTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  447
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.UnregisterBackgroundTasks",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  140
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskProgress"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  299
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  35
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "RegisterButton.IsEnabled",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskRegistered",
+                                                                "UnregisterButton.IsEnabled",
+                                                                "Progress.Text",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskProgress",
+                                                                "Status.Text",
+                                                                "BackgroundTaskSample.GetBackgroundTaskStatus",
+                                                                "BackgroundTaskSample.TimeTriggeredTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  524
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_ApplicationTriggerTask",
+                          "title":  "Scenario5_ApplicationTriggerTask",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\shared\\Scenario5_ApplicationTriggerTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\cs\\Scenario5_ApplicationTriggerTask.xaml.cs",
+                          "description":  "Registers a background task for an application trigger event, requests background access and then signals the event.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Registers a background task for an application trigger event, requests background access and then signals the event."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SignalButton",
+                                               "content":  "Signal",
+                                               "handlers":  {
+                                                                "Click":  "SignalBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Status",
+                                               "text":  "Unregistered"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Progress"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Result"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "SDKTemplate",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "ApplicationTriggerTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskName",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ApplicationTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  548
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.RegisterBackgroundTask",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  433
+                                           },
+                                           {
+                                               "name":  "UnregisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.UnregisterBackgroundTasks",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskName",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskResult"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  214
+                                           },
+                                           {
+                                               "name":  "SignalBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.TaskStatuses",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskName",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskResult"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  390
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskProgress"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  304
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  35
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "RegisterButton.IsEnabled",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskRegistered",
+                                                                "UnregisterButton.IsEnabled",
+                                                                "SignalButton.IsEnabled",
+                                                                "Progress.Text",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskProgress",
+                                                                "Result.Text",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskResult",
+                                                                "Status.Text",
+                                                                "BackgroundTaskSample.GetBackgroundTaskStatus",
+                                                                "BackgroundTaskSample.ApplicationTriggerTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  743
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  6,
+                          "class":  "Scenario6_GroupedTask",
+                          "title":  "Scenario6_GroupedTask",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\shared\\Scenario6_GroupedTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundActivation\\cs\\Scenario6_GroupedTask.xaml.cs",
+                          "description":  "Registers a background task for a Time zone change trigger event with a background task registration group. Registering with a group enables the task registration to remain active when all ungrouped tasks are unregistered.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "RegisterGroupedBackgroundTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterGroupedButton",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterGroupedTask"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "UnregisterUngroupedButton",
+                                               "handlers":  {
+                                                                "Click":  "UnregisterUngroupedTasks"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Unregister Ungrouped Tasks"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Status",
+                                               "text":  "Unregistered"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Progress"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Result"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "SDKTemplate",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Storage",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "GroupedBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.GetTaskGroup",
+                                                                "BackgroundTaskSample.BackgroundTaskGroupId",
+                                                                "BackgroundTaskSample.BackgroundTaskGroupFriendlyName",
+                                                                "Value.Name",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskName",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  632
+                                           },
+                                           {
+                                               "name":  "RegisterGroupedBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.RegisterBackgroundTask",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskName",
+                                                                "SystemTriggerType.TimeZoneChange"
+                                                            ],
+                                               "new_types":  [
+                                                                 "SystemTrigger"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  558
+                                           },
+                                           {
+                                               "name":  "UnregisterGroupedTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskSample.UnregisterBackgroundTasks",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  151
+                                           },
+                                           {
+                                               "name":  "UnregisterUngroupedTasks",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Unregister",
+                                                                "BackgroundTaskSample.UpdateBackgroundTaskRegistrationStatus",
+                                                                "Value.Name"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  255
+                                           },
+                                           {
+                                               "name":  "AttachProgressAndCompletedHandlers",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskProgressEventHandler",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  177
+                                           },
+                                           {
+                                               "name":  "OnProgress",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskProgress"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  303
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  35
+                                           },
+                                           {
+                                               "name":  "UpdateUI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "RegisterButton.IsEnabled",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskRegistered",
+                                                                "UnregisterGroupedButton.IsEnabled",
+                                                                "Progress.Text",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskProgress",
+                                                                "Status.Text",
+                                                                "BackgroundTaskSample.GetBackgroundTaskStatus",
+                                                                "BackgroundTaskSample.GroupedBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  547
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

@@ -1,0 +1,31 @@
+﻿{
+    "sample":  "TouchKeyboardTextInput",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\TouchKeyboardTextInput\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.TouchKeyboardTextInput.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.TouchKeyboardTextInput.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.TouchKeyboardTextInput.CS_8wekyb3d8bbwe!TouchKeyboardTextInput.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Spelling and Text Suggestions",
+                          "initial_capture":  "01_1_Spelling_and_Text_Suggestions__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Scoped Views",
+                          "initial_capture":  "02_2_Scoped_Views__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

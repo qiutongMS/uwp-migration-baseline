@@ -1,0 +1,72 @@
+﻿{
+    "sample":  "LampDevice",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LampDevice\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Lamp.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Lamp.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Lamp.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Get Lamp Instance",
+                          "initial_capture":  "01_1_Get_Lamp_Instance__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Lamp Instance from DeviceInformation",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Get_Lamp_Instance__after_Get_Lamp_Instance_from_DeviceInformation.png"
+                                          },
+                                          {
+                                              "name":  "Get Default Lamp Instance",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Get_Lamp_Instance__after_Get_Default_Lamp_Instance.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Enable Lamp and Settings Adjustment",
+                          "initial_capture":  "02_2_Enable_Lamp_and_Settings_Adjustment__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Adjust Brightness and turn on Lamp",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Enable_Lamp_and_Settings_Adjustment__after_Adjust_Brightness_and_turn_on_Lamp.png"
+                                          },
+                                          {
+                                              "name":  "Adjust Color and turn on Lamp",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Enable_Lamp_and_Settings_Adjustment__after_Adjust_Color_and_turn_on_Lamp.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Lamp Device Change Events",
+                          "initial_capture":  "03_3_Lamp_Device_Change_Events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Register for AvailablityChanged Event",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Lamp_Device_Change_Events__after_Register_for_AvailablityChanged_Event.png"
+                                          },
+                                          {
+                                              "name":  "Unregister for AvailablityChanged Event",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Lamp_Device_Change_Events__after_Unregister_for_AvailablityChanged_Event.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,1093 @@
+﻿{
+    "sample":  "BluetoothAdvertisement",
+    "feature_name":  "Bluetooth Low Energy Advertisement",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                       ],
+    "api_references":  [
+                           "Utilities.BufferFromUInt16",
+                           "AdvertisementFilter.Advertisement",
+                           "ManufacturerData.Add",
+                           "SignalStrengthFilter.InRangeThresholdInDBm",
+                           "SignalStrengthFilter.OutOfRangeThresholdInDBm",
+                           "SignalStrengthFilter.OutOfRangeTimeout",
+                           "TimeSpan.FromSeconds",
+                           "App.Current",
+                           "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                           "BluetoothAdapter.GetDefaultAsync",
+                           "Watcher1MAndCodedPhysReasonRun.Text",
+                           "WatcherPerformanceOptimizationsReasonRun.Text",
+                           "NotifyType.StatusMessage",
+                           "Watcher1MAndCodedPhysCheckBox.IsChecked",
+                           "WatcherPerformanceOptimizationsCheckBox.IsChecked",
+                           "BluetoothLEAdvertisementScanParameters.CoexistenceOptimized",
+                           "BluetoothLEAdvertisementScanParameters.LowLatency",
+                           "Watcher1MAndCodedPhysCheckBox.IsEnabled",
+                           "WatcherPerformanceOptimizationsCheckBox.IsEnabled",
+                           "RunButton.IsEnabled",
+                           "StopButton.IsEnabled",
+                           "Advertisement.LocalName",
+                           "Advertisement.ManufacturerData",
+                           "Utilities.FormatManufacturerData",
+                           "Dispatcher.RunAsync",
+                           "Windows.UI",
+                           "Core.CoreDispatcherPriority",
+                           "ReceivedAdvertisementListBox.Items",
+                           "Error.ToString",
+                           "PublisherPayloadBlock.Text",
+                           "PublisherStatusBlock.Text",
+                           "Publisher2MAndCodedPhysReasonRun.Text",
+                           "Publisher2MAndCodedPhysCheckBox.IsChecked",
+                           "BluetoothLEAdvertisementPhyType.CodedPhy",
+                           "BluetoothLEAdvertisementPhyType.Uncoded2MPhy",
+                           "BluetoothLEAdvertisementPhyType.Uncoded1MPhy",
+                           "Publisher2MAndCodedPhysCheckBox.IsEnabled",
+                           "CryptographicBuffer.CreateFromByteArray",
+                           "BitConverter.GetBytes",
+                           "TimeSpan.FromMilliseconds",
+                           "SignalStrengthFilter.SamplingInterval",
+                           "WatcherTrigger1MAndCodedPhysReasonRun.Text",
+                           "WatcherTriggerPerformanceOptimizationsReasonRun.Text",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "WatcherTrigger1MAndCodedPhysCheckBox.IsChecked",
+                           "WatcherTriggerPerformanceOptimizationsCheckBox.IsChecked",
+                           "App.OnBackgroundActivated",
+                           "NotifyType.ErrorMessage",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "WatcherTrigger1MAndCodedPhysCheckBox.IsEnabled",
+                           "WatcherTriggerPerformanceOptimizationsCheckBox.IsEnabled",
+                           "ApplicationData.Current",
+                           "LocalSettings.Values",
+                           "MainPage.Current",
+                           "PublisherTrigger2MAndCodedPhysReasonRun.Text",
+                           "PublisherTrigger2MAndCodedPhysCheckBox.IsChecked",
+                           "PublisherTrigger2MAndCodedPhysCheckBox.IsEnabled"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Watcher",
+                          "title":  "Foreground watcher",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\shared\\Scenario1_Watcher.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\cs\\Scenario1_Watcher.xaml.cs",
+                          "description":  "Scanning for a particular LE advertisement containing a matching manufacturer data section and above a certain RSSI threshold. This scenario requires Scenario 2 or 4 to run on another Windows platform in close proximity of this one.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "Watcher1MAndCodedPhysCheckBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Scan using both the 1M and Coded PHYs"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "WatcherPerformanceOptimizationsCheckBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Use coexistence optimized Bluetooth LE advertisement scan parameters and offloading the filter to hardware"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Press the Run button to begin scanning. Received advertisements are shown below."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RunButton",
+                                               "content":  "Run",
+                                               "handlers":  {
+                                                                "Click":  "RunButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopButton",
+                                               "content":  "Stop",
+                                               "handlers":  {
+                                                                "Click":  "StopButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ReceivedAdvertisementListBox"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Advertisement",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.Security.Cryptography",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Watcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Utilities.BufferFromUInt16",
+                                                                "AdvertisementFilter.Advertisement",
+                                                                "ManufacturerData.Add",
+                                                                "SignalStrengthFilter.InRangeThresholdInDBm",
+                                                                "SignalStrengthFilter.OutOfRangeThresholdInDBm",
+                                                                "SignalStrengthFilter.OutOfRangeTimeout",
+                                                                "TimeSpan.FromSeconds"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BluetoothLEAdvertisementWatcher",
+                                                                 "BluetoothLEManufacturerData"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3795
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current",
+                                                                "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                                                                "BluetoothAdapter.GetDefaultAsync",
+                                                                "Watcher1MAndCodedPhysReasonRun.Text",
+                                                                "WatcherPerformanceOptimizationsReasonRun.Text",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1966
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  750
+                                           },
+                                           {
+                                               "name":  "App_Suspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  447
+                                           },
+                                           {
+                                               "name":  "App_Resuming",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  161
+                                           },
+                                           {
+                                               "name":  "RunButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Watcher1MAndCodedPhysCheckBox.IsChecked",
+                                                                "WatcherPerformanceOptimizationsCheckBox.IsChecked",
+                                                                "BluetoothLEAdvertisementScanParameters.CoexistenceOptimized",
+                                                                "BluetoothLEAdvertisementScanParameters.LowLatency",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2325
+                                           },
+                                           {
+                                               "name":  "StopButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  287
+                                           },
+                                           {
+                                               "name":  "UpdateButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Watcher1MAndCodedPhysCheckBox.IsEnabled",
+                                                                "WatcherPerformanceOptimizationsCheckBox.IsEnabled",
+                                                                "RunButton.IsEnabled",
+                                                                "StopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  332
+                                           },
+                                           {
+                                               "name":  "OnAdvertisementReceived",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Advertisement.LocalName",
+                                                                "Advertisement.ManufacturerData",
+                                                                "Utilities.FormatManufacturerData",
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "ReceivedAdvertisementListBox.Items"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1704
+                                           },
+                                           {
+                                               "name":  "OnAdvertisementWatcherStopped",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Error.ToString",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  209
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Publisher",
+                          "title":  "Foreground publisher",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\shared\\Scenario2_Publisher.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\cs\\Scenario2_Publisher.xaml.cs",
+                          "description":  "Publishing a LE advertisement. Press Run button to begin advertising. The advertisement generated by this scenario can be received by running Scenario 1 or 3 on another Windows platform in close proximity with this one.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "Publisher2MAndCodedPhysCheckBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Advertise using the Coded primary PHY and 2M secondary PHY"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RunButton",
+                                               "content":  "Run",
+                                               "handlers":  {
+                                                                "Click":  "RunButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopButton",
+                                               "content":  "Stop",
+                                               "handlers":  {
+                                                                "Click":  "StopButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PublisherPayloadBlock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PublisherStatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Advertisement",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Publisher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Utilities.BufferFromUInt16",
+                                                                "Advertisement.ManufacturerData",
+                                                                "PublisherPayloadBlock.Text",
+                                                                "Utilities.FormatManufacturerData",
+                                                                "PublisherStatusBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BluetoothLEAdvertisementPublisher",
+                                                                 "BluetoothLEManufacturerData"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1667
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current",
+                                                                "NotifyType.StatusMessage",
+                                                                "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                                                                "BluetoothAdapter.GetDefaultAsync",
+                                                                "Publisher2MAndCodedPhysReasonRun.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1609
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  607
+                                           },
+                                           {
+                                               "name":  "App_Suspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  400
+                                           },
+                                           {
+                                               "name":  "App_Resuming",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  106
+                                           },
+                                           {
+                                               "name":  "RunButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Publisher2MAndCodedPhysCheckBox.IsChecked",
+                                                                "BluetoothLEAdvertisementPhyType.CodedPhy",
+                                                                "BluetoothLEAdvertisementPhyType.Uncoded2MPhy",
+                                                                "BluetoothLEAdvertisementPhyType.Uncoded1MPhy",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1513
+                                           },
+                                           {
+                                               "name":  "StopButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  279
+                                           },
+                                           {
+                                               "name":  "UpdateButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Publisher2MAndCodedPhysCheckBox.IsEnabled",
+                                                                "RunButton.IsEnabled",
+                                                                "StopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  237
+                                           },
+                                           {
+                                               "name":  "OnPublisherStatusChanged",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "PublisherStatusBlock.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  523
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_BackgroundWatcher",
+                          "title":  "Background watcher",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\shared\\Scenario3_BackgroundWatcher.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\cs\\Scenario3_BackgroundWatcher.xaml.cs",
+                          "description":  "Scanning for a particular LE advertisement containing a matching manufacturer data section and above a certain RSSI threshold using a background trigger and task. This scenario requires Scenario 2 or 4 to run on another Windows platform in close proximity of this one.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "WatcherTrigger1MAndCodedPhysCheckBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Scan using both the 1M and Coded PHYs"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "WatcherTriggerPerformanceOptimizationsCheckBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Enable background performance optimizations"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Press the Run button to begin scanning. Received advertisements are parsed in the background task and shown below."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RunButton",
+                                               "content":  "Run",
+                                               "handlers":  {
+                                                                "Click":  "RunButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopButton",
+                                               "content":  "Stop",
+                                               "handlers":  {
+                                                                "Click":  "StopButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "ReceivedAdvertisementListBox"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.ApplicationModel",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Advertisement",
+                                         "Windows.Security.Cryptography",
+                                         "Windows.Storage",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_BackgroundWatcher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CryptographicBuffer.CreateFromByteArray",
+                                                                "BitConverter.GetBytes",
+                                                                "AdvertisementFilter.Advertisement",
+                                                                "ManufacturerData.Add",
+                                                                "SignalStrengthFilter.InRangeThresholdInDBm",
+                                                                "SignalStrengthFilter.OutOfRangeThresholdInDBm",
+                                                                "SignalStrengthFilter.OutOfRangeTimeout",
+                                                                "TimeSpan.FromMilliseconds",
+                                                                "SignalStrengthFilter.SamplingInterval"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BluetoothLEAdvertisementWatcherTrigger",
+                                                                 "BluetoothLEManufacturerData"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3889
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current",
+                                                                "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                                                                "BluetoothAdapter.GetDefaultAsync",
+                                                                "WatcherTrigger1MAndCodedPhysReasonRun.Text",
+                                                                "WatcherTriggerPerformanceOptimizationsReasonRun.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1819
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  671
+                                           },
+                                           {
+                                               "name":  "App_Suspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  330
+                                           },
+                                           {
+                                               "name":  "App_Resuming",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  367
+                                           },
+                                           {
+                                               "name":  "RunButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "WatcherTrigger1MAndCodedPhysCheckBox.IsChecked",
+                                                                "WatcherTriggerPerformanceOptimizationsCheckBox.IsChecked",
+                                                                "BluetoothLEAdvertisementScanParameters.CoexistenceOptimized",
+                                                                "BluetoothLEAdvertisementScanParameters.LowLatency",
+                                                                "App.OnBackgroundActivated",
+                                                                "NotifyType.ErrorMessage",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3992
+                                           },
+                                           {
+                                               "name":  "StopButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  336
+                                           },
+                                           {
+                                               "name":  "FindTaskRegistration",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  475
+                                           },
+                                           {
+                                               "name":  "UpdateButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "WatcherTrigger1MAndCodedPhysCheckBox.IsEnabled",
+                                                                "WatcherTriggerPerformanceOptimizationsCheckBox.IsEnabled",
+                                                                "RunButton.IsEnabled",
+                                                                "StopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  389
+                                           },
+                                           {
+                                               "name":  "OnBackgroundTaskCompleted",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ApplicationData.Current",
+                                                                "LocalSettings.Values",
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "ReceivedAdvertisementListBox.Items"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  572
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_BackgroundPublisher",
+                          "title":  "Background publisher",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\shared\\Scenario4_BackgroundPublisher.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BluetoothAdvertisement\\cs\\Scenario4_BackgroundPublisher.xaml.cs",
+                          "description":  "Publishing a LE advertisement in the background. Press Run button to register. The advertisement generated by this scenario can be received by running Scenario 1 or 3 on another Windows platform in close proximity with this one.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "PublisherTrigger2MAndCodedPhysCheckBox"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Advertising in the background only using the 2M and Coded PHYs"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RunButton",
+                                               "content":  "Run",
+                                               "handlers":  {
+                                                                "Click":  "RunButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "StopButton",
+                                               "content":  "Stop",
+                                               "handlers":  {
+                                                                "Click":  "StopButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PublisherPayloadBlock"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "PublisherStatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Bluetooth",
+                                         "Windows.Devices.Bluetooth.Advertisement",
+                                         "Windows.Security.Cryptography",
+                                         "Windows.Storage",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_BackgroundPublisher",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "CryptographicBuffer.CreateFromByteArray",
+                                                                "BitConverter.GetBytes",
+                                                                "Advertisement.ManufacturerData",
+                                                                "PublisherPayloadBlock.Text",
+                                                                "Utilities.FormatManufacturerData",
+                                                                "PublisherStatusBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BluetoothLEAdvertisementPublisherTrigger",
+                                                                 "BluetoothLEManufacturerData"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1697
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "App.Current",
+                                                                "FeatureDetection.AreExtendedAdvertisingPhysAndScanParametersSupported",
+                                                                "BluetoothAdapter.GetDefaultAsync",
+                                                                "PublisherTrigger2MAndCodedPhysReasonRun.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1469
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "App.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  673
+                                           },
+                                           {
+                                               "name":  "App_Suspending",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  251
+                                           },
+                                           {
+                                               "name":  "App_Resuming",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  367
+                                           },
+                                           {
+                                               "name":  "RunButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "PublisherTrigger2MAndCodedPhysCheckBox.IsChecked",
+                                                                "BluetoothLEAdvertisementPhyType.CodedPhy",
+                                                                "BluetoothLEAdvertisementPhyType.Uncoded2MPhy",
+                                                                "BluetoothLEAdvertisementPhyType.Uncoded1MPhy",
+                                                                "App.OnBackgroundActivated",
+                                                                "NotifyType.ErrorMessage",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3439
+                                           },
+                                           {
+                                               "name":  "StopButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  336
+                                           },
+                                           {
+                                               "name":  "FindTaskRegistration",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  475
+                                           },
+                                           {
+                                               "name":  "UpdateButtons",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "PublisherTrigger2MAndCodedPhysCheckBox.IsEnabled",
+                                                                "RunButton.IsEnabled",
+                                                                "StopButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  285
+                                           },
+                                           {
+                                               "name":  "OnBackgroundTaskCompleted",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ApplicationData.Current",
+                                                                "LocalSettings.Values",
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "PublisherStatusBlock.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  580
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

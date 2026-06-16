@@ -1,5 +1,153 @@
 ﻿# Known issues
 
+## M13 update — June 2026 (multi-project sample support, +7 baseline rows)
+
+The 89-sample baseline was missing 5 samples whose `cs\` directory contains
+sub-folders instead of a single flat `cs\<Sample>.csproj`. Pipeline discovery
+now recognises sub-projects and emits **one baseline row per UWP app**, so a
+sample that ships two UWP apps (e.g. `AppServices` ships
+`AppServicesClient` **and** `AppServicesProvider`) becomes two rows. Result:
+**89 → 96 rows, +164 PNGs**. Final summary: **78 ok / 10 ok-generic / 6 failed / 1 pending / 1 crashed**.
+
+### Schema (multi-app samples)
+
+| Layout | Row name |
+|---|---|
+| Single-app (`cs\<Sample>.csproj`)        | `<Sample>` (unchanged) |
+| Multi-project, single UWP app (`cs\<Sample>\<Sample>.csproj` + sibling WinRT component) | `<Sample>` |
+| Multi-app (`cs\<App1>\<App1>.csproj`, `cs\<App2>\<App2>.csproj`) | `<Sample>_<App1>`, `<Sample>_<App2>` |
+
+7 new rows added under this rule:
+
+| Row | Sample | UWP app folder |
+|---|---|---|
+| `AudioCreation` | AudioCreation | `cs\AudioCreation\` (sibling: `AudioCreationFrameInputNodeComponent` winmdobj) |
+| `BackgroundTask` | BackgroundTask | `cs\BackgroundTask\` (sibling: `Tasks` winmdobj) |
+| `BackgroundTransfer` | BackgroundTransfer | `cs\BackgroundTransfer\` (sibling: `Toasts` winmdobj) |
+| `AppServices_AppServicesClient` | AppServices | `cs\AppServicesClient\` |
+| `AppServices_AppServicesProvider` | AppServices | `cs\AppServicesProvider\` (+ sibling `RandomNumberService` winmdobj) |
+| `AudioCategory_AudioCategory` | AudioCategory | `cs\AudioCategory\` |
+| `AudioCategory_AudioCategoryCompanion` | AudioCategory | `cs\AudioCategoryCompanion\` |
+
+### What changed
+
+**Pipeline (`scripts/Run-All.ps1`, `scripts/Analyze-Sample.ps1`):**
+
+1. **`Get-SampleRows()` discovery rewrite.** Replaces the old flat
+   `cs\<Sample>.csproj` filter. For every sample under `Samples\`, scans
+   `cs\` for csprojs (at any depth ≤ 2), keeps only those with a sibling
+   `Package.appxmanifest` (= UWP app, not winmdobj component), and emits a
+   record `{RowName, AppName, RootDir, CodeDir}`. Single-app samples keep
+   their existing row names; multi-app samples get the `<Sample>_<App>`
+   suffix. The runner iterates these records, so the rest of the pipeline
+   (`Process-Sample.ps1`, `Capture-Sample.ps1`) didn't need changes.
+2. **`Analyze-Sample.ps1` accepts `-CodeDir` and `-SampleName` overrides.**
+   For the sub-project case, `$sampleName` and `$csDir` are overridden so
+   the analyzer reads from `cs\<SubApp>\` instead of inferring the wrong
+   path. `$sharedDir` and `$readmePath` still derive from the sample root
+   (correct for sub-project case since `README.md` / `shared/` live at the
+   sample root, not in the sub-folder).
+
+**Upstream content (committed in `qiutongMS/uwp-samples-standalone`):**
+
+| Path | What it is |
+|---|---|
+| `Samples\AppServices\shared\` (3 files) | `KeepConnectionOpenScenario.xaml`, `OpenCloseConnectionScenario.xaml`, `ShowPackageFamilyName.xaml` fetched from `microsoft/Windows-universal-samples` HEAD — sparse-checkout had dropped them. |
+| `Samples\AudioCategory\shared\` (11 files) | `PlaybackControl.xaml` + `Scenario1..Scenario10` XAML. |
+| `Samples\BackgroundTask\shared\` (6 files) | `Scenario1_..` through `Scenario6_..` XAML. |
+| `Samples\BackgroundTransfer\shared\` (7 files) | `Scenario1_..` through `Scenario7_..` XAML. |
+| `Samples\BackgroundTask\cs\BackgroundTask\Package.appxmanifest` | `<uap:LockScreen BadgeLogo="Assets\smalltile-sdk.png" />` → `Assets\badge-logo.png`. `BadgeLogo` requires 24×24; `smalltile-sdk.png` is 44×44 — `APPX1619` packaging error. `badge-logo.png` (24×24, 244 bytes) was already in `SharedContent\media\` and is the asset other samples (`BackgroundActivation`, `Geolocation`) use. |
+| `Samples\BackgroundTask\cs\BackgroundTask\BackgroundTask.csproj` | Added `<Content Include="$(SharedContentDir)\media\badge-logo.png"><Link>Assets\badge-logo.png</Link></Content>` so the asset is staged into the appx. |
+
+### Known follow-up (out of scope for M13)
+
+* `AudioCreation` static analyzer reports 5 scenarios while runtime captures
+  6. The file `Scenario3_FrameInputNode.xaml.cs` declares
+  `class Scenario3_FrameInput` (filename ≠ class name), and the analyzer's
+  filename-based derivation drops it. The runtime registry in
+  `SampleConfiguration.cs` enumerates correctly, so all 6 scenarios are
+  captured — only `static.json` undercounts. Fix is an analyzer
+  enhancement to parse the class declaration, not the sample.
+
+---
+
+## M12 update — May 2026 (pipeline hardening + 5 sample fixes + LinguisticServices port)
+
+A second pass on the 89-sample refilter baseline brought the count from
+65 → 71 `ok`. Net `_status.csv` summary: **71 ok / 10 ok-generic / 6 failed / 1 pending / 1 crashed**.
+
+### What was fixed
+
+**Upstream patches** (committed in `qiutongMS/uwp-samples-standalone`
+branch `refilter-102-samples`):
+
+| Sample | Patch |
+|---|---|
+| `ApplicationResources` | `Package.appxmanifest`: `Square150x150Logo` and `Square44x44Logo` were both pointing at `Images\logo.png`, whose `contrast-*_scale-100` variants are 150×150 — wrong for `Square44x44Logo`. Manifest now references `Assets\SquareTile-sdk.png` / `Assets\SmallTile-sdk.png` (50×50 and 44×44 from `SharedContent\media`). Two new `<Content Include="$(SharedContentDir)\media\...">` items with `<Link>Assets\...</Link>` added to the csproj. |
+| `NetworkConnectivity` | Removed `<uap:LockScreen BadgeLogo="Assets\smalltile-sdk.png" .../>` from the manifest — `BadgeLogo` requires a 24×24 asset; `smalltile-sdk.png` is 44×44. The lock-screen badge isn't core to the sample's demonstration. |
+| `MobileHotspot` | `TargetPlatformVersion` `10.0.25336.0` (Insider-only SDK) → `10.0.26100.0`. The 22621.0 SDK doesn't expose `TetheringWiFiAuthenticationKind` which the sample uses. |
+| `PersonalDataEncryption` | `TargetPlatformVersion` and `TargetPlatformMinVersion` `10.0.22000.0` → `10.0.22621.0` (the 22000.0 SDK isn't installed and isn't required by the sample's API surface). |
+| `LinguisticServices` | Ported the missing C++/WinRT `RuntimeComponent\` sister project (10 files: `LinguisticServices.cpp/.h/.idl`, `RuntimeComponent.{vcxproj,vcxproj.filters,def,sln}`, `pch.{h,cpp}`, `packages.config`) from `microsoft/Windows-universal-samples` HEAD `4eb2fcb4`. The component exposes `Sample.LinguisticServices` (a C++/WinRT runtime class with `RecognizeTextLanguages` / `RecognizeTextScripts` / `TransliterateFromCyrillicToLatin` static methods) which the four C# scenarios consume via `using Sample;`. The cs csproj already had the `<ProjectReference Include="..\RuntimeComponent\RuntimeComponent.vcxproj">` line; the port just supplied the missing target. NuGet `Microsoft.Windows.CppWinRT 2.0.200615.7` is restored automatically by the pipeline's per-vcxproj `packages.config` lookup (fix #4 below). Build now succeeds; capture is `ok` with 9 PNGs across 4 scenarios. |
+
+**Pipeline robustness fixes** (`scripts/Process-Sample.ps1`):
+
+1. **Window-finder accepts CamelCase-spaced sample names.** Many UWP
+   manifests declare `DisplayName="ms-resource:appDisplayNameCS"` —
+   the literal `ms-resource:` string never matches a real window
+   title. The pipeline now builds a candidate list:
+   *(a)* the manifest `DisplayName` literal (if it's not an
+   `ms-resource:` indirection), *(b)* the `$SampleName` as-is, and
+   *(c)* a CamelCase-split variant (`ApplicationResources` →
+   `Application Resources`). All three are tried each iteration of
+   the 25 s find loop. Fixed `ApplicationResources` and is a
+   pre-condition for any future sample whose live window title
+   doesn't match the project folder name exactly.
+2. **Per-scenario null-check in the iteration helper.** When a sample
+   doesn't expose `ScenarioControl` or the `ListBox` doesn't enumerate,
+   `FindAll(...).Select(...)` was throwing
+   `You cannot call a method on a null-valued expression`. Defensive
+   `$null` checks now skip cleanly. Fixed `AdvancedCasting`
+   (`partial` → `ok`, 14 shots) and `HotspotAuthentication`
+   (`partial` → `ok`, 3 shots).
+3. **`Get-ScenarioList` retries on UIA timeout.** UI Automation
+   occasionally throws `HRESULT 0x80131505 (UIA timed out)` on the
+   first traversal of a freshly-launched app. We now retry up to
+   3 times with a 500 ms backoff. Fixed `PlayReady`
+   (`partial` → `ok`, 7 shots).
+4. **Native sub-project NuGet restore (`packages.config` style).**
+   Modern `nuget restore <sln>` doesn't recurse into `vcxproj`
+   projects whose `packages.config` lives next to the `vcxproj`
+   (rather than at the sln root). The pipeline now scans every
+   detected `*.vcxproj` for a sibling `packages.config` and runs
+   `nuget restore <packages.config> -PackagesDirectory <sln-dir>\packages`
+   explicitly. **Fixes `CameraOpenCV.build`** (was `failed`, now `ok`).
+5. **MIDI / package-conflict cleanup before re-deploy.** When
+   `Add-AppxPackage -Register` returns `HRESULT 0x80073CF3` with a
+   "Package failed updates, dependency or conflict validation"
+   message that's *purely* a conflict (not a missing framework), we
+   now `Get-AppxPackage -Name <id> | Remove-AppxPackage` both
+   `-AllUsers` and current-user, then retry once.
+   *(Does **not** help MIDI — see below — but is the right cleanup
+   step in general.)*
+
+### What's still not OK after M12
+
+| Sample | State | Why |
+|---|---|---|
+| `CameraOpenCV` | `capture: crashed` (build / deploy / launch OK) | App crashes inside `Windows.UI.Xaml.dll+0x8fa113` immediately after the splash, exit code `0xc000027b` (STATUS_APP_CALLBACK_EXCEPTION — unhandled .NET exception in a XAML callback). Build now succeeds (NuGet restore fix), but `OpenCV.Win.*` 3.10.6.1's old `.targets` aren't fully compatible with the modern UAP build — `OpenCVBridge.dll` likely throws `DllNotFoundException` during `MainPage` activation. Not pipeline-fixable. |
+| `MIDI` | `deploy: failed` | `Microsoft.Midi.GmDls` framework package is not installed on this machine. The MIDI sample's manifest declares `<PackageDependency Name="Microsoft.Midi.GmDls" />`; without the framework appx, deployment can never succeed. Not a sample bug — the framework either ships with Windows or has to be installed separately. |
+| `BluetoothAdvertisement`, `BluetoothLE` | `capture: failed` | No Bluetooth adapter on this Hyper-V host. App processes never even start (`IApplicationActivationManager` returns "the app didn't start"). Pipeline window-find correctly times out. Hardware-environment-broken. |
+| `MobileHotspot`, `NetworkConnectivity`, `OnDemandHotspot` | `capture: failed` | Build now OK. Apps launch but the UI thread never paints a window (no real WiFi adapter on this Hyper-V host; `OnDemandHotspot` additionally requires Microsoft's custom-capability descriptor for `Microsoft.onDemandHotspotControl`). Hardware-environment-broken. |
+| `RadioManager` | `capture: failed` | Needs a `RadioManager` device class enumerable via `Windows.Devices.Radios` — none on this host. Hardware-environment-broken. |
+
+The 7 hardware-environment-broken cases above (Bluetooth ×2, network ×3,
+radio ×1, and CameraOpenCV's runtime DLL load) are environmental, not
+pipeline or source bugs. Re-running on a host with a Bluetooth adapter,
+a real Wi-Fi NIC, and a Surface-class Radio device should pick them up
+without any pipeline change.
+
+---
+
 ## Camera samples — FIXED upstream (5 samples)
 
 Five Camera samples used to crash immediately on launch on Windows 11
@@ -118,16 +266,73 @@ Windows 11 24H2:
 > live preview won't render (MainPage still paints). Fix by editing
 > the `.rdp` to add `camerastoredirect:s:*` and reconnecting.
 
-## Remaining environment-broken samples (2)
+## Remaining environment-broken samples (1)
 
-These also crash with `0xc000027b`, but the cause is **different** from
-the `WindowsMobile` SDKRef story above and they have not been fixed in
+This sample also crashes with `0xc000027b`, but the cause is **different**
+from the `WindowsMobile` SDKRef story above and it has not been fixed in
 source:
 
 | Sample | Status | Notes |
 |---|---|---|
 | `BackgroundMediaPlayback` | `ok-generic` on local console; crashes on RDP | Fault is in `Windows.UI.Xaml.dll+0x8fa113`, not the AppModel host. On a console session the window paints just long enough for Plan A to capture a 1-PNG MainPage. No source change needed — this is an RDP-environment-only crash. |
-| `RadialController` | `crashed` everywhere tested | Needs a Surface Dial / pen input device. Not retested with one. |
+
+> Previously this section also listed `RadialController` (needs Surface
+> Dial / pen input). After the `refilter-102-samples` refresh,
+> `RadialController` was dropped from the upstream sample list and is no
+> longer part of this baseline.
+
+## New failure categories from the 102-sample refresh
+
+When the upstream sample set grew from 38 → 89 (the `refilter-102-samples`
+branch), four new failure shapes appeared. None of them invalidate the
+baseline — each row in `_status.csv` accurately reflects how far the
+pipeline got — but they are worth recording so the next maintainer
+knows what's surgical vs. what's environmental.
+
+### Build failures — 6 samples (`capture: pending`, `build: failed`)
+
+| Sample | Cause |
+|---|---|
+| `CameraOpenCV` | Native sub-project `OpenCVBridge.vcxproj` needs the `OpenCV.Win.Core.310.6.1` NuGet package. `msbuild /restore` only restores the C# top-level project, not the C++ sub-project, so the build fails before reaching code generation. Recoverable by running `nuget restore` (Classic) against the `.sln` first, or by adding a top-level `<RestoreSources>`/`PackageReference` shim. Not yet automated. |
+| `ApplicationResources` | `Package.appxmanifest` references `Images\logo.png` for `Square44x44Logo`, but `shared/images/logo.contrast-*_scale-100.png` has the wrong dimensions. Upstream content bug in the vendored shared assets. |
+| `LinguisticServices`, `MobileHotspot`, `NetworkConnectivity`, `PersonalDataEncryption` | Build fails due to other missing or mis-pathed shared assets / resources. Not investigated in depth; treat as build-time content bugs analogous to the four upstream patches already applied (see "Upstream patches" below). |
+
+### Capture failures — 4 samples (`capture: failed`, `build`/`deploy`/`launch: ok`)
+
+The app launches successfully but the pipeline's `FindWindowsByTitle`
+fails because the running window's title doesn't match the canonical
+`"<SampleName> C# Sample"` / `"<SampleName> C# SDK Sample"` format the
+pipeline expects:
+
+- `BluetoothAdvertisement` — actual title: `"Bluetooth Advertisement C# Sample"` (extra space)
+- `BluetoothLE` — actual title: `"Bluetooth Low Energy C# sample"` (different capitalization + wording)
+- `OnDemandHotspot` — actual title: differs from `"OnDemandHotspot C# Sample"`
+- `RadioManager` — actual title: differs from `"RadioManager C# SDK Sample"`
+
+Recoverable by adding a `<SampleName, ActualTitle>` mapping to
+`Process-Sample.ps1` or by relaxing the title match to substring /
+`StartsWith`. Not yet implemented.
+
+### Partial captures — 3 samples (`capture: partial`)
+
+Plus the existing `XamlBind` scenario-5 case documented below.
+
+- `AdvancedCasting` — null-ref during `Invoke-ScenarioIteration`
+- `HotspotAuthentication` — same shape (null-ref during scenario iteration)
+- `PlayReady` — UIA `FindFirst` exception during scenario walk; got some scenarios before the failure
+
+These are mid-iteration faults: the pipeline captured the main page and
+some scenarios before the loop crashed. The errors look pipeline-side
+(null-ref in PS) rather than app-side, so the right fix is in the
+iteration helper, not the samples.
+
+### Deploy failure — 1 sample (`capture: pending`, `deploy: failed`)
+
+- `MIDI` — `Add-AppxPackage -Register` fails with HRESULT `0x80073CF3`
+  (PACKAGE_DEPLOYMENT_FAILED — likely an identity/signing conflict with
+  a previous deployment of the same `PackageFamilyName`). Workaround:
+  fully remove any pre-existing `MIDI*` packages
+  (`Get-AppxPackage *MIDI* | Remove-AppxPackage`) before re-running.
 
 ## Upstream patches (now committed)
 

@@ -1,0 +1,104 @@
+﻿{
+    "sample":  "AudioCreation",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AudioCreation\\cs\\AudioCreation",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.AudioCreation.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.AudioCreation.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.AudioCreation.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) File Playback",
+                          "initial_capture":  "01_1_File_Playback__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_File_Playback__after_Load_File.png",
+                                              "popup_capture":  "01_1_File_Playback__popup_Load_File.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Capture From Device",
+                          "initial_capture":  "02_2_Capture_From_Device__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Using A FrameInput Node",
+                          "initial_capture":  "03_3_Using_A_FrameInput_Node__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Generate Audio",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Using_A_FrameInput_Node__after_Generate_Audio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Using A Submix Node",
+                          "initial_capture":  "04_4_Using_A_Submix_Node__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load File 1",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "04_4_Using_A_Submix_Node__after_Load_File_1.png",
+                                              "popup_capture":  "04_4_Using_A_Submix_Node__popup_Load_File_1.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Load File 2",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "04_4_Using_A_Submix_Node__after_Load_File_2.png",
+                                              "popup_capture":  "04_4_Using_A_Submix_Node__popup_Load_File_2.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Inbox Effects",
+                          "initial_capture":  "05_5_Inbox_Effects__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "05_5_Inbox_Effects__after_Load_File.png",
+                                              "popup_capture":  "05_5_Inbox_Effects__popup_Load_File.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Custom Effects",
+                          "initial_capture":  "06_6_Custom_Effects__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Load File",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "06_6_Custom_Effects__after_Load_File.png",
+                                              "popup_capture":  "06_6_Custom_Effects__popup_Load_File.png",
+                                              "popup_title":  "Open"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,956 @@
+﻿{
+    "sample":  "WiFiScan",
+    "feature_name":  "WiFiScan",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Devices.Enumeration.DeviceInformation.FindAllAsync"
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "WiFiAdapter.RequestAccessAsync",
+                           "WiFiAccessStatus.Allowed",
+                           "NotifyType.ErrorMessage",
+                           "WiFiAdapter.FindAllAdaptersAsync",
+                           "String.Format",
+                           "Buttons.Children",
+                           "NotifyType.StatusMessage",
+                           "ResultCollection.Clear",
+                           "ResultCollection.Add",
+                           "Windows.Devices",
+                           "Enumeration.DeviceInformation",
+                           "WiFiAdapter.GetDeviceSelector",
+                           "WiFiAdapter.FromIdAsync",
+                           "RegisterButton.IsEnabled",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "UnregisterButton.IsEnabled",
+                           "NetworkInformation.NetworkStatusChanged",
+                           "NetworkAdapter.GetConnectedProfileAsync",
+                           "ProfileName.Equals",
+                           "ConnectionBar.Visibility",
+                           "Visibility.Collapsed",
+                           "ResultsListView.SelectedItem",
+                           "Visibility.Visible",
+                           "AvailableNetwork.SecuritySettings",
+                           "NetworkAuthenticationType.Open80211",
+                           "NetworkEncryptionType.None",
+                           "NetworkKeyInfo.Visibility",
+                           "WiFiReconnectionKind.Manual",
+                           "IsAutomaticReconnection.IsChecked",
+                           "WiFiReconnectionKind.Automatic",
+                           "Credential.Password",
+                           "System.ArgumentException",
+                           "NetworkKey.Password",
+                           "WiFiConnectionStatus.Success"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_CachedNetworks",
+                          "title":  "Cached Networks",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario1_CachedNetworks.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario1_CachedNetworks.xaml.cs",
+                          "description":  "Click each button to view a summary of networks available to each WiFi adapter on this machine. No scans are initiated by these buttons.",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Ssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Bssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Bssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Rssi:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Rssi}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ch. Frequency:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ChannelCenterFrequency}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=SecuritySettings}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ConnectivityLevel}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Click each button to view a summary of networks available to each WiFi adapter on this machine. No scans are initiated by these buttons."
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ResultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "Windows.Devices.WiFi",
+                                         "System.Collections.ObjectModel"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_CachedNetworks",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "WiFiAdapter.RequestAccessAsync",
+                                                                "WiFiAccessStatus.Allowed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "WiFiAdapter.FindAllAdaptersAsync",
+                                                                "String.Format",
+                                                                "Buttons.Children"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "Button"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1162
+                                           },
+                                           {
+                                               "name":  "Button_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  445
+                                           },
+                                           {
+                                               "name":  "DisplayNetworkReport",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ResultCollection.Clear",
+                                                                "ResultCollection.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WiFiNetworkDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  472
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_Scan",
+                          "title":  "Scan",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario2_Scan.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario2_Scan.xaml.cs",
+                          "description":  "Initiate scans and view results on the first WiFi Adapter enumerated by your system.",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Ssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Bssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Bssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Rssi:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Rssi}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ch. Frequency:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ChannelCenterFrequency}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=SecuritySettings}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ConnectivityLevel}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Initiate scans and view results on the first WiFi Adapter enumerated by your system."
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ResultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.Devices.WiFi",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System.Collections.ObjectModel"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_Scan",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+                                                                       "Windows.Devices.Enumeration.DeviceInformation.FindAllAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "WiFiAdapter.RequestAccessAsync",
+                                                                "WiFiAccessStatus.Allowed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Devices",
+                                                                "Enumeration.DeviceInformation",
+                                                                "WiFiAdapter.GetDeviceSelector",
+                                                                "WiFiAdapter.FromIdAsync",
+                                                                "Buttons.Children"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "Button"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1363
+                                           },
+                                           {
+                                               "name":  "Button_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  118
+                                           },
+                                           {
+                                               "name":  "DisplayNetworkReport",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ResultCollection.Clear",
+                                                                "ResultCollection.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WiFiNetworkDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  477
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_RegisterForUpdates",
+                          "title":  "Register for Scan Updates",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario3_RegisterForUpdates.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario3_RegisterForUpdates.xaml.cs",
+                          "description":  "Display scan results from scans performed anywhere on the system. The networks will update automatically when scans are performed. This page displays scan results for the first adapter enumerated by your system only.",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Ssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Bssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Bssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Rssi:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Rssi}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ch. Frequency:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ChannelCenterFrequency}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=SecuritySettings}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ConnectivityLevel}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "RegisterButton",
+                                               "x_name":  "",
+                                               "content":  "Register",
+                                               "handlers":  {
+                                                                "Click":  "Button_Click_Register"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "UnregisterButton",
+                                               "x_name":  "",
+                                               "content":  "Unregister",
+                                               "handlers":  {
+                                                                "Click":  "Button_Click_Unregister"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ResultsListView"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.Devices.WiFi",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System.Collections.ObjectModel"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_RegisterForUpdates",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+                                                                       "Windows.Devices.Enumeration.DeviceInformation.FindAllAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "WiFiAdapter.RequestAccessAsync",
+                                                                "WiFiAccessStatus.Allowed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Devices",
+                                                                "Enumeration.DeviceInformation",
+                                                                "WiFiAdapter.GetDeviceSelector",
+                                                                "WiFiAdapter.FromIdAsync",
+                                                                "RegisterButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1204
+                                           },
+                                           {
+                                               "name":  "FirstAdapter_AvailableNetworksChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  75
+                                           },
+                                           {
+                                               "name":  "DisplayNetworkReport",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage",
+                                                                "ResultCollection.Clear",
+                                                                "ResultCollection.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WiFiNetworkDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  627
+                                           },
+                                           {
+                                               "name":  "Button_Click_Register",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisterButton.IsEnabled",
+                                                                "UnregisterButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  198
+                                           },
+                                           {
+                                               "name":  "Button_Click_Unregister",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "UnregisterButton.IsEnabled",
+                                                                "RegisterButton.IsEnabled"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  198
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_Connect",
+                          "title":  "Connect",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario4_Connect.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\WiFiScan\\cs\\Scenario4_Connect.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Ssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Bssid:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Bssid}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Rssi:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=Rssi}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Ch. Frequency:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ChannelCenterFrequency}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=SecuritySettings}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=ConnectivityLevel}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "View available networks on the first WiFi Adapter and connect to a selected network."
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ResultsListView",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "ResultsListView_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Security Key:"
+                                           },
+                                           {
+                                               "type":  "PasswordBox",
+                                               "name":  "",
+                                               "x_name":  "NetworkKey"
+                                           },
+                                           {
+                                               "type":  "CheckBox",
+                                               "name":  "",
+                                               "x_name":  "IsAutomaticReconnection"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "ConnectButton_Click"
+                                                            },
+                                               "inner_text":  "Connect"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Collections.ObjectModel",
+                                         "System.Threading.Tasks",
+                                         "Windows.Devices.WiFi",
+                                         "Windows.Networking.Connectivity",
+                                         "Windows.Security.Credentials",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_Connect",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+                                                                       "Windows.Devices.Enumeration.DeviceInformation.FindAllAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current",
+                                                                "WiFiAdapter.RequestAccessAsync",
+                                                                "WiFiAccessStatus.Allowed",
+                                                                "NotifyType.ErrorMessage",
+                                                                "Windows.Devices",
+                                                                "Enumeration.DeviceInformation",
+                                                                "WiFiAdapter.GetDeviceSelector",
+                                                                "WiFiAdapter.FromIdAsync",
+                                                                "Buttons.Children",
+                                                                "NetworkInformation.NetworkStatusChanged"
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection",
+                                                                 "Button"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1876
+                                           },
+                                           {
+                                               "name":  "DisconnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  50
+                                           },
+                                           {
+                                               "name":  "NetworkInformation_NetworkStatusChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  272
+                                           },
+                                           {
+                                               "name":  "UpdateConnectivityStatusAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NetworkAdapter.GetConnectedProfileAsync",
+                                                                "ProfileName.Equals",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1009
+                                           },
+                                           {
+                                               "name":  "ScanButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ConnectionBar.Visibility",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  180
+                                           },
+                                           {
+                                               "name":  "DisplayNetworkReport",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage",
+                                                                "ResultCollection.Clear",
+                                                                "ResultCollection.Add"
+                                                            ],
+                                               "new_types":  [
+                                                                 "WiFiNetworkDisplay"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  477
+                                           },
+                                           {
+                                               "name":  "ResultsListView_SelectionChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ResultsListView.SelectedItem",
+                                                                "ConnectionBar.Visibility",
+                                                                "Visibility.Visible",
+                                                                "AvailableNetwork.SecuritySettings",
+                                                                "NetworkAuthenticationType.Open80211",
+                                                                "NetworkEncryptionType.None",
+                                                                "NetworkKeyInfo.Visibility",
+                                                                "Visibility.Collapsed"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  816
+                                           },
+                                           {
+                                               "name":  "ConnectButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ResultsListView.SelectedItem",
+                                                                "NotifyType.ErrorMessage",
+                                                                "WiFiReconnectionKind.Manual",
+                                                                "IsAutomaticReconnection.IsChecked",
+                                                                "WiFiReconnectionKind.Automatic",
+                                                                "AvailableNetwork.SecuritySettings",
+                                                                "NetworkAuthenticationType.Open80211",
+                                                                "NetworkEncryptionType.None",
+                                                                "Credential.Password",
+                                                                "System.ArgumentException",
+                                                                "NetworkKey.Password",
+                                                                "WiFiConnectionStatus.Success",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "PasswordCredential"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2307
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

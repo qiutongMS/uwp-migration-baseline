@@ -1,0 +1,423 @@
+{
+  "sample": "PersonalDataEncryption",
+  "feature_name": "Personal Data Encryption",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "UserDataProtectionManager.TryGetDefault",
+    "AvailablePanel.Visibility",
+    "Visibility.Visible",
+    "UnavailablePanel.Visibility",
+    "Visibility.Collapsed",
+    "FileTypeFilter.Add",
+    "ItemOperationsPanel.Visibility",
+    "ItemNameBlock.Text",
+    "UserDataAvailability.AfterFirstUnlock",
+    "UserDataAvailability.WhileUnlocked",
+    "UserDataAvailability.Always",
+    "UserDataStorageItemProtectionStatus.Succeeded",
+    "NotifyType.StatusMessage",
+    "UserDataStorageItemProtectionStatus.NotProtectable",
+    "NotifyType.ErrorMessage",
+    "UserDataStorageItemProtectionStatus.DataUnavailable",
+    "DataTextBox.Text",
+    "CryptographicBuffer.ConvertStringToBinary",
+    "BinaryStringEncoding.Utf8",
+    "ProtectedDataTextBlock.Text",
+    "CryptographicBuffer.EncodeToHexString",
+    "UnprotectPanel.Visibility",
+    "UnprotectedDataTextBlock.Text",
+    "UserDataBufferUnprotectStatus.Succeeded",
+    "CryptographicBuffer.ConvertBinaryToString",
+    "UserDataBufferUnprotectStatus.Unavailable"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_Files",
+      "title": "Files and folders",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PersonalDataEncryption\\shared\\Scenario1_Files.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PersonalDataEncryption\\cs\\Scenario1_Files.xaml.cs",
+      "description": "Protecting and unprotecting files and folders",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Protecting and unprotecting files and folders"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Protecting and unprotecting a folder controls the protection of new files created in the folder. It does not affect the protection of files which are already present in the folder."
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Choose a file",
+          "handlers": {
+            "Click": "ChooseFile_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Choose a folder",
+          "handlers": {
+            "Click": "ChooseFolder_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Item to protect/unprotect:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ItemNameBlock"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Protect L1 (available after first unlock)",
+          "handlers": {
+            "Click": "ProtectL1_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Protect L2 (while unlocked)",
+          "handlers": {
+            "Click": "ProtectL2_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Unprotect",
+          "handlers": {
+            "Click": "Unprotect_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Personal Data Encryption is not enabled."
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Security.DataProtection",
+        "Windows.Storage",
+        "Windows.Storage.Pickers",
+        "Windows.System.Update",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_Files",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "UserDataProtectionManager.TryGetDefault",
+            "AvailablePanel.Visibility",
+            "Visibility.Visible",
+            "UnavailablePanel.Visibility",
+            "Visibility.Collapsed"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 492
+        },
+        {
+          "name": "ChooseFile_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "FileTypeFilter.Add"
+          ],
+          "new_types": [
+            "FileOpenPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 164
+        },
+        {
+          "name": "ChooseFolder_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "FolderPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 119
+        },
+        {
+          "name": "UpdateItem",
+          "namespaces_used": [],
+          "api_refs": [
+            "ItemOperationsPanel.Visibility",
+            "Visibility.Visible",
+            "ItemNameBlock.Text",
+            "Visibility.Collapsed"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 352
+        },
+        {
+          "name": "ProtectL1_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "UserDataAvailability.AfterFirstUnlock"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 227
+        },
+        {
+          "name": "ProtectL2_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "UserDataAvailability.WhileUnlocked"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 224
+        },
+        {
+          "name": "Unprotect_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "UserDataAvailability.Always"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 216
+        },
+        {
+          "name": "ReportStatus",
+          "namespaces_used": [],
+          "api_refs": [
+            "UserDataStorageItemProtectionStatus.Succeeded",
+            "NotifyType.StatusMessage",
+            "UserDataStorageItemProtectionStatus.NotProtectable",
+            "NotifyType.ErrorMessage",
+            "UserDataStorageItemProtectionStatus.DataUnavailable"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 847
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_Memory",
+      "title": "Memory",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PersonalDataEncryption\\shared\\Scenario2_Memory.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PersonalDataEncryption\\cs\\Scenario2_Memory.xaml.cs",
+      "description": "Protecting and unprotecting memory",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Protecting and unprotecting memory"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "DataTextBox",
+          "placeholdertext": "Enter some text to protect"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Protect L1 (available after first unlock)",
+          "handlers": {
+            "Click": "ProtectL1_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Protect L2 (while unlocked)",
+          "handlers": {
+            "Click": "ProtectL2_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Protected data:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "ProtectedDataTextBlock"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Unprotect",
+          "handlers": {
+            "Click": "Unprotect_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Unprotected data:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "UnprotectedDataTextBlock"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Personal Data Encryption is not enabled."
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Foundation",
+        "Windows.Security.Cryptography",
+        "Windows.Security.DataProtection",
+        "Windows.Storage.Streams",
+        "Windows.UI.ViewManagement",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Controls.Primitives",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_Memory",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "UserDataProtectionManager.TryGetDefault",
+            "AvailablePanel.Visibility",
+            "Visibility.Visible",
+            "UnavailablePanel.Visibility",
+            "Visibility.Collapsed"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 492
+        },
+        {
+          "name": "ProtectL1_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "DataTextBox.Text",
+            "NotifyType.ErrorMessage",
+            "CryptographicBuffer.ConvertStringToBinary",
+            "BinaryStringEncoding.Utf8",
+            "UserDataAvailability.AfterFirstUnlock"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 580
+        },
+        {
+          "name": "ProtectL2_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "DataTextBox.Text",
+            "NotifyType.ErrorMessage",
+            "CryptographicBuffer.ConvertStringToBinary",
+            "BinaryStringEncoding.Utf8",
+            "UserDataAvailability.WhileUnlocked"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 577
+        },
+        {
+          "name": "ReportProtectedBuffer",
+          "namespaces_used": [],
+          "api_refs": [
+            "ProtectedDataTextBlock.Text",
+            "CryptographicBuffer.EncodeToHexString",
+            "UnprotectPanel.Visibility",
+            "Visibility.Visible",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "ProtectedDataTextBlock.Text"
+          ],
+          "body_length": 274
+        },
+        {
+          "name": "Unprotect_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "UnprotectedDataTextBlock.Text",
+            "UserDataBufferUnprotectStatus.Succeeded",
+            "NotifyType.StatusMessage",
+            "CryptographicBuffer.ConvertBinaryToString",
+            "BinaryStringEncoding.Utf8",
+            "UserDataBufferUnprotectStatus.Unavailable",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "UnprotectedDataTextBlock.Text"
+          ],
+          "body_length": 953
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

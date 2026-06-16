@@ -1,0 +1,146 @@
+﻿{
+    "sample":  "BackgroundTransfer",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.BackgroundTransfer.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.BackgroundTransfer.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.BackgroundTransfer.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) File Download",
+                          "initial_capture":  "01_1_File_Download__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Download",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_File_Download__after_Start_Download.png"
+                                          },
+                                          {
+                                              "name":  "Start High Priority Download",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_File_Download__after_Start_High_Priority_Download.png"
+                                          },
+                                          {
+                                              "name":  "Pause All",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_File_Download__after_Pause_All.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) File Upload",
+                          "initial_capture":  "02_2_File_Upload__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Upload",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_File_Upload__after_Start_Upload.png",
+                                              "popup_capture":  "02_2_File_Upload__popup_Start_Upload.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Start Multipart Upload",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_File_Upload__after_Start_Multipart_Upload.png",
+                                              "popup_capture":  "02_2_File_Upload__popup_Start_Multipart_Upload.png",
+                                              "popup_title":  "Open"
+                                          },
+                                          {
+                                              "name":  "Cancel All",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_File_Upload__after_Cancel_All.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Completion Notifications",
+                          "initial_capture":  "03_3_Completion_Notifications__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start three downloads and show toast on completion",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Completion_Notifications__after_Start_three_downloads_and_show_toast_on_completion.png"
+                                          },
+                                          {
+                                              "name":  "Start three downloads and update tile on completion",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Completion_Notifications__after_Start_three_downloads_and_update_tile_on_completio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Completion Groups",
+                          "initial_capture":  "04_4_Completion_Groups__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start ten downloads in a completion group",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Completion_Groups__after_Start_ten_downloads_in_a_completion_group.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Random Access Downloads",
+                          "initial_capture":  "05_5_Random_Access_Downloads__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "05_5_Random_Access_Downloads__after_Start.png"
+                                          },
+                                          {
+                                              "name":  "Seek",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Random_Access_Downloads__after_Seek.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Recoverable Errors",
+                          "initial_capture":  "06_6_Recoverable_Errors__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Recoverable_Errors__after_Start.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Download Reordering",
+                          "initial_capture":  "07_7_Download_Reordering__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start Download",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Download_Reordering__after_Start_Download.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

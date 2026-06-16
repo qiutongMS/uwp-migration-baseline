@@ -1,0 +1,81 @@
+﻿{
+    "sample":  "DatagramSocket",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DatagramSocket\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DatagramSocket.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DatagramSocket.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DatagramSocket.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Start Datagram Listener",
+                          "initial_capture":  "01_1_Start_Datagram_Listener__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Listen",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Start_Datagram_Listener__after_Listen.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Connect to Listener",
+                          "initial_capture":  "02_2_Connect_to_Listener__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Don\u0027t fragment flag",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          },
+                                          {
+                                              "name":  "Connect",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Connect_to_Listener__after_Connect.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Send Data",
+                          "initial_capture":  "03_3_Send_Data__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Send \u0027hello\u0027",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Send_Data__after_Send_\u0027hello\u0027.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Close Socket",
+                          "initial_capture":  "04_4_Close_Socket__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Multicast/Broadcast",
+                          "initial_capture":  "05_5_Multicast_Broadcast__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start listener and join multicast group",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Multicast_Broadcast__after_Start_listener_and_join_multicast_group.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,164 @@
+﻿{
+    "sample":  "ApplicationResources",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ApplicationResources\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.ApplicationResources.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.ApplicationResources.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.ApplicationResources.CS_8wekyb3d8bbwe!ApplicationResources.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) String Resources In XAML",
+                          "initial_capture":  "01_1_String_Resources_In_XAML__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) File Resources In XAML",
+                          "initial_capture":  "02_2_File_Resources_In_XAML__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) String Resources In Code",
+                          "initial_capture":  "03_3_String_Resources_In_Code__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_String_Resources_In_Code__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Resources in the AppX manifest",
+                          "initial_capture":  "04_4_Resources_in_the_AppX_manifest__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Additional Resource Files",
+                          "initial_capture":  "05_5_Additional_Resource_Files__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Additional_Resource_Files__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Class Library Resources",
+                          "initial_capture":  "06_6_Class_Library_Resources__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Class_Library_Resources__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Runtime Changes/Events",
+                          "initial_capture":  "07_7_Runtime_Changes_Events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Runtime_Changes_Events__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  8,
+                          "title":  "8) Application Languages",
+                          "initial_capture":  "08_8_Application_Languages__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "08_8_Application_Languages__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  9,
+                          "title":  "9) Override Languages",
+                          "initial_capture":  "09_9_Override_Languages__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "09_9_Override_Languages__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  10,
+                          "title":  "10) Multi-dimensional fallback",
+                          "initial_capture":  "10_10_Multi-dimensional_fallback__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Message",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "10_10_Multi-dimensional_fallback__after_Show_Message.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  11,
+                          "title":  "11) Working with webservices",
+                          "initial_capture":  "11_11_Working_with_webservices__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Url",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "11_11_Working_with_webservices__after_Get_Url.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  12,
+                          "title":  "12) Retrieving resources in non-UI threads",
+                          "initial_capture":  "12_12_Retrieving_resources_in_non-UI_threads__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Results",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "12_12_Retrieving_resources_in_non-UI_threads__after_Show_Results.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  13,
+                          "title":  "13) File resources in code",
+                          "initial_capture":  "13_13_File_resources_in_code__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,237 @@
+﻿{
+    "sample":  "DisplayOrientation",
+    "feature_name":  "Display orientation",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "DisplayInformation.GetForCurrentView",
+                           "NativeOrientationTextBlock.Text",
+                           "NativeOrientation.ToString",
+                           "CurrentOrientationTextBlock.Text",
+                           "CurrentOrientation.ToString",
+                           "AutoRotationPreferencesTextBlock.Text",
+                           "DisplayInformation.AutoRotationPreferences",
+                           "DisplayOrientations.None",
+                           "PreferLandscape.IsChecked",
+                           "DisplayOrientations.Landscape",
+                           "PreferPortrait.IsChecked",
+                           "DisplayOrientations.Portrait",
+                           "PreferLandscapeFlipped.IsChecked",
+                           "DisplayOrientations.LandscapeFlipped",
+                           "PreferPortraitFlipped.IsChecked",
+                           "DisplayOrientations.PortraitFlipped"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1_Orientation",
+                      "title":  "Show and lock orientation",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisplayOrientation\\shared\\Scenario1_Orientation.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisplayOrientation\\cs\\Scenario1_Orientation.xaml.cs",
+                      "description":  "Reports the native display orientation, current display orientation, and sets auto-rotation preferences. Note that the operating system is not obligated to honor auto-rotation preferences. In particular, the preferences are not respected in overlapped windowing mode.",
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  ""
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Native orientation: "
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "NativeOrientationTextBlock"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Current orientation: "
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "CurrentOrientationTextBlock"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "Auto-rotation preferences: "
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "AutoRotationPreferencesTextBlock"
+                                       },
+                                       {
+                                           "type":  "CheckBox",
+                                           "name":  "",
+                                           "x_name":  "PreferLandscape",
+                                           "content":  "Prefer landscape"
+                                       },
+                                       {
+                                           "type":  "CheckBox",
+                                           "name":  "",
+                                           "x_name":  "PreferPortrait",
+                                           "content":  "Prefer portrait"
+                                       },
+                                       {
+                                           "type":  "CheckBox",
+                                           "name":  "",
+                                           "x_name":  "PreferLandscapeFlipped",
+                                           "content":  "Prefer landscape flipped"
+                                       },
+                                       {
+                                           "type":  "CheckBox",
+                                           "name":  "",
+                                           "x_name":  "PreferPortraitFlipped",
+                                           "content":  "Prefer portrait flipped"
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Apply preferences",
+                                           "handlers":  {
+                                                            "Click":  "ApplyRotationLock_Click"
+                                                        }
+                                       }
+                                   ],
+                      "usings":  [
+                                     "Windows.Foundation",
+                                     "Windows.Graphics.Display",
+                                     "Windows.UI.Core",
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Input",
+                                     "Windows.UI.Xaml.Navigation"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1_Orientation",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  51
+                                       },
+                                       {
+                                           "name":  "OnNavigatedTo",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "DisplayInformation.GetForCurrentView"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  176
+                                       },
+                                       {
+                                           "name":  "OnNavigatedFrom",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  79
+                                       },
+                                       {
+                                           "name":  "OnOrientationChanged",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  40
+                                       },
+                                       {
+                                           "name":  "UpdateContent",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "NativeOrientationTextBlock.Text",
+                                                            "NativeOrientation.ToString",
+                                                            "CurrentOrientationTextBlock.Text",
+                                                            "CurrentOrientation.ToString",
+                                                            "AutoRotationPreferencesTextBlock.Text",
+                                                            "DisplayInformation.AutoRotationPreferences"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+                                                           "NativeOrientationTextBlock.Text",
+                                                           "CurrentOrientationTextBlock.Text",
+                                                           "AutoRotationPreferencesTextBlock.Text"
+                                                       ],
+                                           "body_length":  298
+                                       },
+                                       {
+                                           "name":  "ApplyRotationLock_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "DisplayOrientations.None",
+                                                            "PreferLandscape.IsChecked",
+                                                            "DisplayOrientations.Landscape",
+                                                            "PreferPortrait.IsChecked",
+                                                            "DisplayOrientations.Portrait",
+                                                            "PreferLandscapeFlipped.IsChecked",
+                                                            "DisplayOrientations.LandscapeFlipped",
+                                                            "PreferPortraitFlipped.IsChecked",
+                                                            "DisplayOrientations.PortraitFlipped",
+                                                            "DisplayInformation.AutoRotationPreferences"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  786
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

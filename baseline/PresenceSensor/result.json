@@ -1,0 +1,66 @@
+﻿{
+    "sample":  "PresenceSensor",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PresenceSensor\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PresenceSensor.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PresenceSensor.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PresenceSensor.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Data Events",
+                          "initial_capture":  "01_1_Data_Events__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get default sensor",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Data_Events__after_Get_default_sensor.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Polling",
+                          "initial_capture":  "02_2_Polling__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get a sensor",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Polling__after_Get_a_sensor.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Choosing",
+                          "initial_capture":  "03_3_Choosing__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Use picker",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Choosing__after_Use_picker.png"
+                                          },
+                                          {
+                                              "name":  "Start watcher",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Choosing__after_Start_watcher.png"
+                                          },
+                                          {
+                                              "name":  "Poll selected sensor",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Choosing__after_Poll_selected_sensor.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

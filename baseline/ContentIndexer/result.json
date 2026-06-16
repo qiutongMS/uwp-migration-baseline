@@ -1,0 +1,154 @@
+﻿{
+    "sample":  "ContentIndexer",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\ContentIndexer\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Indexer.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Indexer.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Indexer.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Add item to the index using the ContentIndexer",
+                          "initial_capture":  "01_1_Add_item_to_the_index_using_the_ContentIndexer__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add to index",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Add_item_to_the_index_using_the_ContentIndexer__after_Add_to_index.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Update and delete indexed items using the ContentIndexer",
+                          "initial_capture":  "02_2_Update_and_delete_indexed_items_using_the_Conten__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add items to the index",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Update_and_delete_indexed_items_using_the_Conten__after_Add_items_to_the_index.png"
+                                          },
+                                          {
+                                              "name":  "Update ItemNameDisplay property",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Update_and_delete_indexed_items_using_the_Conten__after_Update_ItemNameDisplay_property.png"
+                                          },
+                                          {
+                                              "name":  "Delete Keywords property",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Update_and_delete_indexed_items_using_the_Conten__after_Delete_Keywords_property.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Retrieve indexed items added using the ContentIndexer",
+                          "initial_capture":  "03_3_Retrieve_indexed_items_added_using_the_ContentIn__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add items to index",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Retrieve_indexed_items_added_using_the_ContentIn__after_Add_items_to_index.png"
+                                          },
+                                          {
+                                              "name":  "Retrieve all items",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Retrieve_indexed_items_added_using_the_ContentIn__after_Retrieve_all_items.png"
+                                          },
+                                          {
+                                              "name":  "Retrieve all items containing \"0\" in a property",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Retrieve_indexed_items_added_using_the_ContentIn__after_Retrieve_all_items_containing_0_in_a_property.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Check the index revision number",
+                          "initial_capture":  "04_4_Check_the_index_revision_number__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Check the index revision number",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Check_the_index_revision_number__after_Check_the_index_revision_number.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Add indexed items by using appcontent-ms files",
+                          "initial_capture":  "05_5_Add_indexed_items_by_using_appcontent-ms_files__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add items to index",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Add_indexed_items_by_using_appcontent-ms_files__after_Add_items_to_index.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Delete indexed appcontent-ms files",
+                          "initial_capture":  "06_6_Delete_indexed_appcontent-ms_files__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add items to index",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Delete_indexed_appcontent-ms_files__after_Add_items_to_index.png"
+                                          },
+                                          {
+                                              "name":  "Delete a single item",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Delete_indexed_appcontent-ms_files__after_Delete_a_single_item.png"
+                                          },
+                                          {
+                                              "name":  "Delete all items",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_Delete_indexed_appcontent-ms_files__after_Delete_all_items.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Retrieve indexed properties from appcontent-ms files",
+                          "initial_capture":  "07_7_Retrieve_indexed_properties_from_appcontent-ms_f__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Add items to index",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Retrieve_indexed_properties_from_appcontent-ms_f__after_Add_items_to_index.png"
+                                          },
+                                          {
+                                              "name":  "Retrieve all items",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Retrieve_indexed_properties_from_appcontent-ms_f__after_Retrieve_all_items.png"
+                                          },
+                                          {
+                                              "name":  "Retrieve all items containing \"Sample 1\"",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Retrieve_indexed_properties_from_appcontent-ms_f__after_Retrieve_all_items_containing_Sample_1_.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

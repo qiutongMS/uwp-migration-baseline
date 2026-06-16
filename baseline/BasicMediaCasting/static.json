@@ -1,0 +1,529 @@
+﻿{
+    "sample":  "BasicMediaCasting",
+    "feature_name":  "BasicMediaCasting",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                       ],
+    "api_references":  [
+                           "MainPage.Current",
+                           "Filter.SupportsVideo",
+                           "Dispatcher.RunAsync",
+                           "Windows.UI",
+                           "Core.CoreDispatcherPriority",
+                           "SelectedCastingDevice.CreateCastingConnection",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "DeviceInformation.CreateWatcher",
+                           "CastingDevice.GetDeviceSelector",
+                           "CastingPlaybackTypes.Video",
+                           "CastingDevice.FromIdAsync",
+                           "Items.Add",
+                           "Items.Remove",
+                           "CastingConnectionState.Connected",
+                           "CastingConnectionState.Rendering",
+                           "Visibility.Visible",
+                           "CastingConnectionState.Disconnected",
+                           "Visibility.Collapsed",
+                           "CastingConnectionState.Connecting"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_BuiltInCasting",
+                          "title":  "Scenario1_BuiltInCasting",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\shared\\Scenario1_BuiltInCasting.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\cs\\Scenario1_BuiltInCasting.xaml.cs",
+                          "description":  "Basic media casting using built in media transport controls. Simply click the cast button located in the transport controls!",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Basic media casting using built in media transport controls. Simply click the cast button located in the transport controls!"
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "video",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "loadButton",
+                                               "x_name":  "",
+                                               "content":  "Load Video",
+                                               "handlers":  {
+                                                                "Click":  "loadButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "Windows.Storage",
+                                         "Windows.Storage.Pickers",
+                                         "Windows.Storage.Streams"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_CastingDevicePicker",
+                          "title":  "Scenario2_CastingDevicePicker",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\shared\\Scenario2_CastingDevicePicker.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\cs\\Scenario2_CastingDevicePicker.xaml.cs",
+                          "description":  "Media casting using casting device picker.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Media casting using casting device picker."
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "video",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "loadButton",
+                                               "x_name":  "",
+                                               "content":  "Load Video",
+                                               "handlers":  {
+                                                                "Click":  "loadButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "castButton",
+                                               "x_name":  "",
+                                               "content":  "Cast Button",
+                                               "handlers":  {
+                                                                "Click":  "castButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "SDKTemplate",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.UI.Xaml.Media",
+                                         "Windows.Storage",
+                                         "Windows.Storage.Pickers",
+                                         "Windows.Storage.Streams",
+                                         "Windows.Media.Casting"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Filter.SupportsVideo"
+                                                            ],
+                                               "new_types":  [
+                                                                 "CastingDevicePicker"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  392
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "Picker_CastingDeviceSelected",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "SelectedCastingDevice.CreateCastingConnection"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  802
+                                           },
+                                           {
+                                               "name":  "Connection_StateChanged",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  251
+                                           },
+                                           {
+                                               "name":  "Connection_ErrorOccurred",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  239
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_CustomPicker",
+                          "title":  "Scenario3_CustomPicker",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\shared\\Scenario3_CustomPicker.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\cs\\Scenario3_CustomPicker.xaml.cs",
+                          "description":  "Media casting using custom device picker.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Media casting using custom device picker."
+                                           },
+                                           {
+                                               "type":  "MediaElement",
+                                               "name":  "",
+                                               "x_name":  "video"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "loadButton",
+                                               "content":  "Load Video",
+                                               "handlers":  {
+                                                                "Click":  "loadButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "disconnectButton",
+                                               "x_name":  "",
+                                               "content":  "Disconnect",
+                                               "handlers":  {
+                                                                "Click":  "disconnectButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "watcherControlButton",
+                                               "content":  "Start Device Watcher",
+                                               "handlers":  {
+                                                                "Click":  "watcherControlButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ProgressRing",
+                                               "name":  "",
+                                               "x_name":  "progressRing"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "progressText"
+                                           },
+                                           {
+                                               "type":  "ListBox",
+                                               "name":  "",
+                                               "x_name":  "castingDevicesList",
+                                               "handlers":  {
+                                                                "SelectionChanged":  "castingDevicesList_SelectionChanged"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding Path=FriendlyName}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "Windows.Storage",
+                                         "Windows.Storage.Pickers",
+                                         "Windows.Storage.Streams",
+                                         "Windows.Media.Casting",
+                                         "Windows.Devices.Enumeration"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceInformation.CreateWatcher",
+                                                                "CastingDevice.GetDeviceSelector",
+                                                                "CastingPlaybackTypes.Video"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  525
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "Watcher_Added",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "CastingDevice.FromIdAsync",
+                                                                "Items.Add"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  348
+                                           },
+                                           {
+                                               "name":  "Watcher_Removed",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "Items.Remove"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  523
+                                           },
+                                           {
+                                               "name":  "Watcher_EnumerationCompleted",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  436
+                                           },
+                                           {
+                                               "name":  "Watcher_Stopped",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  398
+                                           },
+                                           {
+                                               "name":  "Connection_StateChanged",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "CastingConnectionState.Connected",
+                                                                "CastingConnectionState.Rendering",
+                                                                "Visibility.Visible",
+                                                                "CastingConnectionState.Disconnected",
+                                                                "Visibility.Collapsed",
+                                                                "CastingConnectionState.Connecting"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1446
+                                           },
+                                           {
+                                               "name":  "Connection_ErrorOccurred",
+                                               "namespaces_used":  [
+                                                                       "Windows.UI.Core.CoreDispatcherPriority.Normal"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "Windows.UI",
+                                                                "Core.CoreDispatcherPriority",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  354
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

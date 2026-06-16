@@ -1,0 +1,54 @@
+﻿{
+    "sample":  "UserInfo",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\UserInfo\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.UserInfo.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.UserInfo.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.UserInfo.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Find users",
+                          "initial_capture":  "01_1_Find_users__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show properties",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Find_users__after_Show_properties.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Watch users",
+                          "initial_capture":  "02_2_Watch_users__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start watching",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Watch_users__after_Start_watching.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Check user consent group",
+                          "initial_capture":  "03_3_Check_user_consent_group__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show Consent Group",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Check_user_consent_group__after_Show_Consent_Group.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

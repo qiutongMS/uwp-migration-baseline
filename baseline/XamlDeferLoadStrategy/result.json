@@ -1,0 +1,44 @@
+﻿{
+    "sample":  "XamlDeferLoadStrategy",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlDeferLoadStrategy\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.xDeferLoadStrategy.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.xDeferLoadStrategy.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.xDeferLoadStrategy.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Basic Deferral",
+                          "initial_capture":  "01_1_Basic_Deferral__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Realize Elements",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Basic_Deferral__after_Realize_Elements.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Adaptive Deferral",
+                          "initial_capture":  "02_2_Adaptive_Deferral__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Control Template Deferral",
+                          "initial_capture":  "03_3_Control_Template_Deferral__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

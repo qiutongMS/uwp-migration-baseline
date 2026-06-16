@@ -1,0 +1,28 @@
+﻿{
+    "sample":  "Geotag",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Geotag\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Geotag.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Geotag.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Geotag.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Geotag a file",
+                          "initial_capture":  "01_1_Geotag_a_file__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Choose file",
+                                              "invoked":  false,
+                                              "skipped_reason":  "blocklist",
+                                              "capture":  null
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

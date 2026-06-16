@@ -1,0 +1,763 @@
+﻿{
+    "sample":  "NumberFormatting",
+    "feature_name":  "Number formatting C# sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Globalization.NumberFormatting.PercentFormatter",
+                           "Windows.Globalization.NumberFormatting.PermilleFormatter",
+                           "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                           "Windows.Globalization.NumberFormatting.CurrencyFormatter",
+                           "Windows.Globalization.NumberFormatting.IncrementNumberRounder",
+                           "Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder",
+                           "Windows.Globalization.NumberFormatting.NumeralSystemTranslator",
+                           "Windows.Globalization.NumberFormatting"
+                       ],
+    "api_references":  [
+                           "Windows.Globalization",
+                           "NumberFormatting.PercentFormatter",
+                           "NumberFormatting.PermilleFormatter",
+                           "OutputTextBlock.Text",
+                           "NumberFormatting.DecimalFormatter",
+                           "NumberFormatting.CurrencyFormatter",
+                           "GlobalizationPreferences.Currencies",
+                           "CurrencyIdentifiers.USD",
+                           "CurrencyIdentifiers.EUR",
+                           "CurrencyFormatterMode.UseCurrencyCode",
+                           "CurrencyFormatterMode.UseSymbol",
+                           "RoundingAlgorithm.None",
+                           "RoundingAlgorithm.RoundAwayFromZero",
+                           "RoundingAlgorithm.RoundDown",
+                           "RoundingAlgorithm.RoundHalfAwayFromZero",
+                           "RoundingAlgorithm.RoundHalfDown",
+                           "RoundingAlgorithm.RoundHalfToEven",
+                           "RoundingAlgorithm.RoundHalfToOdd",
+                           "RoundingAlgorithm.RoundHalfTowardsZero",
+                           "RoundingAlgorithm.RoundHalfUp",
+                           "RoundingAlgorithm.RoundTowardsZero",
+                           "RoundingAlgorithm.RoundUp",
+                           "NumberFormatting.IncrementNumberRounder",
+                           "NumberFormatting.SignificantDigitsNumberRounder",
+                           "NumberFormatting.NumeralSystemTranslator"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_PercentPermilleFormatting",
+                          "title":  "Percent and Permille Formatting",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario1_PercentPermilleFormatting.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario1_PercentPermilleFormatting.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_PercentPermilleFormatting",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.PercentFormatter",
+                                                                       "Windows.Globalization.NumberFormatting.PermilleFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.PercentFormatter",
+                                                                "NumberFormatting.PermilleFormatter",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Random",
+                                                                 "PercentFormatter",
+                                                                 "PermilleFormatter"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  3110
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_DecimalFormatting",
+                          "title":  "Decimal Formatting",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario2_DecimalFormatting.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario2_DecimalFormatting.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_DecimalFormatting",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.DecimalFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.DecimalFormatter",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                                                                 "Random"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  3354
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_CurrencyFormatting",
+                          "title":  "Currency Formatting",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario3_CurrencyFormatting.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario3_CurrencyFormatting.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System.Text",
+                                         "Windows.Globalization",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.System.UserProfile",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_CurrencyFormatting",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.CurrencyFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.CurrencyFormatter",
+                                                                "GlobalizationPreferences.Currencies",
+                                                                "CurrencyIdentifiers.USD",
+                                                                "CurrencyIdentifiers.EUR",
+                                                                "CurrencyFormatterMode.UseCurrencyCode",
+                                                                "CurrencyFormatterMode.UseSymbol",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "CurrencyFormatter"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  2969
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_NumberParsing",
+                          "title":  "Number Parsing",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario4_NumberParsing.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario4_NumberParsing.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.System.UserProfile",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_NumberParsing",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                                                                       "Windows.Globalization.NumberFormatting.CurrencyFormatter",
+                                                                       "Windows.Globalization.NumberFormatting.PercentFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.DecimalFormatter",
+                                                                "NumberFormatting.CurrencyFormatter",
+                                                                "NumberFormatting.PercentFormatter",
+                                                                "GlobalizationPreferences.Currencies",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "PercentFormatter",
+                                                                 "DecimalFormatter",
+                                                                 "CurrencyFormatter"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  5230
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_RoundingAndPadding",
+                          "title":  "Rounding and Padding",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario5_RoundingAndPadding.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario5_RoundingAndPadding.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario5_RoundingAndPadding",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "DisplayRoundingAlgorithmAsString",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RoundingAlgorithm.None",
+                                                                "RoundingAlgorithm.RoundAwayFromZero",
+                                                                "RoundingAlgorithm.RoundDown",
+                                                                "RoundingAlgorithm.RoundHalfAwayFromZero",
+                                                                "RoundingAlgorithm.RoundHalfDown",
+                                                                "RoundingAlgorithm.RoundHalfToEven",
+                                                                "RoundingAlgorithm.RoundHalfToOdd",
+                                                                "RoundingAlgorithm.RoundHalfTowardsZero",
+                                                                "RoundingAlgorithm.RoundHalfUp",
+                                                                "RoundingAlgorithm.RoundTowardsZero",
+                                                                "RoundingAlgorithm.RoundUp"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1852
+                                           },
+                                           {
+                                               "name":  "DoPaddingScenarios",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1077
+                                           },
+                                           {
+                                               "name":  "DoPaddingAndRoundingScenarios",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.IncrementNumberRounder",
+                                                                       "Windows.Globalization.NumberFormatting.DecimalFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.IncrementNumberRounder",
+                                                                "NumberFormatting.DecimalFormatter"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Globalization.NumberFormatting.IncrementNumberRounder",
+                                                                 "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                                                                 "StringBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2447
+                                           },
+                                           {
+                                               "name":  "DoCurrencyRoundingScenarios",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.CurrencyFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.CurrencyFormatter"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Globalization.NumberFormatting.CurrencyFormatter",
+                                                                 "StringBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1288
+                                           },
+                                           {
+                                               "name":  "DoIncrementRoundingScenarios",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.IncrementNumberRounder",
+                                                                       "Windows.Globalization.NumberFormatting.DecimalFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.IncrementNumberRounder",
+                                                                "NumberFormatting.DecimalFormatter"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Globalization.NumberFormatting.IncrementNumberRounder",
+                                                                 "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                                                                 "StringBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1971
+                                           },
+                                           {
+                                               "name":  "DoSignificantDigitRoundingScenarios",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.SignificantDigitsNumberRounder"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder",
+                                                                 "StringBuilder"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1694
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                                                                       "Windows.Globalization.NumberFormatting.PercentFormatter"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.DecimalFormatter",
+                                                                "NumberFormatting.PercentFormatter",
+                                                                "RoundingAlgorithm.RoundUp",
+                                                                "RoundingAlgorithm.RoundDown",
+                                                                "RoundingAlgorithm.RoundHalfUp",
+                                                                "RoundingAlgorithm.RoundHalfDown",
+                                                                "RoundingAlgorithm.RoundHalfToOdd",
+                                                                "RoundingAlgorithm.RoundHalfToEven",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Globalization.NumberFormatting.DecimalFormatter",
+                                                                 "Windows.Globalization.NumberFormatting.PercentFormatter"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  3021
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  6,
+                          "class":  "Scenario6_NumeralSystemTranslation",
+                          "title":  "Numeral System Translation",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario6_NumeralSystemTranslation.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario6_NumeralSystemTranslation.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This example converts strings containing Latin numbers to an appropriate numeral system that can be rendered when digit substitution is not automatically performed."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario6_NumeralSystemTranslation",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting.NumeralSystemTranslator"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.NumeralSystemTranslator",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Windows.Globalization.NumberFormatting.NumeralSystemTranslator"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  1993
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  7,
+                          "class":  "Scenario7_UsingUnicodeExtensions",
+                          "title":  "Formatting/Translation using Unicode Extensions",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\shared\\Scenario7_UsingUnicodeExtensions.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\NumberFormatting\\cs\\Scenario7_UsingUnicodeExtensions.xaml.cs",
+                          "description":  "",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Description:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This example demonstrates how to use language names with Unicode extensions to directly set properties of number formatters."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Display",
+                                               "handlers":  {
+                                                                "Click":  "Display_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "OutputTextBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Text",
+                                         "Windows.Globalization",
+                                         "Windows.Globalization.NumberFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario7_UsingUnicodeExtensions",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "Display_Click",
+                                               "namespaces_used":  [
+                                                                       "Windows.Globalization.NumberFormatting",
+                                                                       "Windows.Globalization.NumberFormatting.IncrementNumberRounder"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Globalization",
+                                                                "NumberFormatting.IncrementNumberRounder",
+                                                                "CurrencyIdentifiers.EUR",
+                                                                "OutputTextBlock.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "StringBuilder",
+                                                                 "Random",
+                                                                 "Windows.Globalization.NumberFormatting.IncrementNumberRounder",
+                                                                 "DecimalFormatter",
+                                                                 "CurrencyFormatter",
+                                                                 "PercentFormatter",
+                                                                 "PermilleFormatter",
+                                                                 "NumeralSystemTranslator"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "OutputTextBlock.Text"
+                                                           ],
+                                               "body_length":  3596
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

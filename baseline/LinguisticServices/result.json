@@ -1,0 +1,73 @@
+﻿{
+    "sample":  "LinguisticServices",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\LinguisticServices\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.LinguisticServices.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.LinguisticServices.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.LinguisticServices.CS_8wekyb3d8bbwe!LinguisticServices.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Language Detection",
+                          "initial_capture":  "01_1_Language_Detection__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Detect Languages",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Language_Detection__after_Detect_Languages.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Script Detection",
+                          "initial_capture":  "02_2_Script_Detection__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Detect Scripts",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Script_Detection__after_Detect_Scripts.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Transliteration",
+                          "initial_capture":  "03_3_Transliteration__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Transliterate",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Character Grouping",
+                          "initial_capture":  "04_4_Character_Grouping__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get groups",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Character_Grouping__after_Get_groups.png"
+                                          },
+                                          {
+                                              "name":  "Assign group",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Character_Grouping__after_Assign_group.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

@@ -1,0 +1,326 @@
+{
+  "sample": "MobileHotspot",
+  "feature_name": "MobileHotspot C# Sample",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [],
+  "api_references": [
+    "Helpers.TryGetCurrentNetworkOperatorTetheringManager",
+    "HotspotPanel.Visibility",
+    "Visibility.Visible",
+    "BandComboBox.Items",
+    "BandComboBox.SelectedItem",
+    "SsidTextBox.Text",
+    "PassphraseTextBox.Text",
+    "TetheringWiFiBand.Auto",
+    "TetheringWiFiBand.SixGigahertz",
+    "Helpers.IsBandSupported",
+    "Helpers.GetFriendlyName",
+    "BandComboBox.SelectedIndex",
+    "AuthenticationComboBox.Items",
+    "TetheringWiFiAuthenticationKind.Wpa2",
+    "TetheringWiFiAuthenticationKind.Wpa3",
+    "Helpers.IsAuthenticationKindSupported",
+    "AuthenticationComboBox.SelectedIndex",
+    "AuthenticationComboBox.SelectedItem",
+    "MainPage.Current",
+    "NotifyType.StatusMessage",
+    "SsidRun.Text",
+    "PasswordRun.Text",
+    "BandRun.Text",
+    "AuthenticationRun.Text",
+    "TetheringOperationalState.On",
+    "MobileHotspotToggle.IsOn",
+    "TetheringOperationStatus.Success",
+    "TetheringOperationStatus.WiFiDeviceOff",
+    "NotifyType.ErrorMessage"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_ConfigureMobileHotspot",
+      "title": "Configure Mobile Hotspot",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MobileHotspot\\shared\\Scenario1_ConfigureMobileHotspot.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MobileHotspot\\cs\\Scenario1_ConfigureMobileHotspot.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "View and edit Mobile Hotspot settings."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "SsidLabel",
+          "text": "SSID:"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "SsidTextBox"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "PassphraseLabel",
+          "text": "Passphrase:"
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "PassphraseTextBox"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "BandLabel",
+          "text": "Band:"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "BandComboBox"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "AuthenticationLabel",
+          "text": "Authentication:"
+        },
+        {
+          "type": "ComboBox",
+          "name": "",
+          "x_name": "AuthenticationComboBox"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Apply changes",
+          "handlers": {
+            "Click": "ApplyChanges_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Discard changes",
+          "handlers": {
+            "Click": "DiscardChanges_Click"
+          }
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Networking.NetworkOperators",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_ConfigureMobileHotspot",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "Helpers.TryGetCurrentNetworkOperatorTetheringManager",
+            "HotspotPanel.Visibility",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 288
+        },
+        {
+          "name": "AddComboBoxItem",
+          "namespaces_used": [],
+          "api_refs": [
+            "BandComboBox.Items",
+            "BandComboBox.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 235
+        },
+        {
+          "name": "InitializeTetheringControls",
+          "namespaces_used": [],
+          "api_refs": [
+            "SsidTextBox.Text",
+            "PassphraseTextBox.Text",
+            "BandComboBox.Items",
+            "TetheringWiFiBand.Auto",
+            "TetheringWiFiBand.SixGigahertz",
+            "Helpers.IsBandSupported",
+            "Helpers.GetFriendlyName",
+            "BandComboBox.SelectedIndex",
+            "AuthenticationComboBox.Items",
+            "TetheringWiFiAuthenticationKind.Wpa2",
+            "TetheringWiFiAuthenticationKind.Wpa3",
+            "Helpers.IsAuthenticationKindSupported",
+            "AuthenticationComboBox.SelectedIndex"
+          ],
+          "new_types": [],
+          "ui_sets": [
+            "SsidTextBox.Text",
+            "PassphraseTextBox.Text"
+          ],
+          "body_length": 2031
+        },
+        {
+          "name": "ApplyChanges_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "SsidTextBox.Text",
+            "PassphraseTextBox.Text",
+            "BandComboBox.SelectedItem",
+            "AuthenticationComboBox.SelectedItem"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 782
+        },
+        {
+          "name": "DiscardChanges_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 54
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_ToggleMobileHotspot",
+      "title": "Toggle Mobile Hotspot",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MobileHotspot\\shared\\Scenario2_ToggleMobileHotspot.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MobileHotspot\\cs\\Scenario2_ToggleMobileHotspot.xaml.cs",
+      "description": "",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Turn Mobile Hotspot on or off."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "MobileHotspotLabel",
+          "text": "Mobile Hotspot:"
+        },
+        {
+          "type": "ToggleSwitch",
+          "name": "",
+          "x_name": "MobileHotspotToggle",
+          "handlers": {
+            "Toggled": "MobileHotspotToggle_Toggled"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "SSID:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Password:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Band:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Authentication:"
+        }
+      ],
+      "usings": [
+        "System",
+        "Windows.Networking.NetworkOperators",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_ToggleMobileHotspot",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "Helpers.TryGetCurrentNetworkOperatorTetheringManager",
+            "SsidRun.Text",
+            "PasswordRun.Text",
+            "BandRun.Text",
+            "Helpers.GetFriendlyName",
+            "AuthenticationRun.Text",
+            "TetheringOperationalState.On",
+            "MobileHotspotToggle.IsOn",
+            "HotspotPanel.Visibility",
+            "Visibility.Visible"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 991
+        },
+        {
+          "name": "MobileHotspotToggle_Toggled",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current",
+            "NotifyType.StatusMessage",
+            "TetheringOperationalState.On",
+            "MobileHotspotToggle.IsOn",
+            "TetheringOperationStatus.Success",
+            "TetheringOperationStatus.WiFiDeviceOff",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1840
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

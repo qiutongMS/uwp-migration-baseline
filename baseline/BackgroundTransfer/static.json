@@ -1,0 +1,1781 @@
+{
+  "sample": "BackgroundTransfer",
+  "feature_name": "BackgroundTransfer",
+  "readme_description": null,
+  "readme_bullets": [],
+  "readme_api_links": [],
+  "api_namespaces": [
+    "Windows.UI.Core.CoreDispatcherPriority.Normal",
+    "Windows.Media.Playback.MediaPlayer",
+    "Windows.Media.Core.MediaSource.CreateFromStream",
+    "Windows.Storage.Streams.Buffer"
+  ],
+  "api_references": [
+    "GC.SuppressFinalize",
+    "ActivationKind.Launch",
+    "BackgroundDownloader.GetCurrentDownloadsAsync",
+    "String.Format",
+    "CultureInfo.CurrentCulture",
+    "Progress.Status",
+    "Task.WhenAll",
+    "Uri.TryCreate",
+    "Text.Trim",
+    "UriKind.Absolute",
+    "NotifyType.ErrorMessage",
+    "KnownFolders.GetFolderForUserAsync",
+    "KnownFolderId.PicturesLibrary",
+    "CreationCollisionOption.GenerateUniqueName",
+    "BackgroundTransferPriority.Default",
+    "BackgroundTransferPriority.High",
+    "DownloadOperation.Progress",
+    "BackgroundTransferStatus.Running",
+    "BackgroundTransferStatus.PausedByApplication",
+    "Headers.Count",
+    "NotifyType.StatusMessage",
+    "StatusCode.ToString",
+    "String.Empty",
+    "BackgroundTransferError.GetStatus",
+    "WebErrorStatus.Unknown",
+    "Dispatcher.RunAsync",
+    "Windows.UI",
+    "Core.CoreDispatcherPriority",
+    "BackgroundUploader.GetCurrentUploadsAsync",
+    "FileTypeFilter.Add",
+    "UploadOperation.Progress",
+    "BackgroundTransferGroup.CreateGroup",
+    "BackgroundTransferBehavior.Parallel",
+    "BackgroundDownloader.GetCurrentDownloadsForTransferGroupAsync",
+    "ToastNotificationButton.IsEnabled",
+    "TileNotificationButton.IsEnabled",
+    "ToastNotificationManager.GetTemplateContent",
+    "ToastTemplateType.ToastText01",
+    "ScenarioType.Toast",
+    "TileUpdateManager.GetTemplateContent",
+    "TileTemplateType.TileSquare150x150Text03",
+    "DateTime.Now",
+    "ScenarioType.Tile",
+    "CultureInfo.InvariantCulture",
+    "ResultFile.Name",
+    "CompletionGroupTask.CreateBackgroundDownloader",
+    "CompletionGroup.Enable",
+    "SubstatusBlock.Dispatcher",
+    "CoreDispatcherPriority.Normal",
+    "SubstatusBlock.Text",
+    "DownloadedStatusText.Text",
+    "DownloadedRangesText.Text",
+    "DownloadedInfoText.Text",
+    "PreviousReadText.Text",
+    "CurrentReadText.Text",
+    "Windows.Media",
+    "Playback.MediaPlayer",
+    "Core.MediaSource",
+    "WebErrorStatus.InsufficientRangeSupport",
+    "WebErrorStatus.MissingContentLengthSupport",
+    "Windows.Storage",
+    "Streams.Buffer",
+    "InputStreamOptions.None",
+    "BackgroundTransferStatus.PausedRecoverableWebErrorStatus",
+    "WebErrorStatus.Forbidden",
+    "System.Diagnostics",
+    "Debug.Assert",
+    "ReauthorizeDialog.ShowAsync",
+    "ContentDialogResult.Primary",
+    "RequestedUri.OriginalString",
+    "IsChecked.Value",
+    "RecoverableWebErrorStatuses.Add",
+    "BackgroundTransferBehavior.Serialized",
+    "MainPage.Current",
+    "KnownFolders.PicturesLibrary",
+    "BackgroundTransferStatus.Canceled"
+  ],
+  "scenarios": [
+    {
+      "index": 1,
+      "class": "Scenario1_Download",
+      "title": "File Download",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario1_Download.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario1_Download.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "InputTextBlock1"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "serverAddressField",
+          "text": "http://localhost/BackgroundTransferSample/download.aspx"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Local file name: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "fileNameField",
+          "text": "DownloadedFile.txt"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "StartDownloadButton",
+          "content": "Start Download",
+          "handlers": {
+            "Click": "StartDownload_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "StartHighPriorityDownloadButton",
+          "content": "Start High Priority Download",
+          "handlers": {
+            "Click": "StartHighPriorityDownload_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "PauseAllButton",
+          "content": "Pause All",
+          "handlers": {
+            "Click": "PauseAll_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ResumeAllButton",
+          "content": "Resume All",
+          "handlers": {
+            "Click": "ResumeAll_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "CancelAllButton",
+          "content": "Cancel All",
+          "handlers": {
+            "Click": "CancelAll_Click"
+          }
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "outputField"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.IO",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario1_Download",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 103
+        },
+        {
+          "name": "Dispose",
+          "namespaces_used": [],
+          "api_refs": [
+            "GC.SuppressFinalize"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 173
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "ActivationKind.Launch"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 445
+        },
+        {
+          "name": "DiscoverActiveDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundDownloader.GetCurrentDownloadsAsync",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "Progress.Status",
+            "Task.WhenAll"
+          ],
+          "new_types": [
+            "List"
+          ],
+          "ui_sets": [],
+          "body_length": 1635
+        },
+        {
+          "name": "StartDownload",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.GenerateUniqueName",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [
+            "BackgroundDownloader"
+          ],
+          "ui_sets": [],
+          "body_length": 2107
+        },
+        {
+          "name": "StartDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferPriority.Default"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 74
+        },
+        {
+          "name": "StartHighPriorityDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferPriority.High"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 71
+        },
+        {
+          "name": "PauseAll_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadOperation.Progress",
+            "BackgroundTransferStatus.Running",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 966
+        },
+        {
+          "name": "ResumeAll_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadOperation.Progress",
+            "BackgroundTransferStatus.PausedByApplication",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 980
+        },
+        {
+          "name": "CancelAll_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "CancellationTokenSource",
+            "List"
+          ],
+          "ui_sets": [],
+          "body_length": 344
+        },
+        {
+          "name": "DownloadProgress",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadOperation.Progress",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "Headers.Count"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1809
+        },
+        {
+          "name": "HandleDownloadAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "StatusCode.ToString",
+            "String.Empty",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [
+            "Progress"
+          ],
+          "ui_sets": [],
+          "body_length": 1916
+        },
+        {
+          "name": "IsExceptionHandled",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferError.GetStatus",
+            "WebErrorStatus.Unknown",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 668
+        },
+        {
+          "name": "MarshalLog",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 175
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "LogStatus",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 86
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "class": "Scenario2_Upload",
+      "title": "File Upload",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario2_Upload.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario2_Upload.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "InputTextBlock1"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "serverAddressField",
+          "text": "http://localhost/BackgroundTransferSample/Upload.aspx"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "StartUploadButton",
+          "content": "Start Upload",
+          "handlers": {
+            "Click": "StartUpload_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "StartMultipartUploadButton",
+          "content": "Start Multipart Upload",
+          "handlers": {
+            "Click": "StartMultipartUpload_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "CancelAllButton",
+          "content": "Cancel All",
+          "handlers": {
+            "Click": "CancelAll_Click"
+          }
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "outputField"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.Storage.FileProperties",
+        "Windows.Storage.Pickers",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario2_Upload",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 103
+        },
+        {
+          "name": "Dispose",
+          "namespaces_used": [],
+          "api_refs": [
+            "GC.SuppressFinalize"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 173
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "ActivationKind.Launch"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 441
+        },
+        {
+          "name": "DiscoverActiveUploadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundUploader.GetCurrentUploadsAsync",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "Progress.Status",
+            "Task.WhenAll"
+          ],
+          "new_types": [
+            "List"
+          ],
+          "ui_sets": [],
+          "body_length": 1505
+        },
+        {
+          "name": "StartUpload_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "FileTypeFilter.Add"
+          ],
+          "new_types": [
+            "FileOpenPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 837
+        },
+        {
+          "name": "UploadSingleFile",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.ErrorMessage",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [
+            "BackgroundUploader"
+          ],
+          "ui_sets": [],
+          "body_length": 1080
+        },
+        {
+          "name": "StartMultipartUpload_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "FileTypeFilter.Add"
+          ],
+          "new_types": [
+            "FileOpenPicker"
+          ],
+          "ui_sets": [],
+          "body_length": 963
+        },
+        {
+          "name": "StartSingleFileUpload",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 120
+        },
+        {
+          "name": "StartMultipleFilesUpload",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 143
+        },
+        {
+          "name": "UploadMultipleFiles",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.ErrorMessage",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [
+            "List",
+            "BackgroundTransferContentPart",
+            "BackgroundUploader"
+          ],
+          "ui_sets": [],
+          "body_length": 1804
+        },
+        {
+          "name": "CancelAll_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 261
+        },
+        {
+          "name": "UploadProgress",
+          "namespaces_used": [],
+          "api_refs": [
+            "UploadOperation.Progress",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "Headers.Count"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1588
+        },
+        {
+          "name": "HandleUploadAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage",
+            "String.Format",
+            "CultureInfo.CurrentCulture"
+          ],
+          "new_types": [
+            "Progress"
+          ],
+          "ui_sets": [],
+          "body_length": 1354
+        },
+        {
+          "name": "IsExceptionHandled",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferError.GetStatus",
+            "WebErrorStatus.Unknown",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 666
+        },
+        {
+          "name": "MarshalLog",
+          "namespaces_used": [
+            "Windows.UI.Core.CoreDispatcherPriority.Normal"
+          ],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "Windows.UI",
+            "Core.CoreDispatcherPriority"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 175
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "LogStatus",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 86
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "class": "Scenario3_Notifications",
+      "title": "Completion Notifications",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario3_Notifications.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario3_Notifications.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "InputTextBlock1",
+          "inner_text": "BackgroundTransfer completion notifications allow apps to show a toast or update a tile once a set of operations complete."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "serverAddressField",
+          "text": "http://localhost/BackgroundTransferSample/notifications.aspx"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "ToastNotificationButton",
+          "content": "Start three downloads and show toast on completion",
+          "handlers": {
+            "Click": "ToastNotificationButton_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "TileNotificationButton",
+          "content": "Start three downloads and update tile on completion",
+          "handlers": {
+            "Click": "TileNotificationButton_Click"
+          }
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "outputField"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Globalization",
+        "System.IO",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Data.Xml.Dom",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.UI.Notifications",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario3_Notifications",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferGroup.CreateGroup",
+            "BackgroundTransferBehavior.Parallel"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 837
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "ActivationKind.Launch"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 655
+        },
+        {
+          "name": "CancelActiveDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundDownloader.GetCurrentDownloadsForTransferGroupAsync",
+            "Task.WhenAll",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "ToastNotificationButton.IsEnabled",
+            "TileNotificationButton.IsEnabled"
+          ],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 1899
+        },
+        {
+          "name": "ToastNotificationButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "ToastNotificationManager.GetTemplateContent",
+            "ToastTemplateType.ToastText01",
+            "ScenarioType.Toast"
+          ],
+          "new_types": [
+            "BackgroundDownloader",
+            "ToastNotification"
+          ],
+          "ui_sets": [],
+          "body_length": 1446
+        },
+        {
+          "name": "TileNotificationButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "TileUpdateManager.GetTemplateContent",
+            "TileTemplateType.TileSquare150x150Text03",
+            "DateTime.Now",
+            "ScenarioType.Tile"
+          ],
+          "new_types": [
+            "BackgroundDownloader",
+            "TileNotification"
+          ],
+          "ui_sets": [],
+          "body_length": 2021
+        },
+        {
+          "name": "RunDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "String.Format",
+            "CultureInfo.InvariantCulture",
+            "Task.WhenAll"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 2630
+        },
+        {
+          "name": "CreateDownload",
+          "namespaces_used": [],
+          "api_refs": [
+            "String.Format",
+            "CultureInfo.InvariantCulture",
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.GenerateUniqueName",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Uri"
+          ],
+          "ui_sets": [],
+          "body_length": 796
+        },
+        {
+          "name": "DownloadAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "ResultFile.Name",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 644
+        },
+        {
+          "name": "IsExceptionHandled",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferError.GetStatus",
+            "WebErrorStatus.Unknown",
+            "String.Format",
+            "CultureInfo.CurrentCulture",
+            "NotifyType.ErrorMessage",
+            "ResultFile.Name"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 679
+        },
+        {
+          "name": "Log",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 61
+        },
+        {
+          "name": "LogStatus",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 86
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "class": "Scenario4_CompletionGroups",
+      "title": "Completion Groups",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario4_CompletionGroups.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario4_CompletionGroups.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "InputTextBlock1",
+          "inner_text": "Execute a background task when a set of uploads or downloads completes."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "serverAddressField",
+          "text": "http://localhost/BackgroundTransferSample/bitmap.aspx"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "StartDownloadsButton",
+          "content": "Start ten downloads in a completion group",
+          "handlers": {
+            "Click": "StartDownloadsButton_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "SubstatusBlock"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Globalization",
+        "System.Threading.Tasks",
+        "Tasks",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario4_CompletionGroups",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 51
+        },
+        {
+          "name": "StartDownloadsButton_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "CompletionGroupTask.CreateBackgroundDownloader",
+            "String.Format",
+            "CultureInfo.InvariantCulture",
+            "CompletionGroup.Enable"
+          ],
+          "new_types": [
+            "Uri"
+          ],
+          "ui_sets": [],
+          "body_length": 970
+        },
+        {
+          "name": "CreateResultFileAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "String.Format",
+            "CultureInfo.InvariantCulture",
+            "CreationCollisionOption.GenerateUniqueName"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 409
+        },
+        {
+          "name": "SetSubstatus",
+          "namespaces_used": [],
+          "api_refs": [
+            "SubstatusBlock.Dispatcher",
+            "CoreDispatcherPriority.Normal",
+            "SubstatusBlock.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 185
+        },
+        {
+          "name": "OnDownloadCompleted",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "String.Format",
+            "CultureInfo.InvariantCulture",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 336
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "class": "Scenario5_RandomAccess",
+      "title": "Random Access Downloads",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario5_RandomAccess.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario5_RandomAccess.xaml.cs",
+      "description": "Random Access Downloads",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Random Access Downloads"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "inputTextBlock1"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "serverAddressField",
+          "text": "http://localhost/BackgroundTransferSample/randomAccess.aspx"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Local file name: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "fileNameField",
+          "text": "RandomAccessFile.txt"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "startDownloadButton",
+          "content": "Start",
+          "handlers": {
+            "Click": "StartDownload_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "pauseDownloadButton",
+          "content": "Pause",
+          "handlers": {
+            "Click": "PauseDownload_Click"
+          }
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "resumeDownloadButton",
+          "content": "Resume",
+          "handlers": {
+            "Click": "ResumeDownload_Click"
+          }
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "seekSlider",
+          "header": "Seek to position (MB)"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "{Binding ElementName=seekSlider, Path=Value}"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "seekDownloadButton",
+          "content": "Seek",
+          "handlers": {
+            "Click": "SeekDownload_Click"
+          }
+        },
+        {
+          "type": "Slider",
+          "name": "",
+          "x_name": "currentPositionSlider",
+          "header": "Current read position (MB)"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "{Binding ElementName=currentPositionSlider, Path=Value, Mode=OneWay}"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "DownloadedInfoText"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Download status:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Downloaded ranges:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Previous read operation:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Current read operation:"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Foundation",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.Storage.Streams",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario5_RandomAccess",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "ActivationKind.Launch"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 660
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 107
+        },
+        {
+          "name": "CancelActiveDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundDownloader.GetCurrentDownloadsAsync",
+            "Task.WhenAll",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 1432
+        },
+        {
+          "name": "PauseDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 222
+        },
+        {
+          "name": "ResumeDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 223
+        },
+        {
+          "name": "SeekDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 824
+        },
+        {
+          "name": "FormatDownloadedRanges",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 457
+        },
+        {
+          "name": "OnDownloadProgress",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadOperation.Progress",
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DownloadedStatusText.Text"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 767
+        },
+        {
+          "name": "OnRangesDownloaded",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DownloadedRangesText.Text",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 1865
+        },
+        {
+          "name": "StartDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadedInfoText.Text",
+            "DownloadedStatusText.Text",
+            "DownloadedRangesText.Text",
+            "PreviousReadText.Text",
+            "CurrentReadText.Text",
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.GenerateUniqueName"
+          ],
+          "new_types": [
+            "BackgroundDownloader"
+          ],
+          "ui_sets": [],
+          "body_length": 2837
+        },
+        {
+          "name": "StartDownloadAndReadContentsAsync",
+          "namespaces_used": [
+            "Windows.Media.Playback.MediaPlayer",
+            "Windows.Media.Core.MediaSource.CreateFromStream",
+            "Windows.Storage.Streams.Buffer"
+          ],
+          "api_refs": [
+            "Windows.Media",
+            "Playback.MediaPlayer",
+            "Core.MediaSource",
+            "WebErrorStatus.InsufficientRangeSupport",
+            "WebErrorStatus.MissingContentLengthSupport",
+            "Windows.Storage",
+            "Streams.Buffer",
+            "PreviousReadText.Text",
+            "CurrentReadText.Text",
+            "InputStreamOptions.None",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "Windows.Media.Playback.MediaPlayer",
+            "Windows.Storage.Streams.Buffer"
+          ],
+          "ui_sets": [],
+          "body_length": 4877
+        },
+        {
+          "name": "IsWebException",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferError.GetStatus",
+            "WebErrorStatus.Unknown",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 558
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "class": "Scenario6_RecoverableErrors",
+      "title": "Recoverable Errors",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario6_RecoverableErrors.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario6_RecoverableErrors.xaml.cs",
+      "description": "Recoverable Errors",
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Description:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Recoverable Errors"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "The sample server provided with this sample provides a time-limited URL. If you check the box below, then when the URL expires, the app switches to different URL to continue downloading."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "serverAddressField",
+          "text": "http://localhost/BackgroundTransferSample/recoverableErrors.aspx?shouldExpire=yes"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Local file name: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "fileNameField",
+          "text": "RecoverableErrorsFile.txt"
+        },
+        {
+          "type": "CheckBox",
+          "name": "",
+          "x_name": "configureRecoverableErrorsCheckBox",
+          "content": "Recover from expired URL"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "startDownloadButton",
+          "content": "Start",
+          "handlers": {
+            "Click": "StartDownload_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "DownloadedInfoText"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "inner_text": "Download status:"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "The download URL has expired. Enter a new authorization code to resume the download."
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "",
+          "placeholdertext": "1234"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Foundation",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web"
+      ],
+      "handlers": [
+        {
+          "name": "Scenario6_RecoverableErrors",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 46
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "ActivationKind.Launch"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 660
+        },
+        {
+          "name": "OnNavigatedFrom",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 65
+        },
+        {
+          "name": "CancelActiveDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundDownloader.GetCurrentDownloadsAsync",
+            "Task.WhenAll",
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 1434
+        },
+        {
+          "name": "OnDownloadProgress",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadOperation.Progress",
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal",
+            "DownloadedStatusText.Text",
+            "NotifyType.StatusMessage",
+            "BackgroundTransferStatus.PausedRecoverableWebErrorStatus",
+            "WebErrorStatus.Forbidden",
+            "System.Diagnostics",
+            "Debug.Assert",
+            "NotifyType.ErrorMessage",
+            "ReauthorizeDialog.ShowAsync",
+            "ContentDialogResult.Primary",
+            "RequestedUri.OriginalString"
+          ],
+          "new_types": [
+            "Uri",
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 2853
+        },
+        {
+          "name": "StartDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [
+            "DownloadedInfoText.Text",
+            "DownloadedStatusText.Text",
+            "NotifyType.StatusMessage",
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "KnownFolders.GetFolderForUserAsync",
+            "KnownFolderId.PicturesLibrary",
+            "CreationCollisionOption.GenerateUniqueName",
+            "IsChecked.Value",
+            "WebErrorStatus.Forbidden",
+            "RecoverableWebErrorStatuses.Add"
+          ],
+          "new_types": [
+            "BackgroundDownloader"
+          ],
+          "ui_sets": [],
+          "body_length": 2565
+        },
+        {
+          "name": "HandleDownloadAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "NotifyType.StatusMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 860
+        },
+        {
+          "name": "IsWebException",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferError.GetStatus",
+            "WebErrorStatus.Unknown",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 558
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "class": "Scenario7_DownloadReordering",
+      "title": "Download Reordering",
+      "xaml_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\shared\\Scenario7_DownloadReordering.xaml",
+      "cs_path": "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BackgroundTransfer\\cs\\BackgroundTransfer\\Scenario7_DownloadReordering.xaml.cs",
+      "description": null,
+      "controls": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "InputTextBlock1",
+          "inner_text": "Transfers which belong to the same transfer group can be reordered after they have been started."
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Remote address: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "remoteAddressField",
+          "text": "http://localhost/BackgroundTransferSample/download.aspx"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Local file name: "
+        },
+        {
+          "type": "TextBox",
+          "name": "",
+          "x_name": "fileNameField",
+          "text": "DownloadReordering.txt"
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "startDownloadButton",
+          "content": "Start Download",
+          "handlers": {
+            "Click": "StartDownload_Click"
+          }
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "Select a pending transfer to reorder the downloads."
+        },
+        {
+          "type": "ListView",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "Button",
+          "name": "",
+          "x_name": "",
+          "content": "Make Current",
+          "handlers": {
+            "Click": "MakeCurrent_Click"
+          }
+        },
+        {
+          "type": "ProgressBar",
+          "name": "",
+          "x_name": ""
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "x_name": "",
+          "text": "{x:Bind stateText, Mode=OneWay}"
+        }
+      ],
+      "usings": [
+        "System",
+        "System.Collections.Generic",
+        "System.Collections.ObjectModel",
+        "System.ComponentModel",
+        "System.Globalization",
+        "System.IO",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Windows.Networking.BackgroundTransfer",
+        "Windows.Storage",
+        "Windows.UI.Core",
+        "Windows.UI.Xaml",
+        "Windows.UI.Xaml.Controls",
+        "Windows.UI.Xaml.Navigation",
+        "Windows.Web"
+      ],
+      "handlers": [
+        {
+          "name": "DownloadOperationItem",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 114
+        },
+        {
+          "name": "Scenario7_DownloadReordering",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferGroup.CreateGroup",
+            "BackgroundTransferBehavior.Serialized"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 280
+        },
+        {
+          "name": "OnNavigatedTo",
+          "namespaces_used": [],
+          "api_refs": [
+            "MainPage.Current"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 101
+        },
+        {
+          "name": "CancelActiveDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundDownloader.GetCurrentDownloadsForTransferGroupAsync",
+            "Task.WhenAll"
+          ],
+          "new_types": [
+            "CancellationTokenSource"
+          ],
+          "ui_sets": [],
+          "body_length": 1489
+        },
+        {
+          "name": "StartDownload_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 286
+        },
+        {
+          "name": "MakeCurrent_Click",
+          "namespaces_used": [],
+          "api_refs": [],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 256
+        },
+        {
+          "name": "RunDownloadsAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Uri.TryCreate",
+            "Text.Trim",
+            "UriKind.Absolute",
+            "NotifyType.ErrorMessage",
+            "Task.WhenAll"
+          ],
+          "new_types": [
+            "BackgroundDownloader",
+            "DownloadOperationItem"
+          ],
+          "ui_sets": [],
+          "body_length": 2517
+        },
+        {
+          "name": "CreateDownload",
+          "namespaces_used": [],
+          "api_refs": [
+            "KnownFolders.PicturesLibrary",
+            "CreationCollisionOption.GenerateUniqueName",
+            "NotifyType.ErrorMessage"
+          ],
+          "new_types": [
+            "Uri"
+          ],
+          "ui_sets": [],
+          "body_length": 616
+        },
+        {
+          "name": "DownloadAsync",
+          "namespaces_used": [],
+          "api_refs": [
+            "Progress.Status",
+            "ResultFile.Name",
+            "NotifyType.StatusMessage",
+            "BackgroundTransferStatus.Canceled"
+          ],
+          "new_types": [
+            "Progress"
+          ],
+          "ui_sets": [],
+          "body_length": 1150
+        },
+        {
+          "name": "DownloadProgress",
+          "namespaces_used": [],
+          "api_refs": [
+            "Dispatcher.RunAsync",
+            "CoreDispatcherPriority.Normal"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 642
+        },
+        {
+          "name": "IsWebException",
+          "namespaces_used": [],
+          "api_refs": [
+            "BackgroundTransferError.GetStatus",
+            "WebErrorStatus.Unknown",
+            "NotifyType.ErrorMessage",
+            "ResultFile.Name"
+          ],
+          "new_types": [],
+          "ui_sets": [],
+          "body_length": 571
+        }
+      ]
+    }
+  ],
+  "main_page": null
+}

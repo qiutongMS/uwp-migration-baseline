@@ -1,0 +1,118 @@
+﻿{
+    "sample":  "Store",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.Store.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.Store.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.Store.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Trial-mode",
+                          "initial_capture":  "01_1_Trial-mode__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Show trial period information",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Trial-mode__after_Show_trial_period_information.png"
+                                          },
+                                          {
+                                              "name":  "Buy app (Price unknown)",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Trial-mode__after_Buy_app_Price_unknown_.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) In-app purchase",
+                          "initial_capture":  "02_2_In-app_purchase__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Associated Add-Ons",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_In-app_purchase__after_Get_Associated_Add-Ons.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Unmanaged consumable product",
+                          "initial_capture":  "03_3_Unmanaged_consumable_product__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Associated Add-Ons",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Unmanaged_consumable_product__after_Get_Associated_Add-Ons.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Managed consumable product",
+                          "initial_capture":  "04_4_Managed_consumable_product__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Associated Add-Ons",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "04_4_Managed_consumable_product__after_Get_Associated_Add-Ons.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) User collection",
+                          "initial_capture":  "05_5_User_collection__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get User Collection",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_User_collection__after_Get_User_Collection.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) App listing URI",
+                          "initial_capture":  "06_6_App_listing_URI__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Rate this app",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "06_6_App_listing_URI__after_Rate_this_app.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) Business to Business",
+                          "initial_capture":  "07_7_Business_to_Business__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get Customer Collections Id",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Business_to_Business__after_Get_Customer_Collections_Id.png"
+                                          },
+                                          {
+                                              "name":  "Get Customer Purchase Id",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_Business_to_Business__after_Get_Customer_Purchase_Id.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

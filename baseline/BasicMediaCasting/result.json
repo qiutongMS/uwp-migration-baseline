@@ -1,0 +1,90 @@
+﻿{
+    "sample":  "BasicMediaCasting",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\BasicMediaCasting\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.BasicMediaCasting.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.BasicMediaCasting.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.BasicMediaCasting.CS_8wekyb3d8bbwe!BasicMediaCasting.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Basic Media Casting",
+                          "initial_capture":  "01_1_Basic_Media_Casting__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Basic_Media_Casting__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Basic_Media_Casting__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Basic_Media_Casting__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Casting Using Casting Picker",
+                          "initial_capture":  "02_2_Casting_Using_Casting_Picker__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Casting_Using_Casting_Picker__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Casting_Using_Casting_Picker__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Casting_Using_Casting_Picker__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Casting Using Custom Picker",
+                          "initial_capture":  "03_3_Casting_Using_Custom_Picker__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Casting_Using_Custom_Picker__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Casting_Using_Custom_Picker__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "03_3_Casting_Using_Custom_Picker__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

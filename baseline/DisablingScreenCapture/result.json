@@ -1,0 +1,90 @@
+﻿{
+    "sample":  "DisablingScreenCapture",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DisablingScreenCapture\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DisablingScreenCapture.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DisablingScreenCapture.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DisablingScreenCapture.CS_8wekyb3d8bbwe!DisablingScreenCapture.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Enabling screen capture",
+                          "initial_capture":  "01_1_Enabling_screen_capture__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Enabling_screen_capture__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Enabling_screen_capture__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "01_1_Enabling_screen_capture__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Disabling screen capture",
+                          "initial_capture":  "02_2_Disabling_screen_capture__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Disabling_screen_capture__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Disabling_screen_capture__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "02_2_Disabling_screen_capture__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Managing AppCapture",
+                          "initial_capture":  "03_3_Managing_AppCapture__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Volume",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Managing_AppCapture__after_Volume.png"
+                                          },
+                                          {
+                                              "name":  "Play",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Managing_AppCapture__after_Play.png"
+                                          },
+                                          {
+                                              "name":  "Aspect Ratio",
+                                              "invoked":  true,
+                                              "skipped_reason":  "opened_popup",
+                                              "capture":  "03_3_Managing_AppCapture__after_Aspect_Ratio.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

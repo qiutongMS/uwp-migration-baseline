@@ -1,0 +1,279 @@
+﻿{
+    "sample":  "Compression",
+    "feature_name":  "Compression",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "FileTypeFilter.Add",
+                           "Algorithm.ToString",
+                           "Files.Count",
+                           "Enum.Parse",
+                           "Progress.Text",
+                           "String.Format",
+                           "ApplicationData.Current",
+                           "TemporaryFolder.CreateFileAsync",
+                           "CreationCollisionOption.GenerateUniqueName",
+                           "FileAccessMode.ReadWrite",
+                           "Algorithm.HasValue",
+                           "Algorithm.Value",
+                           "RandomAccessStream.CopyAsync",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "AddedItems.Count",
+                           "RemovedItems.Count",
+                           "Content.Equals",
+                           "Visibility.Visible",
+                           "Debug.Assert",
+                           "Visibility.Collapsed",
+                           "CompressAlgorithm.Xpress",
+                           "CompressAlgorithm.XpressHuff",
+                           "CompressAlgorithm.Mszip",
+                           "CompressAlgorithm.Lzms",
+                           "CompressAlgorithm.InvalidAlgorithm",
+                           "CompressAlgorithmComboBox.SelectedItem"
+                       ],
+    "scenarios":  {
+                      "index":  1,
+                      "class":  "Scenario1",
+                      "title":  "Compression/Decompression sample",
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Compression\\cs\\Scenario1.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Compression\\cs\\Scenario1.xaml.cs",
+                      "description":  null,
+                      "controls":  [
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "DefaultTextBlock",
+                                           "inner_text":  "DEFAULT: No compression algorithms explicitly specified. Xpress is used by default."
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "XpressTextBlock",
+                                           "inner_text":  "XPRESS: Compression ratio is medium. High compression and decompression speeds. Low memory requirement."
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "XpressHuffTextBlock",
+                                           "inner_text":  "XPRESSHUFF: Compression ratio is medium. Medium to high compression and decompression speeds. Low memory requirement."
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "MszipTextBlock",
+                                           "inner_text":  "MSZIP: Compression ratio is medium to high. Medium compression speed and high decompression speed. Medium memory requirement."
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "LzmsTextBlock",
+                                           "inner_text":  "LZMS: Compression ratio is high. Low compression speed and high decompression speed. Medium to high memory requirement."
+                                       },
+                                       {
+                                           "type":  "ComboBox",
+                                           "name":  "",
+                                           "x_name":  "CompressAlgorithmComboBox",
+                                           "handlers":  {
+                                                            "SelectionChanged":  "CompressAlgorithmComboBox_SelectionChanged"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "Button",
+                                           "name":  "",
+                                           "x_name":  "CompressFileButton",
+                                           "content":  "Compress File...",
+                                           "handlers":  {
+                                                            "Click":  "CompressFileButton_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "Progress"
+                                       }
+                                   ],
+                      "usings":  [
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Navigation",
+                                     "Windows.UI.ViewManagement",
+                                     "Windows.Storage",
+                                     "Windows.Storage.Streams",
+                                     "Windows.Storage.Pickers",
+                                     "Windows.Storage.Compression",
+                                     "Windows.ApplicationModel.Activation",
+                                     "System",
+                                     "System.Collections.Generic",
+                                     "System.Diagnostics",
+                                     "SDKTemplate",
+                                     "Windows.UI.Xaml.Data",
+                                     "System.Linq"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "Scenario1",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  51
+                                       },
+                                       {
+                                           "name":  "ShowFileOpen",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "FileTypeFilter.Add",
+                                                            "Algorithm.ToString"
+                                                        ],
+                                           "new_types":  [
+                                                             "FileOpenPicker"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  309
+                                       },
+                                       {
+                                           "name":  "ContinueFileOpenPicker",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Files.Count",
+                                                            "Enum.Parse"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  735
+                                       },
+                                       {
+                                           "name":  "CompressFile",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Progress.Text",
+                                                            "String.Format",
+                                                            "ApplicationData.Current",
+                                                            "TemporaryFolder.CreateFileAsync",
+                                                            "CreationCollisionOption.GenerateUniqueName",
+                                                            "FileAccessMode.ReadWrite",
+                                                            "Algorithm.HasValue",
+                                                            "Algorithm.Value",
+                                                            "RandomAccessStream.CopyAsync",
+                                                            "NotifyType.StatusMessage",
+                                                            "NotifyType.ErrorMessage"
+                                                        ],
+                                           "new_types":  [
+                                                             "Compressor",
+                                                             "Decompressor"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  3700
+                                       },
+                                       {
+                                           "name":  "CompressAlgorithmComboBox_SelectionChanged",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "AddedItems.Count",
+                                                            "RemovedItems.Count",
+                                                            "Content.Equals",
+                                                            "Visibility.Visible",
+                                                            "Debug.Assert",
+                                                            "Visibility.Collapsed"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  1208
+                                       },
+                                       {
+                                           "name":  "CompressAlgorithmFromComboBoxItem",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "CompressAlgorithm.Xpress",
+                                                            "CompressAlgorithm.XpressHuff",
+                                                            "CompressAlgorithm.Mszip",
+                                                            "CompressAlgorithm.Lzms",
+                                                            "CompressAlgorithm.InvalidAlgorithm"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  862
+                                       },
+                                       {
+                                           "name":  "UpdateDescriptionVisibility",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "CompressAlgorithm.Xpress",
+                                                            "CompressAlgorithm.XpressHuff",
+                                                            "CompressAlgorithm.Mszip",
+                                                            "CompressAlgorithm.Lzms"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  852
+                                       },
+                                       {
+                                           "name":  "CompressFileButton_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "CompressAlgorithmComboBox.SelectedItem",
+                                                            "CompressAlgorithm.InvalidAlgorithm"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  435
+                                       }
+                                   ]
+                  },
+    "main_page":  null
+}

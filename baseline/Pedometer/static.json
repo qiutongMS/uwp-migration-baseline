@@ -1,0 +1,1000 @@
+﻿{
+    "sample":  "Pedometer",
+    "feature_name":  "Pedometer",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+
+                       ],
+    "api_references":  [
+                           "DeviceAccessInformation.CreateFromDeviceClassId",
+                           "MainPage.Current",
+                           "RegisterButton.IsEnabled",
+                           "Pedometer.GetDefaultAsync",
+                           "NotifyType.ErrorMessage",
+                           "RegisterButton.Content",
+                           "NotifyType.StatusMessage",
+                           "System.UnauthorizedAccessException",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "PedometerStepKind.Unknown",
+                           "ScenarioOutput_UnknownCount.Text",
+                           "ScenarioOutput_UnknownDuration.Text",
+                           "CumulativeStepsDuration.TotalMilliseconds",
+                           "PedometerStepKind.Walking",
+                           "ScenarioOutput_WalkingCount.Text",
+                           "ScenarioOutput_WalkingDuration.Text",
+                           "PedometerStepKind.Running",
+                           "ScenarioOutput_RunningCount.Text",
+                           "ScenarioOutput_RunningDuration.Text",
+                           "ScenarioOutput_TotalStepCount.Text",
+                           "ScenarioOutput_Timestamp.Text",
+                           "DeviceAccessStatus.Allowed",
+                           "SpanPicker.Visibility",
+                           "Visibility.Collapsed",
+                           "Visibility.Visible",
+                           "GetHistory.IsEnabled",
+                           "DateTime.FromFileTimeUtc",
+                           "Pedometer.GetSystemHistoryAsync",
+                           "FromDate.Date",
+                           "Convert.ToInt32",
+                           "FromTime.Time",
+                           "ToDate.Date",
+                           "ToTime.Time",
+                           "TimeSpan.FromTicks",
+                           "Enum.GetValues",
+                           "GetCurrentButton.IsEnabled",
+                           "BackgroundTaskRegistration.AllTasks",
+                           "Value.Name",
+                           "Scenario4_BackgroundPedometer.SampleBackgroundTaskName",
+                           "BackgroundExecutionManager.RequestAccessAsync",
+                           "BackgroundAccessStatus.AlwaysAllowed",
+                           "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                           "Value.Unregister",
+                           "ScenarioRegisterTaskButton.IsEnabled",
+                           "ScenarioUnregisterTaskButton.IsEnabled",
+                           "ScenarioOutput_TaskRegistration.Text",
+                           "ApplicationData.Current",
+                           "ScenarioOutput_CurrentCount.Text",
+                           "ScenarioOutput_StepGoal.Text",
+                           "Values.TryGetValue",
+                           "ScenarioOutput_ReportCount.Text",
+                           "ScenarioOutput_TaskStatus.Text",
+                           "ScenarioOutput_LastTimestamp.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_Events",
+                          "title":  "Events",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario1_Events.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario1_Events.xaml.cs",
+                          "description":  "This page illustrates the Pedometer\u0027s \u0027ReadingChanged\u0027 event usage on default Pedometer. Use the button below to register and unregister for the Pedometer events.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This page illustrates the Pedometer\u0027s \u0027ReadingChanged\u0027 event usage on default Pedometer. Use the button below to register and unregister for the Pedometer events."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "RegisterButton",
+                                               "content":  "Register ReadingChanged",
+                                               "handlers":  {
+                                                                "Click":  "RegisterButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp : "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Total Step Count :"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TotalStepCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Step Type"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Cumulative Step Count"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Cumulative Step Duration (in ms)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Unknown"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Walking"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Running"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_UnknownCount",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_WalkingCount",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_RunningCount",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_UnknownDuration",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_WalkingDuration",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_RunningDuration",
+                                               "text":  "0"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Foundation",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_Events",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId"
+                                                            ],
+                                               "new_types":  [
+                                                                 "TypedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  379
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "MainPage.Current"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  52
+                                           },
+                                           {
+                                               "name":  "OnNavigatedFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  48
+                                           },
+                                           {
+                                               "name":  "RegisterButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "RegisterButton.IsEnabled",
+                                                                "Pedometer.GetDefaultAsync",
+                                                                "NotifyType.ErrorMessage",
+                                                                "RegisterButton.Content",
+                                                                "NotifyType.StatusMessage",
+                                                                "System.UnauthorizedAccessException"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1752
+                                           },
+                                           {
+                                               "name":  "Pedometer_ReadingChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "PedometerStepKind.Unknown",
+                                                                "ScenarioOutput_UnknownCount.Text",
+                                                                "ScenarioOutput_UnknownDuration.Text",
+                                                                "CumulativeStepsDuration.TotalMilliseconds",
+                                                                "PedometerStepKind.Walking",
+                                                                "ScenarioOutput_WalkingCount.Text",
+                                                                "ScenarioOutput_WalkingDuration.Text",
+                                                                "PedometerStepKind.Running",
+                                                                "ScenarioOutput_RunningCount.Text",
+                                                                "ScenarioOutput_RunningDuration.Text",
+                                                                "ScenarioOutput_TotalStepCount.Text",
+                                                                "ScenarioOutput_Timestamp.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DateTimeFormatter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2634
+                                           },
+                                           {
+                                               "name":  "AccessChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "NotifyType.ErrorMessage",
+                                                                "RegisterButton.Content"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  513
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_History",
+                          "title":  "History",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario2_History.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario2_History.xaml.cs",
+                          "description":  "Retrieves the Pedometer History for the timespan requested (up to 100 entries).",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Retrieves the Pedometer History for the timespan requested (up to 100 entries)."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Choose the timespan for which history needs to be retrieved:"
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "AllHistory",
+                                               "handlers":  {
+                                                                "Checked":  "AllHistory_Checked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "RadioButton",
+                                               "name":  "",
+                                               "x_name":  "SpecificHistory",
+                                               "handlers":  {
+                                                                "Checked":  "SpecificHistory_Checked"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "From:"
+                                           },
+                                           {
+                                               "type":  "DatePicker",
+                                               "name":  "",
+                                               "x_name":  "FromDate"
+                                           },
+                                           {
+                                               "type":  "TimePicker",
+                                               "name":  "",
+                                               "x_name":  "FromTime"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "To:"
+                                           },
+                                           {
+                                               "type":  "DatePicker",
+                                               "name":  "",
+                                               "x_name":  "ToDate"
+                                           },
+                                           {
+                                               "type":  "TimePicker",
+                                               "name":  "",
+                                               "x_name":  "ToTime"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetHistory",
+                                               "content":  "Get History",
+                                               "handlers":  {
+                                                                "Click":  "GetHistory_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Time Stamp"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Step Kind"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Steps Count"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Steps Duration"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "historyRecordsList"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding TimeStamp}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding StepKind}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding StepsCount}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding StepsDuration}"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Collections.ObjectModel",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Globalization",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_History",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+                                                                 "ObservableCollection"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  186
+                                           },
+                                           {
+                                               "name":  "AllHistory_Checked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SpanPicker.Visibility",
+                                                                "Visibility.Collapsed",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  416
+                                           },
+                                           {
+                                               "name":  "SpecificHistory_Checked",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "SpanPicker.Visibility",
+                                                                "Visibility.Visible",
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  239
+                                           },
+                                           {
+                                               "name":  "GetHistory_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "GetHistory.IsEnabled",
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId",
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "Pedometer.GetDefaultAsync",
+                                                                "DateTime.FromFileTimeUtc",
+                                                                "NotifyType.StatusMessage",
+                                                                "Pedometer.GetSystemHistoryAsync",
+                                                                "FromDate.Date",
+                                                                "Convert.ToInt32",
+                                                                "FromTime.Time",
+                                                                "ToDate.Date",
+                                                                "ToTime.Time",
+                                                                "NotifyType.ErrorMessage",
+                                                                "TimeSpan.FromTicks"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DateTimeFormatter",
+                                                                 "DateTimeOffset",
+                                                                 "Calendar",
+                                                                 "HistoryRecord"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  5673
+                                           },
+                                           {
+                                               "name":  "HistoryRecord",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  153
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_CurrentStepCount",
+                          "title":  "Current step count",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario3_CurrentStepCount.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario3_CurrentStepCount.xaml.cs",
+                          "description":  "Gets the current steps count using \u0027GetCurrentReadings\u0027 API.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Gets the current steps count using \u0027GetCurrentReadings\u0027 API."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetCurrentButton",
+                                               "content":  "Get steps count",
+                                               "handlers":  {
+                                                                "Click":  "GetCurrentButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Timestamp : "
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Total Step Count :"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_Timestamp",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TotalStepCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "StatusBlock"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_CurrentStepCount",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "NotifyType.StatusMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  147
+                                           },
+                                           {
+                                               "name":  "GetCurrentButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DeviceAccessInformation.CreateFromDeviceClassId",
+                                                                "DeviceAccessStatus.Allowed",
+                                                                "Pedometer.GetDefaultAsync",
+                                                                "DateTime.FromFileTimeUtc",
+                                                                "Enum.GetValues",
+                                                                "ScenarioOutput_Timestamp.Text",
+                                                                "ScenarioOutput_TotalStepCount.Text",
+                                                                "NotifyType.StatusMessage",
+                                                                "GetCurrentButton.IsEnabled",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+                                                                 "DateTimeFormatter"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2257
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_BackgroundTask",
+                          "title":  "Scenario4_BackgroundTask",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario4_BackgroundTask.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Pedometer\\cs\\Scenario4_BackgroundTask.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "InputTextBlock",
+                                               "text":  "Registers a background task for pedometer changes. The background task runs when the step count crosses the requested step goal."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioRegisterTaskButton",
+                                               "content":  "Register Task",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioRegisterTask_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "ScenarioUnregisterTaskButton",
+                                               "content":  "Unregister Task",
+                                               "handlers":  {
+                                                                "Click":  "ScenarioUnregisterTask_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Task Registration:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Task Status:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Current Step Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Step Goal:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Report Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Last Report Timestamp:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Unknown Step Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Walking Step Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Running Step Count:"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TaskRegistration",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_TaskStatus",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_CurrentCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_StepGoal",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_ReportCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_LastTimestamp",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_UnknownCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_WalkingCount",
+                                               "text":  "No data"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ScenarioOutput_RunningCount",
+                                               "text":  "No data"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "Windows.ApplicationModel.Background",
+                                         "Windows.Devices.Enumeration",
+                                         "Windows.Devices.Sensors",
+                                         "Windows.Globalization.DateTimeFormatting",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "Windows.UI.Core",
+                                         "Windows.Storage"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_BackgroundPedometer",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "Scenario4_BackgroundPedometer.SampleBackgroundTaskName"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  413
+                                           },
+                                           {
+                                               "name":  "ScenarioRegisterTask_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Pedometer.GetDefaultAsync",
+                                                                "BackgroundExecutionManager.RequestAccessAsync",
+                                                                "BackgroundAccessStatus.AlwaysAllowed",
+                                                                "BackgroundAccessStatus.AllowedSubjectToSystemPolicy",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1086
+                                           },
+                                           {
+                                               "name":  "RegisterBackgroundTask",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Enum.GetValues"
+                                                            ],
+                                               "new_types":  [
+                                                                 "BackgroundTaskBuilder",
+                                                                 "PedometerDataThreshold",
+                                                                 "SensorDataThresholdTrigger",
+                                                                 "BackgroundTaskCompletedEventHandler"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1498
+                                           },
+                                           {
+                                               "name":  "BackgroundTaskBuilder",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  129
+                                           },
+                                           {
+                                               "name":  "OnCompleted",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  856
+                                           },
+                                           {
+                                               "name":  "ScenarioUnregisterTask_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "BackgroundTaskRegistration.AllTasks",
+                                                                "Value.Name",
+                                                                "Value.Unregister"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  583
+                                           },
+                                           {
+                                               "name":  "UpdateUIAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal",
+                                                                "ScenarioRegisterTaskButton.IsEnabled",
+                                                                "ScenarioUnregisterTaskButton.IsEnabled",
+                                                                "ScenarioOutput_TaskRegistration.Text",
+                                                                "ApplicationData.Current",
+                                                                "ScenarioOutput_CurrentCount.Text",
+                                                                "ScenarioOutput_StepGoal.Text",
+                                                                "ScenarioOutput_UnknownCount.Text",
+                                                                "ScenarioOutput_WalkingCount.Text",
+                                                                "ScenarioOutput_RunningCount.Text",
+                                                                "Values.TryGetValue",
+                                                                "ScenarioOutput_ReportCount.Text",
+                                                                "ScenarioOutput_TaskStatus.Text",
+                                                                "ScenarioOutput_LastTimestamp.Text",
+                                                                "Enum.GetValues",
+                                                                "PedometerStepKind.Unknown",
+                                                                "PedometerStepKind.Walking",
+                                                                "PedometerStepKind.Running"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2433
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

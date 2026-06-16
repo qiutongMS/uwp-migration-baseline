@@ -1,0 +1,31 @@
+﻿{
+    "sample":  "PersonalDataEncryption",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\PersonalDataEncryption\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.PersonalDataEncryption.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.PersonalDataEncryption.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.PersonalDataEncryption.CS_8wekyb3d8bbwe!PersonalDataEncryption.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Files and folders",
+                          "initial_capture":  "01_1_Files_and_folders__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Memory",
+                          "initial_capture":  "02_2_Memory__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

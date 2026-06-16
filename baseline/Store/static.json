@@ -1,0 +1,1022 @@
+﻿{
+    "sample":  "Store",
+    "feature_name":  "Store C# Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.System.Launcher.LaunchUriAsync"
+                       ],
+    "api_references":  [
+                           "StoreContext.GetDefault",
+                           "PurchasePrice.Text",
+                           "Product.Price",
+                           "Dispatcher.RunAsync",
+                           "CoreDispatcherPriority.Normal",
+                           "LicenseMode.Text",
+                           "DateTime.Now",
+                           "NotifyType.StatusMessage",
+                           "NotifyType.ErrorMessage",
+                           "ExtendedError.Message",
+                           "Product.RequestPurchaseAsync",
+                           "StorePurchaseStatus.AlreadyPurchased",
+                           "StorePurchaseStatus.Succeeded",
+                           "StoreContext.OfflineLicensesChanged",
+                           "StorePurchaseStatus.NotPurchased",
+                           "StorePurchaseStatus.NetworkError",
+                           "StorePurchaseStatus.ServerError",
+                           "ProductsListView.ItemsSource",
+                           "Utils.CreateProductListFromQueryResult",
+                           "ProductsListView.SelectedItem",
+                           "Utils.ReportExtendedError",
+                           "StoreConsumableStatus.InsufficentQuantity",
+                           "StoreConsumableStatus.Succeeded",
+                           "StoreConsumableStatus.NetworkError",
+                           "StoreConsumableStatus.ServerError",
+                           "Guid.NewGuid",
+                           "UInt32.Parse",
+                           "QuantityComboBox.SelectedValue",
+                           "Windows.System",
+                           "Launcher.LaunchUriAsync",
+                           "Product.LinkUri",
+                           "String.IsNullOrEmpty",
+                           "Output.Text",
+                           "Headers.ContentType",
+                           "Content.ReadAsStringAsync",
+                           "JsonValue.Parse",
+                           "String.Empty"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_TrialMode",
+                          "title":  "Trial-mode",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario1_TrialMode.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario1_TrialMode.xaml.cs",
+                          "description":  "Determines the type of license the customer has, days remaining in trial mode, and offers to upgrade to the fully-licensed version.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Trial-mode"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Determines the type of license the customer has, days remaining in trial mode, and offers to upgrade to the fully-licensed version."
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Current license mode: Unknown"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Show trial period information",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind ShowTrialPeriodInformation}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind PurchaseFullLicense}"
+                                                            },
+                                               "inner_text":  "Buy app (Price unknown)"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Buy app (Price unknown)"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Threading.Tasks",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Core",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario1_TrialMode",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "StoreContext.GetDefault",
+                                                                "PurchasePrice.Text",
+                                                                "Product.Price"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  432
+                                           },
+                                           {
+                                               "name":  "OnNavigatingFrom",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  86
+                                           },
+                                           {
+                                               "name":  "OfflineLicensesChanged",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Dispatcher.RunAsync",
+                                                                "CoreDispatcherPriority.Normal"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  171
+                                           },
+                                           {
+                                               "name":  "GetLicenseState",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "LicenseMode.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  510
+                                           },
+                                           {
+                                               "name":  "ShowTrialPeriodInformation",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "DateTime.Now",
+                                                                "NotifyType.StatusMessage",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  846
+                                           },
+                                           {
+                                               "name":  "PurchaseFullLicense",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ExtendedError.Message",
+                                                                "NotifyType.ErrorMessage",
+                                                                "NotifyType.StatusMessage",
+                                                                "Product.RequestPurchaseAsync",
+                                                                "StorePurchaseStatus.AlreadyPurchased",
+                                                                "StorePurchaseStatus.Succeeded",
+                                                                "StoreContext.OfflineLicensesChanged",
+                                                                "StorePurchaseStatus.NotPurchased",
+                                                                "StorePurchaseStatus.NetworkError",
+                                                                "StorePurchaseStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  2605
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_InAppPurchase",
+                          "title":  "In-app purchase",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario2_InAppPurchase.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario2_InAppPurchase.xaml.cs",
+                          "description":  "This scenario shows any in-app products that are sellable by this product. Once one is selected from the list, a purchase can be attempted on it.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "In-app purchase"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows any in-app products that are sellable by this product. Once one is selected from the list, a purchase can be attempted on it."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetAssociatedProductsButton",
+                                               "content":  "Get Associated Add-Ons",
+                                               "handlers":  {
+                                                                "Click":  "GetAssociatedProductsButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PurchaseAddOnButton",
+                                               "content":  "Purchase Selected Add-On",
+                                               "handlers":  {
+                                                                "Click":  "PurchaseAddOnButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ProductsListView"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding FormattedTitle}"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario2_InAppPurchase",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetAssociatedProductsButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.ItemsSource",
+                                                                "Utils.CreateProductListFromQueryResult"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  494
+                                           },
+                                           {
+                                               "name":  "PurchaseAddOnButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "Utils.ReportExtendedError",
+                                                                "StorePurchaseStatus.AlreadyPurchased",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StorePurchaseStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StorePurchaseStatus.NotPurchased",
+                                                                "StorePurchaseStatus.NetworkError",
+                                                                "StorePurchaseStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1588
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  3,
+                          "class":  "Scenario3_UnmanagedConsumable",
+                          "title":  "Unmanaged consumable product",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario3_UnmanagedConsumable.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario3_UnmanagedConsumable.xaml.cs",
+                          "description":  "Unmanaged Consumable products require both a purchase call and a fulfillment call to report usage of consumables. Stackable purchases are not supported on Unmanaged consumables.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Unmanaged Consumables"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Unmanaged Consumable products require both a purchase call and a fulfillment call to report usage of consumables. Stackable purchases are not supported on Unmanaged consumables."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetUnManagedConsumablesButton",
+                                               "content":  "Get Associated Add-Ons",
+                                               "handlers":  {
+                                                                "Click":  "GetUnmanagedConsumablesButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PurchaseAddOnButton",
+                                               "content":  "Purchase Selected Consumable",
+                                               "handlers":  {
+                                                                "Click":  "PurchaseAddOnButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetConsumableBalanceButton",
+                                               "content":  "Get Consumable Balance",
+                                               "handlers":  {
+                                                                "Click":  "GetConsumableBalanceButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "FulfillConsumableButton",
+                                               "content":  "Fulfill Consumable",
+                                               "handlers":  {
+                                                                "Click":  "FulfillConsumableButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ProductsListView"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding FormattedTitle}"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario3_UnmanagedConsumable",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetUnmanagedConsumablesButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.ItemsSource",
+                                                                "Utils.CreateProductListFromQueryResult"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  416
+                                           },
+                                           {
+                                               "name":  "PurchaseAddOnButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "Utils.ReportExtendedError",
+                                                                "StorePurchaseStatus.AlreadyPurchased",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StorePurchaseStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StorePurchaseStatus.NotPurchased",
+                                                                "StorePurchaseStatus.NetworkError",
+                                                                "StorePurchaseStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1589
+                                           },
+                                           {
+                                               "name":  "GetConsumableBalanceButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "Utils.ReportExtendedError",
+                                                                "StoreConsumableStatus.InsufficentQuantity",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StoreConsumableStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StoreConsumableStatus.NetworkError",
+                                                                "StoreConsumableStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1466
+                                           },
+                                           {
+                                               "name":  "FulfillConsumableButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "Guid.NewGuid",
+                                                                "Utils.ReportExtendedError",
+                                                                "StoreConsumableStatus.InsufficentQuantity",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StoreConsumableStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StoreConsumableStatus.NetworkError",
+                                                                "StoreConsumableStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1740
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  4,
+                          "class":  "Scenario4_ConsumableProduct",
+                          "title":  "Managed consumable product",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario4_ConsumableProduct.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario4_ConsumableProduct.xaml.cs",
+                          "description":  "Managed Consumable products require both a purchase call and a fulfillment call to report usage of consumables and Microsoft Store Services will maintain the users balance. Stackable purchases are supported.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Managed Consumables"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetManagedConsumablesButton",
+                                               "content":  "Get Associated Add-Ons",
+                                               "handlers":  {
+                                                                "Click":  "GetManagedConsumablesButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "PurchaseAddOnButton",
+                                               "content":  "Purchase Selected Consumable",
+                                               "handlers":  {
+                                                                "Click":  "PurchaseAddOnButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetConsumableBalanceButton",
+                                               "content":  "Get Consumable Balance",
+                                               "handlers":  {
+                                                                "Click":  "GetConsumableBalanceButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "FulfillConsumableButton",
+                                               "content":  "Fulfill Consumable",
+                                               "handlers":  {
+                                                                "Click":  "FulfillConsumableButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Quantity"
+                                           },
+                                           {
+                                               "type":  "ComboBox",
+                                               "name":  "",
+                                               "x_name":  "QuantityComboBox"
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ProductsListView"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding FormattedTitle}"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario4_ConsumableProduct",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetManagedConsumablesButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.ItemsSource",
+                                                                "Utils.CreateProductListFromQueryResult"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  471
+                                           },
+                                           {
+                                               "name":  "PurchaseAddOnButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "Utils.ReportExtendedError",
+                                                                "StorePurchaseStatus.AlreadyPurchased",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StorePurchaseStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StorePurchaseStatus.NotPurchased",
+                                                                "StorePurchaseStatus.NetworkError",
+                                                                "StorePurchaseStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1660
+                                           },
+                                           {
+                                               "name":  "GetConsumableBalanceButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "Utils.ReportExtendedError",
+                                                                "StoreConsumableStatus.InsufficentQuantity",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StoreConsumableStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StoreConsumableStatus.NetworkError",
+                                                                "StoreConsumableStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1466
+                                           },
+                                           {
+                                               "name":  "FulfillConsumableButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.SelectedItem",
+                                                                "UInt32.Parse",
+                                                                "QuantityComboBox.SelectedValue",
+                                                                "Guid.NewGuid",
+                                                                "Utils.ReportExtendedError",
+                                                                "StoreConsumableStatus.InsufficentQuantity",
+                                                                "NotifyType.ErrorMessage",
+                                                                "StoreConsumableStatus.Succeeded",
+                                                                "NotifyType.StatusMessage",
+                                                                "StoreConsumableStatus.NetworkError",
+                                                                "StoreConsumableStatus.ServerError"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1756
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  5,
+                          "class":  "Scenario5_UserCollection",
+                          "title":  "User collection",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario5_UserCollection.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario5_UserCollection.xaml.cs",
+                          "description":  "This scenario shows the collection of Add-On products for this product owned by the user.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "User Collection"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "This scenario shows the collection of Add-On products for this product owned by the user."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "GetUserCollectionButton",
+                                               "content":  "Get User Collection",
+                                               "handlers":  {
+                                                                "Click":  "GetUserCollectionButton_Click"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "ListView",
+                                               "name":  "",
+                                               "x_name":  "ProductsListView"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "{Binding FormattedTitle}"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario5_UserCollection",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetUserCollectionButton_Click",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ProductsListView.ItemsSource",
+                                                                "Utils.CreateProductListFromQueryResult"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  501
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  6,
+                          "class":  "Scenario6_AppListingURI",
+                          "title":  "App listing URI",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario6_AppListingURI.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario6_AppListingURI.xaml.cs",
+                          "description":  "Goes to the app\u0027s listing in the Microsoft Store. You can use this information to make it easy for customers to purchase or review your app.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "App listing URI"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "Goes to the app\u0027s listing in the Microsoft Store. You can use this information to make it easy for customers to purchase or review your app."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Rate this app",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind DisplayLink}"
+                                                            }
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Xaml.Controls"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario6_AppListingURI",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "DisplayLink",
+                                               "namespaces_used":  [
+                                                                       "Windows.System.Launcher.LaunchUriAsync"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Utils.ReportExtendedError",
+                                                                "Windows.System",
+                                                                "Launcher.LaunchUriAsync",
+                                                                "Product.LinkUri"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  360
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  7,
+                          "class":  "Scenario7_B2B",
+                          "title":  "Business to Business",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\shared\\Scenario7_B2B.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\Store\\cs\\Scenario7_B2B.xaml.cs",
+                          "description":  "These APIs are used to retrieve secure tokens that can be saved by the application\u0027s servers to query the user\u0027s collection or grant a user access to a product.",
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "text":  "Business to Business"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "inner_text":  "These APIs are used to retrieve secure tokens that can be saved by the application\u0027s servers to query the user\u0027s collection or grant a user access to a product."
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get Customer Collections Id",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind GetCustomerCollectionsId}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "",
+                                               "content":  "Get Customer Purchase Id",
+                                               "handlers":  {
+                                                                "Click":  "{x:Bind GetCustomerPurchaseId}"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Output"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "System",
+                                         "System.Collections.Generic",
+                                         "System.Threading.Tasks",
+                                         "Windows.Data.Json",
+                                         "Windows.Services.Store",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.Web.Http",
+                                         "Windows.Web.Http.Headers"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "Scenario7_B2B",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "GetCustomerCollectionsId",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "Output.Text",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  494
+                                           },
+                                           {
+                                               "name":  "GetCustomerPurchaseId",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "String.IsNullOrEmpty",
+                                                                "Output.Text",
+                                                                "NotifyType.ErrorMessage"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  488
+                                           },
+                                           {
+                                               "name":  "GetTokenFromAzureOAuthAsync",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Headers.ContentType",
+                                                                "Content.ReadAsStringAsync",
+                                                                "JsonValue.Parse",
+                                                                "Output.Text",
+                                                                "String.Empty"
+                                                            ],
+                                               "new_types":  [
+                                                                 "HttpFormUrlEncodedContent",
+                                                                 "Dictionary",
+                                                                 "HttpMediaTypeHeaderValue",
+                                                                 "HttpClient",
+                                                                 "Uri"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  1273
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}

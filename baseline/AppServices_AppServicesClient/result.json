@@ -1,0 +1,47 @@
+﻿{
+    "sample":  "AppServicesClient",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\AppServices\\cs\\AppServicesClient",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.AppServicesClient.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.AppServicesClient.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.AppServicesClient.CS_8wekyb3d8bbwe!AppServicesClient.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Open/Close Connection",
+                          "initial_capture":  "01_1_Open_Close_Connection__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Generate Random Number",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Open_Close_Connection__after_Generate_Random_Number.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Keep Connection Open",
+                          "initial_capture":  "02_2_Keep_Connection_Open__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Open Connection",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Keep_Connection_Open__after_Open_Connection.png"
+                                          },
+                                          {
+                                              "name":  "Generate Random Number",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Keep_Connection_Open__after_Generate_Random_Number.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

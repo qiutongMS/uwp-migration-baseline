@@ -1,0 +1,41 @@
+﻿{
+    "sample":  "DataReaderWriter",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DataReaderWriter\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.DataReaderWriter.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.DataReaderWriter.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.DataReaderWriter.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Read and write simple structured data.",
+                          "initial_capture":  "01_1_Read_and_write_simple_structured_data.__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Copy Strings",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Read_and_write_simple_structured_data.__after_Copy_Strings.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Dump file contents using ReadBytes().",
+                          "initial_capture":  "02_2_Dump_file_contents_using_ReadBytes_.__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Hex Dump",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Dump_file_contents_using_ReadBytes_.__after_Hex_Dump.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

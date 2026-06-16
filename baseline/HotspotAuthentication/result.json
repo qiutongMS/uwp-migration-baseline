@@ -1,0 +1,50 @@
+﻿{
+    "sample":  "HotspotAuthentication",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\HotspotAuthentication\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.HotspotAuthentication.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.HotspotAuthentication.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.HotspotAuthentication.CS_8wekyb3d8bbwe!HotspotApp.App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Initialization",
+                          "initial_capture":  "01_1_Initialization__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Provision",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "01_1_Initialization__after_Provision.png"
+                                          },
+                                          {
+                                              "name":  "Register",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Authentication by background task",
+                          "initial_capture":  null,
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Authentication by foreground app",
+                          "initial_capture":  null,
+                          "buttons":  [
+
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

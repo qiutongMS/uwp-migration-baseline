@@ -1,0 +1,97 @@
+﻿{
+    "sample":  "MobileBroadband",
+    "sample_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\MobileBroadband\\cs",
+    "build":  "ok",
+    "deploy":  "ok",
+    "launch":  "ok",
+    "capture":  "ok",
+    "uninstall":  "ok",
+    "package_full_name":  "Microsoft.SDKSamples.MobileBroadband.CS_1.0.0.0_x64__8wekyb3d8bbwe",
+    "package_family_name":  "Microsoft.SDKSamples.MobileBroadband.CS_8wekyb3d8bbwe",
+    "aumid":  "Microsoft.SDKSamples.MobileBroadband.CS_8wekyb3d8bbwe!App",
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "title":  "1) Mobile Broadband Device",
+                          "initial_capture":  "01_1_Mobile_Broadband_Device__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  2,
+                          "title":  "2) Network Account Watcher",
+                          "initial_capture":  "02_2_Network_Account_Watcher__initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Start",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Network_Account_Watcher__after_Start.png"
+                                          },
+                                          {
+                                              "name":  "Stop",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "02_2_Network_Account_Watcher__after_Stop.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  3,
+                          "title":  "3) Connection UI",
+                          "initial_capture":  "03_3_Connection_UI__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  4,
+                          "title":  "4) Get Connection Profiles",
+                          "initial_capture":  "04_4_Get_Connection_Profiles__initial.png",
+                          "buttons":  [
+
+                                      ]
+                      },
+                      {
+                          "index":  5,
+                          "title":  "5) Modem information (New)",
+                          "initial_capture":  "05_5_Modem_information_New___initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Refresh Modem Information",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "05_5_Modem_information_New___after_Refresh_Modem_Information.png"
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  6,
+                          "title":  "6) Device Services (New)",
+                          "initial_capture":  "06_6_Device_Services_New___initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get DeviceService",
+                                              "invoked":  false,
+                                              "skipped_reason":  "invoke_failed",
+                                              "capture":  null
+                                          }
+                                      ]
+                      },
+                      {
+                          "index":  7,
+                          "title":  "7) SIM Card (New)",
+                          "initial_capture":  "07_7_SIM_Card_New___initial.png",
+                          "buttons":  [
+                                          {
+                                              "name":  "Get SIM Card Information",
+                                              "invoked":  true,
+                                              "skipped_reason":  null,
+                                              "capture":  "07_7_SIM_Card_New___after_Get_SIM_Card_Information.png"
+                                          }
+                                      ]
+                      }
+                  ],
+    "error":  null
+}

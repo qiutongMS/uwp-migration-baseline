@@ -1,0 +1,245 @@
+﻿{
+    "sample":  "XamlDeferLoadStrategy",
+    "feature_name":  "x:DeferLoadStrategy",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.System.Launcher.LaunchUriAsync"
+                       ],
+    "api_references":  [
+                           "SampleTitle.Text",
+                           "ScenarioControl.ItemsSource",
+                           "Window.Current",
+                           "Bounds.Width",
+                           "ScenarioControl.SelectedIndex",
+                           "ScenarioFrame.Navigate",
+                           "Splitter.IsPaneOpen",
+                           "Windows.System",
+                           "Launcher.LaunchUriAsync",
+                           "Tag.ToString",
+                           "MainPage.Current",
+                           "Scenarios.IndexOf"
+                       ],
+    "scenarios":  {
+
+                  },
+    "main_page":  {
+                      "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlDeferLoadStrategy\\cs\\MainPage.xaml",
+                      "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\XamlDeferLoadStrategy\\cs\\MainPage.xaml.cs",
+                      "controls":  [
+                                       {
+                                           "type":  "Image",
+                                           "name":  "",
+                                           "x_name":  "WindowsLogo"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "Header",
+                                           "text":  "Windows platform sample"
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "SampleTitle",
+                                           "text":  "Sample Title Here"
+                                       },
+                                       {
+                                           "type":  "ListBox",
+                                           "name":  "",
+                                           "x_name":  "ScenarioControl",
+                                           "handlers":  {
+                                                            "SelectionChanged":  "ScenarioControl_SelectionChanged"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "{Binding Converter={StaticResource ScenarioConverter}}"
+                                       },
+                                       {
+                                           "type":  "Image",
+                                           "name":  "",
+                                           "x_name":  ""
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "Copyright",
+                                           "text":  "© Microsoft Corporation. All rights reserved."
+                                       },
+                                       {
+                                           "type":  "HyperlinkButton",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "content":  "Trademarks",
+                                           "tag":  "http://www.microsoft.com/About/Legal/EN/US/IntellectualProperty/Trademarks/EN-US.aspx",
+                                           "handlers":  {
+                                                            "Click":  "Footer_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "TextBlock",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "text":  "|"
+                                       },
+                                       {
+                                           "type":  "HyperlinkButton",
+                                           "name":  "",
+                                           "x_name":  "PrivacyLink",
+                                           "content":  "Privacy",
+                                           "tag":  "http://privacy.microsoft.com",
+                                           "handlers":  {
+                                                            "Click":  "Footer_Click"
+                                                        }
+                                       },
+                                       {
+                                           "type":  "ToggleButton",
+                                           "name":  "",
+                                           "x_name":  "",
+                                           "handlers":  {
+                                                            "Click":  "Button_Click"
+                                                        }
+                                       }
+                                   ],
+                      "usings":  [
+                                     "System",
+                                     "System.Collections.Generic",
+                                     "Windows.UI.Xaml",
+                                     "Windows.UI.Xaml.Controls",
+                                     "Windows.UI.Xaml.Data",
+                                     "Windows.UI.Xaml.Media",
+                                     "Windows.UI.Xaml.Navigation"
+                                 ],
+                      "handlers":  [
+                                       {
+                                           "name":  "MainPage",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "SampleTitle.Text"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  312
+                                       },
+                                       {
+                                           "name":  "OnNavigatedTo",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "ScenarioControl.ItemsSource",
+                                                            "Window.Current",
+                                                            "Bounds.Width",
+                                                            "ScenarioControl.SelectedIndex"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  379
+                                       },
+                                       {
+                                           "name":  "ScenarioControl_SelectionChanged",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "ScenarioFrame.Navigate",
+                                                            "Window.Current",
+                                                            "Bounds.Width",
+                                                            "Splitter.IsPaneOpen"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  392
+                                       },
+                                       {
+                                           "name":  "Footer_Click",
+                                           "namespaces_used":  [
+                                                                   "Windows.System.Launcher.LaunchUriAsync"
+                                                               ],
+                                           "api_refs":  [
+                                                            "Windows.System",
+                                                            "Launcher.LaunchUriAsync",
+                                                            "Tag.ToString"
+                                                        ],
+                                           "new_types":  [
+                                                             "Uri"
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  120
+                                       },
+                                       {
+                                           "name":  "Button_Click",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "Splitter.IsPaneOpen"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  91
+                                       },
+                                       {
+                                           "name":  "Convert",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+                                                            "MainPage.Current",
+                                                            "Scenarios.IndexOf"
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  137
+                                       },
+                                       {
+                                           "name":  "ConvertBack",
+                                           "namespaces_used":  [
+
+                                                               ],
+                                           "api_refs":  [
+
+                                                        ],
+                                           "new_types":  [
+
+                                                         ],
+                                           "ui_sets":  [
+
+                                                       ],
+                                           "body_length":  36
+                                       }
+                                   ]
+                  }
+}

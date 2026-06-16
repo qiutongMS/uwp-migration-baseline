@@ -1,0 +1,255 @@
+﻿{
+    "sample":  "DataReaderWriter",
+    "feature_name":  "DataReader/Writer Sample",
+    "readme_description":  null,
+    "readme_bullets":  [
+
+                       ],
+    "readme_api_links":  [
+
+                         ],
+    "api_namespaces":  [
+                           "Windows.Storage.Streams.InMemoryRandomAccessStream",
+                           "Windows.Storage.Streams.DataWriter",
+                           "Windows.Storage.Streams.UnicodeEncoding.Utf8",
+                           "Windows.Storage.Streams.ByteOrder.LittleEndian",
+                           "Windows.Storage.Streams.DataReader",
+                           "Windows.Storage.StorageFile.GetFileFromApplicationUriAsync"
+                       ],
+    "api_references":  [
+                           "ElementsToWrite.Text",
+                           "String.Join",
+                           "Windows.Storage",
+                           "Streams.InMemoryRandomAccessStream",
+                           "Streams.DataWriter",
+                           "Streams.UnicodeEncoding",
+                           "Streams.ByteOrder",
+                           "Streams.DataReader",
+                           "ElementsRead.Text",
+                           "StorageFile.GetFileFromApplicationUriAsync",
+                           "ReadBytesOutput.Text"
+                       ],
+    "scenarios":  [
+                      {
+                          "index":  1,
+                          "class":  "Scenario1_WriteReadStream",
+                          "title":  "Scenario1_WriteReadStream",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DataReaderWriter\\shared\\Scenario1_WriteReadStream.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DataReaderWriter\\cs\\Scenario1_WriteReadStream.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Description"
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ElementsToWrite",
+                                               "inner_text":  "Hello;World;1 2 3 4 5;Très bien!;Goodbye"
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "SendButton",
+                                               "content":  "Copy Strings",
+                                               "handlers":  {
+                                                                "Click":  "TransferData"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ElementsRead"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "SDKTemplate",
+                                         "System",
+                                         "System.Diagnostics",
+                                         "Windows.Foundation",
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "WriteReadStream",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ElementsToWrite.Text",
+                                                                "String.Join"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  188
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  10
+                                           },
+                                           {
+                                               "name":  "TransferData",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.Streams.InMemoryRandomAccessStream",
+                                                                       "Windows.Storage.Streams.DataWriter",
+                                                                       "Windows.Storage.Streams.UnicodeEncoding.Utf8",
+                                                                       "Windows.Storage.Streams.ByteOrder.LittleEndian",
+                                                                       "Windows.Storage.Streams.DataReader"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Storage",
+                                                                "Streams.InMemoryRandomAccessStream",
+                                                                "Streams.DataWriter",
+                                                                "Streams.UnicodeEncoding",
+                                                                "Streams.ByteOrder",
+                                                                "Streams.DataReader",
+                                                                "ElementsRead.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Windows.Storage.Streams.InMemoryRandomAccessStream",
+                                                                 "Windows.Storage.Streams.DataWriter",
+                                                                 "Windows.Storage.Streams.DataReader"
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  3317
+                                           }
+                                       ]
+                      },
+                      {
+                          "index":  2,
+                          "class":  "Scenario2_ReadBytes",
+                          "title":  "Scenario2_ReadBytes",
+                          "xaml_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DataReaderWriter\\shared\\Scenario2_ReadBytes.xaml",
+                          "cs_path":  "C:\\Users\\qiutongshen\\project\\uwp-samples-standalone\\Samples\\DataReaderWriter\\cs\\Scenario2_ReadBytes.xaml.cs",
+                          "description":  null,
+                          "controls":  [
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "Description",
+                                               "inner_text":  "This scenario opens a sequential-access stream over the image below, and uses ReadBytes() to retrieve its contents in order to display a hex dump its binary data."
+                                           },
+                                           {
+                                               "type":  "Image",
+                                               "name":  "",
+                                               "x_name":  ""
+                                           },
+                                           {
+                                               "type":  "Button",
+                                               "name":  "",
+                                               "x_name":  "HexDumpButton",
+                                               "content":  "Hex Dump",
+                                               "handlers":  {
+                                                                "Click":  "HexDump"
+                                                            }
+                                           },
+                                           {
+                                               "type":  "TextBlock",
+                                               "name":  "",
+                                               "x_name":  "ReadBytesOutput"
+                                           }
+                                       ],
+                          "usings":  [
+                                         "Windows.UI.Xaml",
+                                         "Windows.UI.Xaml.Controls",
+                                         "Windows.UI.Xaml.Navigation",
+                                         "SDKTemplate",
+                                         "System"
+                                     ],
+                          "handlers":  [
+                                           {
+                                               "name":  "ReadBytes",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  51
+                                           },
+                                           {
+                                               "name":  "OnNavigatedTo",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  10
+                                           },
+                                           {
+                                               "name":  "HexDump",
+                                               "namespaces_used":  [
+                                                                       "Windows.Storage.StorageFile.GetFileFromApplicationUriAsync",
+                                                                       "Windows.Storage.Streams.DataReader"
+                                                                   ],
+                                               "api_refs":  [
+                                                                "Windows.Storage",
+                                                                "StorageFile.GetFileFromApplicationUriAsync",
+                                                                "Streams.DataReader",
+                                                                "ReadBytesOutput.Text"
+                                                            ],
+                                               "new_types":  [
+                                                                 "Uri",
+                                                                 "Windows.Storage.Streams.DataReader"
+                                                             ],
+                                               "ui_sets":  [
+                                                               "ReadBytesOutput.Text"
+                                                           ],
+                                               "body_length":  3256
+                                           },
+                                           {
+                                               "name":  "PrintRow",
+                                               "namespaces_used":  [
+
+                                                                   ],
+                                               "api_refs":  [
+                                                                "ReadBytesOutput.Text"
+                                                            ],
+                                               "new_types":  [
+
+                                                             ],
+                                               "ui_sets":  [
+
+                                                           ],
+                                               "body_length":  807
+                                           }
+                                       ]
+                      }
+                  ],
+    "main_page":  null
+}
